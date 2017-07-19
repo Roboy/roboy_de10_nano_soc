@@ -53,6 +53,5 @@ c5_pin_model_dump.txt
 db/
 hps_isw_handoff/
 incremental_db/
-soc_system.sld
+*.sld
 soc_system/
-output_files/
