@@ -23,5 +23,5 @@ sudo ~/intelFPGA/17.0/quartus/bin/jtagconfig
 * open the programmer in quartus
 * select your usb ( in the example output above that would be [3-2.1.1] )
 * change the programming file to soc_system.sof ( this will flash the fpga temporarily )
-* [sof_programmer](https://github.com/Roboy/roboy_de10_nano_soc/blob/master/images/programmer_sof.png?raw=true "sof programmer")
+* ![sof_programmer](https://github.com/Roboy/roboy_de10_nano_soc/blob/master/images/programmer_sof.png?raw=true "sof programmer")
 * if you want to program it permanently use the conversion file to_jic.cof
