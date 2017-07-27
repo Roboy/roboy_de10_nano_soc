@@ -1,0 +1,3 @@
+[submodule "ip"]
+	path = ip
+	url = https://github.com/Roboy/roboy_fpga_code
