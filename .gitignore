@@ -1,9 +1,17 @@
-.qsys_edit/
+# ignore Quartus II generated files
+
+*_generation_script*
+*_inst.vhd
 *.png
+*.jpg
 *.bak
+*.mif
+*.eqn
 *.sof
 *.rpt
 *.summary
+*.qar
+*.qarlog
 *.done
 *.jdi
 *.qdf
@@ -13,9 +21,11 @@
 *.qws
 *.log
 *.chg
+*~
 greybox_tmp
-
+*.sld
 *.html
+*.xml
 *.bsf
 *.ptf.*
 *.elf
@@ -25,7 +35,10 @@ obj
 *.swp
 *.a
 *.cmp
+*example*
+*sopc_*
 *.sopcinfo
+*.sopc_builder
 
 *.cmd
 *.mod.c
@@ -34,24 +47,22 @@ obj
 modules.order
 Module.symvers
 .tmp_versions
-
 *.ver
 *.smsg
 
-/fpga/db
-/fpga/simulation
-/fpga/incremental_db
-/fpga/c5_pin_model_dump.txt
-/fpga/output_files
-/fpga/hc_output
-/fpga/.qsys_edit
-/fpga/hps_isw_handoff
-/fpga/hps_sdram_p0_all_pins.txt
-/fpga/hps_sdram_p0_summary.csv
-/fpga/soc_system/synthesis
-c5_pin_model_dump.txt
+
+
+# ignore Quartus II generated folders
+
 db/
 hps_isw_handoff/
-incremental_db/
-*.sld
-soc_system/
+soc_system/synthesis/
+*/incremental_db/
+*/simulation/
+*/timing/
+*/testbench/
+*/*_sim/
+.qsys_edit/
+
+
+
