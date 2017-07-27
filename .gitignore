@@ -49,6 +49,7 @@ Module.symvers
 .tmp_versions
 *.ver
 *.smsg
+c5_pin_model_dump.txt
 
 
 
@@ -56,8 +57,9 @@ Module.symvers
 
 db/
 hps_isw_handoff/
-soc_system/synthesis/
+soc_system/
 */incremental_db/
+incremental_db/
 */simulation/
 */timing/
 */testbench/
