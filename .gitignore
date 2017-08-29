@@ -65,6 +65,4 @@ incremental_db/
 */testbench/
 */*_sim/
 .qsys_edit/
-
-
-
+*.txt
