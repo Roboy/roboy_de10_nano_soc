@@ -127,10 +127,10 @@ soc_system u0(
                //Clock&Reset
                .clk_clk(FPGA_CLK1_50),                                      //                            clk.clk
                .reset_reset_n(hps_fpga_reset_n),                            //                          reset.reset_n
-					.darkroom_0_sensor_signals_sensor_signal_i(GPIO_0[31:0]),
+					.darkroom_0_sensor_signals_sensor_signal_i({GPIO_0[25:10],GPIO_1[25:10]}),
 					.darkroom_0_sensor_signals_led(fpga_led_internal),
-					.i2c_0_conduit_end_scl(GPIO_1[10]),
-					.i2c_0_conduit_end_sda(GPIO_1[11]),
+					.i2c_0_conduit_end_scl(ARDUINO_IO[0]),
+					.i2c_0_conduit_end_sda(ARDUINO_IO[1]),
 					.myocontrol_0_conduit_end_miso(GPIO_1[0]),
 					.myocontrol_0_conduit_end_mosi(GPIO_1[1]),
 					.myocontrol_0_conduit_end_sck(GPIO_1[2]),
