@@ -6,7 +6,7 @@
 set_global_assignment -name FAMILY "Cyclone V"
 set_global_assignment -name DEVICE 5CSEBA6U23I7
 set_global_assignment -name TOP_LEVEL_ENTITY "DE10_NANO_SoC_GHRD"
-set_global_assignment -name LAST_QUARTUS_VERSION "17.0.0 Lite Edition"
+set_global_assignment -name LAST_QUARTUS_VERSION "17.0.1 Lite Edition"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "17:14:54 MARCH 04,2015"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 
@@ -684,6 +684,7 @@ set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_0[25]
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_1[25]
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_1[24]
 set_global_assignment -name QIP_FILE soc_system/synthesis/soc_system.qip
+set_global_assignment -name VERILOG_FILE ip/roboy_fpga_code/i2c/I2C_avalon_bridge.v
 set_global_assignment -name VHDL_FILE ip/roboy_fpga_code/myo_control/spi_master_slave/trunk/rtl/spi_master_slave/spi_master.vhd
 set_global_assignment -name VHDL_FILE ip/roboy_fpga_code/i2c/i2c_master.vhd
 set_global_assignment -name VERILOG_FILE ip/roboy_fpga_code/myo_control/SpiControl.v

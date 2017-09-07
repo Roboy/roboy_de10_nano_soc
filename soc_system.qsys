@@ -37,6 +37,22 @@
    {
       datum baseAddress
       {
+         value = "2336";
+         type = "String";
+      }
+   }
+   element I2C_1
+   {
+      datum _sortIndex
+      {
+         value = "8";
+         type = "int";
+      }
+   }
+   element I2C_1.avalon_slave_0
+   {
+      datum baseAddress
+      {
          value = "2304";
          type = "String";
       }
@@ -133,6 +149,14 @@
          type = "String";
       }
    }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
    element sysid_qsys
    {
       datum _sortIndex
@@ -218,6 +242,11 @@
    internal="I2C_0.conduit_end"
    type="conduit"
    dir="end" />
+ <interface
+   name="i2c_1_conduit_end"
+   internal="I2C_1.conduit_end"
+   type="conduit"
+   dir="end" />
  <interface name="memory" internal="hps_0.memory" type="conduit" dir="end" />
  <interface
    name="myocontrol_0_conduit_end"
@@ -232,6 +261,7 @@
  <interface name="reset" internal="clk_0.clk_in_reset" type="reset" dir="end" />
  <module name="DarkRoom_0" kind="DarkRoom" version="1.0" enabled="1" />
  <module name="I2C_0" kind="I2C" version="1.0" enabled="1" />
+ <module name="I2C_1" kind="I2C" version="1.0" enabled="1" />
  <module name="MYOControl_0" kind="MYOControl" version="1.0" enabled="1" />
  <module name="MYOControl_1" kind="MYOControl" version="1.0" enabled="1" />
  <module name="clk_0" kind="clock_source" version="17.0" enabled="1">
@@ -829,6 +859,15 @@
    start="hps_0.h2f_lw_axi_master"
    end="I2C_0.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0920" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="17.0"
+   start="hps_0.h2f_lw_axi_master"
+   end="I2C_1.avalon_slave_0">
+  <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0900" />
   <parameter name="defaultConnection" value="false" />
  </connection>
@@ -850,6 +889,7 @@
    start="clk_0.clk"
    end="MYOControl_0.clock_sink" />
  <connection kind="clock" version="17.0" start="clk_0.clk" end="I2C_0.clock_sink" />
+ <connection kind="clock" version="17.0" start="clk_0.clk" end="I2C_1.clock_sink" />
  <connection
    kind="clock"
    version="17.0"
@@ -903,6 +943,7 @@
    start="clk_0.clk_reset"
    end="MYOControl_1.reset" />
  <connection kind="reset" version="17.0" start="clk_0.clk_reset" end="I2C_0.reset" />
+ <connection kind="reset" version="17.0" start="clk_0.clk_reset" end="I2C_1.reset" />
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
  <interconnectRequirement for="$system" name="qsys_mm.maxAdditionalLatency" value="1" />
 </system>
