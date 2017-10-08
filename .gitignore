@@ -7,7 +7,6 @@
 *.bak
 *.mif
 *.eqn
-*.sof
 *.rpt
 *.summary
 *.qar
@@ -66,3 +65,4 @@ incremental_db/
 */*_sim/
 .qsys_edit/
 *.txt
+hps_0.h
