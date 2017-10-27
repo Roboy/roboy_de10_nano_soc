@@ -10,8 +10,7 @@
 
 /*
  * This file contains macros for module 'hps_0' and devices
- * connected to the following masters:
- *   h2f_axi_master
+ * connected to the following master:
  *   h2f_lw_axi_master
  * 
  * Do not include this header file and another header file created for a
@@ -74,6 +73,17 @@
 #define I2C_0_BASE 0x920
 #define I2C_0_SPAN 32
 #define I2C_0_END 0x93f
+
+/*
+ * Macros for device 'adc_ltc2308_0', class 'adc_ltc2308'
+ * The macros are prefixed with 'ADC_LTC2308_0_'.
+ * The prefix is the slave descriptor.
+ */
+#define ADC_LTC2308_0_COMPONENT_TYPE adc_ltc2308
+#define ADC_LTC2308_0_COMPONENT_NAME adc_ltc2308_0
+#define ADC_LTC2308_0_BASE 0x940
+#define ADC_LTC2308_0_SPAN 8
+#define ADC_LTC2308_0_END 0x947
 
 
 #endif /* _ALTERA_HPS_0_H_ */
