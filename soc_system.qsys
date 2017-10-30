@@ -1055,6 +1055,15 @@
    kind="avalon"
    version="17.0"
    start="hps_0.h2f_lw_axi_master"
+   end="jtag_uart.avalon_jtag_slave">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x2000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="17.0"
+   start="hps_0.h2f_lw_axi_master"
    end="DarkRoom_0.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0800" />
@@ -1094,6 +1103,15 @@
    end="I2C_1.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0900" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="17.0"
+   start="hps_0.h2f_lw_axi_master"
+   end="sysid_qsys.control_slave">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x1000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
