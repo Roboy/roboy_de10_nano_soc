@@ -220,6 +220,11 @@
  <parameter name="timeStamp" value="0" />
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
+ <interface
+   name="adc_ltc2308_0_conduit_end"
+   internal="adc_ltc2308_0.conduit_end"
+   type="conduit"
+   dir="end" />
  <interface name="clk" internal="clk_0.clk_in" type="clock" dir="end" />
  <interface
    name="darkroom_0_sensor_signals"

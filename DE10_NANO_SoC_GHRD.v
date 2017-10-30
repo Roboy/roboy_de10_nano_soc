@@ -127,6 +127,10 @@ soc_system u0(
                //Clock&Reset
                .clk_clk(FPGA_CLK1_50),                                      //                            clk.clk
                .reset_reset_n(hps_fpga_reset_n),                            //                          reset.reset_n
+					.adc_ltc2308_0_conduit_end_CONVST(ADC_CONVST), 
+					.adc_ltc2308_0_conduit_end_SCK(ADC_SCK), 
+					.adc_ltc2308_0_conduit_end_SDI(ADC_SDI), 
+					.adc_ltc2308_0_conduit_end_SDO(ADC_SDO),
 					.darkroom_0_sensor_signals_sensor_signal_i({GPIO_0[23:10],GPIO_1[23:10]}),  // only 28 pins connected
 					.darkroom_0_sensor_signals_led(fpga_led_internal),
 					// angle sensors 
