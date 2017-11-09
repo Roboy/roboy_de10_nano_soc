@@ -127,25 +127,7 @@ soc_system u0(
                //Clock&Reset
                .clk_clk(FPGA_CLK1_50),                                      //                            clk.clk
                .reset_reset_n(hps_fpga_reset_n),                            //                          reset.reset_n
-					.adc_ltc2308_0_conduit_end_CONVST(ADC_CONVST), 
-					.adc_ltc2308_0_conduit_end_SCK(ADC_SCK), 
-					.adc_ltc2308_0_conduit_end_SDI(ADC_SDI), 
-					.adc_ltc2308_0_conduit_end_SDO(ADC_SDO),
-					.darkroom_0_sensor_signals_sensor_signal_i({GPIO_0[23:10],GPIO_1[23:10]}),  // only 28 pins connected
-					.darkroom_0_sensor_signals_led(fpga_led_internal),
-					// angle sensors 
-					.i2c_0_conduit_end_scl(GPIO_0[24]),
-					.i2c_0_conduit_end_sda(GPIO_0[25]),
-					.i2c_1_conduit_end_scl(GPIO_1[24]),
-					.i2c_1_conduit_end_sda(GPIO_1[25]),
-					.myocontrol_0_conduit_end_miso(GPIO_1[1]),
-					.myocontrol_0_conduit_end_mosi(GPIO_1[0]),
-					.myocontrol_0_conduit_end_sck(GPIO_1[2]),
-					.myocontrol_0_conduit_end_ss_n(GPIO_1[35:29]),
-					.myocontrol_1_conduit_end_miso(GPIO_0[34]),
-					.myocontrol_1_conduit_end_mosi(GPIO_0[35]),
-					.myocontrol_1_conduit_end_sck(GPIO_0[33]),
-					.myocontrol_1_conduit_end_ss_n(GPIO_0[6:0]),
+					.pio_0_external_connection_export(fpga_debounced_buttons),
                //HPS ddr3
                .memory_mem_a(HPS_DDR3_ADDR),                                //                         memory.mem_a
                .memory_mem_ba(HPS_DDR3_BA),                                 //                               .mem_ba
