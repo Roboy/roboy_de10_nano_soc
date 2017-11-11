@@ -128,6 +128,7 @@ soc_system u0(
                .clk_clk(FPGA_CLK1_50),                                      //                            clk.clk
                .reset_reset_n(hps_fpga_reset_n),                            //                          reset.reset_n
 					.pio_0_external_connection_export(fpga_debounced_buttons),
+					.pio_1_external_connection_export(fpga_led_internal),
                //HPS ddr3
                .memory_mem_a(HPS_DDR3_ADDR),                                //                         memory.mem_a
                .memory_mem_ba(HPS_DDR3_BA),                                 //                               .mem_ba
