@@ -20,53 +20,16 @@
  */
 
 /*
- * Macros for device 'pio_1', class 'altera_avalon_pio'
- * The macros are prefixed with 'PIO_1_'.
+ * Macros for device 'user_input_device_0', class 'user_input_device'
+ * The macros are prefixed with 'USER_INPUT_DEVICE_0_'.
  * The prefix is the slave descriptor.
  */
-#define PIO_1_COMPONENT_TYPE altera_avalon_pio
-#define PIO_1_COMPONENT_NAME pio_1
-#define PIO_1_BASE 0x0
-#define PIO_1_SPAN 16
-#define PIO_1_END 0xf
-#define PIO_1_BIT_CLEARING_EDGE_REGISTER 1
-#define PIO_1_BIT_MODIFYING_OUTPUT_REGISTER 0
-#define PIO_1_CAPTURE 0
-#define PIO_1_DATA_WIDTH 2
-#define PIO_1_DO_TEST_BENCH_WIRING 0
-#define PIO_1_DRIVEN_SIM_VALUE 0
-#define PIO_1_EDGE_TYPE NONE
-#define PIO_1_FREQ 50000000
-#define PIO_1_HAS_IN 0
-#define PIO_1_HAS_OUT 1
-#define PIO_1_HAS_TRI 0
-#define PIO_1_IRQ_TYPE NONE
-#define PIO_1_RESET_VALUE 0
-
-/*
- * Macros for device 'pio_0', class 'altera_avalon_pio'
- * The macros are prefixed with 'PIO_0_'.
- * The prefix is the slave descriptor.
- */
-#define PIO_0_COMPONENT_TYPE altera_avalon_pio
-#define PIO_0_COMPONENT_NAME pio_0
-#define PIO_0_BASE 0x10
-#define PIO_0_SPAN 16
-#define PIO_0_END 0x1f
-#define PIO_0_IRQ 0
-#define PIO_0_BIT_CLEARING_EDGE_REGISTER 1
-#define PIO_0_BIT_MODIFYING_OUTPUT_REGISTER 0
-#define PIO_0_CAPTURE 1
-#define PIO_0_DATA_WIDTH 2
-#define PIO_0_DO_TEST_BENCH_WIRING 0
-#define PIO_0_DRIVEN_SIM_VALUE 0
-#define PIO_0_EDGE_TYPE FALLING
-#define PIO_0_FREQ 50000000
-#define PIO_0_HAS_IN 1
-#define PIO_0_HAS_OUT 0
-#define PIO_0_HAS_TRI 0
-#define PIO_0_IRQ_TYPE EDGE
-#define PIO_0_RESET_VALUE 0
+#define USER_INPUT_DEVICE_0_COMPONENT_TYPE user_input_device
+#define USER_INPUT_DEVICE_0_COMPONENT_NAME user_input_device_0
+#define USER_INPUT_DEVICE_0_BASE 0x0
+#define USER_INPUT_DEVICE_0_SPAN 1
+#define USER_INPUT_DEVICE_0_END 0x0
+#define USER_INPUT_DEVICE_0_IRQ 31
 
 /*
  * Macros for device 'sysid_qsys', class 'altera_avalon_sysid_qsys'
@@ -79,23 +42,7 @@
 #define SYSID_QSYS_SPAN 8
 #define SYSID_QSYS_END 0x1007
 #define SYSID_QSYS_ID 2899645186
-#define SYSID_QSYS_TIMESTAMP 1510413371
-
-/*
- * Macros for device 'jtag_uart', class 'altera_avalon_jtag_uart'
- * The macros are prefixed with 'JTAG_UART_'.
- * The prefix is the slave descriptor.
- */
-#define JTAG_UART_COMPONENT_TYPE altera_avalon_jtag_uart
-#define JTAG_UART_COMPONENT_NAME jtag_uart
-#define JTAG_UART_BASE 0x2000
-#define JTAG_UART_SPAN 8
-#define JTAG_UART_END 0x2007
-#define JTAG_UART_IRQ 2
-#define JTAG_UART_READ_DEPTH 64
-#define JTAG_UART_READ_THRESHOLD 8
-#define JTAG_UART_WRITE_DEPTH 64
-#define JTAG_UART_WRITE_THRESHOLD 8
+#define SYSID_QSYS_TIMESTAMP 1510529191
 
 
 #endif /* _ALTERA_HPS_0_H_ */
