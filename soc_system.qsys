@@ -57,6 +57,22 @@
          type = "String";
       }
    }
+   element LED
+   {
+      datum _sortIndex
+      {
+         value = "11";
+         type = "int";
+      }
+   }
+   element LED.s1
+   {
+      datum baseAddress
+      {
+         value = "2368";
+         type = "String";
+      }
+   }
    element MYOControl_0
    {
       datum _sortIndex
@@ -101,7 +117,7 @@
    {
       datum baseAddress
       {
-         value = "2368";
+         value = "2384";
          type = "String";
       }
    }
@@ -268,6 +284,11 @@
    internal="I2C_1.conduit_end"
    type="conduit"
    dir="end" />
+ <interface
+   name="led_external_connection"
+   internal="LED.external_connection"
+   type="conduit"
+   dir="end" />
  <interface name="memory" internal="hps_0.memory" type="conduit" dir="end" />
  <interface
    name="myocontrol_0_conduit_end"
@@ -283,6 +304,20 @@
  <module name="DarkRoom_0" kind="DarkRoom" version="1.0" enabled="1" />
  <module name="I2C_0" kind="I2C" version="1.0" enabled="1" />
  <module name="I2C_1" kind="I2C" version="1.0" enabled="1" />
+ <module name="LED" kind="altera_avalon_pio" version="17.0" enabled="1">
+  <parameter name="bitClearingEdgeCapReg" value="false" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="captureEdge" value="false" />
+  <parameter name="clockRate" value="50000000" />
+  <parameter name="direction" value="Output" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="generateIRQ" value="false" />
+  <parameter name="irqType" value="LEVEL" />
+  <parameter name="resetValue" value="0" />
+  <parameter name="simDoTestBenchWiring" value="false" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="width" value="8" />
+ </module>
  <module name="MYOControl_0" kind="MYOControl" version="1.0" enabled="1" />
  <module name="MYOControl_1" kind="MYOControl" version="1.0" enabled="1" />
  <module name="adc_ltc2308_0" kind="adc_ltc2308" version="1.1" enabled="1" />
@@ -1118,13 +1153,23 @@
    kind="avalon"
    version="17.0"
    start="hps_0.h2f_lw_axi_master"
-   end="adc_ltc2308_0.slave">
+   end="LED.s1">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0940" />
   <parameter name="defaultConnection" value="false" />
  </connection>
+ <connection
+   kind="avalon"
+   version="17.0"
+   start="hps_0.h2f_lw_axi_master"
+   end="adc_ltc2308_0.slave">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0950" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
  <connection kind="clock" version="17.0" start="clk_0.clk" end="sysid_qsys.clk" />
  <connection kind="clock" version="17.0" start="clk_0.clk" end="jtag_uart.clk" />
+ <connection kind="clock" version="17.0" start="clk_0.clk" end="LED.clk" />
  <connection
    kind="clock"
    version="17.0"
@@ -1197,6 +1242,7 @@
    version="17.0"
    start="clk_0.clk_reset"
    end="pll_40MHz.reset" />
+ <connection kind="reset" version="17.0" start="clk_0.clk_reset" end="LED.reset" />
  <connection
    kind="reset"
    version="17.0"

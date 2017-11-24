@@ -114,7 +114,6 @@ wire                hps_debug_reset;
 wire     [27: 0]    stm_hw_events;
 wire                fpga_clk_50;
 // connection of internal logics
-assign LED[7: 1] = fpga_led_internal;
 assign fpga_clk_50 = FPGA_CLK1_50;
 assign stm_hw_events = {{15{1'b0}}, SW, fpga_led_internal, fpga_debounced_buttons};
 
@@ -127,17 +126,20 @@ soc_system u0(
                //Clock&Reset
                .clk_clk(FPGA_CLK1_50),                                      //                            clk.clk
                .reset_reset_n(hps_fpga_reset_n),                            //                          reset.reset_n
+					// adc
 					.adc_ltc2308_0_conduit_end_CONVST(ADC_CONVST), 
 					.adc_ltc2308_0_conduit_end_SCK(ADC_SCK), 
 					.adc_ltc2308_0_conduit_end_SDI(ADC_SDI), 
 					.adc_ltc2308_0_conduit_end_SDO(ADC_SDO),
+					// darkroom
 					.darkroom_0_sensor_signals_sensor_signal_i({GPIO_0[23:10],GPIO_1[23:10]}),  // only 28 pins connected
-					.darkroom_0_sensor_signals_led(fpga_led_internal),
-					// angle sensors 
+					// two i2c buses
 					.i2c_0_conduit_end_scl(GPIO_0[24]),
 					.i2c_0_conduit_end_sda(GPIO_0[25]),
+//					.i2c_0_conduit_end_led(fpga_led_internal),
 					.i2c_1_conduit_end_scl(GPIO_1[24]),
 					.i2c_1_conduit_end_sda(GPIO_1[25]),
+					// myocontrol, two buses a 7 motors
 					.myocontrol_0_conduit_end_miso(GPIO_1[1]),
 					.myocontrol_0_conduit_end_mosi(GPIO_1[0]),
 					.myocontrol_0_conduit_end_sck(GPIO_1[2]),
@@ -146,6 +148,8 @@ soc_system u0(
 					.myocontrol_1_conduit_end_mosi(GPIO_0[35]),
 					.myocontrol_1_conduit_end_sck(GPIO_0[33]),
 					.myocontrol_1_conduit_end_ss_n(GPIO_0[6:0]),
+					// led
+					.led_external_connection_export(LED),
                //HPS ddr3
                .memory_mem_a(HPS_DDR3_ADDR),                                //                         memory.mem_a
                .memory_mem_ba(HPS_DDR3_BA),                                 //                               .mem_ba
@@ -275,24 +279,6 @@ altera_edge_detector pulse_debug_reset(
 defparam pulse_debug_reset.PULSE_EXT = 32;
 defparam pulse_debug_reset.EDGE_TYPE = 1;
 defparam pulse_debug_reset.IGNORE_RST_WHILE_BUSY = 1;
-
-reg [25: 0] counter;
-reg led_level;
-always @(posedge fpga_clk_50 or negedge hps_fpga_reset_n) begin
-    if (~hps_fpga_reset_n) begin
-        counter <= 0;
-        led_level <= 0;
-    end
-
-    else if (counter == 24999999) begin
-        counter <= 0;
-        led_level <= ~led_level;
-    end
-    else
-        counter <= counter + 1'b1;
-end
-
-assign LED[0] = led_level;
 
 
 endmodule
