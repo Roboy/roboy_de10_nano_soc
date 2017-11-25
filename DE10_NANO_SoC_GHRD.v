@@ -132,7 +132,7 @@ soc_system u0(
 					.adc_ltc2308_0_conduit_end_SDI(ADC_SDI), 
 					.adc_ltc2308_0_conduit_end_SDO(ADC_SDO),
 					// darkroom
-					.darkroom_0_sensor_signals_sensor_signal_i({GPIO_0[23:10],GPIO_1[23:10]}),  // only 28 pins connected
+					.darkroom_0_sensor_signals_sensor_signal_i({GPIO_0[25:10],GPIO_1[25:10]}),
 					// two i2c buses
 					.i2c_0_conduit_end_scl(GPIO_0[24]),
 					.i2c_0_conduit_end_sda(GPIO_0[25]),
