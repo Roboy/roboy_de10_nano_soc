@@ -121,7 +121,7 @@ soc_system soc(
 	.darkroomootxdecoder_0_conduit_end_led(LED),
 	.darkroomootxdecoder_0_conduit_end_sensor(GPIO_0[0]),
 	.darkroomootxdecoder_0_conduit_end_uart_tx(GPIO_0[2]) 
-);
+); 
 
 ////// DarkRoom can also be instantiated individually
 //DarkRoom #(32) darkroom(
