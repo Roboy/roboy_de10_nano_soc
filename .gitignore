@@ -66,3 +66,4 @@ incremental_db/
 .qsys_edit/
 *.txt
 hps_0.h
+*.inc

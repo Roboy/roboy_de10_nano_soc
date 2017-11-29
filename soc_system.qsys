@@ -9,6 +9,14 @@
    categories="System" />
  <parameter name="bonusData"><![CDATA[bonusData 
 {
+   element DarkRoomOOTXdecoder_0
+   {
+      datum _sortIndex
+      {
+         value = "2";
+         type = "int";
+      }
+   }
    element DarkRoom_0
    {
       datum _sortIndex
@@ -65,7 +73,17 @@
    internal="DarkRoom_0.conduit_end"
    type="conduit"
    dir="end" />
+ <interface
+   name="darkroomootxdecoder_0_conduit_end"
+   internal="DarkRoomOOTXdecoder_0.conduit_end"
+   type="conduit"
+   dir="end" />
  <interface name="reset" internal="clk_0.clk_in_reset" type="reset" dir="end" />
+ <module
+   name="DarkRoomOOTXdecoder_0"
+   kind="DarkRoomOOTXdecoder"
+   version="1.0"
+   enabled="1" />
  <module name="DarkRoom_0" kind="DarkRoom" version="1.0" enabled="1">
   <parameter name="NUMBER_OF_SENSORS" value="32" />
  </module>
@@ -81,10 +99,20 @@
    start="clk_0.clk"
    end="DarkRoom_0.clock_sink" />
  <connection
+   kind="clock"
+   version="17.0"
+   start="clk_0.clk"
+   end="DarkRoomOOTXdecoder_0.clock_sink" />
+ <connection
    kind="reset"
    version="17.0"
    start="clk_0.clk_reset"
    end="DarkRoom_0.reset" />
+ <connection
+   kind="reset"
+   version="17.0"
+   start="clk_0.clk_reset"
+   end="DarkRoomOOTXdecoder_0.reset" />
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
  <interconnectRequirement for="$system" name="qsys_mm.maxAdditionalLatency" value="1" />
 </system>

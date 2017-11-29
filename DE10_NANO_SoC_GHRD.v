@@ -109,145 +109,41 @@ wire     [1: 0]     fpga_debounced_buttons;
 //=======================================================
 //  Structural coding
 //=======================================================
-//soc_system soc(
-//	.clk_clk(FPGA_CLK1_50),
-//	.reset_reset_n(fpga_debounced_buttons[1]),
-//   .darkroom_0_conduit_end_mosi_o(GPIO_1[2]),           
-//	.darkroom_0_conduit_end_sck_o(GPIO_1[0]),            
-//	.darkroom_0_conduit_end_sensor_signals_i({GPIO_1[25:10],GPIO_0[25:10]}), 
-//	.darkroom_0_conduit_end_ss_n_o(GPIO_1[1]),         
-//	.darkroom_0_conduit_end_trigger_me(~KEY[0]) ,
-//	.darkroom_0_conduit_end_sync_o(sync) 	
+soc_system soc(
+	.clk_clk(FPGA_CLK1_50),
+	.reset_reset_n(fpga_debounced_buttons[1]),
+   .darkroom_0_conduit_end_mosi_o(GPIO_1[2]),           
+	.darkroom_0_conduit_end_sck_o(GPIO_1[0]),            
+	.darkroom_0_conduit_end_sensor_signals_i({GPIO_1[25:10],GPIO_0[25:10]}), 
+	.darkroom_0_conduit_end_ss_n_o(GPIO_1[1]),         
+	.darkroom_0_conduit_end_trigger_me(~KEY[0]) ,
+	.darkroom_0_conduit_end_sync_o(sync) ,
+	.darkroomootxdecoder_0_conduit_end_led(LED),
+	.darkroomootxdecoder_0_conduit_end_sensor(GPIO_0[0]),
+	.darkroomootxdecoder_0_conduit_end_uart_tx(GPIO_0[2]) 
+);
+
+////// DarkRoom can also be instantiated individually
+//DarkRoom #(32) darkroom(
+//	.clock(FPGA_CLK1_50),
+//	.reset_n(KEY[1]),
+//	// those are the sensor signals
+//	.sensor_signals_i({GPIO_1[25:10],GPIO_0[25:10]}),
+//	// SPI
+//	.sck_o(GPIO_1[0]), // clock
+//	.ss_n_o(GPIO_1[1]), // slave select
+//	.mosi_o(GPIO_1[2])	// mosi
 //);
-
-wire sync;
-wire uart_done;
-reg [264:0] ootx_payload_o;
-reg [31:0] ootx_crc32_o;
-reg [15:0] ootx_payload_length_o;
-
-lighthouse_ootx_decoder ootx_decoder(
-	.clk(FPGA_CLK1_50),
-	.reset(~KEY[1]),
-	.sensor(GPIO_0[0]),
-	.led(LED[6:0]),
-	.sync(sync),
-	.ootx_payload_o(ootx_payload_o),
-	.ootx_payload_length_o(ootx_payload_length_o),
-	.ootx_crc32_o(ootx_crc32_o)
-);
-
-reg trigger_send;
-reg [0:7] data_byte;
-
-reg [8:0] byte_counter;
-always @(posedge FPGA_CLK1_50) begin: UART_TRANSMISSION
-	
-	reg transmit;
-	reg [1:0] uart_state;
-	parameter IDLE  = 2'b00, TRIGGER_SEND = 2'b01, WAIT_FOR_NEXT_BYTE = 2'b10;
-	
-	trigger_send <= 0;
-	case(uart_state) 
-		IDLE: begin
-					if(sync) begin // if trigger me or successfull ootx decoding 
-						uart_state <= TRIGGER_SEND;
-						byte_counter <= 0;
-					end
-				end
-		TRIGGER_SEND: begin		
-					if(byte_counter< 39) begin
-						case(byte_counter)
-							// fw_version
-							0: data_byte <= ootx_payload_o[7:0];
-							1: data_byte <= ootx_payload_o[15:8];
-							// ID
-							2: data_byte <= ootx_payload_o[23:16];
-							3: data_byte <= ootx_payload_o[31:24];
-							4: data_byte <= ootx_payload_o[39:32];
-							5: data_byte <= ootx_payload_o[47:40];
-							// fcal.0.phase
-							6: data_byte <= ootx_payload_o[55:48];
-							7: data_byte <= ootx_payload_o[63:56];
-							// fcal.1.phase
-							8: data_byte <= ootx_payload_o[71:64];
-							9: data_byte <= ootx_payload_o[79:72];
-							// fcal.0.tilt
-							10: data_byte <= ootx_payload_o[87:80];
-							11: data_byte <= ootx_payload_o[95:88];
-							// fcal.1.tilt
-							12: data_byte <= ootx_payload_o[103:96];
-							13: data_byte <= ootx_payload_o[111:104];
-							// sys.unlock_count
-							14: data_byte <= ootx_payload_o[119:112];
-							// hw_version
-							15: data_byte <= ootx_payload_o[127:120];
-							// fcal.0.curve
-							16: data_byte <= ootx_payload_o[135:128];
-							17: data_byte <= ootx_payload_o[143:136];
-							// fcal.1.curve
-							18: data_byte <= ootx_payload_o[151:144];
-							19: data_byte <= ootx_payload_o[159:152];
-							// accel.dir_x
-							20: data_byte <= ootx_payload_o[167:160];
-							// accel.dir_y
-							21: data_byte <= ootx_payload_o[175:168];
-							// accel.dir_z
-							22: data_byte <= ootx_payload_o[183:176];
-							// fcal.0.gibphase
-							23: data_byte <= ootx_payload_o[191:184];
-							24: data_byte <= ootx_payload_o[199:192];
-							// fcal.1.gibphase
-							25: data_byte <= ootx_payload_o[207:200];
-							26: data_byte <= ootx_payload_o[215:208];
-							// fcal.0.gibmag
-							27: data_byte <= ootx_payload_o[223:216];
-							28: data_byte <= ootx_payload_o[231:224];
-							// fcal.1.gibmag
-							29: data_byte <= ootx_payload_o[239:232];
-							30: data_byte <= ootx_payload_o[247:240];
-							// mode.current
-							31: data_byte <= ootx_payload_o[255:248];
-							// sys.faults
-							32: data_byte <= ootx_payload_o[263:256];
-							// payload length
-							33: data_byte <= ootx_payload_length_o[7:0];
-							34: data_byte <= ootx_payload_length_o[15:8];
-							// crc32
-							35: data_byte <= ootx_crc32_o[7:0];
-							36: data_byte <= ootx_crc32_o[15:8];
-							37: data_byte <= ootx_crc32_o[23:16];
-							38: data_byte <= ootx_crc32_o[31:24];
-							default: data_byte <= 0; 
-						endcase
-						trigger_send <= 1;
-						uart_state <= WAIT_FOR_NEXT_BYTE;
-					end else begin
-						uart_state <= IDLE; 
-					end
-				end
-		
-		WAIT_FOR_NEXT_BYTE: begin
-					if(uart_done) begin // if the byte is done, go to next byte
-						uart_state <= TRIGGER_SEND;
-						byte_counter <= byte_counter+1;
-					end
-				end
-		default: uart_state <= IDLE;
-	endcase
-end 
-
-wire uart_o;
-assign GPIO_0[1] = uart_o;
-assign GPIO_0[2] = uart_o;
-
-uart_tx #(434) uart(
-	.i_Clock(FPGA_CLK1_50),
-	.i_Tx_DV(trigger_send),
-	.i_Tx_Byte(data_byte),
-	.o_Tx_Done(uart_done),
-	.o_Tx_Serial(uart_o)
-);
+//
+//// DarkRoom ootx decoder can also be instantiated individually
+//DarkRoomOOTXdecoder ootx_decoder(
+//	.clock(FPGA_CLK1_50),
+//	.reset(~KEY[1]),
+//	// uart tx port
+//	.uart_tx(GPIO_0[2]),
+//	.sensor(GPIO_0[0]), 
+//	.led(LED)
+//);
 
 // Debounce logic to clean out glitches within 1ms
 debounce debounce_inst(
