@@ -132,7 +132,15 @@ soc_system u0(
 					.adc_ltc2308_0_conduit_end_SDI(ADC_SDI), 
 					.adc_ltc2308_0_conduit_end_SDO(ADC_SDO),
 					// darkroom
-					.darkroom_0_sensor_signals_sensor_signal_i({GPIO_0[25:10],GPIO_1[25:10]}),
+					.darkroom_0_conduit_end_sensor_signals_i({GPIO_0[25:10],GPIO_1[25:10]}),
+					// // spi interface for esp8266
+					.darkroom_0_conduit_end_sck_o(GPIO_1[4]),
+					.darkroom_0_conduit_end_ss_n_o(GPIO_1[5]),
+					.darkroom_0_conduit_end_mosi_o(GPIO_1[6]),
+					// darkroom ootx decoder
+					.darkroomootxdecoder_0_conduit_end_sensor(GPIO_1[10]), // using sensor 0 for decoding ootx 
+					// // uart interface 
+					.darkroomootxdecoder_0_conduit_end_uart_tx(GPIO_1[8]),
 					// two i2c buses
 					.i2c_0_conduit_end_scl(GPIO_0[24]),
 					.i2c_0_conduit_end_sda(GPIO_0[25]),

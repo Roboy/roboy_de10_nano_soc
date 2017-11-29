@@ -683,6 +683,12 @@ set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_0[24]
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_0[25]
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_1[25]
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_1[24]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to HPS_I2C1_SCLK
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to HPS_I2C1_SDAT
+set_global_assignment -name VERILOG_FILE ip/roboy_fpga_code/lighthouse_tracking/uart_tx.v
+set_global_assignment -name VERILOG_FILE ip/roboy_fpga_code/lighthouse_tracking/SpiControl_esp8266.v
+set_global_assignment -name VERILOG_FILE ip/roboy_fpga_code/lighthouse_tracking/DarkRoomOOTXdecoder.v
+set_global_assignment -name VHDL_FILE ip/roboy_fpga_code/lighthouse_tracking/lighthouse_ootx_decoder.vhdl
 set_global_assignment -name QIP_FILE ip/roboy_fpga_code/i2c/fifo.qip
 set_global_assignment -name VERILOG_FILE ip/roboy_fpga_code/i2c/oneshot.v
 set_global_assignment -name VERILOG_FILE ip/roboy_fpga_code/myo_control/MYOControl.v
