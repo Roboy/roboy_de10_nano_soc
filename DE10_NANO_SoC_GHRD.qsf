@@ -679,10 +679,6 @@ set_global_assignment -name USE_DLL_FREQUENCY_FOR_DQS_DELAY_CHAIN ON
 set_global_assignment -name UNIPHY_SEQUENCER_DQS_CONFIG_ENABLE ON
 set_global_assignment -name OPTIMIZE_MULTI_CORNER_TIMING ON
 set_global_assignment -name ECO_REGENERATE_REPORT ON
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_0[24]
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_0[25]
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_1[25]
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_1[24]
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to HPS_I2C1_SCLK
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to HPS_I2C1_SDAT
 set_global_assignment -name VERILOG_FILE ip/roboy_fpga_code/lighthouse_tracking/uart_tx.v
@@ -706,4 +702,8 @@ set_global_assignment -name VERILOG_FILE ip/intr_capturer/intr_capturer.v
 set_global_assignment -name VERILOG_FILE ip/edge_detect/altera_edge_detector.v
 set_global_assignment -name VERILOG_FILE ip/debounce/debounce.v
 set_global_assignment -name QIP_FILE ip/altsource_probe/hps_reset.qip
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_0[26]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_0[27]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_1[26]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_1[27]
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

@@ -205,6 +205,14 @@
          type = "String";
       }
    }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
    element sysid_qsys
    {
       datum _sortIndex
@@ -327,7 +335,9 @@
    name="DarkRoomOOTXdecoder_0"
    kind="DarkRoomOOTXdecoder"
    version="1.0"
-   enabled="1" />
+   enabled="1">
+  <parameter name="NUMBER_OF_SENSORS" value="32" />
+ </module>
  <module name="DarkRoom_0" kind="DarkRoom" version="1.0" enabled="1">
   <parameter name="NUMBER_OF_SENSORS" value="32" />
  </module>
