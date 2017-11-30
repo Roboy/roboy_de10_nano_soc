@@ -119,8 +119,8 @@ soc_system soc(
 	.darkroom_0_conduit_end_trigger_me(~KEY[0]) ,
 	.darkroom_0_conduit_end_sync_o(sync) ,
 	.darkroomootxdecoder_0_conduit_end_led(LED),
-	.darkroomootxdecoder_0_conduit_end_sensor(GPIO_0[0]),
-	.darkroomootxdecoder_0_conduit_end_uart_tx(GPIO_0[2]) 
+	.darkroomootxdecoder_0_conduit_end_sensor_signals({GPIO_1[25:10],GPIO_0[25:10]}),
+	.darkroomootxdecoder_0_conduit_end_uart_tx(GPIO_0[0]) 
 ); 
 
 ////// DarkRoom can also be instantiated individually
@@ -136,12 +136,12 @@ soc_system soc(
 //);
 //
 //// DarkRoom ootx decoder can also be instantiated individually
-//DarkRoomOOTXdecoder ootx_decoder(
+//DarkRoomOOTXdecoder #(32) ootx_decoder(
 //	.clock(FPGA_CLK1_50),
 //	.reset(~KEY[1]),
 //	// uart tx port
 //	.uart_tx(GPIO_0[2]),
-//	.sensor(GPIO_0[0]), 
+//	.sensor_signals({GPIO_1[25:10],GPIO_0[25:10]}), 
 //	.led(LED)
 //);
 
