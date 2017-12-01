@@ -25,3 +25,6 @@ sudo ~/intelFPGA/17.0/quartus/bin/jtagconfig
 * change the programming file to soc_system.sof ( this will flash the fpga temporarily )
 * ![sof_programmer](https://github.com/Roboy/roboy_de10_nano_soc/blob/master/images/programmer_sof.png?raw=true "sof programmer")
 * if you want to program it permanently use the conversion file to_jic.cof
+
+# PINOUT
+![de10_nano_soc_pinout](https://github.com/Roboy/roboy_de10_nano_soc/blob/master/images/de10_nano_soc_pinout.png?raw=true "de10 nano soc pinout")

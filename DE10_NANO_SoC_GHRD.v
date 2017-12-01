@@ -142,8 +142,8 @@ soc_system u0(
 					// // uart interface 
 					.darkroomootxdecoder_0_conduit_end_uart_tx(GPIO_1[8]),
 					// two i2c buses
-					.i2c_0_conduit_end_scl(GPIO_0[26]),
-					.i2c_0_conduit_end_sda(GPIO_0[27]),
+					.i2c_0_conduit_end_scl(GPIO_0[9]),
+					.i2c_0_conduit_end_sda(GPIO_0[8]),
 //					.i2c_0_conduit_end_led(fpga_led_internal),
 					.i2c_1_conduit_end_scl(GPIO_1[26]),
 					.i2c_1_conduit_end_sda(GPIO_1[27]),
