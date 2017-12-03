@@ -1123,7 +1123,7 @@
    kind="altera_avalon_sysid_qsys"
    version="17.0"
    enabled="1">
-  <parameter name="id" value="-1395322110" />
+  <parameter name="id" value="-559038737" />
  </module>
  <connection
    kind="avalon"

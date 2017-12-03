@@ -700,7 +700,6 @@ set_global_assignment -name VHDL_FILE ip/roboy_fpga_code/i2c/i2c_master.vhd
 set_global_assignment -name VERILOG_FILE ip/roboy_fpga_code/myo_control/SpiControl.v
 set_global_assignment -name VERILOG_FILE ip/roboy_fpga_code/myo_control/PIDController.v
 set_global_assignment -name VHDL_FILE ip/roboy_fpga_code/lighthouse_tracking/lighthouse_sensor.vhd
-set_global_assignment -name VHDL_FILE spi_master_slave/trunk/rtl/spi_master_slave/spi_master.vhd
 set_global_assignment -name SDC_FILE DE10_NANO_SOC_GHRD.sdc
 set_global_assignment -name VERILOG_FILE ip/intr_capturer/intr_capturer.v
 set_global_assignment -name VERILOG_FILE ip/edge_detect/altera_edge_detector.v
