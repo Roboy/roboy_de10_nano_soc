@@ -56,7 +56,7 @@ c5_pin_model_dump.txt
 # ignore Quartus II generated folders
 
 db/
-hps_isw_handoff/
+#hps_isw_handoff/
 soc_system/
 */incremental_db/
 incremental_db/

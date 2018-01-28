@@ -21,7 +21,7 @@
    {
       datum baseAddress
       {
-         value = "2560";
+         value = "512";
          type = "String";
       }
    }
@@ -37,7 +37,7 @@
    {
       datum baseAddress
       {
-         value = "2048";
+         value = "0";
          type = "String";
       }
    }
@@ -53,7 +53,7 @@
    {
       datum baseAddress
       {
-         value = "2848";
+         value = "800";
          type = "String";
       }
    }
@@ -69,7 +69,7 @@
    {
       datum baseAddress
       {
-         value = "2816";
+         value = "768";
          type = "String";
       }
    }
@@ -85,7 +85,7 @@
    {
       datum baseAddress
       {
-         value = "2880";
+         value = "832";
          type = "String";
       }
    }
@@ -101,7 +101,7 @@
    {
       datum baseAddress
       {
-         value = "1024";
+         value = "524288";
          type = "String";
       }
    }
@@ -117,7 +117,7 @@
    {
       datum baseAddress
       {
-         value = "0";
+         value = "262144";
          type = "String";
       }
    }
@@ -133,7 +133,7 @@
    {
       datum baseAddress
       {
-         value = "2896";
+         value = "848";
          type = "String";
       }
    }
@@ -195,6 +195,22 @@
       {
          value = "11";
          type = "int";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
       }
    }
    element soc_system
@@ -343,7 +359,7 @@
  </module>
  <module name="I2C_0" kind="I2C" version="1.0" enabled="1" />
  <module name="I2C_1" kind="I2C" version="1.0" enabled="1" />
- <module name="LED" kind="altera_avalon_pio" version="17.0" enabled="1">
+ <module name="LED" kind="altera_avalon_pio" version="16.1" enabled="1">
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
   <parameter name="captureEdge" value="false" />
@@ -357,16 +373,20 @@
   <parameter name="simDrivenValue" value="0" />
   <parameter name="width" value="8" />
  </module>
- <module name="MYOControl_0" kind="MYOControl" version="1.0" enabled="1" />
- <module name="MYOControl_1" kind="MYOControl" version="1.0" enabled="1" />
+ <module name="MYOControl_0" kind="MYOControl" version="1.0" enabled="1">
+  <parameter name="NUMBER_OF_MOTORS" value="7" />
+ </module>
+ <module name="MYOControl_1" kind="MYOControl" version="1.0" enabled="1">
+  <parameter name="NUMBER_OF_MOTORS" value="7" />
+ </module>
  <module name="adc_ltc2308_0" kind="adc_ltc2308" version="1.1" enabled="1" />
- <module name="clk_0" kind="clock_source" version="17.0" enabled="1">
+ <module name="clk_0" kind="clock_source" version="16.1" enabled="1">
   <parameter name="clockFrequency" value="50000000" />
   <parameter name="clockFrequencyKnown" value="true" />
   <parameter name="inputClockFrequency" value="0" />
   <parameter name="resetSynchronousEdges" value="NONE" />
  </module>
- <module name="hps_0" kind="altera_hps" version="17.0" enabled="1">
+ <module name="hps_0" kind="altera_hps" version="16.1" enabled="1">
   <parameter name="ABSTRACT_REAL_COMPARE_TEST" value="false" />
   <parameter name="ABS_RAM_MEM_INIT_FILENAME" value="meminit" />
   <parameter name="ACV_PHY_CLK_ADD_FR_PHASE" value="0.0" />
@@ -899,7 +919,7 @@
  <module
    name="jtag_uart"
    kind="altera_avalon_jtag_uart"
-   version="17.0"
+   version="16.1"
    enabled="1">
   <parameter name="allowMultipleConnections" value="true" />
   <parameter name="avalonSpec" value="2.0" />
@@ -915,7 +935,7 @@
   <parameter name="writeBufferDepth" value="64" />
   <parameter name="writeIRQThreshold" value="8" />
  </module>
- <module name="pll_40MHz" kind="altera_pll" version="17.0" enabled="1">
+ <module name="pll_40MHz" kind="altera_pll" version="16.1" enabled="1">
   <parameter name="debug_print_output" value="false" />
   <parameter name="debug_use_rbc_taf_method" value="false" />
   <parameter name="device" value="5CSEBA6U23I7" />
@@ -978,7 +998,7 @@
   <parameter name="gui_cascade_outclk_index" value="0" />
   <parameter name="gui_channel_spacing" value="0.0" />
   <parameter name="gui_clk_bad" value="false" />
-  <parameter name="gui_device_speed_grade" value="1" />
+  <parameter name="gui_device_speed_grade" value="2" />
   <parameter name="gui_divide_factor_c0" value="1" />
   <parameter name="gui_divide_factor_c1" value="1" />
   <parameter name="gui_divide_factor_c10" value="1" />
@@ -1121,13 +1141,13 @@
  <module
    name="sysid_qsys"
    kind="altera_avalon_sysid_qsys"
-   version="17.0"
+   version="16.1"
    enabled="1">
   <parameter name="id" value="-559038737" />
  </module>
  <connection
    kind="avalon"
-   version="17.0"
+   version="16.1"
    start="hps_0.h2f_lw_axi_master"
    end="jtag_uart.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
@@ -1136,61 +1156,61 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.0"
+   version="16.1"
    start="hps_0.h2f_lw_axi_master"
    end="DarkRoom_0.avalon_slave_0">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0800" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="17.0"
-   start="hps_0.h2f_lw_axi_master"
-   end="MYOControl_0.avalon_slave_0">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0400" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="17.0"
-   start="hps_0.h2f_lw_axi_master"
-   end="MYOControl_1.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
    kind="avalon"
-   version="17.0"
+   version="16.1"
+   start="hps_0.h2f_lw_axi_master"
+   end="MYOControl_0.avalon_slave_0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x00080000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="16.1"
+   start="hps_0.h2f_lw_axi_master"
+   end="MYOControl_1.avalon_slave_0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x00040000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="16.1"
    start="hps_0.h2f_lw_axi_master"
    end="I2C_0.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0b20" />
+  <parameter name="baseAddress" value="0x0320" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
    kind="avalon"
-   version="17.0"
+   version="16.1"
    start="hps_0.h2f_lw_axi_master"
    end="I2C_1.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0b00" />
+  <parameter name="baseAddress" value="0x0300" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
    kind="avalon"
-   version="17.0"
+   version="16.1"
    start="hps_0.h2f_lw_axi_master"
    end="DarkRoomOOTXdecoder_0.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0a00" />
+  <parameter name="baseAddress" value="0x0200" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
    kind="avalon"
-   version="17.0"
+   version="16.1"
    start="hps_0.h2f_lw_axi_master"
    end="sysid_qsys.control_slave">
   <parameter name="arbitrationPriority" value="1" />
@@ -1199,111 +1219,111 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.0"
+   version="16.1"
    start="hps_0.h2f_lw_axi_master"
    end="LED.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0b40" />
+  <parameter name="baseAddress" value="0x0340" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
    kind="avalon"
-   version="17.0"
+   version="16.1"
    start="hps_0.h2f_lw_axi_master"
    end="adc_ltc2308_0.slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0b50" />
+  <parameter name="baseAddress" value="0x0350" />
   <parameter name="defaultConnection" value="false" />
  </connection>
- <connection kind="clock" version="17.0" start="clk_0.clk" end="sysid_qsys.clk" />
- <connection kind="clock" version="17.0" start="clk_0.clk" end="jtag_uart.clk" />
- <connection kind="clock" version="17.0" start="clk_0.clk" end="LED.clk" />
+ <connection kind="clock" version="16.1" start="clk_0.clk" end="sysid_qsys.clk" />
+ <connection kind="clock" version="16.1" start="clk_0.clk" end="jtag_uart.clk" />
+ <connection kind="clock" version="16.1" start="clk_0.clk" end="LED.clk" />
  <connection
    kind="clock"
-   version="17.0"
+   version="16.1"
    start="clk_0.clk"
    end="DarkRoom_0.clock_sink" />
  <connection
    kind="clock"
-   version="17.0"
+   version="16.1"
    start="clk_0.clk"
    end="MYOControl_1.clock_sink" />
  <connection
    kind="clock"
-   version="17.0"
+   version="16.1"
    start="clk_0.clk"
    end="MYOControl_0.clock_sink" />
- <connection kind="clock" version="17.0" start="clk_0.clk" end="I2C_0.clock_sink" />
- <connection kind="clock" version="17.0" start="clk_0.clk" end="I2C_1.clock_sink" />
+ <connection kind="clock" version="16.1" start="clk_0.clk" end="I2C_0.clock_sink" />
+ <connection kind="clock" version="16.1" start="clk_0.clk" end="I2C_1.clock_sink" />
  <connection
    kind="clock"
-   version="17.0"
+   version="16.1"
    start="clk_0.clk"
    end="adc_ltc2308_0.clock_sink" />
  <connection
    kind="clock"
-   version="17.0"
+   version="16.1"
    start="clk_0.clk"
    end="DarkRoomOOTXdecoder_0.clock_sink" />
  <connection
    kind="clock"
-   version="17.0"
+   version="16.1"
    start="clk_0.clk"
    end="hps_0.h2f_lw_axi_clock" />
- <connection kind="clock" version="17.0" start="clk_0.clk" end="pll_40MHz.refclk" />
+ <connection kind="clock" version="16.1" start="clk_0.clk" end="pll_40MHz.refclk" />
  <connection
    kind="clock"
-   version="17.0"
+   version="16.1"
    start="pll_40MHz.outclk0"
    end="adc_ltc2308_0.clock_sink_adc" />
  <connection
    kind="interrupt"
-   version="17.0"
+   version="16.1"
    start="hps_0.f2h_irq0"
    end="jtag_uart.irq">
   <parameter name="irqNumber" value="2" />
  </connection>
  <connection
    kind="reset"
-   version="17.0"
+   version="16.1"
    start="clk_0.clk_reset"
    end="sysid_qsys.reset" />
  <connection
    kind="reset"
-   version="17.0"
+   version="16.1"
    start="clk_0.clk_reset"
    end="jtag_uart.reset" />
  <connection
    kind="reset"
-   version="17.0"
+   version="16.1"
    start="clk_0.clk_reset"
    end="DarkRoom_0.reset" />
  <connection
    kind="reset"
-   version="17.0"
+   version="16.1"
    start="clk_0.clk_reset"
    end="MYOControl_0.reset" />
  <connection
    kind="reset"
-   version="17.0"
+   version="16.1"
    start="clk_0.clk_reset"
    end="MYOControl_1.reset" />
- <connection kind="reset" version="17.0" start="clk_0.clk_reset" end="I2C_0.reset" />
- <connection kind="reset" version="17.0" start="clk_0.clk_reset" end="I2C_1.reset" />
+ <connection kind="reset" version="16.1" start="clk_0.clk_reset" end="I2C_0.reset" />
+ <connection kind="reset" version="16.1" start="clk_0.clk_reset" end="I2C_1.reset" />
  <connection
    kind="reset"
-   version="17.0"
+   version="16.1"
    start="clk_0.clk_reset"
    end="pll_40MHz.reset" />
- <connection kind="reset" version="17.0" start="clk_0.clk_reset" end="LED.reset" />
+ <connection kind="reset" version="16.1" start="clk_0.clk_reset" end="LED.reset" />
  <connection
    kind="reset"
-   version="17.0"
+   version="16.1"
    start="clk_0.clk_reset"
    end="DarkRoomOOTXdecoder_0.reset" />
  <connection
    kind="reset"
-   version="17.0"
+   version="16.1"
    start="clk_0.clk_reset"
    end="adc_ltc2308_0.reset_sink" />
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
