@@ -10,7 +10,7 @@
 		<user_name>Page_0</user_name>
 		<page_flags>1</page_flags>
 		<bit0>
-			<sof_filename>/home/roboy/workspace/roboy_middleware/src/roboy_plexus/roboy_de10_nano_soc/output_files/DE10_NANO_SoC_GHRD.sof</sof_filename> 
+			<sof_filename>/home/letrend/workspace/roboy_middleware/src/roboy_plexus/roboy_de10_nano_soc/output_files/DE10_NANO_SoC_GHRD.sof</sof_filename> 
 		</bit0>
 	</sof_data>
 	<version>10</version>

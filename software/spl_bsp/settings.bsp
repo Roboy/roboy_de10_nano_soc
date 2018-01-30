@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>spl</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Jan 30, 2018 7:33:15 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1517337195702</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>Jan 30, 2018 8:28:58 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1517340538244</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>./</BspGeneratedLocation>
         <BspSettingsFile>/home/letrend/workspace/roboy_middleware/src/roboy_plexus/roboy_de10_nano_soc/software/spl_bsp/settings.bsp</BspSettingsFile>
         <HpsSettingsPath>../../hps_isw_handoff/soc_system_hps_0</HpsSettingsPath>
