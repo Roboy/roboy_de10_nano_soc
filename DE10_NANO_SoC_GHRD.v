@@ -127,31 +127,31 @@ soc_system u0(
                .clk_clk(FPGA_CLK1_50),                                      //                            clk.clk
                .reset_reset_n(hps_fpga_reset_n),                            //                          reset.reset_n
 					// adc
-					.adc_ltc2308_0_conduit_end_CONVST(ADC_CONVST), 
-					.adc_ltc2308_0_conduit_end_SCK(ADC_SCK), 
-					.adc_ltc2308_0_conduit_end_SDI(ADC_SDI), 
-					.adc_ltc2308_0_conduit_end_SDO(ADC_SDO),
-					// darkroom
-					.darkroom_0_conduit_end_sensor_signals_i({GPIO_0[25:10],GPIO_1[25:10]}),
-					// // spi interface for esp8266
-					.darkroom_0_conduit_end_sck_o(GPIO_1[4]),
-					.darkroom_0_conduit_end_ss_n_o(GPIO_1[5]),
-					.darkroom_0_conduit_end_mosi_o(GPIO_1[6]),
-					// darkroom ootx decoder
-					.darkroomootxdecoder_0_conduit_end_sensor_signals({GPIO_0[25:10],GPIO_1[25:10]}),
-					// // uart interface 
-					.darkroomootxdecoder_0_conduit_end_uart_tx(GPIO_1[8]),
-					// two i2c buses
-					.i2c_0_conduit_end_scl(GPIO_0[9]),
-					.i2c_0_conduit_end_sda(GPIO_0[8]),
-//					.i2c_0_conduit_end_led(fpga_led_internal),
-					.i2c_1_conduit_end_scl(GPIO_1[26]),
-					.i2c_1_conduit_end_sda(GPIO_1[27]),
-					// myocontrol, two buses a 7 motors
-					.myocontrol_0_conduit_end_miso(GPIO_1[1]),
-					.myocontrol_0_conduit_end_mosi(GPIO_1[0]),
-					.myocontrol_0_conduit_end_sck(GPIO_1[2]),
-					.myocontrol_0_conduit_end_ss_n(GPIO_1[35:29]),
+//					.adc_ltc2308_0_conduit_end_CONVST(ADC_CONVST), 
+//					.adc_ltc2308_0_conduit_end_SCK(ADC_SCK), 
+//					.adc_ltc2308_0_conduit_end_SDI(ADC_SDI), 
+//					.adc_ltc2308_0_conduit_end_SDO(ADC_SDO),
+//					// darkroom
+//					.darkroom_0_conduit_end_sensor_signals_i({GPIO_0[25:10],GPIO_1[25:10]}),
+//					// // spi interface for esp8266
+//					.darkroom_0_conduit_end_sck_o(GPIO_1[4]),
+//					.darkroom_0_conduit_end_ss_n_o(GPIO_1[5]),
+//					.darkroom_0_conduit_end_mosi_o(GPIO_1[6]),
+//					// darkroom ootx decoder
+//					.darkroomootxdecoder_0_conduit_end_sensor_signals({GPIO_0[25:10],GPIO_1[25:10]}),
+//					// // uart interface 
+//					.darkroomootxdecoder_0_conduit_end_uart_tx(GPIO_1[8]),
+//					// two i2c buses
+//					.i2c_0_conduit_end_scl(GPIO_0[9]),
+//					.i2c_0_conduit_end_sda(GPIO_0[8]),
+////					.i2c_0_conduit_end_led(fpga_led_internal),
+//					.i2c_1_conduit_end_scl(GPIO_1[26]),
+//					.i2c_1_conduit_end_sda(GPIO_1[27]),
+//					// myocontrol, two buses a 7 motors
+//					.myocontrol_0_conduit_end_miso(GPIO_1[1]),
+//					.myocontrol_0_conduit_end_mosi(GPIO_1[0]),
+//					.myocontrol_0_conduit_end_sck(GPIO_1[2]),
+//					.myocontrol_0_conduit_end_ss_n(GPIO_1[35:29]),
 					.myocontrol_1_conduit_end_miso(GPIO_0[34]),
 					.myocontrol_1_conduit_end_mosi(GPIO_0[35]),
 					.myocontrol_1_conduit_end_sck(GPIO_0[33]),
