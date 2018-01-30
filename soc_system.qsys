@@ -84,12 +84,14 @@
    kind="DarkRoomOOTXdecoder"
    version="1.0"
    enabled="1">
+  <parameter name="ENABLE_UART_TRANSMITTER" value="true" />
   <parameter name="NUMBER_OF_SENSORS" value="32" />
  </module>
  <module name="DarkRoom_0" kind="DarkRoom" version="1.0" enabled="1">
+  <parameter name="ENABLE_SPI_TRANSMITTER" value="true" />
   <parameter name="NUMBER_OF_SENSORS" value="32" />
  </module>
- <module name="clk_0" kind="clock_source" version="17.0" enabled="1">
+ <module name="clk_0" kind="clock_source" version="17.1" enabled="1">
   <parameter name="clockFrequency" value="50000000" />
   <parameter name="clockFrequencyKnown" value="true" />
   <parameter name="inputClockFrequency" value="0" />
@@ -97,22 +99,22 @@
  </module>
  <connection
    kind="clock"
-   version="17.0"
+   version="17.1"
    start="clk_0.clk"
    end="DarkRoom_0.clock_sink" />
  <connection
    kind="clock"
-   version="17.0"
+   version="17.1"
    start="clk_0.clk"
    end="DarkRoomOOTXdecoder_0.clock_sink" />
  <connection
    kind="reset"
-   version="17.0"
+   version="17.1"
    start="clk_0.clk_reset"
    end="DarkRoom_0.reset" />
  <connection
    kind="reset"
-   version="17.0"
+   version="17.1"
    start="clk_0.clk_reset"
    end="DarkRoomOOTXdecoder_0.reset" />
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
