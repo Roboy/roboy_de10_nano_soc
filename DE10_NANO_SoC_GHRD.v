@@ -146,15 +146,15 @@ soc_system u0(
 					.i2c_0_conduit_end_sda(GPIO_0[8]),
 					.i2c_1_conduit_end_scl(GPIO_1[26]),
 					.i2c_1_conduit_end_sda(GPIO_1[27]),
-					// myocontrol, two buses a 7 motors
+					// myocontrol, two buses a 6 motors
 					.myocontrol_0_conduit_end_miso(GPIO_1[1]),
 					.myocontrol_0_conduit_end_mosi(GPIO_1[0]),
 					.myocontrol_0_conduit_end_sck(GPIO_1[2]),
-					.myocontrol_0_conduit_end_ss_n(GPIO_1[35:29]),
+					.myocontrol_0_conduit_end_ss_n(GPIO_1[35:30]),
 					.myocontrol_1_conduit_end_miso(GPIO_0[34]),
 					.myocontrol_1_conduit_end_mosi(GPIO_0[35]),
 					.myocontrol_1_conduit_end_sck(GPIO_0[33]),
-					.myocontrol_1_conduit_end_ss_n(GPIO_0[6:0]),
+					.myocontrol_1_conduit_end_ss_n(GPIO_0[5:0]),
 					// led
 					.led_external_connection_export(LED),
                //HPS ddr3
@@ -235,7 +235,7 @@ soc_system u0(
                .hps_0_f2h_cold_reset_req_reset_n(~hps_cold_reset),          //       hps_0_f2h_cold_reset_req.reset_n
                .hps_0_f2h_debug_reset_req_reset_n(~hps_debug_reset),        //      hps_0_f2h_debug_reset_req.reset_n
                .hps_0_f2h_stm_hw_events_stm_hwevents(stm_hw_events),        //        hps_0_f2h_stm_hw_events.stm_hwevents
-               .hps_0_f2h_warm_reset_req_reset_n(~hps_warm_reset),          //       hps_0_f2h_warm_reset_req.reset_n
+               .hps_0_f2h_warm_reset_req_reset_n(~hps_warm_reset)          //       hps_0_f2h_warm_reset_req.reset_n
 
            );
 
