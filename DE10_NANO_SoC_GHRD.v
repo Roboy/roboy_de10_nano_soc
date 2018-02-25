@@ -134,27 +134,32 @@ soc_system u0(
 					// darkroom
 					.darkroom_0_conduit_end_sensor_signals_i({GPIO_0[25:10],GPIO_1[25:10]}),
 //					// spi interface for esp8266
-//					.darkroom_0_conduit_end_sck_o(GPIO_1[4]),
-//					.darkroom_0_conduit_end_ss_n_o(GPIO_1[5]),
-//					.darkroom_0_conduit_end_mosi_o(GPIO_1[6]),
+//					.darkroom_0_conduit_end_sck_o(GPIO_0[3]),
+//					.darkroom_0_conduit_end_ss_n_o(GPIO_0[5]),
+//					.darkroom_0_conduit_end_mosi_o(GPIO_0[1]),
 					// darkroom ootx decoder
 					.darkroomootxdecoder_0_conduit_end_sensor_signals({GPIO_0[25:10],GPIO_1[25:10]}),
 //					// uart interface 
-//					.darkroomootxdecoder_0_conduit_end_uart_tx(GPIO_1[8]),
+//					.darkroomootxdecoder_0_conduit_end_uart_tx(GPIO_0[9]),
 					// two i2c buses
-					.i2c_0_conduit_end_scl(GPIO_0[9]),
-					.i2c_0_conduit_end_sda(GPIO_0[8]),
-					.i2c_1_conduit_end_scl(GPIO_1[26]),
-					.i2c_1_conduit_end_sda(GPIO_1[27]),
+					.i2c_0_conduit_end_scl(GPIO_0[0]),
+					.i2c_0_conduit_end_sda(GPIO_0[1]),
+					.i2c_0_conduit_end_gpio({GPIO_1[35],GPIO_1[34]}),
+					.i2c_1_conduit_end_scl(GPIO_0[2]),
+					.i2c_1_conduit_end_sda(GPIO_0[3]),
+					.i2c_1_conduit_end_gpio({GPIO_1[33],GPIO_1[32]}),
+					.i2c_2_conduit_end_scl(GPIO_0[4]),
+					.i2c_2_conduit_end_sda(GPIO_0[5]),
+					.i2c_2_conduit_end_gpio({GPIO_1[31],GPIO_1[30]}),
 					// myocontrol, two buses a 6 motors
 					.myocontrol_0_conduit_end_miso(GPIO_1[1]),
 					.myocontrol_0_conduit_end_mosi(GPIO_1[0]),
 					.myocontrol_0_conduit_end_sck(GPIO_1[2]),
-					.myocontrol_0_conduit_end_ss_n(GPIO_1[35:30]),
+					.myocontrol_0_conduit_end_ss_n(GPIO_1[9:4]),
 					.myocontrol_1_conduit_end_miso(GPIO_0[34]),
 					.myocontrol_1_conduit_end_mosi(GPIO_0[35]),
 					.myocontrol_1_conduit_end_sck(GPIO_0[33]),
-					.myocontrol_1_conduit_end_ss_n(GPIO_0[5:0]),
+					.myocontrol_1_conduit_end_ss_n(GPIO_0[31:26]),
 					// led
 					.led_external_connection_export(LED),
                //HPS ddr3
