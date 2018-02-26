@@ -57,7 +57,7 @@ c5_pin_model_dump.txt
 
 db/
 #hps_isw_handoff/
-soc_system/
+#soc_system/
 */incremental_db/
 incremental_db/
 */simulation/
