@@ -129,7 +129,7 @@ soc_system u0(
 					// adc
 					.adc_ltc2308_0_conduit_end_CONVST(ADC_CONVST), 
 					.adc_ltc2308_0_conduit_end_SCK(ADC_SCK), 
-					.adc_ltc2308_0_conduit_end_SDI(ADC_SDI), 
+					.adc_ltc2308_0_conduit_end_SDI(ADC_SDI),  
 					.adc_ltc2308_0_conduit_end_SDO(ADC_SDO),
 					// darkroom
 					.darkroom_0_conduit_end_sensor_signals_i({GPIO_0[25:10],GPIO_1[25:10]}),
