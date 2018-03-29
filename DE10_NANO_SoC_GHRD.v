@@ -150,6 +150,10 @@ soc_system u0(
 					.i2c_1_conduit_end_gpio({GPIO_1[31],GPIO_1[33],GPIO_1[35]}),
 					.i2c_2_conduit_end_scl(GPIO_0[4]),
 					.i2c_2_conduit_end_sda(GPIO_0[5]),
+					.i2c_3_conduit_end_scl(GPIO_1[28]),
+					.i2c_3_conduit_end_sda(GPIO_1[29]),
+					.i2c_4_conduit_end_scl(GPIO_1[26]),
+					.i2c_4_conduit_end_sda(GPIO_1[27]),
 					// myocontrol, two buses a 6 motors
 					.myocontrol_0_conduit_end_miso(GPIO_1[1]),
 					.myocontrol_0_conduit_end_mosi(GPIO_1[0]),

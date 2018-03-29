@@ -16,7 +16,10 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="de10_nano_soc_pinout.svg">
+   sodipodi:docname="de10_nano_soc_pinout.svg"
+   inkscape:export-filename="/home/letrend/workspace/roboy_middleware/src/roboy_plexus/roboy_de10_nano_soc/images/de10_nano_soc_pinout.png"
+   inkscape:export-xdpi="300"
+   inkscape:export-ydpi="300">
   <defs
      id="defs4">
     <clipPath
@@ -72,15 +75,15 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.979899"
-     inkscape:cx="313.72489"
-     inkscape:cy="489.87056"
+     inkscape:cx="273.31879"
+     inkscape:cy="813.11937"
      inkscape:document-units="px"
      inkscape:current-layer="g6310"
      showgrid="false"
-     inkscape:window-width="1920"
-     inkscape:window-height="1031"
-     inkscape:window-x="0"
-     inkscape:window-y="25"
+     inkscape:window-width="1855"
+     inkscape:window-height="1056"
+     inkscape:window-x="65"
+     inkscape:window-y="24"
      inkscape:window-maximized="1" />
   <metadata
      id="metadata7">
@@ -1022,7 +1025,7 @@
            y="181.2012"
            x="111.0481"
            id="tspan4310-9-6-6-22-5-8-9"
-           sodipodi:role="line">SCL[0-2]           I2C clock lines for 3 cores</tspan></text>
+           sodipodi:role="line">SCL[0-4]           I2C clock lines for 5 cores</tspan></text>
       <text
          sodipodi:linespacing="125%"
          id="text4308-0-0-2-9-4-6-8-7"
@@ -1036,7 +1039,7 @@
            y="193.95071"
            x="111.0481"
            id="tspan4310-9-6-6-22-5-8-4-5"
-           sodipodi:role="line">SDA[0-2]           I2C data lines for 3 cores</tspan></text>
+           sodipodi:role="line">SDA[0-4]           I2C data lines for 5 cores</tspan></text>
       <text
          xml:space="preserve"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.62741756px;line-height:125%;font-family:Courier;-inkscape-font-specification:Courier;letter-spacing:0px;word-spacing:0px;fill:#ff8018;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -1344,6 +1347,62 @@
              y="520.15222"
              style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.25185966px;font-family:Courier;-inkscape-font-specification:Courier;fill:#3b1946;fill-opacity:1">GP1[2] </tspan></text>
       </g>
+      <text
+         sodipodi:linespacing="125%"
+         id="text4308-0-0-2-9-4-6-80-3"
+         y="536.13269"
+         x="292.89114"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.62741756px;line-height:125%;font-family:Courier;-inkscape-font-specification:Courier;letter-spacing:0px;word-spacing:0px;fill:#0080ff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.25185966px;font-family:Courier;-inkscape-font-specification:Courier;fill:#0080ff;fill-opacity:1"
+           y="536.13269"
+           x="292.89114"
+           id="tspan4310-9-6-6-22-5-8-3-6"
+           sodipodi:role="line">SCL[3]</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text4308-0-0-2-9-4-6-80-3-7"
+         y="549.99231"
+         x="292.89114"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.62741756px;line-height:125%;font-family:Courier;-inkscape-font-specification:Courier;letter-spacing:0px;word-spacing:0px;fill:#0080ff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.25185966px;font-family:Courier;-inkscape-font-specification:Courier;fill:#0080ff;fill-opacity:1"
+           y="549.99231"
+           x="292.89114"
+           id="tspan4310-9-6-6-22-5-8-3-6-5"
+           sodipodi:role="line">SCL[4]</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text4308-0-0-2-9-4-6-8-3"
+         y="536.13269"
+         x="73.236206"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.62741756px;line-height:125%;font-family:Courier;-inkscape-font-specification:Courier;letter-spacing:0px;word-spacing:0px;fill:#0080ff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.25185966px;font-family:Courier;-inkscape-font-specification:Courier;fill:#0080ff;fill-opacity:1"
+           y="536.13269"
+           x="73.236206"
+           id="tspan4310-9-6-6-22-5-8-4-56"
+           sodipodi:role="line">SDA[3]</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text4308-0-0-2-9-4-6-8-1-2"
+         y="550.77997"
+         x="73.236206"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.62741756px;line-height:125%;font-family:Courier;-inkscape-font-specification:Courier;letter-spacing:0px;word-spacing:0px;fill:#0080ff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.25185966px;font-family:Courier;-inkscape-font-specification:Courier;fill:#0080ff;fill-opacity:1"
+           y="550.77997"
+           x="73.236206"
+           id="tspan4310-9-6-6-22-5-8-4-0-9"
+           sodipodi:role="line">SDA[4]</tspan></text>
     </g>
   </g>
 </svg>

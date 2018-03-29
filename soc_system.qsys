@@ -53,7 +53,7 @@
    {
       datum baseAddress
       {
-         value = "832";
+         value = "896";
          type = "String";
       }
    }
@@ -69,7 +69,7 @@
    {
       datum baseAddress
       {
-         value = "800";
+         value = "864";
          type = "String";
       }
    }
@@ -85,6 +85,38 @@
    {
       datum baseAddress
       {
+         value = "832";
+         type = "String";
+      }
+   }
+   element I2C_3
+   {
+      datum _sortIndex
+      {
+         value = "11";
+         type = "int";
+      }
+   }
+   element I2C_3.avalon_slave_0
+   {
+      datum baseAddress
+      {
+         value = "800";
+         type = "String";
+      }
+   }
+   element I2C_4
+   {
+      datum _sortIndex
+      {
+         value = "12";
+         type = "int";
+      }
+   }
+   element I2C_4.avalon_slave_0
+   {
+      datum baseAddress
+      {
          value = "768";
          type = "String";
       }
@@ -93,7 +125,7 @@
    {
       datum _sortIndex
       {
-         value = "13";
+         value = "15";
          type = "int";
       }
    }
@@ -101,7 +133,7 @@
    {
       datum baseAddress
       {
-         value = "864";
+         value = "928";
          type = "String";
       }
    }
@@ -141,7 +173,7 @@
    {
       datum _sortIndex
       {
-         value = "11";
+         value = "13";
          type = "int";
       }
    }
@@ -149,7 +181,7 @@
    {
       datum baseAddress
       {
-         value = "880";
+         value = "944";
          type = "String";
       }
    }
@@ -209,7 +241,7 @@
    {
       datum _sortIndex
       {
-         value = "12";
+         value = "14";
          type = "int";
       }
    }
@@ -432,6 +464,16 @@
    type="conduit"
    dir="end" />
  <interface
+   name="i2c_3_conduit_end"
+   internal="I2C_3.conduit_end"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="i2c_4_conduit_end"
+   internal="I2C_4.conduit_end"
+   type="conduit"
+   dir="end" />
+ <interface
    name="led_external_connection"
    internal="LED.external_connection"
    type="conduit"
@@ -472,7 +514,15 @@
   <parameter name="BUS_SPEED_HZ" value="100000" />
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
  </module>
- <module name="LED" kind="altera_avalon_pio" version="17.0" enabled="1">
+ <module name="I2C_3" kind="I2C" version="1.0" enabled="1">
+  <parameter name="BUS_SPEED_HZ" value="100000" />
+  <parameter name="CLOCK_SPEED_HZ" value="50000000" />
+ </module>
+ <module name="I2C_4" kind="I2C" version="1.0" enabled="1">
+  <parameter name="BUS_SPEED_HZ" value="100000" />
+  <parameter name="CLOCK_SPEED_HZ" value="50000000" />
+ </module>
+ <module name="LED" kind="altera_avalon_pio" version="17.1" enabled="1">
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
   <parameter name="captureEdge" value="false" />
@@ -488,20 +538,20 @@
  </module>
  <module name="MYOControl_0" kind="MYOControl" version="1.0" enabled="1">
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
-  <parameter name="NUMBER_OF_MOTORS" value="6" />
+  <parameter name="NUMBER_OF_MOTORS" value="7" />
  </module>
  <module name="MYOControl_1" kind="MYOControl" version="1.0" enabled="1">
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
-  <parameter name="NUMBER_OF_MOTORS" value="6" />
+  <parameter name="NUMBER_OF_MOTORS" value="7" />
  </module>
  <module name="adc_ltc2308_0" kind="adc_ltc2308" version="1.1" enabled="1" />
- <module name="clk_0" kind="clock_source" version="17.0" enabled="1">
+ <module name="clk_0" kind="clock_source" version="17.1" enabled="1">
   <parameter name="clockFrequency" value="50000000" />
   <parameter name="clockFrequencyKnown" value="true" />
   <parameter name="inputClockFrequency" value="0" />
   <parameter name="resetSynchronousEdges" value="NONE" />
  </module>
- <module name="hps_0" kind="altera_hps" version="17.0" enabled="1">
+ <module name="hps_0" kind="altera_hps" version="17.1" enabled="1">
   <parameter name="ABSTRACT_REAL_COMPARE_TEST" value="false" />
   <parameter name="ABS_RAM_MEM_INIT_FILENAME" value="meminit" />
   <parameter name="ACV_PHY_CLK_ADD_FR_PHASE" value="0.0" />
@@ -1034,7 +1084,7 @@
  <module
    name="jtag_uart"
    kind="altera_avalon_jtag_uart"
-   version="17.0"
+   version="17.1"
    enabled="1">
   <parameter name="allowMultipleConnections" value="true" />
   <parameter name="avalonSpec" value="2.0" />
@@ -1050,7 +1100,7 @@
   <parameter name="writeBufferDepth" value="64" />
   <parameter name="writeIRQThreshold" value="8" />
  </module>
- <module name="pll_40MHz" kind="altera_pll" version="17.0" enabled="1">
+ <module name="pll_40MHz" kind="altera_pll" version="17.1" enabled="1">
   <parameter name="debug_print_output" value="false" />
   <parameter name="debug_use_rbc_taf_method" value="false" />
   <parameter name="device" value="5CSEBA6U23I7" />
@@ -1256,13 +1306,13 @@
  <module
    name="sysid_qsys"
    kind="altera_avalon_sysid_qsys"
-   version="17.0"
+   version="17.1"
    enabled="1">
   <parameter name="id" value="-559038737" />
  </module>
  <connection
    kind="avalon"
-   version="17.0"
+   version="17.1"
    start="hps_0.h2f_lw_axi_master"
    end="jtag_uart.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
@@ -1271,7 +1321,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.0"
+   version="17.1"
    start="hps_0.h2f_lw_axi_master"
    end="DarkRoom_0.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
@@ -1280,7 +1330,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.0"
+   version="17.1"
    start="hps_0.h2f_lw_axi_master"
    end="MYOControl_0.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
@@ -1289,7 +1339,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.0"
+   version="17.1"
    start="hps_0.h2f_lw_axi_master"
    end="MYOControl_1.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
@@ -1298,25 +1348,25 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.0"
+   version="17.1"
    start="hps_0.h2f_lw_axi_master"
    end="I2C_0.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0340" />
+  <parameter name="baseAddress" value="0x0380" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
    kind="avalon"
-   version="17.0"
+   version="17.1"
    start="hps_0.h2f_lw_axi_master"
    end="I2C_1.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0320" />
+  <parameter name="baseAddress" value="0x0360" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
    kind="avalon"
-   version="17.0"
+   version="17.1"
    start="hps_0.h2f_lw_axi_master"
    end="DarkRoomOOTXdecoder_0.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
@@ -1325,16 +1375,34 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.0"
+   version="17.1"
    start="hps_0.h2f_lw_axi_master"
    end="I2C_2.avalon_slave_0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0340" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="17.1"
+   start="hps_0.h2f_lw_axi_master"
+   end="I2C_3.avalon_slave_0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0320" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="17.1"
+   start="hps_0.h2f_lw_axi_master"
+   end="I2C_4.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0300" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
    kind="avalon"
-   version="17.0"
+   version="17.1"
    start="hps_0.h2f_lw_axi_master"
    end="sysid_qsys.control_slave">
   <parameter name="arbitrationPriority" value="1" />
@@ -1343,113 +1411,117 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.0"
+   version="17.1"
    start="hps_0.h2f_lw_axi_master"
    end="LED.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0360" />
+  <parameter name="baseAddress" value="0x03a0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
    kind="avalon"
-   version="17.0"
+   version="17.1"
    start="hps_0.h2f_lw_axi_master"
    end="adc_ltc2308_0.slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0370" />
+  <parameter name="baseAddress" value="0x03b0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
- <connection kind="clock" version="17.0" start="clk_0.clk" end="sysid_qsys.clk" />
- <connection kind="clock" version="17.0" start="clk_0.clk" end="jtag_uart.clk" />
- <connection kind="clock" version="17.0" start="clk_0.clk" end="LED.clk" />
+ <connection kind="clock" version="17.1" start="clk_0.clk" end="sysid_qsys.clk" />
+ <connection kind="clock" version="17.1" start="clk_0.clk" end="jtag_uart.clk" />
+ <connection kind="clock" version="17.1" start="clk_0.clk" end="LED.clk" />
  <connection
    kind="clock"
-   version="17.0"
+   version="17.1"
    start="clk_0.clk"
    end="DarkRoom_0.clock_sink" />
  <connection
    kind="clock"
-   version="17.0"
+   version="17.1"
    start="clk_0.clk"
    end="MYOControl_1.clock_sink" />
  <connection
    kind="clock"
-   version="17.0"
+   version="17.1"
    start="clk_0.clk"
    end="MYOControl_0.clock_sink" />
- <connection kind="clock" version="17.0" start="clk_0.clk" end="I2C_0.clock_sink" />
- <connection kind="clock" version="17.0" start="clk_0.clk" end="I2C_1.clock_sink" />
+ <connection kind="clock" version="17.1" start="clk_0.clk" end="I2C_0.clock_sink" />
+ <connection kind="clock" version="17.1" start="clk_0.clk" end="I2C_1.clock_sink" />
  <connection
    kind="clock"
-   version="17.0"
+   version="17.1"
    start="clk_0.clk"
    end="adc_ltc2308_0.clock_sink" />
  <connection
    kind="clock"
-   version="17.0"
+   version="17.1"
    start="clk_0.clk"
    end="DarkRoomOOTXdecoder_0.clock_sink" />
- <connection kind="clock" version="17.0" start="clk_0.clk" end="I2C_2.clock_sink" />
+ <connection kind="clock" version="17.1" start="clk_0.clk" end="I2C_2.clock_sink" />
+ <connection kind="clock" version="17.1" start="clk_0.clk" end="I2C_3.clock_sink" />
+ <connection kind="clock" version="17.1" start="clk_0.clk" end="I2C_4.clock_sink" />
  <connection
    kind="clock"
-   version="17.0"
+   version="17.1"
    start="clk_0.clk"
    end="hps_0.h2f_lw_axi_clock" />
- <connection kind="clock" version="17.0" start="clk_0.clk" end="pll_40MHz.refclk" />
+ <connection kind="clock" version="17.1" start="clk_0.clk" end="pll_40MHz.refclk" />
  <connection
    kind="clock"
-   version="17.0"
+   version="17.1"
    start="pll_40MHz.outclk0"
    end="adc_ltc2308_0.clock_sink_adc" />
  <connection
    kind="interrupt"
-   version="17.0"
+   version="17.1"
    start="hps_0.f2h_irq0"
    end="jtag_uart.irq">
   <parameter name="irqNumber" value="2" />
  </connection>
  <connection
    kind="reset"
-   version="17.0"
+   version="17.1"
    start="clk_0.clk_reset"
    end="sysid_qsys.reset" />
  <connection
    kind="reset"
-   version="17.0"
+   version="17.1"
    start="clk_0.clk_reset"
    end="jtag_uart.reset" />
  <connection
    kind="reset"
-   version="17.0"
+   version="17.1"
    start="clk_0.clk_reset"
    end="DarkRoom_0.reset" />
  <connection
    kind="reset"
-   version="17.0"
+   version="17.1"
    start="clk_0.clk_reset"
    end="MYOControl_0.reset" />
  <connection
    kind="reset"
-   version="17.0"
+   version="17.1"
    start="clk_0.clk_reset"
    end="MYOControl_1.reset" />
- <connection kind="reset" version="17.0" start="clk_0.clk_reset" end="I2C_0.reset" />
- <connection kind="reset" version="17.0" start="clk_0.clk_reset" end="I2C_1.reset" />
+ <connection kind="reset" version="17.1" start="clk_0.clk_reset" end="I2C_0.reset" />
+ <connection kind="reset" version="17.1" start="clk_0.clk_reset" end="I2C_1.reset" />
  <connection
    kind="reset"
-   version="17.0"
+   version="17.1"
    start="clk_0.clk_reset"
    end="pll_40MHz.reset" />
- <connection kind="reset" version="17.0" start="clk_0.clk_reset" end="LED.reset" />
+ <connection kind="reset" version="17.1" start="clk_0.clk_reset" end="LED.reset" />
  <connection
    kind="reset"
-   version="17.0"
+   version="17.1"
    start="clk_0.clk_reset"
    end="DarkRoomOOTXdecoder_0.reset" />
- <connection kind="reset" version="17.0" start="clk_0.clk_reset" end="I2C_2.reset" />
+ <connection kind="reset" version="17.1" start="clk_0.clk_reset" end="I2C_2.reset" />
+ <connection kind="reset" version="17.1" start="clk_0.clk_reset" end="I2C_3.reset" />
+ <connection kind="reset" version="17.1" start="clk_0.clk_reset" end="I2C_4.reset" />
  <connection
    kind="reset"
-   version="17.0"
+   version="17.1"
    start="clk_0.clk_reset"
    end="adc_ltc2308_0.reset_sink" />
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
