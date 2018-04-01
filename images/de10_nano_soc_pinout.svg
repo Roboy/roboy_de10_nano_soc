@@ -75,8 +75,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.979899"
-     inkscape:cx="273.31879"
-     inkscape:cy="813.11937"
+     inkscape:cx="388.39339"
+     inkscape:cy="388.81135"
      inkscape:document-units="px"
      inkscape:current-layer="g6310"
      showgrid="false"
@@ -93,7 +93,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -227,7 +227,7 @@
            y="715.34961"
            x="440.66315"
            id="tspan4310-9-6"
-           sodipodi:role="line">SS1[6]</tspan></text>
+           sodipodi:role="line">SS1[7]</tspan></text>
       <text
          sodipodi:linespacing="125%"
          id="text4308-0-0-2"
@@ -241,7 +241,7 @@
            y="715.34961"
            x="655.74677"
            id="tspan4310-9-6-6"
-           sodipodi:role="line">SS1[7]</tspan></text>
+           sodipodi:role="line">SS1[8]</tspan></text>
       <text
          sodipodi:linespacing="125%"
          id="text4308-0-0-9"
@@ -255,21 +255,21 @@
            y="730.28851"
            x="440.66315"
            sodipodi:role="line"
-           id="tspan4552">SS1[8]</tspan></text>
+           id="tspan4552">SS1[9]</tspan></text>
       <text
          sodipodi:linespacing="125%"
          id="text4308-0-0-2-0"
          y="730.28851"
-         x="655.74677"
+         x="649.00006"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.62741756px;line-height:125%;font-family:Courier;-inkscape-font-specification:Courier;letter-spacing:0px;word-spacing:0px;fill:#00754a;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          xml:space="preserve"
          inkscape:export-xdpi="300"
          inkscape:export-ydpi="300"><tspan
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.25185966px;font-family:Courier;-inkscape-font-specification:Courier;fill:#00754a;fill-opacity:1"
            y="730.28851"
-           x="655.74677"
+           x="649.00006"
            id="tspan4310-9-6-6-2"
-           sodipodi:role="line">SS1[9]</tspan></text>
+           sodipodi:role="line">SS1[10]</tspan></text>
       <text
          sodipodi:linespacing="125%"
          id="text4308-0-0-7"
@@ -283,7 +283,7 @@
            y="744.99988"
            x="440.66315"
            id="tspan4310-9-6-5"
-           sodipodi:role="line">SS1[10]</tspan></text>
+           sodipodi:role="line">SS1[11]</tspan></text>
       <text
          sodipodi:linespacing="125%"
          id="text4308-0-0-2-9"
@@ -297,7 +297,7 @@
            y="744.99988"
            x="648.58252"
            id="tspan4310-9-6-6-22"
-           sodipodi:role="line">SS1[11]</tspan></text>
+           sodipodi:role="line">SS1[12]</tspan></text>
       <text
          sodipodi:linespacing="125%"
          id="text4308-0-0-6"
@@ -311,7 +311,7 @@
            y="713.72314"
            x="74.048897"
            id="tspan4310-9-6-1"
-           sodipodi:role="line">SS0[5]</tspan></text>
+           sodipodi:role="line">SS0[6]</tspan></text>
       <text
          sodipodi:linespacing="125%"
          id="text4308-0-0-2-5"
@@ -325,7 +325,7 @@
            y="713.72314"
            x="293.10364"
            id="tspan4310-9-6-6-5"
-           sodipodi:role="line">SS0[4]</tspan></text>
+           sodipodi:role="line">SS0[5]</tspan></text>
       <text
          sodipodi:linespacing="125%"
          id="text4308-0-0-9-7"
@@ -339,7 +339,7 @@
            y="728.66199"
            x="74.048897"
            sodipodi:role="line"
-           id="tspan4552-6">SS0[3]</tspan></text>
+           id="tspan4552-6">SS0[4]</tspan></text>
       <text
          sodipodi:linespacing="125%"
          id="text4308-0-0-2-0-5"
@@ -353,7 +353,7 @@
            y="728.66199"
            x="293.10364"
            id="tspan4310-9-6-6-2-6"
-           sodipodi:role="line">SS0[2]</tspan></text>
+           sodipodi:role="line">SS0[3]</tspan></text>
       <text
          sodipodi:linespacing="125%"
          id="text4308-0-0-7-3"
@@ -367,7 +367,7 @@
            y="743.37341"
            x="74.048897"
            id="tspan4310-9-6-5-7"
-           sodipodi:role="line">SS0[1]</tspan></text>
+           sodipodi:role="line">SS0[2]</tspan></text>
       <text
          sodipodi:linespacing="125%"
          id="text4308-0-0-2-9-4"
@@ -381,7 +381,7 @@
            y="743.37341"
            x="293.10364"
            id="tspan4310-9-6-6-22-5"
-           sodipodi:role="line">SS0[0]</tspan></text>
+           sodipodi:role="line">SS0[1]</tspan></text>
       <text
          sodipodi:linespacing="125%"
          id="text4308-7"
@@ -969,7 +969,7 @@
            y="155.65715"
            x="111.0481"
            id="tspan4310-9-6-1-6"
-           sodipodi:role="line">SS0[0-5]           SPI Slave Select lines of SPI bus 0 (the [] is the motor ID)</tspan></text>
+           sodipodi:role="line">SS0[0-6]           SPI Slave Select lines of SPI bus 0 (the [] is the motor ID)</tspan></text>
       <text
          sodipodi:linespacing="125%"
          id="text4308-7-7"
@@ -1123,7 +1123,7 @@
            y="168.42918"
            x="111.0481"
            id="tspan4310-9-6-1-6-4"
-           sodipodi:role="line">SS1[6-11]          SPI Slave Select lines of SPI bus 1 (the [] is the motor ID)</tspan></text>
+           sodipodi:role="line">SS1[7-13]          SPI Slave Select lines of SPI bus 1 (the [] is the motor ID)</tspan></text>
       <text
          sodipodi:linespacing="125%"
          id="text5969"
@@ -1403,6 +1403,34 @@
            x="73.236206"
            id="tspan4310-9-6-6-22-5-8-4-0-9"
            sodipodi:role="line">SDA[4]</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text4308-0-0-2-9-4-3"
+         y="758.48511"
+         x="74.048897"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.62741756px;line-height:125%;font-family:Courier;-inkscape-font-specification:Courier;letter-spacing:0px;word-spacing:0px;fill:#00754a;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.25185966px;font-family:Courier;-inkscape-font-specification:Courier;fill:#00754a;fill-opacity:1"
+           y="758.48511"
+           x="74.048897"
+           id="tspan4310-9-6-6-22-5-6"
+           sodipodi:role="line">SS0[0]</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text4308-0-0-2-9-7"
+         y="760.11163"
+         x="440.66315"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.62741756px;line-height:125%;font-family:Courier;-inkscape-font-specification:Courier;letter-spacing:0px;word-spacing:0px;fill:#00754a;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.25185966px;font-family:Courier;-inkscape-font-specification:Courier;fill:#00754a;fill-opacity:1"
+           y="760.11163"
+           x="440.66315"
+           id="tspan4310-9-6-6-22-53"
+           sodipodi:role="line">SS1[13]</tspan></text>
     </g>
   </g>
 </svg>
