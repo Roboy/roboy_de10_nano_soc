@@ -9,7 +9,7 @@ module DE10_NANO_SoC_GHRD(
       output             ADC_SCK,
       output             ADC_SDI,
       input              ADC_SDO,
-
+ 
       ///////// ARDUINO /////////
       inout       [15:0] ARDUINO_IO, 
       inout              ARDUINO_RESET_N,

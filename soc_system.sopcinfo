@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="soc_system" kind="soc_system" version="1.0" fabric="QSYS">
  <!-- Format version 17.1 590 (Future versions may contain additional information.) -->
- <!-- 2018.04.01.19:48:21 -->
+ <!-- 2018.04.02.16:07:29 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1522604886</value>
+  <value>1522678036</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -2906,7 +2906,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="BUS_SPEED_HZ">
    <type>int</type>
-   <value>100000</value>
+   <value>400000</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -3466,7 +3466,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="BUS_SPEED_HZ">
    <type>int</type>
-   <value>100000</value>
+   <value>400000</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -83502,7 +83502,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.TIMESTAMP</name>
-   <value>1522604886</value>
+   <value>1522678036</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.compatible</name>
@@ -83522,7 +83522,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.timestamp</name>
-   <value>1522604886</value>
+   <value>1522678036</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.vendor</name>
@@ -83538,7 +83538,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="timestamp">
    <type>int</type>
-   <value>1522604886</value>
+   <value>1522678036</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>

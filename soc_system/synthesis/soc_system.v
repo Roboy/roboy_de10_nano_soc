@@ -325,7 +325,7 @@ module soc_system (
 
 	I2C_avalon_bridge #(
 		.CLOCK_SPEED_HZ (50000000),
-		.BUS_SPEED_HZ   (100000)
+		.BUS_SPEED_HZ   (400000)
 	) i2c_3 (
 		.reset       (rst_controller_reset_out_reset),                     //          reset.reset
 		.address     (mm_interconnect_0_i2c_3_avalon_slave_0_address),     // avalon_slave_0.address
@@ -343,7 +343,7 @@ module soc_system (
 
 	I2C_avalon_bridge #(
 		.CLOCK_SPEED_HZ (50000000),
-		.BUS_SPEED_HZ   (100000)
+		.BUS_SPEED_HZ   (400000)
 	) i2c_4 (
 		.reset       (rst_controller_reset_out_reset),                     //          reset.reset
 		.address     (mm_interconnect_0_i2c_4_avalon_slave_0_address),     // avalon_slave_0.address
