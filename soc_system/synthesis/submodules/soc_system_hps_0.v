@@ -14,7 +14,6 @@ module soc_system_hps_0 #(
 		input  wire        f2h_cold_rst_req_n,       //  f2h_cold_reset_req.reset_n
 		input  wire        f2h_dbg_rst_req_n,        // f2h_debug_reset_req.reset_n
 		input  wire        f2h_warm_rst_req_n,       //  f2h_warm_reset_req.reset_n
-		input  wire [27:0] f2h_stm_hwevents,         //   f2h_stm_hw_events.stm_hwevents
 		input  wire        h2f_lw_axi_clk,           //    h2f_lw_axi_clock.clk
 		output wire [11:0] h2f_lw_AWID,              //   h2f_lw_axi_master.awid
 		output wire [20:0] h2f_lw_AWADDR,            //                    .awaddr
@@ -151,7 +150,6 @@ module soc_system_hps_0 #(
 		.f2h_cold_rst_req_n (f2h_cold_rst_req_n), //  f2h_cold_reset_req.reset_n
 		.f2h_dbg_rst_req_n  (f2h_dbg_rst_req_n),  // f2h_debug_reset_req.reset_n
 		.f2h_warm_rst_req_n (f2h_warm_rst_req_n), //  f2h_warm_reset_req.reset_n
-		.f2h_stm_hwevents   (f2h_stm_hwevents),   //   f2h_stm_hw_events.stm_hwevents
 		.h2f_lw_axi_clk     (h2f_lw_axi_clk),     //    h2f_lw_axi_clock.clk
 		.h2f_lw_AWID        (h2f_lw_AWID),        //   h2f_lw_axi_master.awid
 		.h2f_lw_AWADDR      (h2f_lw_AWADDR),      //                    .awaddr

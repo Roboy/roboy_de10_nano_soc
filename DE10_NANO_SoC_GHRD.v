@@ -111,13 +111,6 @@ wire     [2: 0]     hps_reset_req;
 wire                hps_cold_reset;
 wire                hps_warm_reset;
 wire                hps_debug_reset;
-wire     [27: 0]    stm_hw_events;
-wire                fpga_clk_50;
-// connection of internal logics
-assign fpga_clk_50 = FPGA_CLK1_50;
-assign stm_hw_events = {{15{1'b0}}, SW, fpga_led_internal, fpga_debounced_buttons};
-
-
 
 //=======================================================
 //  Structural coding
@@ -153,7 +146,7 @@ soc_system u0(
 					.i2c_3_conduit_end_scl(GPIO_1[28]),
 					.i2c_3_conduit_end_sda(GPIO_1[29]),
 					.i2c_4_conduit_end_scl(GPIO_1[26]),
-					.i2c_4_conduit_end_sda(GPIO_1[27]),
+					.i2c_4_conduit_end_sda(GPIO_1[27]), 
 					// myocontrol, two buses a 6 motors
 					.myocontrol_0_conduit_end_miso(GPIO_1[1]),
 					.myocontrol_0_conduit_end_mosi(GPIO_1[0]),
@@ -165,6 +158,8 @@ soc_system u0(
 					.myocontrol_1_conduit_end_ss_n(GPIO_0[32:26]),
 					// led
 					.led_external_connection_export(LED),
+					// switches
+					.switches_external_connection_export(SW),
                //HPS ddr3
                .memory_mem_a(HPS_DDR3_ADDR),                                //                         memory.mem_a
                .memory_mem_ba(HPS_DDR3_BA),                                 //                               .mem_ba
@@ -242,14 +237,12 @@ soc_system u0(
                .hps_0_h2f_reset_reset_n(hps_fpga_reset_n),                  //                hps_0_h2f_reset.reset_n
                .hps_0_f2h_cold_reset_req_reset_n(~hps_cold_reset),          //       hps_0_f2h_cold_reset_req.reset_n
                .hps_0_f2h_debug_reset_req_reset_n(~hps_debug_reset),        //      hps_0_f2h_debug_reset_req.reset_n
-               .hps_0_f2h_stm_hw_events_stm_hwevents(stm_hw_events),        //        hps_0_f2h_stm_hw_events.stm_hwevents
                .hps_0_f2h_warm_reset_req_reset_n(~hps_warm_reset)          //       hps_0_f2h_warm_reset_req.reset_n
-
            );
 
 // Debounce logic to clean out glitches within 1ms
 debounce debounce_inst(
-             .clk(fpga_clk_50),
+             .clk(FPGA_CLK1_50),
              .reset_n(hps_fpga_reset_n),
              .data_in(KEY),
              .data_out(fpga_debounced_buttons)
@@ -261,12 +254,12 @@ defparam debounce_inst.TIMEOUT_WIDTH = 16;            // ceil(log2(TIMEOUT))
 
 // Source/Probe megawizard instance
 hps_reset hps_reset_inst(
-              .source_clk(fpga_clk_50),
+              .source_clk(FPGA_CLK1_50),
               .source(hps_reset_req)
           );
 
 altera_edge_detector pulse_cold_reset(
-                         .clk(fpga_clk_50),
+                         .clk(FPGA_CLK1_50),
                          .rst_n(hps_fpga_reset_n),
                          .signal_in(hps_reset_req[0]),
                          .pulse_out(hps_cold_reset)
@@ -276,7 +269,7 @@ defparam pulse_cold_reset.EDGE_TYPE = 1;
 defparam pulse_cold_reset.IGNORE_RST_WHILE_BUSY = 1;
 
 altera_edge_detector pulse_warm_reset(
-                         .clk(fpga_clk_50),
+                         .clk(FPGA_CLK1_50),
                          .rst_n(hps_fpga_reset_n),
                          .signal_in(hps_reset_req[1]),
                          .pulse_out(hps_warm_reset)
@@ -286,7 +279,7 @@ defparam pulse_warm_reset.EDGE_TYPE = 1;
 defparam pulse_warm_reset.IGNORE_RST_WHILE_BUSY = 1;
 
 altera_edge_detector pulse_debug_reset(
-                         .clk(fpga_clk_50),
+                         .clk(FPGA_CLK1_50),
                          .rst_n(hps_fpga_reset_n),
                          .signal_in(hps_reset_req[2]),
                          .pulse_out(hps_debug_reset)

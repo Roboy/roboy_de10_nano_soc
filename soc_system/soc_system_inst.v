@@ -15,7 +15,6 @@
 		.darkroomootxdecoder_0_conduit_end_sensor_signals (<connected-to-darkroomootxdecoder_0_conduit_end_sensor_signals>), //                                  .sensor_signals
 		.hps_0_f2h_cold_reset_req_reset_n                 (<connected-to-hps_0_f2h_cold_reset_req_reset_n>),                 //          hps_0_f2h_cold_reset_req.reset_n
 		.hps_0_f2h_debug_reset_req_reset_n                (<connected-to-hps_0_f2h_debug_reset_req_reset_n>),                //         hps_0_f2h_debug_reset_req.reset_n
-		.hps_0_f2h_stm_hw_events_stm_hwevents             (<connected-to-hps_0_f2h_stm_hw_events_stm_hwevents>),             //           hps_0_f2h_stm_hw_events.stm_hwevents
 		.hps_0_f2h_warm_reset_req_reset_n                 (<connected-to-hps_0_f2h_warm_reset_req_reset_n>),                 //          hps_0_f2h_warm_reset_req.reset_n
 		.hps_0_h2f_reset_reset_n                          (<connected-to-hps_0_h2f_reset_reset_n>),                          //                   hps_0_h2f_reset.reset_n
 		.hps_0_hps_io_hps_io_emac1_inst_TX_CLK            (<connected-to-hps_0_hps_io_hps_io_emac1_inst_TX_CLK>),            //                      hps_0_hps_io.hps_io_emac1_inst_TX_CLK
@@ -111,6 +110,7 @@
 		.myocontrol_1_conduit_end_mosi                    (<connected-to-myocontrol_1_conduit_end_mosi>),                    //                                  .mosi
 		.myocontrol_1_conduit_end_sck                     (<connected-to-myocontrol_1_conduit_end_sck>),                     //                                  .sck
 		.myocontrol_1_conduit_end_ss_n                    (<connected-to-myocontrol_1_conduit_end_ss_n>),                    //                                  .ss_n
-		.reset_reset_n                                    (<connected-to-reset_reset_n>)                                     //                             reset.reset_n
+		.reset_reset_n                                    (<connected-to-reset_reset_n>),                                    //                             reset.reset_n
+		.switches_external_connection_export              (<connected-to-switches_external_connection_export>)               //      switches_external_connection.export
 	);
 

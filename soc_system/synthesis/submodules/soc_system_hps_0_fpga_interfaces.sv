@@ -20,8 +20,6 @@ module soc_system_hps_0_fpga_interfaces(
  ,input wire [1 - 1 : 0 ] f2h_dbg_rst_req_n
 // f2h_warm_reset_req
  ,input wire [1 - 1 : 0 ] f2h_warm_rst_req_n
-// f2h_stm_hw_events
- ,input wire [28 - 1 : 0 ] f2h_stm_hwevents
 // h2f_lw_axi_clock
  ,input wire [1 - 1 : 0 ] h2f_lw_axi_clk
 // h2f_lw_axi_master
@@ -93,13 +91,6 @@ cyclonev_hps_interface_dbg_apb debug_apb(
   })
 ,.P_CLK_EN({
     1'b0 // 0:0
-  })
-);
-
-
-cyclonev_hps_interface_stm_event stm_event(
- .stm_event({
-    f2h_stm_hwevents[27:0] // 27:0
   })
 );
 

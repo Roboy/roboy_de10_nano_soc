@@ -20,7 +20,6 @@ module soc_system (
 		input  wire [31:0] darkroomootxdecoder_0_conduit_end_sensor_signals, //                                  .sensor_signals
 		input  wire        hps_0_f2h_cold_reset_req_reset_n,                 //          hps_0_f2h_cold_reset_req.reset_n
 		input  wire        hps_0_f2h_debug_reset_req_reset_n,                //         hps_0_f2h_debug_reset_req.reset_n
-		input  wire [27:0] hps_0_f2h_stm_hw_events_stm_hwevents,             //           hps_0_f2h_stm_hw_events.stm_hwevents
 		input  wire        hps_0_f2h_warm_reset_req_reset_n,                 //          hps_0_f2h_warm_reset_req.reset_n
 		output wire        hps_0_h2f_reset_reset_n,                          //                   hps_0_h2f_reset.reset_n
 		output wire        hps_0_hps_io_hps_io_emac1_inst_TX_CLK,            //                      hps_0_hps_io.hps_io_emac1_inst_TX_CLK
@@ -116,7 +115,8 @@ module soc_system (
 		output wire        myocontrol_1_conduit_end_mosi,                    //                                  .mosi
 		output wire        myocontrol_1_conduit_end_sck,                     //                                  .sck
 		output wire [6:0]  myocontrol_1_conduit_end_ss_n,                    //                                  .ss_n
-		input  wire        reset_reset_n                                     //                             reset.reset_n
+		input  wire        reset_reset_n,                                    //                             reset.reset_n
+		input  wire [3:0]  switches_external_connection_export               //      switches_external_connection.export
 	);
 
 	wire         pll_40mhz_outclk0_clk;                                              // pll_40MHz:outclk_0 -> adc_ltc2308_0:adc_clk
@@ -222,6 +222,8 @@ module soc_system (
 	wire   [1:0] mm_interconnect_0_led_s1_address;                                   // mm_interconnect_0:LED_s1_address -> LED:address
 	wire         mm_interconnect_0_led_s1_write;                                     // mm_interconnect_0:LED_s1_write -> LED:write_n
 	wire  [31:0] mm_interconnect_0_led_s1_writedata;                                 // mm_interconnect_0:LED_s1_writedata -> LED:writedata
+	wire  [31:0] mm_interconnect_0_switches_s1_readdata;                             // SWITCHES:readdata -> mm_interconnect_0:SWITCHES_s1_readdata
+	wire   [1:0] mm_interconnect_0_switches_s1_address;                              // mm_interconnect_0:SWITCHES_s1_address -> SWITCHES:address
 	wire         mm_interconnect_0_adc_ltc2308_0_slave_chipselect;                   // mm_interconnect_0:adc_ltc2308_0_slave_chipselect -> adc_ltc2308_0:slave_chipselect_n
 	wire  [15:0] mm_interconnect_0_adc_ltc2308_0_slave_readdata;                     // adc_ltc2308_0:slave_readdata -> mm_interconnect_0:adc_ltc2308_0_slave_readdata
 	wire   [0:0] mm_interconnect_0_adc_ltc2308_0_slave_address;                      // mm_interconnect_0:adc_ltc2308_0_slave_address -> adc_ltc2308_0:slave_addr
@@ -231,7 +233,7 @@ module soc_system (
 	wire         irq_mapper_receiver0_irq;                                           // jtag_uart:av_irq -> irq_mapper:receiver0_irq
 	wire  [31:0] hps_0_f2h_irq0_irq;                                                 // irq_mapper:sender_irq -> hps_0:f2h_irq_p0
 	wire  [31:0] hps_0_f2h_irq1_irq;                                                 // irq_mapper_001:sender_irq -> hps_0:f2h_irq_p1
-	wire         rst_controller_reset_out_reset;                                     // rst_controller:reset_out -> [DarkRoomOOTXdecoder_0:reset, DarkRoom_0:reset_n, I2C_0:reset, I2C_1:reset, I2C_2:reset, I2C_3:reset, I2C_4:reset, LED:reset_n, MYOControl_0:reset, MYOControl_1:reset, adc_ltc2308_0:slave_reset_n, jtag_uart:rst_n, mm_interconnect_0:jtag_uart_reset_reset_bridge_in_reset_reset, sysid_qsys:reset_n]
+	wire         rst_controller_reset_out_reset;                                     // rst_controller:reset_out -> [DarkRoomOOTXdecoder_0:reset, DarkRoom_0:reset_n, I2C_0:reset, I2C_1:reset, I2C_2:reset, I2C_3:reset, I2C_4:reset, LED:reset_n, MYOControl_0:reset, MYOControl_1:reset, SWITCHES:reset_n, adc_ltc2308_0:slave_reset_n, jtag_uart:rst_n, mm_interconnect_0:jtag_uart_reset_reset_bridge_in_reset_reset, sysid_qsys:reset_n]
 	wire         rst_controller_001_reset_out_reset;                                 // rst_controller_001:reset_out -> mm_interconnect_0:hps_0_h2f_lw_axi_master_agent_clk_reset_reset_bridge_in_reset_reset
 
 	DarkRoomOOTXdecoder #(
@@ -325,7 +327,7 @@ module soc_system (
 
 	I2C_avalon_bridge #(
 		.CLOCK_SPEED_HZ (50000000),
-		.BUS_SPEED_HZ   (400000)
+		.BUS_SPEED_HZ   (100000)
 	) i2c_3 (
 		.reset       (rst_controller_reset_out_reset),                     //          reset.reset
 		.address     (mm_interconnect_0_i2c_3_avalon_slave_0_address),     // avalon_slave_0.address
@@ -406,6 +408,14 @@ module soc_system (
 		.clock       (clk_clk)                                                    //     clock_sink.clk
 	);
 
+	soc_system_SWITCHES switches (
+		.clk      (clk_clk),                                //                 clk.clk
+		.reset_n  (~rst_controller_reset_out_reset),        //               reset.reset_n
+		.address  (mm_interconnect_0_switches_s1_address),  //                  s1.address
+		.readdata (mm_interconnect_0_switches_s1_readdata), //                    .readdata
+		.in_port  (switches_external_connection_export)     // external_connection.export
+	);
+
 	adc_ltc2308_fifo adc_ltc2308_0 (
 		.slave_chipselect_n (~mm_interconnect_0_adc_ltc2308_0_slave_chipselect), //          slave.chipselect_n
 		.slave_read_n       (~mm_interconnect_0_adc_ltc2308_0_slave_read),       //               .read_n
@@ -429,7 +439,6 @@ module soc_system (
 		.f2h_cold_rst_req_n       (hps_0_f2h_cold_reset_req_reset_n),      //  f2h_cold_reset_req.reset_n
 		.f2h_dbg_rst_req_n        (hps_0_f2h_debug_reset_req_reset_n),     // f2h_debug_reset_req.reset_n
 		.f2h_warm_rst_req_n       (hps_0_f2h_warm_reset_req_reset_n),      //  f2h_warm_reset_req.reset_n
-		.f2h_stm_hwevents         (hps_0_f2h_stm_hw_events_stm_hwevents),  //   f2h_stm_hw_events.stm_hwevents
 		.mem_a                    (memory_mem_a),                          //              memory.mem_a
 		.mem_ba                   (memory_mem_ba),                         //                    .mem_ba
 		.mem_ck                   (memory_mem_ck),                         //                    .mem_ck
@@ -673,6 +682,8 @@ module soc_system (
 		.MYOControl_1_avalon_slave_0_readdata                                (mm_interconnect_0_myocontrol_1_avalon_slave_0_readdata),             //                                                              .readdata
 		.MYOControl_1_avalon_slave_0_writedata                               (mm_interconnect_0_myocontrol_1_avalon_slave_0_writedata),            //                                                              .writedata
 		.MYOControl_1_avalon_slave_0_waitrequest                             (mm_interconnect_0_myocontrol_1_avalon_slave_0_waitrequest),          //                                                              .waitrequest
+		.SWITCHES_s1_address                                                 (mm_interconnect_0_switches_s1_address),                              //                                                   SWITCHES_s1.address
+		.SWITCHES_s1_readdata                                                (mm_interconnect_0_switches_s1_readdata),                             //                                                              .readdata
 		.sysid_qsys_control_slave_address                                    (mm_interconnect_0_sysid_qsys_control_slave_address),                 //                                      sysid_qsys_control_slave.address
 		.sysid_qsys_control_slave_readdata                                   (mm_interconnect_0_sysid_qsys_control_slave_readdata)                 //                                                              .readdata
 	);

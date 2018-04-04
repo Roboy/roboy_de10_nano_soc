@@ -142,7 +142,7 @@ reg [15:0] displacements[NUMBER_OF_MOTORS-1:0];
 
 
 assign readdata = returnvalue;
-assign waitrequest = (waitFlag && read) || update_controller;
+assign waitrequest = (waitFlag && read);
 reg [31:0] returnvalue;
 reg waitFlag;
 
