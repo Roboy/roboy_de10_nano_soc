@@ -536,19 +536,19 @@
   <parameter name="NUMBER_OF_SENSORS" value="32" />
  </module>
  <module name="I2C_0" kind="I2C" version="1.0" enabled="1">
-  <parameter name="BUS_SPEED_HZ" value="100000" />
+  <parameter name="BUS_SPEED_HZ" value="400000" />
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
  </module>
  <module name="I2C_1" kind="I2C" version="1.0" enabled="1">
-  <parameter name="BUS_SPEED_HZ" value="100000" />
+  <parameter name="BUS_SPEED_HZ" value="400000" />
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
  </module>
  <module name="I2C_2" kind="I2C" version="1.0" enabled="1">
-  <parameter name="BUS_SPEED_HZ" value="100000" />
+  <parameter name="BUS_SPEED_HZ" value="400000" />
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
  </module>
  <module name="I2C_3" kind="I2C" version="1.0" enabled="1">
-  <parameter name="BUS_SPEED_HZ" value="100000" />
+  <parameter name="BUS_SPEED_HZ" value="400000" />
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
  </module>
  <module name="I2C_4" kind="I2C" version="1.0" enabled="1">

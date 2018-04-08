@@ -21,7 +21,7 @@
 // [8'h0D 8'h(motor)]         [int16] current - motor current
 // [8'h0E 8'h(motor)]         [int16] displacement - spring displacement
 // [8'h0F 8'h(motor)]         [int16] pwmRef - output of PID controller
-// [8'h10 8'hz]               [int32] update_frequency - update frequency between pid an motor board
+// [8'h10 8'hz]               [uint32] update_frequency - update frequency between pid an motor board
 //
 // Through the axi bridge, the following values can be WRITTEN
 //	address            -----   [type] value
@@ -95,7 +95,8 @@ module MYOControl (
 	output [NUMBER_OF_MOTORS-1:0] ss_n_o,
 	input miso,
 	output mosi,
-	output sck
+	output sck,
+	input mirrored_muscle_unit
 );
 
 parameter NUMBER_OF_MOTORS = 6 ;
@@ -367,6 +368,7 @@ generate
 			.velocity(velocitys[j]),
 			.displacement(displacements[j]),
 			.update_controller(pid_update==j && update_controller),
+			.mirrored_muscle_unit(mirrored_muscle_unit),
 			.pwmRef(pwmRefs[j])
 		);
 		assign ss_n_o[j] = (motor==j?ss_n:1);

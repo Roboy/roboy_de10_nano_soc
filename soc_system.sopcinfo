@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="soc_system" kind="soc_system" version="1.0" fabric="QSYS">
  <!-- Format version 17.1 590 (Future versions may contain additional information.) -->
- <!-- 2018.04.04.21:06:31 -->
+ <!-- 2018.04.08.01:33:56 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1522868777</value>
+  <value>1523144023</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -1226,7 +1226,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="BUS_SPEED_HZ">
    <type>int</type>
-   <value>100000</value>
+   <value>400000</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -1786,7 +1786,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="BUS_SPEED_HZ">
    <type>int</type>
-   <value>100000</value>
+   <value>400000</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -2346,7 +2346,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="BUS_SPEED_HZ">
    <type>int</type>
-   <value>100000</value>
+   <value>400000</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -2906,7 +2906,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="BUS_SPEED_HZ">
    <type>int</type>
-   <value>100000</value>
+   <value>400000</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -5304,6 +5304,12 @@ parameters are a RESULT of the module parameters. -->
     <width>7</width>
     <role>ss_n</role>
    </port>
+   <port>
+    <name>mirrored_muscle_unit</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>mirrored_muscle_unit</role>
+   </port>
   </interface>
   <interface name="clock_sink" kind="clock_sink" version="17.1">
    <!-- The connection points exposed by a module instance for the
@@ -5867,6 +5873,12 @@ parameters are a RESULT of the module parameters. -->
     <direction>Output</direction>
     <width>7</width>
     <role>ss_n</role>
+   </port>
+   <port>
+    <name>mirrored_muscle_unit</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>mirrored_muscle_unit</role>
    </port>
   </interface>
   <interface name="clock_sink" kind="clock_sink" version="17.1">
@@ -84210,7 +84222,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.TIMESTAMP</name>
-   <value>1522868777</value>
+   <value>1523144023</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.compatible</name>
@@ -84230,7 +84242,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.timestamp</name>
-   <value>1522868777</value>
+   <value>1523144023</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.vendor</name>
@@ -84246,7 +84258,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="timestamp">
    <type>int</type>
-   <value>1522868777</value>
+   <value>1523144023</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>

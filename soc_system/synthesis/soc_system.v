@@ -111,10 +111,12 @@ module soc_system (
 		output wire        myocontrol_0_conduit_end_mosi,                    //                                  .mosi
 		output wire        myocontrol_0_conduit_end_sck,                     //                                  .sck
 		output wire [6:0]  myocontrol_0_conduit_end_ss_n,                    //                                  .ss_n
+		input  wire        myocontrol_0_conduit_end_mirrored_muscle_unit,    //                                  .mirrored_muscle_unit
 		input  wire        myocontrol_1_conduit_end_miso,                    //          myocontrol_1_conduit_end.miso
 		output wire        myocontrol_1_conduit_end_mosi,                    //                                  .mosi
 		output wire        myocontrol_1_conduit_end_sck,                     //                                  .sck
 		output wire [6:0]  myocontrol_1_conduit_end_ss_n,                    //                                  .ss_n
+		input  wire        myocontrol_1_conduit_end_mirrored_muscle_unit,    //                                  .mirrored_muscle_unit
 		input  wire        reset_reset_n,                                    //                             reset.reset_n
 		input  wire [3:0]  switches_external_connection_export               //      switches_external_connection.export
 	);
@@ -273,7 +275,7 @@ module soc_system (
 
 	I2C_avalon_bridge #(
 		.CLOCK_SPEED_HZ (50000000),
-		.BUS_SPEED_HZ   (100000)
+		.BUS_SPEED_HZ   (400000)
 	) i2c_0 (
 		.reset       (rst_controller_reset_out_reset),                     //          reset.reset
 		.address     (mm_interconnect_0_i2c_0_avalon_slave_0_address),     // avalon_slave_0.address
@@ -291,7 +293,7 @@ module soc_system (
 
 	I2C_avalon_bridge #(
 		.CLOCK_SPEED_HZ (50000000),
-		.BUS_SPEED_HZ   (100000)
+		.BUS_SPEED_HZ   (400000)
 	) i2c_1 (
 		.reset       (rst_controller_reset_out_reset),                     //          reset.reset
 		.address     (mm_interconnect_0_i2c_1_avalon_slave_0_address),     // avalon_slave_0.address
@@ -309,7 +311,7 @@ module soc_system (
 
 	I2C_avalon_bridge #(
 		.CLOCK_SPEED_HZ (50000000),
-		.BUS_SPEED_HZ   (100000)
+		.BUS_SPEED_HZ   (400000)
 	) i2c_2 (
 		.reset       (rst_controller_reset_out_reset),                     //          reset.reset
 		.address     (mm_interconnect_0_i2c_2_avalon_slave_0_address),     // avalon_slave_0.address
@@ -327,7 +329,7 @@ module soc_system (
 
 	I2C_avalon_bridge #(
 		.CLOCK_SPEED_HZ (50000000),
-		.BUS_SPEED_HZ   (100000)
+		.BUS_SPEED_HZ   (400000)
 	) i2c_3 (
 		.reset       (rst_controller_reset_out_reset),                     //          reset.reset
 		.address     (mm_interconnect_0_i2c_3_avalon_slave_0_address),     // avalon_slave_0.address
@@ -376,36 +378,38 @@ module soc_system (
 		.NUMBER_OF_MOTORS (7),
 		.CLOCK_SPEED_HZ   (50000000)
 	) myocontrol_0 (
-		.reset       (rst_controller_reset_out_reset),                            //          reset.reset
-		.address     (mm_interconnect_0_myocontrol_0_avalon_slave_0_address),     // avalon_slave_0.address
-		.write       (mm_interconnect_0_myocontrol_0_avalon_slave_0_write),       //               .write
-		.writedata   (mm_interconnect_0_myocontrol_0_avalon_slave_0_writedata),   //               .writedata
-		.read        (mm_interconnect_0_myocontrol_0_avalon_slave_0_read),        //               .read
-		.readdata    (mm_interconnect_0_myocontrol_0_avalon_slave_0_readdata),    //               .readdata
-		.waitrequest (mm_interconnect_0_myocontrol_0_avalon_slave_0_waitrequest), //               .waitrequest
-		.miso        (myocontrol_0_conduit_end_miso),                             //    conduit_end.miso
-		.mosi        (myocontrol_0_conduit_end_mosi),                             //               .mosi
-		.sck         (myocontrol_0_conduit_end_sck),                              //               .sck
-		.ss_n_o      (myocontrol_0_conduit_end_ss_n),                             //               .ss_n
-		.clock       (clk_clk)                                                    //     clock_sink.clk
+		.reset                (rst_controller_reset_out_reset),                            //          reset.reset
+		.address              (mm_interconnect_0_myocontrol_0_avalon_slave_0_address),     // avalon_slave_0.address
+		.write                (mm_interconnect_0_myocontrol_0_avalon_slave_0_write),       //               .write
+		.writedata            (mm_interconnect_0_myocontrol_0_avalon_slave_0_writedata),   //               .writedata
+		.read                 (mm_interconnect_0_myocontrol_0_avalon_slave_0_read),        //               .read
+		.readdata             (mm_interconnect_0_myocontrol_0_avalon_slave_0_readdata),    //               .readdata
+		.waitrequest          (mm_interconnect_0_myocontrol_0_avalon_slave_0_waitrequest), //               .waitrequest
+		.miso                 (myocontrol_0_conduit_end_miso),                             //    conduit_end.miso
+		.mosi                 (myocontrol_0_conduit_end_mosi),                             //               .mosi
+		.sck                  (myocontrol_0_conduit_end_sck),                              //               .sck
+		.ss_n_o               (myocontrol_0_conduit_end_ss_n),                             //               .ss_n
+		.mirrored_muscle_unit (myocontrol_0_conduit_end_mirrored_muscle_unit),             //               .mirrored_muscle_unit
+		.clock                (clk_clk)                                                    //     clock_sink.clk
 	);
 
 	MYOControl #(
 		.NUMBER_OF_MOTORS (7),
 		.CLOCK_SPEED_HZ   (50000000)
 	) myocontrol_1 (
-		.reset       (rst_controller_reset_out_reset),                            //          reset.reset
-		.address     (mm_interconnect_0_myocontrol_1_avalon_slave_0_address),     // avalon_slave_0.address
-		.write       (mm_interconnect_0_myocontrol_1_avalon_slave_0_write),       //               .write
-		.writedata   (mm_interconnect_0_myocontrol_1_avalon_slave_0_writedata),   //               .writedata
-		.read        (mm_interconnect_0_myocontrol_1_avalon_slave_0_read),        //               .read
-		.readdata    (mm_interconnect_0_myocontrol_1_avalon_slave_0_readdata),    //               .readdata
-		.waitrequest (mm_interconnect_0_myocontrol_1_avalon_slave_0_waitrequest), //               .waitrequest
-		.miso        (myocontrol_1_conduit_end_miso),                             //    conduit_end.miso
-		.mosi        (myocontrol_1_conduit_end_mosi),                             //               .mosi
-		.sck         (myocontrol_1_conduit_end_sck),                              //               .sck
-		.ss_n_o      (myocontrol_1_conduit_end_ss_n),                             //               .ss_n
-		.clock       (clk_clk)                                                    //     clock_sink.clk
+		.reset                (rst_controller_reset_out_reset),                            //          reset.reset
+		.address              (mm_interconnect_0_myocontrol_1_avalon_slave_0_address),     // avalon_slave_0.address
+		.write                (mm_interconnect_0_myocontrol_1_avalon_slave_0_write),       //               .write
+		.writedata            (mm_interconnect_0_myocontrol_1_avalon_slave_0_writedata),   //               .writedata
+		.read                 (mm_interconnect_0_myocontrol_1_avalon_slave_0_read),        //               .read
+		.readdata             (mm_interconnect_0_myocontrol_1_avalon_slave_0_readdata),    //               .readdata
+		.waitrequest          (mm_interconnect_0_myocontrol_1_avalon_slave_0_waitrequest), //               .waitrequest
+		.miso                 (myocontrol_1_conduit_end_miso),                             //    conduit_end.miso
+		.mosi                 (myocontrol_1_conduit_end_mosi),                             //               .mosi
+		.sck                  (myocontrol_1_conduit_end_sck),                              //               .sck
+		.ss_n_o               (myocontrol_1_conduit_end_ss_n),                             //               .ss_n
+		.mirrored_muscle_unit (myocontrol_1_conduit_end_mirrored_muscle_unit),             //               .mirrored_muscle_unit
+		.clock                (clk_clk)                                                    //     clock_sink.clk
 	);
 
 	soc_system_SWITCHES switches (
