@@ -529,11 +529,11 @@
    version="1.0"
    enabled="1">
   <parameter name="ENABLE_UART_TRANSMITTER" value="false" />
-  <parameter name="NUMBER_OF_SENSORS" value="32" />
+  <parameter name="NUMBER_OF_SENSORS" value="30" />
  </module>
  <module name="DarkRoom_0" kind="DarkRoom" version="1.0" enabled="1">
   <parameter name="ENABLE_SPI_TRANSMITTER" value="false" />
-  <parameter name="NUMBER_OF_SENSORS" value="32" />
+  <parameter name="NUMBER_OF_SENSORS" value="30" />
  </module>
  <module name="I2C_0" kind="I2C" version="1.0" enabled="1">
   <parameter name="BUS_SPEED_HZ" value="400000" />

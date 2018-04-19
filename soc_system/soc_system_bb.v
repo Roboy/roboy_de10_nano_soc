@@ -107,10 +107,12 @@ module soc_system (
 	myocontrol_0_conduit_end_mosi,
 	myocontrol_0_conduit_end_sck,
 	myocontrol_0_conduit_end_ss_n,
+	myocontrol_0_conduit_end_mirrored_muscle_unit,
 	myocontrol_1_conduit_end_miso,
 	myocontrol_1_conduit_end_mosi,
 	myocontrol_1_conduit_end_sck,
 	myocontrol_1_conduit_end_ss_n,
+	myocontrol_1_conduit_end_mirrored_muscle_unit,
 	reset_reset_n,
 	switches_external_connection_export);	
 
@@ -121,13 +123,13 @@ module soc_system (
 	input		clk_clk;
 	output		darkroom_0_conduit_end_mosi_o;
 	output		darkroom_0_conduit_end_sck_o;
-	input	[31:0]	darkroom_0_conduit_end_sensor_signals_i;
+	input	[29:0]	darkroom_0_conduit_end_sensor_signals_i;
 	output		darkroom_0_conduit_end_ss_n_o;
 	input		darkroom_0_conduit_end_trigger_me;
-	output	[31:0]	darkroom_0_conduit_end_sync_o;
+	output	[29:0]	darkroom_0_conduit_end_sync_o;
 	output	[7:0]	darkroomootxdecoder_0_conduit_end_led;
 	output		darkroomootxdecoder_0_conduit_end_uart_tx;
-	input	[31:0]	darkroomootxdecoder_0_conduit_end_sensor_signals;
+	input	[29:0]	darkroomootxdecoder_0_conduit_end_sensor_signals;
 	input		hps_0_f2h_cold_reset_req_reset_n;
 	input		hps_0_f2h_debug_reset_req_reset_n;
 	input		hps_0_f2h_warm_reset_req_reset_n;
@@ -221,10 +223,12 @@ module soc_system (
 	output		myocontrol_0_conduit_end_mosi;
 	output		myocontrol_0_conduit_end_sck;
 	output	[6:0]	myocontrol_0_conduit_end_ss_n;
+	input		myocontrol_0_conduit_end_mirrored_muscle_unit;
 	input		myocontrol_1_conduit_end_miso;
 	output		myocontrol_1_conduit_end_mosi;
 	output		myocontrol_1_conduit_end_sck;
 	output	[6:0]	myocontrol_1_conduit_end_ss_n;
+	input		myocontrol_1_conduit_end_mirrored_muscle_unit;
 	input		reset_reset_n;
 	input	[3:0]	switches_external_connection_export;
 endmodule

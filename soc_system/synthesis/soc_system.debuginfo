@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="soc_system" kind="system" version="17.1" fabric="QSYS">
  <!-- Format version 17.1 590 (Future versions may contain additional information.) -->
- <!-- 2018.04.11.03:13:59 -->
+ <!-- 2018.04.19.04:34:22 -->
  <!-- A collection of modules and connections -->
  <parameter name="clockCrossingAdapter">
   <type>com.altera.sopcmodel.ensemble.EClockAdapter</type>
@@ -53,7 +53,7 @@
  </parameter>
  <parameter name="generationId">
   <type>int</type>
-  <value>1523409177</value>
+  <value>1524105203</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>true</visible>
@@ -156,7 +156,7 @@
 the requested settings for a module instance. -->
   <parameter name="NUMBER_OF_SENSORS">
    <type>int</type>
-   <value>32</value>
+   <value>30</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -655,7 +655,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>sensor_signals</name>
     <direction>Input</direction>
-    <width>32</width>
+    <width>30</width>
     <role>sensor_signals</role>
    </port>
   </interface>
@@ -718,7 +718,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="NUMBER_OF_SENSORS">
    <type>int</type>
-   <value>32</value>
+   <value>30</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -838,7 +838,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>sensor_signals_i</name>
     <direction>Input</direction>
-    <width>32</width>
+    <width>30</width>
     <role>sensor_signals_i</role>
    </port>
    <port>
@@ -856,7 +856,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>sync_o</name>
     <direction>Output</direction>
-    <width>32</width>
+    <width>30</width>
     <role>sync_o</role>
    </port>
   </interface>
@@ -5362,6 +5362,12 @@ parameters are a RESULT of the module parameters. -->
     <width>1</width>
     <role>mirrored_muscle_unit</role>
    </port>
+   <port>
+    <name>power_sense_n</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>power_sense_n</role>
+   </port>
   </interface>
   <interface name="clock_sink" kind="clock_sink" version="17.1">
    <!-- The connection points exposed by a module instance for the
@@ -5931,6 +5937,12 @@ parameters are a RESULT of the module parameters. -->
     <direction>Input</direction>
     <width>1</width>
     <role>mirrored_muscle_unit</role>
+   </port>
+   <port>
+    <name>power_sense_n</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>power_sense_n</role>
    </port>
   </interface>
   <interface name="clock_sink" kind="clock_sink" version="17.1">
@@ -52895,7 +52907,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.TIMESTAMP</name>
-   <value>1523409177</value>
+   <value>1524105203</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.compatible</name>
@@ -52915,7 +52927,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.timestamp</name>
-   <value>1523409177</value>
+   <value>1524105203</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.vendor</name>
@@ -52931,7 +52943,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="timestamp">
    <type>int</type>
-   <value>1523409177</value>
+   <value>1524105203</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -61839,5 +61851,5 @@ parameters are a RESULT of the module parameters. -->
   <version>17.1</version>
  </plugin>
  <reportVersion>17.1 590</reportVersion>
- <uniqueIdentifier>60F67700881800000162B243CC76</uniqueIdentifier>
+ <uniqueIdentifier>60F67700881800000162DBC048B7</uniqueIdentifier>
 </EnsembleReport>

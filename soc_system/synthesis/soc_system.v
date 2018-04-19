@@ -11,13 +11,13 @@ module soc_system (
 		input  wire        clk_clk,                                          //                               clk.clk
 		output wire        darkroom_0_conduit_end_mosi_o,                    //            darkroom_0_conduit_end.mosi_o
 		output wire        darkroom_0_conduit_end_sck_o,                     //                                  .sck_o
-		input  wire [31:0] darkroom_0_conduit_end_sensor_signals_i,          //                                  .sensor_signals_i
+		input  wire [29:0] darkroom_0_conduit_end_sensor_signals_i,          //                                  .sensor_signals_i
 		output wire        darkroom_0_conduit_end_ss_n_o,                    //                                  .ss_n_o
 		input  wire        darkroom_0_conduit_end_trigger_me,                //                                  .trigger_me
-		output wire [31:0] darkroom_0_conduit_end_sync_o,                    //                                  .sync_o
+		output wire [29:0] darkroom_0_conduit_end_sync_o,                    //                                  .sync_o
 		output wire [7:0]  darkroomootxdecoder_0_conduit_end_led,            // darkroomootxdecoder_0_conduit_end.led
 		output wire        darkroomootxdecoder_0_conduit_end_uart_tx,        //                                  .uart_tx
-		input  wire [31:0] darkroomootxdecoder_0_conduit_end_sensor_signals, //                                  .sensor_signals
+		input  wire [29:0] darkroomootxdecoder_0_conduit_end_sensor_signals, //                                  .sensor_signals
 		input  wire        hps_0_f2h_cold_reset_req_reset_n,                 //          hps_0_f2h_cold_reset_req.reset_n
 		input  wire        hps_0_f2h_debug_reset_req_reset_n,                //         hps_0_f2h_debug_reset_req.reset_n
 		input  wire        hps_0_f2h_warm_reset_req_reset_n,                 //          hps_0_f2h_warm_reset_req.reset_n
@@ -112,11 +112,13 @@ module soc_system (
 		output wire        myocontrol_0_conduit_end_sck,                     //                                  .sck
 		output wire [6:0]  myocontrol_0_conduit_end_ss_n,                    //                                  .ss_n
 		input  wire        myocontrol_0_conduit_end_mirrored_muscle_unit,    //                                  .mirrored_muscle_unit
+		input  wire        myocontrol_0_conduit_end_power_sense_n,           //                                  .power_sense_n
 		input  wire        myocontrol_1_conduit_end_miso,                    //          myocontrol_1_conduit_end.miso
 		output wire        myocontrol_1_conduit_end_mosi,                    //                                  .mosi
 		output wire        myocontrol_1_conduit_end_sck,                     //                                  .sck
 		output wire [6:0]  myocontrol_1_conduit_end_ss_n,                    //                                  .ss_n
 		input  wire        myocontrol_1_conduit_end_mirrored_muscle_unit,    //                                  .mirrored_muscle_unit
+		input  wire        myocontrol_1_conduit_end_power_sense_n,           //                                  .power_sense_n
 		input  wire        reset_reset_n,                                    //                             reset.reset_n
 		input  wire [3:0]  switches_external_connection_export               //      switches_external_connection.export
 	);
@@ -239,7 +241,7 @@ module soc_system (
 	wire         rst_controller_001_reset_out_reset;                                 // rst_controller_001:reset_out -> mm_interconnect_0:hps_0_h2f_lw_axi_master_agent_clk_reset_reset_bridge_in_reset_reset
 
 	DarkRoomOOTXdecoder #(
-		.NUMBER_OF_SENSORS       (32),
+		.NUMBER_OF_SENSORS       (30),
 		.ENABLE_UART_TRANSMITTER (0)
 	) darkroomootxdecoder_0 (
 		.reset          (rst_controller_reset_out_reset),                                     //          reset.reset
@@ -257,7 +259,7 @@ module soc_system (
 
 	DarkRoom #(
 		.ENABLE_SPI_TRANSMITTER (0),
-		.NUMBER_OF_SENSORS      (32)
+		.NUMBER_OF_SENSORS      (30)
 	) darkroom_0 (
 		.reset_n          (~rst_controller_reset_out_reset),                         //          reset.reset_n
 		.mosi_o           (darkroom_0_conduit_end_mosi_o),                           //    conduit_end.mosi_o
@@ -390,6 +392,7 @@ module soc_system (
 		.sck                  (myocontrol_0_conduit_end_sck),                              //               .sck
 		.ss_n_o               (myocontrol_0_conduit_end_ss_n),                             //               .ss_n
 		.mirrored_muscle_unit (myocontrol_0_conduit_end_mirrored_muscle_unit),             //               .mirrored_muscle_unit
+		.power_sense_n        (myocontrol_0_conduit_end_power_sense_n),                    //               .power_sense_n
 		.clock                (clk_clk)                                                    //     clock_sink.clk
 	);
 
@@ -409,6 +412,7 @@ module soc_system (
 		.sck                  (myocontrol_1_conduit_end_sck),                              //               .sck
 		.ss_n_o               (myocontrol_1_conduit_end_ss_n),                             //               .ss_n
 		.mirrored_muscle_unit (myocontrol_1_conduit_end_mirrored_muscle_unit),             //               .mirrored_muscle_unit
+		.power_sense_n        (myocontrol_1_conduit_end_power_sense_n),                    //               .power_sense_n
 		.clock                (clk_clk)                                                    //     clock_sink.clk
 	);
 
