@@ -152,14 +152,15 @@ soc_system u0(
 					.myocontrol_0_conduit_end_mosi(GPIO_1[0]),
 					.myocontrol_0_conduit_end_sck(GPIO_1[2]),
 					.myocontrol_0_conduit_end_ss_n(GPIO_1[9:3]),
-					.myocontrol_0_conduit_end_mirrored_muscle_unit(SW[3]==0 && SW[2]==1 && SW[1]==0 &&SW[0]==1), // true for switch ID 5
-					.myocontrol_0_conduit_end_power_sense_n(GPIO_0[24]),
+					.myocontrol_0_conduit_end_mirrored_muscle_unit(SW[2]==1 && SW[1]==0 &&SW[0]==0), // true for switch ID 4
+					.myocontrol_0_conduit_end_power_sense_n(GPIO_0[24] && SW[3]),
+					.myocontrol_0_conduit_end_gpio_n(GPIO_0[25]),
 					.myocontrol_1_conduit_end_miso(GPIO_0[34]),
 					.myocontrol_1_conduit_end_mosi(GPIO_0[35]),
 					.myocontrol_1_conduit_end_sck(GPIO_0[33]),
 					.myocontrol_1_conduit_end_ss_n(GPIO_0[32:26]),
-					.myocontrol_1_conduit_end_mirrored_muscle_unit(SW[3]==0 && SW[2]==1 && SW[1]==0 && SW[0]==1), // true for switch ID 5
-					.myocontrol_1_conduit_end_power_sense_n(GPIO_0[24]),
+					.myocontrol_1_conduit_end_mirrored_muscle_unit(SW[2]==1 && SW[1]==0 && SW[0]==0), // true for switch ID 4
+					.myocontrol_1_conduit_end_power_sense_n(GPIO_0[24] && SW[3]),
 					// led
 					.led_external_connection_export(LED),
 					// switches
