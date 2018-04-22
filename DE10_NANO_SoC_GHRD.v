@@ -99,8 +99,6 @@ module DE10_NANO_SoC_GHRD(
       input       [3:0]  SW
 );
 
-
-
 //=======================================================
 //  REG/WIRE declarations
 //=======================================================
@@ -143,8 +141,8 @@ soc_system u0(
 					.i2c_1_conduit_end_gpio({GPIO_1[31],GPIO_1[33],GPIO_1[35]}),
 					.i2c_2_conduit_end_scl(GPIO_0[4]),
 					.i2c_2_conduit_end_sda(GPIO_0[5]),
-					.i2c_3_conduit_end_scl(GPIO_1[28]),
-					.i2c_3_conduit_end_sda(GPIO_1[29]),
+//					.i2c_3_conduit_end_scl(GPIO_1[28]), 
+//					.i2c_3_conduit_end_sda(GPIO_1[29]),
 					.i2c_4_conduit_end_scl(GPIO_1[26]),
 					.i2c_4_conduit_end_sda(GPIO_1[27]), 
 					// myocontrol, two buses a 6 motors
@@ -155,6 +153,8 @@ soc_system u0(
 					.myocontrol_0_conduit_end_mirrored_muscle_unit(SW[2]==1 && SW[1]==0 &&SW[0]==0), // true for switch ID 4
 					.myocontrol_0_conduit_end_power_sense_n(GPIO_0[24] && SW[3]),
 					.myocontrol_0_conduit_end_gpio_n(GPIO_0[25]),
+					.myocontrol_0_conduit_end_scl(GPIO_1[28]),
+					.myocontrol_0_conduit_end_sda(GPIO_1[29]),
 					.myocontrol_1_conduit_end_miso(GPIO_0[34]),
 					.myocontrol_1_conduit_end_mosi(GPIO_0[35]),
 					.myocontrol_1_conduit_end_sck(GPIO_0[33]),
@@ -244,7 +244,7 @@ soc_system u0(
                .hps_0_f2h_debug_reset_req_reset_n(~hps_debug_reset),        //      hps_0_f2h_debug_reset_req.reset_n
                .hps_0_f2h_warm_reset_req_reset_n(~hps_warm_reset)          //       hps_0_f2h_warm_reset_req.reset_n
            );
-
+//
 // Debounce logic to clean out glitches within 1ms
 debounce debounce_inst(
              .clk(FPGA_CLK1_50),

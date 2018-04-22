@@ -114,6 +114,8 @@ module soc_system (
 		input  wire        myocontrol_0_conduit_end_mirrored_muscle_unit,    //                                  .mirrored_muscle_unit
 		input  wire        myocontrol_0_conduit_end_power_sense_n,           //                                  .power_sense_n
 		output wire        myocontrol_0_conduit_end_gpio_n,                  //                                  .gpio_n
+		output wire        myocontrol_0_conduit_end_scl,                     //                                  .scl
+		inout  wire        myocontrol_0_conduit_end_sda,                     //                                  .sda
 		input  wire        myocontrol_1_conduit_end_miso,                    //          myocontrol_1_conduit_end.miso
 		output wire        myocontrol_1_conduit_end_mosi,                    //                                  .mosi
 		output wire        myocontrol_1_conduit_end_sck,                     //                                  .sck
@@ -121,6 +123,8 @@ module soc_system (
 		input  wire        myocontrol_1_conduit_end_mirrored_muscle_unit,    //                                  .mirrored_muscle_unit
 		input  wire        myocontrol_1_conduit_end_power_sense_n,           //                                  .power_sense_n
 		output wire        myocontrol_1_conduit_end_gpio_n,                  //                                  .gpio_n
+		output wire        myocontrol_1_conduit_end_scl,                     //                                  .scl
+		inout  wire        myocontrol_1_conduit_end_sda,                     //                                  .sda
 		input  wire        reset_reset_n,                                    //                             reset.reset_n
 		input  wire [3:0]  switches_external_connection_export               //      switches_external_connection.export
 	);
@@ -396,6 +400,8 @@ module soc_system (
 		.mirrored_muscle_unit (myocontrol_0_conduit_end_mirrored_muscle_unit),             //               .mirrored_muscle_unit
 		.power_sense_n        (myocontrol_0_conduit_end_power_sense_n),                    //               .power_sense_n
 		.gpio_n               (myocontrol_0_conduit_end_gpio_n),                           //               .gpio_n
+		.scl                  (myocontrol_0_conduit_end_scl),                              //               .scl
+		.sda                  (myocontrol_0_conduit_end_sda),                              //               .sda
 		.clock                (clk_clk)                                                    //     clock_sink.clk
 	);
 
@@ -417,6 +423,8 @@ module soc_system (
 		.mirrored_muscle_unit (myocontrol_1_conduit_end_mirrored_muscle_unit),             //               .mirrored_muscle_unit
 		.power_sense_n        (myocontrol_1_conduit_end_power_sense_n),                    //               .power_sense_n
 		.gpio_n               (myocontrol_1_conduit_end_gpio_n),                           //               .gpio_n
+		.scl                  (myocontrol_1_conduit_end_scl),                              //               .scl
+		.sda                  (myocontrol_1_conduit_end_sda),                              //               .sda
 		.clock                (clk_clk)                                                    //     clock_sink.clk
 	);
 

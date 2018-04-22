@@ -108,11 +108,19 @@ module soc_system (
 	myocontrol_0_conduit_end_sck,
 	myocontrol_0_conduit_end_ss_n,
 	myocontrol_0_conduit_end_mirrored_muscle_unit,
+	myocontrol_0_conduit_end_power_sense_n,
+	myocontrol_0_conduit_end_gpio_n,
+	myocontrol_0_conduit_end_scl,
+	myocontrol_0_conduit_end_sda,
 	myocontrol_1_conduit_end_miso,
 	myocontrol_1_conduit_end_mosi,
 	myocontrol_1_conduit_end_sck,
 	myocontrol_1_conduit_end_ss_n,
 	myocontrol_1_conduit_end_mirrored_muscle_unit,
+	myocontrol_1_conduit_end_power_sense_n,
+	myocontrol_1_conduit_end_gpio_n,
+	myocontrol_1_conduit_end_scl,
+	myocontrol_1_conduit_end_sda,
 	reset_reset_n,
 	switches_external_connection_export);	
 
@@ -224,11 +232,19 @@ module soc_system (
 	output		myocontrol_0_conduit_end_sck;
 	output	[6:0]	myocontrol_0_conduit_end_ss_n;
 	input		myocontrol_0_conduit_end_mirrored_muscle_unit;
+	input		myocontrol_0_conduit_end_power_sense_n;
+	output		myocontrol_0_conduit_end_gpio_n;
+	output		myocontrol_0_conduit_end_scl;
+	inout		myocontrol_0_conduit_end_sda;
 	input		myocontrol_1_conduit_end_miso;
 	output		myocontrol_1_conduit_end_mosi;
 	output		myocontrol_1_conduit_end_sck;
 	output	[6:0]	myocontrol_1_conduit_end_ss_n;
 	input		myocontrol_1_conduit_end_mirrored_muscle_unit;
+	input		myocontrol_1_conduit_end_power_sense_n;
+	output		myocontrol_1_conduit_end_gpio_n;
+	output		myocontrol_1_conduit_end_scl;
+	inout		myocontrol_1_conduit_end_sda;
 	input		reset_reset_n;
 	input	[3:0]	switches_external_connection_export;
 endmodule
