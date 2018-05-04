@@ -122,8 +122,9 @@ soc_system u0(
 					.adc_ltc2308_0_conduit_end_SCK(ADC_SCK), 
 					.adc_ltc2308_0_conduit_end_SDI(ADC_SDI),  
 					.adc_ltc2308_0_conduit_end_SDO(ADC_SDO),
-//					// darkroom
-//					.darkroom_0_conduit_end_sensor_signals_i({GPIO_1[25:10]}),
+					// darkroom
+					.darkroom_0_conduit_end_d_i({GPIO_1[10]}),
+					.darkroom_0_conduit_end_e_i({GPIO_1[11]}),
 //					// spi interface for esp8266
 //					.darkroom_0_conduit_end_sck_o(GPIO_0[3]),
 //					.darkroom_0_conduit_end_ss_n_o(GPIO_0[5]),

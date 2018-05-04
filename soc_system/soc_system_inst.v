@@ -4,6 +4,13 @@
 		.adc_ltc2308_0_conduit_end_SDI                 (<connected-to-adc_ltc2308_0_conduit_end_SDI>),                 //                             .SDI
 		.adc_ltc2308_0_conduit_end_SDO                 (<connected-to-adc_ltc2308_0_conduit_end_SDO>),                 //                             .SDO
 		.clk_clk                                       (<connected-to-clk_clk>),                                       //                          clk.clk
+		.darkroom_0_conduit_end_mosi_o                 (<connected-to-darkroom_0_conduit_end_mosi_o>),                 //       darkroom_0_conduit_end.mosi_o
+		.darkroom_0_conduit_end_sck_o                  (<connected-to-darkroom_0_conduit_end_sck_o>),                  //                             .sck_o
+		.darkroom_0_conduit_end_ss_n_o                 (<connected-to-darkroom_0_conduit_end_ss_n_o>),                 //                             .ss_n_o
+		.darkroom_0_conduit_end_trigger_me             (<connected-to-darkroom_0_conduit_end_trigger_me>),             //                             .trigger_me
+		.darkroom_0_conduit_end_sync_o                 (<connected-to-darkroom_0_conduit_end_sync_o>),                 //                             .sync_o
+		.darkroom_0_conduit_end_d_i                    (<connected-to-darkroom_0_conduit_end_d_i>),                    //                             .d_i
+		.darkroom_0_conduit_end_e_i                    (<connected-to-darkroom_0_conduit_end_e_i>),                    //                             .e_i
 		.hps_0_f2h_cold_reset_req_reset_n              (<connected-to-hps_0_f2h_cold_reset_req_reset_n>),              //     hps_0_f2h_cold_reset_req.reset_n
 		.hps_0_f2h_debug_reset_req_reset_n             (<connected-to-hps_0_f2h_debug_reset_req_reset_n>),             //    hps_0_f2h_debug_reset_req.reset_n
 		.hps_0_f2h_warm_reset_req_reset_n              (<connected-to-hps_0_f2h_warm_reset_req_reset_n>),              //     hps_0_f2h_warm_reset_req.reset_n
