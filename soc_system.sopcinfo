@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="soc_system" kind="soc_system" version="1.0" fabric="QSYS">
  <!-- Format version 17.0 595 (Future versions may contain additional information.) -->
- <!-- 2018.05.07.18:35:40 -->
+ <!-- 2018.05.07.23:07:51 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1525710928</value>
+  <value>1525727260</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -104,7 +104,7 @@
 the requested settings for a module instance. -->
   <parameter name="NUMBER_OF_SENSORS">
    <type>int</type>
-   <value>15</value>
+   <value>8</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -112,7 +112,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="ENABLE_UART_TRANSMITTER">
    <type>boolean</type>
-   <value>true</value>
+   <value>false</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -603,7 +603,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>sensor_signals</name>
     <direction>Input</direction>
-    <width>15</width>
+    <width>8</width>
     <role>sensor_signals</role>
    </port>
   </interface>
@@ -658,7 +658,7 @@ parameters are a RESULT of the module parameters. -->
 the requested settings for a module instance. -->
   <parameter name="ENABLE_SPI_TRANSMITTER">
    <type>boolean</type>
-   <value>true</value>
+   <value>false</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -666,7 +666,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="NUMBER_OF_SENSORS">
    <type>int</type>
-   <value>15</value>
+   <value>8</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -806,19 +806,19 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>sync_o</name>
     <direction>Output</direction>
-    <width>15</width>
+    <width>8</width>
     <role>sync_o</role>
    </port>
    <port>
     <name>D_io</name>
     <direction>Bidir</direction>
-    <width>15</width>
+    <width>8</width>
     <role>d_io</role>
    </port>
    <port>
     <name>E_io</name>
     <direction>Bidir</direction>
-    <width>15</width>
+    <width>8</width>
     <role>e_io</role>
    </port>
   </interface>
@@ -83686,7 +83686,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.TIMESTAMP</name>
-   <value>1525710928</value>
+   <value>1525727260</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.compatible</name>
@@ -83706,7 +83706,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.timestamp</name>
-   <value>1525710928</value>
+   <value>1525727260</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.vendor</name>
@@ -83722,7 +83722,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="timestamp">
    <type>int</type>
-   <value>1525710928</value>
+   <value>1525727260</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>

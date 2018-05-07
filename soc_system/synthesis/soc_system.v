@@ -13,12 +13,12 @@ module soc_system (
 		output wire        darkroom_0_conduit_end_sck_o,                     //                                  .sck_o
 		output wire        darkroom_0_conduit_end_ss_n_o,                    //                                  .ss_n_o
 		input  wire        darkroom_0_conduit_end_trigger_me,                //                                  .trigger_me
-		output wire [14:0] darkroom_0_conduit_end_sync_o,                    //                                  .sync_o
-		inout  wire [14:0] darkroom_0_conduit_end_d_io,                      //                                  .d_io
-		inout  wire [14:0] darkroom_0_conduit_end_e_io,                      //                                  .e_io
+		output wire [7:0]  darkroom_0_conduit_end_sync_o,                    //                                  .sync_o
+		inout  wire [7:0]  darkroom_0_conduit_end_d_io,                      //                                  .d_io
+		inout  wire [7:0]  darkroom_0_conduit_end_e_io,                      //                                  .e_io
 		output wire [7:0]  darkroomootxdecoder_0_conduit_end_led,            // darkroomootxdecoder_0_conduit_end.led
 		output wire        darkroomootxdecoder_0_conduit_end_uart_tx,        //                                  .uart_tx
-		input  wire [14:0] darkroomootxdecoder_0_conduit_end_sensor_signals, //                                  .sensor_signals
+		input  wire [7:0]  darkroomootxdecoder_0_conduit_end_sensor_signals, //                                  .sensor_signals
 		input  wire        hps_0_f2h_cold_reset_req_reset_n,                 //          hps_0_f2h_cold_reset_req.reset_n
 		input  wire        hps_0_f2h_debug_reset_req_reset_n,                //         hps_0_f2h_debug_reset_req.reset_n
 		input  wire        hps_0_f2h_warm_reset_req_reset_n,                 //          hps_0_f2h_warm_reset_req.reset_n
@@ -238,8 +238,8 @@ module soc_system (
 	wire         rst_controller_001_reset_out_reset;                                 // rst_controller_001:reset_out -> mm_interconnect_0:hps_0_h2f_lw_axi_master_agent_clk_reset_reset_bridge_in_reset_reset
 
 	DarkRoomOOTXdecoder #(
-		.NUMBER_OF_SENSORS       (15),
-		.ENABLE_UART_TRANSMITTER (1)
+		.NUMBER_OF_SENSORS       (8),
+		.ENABLE_UART_TRANSMITTER (0)
 	) darkroomootxdecoder_0 (
 		.reset          (rst_controller_reset_out_reset),                                     //          reset.reset
 		.address        (mm_interconnect_0_darkroomootxdecoder_0_avalon_slave_0_address),     // avalon_slave_0.address
@@ -255,8 +255,8 @@ module soc_system (
 	);
 
 	DarkRoom #(
-		.ENABLE_SPI_TRANSMITTER (1),
-		.NUMBER_OF_SENSORS      (15),
+		.ENABLE_SPI_TRANSMITTER (0),
+		.NUMBER_OF_SENSORS      (8),
 		.CLK_SPEED              (50000000)
 	) darkroom_0 (
 		.reset_n     (~rst_controller_reset_out_reset),                         //          reset.reset_n
