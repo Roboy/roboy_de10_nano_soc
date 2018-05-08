@@ -53,7 +53,7 @@
    {
       datum baseAddress
       {
-         value = "768";
+         value = "864";
          type = "String";
       }
    }
@@ -69,7 +69,7 @@
    {
       datum baseAddress
       {
-         value = "864";
+         value = "832";
          type = "String";
       }
    }
@@ -85,7 +85,7 @@
    {
       datum baseAddress
       {
-         value = "832";
+         value = "800";
          type = "String";
       }
    }
@@ -101,7 +101,7 @@
    {
       datum baseAddress
       {
-         value = "800";
+         value = "768";
          type = "String";
       }
    }
@@ -581,6 +581,30 @@
          type = "String";
       }
    }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
    element sysid_qsys
    {
       datum _sortIndex
@@ -715,13 +739,13 @@
    kind="DarkRoomOOTXdecoder"
    version="1.0"
    enabled="1">
-  <parameter name="ENABLE_UART_TRANSMITTER" value="false" />
-  <parameter name="NUMBER_OF_SENSORS" value="8" />
+  <parameter name="ENABLE_UART_TRANSMITTER" value="true" />
+  <parameter name="NUMBER_OF_SENSORS" value="15" />
  </module>
  <module name="DarkRoom_0" kind="DarkRoom" version="1.0" enabled="1">
   <parameter name="CLK_SPEED" value="50000000" />
-  <parameter name="ENABLE_SPI_TRANSMITTER" value="false" />
-  <parameter name="NUMBER_OF_SENSORS" value="8" />
+  <parameter name="ENABLE_SPI_TRANSMITTER" value="true" />
+  <parameter name="NUMBER_OF_SENSORS" value="15" />
  </module>
  <module name="I2C_0" kind="I2C" version="1.0" enabled="1">
   <parameter name="BUS_SPEED_HZ" value="400000" />
@@ -1563,6 +1587,15 @@
    kind="avalon"
    version="17.0"
    start="hps_0.h2f_lw_axi_master"
+   end="DarkRoomOOTXdecoder_0.avalon_slave_0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0200" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="17.0"
+   start="hps_0.h2f_lw_axi_master"
    end="MYOControl_0.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x00080000" />
@@ -1581,7 +1614,7 @@
    kind="avalon"
    version="17.0"
    start="hps_0.h2f_lw_axi_master"
-   end="I2C_1.avalon_slave_0">
+   end="I2C_0.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0360" />
   <parameter name="defaultConnection" value="false" />
@@ -1590,7 +1623,7 @@
    kind="avalon"
    version="17.0"
    start="hps_0.h2f_lw_axi_master"
-   end="I2C_2.avalon_slave_0">
+   end="I2C_1.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0340" />
   <parameter name="defaultConnection" value="false" />
@@ -1599,18 +1632,9 @@
    kind="avalon"
    version="17.0"
    start="hps_0.h2f_lw_axi_master"
-   end="I2C_0.avalon_slave_0">
+   end="I2C_2.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0300" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="17.0"
-   start="hps_0.h2f_lw_axi_master"
-   end="DarkRoomOOTXdecoder_0.avalon_slave_0">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0200" />
+  <parameter name="baseAddress" value="0x0320" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1619,7 +1643,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="I2C_3.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0320" />
+  <parameter name="baseAddress" value="0x0300" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1666,7 +1690,12 @@
    kind="clock"
    version="17.0"
    start="clk_0.clk"
-   end="MYOControl_1.clock_sink" />
+   end="DarkRoom_0.clock_sink" />
+ <connection
+   kind="clock"
+   version="17.0"
+   start="clk_0.clk"
+   end="DarkRoomOOTXdecoder_0.clock_sink" />
  <connection
    kind="clock"
    version="17.0"
@@ -1676,21 +1705,16 @@
    kind="clock"
    version="17.0"
    start="clk_0.clk"
-   end="adc_ltc2308_0.clock_sink" />
- <connection kind="clock" version="17.0" start="clk_0.clk" end="I2C_2.clock_sink" />
+   end="MYOControl_1.clock_sink" />
  <connection kind="clock" version="17.0" start="clk_0.clk" end="I2C_0.clock_sink" />
  <connection kind="clock" version="17.0" start="clk_0.clk" end="I2C_1.clock_sink" />
- <connection
-   kind="clock"
-   version="17.0"
-   start="clk_0.clk"
-   end="DarkRoom_0.clock_sink" />
- <connection
-   kind="clock"
-   version="17.0"
-   start="clk_0.clk"
-   end="DarkRoomOOTXdecoder_0.clock_sink" />
+ <connection kind="clock" version="17.0" start="clk_0.clk" end="I2C_2.clock_sink" />
  <connection kind="clock" version="17.0" start="clk_0.clk" end="I2C_3.clock_sink" />
+ <connection
+   kind="clock"
+   version="17.0"
+   start="clk_0.clk"
+   end="adc_ltc2308_0.clock_sink" />
  <connection
    kind="clock"
    version="17.0"
@@ -1723,37 +1747,37 @@
    kind="reset"
    version="17.0"
    start="clk_0.clk_reset"
-   end="MYOControl_0.reset" />
- <connection
-   kind="reset"
-   version="17.0"
-   start="clk_0.clk_reset"
-   end="MYOControl_1.reset" />
- <connection
-   kind="reset"
-   version="17.0"
-   start="clk_0.clk_reset"
-   end="pll_40MHz.reset" />
+   end="DarkRoom_0.reset" />
  <connection kind="reset" version="17.0" start="clk_0.clk_reset" end="LED.reset" />
  <connection
    kind="reset"
    version="17.0"
    start="clk_0.clk_reset"
    end="SWITCHES.reset" />
- <connection kind="reset" version="17.0" start="clk_0.clk_reset" end="I2C_2.reset" />
- <connection kind="reset" version="17.0" start="clk_0.clk_reset" end="I2C_1.reset" />
- <connection kind="reset" version="17.0" start="clk_0.clk_reset" end="I2C_0.reset" />
- <connection
-   kind="reset"
-   version="17.0"
-   start="clk_0.clk_reset"
-   end="DarkRoom_0.reset" />
  <connection
    kind="reset"
    version="17.0"
    start="clk_0.clk_reset"
    end="DarkRoomOOTXdecoder_0.reset" />
+ <connection
+   kind="reset"
+   version="17.0"
+   start="clk_0.clk_reset"
+   end="MYOControl_0.reset" />
+ <connection
+   kind="reset"
+   version="17.0"
+   start="clk_0.clk_reset"
+   end="MYOControl_1.reset" />
+ <connection kind="reset" version="17.0" start="clk_0.clk_reset" end="I2C_0.reset" />
+ <connection kind="reset" version="17.0" start="clk_0.clk_reset" end="I2C_1.reset" />
+ <connection kind="reset" version="17.0" start="clk_0.clk_reset" end="I2C_2.reset" />
  <connection kind="reset" version="17.0" start="clk_0.clk_reset" end="I2C_3.reset" />
+ <connection
+   kind="reset"
+   version="17.0"
+   start="clk_0.clk_reset"
+   end="pll_40MHz.reset" />
  <connection
    kind="reset"
    version="17.0"

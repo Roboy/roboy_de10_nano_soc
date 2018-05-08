@@ -13,12 +13,12 @@ module soc_system (
 		output wire        darkroom_0_conduit_end_sck_o,                     //                                  .sck_o
 		output wire        darkroom_0_conduit_end_ss_n_o,                    //                                  .ss_n_o
 		input  wire        darkroom_0_conduit_end_trigger_me,                //                                  .trigger_me
-		output wire [7:0]  darkroom_0_conduit_end_sync_o,                    //                                  .sync_o
-		inout  wire [7:0]  darkroom_0_conduit_end_d_io,                      //                                  .d_io
-		inout  wire [7:0]  darkroom_0_conduit_end_e_io,                      //                                  .e_io
+		output wire [14:0] darkroom_0_conduit_end_sync_o,                    //                                  .sync_o
+		inout  wire [14:0] darkroom_0_conduit_end_d_io,                      //                                  .d_io
+		inout  wire [14:0] darkroom_0_conduit_end_e_io,                      //                                  .e_io
 		output wire [7:0]  darkroomootxdecoder_0_conduit_end_led,            // darkroomootxdecoder_0_conduit_end.led
 		output wire        darkroomootxdecoder_0_conduit_end_uart_tx,        //                                  .uart_tx
-		input  wire [7:0]  darkroomootxdecoder_0_conduit_end_sensor_signals, //                                  .sensor_signals
+		input  wire [14:0] darkroomootxdecoder_0_conduit_end_sensor_signals, //                                  .sensor_signals
 		input  wire        hps_0_f2h_cold_reset_req_reset_n,                 //          hps_0_f2h_cold_reset_req.reset_n
 		input  wire        hps_0_f2h_debug_reset_req_reset_n,                //         hps_0_f2h_debug_reset_req.reset_n
 		input  wire        hps_0_f2h_warm_reset_req_reset_n,                 //          hps_0_f2h_warm_reset_req.reset_n
@@ -174,6 +174,12 @@ module soc_system (
 	wire         mm_interconnect_0_darkroom_0_avalon_slave_0_waitrequest;            // DarkRoom_0:waitrequest -> mm_interconnect_0:DarkRoom_0_avalon_slave_0_waitrequest
 	wire   [6:0] mm_interconnect_0_darkroom_0_avalon_slave_0_address;                // mm_interconnect_0:DarkRoom_0_avalon_slave_0_address -> DarkRoom_0:address
 	wire         mm_interconnect_0_darkroom_0_avalon_slave_0_read;                   // mm_interconnect_0:DarkRoom_0_avalon_slave_0_read -> DarkRoom_0:read
+	wire  [31:0] mm_interconnect_0_darkroomootxdecoder_0_avalon_slave_0_readdata;    // DarkRoomOOTXdecoder_0:readdata -> mm_interconnect_0:DarkRoomOOTXdecoder_0_avalon_slave_0_readdata
+	wire         mm_interconnect_0_darkroomootxdecoder_0_avalon_slave_0_waitrequest; // DarkRoomOOTXdecoder_0:waitrequest -> mm_interconnect_0:DarkRoomOOTXdecoder_0_avalon_slave_0_waitrequest
+	wire   [5:0] mm_interconnect_0_darkroomootxdecoder_0_avalon_slave_0_address;     // mm_interconnect_0:DarkRoomOOTXdecoder_0_avalon_slave_0_address -> DarkRoomOOTXdecoder_0:address
+	wire         mm_interconnect_0_darkroomootxdecoder_0_avalon_slave_0_read;        // mm_interconnect_0:DarkRoomOOTXdecoder_0_avalon_slave_0_read -> DarkRoomOOTXdecoder_0:read
+	wire         mm_interconnect_0_darkroomootxdecoder_0_avalon_slave_0_write;       // mm_interconnect_0:DarkRoomOOTXdecoder_0_avalon_slave_0_write -> DarkRoomOOTXdecoder_0:write
+	wire  [31:0] mm_interconnect_0_darkroomootxdecoder_0_avalon_slave_0_writedata;   // mm_interconnect_0:DarkRoomOOTXdecoder_0_avalon_slave_0_writedata -> DarkRoomOOTXdecoder_0:writedata
 	wire  [31:0] mm_interconnect_0_myocontrol_0_avalon_slave_0_readdata;             // MYOControl_0:readdata -> mm_interconnect_0:MYOControl_0_avalon_slave_0_readdata
 	wire         mm_interconnect_0_myocontrol_0_avalon_slave_0_waitrequest;          // MYOControl_0:waitrequest -> mm_interconnect_0:MYOControl_0_avalon_slave_0_waitrequest
 	wire  [15:0] mm_interconnect_0_myocontrol_0_avalon_slave_0_address;              // mm_interconnect_0:MYOControl_0_avalon_slave_0_address -> MYOControl_0:address
@@ -186,6 +192,12 @@ module soc_system (
 	wire         mm_interconnect_0_myocontrol_1_avalon_slave_0_read;                 // mm_interconnect_0:MYOControl_1_avalon_slave_0_read -> MYOControl_1:read
 	wire         mm_interconnect_0_myocontrol_1_avalon_slave_0_write;                // mm_interconnect_0:MYOControl_1_avalon_slave_0_write -> MYOControl_1:write
 	wire  [31:0] mm_interconnect_0_myocontrol_1_avalon_slave_0_writedata;            // mm_interconnect_0:MYOControl_1_avalon_slave_0_writedata -> MYOControl_1:writedata
+	wire  [31:0] mm_interconnect_0_i2c_0_avalon_slave_0_readdata;                    // I2C_0:readdata -> mm_interconnect_0:I2C_0_avalon_slave_0_readdata
+	wire         mm_interconnect_0_i2c_0_avalon_slave_0_waitrequest;                 // I2C_0:waitrequest -> mm_interconnect_0:I2C_0_avalon_slave_0_waitrequest
+	wire   [2:0] mm_interconnect_0_i2c_0_avalon_slave_0_address;                     // mm_interconnect_0:I2C_0_avalon_slave_0_address -> I2C_0:address
+	wire         mm_interconnect_0_i2c_0_avalon_slave_0_read;                        // mm_interconnect_0:I2C_0_avalon_slave_0_read -> I2C_0:read
+	wire         mm_interconnect_0_i2c_0_avalon_slave_0_write;                       // mm_interconnect_0:I2C_0_avalon_slave_0_write -> I2C_0:write
+	wire  [31:0] mm_interconnect_0_i2c_0_avalon_slave_0_writedata;                   // mm_interconnect_0:I2C_0_avalon_slave_0_writedata -> I2C_0:writedata
 	wire  [31:0] mm_interconnect_0_i2c_1_avalon_slave_0_readdata;                    // I2C_1:readdata -> mm_interconnect_0:I2C_1_avalon_slave_0_readdata
 	wire         mm_interconnect_0_i2c_1_avalon_slave_0_waitrequest;                 // I2C_1:waitrequest -> mm_interconnect_0:I2C_1_avalon_slave_0_waitrequest
 	wire   [2:0] mm_interconnect_0_i2c_1_avalon_slave_0_address;                     // mm_interconnect_0:I2C_1_avalon_slave_0_address -> I2C_1:address
@@ -198,18 +210,6 @@ module soc_system (
 	wire         mm_interconnect_0_i2c_2_avalon_slave_0_read;                        // mm_interconnect_0:I2C_2_avalon_slave_0_read -> I2C_2:read
 	wire         mm_interconnect_0_i2c_2_avalon_slave_0_write;                       // mm_interconnect_0:I2C_2_avalon_slave_0_write -> I2C_2:write
 	wire  [31:0] mm_interconnect_0_i2c_2_avalon_slave_0_writedata;                   // mm_interconnect_0:I2C_2_avalon_slave_0_writedata -> I2C_2:writedata
-	wire  [31:0] mm_interconnect_0_i2c_0_avalon_slave_0_readdata;                    // I2C_0:readdata -> mm_interconnect_0:I2C_0_avalon_slave_0_readdata
-	wire         mm_interconnect_0_i2c_0_avalon_slave_0_waitrequest;                 // I2C_0:waitrequest -> mm_interconnect_0:I2C_0_avalon_slave_0_waitrequest
-	wire   [2:0] mm_interconnect_0_i2c_0_avalon_slave_0_address;                     // mm_interconnect_0:I2C_0_avalon_slave_0_address -> I2C_0:address
-	wire         mm_interconnect_0_i2c_0_avalon_slave_0_read;                        // mm_interconnect_0:I2C_0_avalon_slave_0_read -> I2C_0:read
-	wire         mm_interconnect_0_i2c_0_avalon_slave_0_write;                       // mm_interconnect_0:I2C_0_avalon_slave_0_write -> I2C_0:write
-	wire  [31:0] mm_interconnect_0_i2c_0_avalon_slave_0_writedata;                   // mm_interconnect_0:I2C_0_avalon_slave_0_writedata -> I2C_0:writedata
-	wire  [31:0] mm_interconnect_0_darkroomootxdecoder_0_avalon_slave_0_readdata;    // DarkRoomOOTXdecoder_0:readdata -> mm_interconnect_0:DarkRoomOOTXdecoder_0_avalon_slave_0_readdata
-	wire         mm_interconnect_0_darkroomootxdecoder_0_avalon_slave_0_waitrequest; // DarkRoomOOTXdecoder_0:waitrequest -> mm_interconnect_0:DarkRoomOOTXdecoder_0_avalon_slave_0_waitrequest
-	wire   [5:0] mm_interconnect_0_darkroomootxdecoder_0_avalon_slave_0_address;     // mm_interconnect_0:DarkRoomOOTXdecoder_0_avalon_slave_0_address -> DarkRoomOOTXdecoder_0:address
-	wire         mm_interconnect_0_darkroomootxdecoder_0_avalon_slave_0_read;        // mm_interconnect_0:DarkRoomOOTXdecoder_0_avalon_slave_0_read -> DarkRoomOOTXdecoder_0:read
-	wire         mm_interconnect_0_darkroomootxdecoder_0_avalon_slave_0_write;       // mm_interconnect_0:DarkRoomOOTXdecoder_0_avalon_slave_0_write -> DarkRoomOOTXdecoder_0:write
-	wire  [31:0] mm_interconnect_0_darkroomootxdecoder_0_avalon_slave_0_writedata;   // mm_interconnect_0:DarkRoomOOTXdecoder_0_avalon_slave_0_writedata -> DarkRoomOOTXdecoder_0:writedata
 	wire  [31:0] mm_interconnect_0_i2c_3_avalon_slave_0_readdata;                    // I2C_3:readdata -> mm_interconnect_0:I2C_3_avalon_slave_0_readdata
 	wire         mm_interconnect_0_i2c_3_avalon_slave_0_waitrequest;                 // I2C_3:waitrequest -> mm_interconnect_0:I2C_3_avalon_slave_0_waitrequest
 	wire   [2:0] mm_interconnect_0_i2c_3_avalon_slave_0_address;                     // mm_interconnect_0:I2C_3_avalon_slave_0_address -> I2C_3:address
@@ -238,8 +238,8 @@ module soc_system (
 	wire         rst_controller_001_reset_out_reset;                                 // rst_controller_001:reset_out -> mm_interconnect_0:hps_0_h2f_lw_axi_master_agent_clk_reset_reset_bridge_in_reset_reset
 
 	DarkRoomOOTXdecoder #(
-		.NUMBER_OF_SENSORS       (8),
-		.ENABLE_UART_TRANSMITTER (0)
+		.NUMBER_OF_SENSORS       (15),
+		.ENABLE_UART_TRANSMITTER (1)
 	) darkroomootxdecoder_0 (
 		.reset          (rst_controller_reset_out_reset),                                     //          reset.reset
 		.address        (mm_interconnect_0_darkroomootxdecoder_0_avalon_slave_0_address),     // avalon_slave_0.address
@@ -255,8 +255,8 @@ module soc_system (
 	);
 
 	DarkRoom #(
-		.ENABLE_SPI_TRANSMITTER (0),
-		.NUMBER_OF_SENSORS      (8),
+		.ENABLE_SPI_TRANSMITTER (1),
+		.NUMBER_OF_SENSORS      (15),
 		.CLK_SPEED              (50000000)
 	) darkroom_0 (
 		.reset_n     (~rst_controller_reset_out_reset),                         //          reset.reset_n

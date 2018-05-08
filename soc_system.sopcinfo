@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="soc_system" kind="soc_system" version="1.0" fabric="QSYS">
  <!-- Format version 17.0 595 (Future versions may contain additional information.) -->
- <!-- 2018.05.07.23:07:51 -->
+ <!-- 2018.05.08.15:00:11 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1525727260</value>
+  <value>1525784400</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -104,7 +104,7 @@
 the requested settings for a module instance. -->
   <parameter name="NUMBER_OF_SENSORS">
    <type>int</type>
-   <value>8</value>
+   <value>15</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -112,7 +112,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="ENABLE_UART_TRANSMITTER">
    <type>boolean</type>
-   <value>false</value>
+   <value>true</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -603,7 +603,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>sensor_signals</name>
     <direction>Input</direction>
-    <width>8</width>
+    <width>15</width>
     <role>sensor_signals</role>
    </port>
   </interface>
@@ -658,7 +658,7 @@ parameters are a RESULT of the module parameters. -->
 the requested settings for a module instance. -->
   <parameter name="ENABLE_SPI_TRANSMITTER">
    <type>boolean</type>
-   <value>false</value>
+   <value>true</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -666,7 +666,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="NUMBER_OF_SENSORS">
    <type>int</type>
-   <value>8</value>
+   <value>15</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -806,19 +806,19 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>sync_o</name>
     <direction>Output</direction>
-    <width>8</width>
+    <width>15</width>
     <role>sync_o</role>
    </port>
    <port>
     <name>D_io</name>
     <direction>Bidir</direction>
-    <width>8</width>
+    <width>15</width>
     <role>d_io</role>
    </port>
    <port>
     <name>E_io</name>
     <direction>Bidir</direction>
-    <width>8</width>
+    <width>15</width>
     <role>e_io</role>
    </port>
   </interface>
@@ -7043,9 +7043,15 @@ parameters are a RESULT of the module parameters. -->
    </clockDomainMember>
    <clockDomainMember>
     <isBridge>false</isBridge>
-    <moduleName>MYOControl_1</moduleName>
+    <moduleName>DarkRoom_0</moduleName>
     <slaveName>clock_sink</slaveName>
-    <name>MYOControl_1.clock_sink</name>
+    <name>DarkRoom_0.clock_sink</name>
+   </clockDomainMember>
+   <clockDomainMember>
+    <isBridge>false</isBridge>
+    <moduleName>DarkRoomOOTXdecoder_0</moduleName>
+    <slaveName>clock_sink</slaveName>
+    <name>DarkRoomOOTXdecoder_0.clock_sink</name>
    </clockDomainMember>
    <clockDomainMember>
     <isBridge>false</isBridge>
@@ -7055,15 +7061,9 @@ parameters are a RESULT of the module parameters. -->
    </clockDomainMember>
    <clockDomainMember>
     <isBridge>false</isBridge>
-    <moduleName>adc_ltc2308_0</moduleName>
+    <moduleName>MYOControl_1</moduleName>
     <slaveName>clock_sink</slaveName>
-    <name>adc_ltc2308_0.clock_sink</name>
-   </clockDomainMember>
-   <clockDomainMember>
-    <isBridge>false</isBridge>
-    <moduleName>I2C_2</moduleName>
-    <slaveName>clock_sink</slaveName>
-    <name>I2C_2.clock_sink</name>
+    <name>MYOControl_1.clock_sink</name>
    </clockDomainMember>
    <clockDomainMember>
     <isBridge>false</isBridge>
@@ -7079,21 +7079,21 @@ parameters are a RESULT of the module parameters. -->
    </clockDomainMember>
    <clockDomainMember>
     <isBridge>false</isBridge>
-    <moduleName>DarkRoom_0</moduleName>
+    <moduleName>I2C_2</moduleName>
     <slaveName>clock_sink</slaveName>
-    <name>DarkRoom_0.clock_sink</name>
-   </clockDomainMember>
-   <clockDomainMember>
-    <isBridge>false</isBridge>
-    <moduleName>DarkRoomOOTXdecoder_0</moduleName>
-    <slaveName>clock_sink</slaveName>
-    <name>DarkRoomOOTXdecoder_0.clock_sink</name>
+    <name>I2C_2.clock_sink</name>
    </clockDomainMember>
    <clockDomainMember>
     <isBridge>false</isBridge>
     <moduleName>I2C_3</moduleName>
     <slaveName>clock_sink</slaveName>
     <name>I2C_3.clock_sink</name>
+   </clockDomainMember>
+   <clockDomainMember>
+    <isBridge>false</isBridge>
+    <moduleName>adc_ltc2308_0</moduleName>
+    <slaveName>clock_sink</slaveName>
+    <name>adc_ltc2308_0.clock_sink</name>
    </clockDomainMember>
    <clockDomainMember>
     <isBridge>false</isBridge>
@@ -22907,6 +22907,14 @@ parameters are a RESULT of the module parameters. -->
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
+    <moduleName>DarkRoomOOTXdecoder_0</moduleName>
+    <slaveName>avalon_slave_0</slaveName>
+    <name>DarkRoomOOTXdecoder_0.avalon_slave_0</name>
+    <baseAddress>512</baseAddress>
+    <span>256</span>
+   </memoryBlock>
+   <memoryBlock>
+    <isBridge>false</isBridge>
     <moduleName>MYOControl_0</moduleName>
     <slaveName>avalon_slave_0</slaveName>
     <name>MYOControl_0.avalon_slave_0</name>
@@ -22923,10 +22931,18 @@ parameters are a RESULT of the module parameters. -->
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
+    <moduleName>I2C_0</moduleName>
+    <slaveName>avalon_slave_0</slaveName>
+    <name>I2C_0.avalon_slave_0</name>
+    <baseAddress>864</baseAddress>
+    <span>32</span>
+   </memoryBlock>
+   <memoryBlock>
+    <isBridge>false</isBridge>
     <moduleName>I2C_1</moduleName>
     <slaveName>avalon_slave_0</slaveName>
     <name>I2C_1.avalon_slave_0</name>
-    <baseAddress>864</baseAddress>
+    <baseAddress>832</baseAddress>
     <span>32</span>
    </memoryBlock>
    <memoryBlock>
@@ -22934,31 +22950,15 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>I2C_2</moduleName>
     <slaveName>avalon_slave_0</slaveName>
     <name>I2C_2.avalon_slave_0</name>
-    <baseAddress>832</baseAddress>
+    <baseAddress>800</baseAddress>
     <span>32</span>
-   </memoryBlock>
-   <memoryBlock>
-    <isBridge>false</isBridge>
-    <moduleName>I2C_0</moduleName>
-    <slaveName>avalon_slave_0</slaveName>
-    <name>I2C_0.avalon_slave_0</name>
-    <baseAddress>768</baseAddress>
-    <span>32</span>
-   </memoryBlock>
-   <memoryBlock>
-    <isBridge>false</isBridge>
-    <moduleName>DarkRoomOOTXdecoder_0</moduleName>
-    <slaveName>avalon_slave_0</slaveName>
-    <name>DarkRoomOOTXdecoder_0.avalon_slave_0</name>
-    <baseAddress>512</baseAddress>
-    <span>256</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
     <moduleName>I2C_3</moduleName>
     <slaveName>avalon_slave_0</slaveName>
     <name>I2C_3.avalon_slave_0</name>
-    <baseAddress>800</baseAddress>
+    <baseAddress>768</baseAddress>
     <span>32</span>
    </memoryBlock>
    <memoryBlock>
@@ -49133,6 +49133,14 @@ parameters are a RESULT of the module parameters. -->
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
+    <moduleName>DarkRoomOOTXdecoder_0</moduleName>
+    <slaveName>avalon_slave_0</slaveName>
+    <name>DarkRoomOOTXdecoder_0.avalon_slave_0</name>
+    <baseAddress>512</baseAddress>
+    <span>256</span>
+   </memoryBlock>
+   <memoryBlock>
+    <isBridge>false</isBridge>
     <moduleName>MYOControl_0</moduleName>
     <slaveName>avalon_slave_0</slaveName>
     <name>MYOControl_0.avalon_slave_0</name>
@@ -49149,10 +49157,18 @@ parameters are a RESULT of the module parameters. -->
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
+    <moduleName>I2C_0</moduleName>
+    <slaveName>avalon_slave_0</slaveName>
+    <name>I2C_0.avalon_slave_0</name>
+    <baseAddress>864</baseAddress>
+    <span>32</span>
+   </memoryBlock>
+   <memoryBlock>
+    <isBridge>false</isBridge>
     <moduleName>I2C_1</moduleName>
     <slaveName>avalon_slave_0</slaveName>
     <name>I2C_1.avalon_slave_0</name>
-    <baseAddress>864</baseAddress>
+    <baseAddress>832</baseAddress>
     <span>32</span>
    </memoryBlock>
    <memoryBlock>
@@ -49160,31 +49176,15 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>I2C_2</moduleName>
     <slaveName>avalon_slave_0</slaveName>
     <name>I2C_2.avalon_slave_0</name>
-    <baseAddress>832</baseAddress>
+    <baseAddress>800</baseAddress>
     <span>32</span>
-   </memoryBlock>
-   <memoryBlock>
-    <isBridge>false</isBridge>
-    <moduleName>I2C_0</moduleName>
-    <slaveName>avalon_slave_0</slaveName>
-    <name>I2C_0.avalon_slave_0</name>
-    <baseAddress>768</baseAddress>
-    <span>32</span>
-   </memoryBlock>
-   <memoryBlock>
-    <isBridge>false</isBridge>
-    <moduleName>DarkRoomOOTXdecoder_0</moduleName>
-    <slaveName>avalon_slave_0</slaveName>
-    <name>DarkRoomOOTXdecoder_0.avalon_slave_0</name>
-    <baseAddress>512</baseAddress>
-    <span>256</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
     <moduleName>I2C_3</moduleName>
     <slaveName>avalon_slave_0</slaveName>
     <name>I2C_3.avalon_slave_0</name>
-    <baseAddress>800</baseAddress>
+    <baseAddress>768</baseAddress>
     <span>32</span>
    </memoryBlock>
    <memoryBlock>
@@ -50356,6 +50356,14 @@ parameters are a RESULT of the module parameters. -->
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
+    <moduleName>DarkRoomOOTXdecoder_0</moduleName>
+    <slaveName>avalon_slave_0</slaveName>
+    <name>DarkRoomOOTXdecoder_0.avalon_slave_0</name>
+    <baseAddress>4280287744</baseAddress>
+    <span>256</span>
+   </memoryBlock>
+   <memoryBlock>
+    <isBridge>false</isBridge>
     <moduleName>MYOControl_0</moduleName>
     <slaveName>avalon_slave_0</slaveName>
     <name>MYOControl_0.avalon_slave_0</name>
@@ -50372,10 +50380,18 @@ parameters are a RESULT of the module parameters. -->
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
+    <moduleName>I2C_0</moduleName>
+    <slaveName>avalon_slave_0</slaveName>
+    <name>I2C_0.avalon_slave_0</name>
+    <baseAddress>4280288096</baseAddress>
+    <span>32</span>
+   </memoryBlock>
+   <memoryBlock>
+    <isBridge>false</isBridge>
     <moduleName>I2C_1</moduleName>
     <slaveName>avalon_slave_0</slaveName>
     <name>I2C_1.avalon_slave_0</name>
-    <baseAddress>4280288096</baseAddress>
+    <baseAddress>4280288064</baseAddress>
     <span>32</span>
    </memoryBlock>
    <memoryBlock>
@@ -50383,31 +50399,15 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>I2C_2</moduleName>
     <slaveName>avalon_slave_0</slaveName>
     <name>I2C_2.avalon_slave_0</name>
-    <baseAddress>4280288064</baseAddress>
+    <baseAddress>4280288032</baseAddress>
     <span>32</span>
-   </memoryBlock>
-   <memoryBlock>
-    <isBridge>false</isBridge>
-    <moduleName>I2C_0</moduleName>
-    <slaveName>avalon_slave_0</slaveName>
-    <name>I2C_0.avalon_slave_0</name>
-    <baseAddress>4280288000</baseAddress>
-    <span>32</span>
-   </memoryBlock>
-   <memoryBlock>
-    <isBridge>false</isBridge>
-    <moduleName>DarkRoomOOTXdecoder_0</moduleName>
-    <slaveName>avalon_slave_0</slaveName>
-    <name>DarkRoomOOTXdecoder_0.avalon_slave_0</name>
-    <baseAddress>4280287744</baseAddress>
-    <span>256</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
     <moduleName>I2C_3</moduleName>
     <slaveName>avalon_slave_0</slaveName>
     <name>I2C_3.avalon_slave_0</name>
-    <baseAddress>4280288032</baseAddress>
+    <baseAddress>4280288000</baseAddress>
     <span>32</span>
    </memoryBlock>
    <memoryBlock>
@@ -51275,6 +51275,14 @@ parameters are a RESULT of the module parameters. -->
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
+    <moduleName>DarkRoomOOTXdecoder_0</moduleName>
+    <slaveName>avalon_slave_0</slaveName>
+    <name>DarkRoomOOTXdecoder_0.avalon_slave_0</name>
+    <baseAddress>4280287744</baseAddress>
+    <span>256</span>
+   </memoryBlock>
+   <memoryBlock>
+    <isBridge>false</isBridge>
     <moduleName>MYOControl_0</moduleName>
     <slaveName>avalon_slave_0</slaveName>
     <name>MYOControl_0.avalon_slave_0</name>
@@ -51291,10 +51299,18 @@ parameters are a RESULT of the module parameters. -->
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
+    <moduleName>I2C_0</moduleName>
+    <slaveName>avalon_slave_0</slaveName>
+    <name>I2C_0.avalon_slave_0</name>
+    <baseAddress>4280288096</baseAddress>
+    <span>32</span>
+   </memoryBlock>
+   <memoryBlock>
+    <isBridge>false</isBridge>
     <moduleName>I2C_1</moduleName>
     <slaveName>avalon_slave_0</slaveName>
     <name>I2C_1.avalon_slave_0</name>
-    <baseAddress>4280288096</baseAddress>
+    <baseAddress>4280288064</baseAddress>
     <span>32</span>
    </memoryBlock>
    <memoryBlock>
@@ -51302,31 +51318,15 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>I2C_2</moduleName>
     <slaveName>avalon_slave_0</slaveName>
     <name>I2C_2.avalon_slave_0</name>
-    <baseAddress>4280288064</baseAddress>
+    <baseAddress>4280288032</baseAddress>
     <span>32</span>
-   </memoryBlock>
-   <memoryBlock>
-    <isBridge>false</isBridge>
-    <moduleName>I2C_0</moduleName>
-    <slaveName>avalon_slave_0</slaveName>
-    <name>I2C_0.avalon_slave_0</name>
-    <baseAddress>4280288000</baseAddress>
-    <span>32</span>
-   </memoryBlock>
-   <memoryBlock>
-    <isBridge>false</isBridge>
-    <moduleName>DarkRoomOOTXdecoder_0</moduleName>
-    <slaveName>avalon_slave_0</slaveName>
-    <name>DarkRoomOOTXdecoder_0.avalon_slave_0</name>
-    <baseAddress>4280287744</baseAddress>
-    <span>256</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
     <moduleName>I2C_3</moduleName>
     <slaveName>avalon_slave_0</slaveName>
     <name>I2C_3.avalon_slave_0</name>
-    <baseAddress>4280288032</baseAddress>
+    <baseAddress>4280288000</baseAddress>
     <span>32</span>
    </memoryBlock>
    <memoryBlock>
@@ -83686,7 +83686,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.TIMESTAMP</name>
-   <value>1525727260</value>
+   <value>1525784400</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.compatible</name>
@@ -83706,7 +83706,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.timestamp</name>
-   <value>1525727260</value>
+   <value>1525784400</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.vendor</name>
@@ -83722,7 +83722,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="timestamp">
    <type>int</type>
-   <value>1525727260</value>
+   <value>1525784400</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -92266,6 +92266,57 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>avalon_slave_0</endConnectionPoint>
  </connection>
  <connection
+   name="hps_0_bridges.h2f_lw/DarkRoomOOTXdecoder_0.avalon_slave_0"
+   kind="avalon"
+   version="17.0"
+   start="hps_0_bridges.h2f_lw"
+   end="DarkRoomOOTXdecoder_0.avalon_slave_0">
+  <parameter name="arbitrationPriority">
+   <type>int</type>
+   <value>1</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="baseAddress">
+   <type>java.math.BigInteger</type>
+   <value>0x0200</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="defaultConnection">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="deviceFamily">
+   <type>java.lang.String</type>
+   <value>UNKNOWN</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="generateLegacySim">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <startModule>hps_0_bridges</startModule>
+  <startConnectionPoint>h2f_lw</startConnectionPoint>
+  <endModule>DarkRoomOOTXdecoder_0</endModule>
+  <endConnectionPoint>avalon_slave_0</endConnectionPoint>
+ </connection>
+ <connection
    name="hps_0_bridges.h2f_lw/MYOControl_0.avalon_slave_0"
    kind="avalon"
    version="17.0"
@@ -92368,6 +92419,57 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>avalon_slave_0</endConnectionPoint>
  </connection>
  <connection
+   name="hps_0_bridges.h2f_lw/I2C_0.avalon_slave_0"
+   kind="avalon"
+   version="17.0"
+   start="hps_0_bridges.h2f_lw"
+   end="I2C_0.avalon_slave_0">
+  <parameter name="arbitrationPriority">
+   <type>int</type>
+   <value>1</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="baseAddress">
+   <type>java.math.BigInteger</type>
+   <value>0x0360</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="defaultConnection">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="deviceFamily">
+   <type>java.lang.String</type>
+   <value>UNKNOWN</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="generateLegacySim">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <startModule>hps_0_bridges</startModule>
+  <startConnectionPoint>h2f_lw</startConnectionPoint>
+  <endModule>I2C_0</endModule>
+  <endConnectionPoint>avalon_slave_0</endConnectionPoint>
+ </connection>
+ <connection
    name="hps_0_bridges.h2f_lw/I2C_1.avalon_slave_0"
    kind="avalon"
    version="17.0"
@@ -92383,7 +92485,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x0360</value>
+   <value>0x0340</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -92434,7 +92536,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x0340</value>
+   <value>0x0320</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -92470,108 +92572,6 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>avalon_slave_0</endConnectionPoint>
  </connection>
  <connection
-   name="hps_0_bridges.h2f_lw/I2C_0.avalon_slave_0"
-   kind="avalon"
-   version="17.0"
-   start="hps_0_bridges.h2f_lw"
-   end="I2C_0.avalon_slave_0">
-  <parameter name="arbitrationPriority">
-   <type>int</type>
-   <value>1</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="baseAddress">
-   <type>java.math.BigInteger</type>
-   <value>0x0300</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="defaultConnection">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="deviceFamily">
-   <type>java.lang.String</type>
-   <value>UNKNOWN</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="generateLegacySim">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <startModule>hps_0_bridges</startModule>
-  <startConnectionPoint>h2f_lw</startConnectionPoint>
-  <endModule>I2C_0</endModule>
-  <endConnectionPoint>avalon_slave_0</endConnectionPoint>
- </connection>
- <connection
-   name="hps_0_bridges.h2f_lw/DarkRoomOOTXdecoder_0.avalon_slave_0"
-   kind="avalon"
-   version="17.0"
-   start="hps_0_bridges.h2f_lw"
-   end="DarkRoomOOTXdecoder_0.avalon_slave_0">
-  <parameter name="arbitrationPriority">
-   <type>int</type>
-   <value>1</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="baseAddress">
-   <type>java.math.BigInteger</type>
-   <value>0x0200</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="defaultConnection">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="deviceFamily">
-   <type>java.lang.String</type>
-   <value>UNKNOWN</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="generateLegacySim">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <startModule>hps_0_bridges</startModule>
-  <startConnectionPoint>h2f_lw</startConnectionPoint>
-  <endModule>DarkRoomOOTXdecoder_0</endModule>
-  <endConnectionPoint>avalon_slave_0</endConnectionPoint>
- </connection>
- <connection
    name="hps_0_bridges.h2f_lw/I2C_3.avalon_slave_0"
    kind="avalon"
    version="17.0"
@@ -92587,7 +92587,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x0320</value>
+   <value>0x0300</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -92935,11 +92935,11 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>clk</endConnectionPoint>
  </connection>
  <connection
-   name="clk_0.clk/MYOControl_1.clock_sink"
+   name="clk_0.clk/DarkRoom_0.clock_sink"
    kind="clock"
    version="17.0"
    start="clk_0.clk"
-   end="MYOControl_1.clock_sink">
+   end="DarkRoom_0.clock_sink">
   <parameter name="deviceFamily">
    <type>java.lang.String</type>
    <value>UNKNOWN</value>
@@ -92958,7 +92958,34 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <startModule>clk_0</startModule>
   <startConnectionPoint>clk</startConnectionPoint>
-  <endModule>MYOControl_1</endModule>
+  <endModule>DarkRoom_0</endModule>
+  <endConnectionPoint>clock_sink</endConnectionPoint>
+ </connection>
+ <connection
+   name="clk_0.clk/DarkRoomOOTXdecoder_0.clock_sink"
+   kind="clock"
+   version="17.0"
+   start="clk_0.clk"
+   end="DarkRoomOOTXdecoder_0.clock_sink">
+  <parameter name="deviceFamily">
+   <type>java.lang.String</type>
+   <value>UNKNOWN</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="generateLegacySim">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <startModule>clk_0</startModule>
+  <startConnectionPoint>clk</startConnectionPoint>
+  <endModule>DarkRoomOOTXdecoder_0</endModule>
   <endConnectionPoint>clock_sink</endConnectionPoint>
  </connection>
  <connection
@@ -92989,11 +93016,11 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>clock_sink</endConnectionPoint>
  </connection>
  <connection
-   name="clk_0.clk/adc_ltc2308_0.clock_sink"
+   name="clk_0.clk/MYOControl_1.clock_sink"
    kind="clock"
    version="17.0"
    start="clk_0.clk"
-   end="adc_ltc2308_0.clock_sink">
+   end="MYOControl_1.clock_sink">
   <parameter name="deviceFamily">
    <type>java.lang.String</type>
    <value>UNKNOWN</value>
@@ -93012,34 +93039,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <startModule>clk_0</startModule>
   <startConnectionPoint>clk</startConnectionPoint>
-  <endModule>adc_ltc2308_0</endModule>
-  <endConnectionPoint>clock_sink</endConnectionPoint>
- </connection>
- <connection
-   name="clk_0.clk/I2C_2.clock_sink"
-   kind="clock"
-   version="17.0"
-   start="clk_0.clk"
-   end="I2C_2.clock_sink">
-  <parameter name="deviceFamily">
-   <type>java.lang.String</type>
-   <value>UNKNOWN</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="generateLegacySim">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <startModule>clk_0</startModule>
-  <startConnectionPoint>clk</startConnectionPoint>
-  <endModule>I2C_2</endModule>
+  <endModule>MYOControl_1</endModule>
   <endConnectionPoint>clock_sink</endConnectionPoint>
  </connection>
  <connection
@@ -93097,11 +93097,11 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>clock_sink</endConnectionPoint>
  </connection>
  <connection
-   name="clk_0.clk/DarkRoom_0.clock_sink"
+   name="clk_0.clk/I2C_2.clock_sink"
    kind="clock"
    version="17.0"
    start="clk_0.clk"
-   end="DarkRoom_0.clock_sink">
+   end="I2C_2.clock_sink">
   <parameter name="deviceFamily">
    <type>java.lang.String</type>
    <value>UNKNOWN</value>
@@ -93120,34 +93120,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <startModule>clk_0</startModule>
   <startConnectionPoint>clk</startConnectionPoint>
-  <endModule>DarkRoom_0</endModule>
-  <endConnectionPoint>clock_sink</endConnectionPoint>
- </connection>
- <connection
-   name="clk_0.clk/DarkRoomOOTXdecoder_0.clock_sink"
-   kind="clock"
-   version="17.0"
-   start="clk_0.clk"
-   end="DarkRoomOOTXdecoder_0.clock_sink">
-  <parameter name="deviceFamily">
-   <type>java.lang.String</type>
-   <value>UNKNOWN</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="generateLegacySim">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <startModule>clk_0</startModule>
-  <startConnectionPoint>clk</startConnectionPoint>
-  <endModule>DarkRoomOOTXdecoder_0</endModule>
+  <endModule>I2C_2</endModule>
   <endConnectionPoint>clock_sink</endConnectionPoint>
  </connection>
  <connection
@@ -93175,6 +93148,33 @@ parameters are a RESULT of the module parameters. -->
   <startModule>clk_0</startModule>
   <startConnectionPoint>clk</startConnectionPoint>
   <endModule>I2C_3</endModule>
+  <endConnectionPoint>clock_sink</endConnectionPoint>
+ </connection>
+ <connection
+   name="clk_0.clk/adc_ltc2308_0.clock_sink"
+   kind="clock"
+   version="17.0"
+   start="clk_0.clk"
+   end="adc_ltc2308_0.clock_sink">
+  <parameter name="deviceFamily">
+   <type>java.lang.String</type>
+   <value>UNKNOWN</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="generateLegacySim">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <startModule>clk_0</startModule>
+  <startConnectionPoint>clk</startConnectionPoint>
+  <endModule>adc_ltc2308_0</endModule>
   <endConnectionPoint>clock_sink</endConnectionPoint>
  </connection>
  <connection
@@ -93348,11 +93348,11 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>reset</endConnectionPoint>
  </connection>
  <connection
-   name="clk_0.clk_reset/MYOControl_0.reset"
+   name="clk_0.clk_reset/DarkRoom_0.reset"
    kind="reset"
    version="17.0"
    start="clk_0.clk_reset"
-   end="MYOControl_0.reset">
+   end="DarkRoom_0.reset">
   <parameter name="deviceFamily">
    <type>java.lang.String</type>
    <value>UNKNOWN</value>
@@ -93371,61 +93371,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <startModule>clk_0</startModule>
   <startConnectionPoint>clk_reset</startConnectionPoint>
-  <endModule>MYOControl_0</endModule>
-  <endConnectionPoint>reset</endConnectionPoint>
- </connection>
- <connection
-   name="clk_0.clk_reset/MYOControl_1.reset"
-   kind="reset"
-   version="17.0"
-   start="clk_0.clk_reset"
-   end="MYOControl_1.reset">
-  <parameter name="deviceFamily">
-   <type>java.lang.String</type>
-   <value>UNKNOWN</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="generateLegacySim">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <startModule>clk_0</startModule>
-  <startConnectionPoint>clk_reset</startConnectionPoint>
-  <endModule>MYOControl_1</endModule>
-  <endConnectionPoint>reset</endConnectionPoint>
- </connection>
- <connection
-   name="clk_0.clk_reset/pll_40MHz.reset"
-   kind="reset"
-   version="17.0"
-   start="clk_0.clk_reset"
-   end="pll_40MHz.reset">
-  <parameter name="deviceFamily">
-   <type>java.lang.String</type>
-   <value>UNKNOWN</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="generateLegacySim">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <startModule>clk_0</startModule>
-  <startConnectionPoint>clk_reset</startConnectionPoint>
-  <endModule>pll_40MHz</endModule>
+  <endModule>DarkRoom_0</endModule>
   <endConnectionPoint>reset</endConnectionPoint>
  </connection>
  <connection
@@ -93483,11 +93429,11 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>reset</endConnectionPoint>
  </connection>
  <connection
-   name="clk_0.clk_reset/I2C_2.reset"
+   name="clk_0.clk_reset/DarkRoomOOTXdecoder_0.reset"
    kind="reset"
    version="17.0"
    start="clk_0.clk_reset"
-   end="I2C_2.reset">
+   end="DarkRoomOOTXdecoder_0.reset">
   <parameter name="deviceFamily">
    <type>java.lang.String</type>
    <value>UNKNOWN</value>
@@ -93506,15 +93452,15 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <startModule>clk_0</startModule>
   <startConnectionPoint>clk_reset</startConnectionPoint>
-  <endModule>I2C_2</endModule>
+  <endModule>DarkRoomOOTXdecoder_0</endModule>
   <endConnectionPoint>reset</endConnectionPoint>
  </connection>
  <connection
-   name="clk_0.clk_reset/I2C_1.reset"
+   name="clk_0.clk_reset/MYOControl_0.reset"
    kind="reset"
    version="17.0"
    start="clk_0.clk_reset"
-   end="I2C_1.reset">
+   end="MYOControl_0.reset">
   <parameter name="deviceFamily">
    <type>java.lang.String</type>
    <value>UNKNOWN</value>
@@ -93533,7 +93479,34 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <startModule>clk_0</startModule>
   <startConnectionPoint>clk_reset</startConnectionPoint>
-  <endModule>I2C_1</endModule>
+  <endModule>MYOControl_0</endModule>
+  <endConnectionPoint>reset</endConnectionPoint>
+ </connection>
+ <connection
+   name="clk_0.clk_reset/MYOControl_1.reset"
+   kind="reset"
+   version="17.0"
+   start="clk_0.clk_reset"
+   end="MYOControl_1.reset">
+  <parameter name="deviceFamily">
+   <type>java.lang.String</type>
+   <value>UNKNOWN</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="generateLegacySim">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <startModule>clk_0</startModule>
+  <startConnectionPoint>clk_reset</startConnectionPoint>
+  <endModule>MYOControl_1</endModule>
   <endConnectionPoint>reset</endConnectionPoint>
  </connection>
  <connection
@@ -93564,11 +93537,11 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>reset</endConnectionPoint>
  </connection>
  <connection
-   name="clk_0.clk_reset/DarkRoom_0.reset"
+   name="clk_0.clk_reset/I2C_1.reset"
    kind="reset"
    version="17.0"
    start="clk_0.clk_reset"
-   end="DarkRoom_0.reset">
+   end="I2C_1.reset">
   <parameter name="deviceFamily">
    <type>java.lang.String</type>
    <value>UNKNOWN</value>
@@ -93587,15 +93560,15 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <startModule>clk_0</startModule>
   <startConnectionPoint>clk_reset</startConnectionPoint>
-  <endModule>DarkRoom_0</endModule>
+  <endModule>I2C_1</endModule>
   <endConnectionPoint>reset</endConnectionPoint>
  </connection>
  <connection
-   name="clk_0.clk_reset/DarkRoomOOTXdecoder_0.reset"
+   name="clk_0.clk_reset/I2C_2.reset"
    kind="reset"
    version="17.0"
    start="clk_0.clk_reset"
-   end="DarkRoomOOTXdecoder_0.reset">
+   end="I2C_2.reset">
   <parameter name="deviceFamily">
    <type>java.lang.String</type>
    <value>UNKNOWN</value>
@@ -93614,7 +93587,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <startModule>clk_0</startModule>
   <startConnectionPoint>clk_reset</startConnectionPoint>
-  <endModule>DarkRoomOOTXdecoder_0</endModule>
+  <endModule>I2C_2</endModule>
   <endConnectionPoint>reset</endConnectionPoint>
  </connection>
  <connection
@@ -93642,6 +93615,33 @@ parameters are a RESULT of the module parameters. -->
   <startModule>clk_0</startModule>
   <startConnectionPoint>clk_reset</startConnectionPoint>
   <endModule>I2C_3</endModule>
+  <endConnectionPoint>reset</endConnectionPoint>
+ </connection>
+ <connection
+   name="clk_0.clk_reset/pll_40MHz.reset"
+   kind="reset"
+   version="17.0"
+   start="clk_0.clk_reset"
+   end="pll_40MHz.reset">
+  <parameter name="deviceFamily">
+   <type>java.lang.String</type>
+   <value>UNKNOWN</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="generateLegacySim">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <startModule>clk_0</startModule>
+  <startConnectionPoint>clk_reset</startConnectionPoint>
+  <endModule>pll_40MHz</endModule>
   <endConnectionPoint>reset</endConnectionPoint>
  </connection>
  <connection
