@@ -172,7 +172,7 @@ module soc_system (
 	wire  [31:0] mm_interconnect_0_jtag_uart_avalon_jtag_slave_writedata;            // mm_interconnect_0:jtag_uart_avalon_jtag_slave_writedata -> jtag_uart:av_writedata
 	wire  [31:0] mm_interconnect_0_darkroom_0_avalon_slave_0_readdata;               // DarkRoom_0:readdata -> mm_interconnect_0:DarkRoom_0_avalon_slave_0_readdata
 	wire         mm_interconnect_0_darkroom_0_avalon_slave_0_waitrequest;            // DarkRoom_0:waitrequest -> mm_interconnect_0:DarkRoom_0_avalon_slave_0_waitrequest
-	wire   [6:0] mm_interconnect_0_darkroom_0_avalon_slave_0_address;                // mm_interconnect_0:DarkRoom_0_avalon_slave_0_address -> DarkRoom_0:address
+	wire   [8:0] mm_interconnect_0_darkroom_0_avalon_slave_0_address;                // mm_interconnect_0:DarkRoom_0_avalon_slave_0_address -> DarkRoom_0:address
 	wire         mm_interconnect_0_darkroom_0_avalon_slave_0_read;                   // mm_interconnect_0:DarkRoom_0_avalon_slave_0_read -> DarkRoom_0:read
 	wire  [31:0] mm_interconnect_0_darkroomootxdecoder_0_avalon_slave_0_readdata;    // DarkRoomOOTXdecoder_0:readdata -> mm_interconnect_0:DarkRoomOOTXdecoder_0_avalon_slave_0_readdata
 	wire         mm_interconnect_0_darkroomootxdecoder_0_avalon_slave_0_waitrequest; // DarkRoomOOTXdecoder_0:waitrequest -> mm_interconnect_0:DarkRoomOOTXdecoder_0_avalon_slave_0_waitrequest

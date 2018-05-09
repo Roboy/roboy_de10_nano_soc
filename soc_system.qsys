@@ -21,7 +21,7 @@
    {
       datum baseAddress
       {
-         value = "512";
+         value = "2048";
          type = "String";
       }
    }
@@ -53,7 +53,7 @@
    {
       datum baseAddress
       {
-         value = "864";
+         value = "2400";
          type = "String";
       }
    }
@@ -69,7 +69,7 @@
    {
       datum baseAddress
       {
-         value = "832";
+         value = "2368";
          type = "String";
       }
    }
@@ -85,7 +85,7 @@
    {
       datum baseAddress
       {
-         value = "800";
+         value = "2336";
          type = "String";
       }
    }
@@ -101,7 +101,7 @@
    {
       datum baseAddress
       {
-         value = "768";
+         value = "2304";
          type = "String";
       }
    }
@@ -117,7 +117,7 @@
    {
       datum baseAddress
       {
-         value = "912";
+         value = "2448";
          type = "String";
       }
    }
@@ -165,7 +165,7 @@
    {
       datum baseAddress
       {
-         value = "896";
+         value = "2432";
          type = "String";
       }
    }
@@ -181,7 +181,7 @@
    {
       datum baseAddress
       {
-         value = "928";
+         value = "2464";
          type = "String";
       }
    }
@@ -243,6 +243,14 @@
       {
          value = "15";
          type = "int";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
       }
    }
    element soc_system
@@ -1589,7 +1597,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="DarkRoomOOTXdecoder_0.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0200" />
+  <parameter name="baseAddress" value="0x0800" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1616,7 +1624,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="I2C_0.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0360" />
+  <parameter name="baseAddress" value="0x0960" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1625,7 +1633,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="I2C_1.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0340" />
+  <parameter name="baseAddress" value="0x0940" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1634,7 +1642,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="I2C_2.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0320" />
+  <parameter name="baseAddress" value="0x0920" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1643,7 +1651,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="I2C_3.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0300" />
+  <parameter name="baseAddress" value="0x0900" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1661,7 +1669,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="LED.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0390" />
+  <parameter name="baseAddress" value="0x0990" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1670,7 +1678,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="SWITCHES.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0380" />
+  <parameter name="baseAddress" value="0x0980" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1679,7 +1687,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="adc_ltc2308_0.slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x03a0" />
+  <parameter name="baseAddress" value="0x09a0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection kind="clock" version="17.0" start="clk_0.clk" end="sysid_qsys.clk" />

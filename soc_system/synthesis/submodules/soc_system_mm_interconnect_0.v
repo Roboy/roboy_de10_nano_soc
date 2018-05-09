@@ -52,7 +52,7 @@ module soc_system_mm_interconnect_0 (
 		input  wire [15:0] adc_ltc2308_0_slave_readdata,                                        //                                                              .readdata
 		output wire [15:0] adc_ltc2308_0_slave_writedata,                                       //                                                              .writedata
 		output wire        adc_ltc2308_0_slave_chipselect,                                      //                                                              .chipselect
-		output wire [6:0]  DarkRoom_0_avalon_slave_0_address,                                   //                                     DarkRoom_0_avalon_slave_0.address
+		output wire [8:0]  DarkRoom_0_avalon_slave_0_address,                                   //                                     DarkRoom_0_avalon_slave_0.address
 		output wire        DarkRoom_0_avalon_slave_0_read,                                      //                                                              .read
 		input  wire [31:0] DarkRoom_0_avalon_slave_0_readdata,                                  //                                                              .readdata
 		input  wire        DarkRoom_0_avalon_slave_0_waitrequest,                               //                                                              .waitrequest
@@ -1254,7 +1254,7 @@ module soc_system_mm_interconnect_0 (
 	);
 
 	altera_merlin_slave_translator #(
-		.AV_ADDRESS_W                   (7),
+		.AV_ADDRESS_W                   (9),
 		.AV_DATA_W                      (32),
 		.UAV_DATA_W                     (32),
 		.AV_BURSTCOUNT_W                (1),
