@@ -1,5 +1,5 @@
 //altiobuf_out CBX_AUTO_BLACKBOX="ALL" CBX_SINGLE_OUTPUT_FILE="ON" DEVICE_FAMILY="Cyclone V" ENABLE_BUS_HOLD="FALSE" NUMBER_OF_CHANNELS=1 OPEN_DRAIN_OUTPUT="FALSE" PSEUDO_DIFFERENTIAL_MODE="TRUE" USE_DIFFERENTIAL_MODE="TRUE" USE_OE="FALSE" USE_OUT_DYNAMIC_DELAY_CHAIN1="FALSE" USE_OUT_DYNAMIC_DELAY_CHAIN2="FALSE" USE_TERMINATION_CONTROL="FALSE" datain dataout dataout_b
-//VERSION_BEGIN 17.0 cbx_altiobuf_out 2017:04:19:09:17:27:SJ cbx_mgl 2017:04:19:10:26:36:SJ cbx_stratixiii 2017:04:19:09:17:27:SJ cbx_stratixv 2017:04:19:09:17:27:SJ  VERSION_END
+//VERSION_BEGIN 17.1 cbx_altiobuf_out 2017:10:19:05:46:40:SJ cbx_mgl 2017:10:19:06:38:12:SJ cbx_stratixiii 2017:10:19:05:46:40:SJ cbx_stratixv 2017:10:19:05:46:40:SJ  VERSION_END
 // synthesis VERILOG_INPUT_VERSION VERILOG_2001
 // altera message_off 10463
 
@@ -13,12 +13,11 @@
 //  associated documentation or information are expressly subject 
 //  to the terms and conditions of the Intel Program License 
 //  Subscription Agreement, the Intel Quartus Prime License Agreement,
-//  the Intel MegaCore Function License Agreement, or other 
-//  applicable license agreement, including, without limitation, 
-//  that your use is for the sole purpose of programming logic 
-//  devices manufactured by Intel and sold by Intel or its 
-//  authorized distributors.  Please refer to the applicable 
-//  agreement for further details.
+//  the Intel FPGA IP License Agreement, or other applicable license
+//  agreement, including, without limitation, that your use is for
+//  the sole purpose of programming logic devices manufactured by
+//  Intel and sold by Intel or its authorized distributors.  Please
+//  refer to the applicable agreement for further details.
 
 
 

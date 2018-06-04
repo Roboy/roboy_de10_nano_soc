@@ -75,14 +75,6 @@ module soc_system (
 	i2c_1_conduit_end_sda,
 	i2c_1_conduit_end_led,
 	i2c_1_conduit_end_gpio,
-	i2c_2_conduit_end_scl,
-	i2c_2_conduit_end_sda,
-	i2c_2_conduit_end_led,
-	i2c_2_conduit_end_gpio,
-	i2c_3_conduit_end_scl,
-	i2c_3_conduit_end_sda,
-	i2c_3_conduit_end_led,
-	i2c_3_conduit_end_gpio,
 	led_external_connection_export,
 	memory_mem_a,
 	memory_mem_ba,
@@ -130,12 +122,12 @@ module soc_system (
 	output		darkroom_0_conduit_end_sck_o;
 	output		darkroom_0_conduit_end_ss_n_o;
 	input		darkroom_0_conduit_end_trigger_me;
-	output	[14:0]	darkroom_0_conduit_end_sync_o;
-	inout	[14:0]	darkroom_0_conduit_end_d_io;
-	inout	[14:0]	darkroom_0_conduit_end_e_io;
+	output	[15:0]	darkroom_0_conduit_end_sync_o;
+	inout	[15:0]	darkroom_0_conduit_end_d_io;
+	inout	[15:0]	darkroom_0_conduit_end_e_io;
 	output	[7:0]	darkroomootxdecoder_0_conduit_end_led;
 	output		darkroomootxdecoder_0_conduit_end_uart_tx;
-	input	[14:0]	darkroomootxdecoder_0_conduit_end_sensor_signals;
+	input	[15:0]	darkroomootxdecoder_0_conduit_end_sensor_signals;
 	input		hps_0_f2h_cold_reset_req_reset_n;
 	input		hps_0_f2h_debug_reset_req_reset_n;
 	input		hps_0_f2h_warm_reset_req_reset_n;
@@ -196,14 +188,6 @@ module soc_system (
 	inout		i2c_1_conduit_end_sda;
 	output	[6:0]	i2c_1_conduit_end_led;
 	output	[2:0]	i2c_1_conduit_end_gpio;
-	inout		i2c_2_conduit_end_scl;
-	inout		i2c_2_conduit_end_sda;
-	output	[6:0]	i2c_2_conduit_end_led;
-	output	[2:0]	i2c_2_conduit_end_gpio;
-	inout		i2c_3_conduit_end_scl;
-	inout		i2c_3_conduit_end_sda;
-	output	[6:0]	i2c_3_conduit_end_led;
-	output	[2:0]	i2c_3_conduit_end_gpio;
 	output	[7:0]	led_external_connection_export;
 	output	[14:0]	memory_mem_a;
 	output	[2:0]	memory_mem_ba;
