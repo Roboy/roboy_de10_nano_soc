@@ -74,9 +74,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.8089458"
-     inkscape:cx="183.55219"
-     inkscape:cy="404.40947"
+     inkscape:zoom="1.4044729"
+     inkscape:cx="380.89293"
+     inkscape:cy="375.79201"
      inkscape:document-units="px"
      inkscape:current-layer="g6310"
      showgrid="false"
@@ -241,7 +241,7 @@
            y="529.10089"
            x="70.141151"
            id="tspan4310-9-6-6"
-           sodipodi:role="line">SS1[8]</tspan></text>
+           sodipodi:role="line">SS1[9]</tspan></text>
       <text
          sodipodi:linespacing="125%"
          id="text4308-0-0-9"
@@ -255,7 +255,7 @@
            y="529.13623"
            x="294.85275"
            sodipodi:role="line"
-           id="tspan4552">SS1[9]</tspan></text>
+           id="tspan4552">SS1[8]</tspan></text>
       <text
          sodipodi:linespacing="125%"
          id="text4308-0-0-2-0"
@@ -269,7 +269,7 @@
            y="514.67999"
            x="70.141151"
            id="tspan4310-9-6-6-2"
-           sodipodi:role="line">SS1[10]</tspan></text>
+           sodipodi:role="line">SS1[11]</tspan></text>
       <text
          sodipodi:linespacing="125%"
          id="text4308-0-0-7"
@@ -283,7 +283,7 @@
            y="514.19806"
            x="288.10605"
            id="tspan4310-9-6-5"
-           sodipodi:role="line">SS1[11]</tspan></text>
+           sodipodi:role="line">SS1[10]</tspan></text>
       <text
          sodipodi:linespacing="125%"
          id="text4308-0-0-2-9"
@@ -297,7 +297,7 @@
            y="500.25906"
            x="70.141151"
            id="tspan4310-9-6-6-22"
-           sodipodi:role="line">SS1[12]</tspan></text>
+           sodipodi:role="line">SS1[13]</tspan></text>
       <text
          sodipodi:linespacing="125%"
          id="text4308-0-0-6"
@@ -311,7 +311,7 @@
            y="721.98877"
            x="294.85275"
            id="tspan4310-9-6-1"
-           sodipodi:role="line">SS0[6]</tspan></text>
+           sodipodi:role="line">SS0[5]</tspan></text>
       <text
          sodipodi:linespacing="125%"
          id="text4308-0-0-2-5"
@@ -325,7 +325,7 @@
            y="722.22662"
            x="70.141151"
            id="tspan4310-9-6-6-5"
-           sodipodi:role="line">SS0[5]</tspan></text>
+           sodipodi:role="line">SS0[6]</tspan></text>
       <text
          sodipodi:linespacing="125%"
          id="text4308-0-0-9-7"
@@ -339,7 +339,7 @@
            y="736.53418"
            x="294.85275"
            sodipodi:role="line"
-           id="tspan4552-6">SS0[4]</tspan></text>
+           id="tspan4552-6">SS0[3]</tspan></text>
       <text
          sodipodi:linespacing="125%"
          id="text4308-0-0-2-0-5"
@@ -353,7 +353,7 @@
            y="736.90137"
            x="70.141151"
            id="tspan4310-9-6-6-2-6"
-           sodipodi:role="line">SS0[3]</tspan></text>
+           sodipodi:role="line">SS0[4]</tspan></text>
       <text
          sodipodi:linespacing="125%"
          id="text4308-0-0-7-3"
@@ -367,7 +367,7 @@
            y="751.07965"
            x="294.85275"
            id="tspan4310-9-6-5-7"
-           sodipodi:role="line">SS0[2]</tspan></text>
+           sodipodi:role="line">SS0[1]</tspan></text>
       <text
          sodipodi:linespacing="125%"
          id="text4308-0-0-2-9-4"
@@ -381,7 +381,7 @@
            y="751.57617"
            x="70.141151"
            id="tspan4310-9-6-6-22-5"
-           sodipodi:role="line">SS0[1]</tspan></text>
+           sodipodi:role="line">SS0[2]</tspan></text>
       <text
          sodipodi:linespacing="125%"
          id="text4308-7"
@@ -427,15 +427,15 @@
       <text
          sodipodi:linespacing="125%"
          id="text4308-0-0-2-9-4-6"
-         y="603.07062"
-         x="70.141151"
+         y="589.54242"
+         x="294.06857"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.62741756px;line-height:125%;font-family:Courier;-inkscape-font-specification:Courier;letter-spacing:0px;word-spacing:0px;fill:#0080ff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          xml:space="preserve"
          inkscape:export-xdpi="300"
          inkscape:export-ydpi="300"><tspan
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.25185966px;font-family:Courier;-inkscape-font-specification:Courier;fill:#0080ff;fill-opacity:1"
-           y="603.07062"
-           x="70.141151"
+           y="589.54242"
+           x="294.06857"
            id="tspan4310-9-6-6-22-5-8"
            sodipodi:role="line">SCL[1]</tspan></text>
       <text
@@ -731,7 +731,7 @@
            id="tspan4310-9-6-6-22-5-8-0-8-6-0-1-8-4"
            x="111.49818"
            y="249.48251"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.25185966px;font-family:Courier;-inkscape-font-specification:Courier;fill:#ff8018;fill-opacity:1">LS_D[0-14]         DarkRoom Lighthouse Sensor TS4231 data lines</tspan></text>
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.25185966px;font-family:Courier;-inkscape-font-specification:Courier;fill:#ff8018;fill-opacity:1">LS_D[0-15]         DarkRoom Lighthouse Sensor TS4231 data lines</tspan></text>
       <text
          sodipodi:linespacing="125%"
          id="text4308-7-8-3"
@@ -843,15 +843,15 @@
       <text
          sodipodi:linespacing="125%"
          id="text4308-0-0-2-9-4-6-8-2"
-         y="588.31799"
-         x="294.85275"
+         y="602.55823"
+         x="69.501305"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.62741756px;line-height:125%;font-family:Courier;-inkscape-font-specification:Courier;letter-spacing:0px;word-spacing:0px;fill:#0080ff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          xml:space="preserve"
          inkscape:export-xdpi="300"
          inkscape:export-ydpi="300"><tspan
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.25185966px;font-family:Courier;-inkscape-font-specification:Courier;fill:#0080ff;fill-opacity:1"
-           y="588.31799"
-           x="294.85275"
+           y="602.55823"
+           x="69.501305"
            id="tspan4310-9-6-6-22-5-8-4-7"
            sodipodi:role="line">SDA[0]</tspan></text>
       <text
@@ -884,78 +884,50 @@
            sodipodi:role="line">GP1[0-1]           GPIO pins controlled by I2C core 1</tspan></text>
       <text
          sodipodi:linespacing="125%"
-         id="text4308-0-0-2-9-4-6-80"
-         y="617.82324"
-         x="70.141151"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.62741756px;line-height:125%;font-family:Courier;-inkscape-font-specification:Courier;letter-spacing:0px;word-spacing:0px;fill:#0080ff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         xml:space="preserve"
-         inkscape:export-xdpi="300"
-         inkscape:export-ydpi="300"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.25185966px;font-family:Courier;-inkscape-font-specification:Courier;fill:#0080ff;fill-opacity:1"
-           y="617.82324"
-           x="70.141151"
-           id="tspan4310-9-6-6-22-5-8-3"
-           sodipodi:role="line">SCL[2]</tspan></text>
-      <text
-         sodipodi:linespacing="125%"
-         id="text4308-0-0-2-9-4-6-8-1"
-         y="617.82324"
-         x="294.85275"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.62741756px;line-height:125%;font-family:Courier;-inkscape-font-specification:Courier;letter-spacing:0px;word-spacing:0px;fill:#0080ff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         xml:space="preserve"
-         inkscape:export-xdpi="300"
-         inkscape:export-ydpi="300"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.25185966px;font-family:Courier;-inkscape-font-specification:Courier;fill:#0080ff;fill-opacity:1"
-           y="617.82324"
-           x="294.85275"
-           id="tspan4310-9-6-6-22-5-8-4-0"
-           sodipodi:role="line">SDA[2]</tspan></text>
-      <text
-         sodipodi:linespacing="125%"
          id="text4308-0-0-2-9-4-6-8-3-2-6"
-         y="632.57581"
-         x="291.38031"
+         y="617.97955"
+         x="70.300926"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.62741756px;line-height:125%;font-family:Courier;-inkscape-font-specification:Courier;letter-spacing:0px;word-spacing:0px;fill:#3b1946;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          xml:space="preserve"><tspan
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.25185966px;font-family:Courier;-inkscape-font-specification:Courier;fill:#3b1946;fill-opacity:1"
-           y="632.57581"
-           x="291.38031"
+           y="617.97955"
+           x="70.300926"
            id="tspan4310-9-6-6-22-5-8-4-6-6-7"
            sodipodi:role="line">GP0[0] </tspan></text>
       <text
          sodipodi:linespacing="125%"
          id="text4308-0-0-2-9-4-6-8-3-2-6-5"
-         y="632.57581"
-         x="70.714996"
+         y="617.26758"
+         x="294.28641"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.62741756px;line-height:125%;font-family:Courier;-inkscape-font-specification:Courier;letter-spacing:0px;word-spacing:0px;fill:#3b1946;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          xml:space="preserve"><tspan
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.25185966px;font-family:Courier;-inkscape-font-specification:Courier;fill:#3b1946;fill-opacity:1"
-           y="632.57581"
-           x="70.714996"
+           y="617.26758"
+           x="294.28641"
            id="tspan4310-9-6-6-22-5-8-4-6-6-7-3"
            sodipodi:role="line">GP1[0] </tspan></text>
       <text
          sodipodi:linespacing="125%"
          id="text4308-0-0-2-9-4-6-8-3-2-6-2"
-         y="647.32849"
-         x="291.38031"
+         y="632.73224"
+         x="70.300926"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.62741756px;line-height:125%;font-family:Courier;-inkscape-font-specification:Courier;letter-spacing:0px;word-spacing:0px;fill:#3b1946;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          xml:space="preserve"><tspan
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.25185966px;font-family:Courier;-inkscape-font-specification:Courier;fill:#3b1946;fill-opacity:1"
-           y="647.32849"
-           x="291.38031"
+           y="632.73224"
+           x="70.300926"
            id="tspan4310-9-6-6-22-5-8-4-6-6-7-1"
            sodipodi:role="line">GP0[1] </tspan></text>
       <text
          sodipodi:linespacing="125%"
          id="text4308-0-0-2-9-4-6-8-3-2-6-2-3"
-         y="647.32849"
-         x="70.714996"
+         y="632.02026"
+         x="294.28641"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.62741756px;line-height:125%;font-family:Courier;-inkscape-font-specification:Courier;letter-spacing:0px;word-spacing:0px;fill:#3b1946;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          xml:space="preserve"><tspan
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.25185966px;font-family:Courier;-inkscape-font-specification:Courier;fill:#3b1946;fill-opacity:1"
-           y="647.32849"
-           x="70.714996"
+           y="632.02026"
+           x="294.28641"
            id="tspan4310-9-6-6-22-5-8-4-6-6-7-1-8"
            sodipodi:role="line">GP1[1] </tspan></text>
       <text
@@ -975,25 +947,25 @@
       <text
          sodipodi:linespacing="125%"
          id="text4308-0-0-2-9-4-6-8-3-2-6-2-36"
-         y="662.08105"
-         x="291.38031"
+         y="647.4848"
+         x="70.300926"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.62741756px;line-height:125%;font-family:Courier;-inkscape-font-specification:Courier;letter-spacing:0px;word-spacing:0px;fill:#3b1946;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          xml:space="preserve"><tspan
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.25185966px;font-family:Courier;-inkscape-font-specification:Courier;fill:#3b1946;fill-opacity:1"
-           y="662.08105"
-           x="291.38031"
+           y="647.4848"
+           x="70.300926"
            id="tspan4310-9-6-6-22-5-8-4-6-6-7-1-7"
            sodipodi:role="line">GP0[2] </tspan></text>
       <text
          sodipodi:linespacing="125%"
          id="text4308-0-0-2-9-4-6-8-3-2-6-2-3-53"
-         y="662.08105"
-         x="70.714996"
+         y="646.77283"
+         x="294.28641"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.62741756px;line-height:125%;font-family:Courier;-inkscape-font-specification:Courier;letter-spacing:0px;word-spacing:0px;fill:#3b1946;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          xml:space="preserve"><tspan
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.25185966px;font-family:Courier;-inkscape-font-specification:Courier;fill:#3b1946;fill-opacity:1"
-           y="662.08105"
-           x="70.714996"
+           y="646.77283"
+           x="294.28641"
            id="tspan4310-9-6-6-22-5-8-4-6-6-7-1-8-5"
            sodipodi:role="line">GP1[2] </tspan></text>
       <text
@@ -1051,7 +1023,7 @@
            y="499.25986"
            x="288.10605"
            id="tspan4310-9-6-6-22-53"
-           sodipodi:role="line">SS1[13]</tspan></text>
+           sodipodi:role="line">SS1[12]</tspan></text>
       <text
          xml:space="preserve"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.62741756px;line-height:125%;font-family:Courier;-inkscape-font-specification:Courier;letter-spacing:0px;word-spacing:0px;fill:#ff00ff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -1082,7 +1054,7 @@
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.25185966px;font-family:Courier;-inkscape-font-specification:Courier;fill:#ff00ff;fill-opacity:1">PWR_S </tspan></text>
       <text
          xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.62741756px;line-height:125%;font-family:Courier;-inkscape-font-specification:Courier;letter-spacing:0px;word-spacing:0px;fill:#ffcc00;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.62741756px;line-height:125%;font-family:Courier;-inkscape-font-specification:Courier;letter-spacing:0px;word-spacing:0px;fill:#808000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
          x="111.62195"
          y="300.68439"
          id="text4308-0-0-2-9-4-6-2-1-8-3-3"
@@ -1093,10 +1065,10 @@
            id="tspan4310-9-6-6-22-5-8-0-5-9-6-6"
            x="111.62195"
            y="300.68439"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.25185966px;font-family:Courier;-inkscape-font-specification:Courier;fill:#ffcc00;fill-opacity:1">GPIO               gpio, controlled by myoControl[0]</tspan></text>
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.25185966px;font-family:Courier;-inkscape-font-specification:Courier;fill:#808000;fill-opacity:1;">GPIO               gpio, controlled by myoControl[0]</tspan></text>
       <text
          xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.62741756px;line-height:125%;font-family:Courier;-inkscape-font-specification:Courier;letter-spacing:0px;word-spacing:0px;fill:#ffcc00;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.62741756px;line-height:125%;font-family:Courier;-inkscape-font-specification:Courier;letter-spacing:0px;word-spacing:0px;fill:#808000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
          x="304.87378"
          y="690.85059"
          id="text4308-0-0-2-9-4-6-2-1-8-3-3-7"
@@ -1107,7 +1079,7 @@
            id="tspan4310-9-6-6-22-5-8-0-5-9-6-6-5"
            x="304.87378"
            y="690.85059"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.25185966px;font-family:Courier;-inkscape-font-specification:Courier;fill:#ffcc00;fill-opacity:1">GPIO </tspan></text>
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.25185966px;font-family:Courier;-inkscape-font-specification:Courier;fill:#808000;fill-opacity:1;">GPIO </tspan></text>
       <text
          xml:space="preserve"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.62741756px;line-height:125%;font-family:Courier;-inkscape-font-specification:Courier;letter-spacing:0px;word-spacing:0px;fill:#ff8018;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -1121,7 +1093,7 @@
            id="tspan4310-9-6-6-22-5-8-0-8-6-0-1-8-4-6"
            x="111.49818"
            y="262.28302"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.25185966px;font-family:Courier;-inkscape-font-specification:Courier;fill:#ff8018;fill-opacity:1">LS_E[0-14]         DarkRoom Lighthouse Sensor TS4231 envelope lines</tspan></text>
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.25185966px;font-family:Courier;-inkscape-font-specification:Courier;fill:#ff8018;fill-opacity:1">LS_E[0-15]         DarkRoom Lighthouse Sensor TS4231 envelope lines</tspan></text>
       <text
          xml:space="preserve"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.62741756px;line-height:125%;font-family:Courier;-inkscape-font-specification:Courier;letter-spacing:0px;word-spacing:0px;fill:#ff8018;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
