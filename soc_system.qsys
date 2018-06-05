@@ -605,6 +605,142 @@
          type = "String";
       }
    }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
    element sysid_qsys
    {
       datum _sortIndex
@@ -1561,9 +1697,18 @@
    kind="avalon"
    version="17.1"
    start="hps_0.h2f_lw_axi_master"
-   end="I2C_1.avalon_slave_0">
+   end="MYOControl_1.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0920" />
+  <parameter name="baseAddress" value="0x00080000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="17.1"
+   start="hps_0.h2f_lw_axi_master"
+   end="MYOControl_0.avalon_slave_0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x00040000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1579,18 +1724,9 @@
    kind="avalon"
    version="17.1"
    start="hps_0.h2f_lw_axi_master"
-   end="MYOControl_1.avalon_slave_0">
+   end="I2C_1.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00080000" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="17.1"
-   start="hps_0.h2f_lw_axi_master"
-   end="MYOControl_0.avalon_slave_0">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00040000" />
+  <parameter name="baseAddress" value="0x0920" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1655,19 +1791,19 @@
    kind="clock"
    version="17.1"
    start="clk_0.clk"
-   end="adc_ltc2308_0.clock_sink" />
- <connection kind="clock" version="17.1" start="clk_0.clk" end="I2C_1.clock_sink" />
- <connection kind="clock" version="17.1" start="clk_0.clk" end="I2C_0.clock_sink" />
- <connection
-   kind="clock"
-   version="17.1"
-   start="clk_0.clk"
    end="MYOControl_1.clock_sink" />
  <connection
    kind="clock"
    version="17.1"
    start="clk_0.clk"
    end="MYOControl_0.clock_sink" />
+ <connection kind="clock" version="17.1" start="clk_0.clk" end="I2C_0.clock_sink" />
+ <connection kind="clock" version="17.1" start="clk_0.clk" end="I2C_1.clock_sink" />
+ <connection
+   kind="clock"
+   version="17.1"
+   start="clk_0.clk"
+   end="adc_ltc2308_0.clock_sink" />
  <connection
    kind="clock"
    version="17.1"
@@ -1716,19 +1852,19 @@
    kind="reset"
    version="17.1"
    start="clk_0.clk_reset"
-   end="pll_40MHz.reset" />
- <connection kind="reset" version="17.1" start="clk_0.clk_reset" end="I2C_1.reset" />
- <connection kind="reset" version="17.1" start="clk_0.clk_reset" end="I2C_0.reset" />
- <connection
-   kind="reset"
-   version="17.1"
-   start="clk_0.clk_reset"
    end="MYOControl_1.reset" />
  <connection
    kind="reset"
    version="17.1"
    start="clk_0.clk_reset"
    end="MYOControl_0.reset" />
+ <connection kind="reset" version="17.1" start="clk_0.clk_reset" end="I2C_0.reset" />
+ <connection kind="reset" version="17.1" start="clk_0.clk_reset" end="I2C_1.reset" />
+ <connection
+   kind="reset"
+   version="17.1"
+   start="clk_0.clk_reset"
+   end="pll_40MHz.reset" />
  <connection
    kind="reset"
    version="17.1"
