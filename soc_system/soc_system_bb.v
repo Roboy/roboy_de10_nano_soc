@@ -5,16 +5,6 @@ module soc_system (
 	adc_ltc2308_0_conduit_end_SDI,
 	adc_ltc2308_0_conduit_end_SDO,
 	clk_clk,
-	darkroom_0_conduit_end_mosi_o,
-	darkroom_0_conduit_end_sck_o,
-	darkroom_0_conduit_end_ss_n_o,
-	darkroom_0_conduit_end_trigger_me,
-	darkroom_0_conduit_end_sync_o,
-	darkroom_0_conduit_end_d_io,
-	darkroom_0_conduit_end_e_io,
-	darkroomootxdecoder_0_conduit_end_led,
-	darkroomootxdecoder_0_conduit_end_uart_tx,
-	darkroomootxdecoder_0_conduit_end_sensor_signals,
 	hps_0_f2h_cold_reset_req_reset_n,
 	hps_0_f2h_debug_reset_req_reset_n,
 	hps_0_f2h_warm_reset_req_reset_n,
@@ -118,16 +108,6 @@ module soc_system (
 	output		adc_ltc2308_0_conduit_end_SDI;
 	input		adc_ltc2308_0_conduit_end_SDO;
 	input		clk_clk;
-	output		darkroom_0_conduit_end_mosi_o;
-	output		darkroom_0_conduit_end_sck_o;
-	output		darkroom_0_conduit_end_ss_n_o;
-	input		darkroom_0_conduit_end_trigger_me;
-	output	[15:0]	darkroom_0_conduit_end_sync_o;
-	inout	[15:0]	darkroom_0_conduit_end_d_io;
-	inout	[15:0]	darkroom_0_conduit_end_e_io;
-	output	[7:0]	darkroomootxdecoder_0_conduit_end_led;
-	output		darkroomootxdecoder_0_conduit_end_uart_tx;
-	input	[15:0]	darkroomootxdecoder_0_conduit_end_sensor_signals;
 	input		hps_0_f2h_cold_reset_req_reset_n;
 	input		hps_0_f2h_debug_reset_req_reset_n;
 	input		hps_0_f2h_warm_reset_req_reset_n;
