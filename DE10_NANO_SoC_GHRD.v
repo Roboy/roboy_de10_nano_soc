@@ -122,7 +122,7 @@ soc_system u0(
 					// adc
 					.adc_ltc2308_0_conduit_end_CONVST(ADC_CONVST), 
 					.adc_ltc2308_0_conduit_end_SCK(ADC_SCK), 
-					.adc_ltc2308_0_conduit_end_SDI(ADC_SDI),  
+					.adc_ltc2308_0_conduit_end_SDI(ADC_SDI),   
 					.adc_ltc2308_0_conduit_end_SDO(ADC_SDO),
 					`ifndef USE_ETHERNET_SIDE
 //						// darkroom
