@@ -948,11 +948,11 @@
  </module>
  <module name="MYOControl_0" kind="MYOControl" version="1.0" enabled="1">
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
-  <parameter name="NUMBER_OF_MOTORS" value="7" />
+  <parameter name="NUMBER_OF_MOTORS" value="9" />
  </module>
  <module name="MYOControl_1" kind="MYOControl" version="1.0" enabled="1">
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
-  <parameter name="NUMBER_OF_MOTORS" value="7" />
+  <parameter name="NUMBER_OF_MOTORS" value="4" />
  </module>
  <module name="SWITCHES" kind="altera_avalon_pio" version="17.0" enabled="1">
   <parameter name="bitClearingEdgeCapReg" value="false" />
