@@ -20,8 +20,8 @@ sudo dd if=DE10_nano_lxce_4.9.78-ltsi-altera.img of=/dev/sdX bs=1M status=progre
 * in a terminal execute the folowing commands:
 ```
 #!/bin/bash
-sudo ~/intelFPGA/17.0/quartus/bin/jtagd  # this is the jtag server and should only be started once!!
-sudo ~/intelFPGA/17.0/quartus/bin/jtagconfig 
+sudo ~/intelFPGA/17.1/quartus/bin/jtagd  # this is the jtag server and should only be started once!!
+sudo ~/intelFPGA/17.1/quartus/bin/jtagconfig 
 1) DE-SoC [3-2.1.1]
   4BA00477   SOCVHPS
   02D020DD   5CSEBA6(.|ES)/5CSEMA6/..
