@@ -1,8 +1,12 @@
 # roboy_de10_nano_soc
-golden hardware reference design
+you can download the sd-card image with Ubuntu 16.04, xfce, kernel linux 4.9.78-ltsi from our servers:
+wget -nv http://bot.roboy.org:8081/~roboy/DE10_nano_lxce_4.9.78-ltsi-altera.img
+
+flash the image to a min 8GB sd-card:
+sudo dd if=DE10_nano_lxce_4.9.78-ltsi-altera.img of=/dev/sdX bs=1M status=progress
 
 # dependencies
-(quartus 17.0)[http://dl.altera.com/17.0/?edition=lite]
+(quartus 17.1)[http://dl.altera.com/17.1/?edition=lite]
 
 # build it
 * Open quartus and load the .qpf project.
