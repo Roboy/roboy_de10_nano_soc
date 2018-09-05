@@ -271,7 +271,7 @@ module soc_system (
 	MYOControl #(
 		.NUMBER_OF_MOTORS        (4),
 		.CLOCK_SPEED_HZ          (50000000),
-		.ENABLE_MYOBRICK_CONTROL (0)
+		.ENABLE_MYOBRICK_CONTROL (1)
 	) myocontrol_1 (
 		.reset                (rst_controller_reset_out_reset),                            //          reset.reset
 		.address              (mm_interconnect_0_myocontrol_1_avalon_slave_0_address),     // avalon_slave_0.address

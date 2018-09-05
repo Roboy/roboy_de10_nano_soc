@@ -143,7 +143,7 @@ soc_system u0(
 						.i2c_1_conduit_end_scl(GPIO_0[34]),
 						.i2c_1_conduit_end_sda(GPIO_0[32]), 
 						.i2c_1_conduit_end_gpio({GPIO_0[27],GPIO_0[29],GPIO_0[31]}),
-						// myocontrol, two buses a 7 motors
+						// myocontrol, two buses a 9 and 4 motors respectively
 						.myocontrol_0_conduit_end_mosi(GPIO_0[0]),
 						.myocontrol_0_conduit_end_miso(GPIO_0[1]),
 						.myocontrol_0_conduit_end_sck(GPIO_0[2]),
@@ -151,12 +151,12 @@ soc_system u0(
 						.myocontrol_0_conduit_end_mirrored_muscle_unit(SW[2]==1 && SW[1]==0 && SW[0]==0), // true for switch ID 4
 						.myocontrol_0_conduit_end_power_sense_n(GPIO_0[21] && SW[3]),
 						.myocontrol_0_conduit_end_gpio_n(GPIO_0[23]),
-						.myocontrol_0_conduit_end_scl(GPIO_0[13]),
-						.myocontrol_0_conduit_end_sda(GPIO_0[12]),
 						.myocontrol_1_conduit_end_mosi(GPIO_0[14]),
 						.myocontrol_1_conduit_end_miso(GPIO_0[15]),
 						.myocontrol_1_conduit_end_sck(GPIO_0[16]),
 						.myocontrol_1_conduit_end_ss_n({GPIO_0[20:17]}),
+						.myocontrol_1_conduit_end_scl(GPIO_0[13]),
+						.myocontrol_1_conduit_end_sda(GPIO_0[12]),
 						.myocontrol_1_conduit_end_mirrored_muscle_unit(SW[2]==1 && SW[1]==0 && SW[0]==0), // true for switch ID 4
 						.myocontrol_1_conduit_end_power_sense_n(GPIO_0[21] && SW[3]),
 					`else /*USE_ETHERNET_SIDE*/
@@ -178,7 +178,7 @@ soc_system u0(
 						.i2c_1_conduit_end_scl(GPIO_1[34]),
 						.i2c_1_conduit_end_sda(GPIO_1[32]), 
 						.i2c_1_conduit_end_gpio({GPIO_1[27],GPIO_1[29],GPIO_1[31]}),
-						// myocontrol, two buses a 7 motors
+						// myocontrol, two buses a 9 and 4 motors respectively
 						.myocontrol_0_conduit_end_mosi(GPIO_1[0]),
 						.myocontrol_0_conduit_end_miso(GPIO_1[1]),
 						.myocontrol_0_conduit_end_sck(GPIO_1[2]),
@@ -186,12 +186,12 @@ soc_system u0(
 						.myocontrol_0_conduit_end_mirrored_muscle_unit(SW[2]==1 && SW[1]==0 && SW[0]==0), // true for switch ID 4
 						.myocontrol_0_conduit_end_power_sense_n(GPIO_1[21] && SW[3]),
 						.myocontrol_0_conduit_end_gpio_n(GPIO_1[23]),
-						.myocontrol_0_conduit_end_scl(GPIO_1[13]),
-						.myocontrol_0_conduit_end_sda(GPIO_1[12]),
 						.myocontrol_1_conduit_end_mosi(GPIO_1[14]),
 						.myocontrol_1_conduit_end_miso(GPIO_1[15]),
 						.myocontrol_1_conduit_end_sck(GPIO_1[16]),
 						.myocontrol_1_conduit_end_ss_n({GPIO_1[20:17]}),
+						.myocontrol_1_conduit_end_scl(GPIO_1[13]),
+						.myocontrol_1_conduit_end_sda(GPIO_1[12]),
 						.myocontrol_1_conduit_end_mirrored_muscle_unit(SW[2]==1 && SW[1]==0 && SW[0]==0), // true for switch ID 4
 						.myocontrol_1_conduit_end_power_sense_n(GPIO_1[21] && SW[3]),
 					`endif /*USE_ETHERNET_SIDE*/
