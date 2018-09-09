@@ -100,6 +100,14 @@
 		.myocontrol_1_conduit_end_scl                  (<connected-to-myocontrol_1_conduit_end_scl>),                  //                             .scl
 		.myocontrol_1_conduit_end_sda                  (<connected-to-myocontrol_1_conduit_end_sda>),                  //                             .sda
 		.reset_reset_n                                 (<connected-to-reset_reset_n>),                                 //                        reset.reset_n
-		.switches_external_connection_export           (<connected-to-switches_external_connection_export>)            // switches_external_connection.export
+		.switches_external_connection_export           (<connected-to-switches_external_connection_export>),           // switches_external_connection.export
+		.i2c_2_conduit_end_scl                         (<connected-to-i2c_2_conduit_end_scl>),                         //            i2c_2_conduit_end.scl
+		.i2c_2_conduit_end_sda                         (<connected-to-i2c_2_conduit_end_sda>),                         //                             .sda
+		.i2c_2_conduit_end_led                         (<connected-to-i2c_2_conduit_end_led>),                         //                             .led
+		.i2c_2_conduit_end_gpio                        (<connected-to-i2c_2_conduit_end_gpio>),                        //                             .gpio
+		.i2c_3_conduit_end_scl                         (<connected-to-i2c_3_conduit_end_scl>),                         //            i2c_3_conduit_end.scl
+		.i2c_3_conduit_end_sda                         (<connected-to-i2c_3_conduit_end_sda>),                         //                             .sda
+		.i2c_3_conduit_end_led                         (<connected-to-i2c_3_conduit_end_led>),                         //                             .led
+		.i2c_3_conduit_end_gpio                        (<connected-to-i2c_3_conduit_end_gpio>)                         //                             .gpio
 	);
 
