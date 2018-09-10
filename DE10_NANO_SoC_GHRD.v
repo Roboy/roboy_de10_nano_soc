@@ -120,10 +120,10 @@ soc_system u0(
                .clk_clk(FPGA_CLK1_50),                                      //                            clk.clk
                .reset_reset_n(hps_fpga_reset_n),                            //                          reset.reset_n
 					// adc
-					.adc_ltc2308_0_conduit_end_CONVST(ADC_CONVST), 
-					.adc_ltc2308_0_conduit_end_SCK(ADC_SCK), 
-					.adc_ltc2308_0_conduit_end_SDI(ADC_SDI),   
-					.adc_ltc2308_0_conduit_end_SDO(ADC_SDO),
+//					.adc_ltc2308_0_conduit_end_CONVST(ADC_CONVST), 
+//					.adc_ltc2308_0_conduit_end_SCK(ADC_SCK), 
+//					.adc_ltc2308_0_conduit_end_SDI(ADC_SDI),    
+//					.adc_ltc2308_0_conduit_end_SDO(ADC_SDO),
 					`ifndef USE_ETHERNET_SIDE
 //						// darkroom
 //						.darkroom_0_conduit_end_d_io({GPIO_1[34],GPIO_1[32],GPIO_1[30],GPIO_1[28],GPIO_1[26],GPIO_1[24],GPIO_1[22],GPIO_1[20],GPIO_1[18],GPIO_1[16],GPIO_1[14],GPIO_1[12],GPIO_1[10],GPIO_1[8],GPIO_1[6],GPIO_1[4]}),
@@ -137,14 +137,14 @@ soc_system u0(
 //						// uart interface 
 //						.darkroomootxdecoder_0_conduit_end_uart_tx(GPIO_1[3]),
 						// two i2c buses
-						.i2c_0_conduit_end_scl(GPIO_0[35]), 
-						.i2c_0_conduit_end_sda(GPIO_0[33]),
-						.i2c_1_conduit_end_scl(GPIO_0[31]),
-						.i2c_1_conduit_end_sda(GPIO_0[30]), 
-						.i2c_2_conduit_end_scl(GPIO_0[29]),
-						.i2c_2_conduit_end_sda(GPIO_0[28]), 
-						.i2c_3_conduit_end_scl(GPIO_0[27]),
-						.i2c_3_conduit_end_sda(GPIO_0[26]), 
+//						.i2c_0_conduit_end_scl(GPIO_0[35]), 
+//						.i2c_0_conduit_end_sda(GPIO_0[33]),
+//						.i2c_1_conduit_end_scl(GPIO_0[31]),
+//						.i2c_1_conduit_end_sda(GPIO_0[30]), 
+//						.i2c_2_conduit_end_scl(GPIO_0[29]),
+//						.i2c_2_conduit_end_sda(GPIO_0[28]), 
+//						.i2c_3_conduit_end_scl(GPIO_0[27]),
+//						.i2c_3_conduit_end_sda(GPIO_0[26]), 
 						// myocontrol, two buses a 7 motors
 						.myocontrol_0_conduit_end_mosi(GPIO_0[0]),
 						.myocontrol_0_conduit_end_miso(GPIO_0[1]),
@@ -159,8 +159,10 @@ soc_system u0(
 						.myocontrol_1_conduit_end_ss_n({GPIO_0[20:17]}),
 						.myocontrol_1_conduit_end_mirrored_muscle_unit(SW[2]==1 && SW[1]==0 && SW[0]==0), // true for switch ID 4
 						.myocontrol_1_conduit_end_power_sense_n(GPIO_0[21] && SW[3]),
-						.myocontrol_1_conduit_end_scl(GPIO_0[13]),
-						.myocontrol_1_conduit_end_sda(GPIO_0[12]),
+						.myocontrol_1_conduit_end_myobrick_scl(GPIO_0[13]),
+						.myocontrol_1_conduit_end_myobrick_sda(GPIO_0[12]),
+						.myocontrol_1_conduit_end_joint_angle_scl(GPIO_0[31]),
+						.myocontrol_1_conduit_end_joint_angle_sda(GPIO_0[30]),
 					`else /*USE_ETHERNET_SIDE*/
 //						// darkroom
 //						.darkroom_0_conduit_end_d_io({GPIO_0[34],GPIO_0[32],GPIO_0[30],GPIO_0[28],GPIO_0[26],GPIO_0[24],GPIO_0[22],GPIO_0[20],GPIO_0[18],GPIO_0[16],GPIO_0[14],GPIO_0[12],GPIO_0[10],GPIO_0[8],GPIO_0[6],GPIO_0[4]}),
