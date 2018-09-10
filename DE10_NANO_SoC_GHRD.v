@@ -153,14 +153,14 @@ soc_system u0(
 						.myocontrol_0_conduit_end_mirrored_muscle_unit(SW[2]==1 && SW[1]==0 && SW[0]==0), // true for switch ID 4
 						.myocontrol_0_conduit_end_power_sense_n(GPIO_0[21] && SW[3]),
 						.myocontrol_0_conduit_end_gpio_n(GPIO_0[23]),
-						.myocontrol_0_conduit_end_scl(GPIO_0[13]),
-						.myocontrol_0_conduit_end_sda(GPIO_0[12]),
 						.myocontrol_1_conduit_end_mosi(GPIO_0[14]),
 						.myocontrol_1_conduit_end_miso(GPIO_0[15]),
 						.myocontrol_1_conduit_end_sck(GPIO_0[16]),
 						.myocontrol_1_conduit_end_ss_n({GPIO_0[20:17]}),
 						.myocontrol_1_conduit_end_mirrored_muscle_unit(SW[2]==1 && SW[1]==0 && SW[0]==0), // true for switch ID 4
 						.myocontrol_1_conduit_end_power_sense_n(GPIO_0[21] && SW[3]),
+						.myocontrol_1_conduit_end_scl(GPIO_0[13]),
+						.myocontrol_1_conduit_end_sda(GPIO_0[12]),
 					`else /*USE_ETHERNET_SIDE*/
 //						// darkroom
 //						.darkroom_0_conduit_end_d_io({GPIO_0[34],GPIO_0[32],GPIO_0[30],GPIO_0[28],GPIO_0[26],GPIO_0[24],GPIO_0[22],GPIO_0[20],GPIO_0[18],GPIO_0[16],GPIO_0[14],GPIO_0[12],GPIO_0[10],GPIO_0[8],GPIO_0[6],GPIO_0[4]}),
@@ -190,14 +190,14 @@ soc_system u0(
 						.myocontrol_0_conduit_end_mirrored_muscle_unit(SW[2]==1 && SW[1]==0 && SW[0]==0), // true for switch ID 4
 						.myocontrol_0_conduit_end_power_sense_n(GPIO_1[21] && SW[3]),
 						.myocontrol_0_conduit_end_gpio_n(GPIO_1[23]),
-						.myocontrol_0_conduit_end_scl(GPIO_1[13]),
-						.myocontrol_0_conduit_end_sda(GPIO_1[12]),
 						.myocontrol_1_conduit_end_mosi(GPIO_1[14]),
 						.myocontrol_1_conduit_end_miso(GPIO_1[15]),
 						.myocontrol_1_conduit_end_sck(GPIO_1[16]),
 						.myocontrol_1_conduit_end_ss_n({GPIO_1[20:17]}),
 						.myocontrol_1_conduit_end_mirrored_muscle_unit(SW[2]==1 && SW[1]==0 && SW[0]==0), // true for switch ID 4
 						.myocontrol_1_conduit_end_power_sense_n(GPIO_1[21] && SW[3]),
+						.myocontrol_1_conduit_end_scl(GPIO_1[13]),
+						.myocontrol_1_conduit_end_sda(GPIO_1[12]),
 					`endif /*USE_ETHERNET_SIDE*/
 					// led
 					.led_external_connection_export(LED),
