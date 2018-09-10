@@ -829,6 +829,22 @@
          type = "String";
       }
    }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
    element sysid_qsys
    {
       datum _sortIndex
@@ -876,11 +892,7 @@
  <parameter name="timeStamp" value="0" />
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
- <interface
-   name="adc_ltc2308_0_conduit_end"
-   internal="adc_ltc2308_0.conduit_end"
-   type="conduit"
-   dir="end" />
+ <interface name="adc_ltc2308_0_conduit_end" internal="adc_ltc2308_0.conduit_end" />
  <interface name="clk" internal="clk_0.clk_in" type="clock" dir="end" />
  <interface name="darkroom_0_conduit_end" internal="DarkRoom_0.conduit_end" />
  <interface name="darkroom_0_sensor_signals" internal="DarkRoom_0.sensor_signals" />
@@ -910,26 +922,10 @@
    dir="start" />
  <interface name="hps_0_h2f_user0_clock" internal="hps_0.h2f_user0_clock" />
  <interface name="hps_0_hps_io" internal="hps_0.hps_io" type="conduit" dir="end" />
- <interface
-   name="i2c_0_conduit_end"
-   internal="I2C_0.conduit_end"
-   type="conduit"
-   dir="end" />
- <interface
-   name="i2c_1_conduit_end"
-   internal="I2C_1.conduit_end"
-   type="conduit"
-   dir="end" />
- <interface
-   name="i2c_2_conduit_end"
-   internal="I2C_2.conduit_end"
-   type="conduit"
-   dir="end" />
- <interface
-   name="i2c_3_conduit_end"
-   internal="I2C_3.conduit_end"
-   type="conduit"
-   dir="end" />
+ <interface name="i2c_0_conduit_end" internal="I2C_0.conduit_end" />
+ <interface name="i2c_1_conduit_end" internal="I2C_1.conduit_end" />
+ <interface name="i2c_2_conduit_end" internal="I2C_2.conduit_end" />
+ <interface name="i2c_3_conduit_end" internal="I2C_3.conduit_end" />
  <interface
    name="led_external_connection"
    internal="LED.external_connection"
@@ -966,19 +962,19 @@
   <parameter name="ENABLE_SPI_TRANSMITTER" value="true" />
   <parameter name="NUMBER_OF_SENSORS" value="16" />
  </module>
- <module name="I2C_0" kind="I2C" version="1.0" enabled="1">
+ <module name="I2C_0" kind="I2C" version="1.0" enabled="0">
   <parameter name="BUS_SPEED_HZ" value="400000" />
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
  </module>
- <module name="I2C_1" kind="I2C" version="1.0" enabled="1">
+ <module name="I2C_1" kind="I2C" version="1.0" enabled="0">
   <parameter name="BUS_SPEED_HZ" value="400000" />
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
  </module>
- <module name="I2C_2" kind="I2C" version="1.0" enabled="1">
+ <module name="I2C_2" kind="I2C" version="1.0" enabled="0">
   <parameter name="BUS_SPEED_HZ" value="400000" />
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
  </module>
- <module name="I2C_3" kind="I2C" version="1.0" enabled="1">
+ <module name="I2C_3" kind="I2C" version="1.0" enabled="0">
   <parameter name="BUS_SPEED_HZ" value="400000" />
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
  </module>
@@ -998,12 +994,14 @@
  </module>
  <module name="MYOControl_0" kind="MYOControl" version="1.0" enabled="1">
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
+  <parameter name="ENABLE_JOINTANGLE_CONTROL" value="0" />
   <parameter name="ENABLE_MYOBRICK_CONTROL" value="0" />
   <parameter name="NUMBER_OF_MOTORS" value="9" />
  </module>
  <module name="MYOControl_1" kind="MYOControl" version="1.0" enabled="1">
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
-  <parameter name="ENABLE_MYOBRICK_CONTROL" value="1" />
+  <parameter name="ENABLE_JOINTANGLE_CONTROL" value="1" />
+  <parameter name="ENABLE_MYOBRICK_CONTROL" value="0" />
   <parameter name="NUMBER_OF_MOTORS" value="4" />
  </module>
  <module name="SWITCHES" kind="altera_avalon_pio" version="18.0" enabled="1">
@@ -1020,7 +1018,7 @@
   <parameter name="simDrivenValue" value="0" />
   <parameter name="width" value="4" />
  </module>
- <module name="adc_ltc2308_0" kind="adc_ltc2308" version="1.1" enabled="1" />
+ <module name="adc_ltc2308_0" kind="adc_ltc2308" version="1.1" enabled="0" />
  <module name="clk_0" kind="clock_source" version="18.0" enabled="1">
   <parameter name="clockFrequency" value="50000000" />
   <parameter name="clockFrequencyKnown" value="true" />
@@ -1576,7 +1574,7 @@
   <parameter name="writeBufferDepth" value="64" />
   <parameter name="writeIRQThreshold" value="8" />
  </module>
- <module name="pll_40MHz" kind="altera_pll" version="18.0" enabled="1">
+ <module name="pll_40MHz" kind="altera_pll" version="18.0" enabled="0">
   <parameter name="debug_print_output" value="false" />
   <parameter name="debug_use_rbc_taf_method" value="false" />
   <parameter name="device" value="5CSEBA6U23I7" />

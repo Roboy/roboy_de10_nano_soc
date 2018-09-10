@@ -42,8 +42,6 @@ Info: soc_system.SWITCHES: PIO inputs are not hardwired in test bench. Undefined
 Info: soc_system.hps_0: HPS Main PLL counter settings: n = 0  m = 63
 Info: soc_system.hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
 Info: soc_system.jtag_uart: JTAG UART IP input clock need to be at least double (2x) the operating frequency of JTAG TCK on board
-Info: soc_system.pll_40MHz: The legal reference clock frequency is 5.0 MHz..700.0 MHz
-Info: soc_system.pll_40MHz: Able to implement PLL with user settings
 Info: soc_system.sysid_qsys: System ID is not assigned automatically. Edit the System ID parameter to provide a unique ID
 Info: soc_system.sysid_qsys: Time stamp will be automatically updated when this component is generated.
 Info: soc_system: Generating soc_system "soc_system" for QUARTUS_SYNTH
@@ -51,26 +49,23 @@ Warning: hps_0.f2h_irq0: Cannot connect clock for irq_mapper.sender
 Warning: hps_0.f2h_irq0: Cannot connect reset for irq_mapper.sender
 Warning: hps_0.f2h_irq1: Cannot connect clock for irq_mapper_001.sender
 Warning: hps_0.f2h_irq1: Cannot connect reset for irq_mapper_001.sender
-Info: I2C_0: "soc_system" instantiated I2C "I2C_0"
 Info: LED: Starting RTL generation for module 'soc_system_LED'
-Info: LED:   Generation command is [exec /home/roboy/intelFPGA/18.0/quartus/linux64/perl/bin/perl -I /home/roboy/intelFPGA/18.0/quartus/linux64/perl/lib -I /home/roboy/intelFPGA/18.0/quartus/sopc_builder/bin/europa -I /home/roboy/intelFPGA/18.0/quartus/sopc_builder/bin/perl_lib -I /home/roboy/intelFPGA/18.0/quartus/sopc_builder/bin -I /home/roboy/intelFPGA/18.0/quartus/../ip/altera/sopc_builder_ip/common -I /home/roboy/intelFPGA/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /home/roboy/intelFPGA/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_LED --dir=/tmp/alt7784_5575350914814378223.dir/0004_LED_gen/ --quartus_dir=/home/roboy/intelFPGA/18.0/quartus --verilog --config=/tmp/alt7784_5575350914814378223.dir/0004_LED_gen//soc_system_LED_component_configuration.pl  --do_build_sim=0  ]
+Info: LED:   Generation command is [exec /home/roboy/intelFPGA/18.0/quartus/linux64/perl/bin/perl -I /home/roboy/intelFPGA/18.0/quartus/linux64/perl/lib -I /home/roboy/intelFPGA/18.0/quartus/sopc_builder/bin/europa -I /home/roboy/intelFPGA/18.0/quartus/sopc_builder/bin/perl_lib -I /home/roboy/intelFPGA/18.0/quartus/sopc_builder/bin -I /home/roboy/intelFPGA/18.0/quartus/../ip/altera/sopc_builder_ip/common -I /home/roboy/intelFPGA/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /home/roboy/intelFPGA/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_LED --dir=/tmp/alt7784_5575350914814378223.dir/0156_LED_gen/ --quartus_dir=/home/roboy/intelFPGA/18.0/quartus --verilog --config=/tmp/alt7784_5575350914814378223.dir/0156_LED_gen//soc_system_LED_component_configuration.pl  --do_build_sim=0  ]
 Info: LED: Done RTL generation for module 'soc_system_LED'
 Info: LED: "soc_system" instantiated altera_avalon_pio "LED"
 Info: MYOControl_0: "soc_system" instantiated MYOControl "MYOControl_0"
 Info: SWITCHES: Starting RTL generation for module 'soc_system_SWITCHES'
-Info: SWITCHES:   Generation command is [exec /home/roboy/intelFPGA/18.0/quartus/linux64/perl/bin/perl -I /home/roboy/intelFPGA/18.0/quartus/linux64/perl/lib -I /home/roboy/intelFPGA/18.0/quartus/sopc_builder/bin/europa -I /home/roboy/intelFPGA/18.0/quartus/sopc_builder/bin/perl_lib -I /home/roboy/intelFPGA/18.0/quartus/sopc_builder/bin -I /home/roboy/intelFPGA/18.0/quartus/../ip/altera/sopc_builder_ip/common -I /home/roboy/intelFPGA/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /home/roboy/intelFPGA/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_SWITCHES --dir=/tmp/alt7784_5575350914814378223.dir/0006_SWITCHES_gen/ --quartus_dir=/home/roboy/intelFPGA/18.0/quartus --verilog --config=/tmp/alt7784_5575350914814378223.dir/0006_SWITCHES_gen//soc_system_SWITCHES_component_configuration.pl  --do_build_sim=0  ]
+Info: SWITCHES:   Generation command is [exec /home/roboy/intelFPGA/18.0/quartus/linux64/perl/bin/perl -I /home/roboy/intelFPGA/18.0/quartus/linux64/perl/lib -I /home/roboy/intelFPGA/18.0/quartus/sopc_builder/bin/europa -I /home/roboy/intelFPGA/18.0/quartus/sopc_builder/bin/perl_lib -I /home/roboy/intelFPGA/18.0/quartus/sopc_builder/bin -I /home/roboy/intelFPGA/18.0/quartus/../ip/altera/sopc_builder_ip/common -I /home/roboy/intelFPGA/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /home/roboy/intelFPGA/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_SWITCHES --dir=/tmp/alt7784_5575350914814378223.dir/0158_SWITCHES_gen/ --quartus_dir=/home/roboy/intelFPGA/18.0/quartus --verilog --config=/tmp/alt7784_5575350914814378223.dir/0158_SWITCHES_gen//soc_system_SWITCHES_component_configuration.pl  --do_build_sim=0  ]
 Info: SWITCHES: Done RTL generation for module 'soc_system_SWITCHES'
 Info: SWITCHES: "soc_system" instantiated altera_avalon_pio "SWITCHES"
-Info: adc_ltc2308_0: "soc_system" instantiated adc_ltc2308 "adc_ltc2308_0"
 Info: hps_0: "Running  for module: hps_0"
 Info: hps_0: HPS Main PLL counter settings: n = 0  m = 63
 Info: hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
 Info: hps_0: "soc_system" instantiated altera_hps "hps_0"
 Info: jtag_uart: Starting RTL generation for module 'soc_system_jtag_uart'
-Info: jtag_uart:   Generation command is [exec /home/roboy/intelFPGA/18.0/quartus/linux64/perl/bin/perl -I /home/roboy/intelFPGA/18.0/quartus/linux64/perl/lib -I /home/roboy/intelFPGA/18.0/quartus/sopc_builder/bin/europa -I /home/roboy/intelFPGA/18.0/quartus/sopc_builder/bin/perl_lib -I /home/roboy/intelFPGA/18.0/quartus/sopc_builder/bin -I /home/roboy/intelFPGA/18.0/quartus/../ip/altera/sopc_builder_ip/common -I /home/roboy/intelFPGA/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- /home/roboy/intelFPGA/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=soc_system_jtag_uart --dir=/tmp/alt7784_5575350914814378223.dir/0008_jtag_uart_gen/ --quartus_dir=/home/roboy/intelFPGA/18.0/quartus --verilog --config=/tmp/alt7784_5575350914814378223.dir/0008_jtag_uart_gen//soc_system_jtag_uart_component_configuration.pl  --do_build_sim=0  ]
+Info: jtag_uart:   Generation command is [exec /home/roboy/intelFPGA/18.0/quartus/linux64/perl/bin/perl -I /home/roboy/intelFPGA/18.0/quartus/linux64/perl/lib -I /home/roboy/intelFPGA/18.0/quartus/sopc_builder/bin/europa -I /home/roboy/intelFPGA/18.0/quartus/sopc_builder/bin/perl_lib -I /home/roboy/intelFPGA/18.0/quartus/sopc_builder/bin -I /home/roboy/intelFPGA/18.0/quartus/../ip/altera/sopc_builder_ip/common -I /home/roboy/intelFPGA/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- /home/roboy/intelFPGA/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=soc_system_jtag_uart --dir=/tmp/alt7784_5575350914814378223.dir/0159_jtag_uart_gen/ --quartus_dir=/home/roboy/intelFPGA/18.0/quartus --verilog --config=/tmp/alt7784_5575350914814378223.dir/0159_jtag_uart_gen//soc_system_jtag_uart_component_configuration.pl  --do_build_sim=0  ]
 Info: jtag_uart: Done RTL generation for module 'soc_system_jtag_uart'
 Info: jtag_uart: "soc_system" instantiated altera_avalon_jtag_uart "jtag_uart"
-Info: pll_40MHz: "soc_system" instantiated altera_pll "pll_40MHz"
 Info: sysid_qsys: "soc_system" instantiated altera_avalon_sysid_qsys "sysid_qsys"
 Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_001: Inserting error_adapter: error_adapter_0
@@ -78,11 +73,6 @@ Info: avalon_st_adapter_002: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_003: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_004: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_005: Inserting error_adapter: error_adapter_0
-Info: avalon_st_adapter_006: Inserting error_adapter: error_adapter_0
-Info: avalon_st_adapter_007: Inserting error_adapter: error_adapter_0
-Info: avalon_st_adapter_008: Inserting error_adapter: error_adapter_0
-Info: avalon_st_adapter_009: Inserting error_adapter: error_adapter_0
-Info: avalon_st_adapter_010: Inserting error_adapter: error_adapter_0
 Info: mm_interconnect_0: "soc_system" instantiated altera_mm_interconnect "mm_interconnect_0"
 Info: irq_mapper: "soc_system" instantiated altera_irq_mapper "irq_mapper"
 Info: irq_mapper_001: "soc_system" instantiated altera_irq_mapper "irq_mapper_001"
@@ -108,6 +98,6 @@ Info: Reusing file /home/roboy/workspace/roboy_middleware/src/roboy_plexus/roboy
 Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
 Info: border: "hps_io" instantiated altera_interface_generator "border"
 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
-Info: soc_system: Done "soc_system" with 31 modules, 91 files
+Info: soc_system: Done "soc_system" with 28 modules, 85 files
 Info: qsys-generate succeeded.
 Info: Finished: Create HDL design files for synthesis
