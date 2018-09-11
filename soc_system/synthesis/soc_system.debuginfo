@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="soc_system" kind="system" version="18.0" fabric="QSYS">
  <!-- Format version 18.0 614 (Future versions may contain additional information.) -->
- <!-- 2018.09.11.00:57:58 -->
+ <!-- 2018.09.11.23:57:56 -->
  <!-- A collection of modules and connections -->
  <parameter name="clockCrossingAdapter">
   <type>com.altera.sopcmodel.ensemble.EClockAdapter</type>
@@ -53,7 +53,7 @@
  </parameter>
  <parameter name="generationId">
   <type>int</type>
-  <value>1536620238</value>
+  <value>1536702995</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>true</visible>
@@ -952,7 +952,7 @@ the requested settings for a module instance. -->
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
-  <parameter name="ENABLE_JOINTANGLE_CONTROL">
+  <parameter name="ENABLE_ARM_CONTROL">
    <type>int</type>
    <value>0</value>
    <derived>false</derived>
@@ -1473,18 +1473,6 @@ parameters are a RESULT of the module parameters. -->
     <role>gpio_n</role>
    </port>
    <port>
-    <name>joint_angle_scl</name>
-    <direction>Output</direction>
-    <width>1</width>
-    <role>joint_angle_scl</role>
-   </port>
-   <port>
-    <name>joint_angle_sda</name>
-    <direction>Bidir</direction>
-    <width>1</width>
-    <role>joint_angle_sda</role>
-   </port>
-   <port>
     <name>myobrick_scl</name>
     <direction>Output</direction>
     <width>1</width>
@@ -1495,6 +1483,18 @@ parameters are a RESULT of the module parameters. -->
     <direction>Bidir</direction>
     <width>1</width>
     <role>myobrick_sda</role>
+   </port>
+   <port>
+    <name>arm_scl</name>
+    <direction>Output</direction>
+    <width>1</width>
+    <role>arm_scl</role>
+   </port>
+   <port>
+    <name>arm_sda</name>
+    <direction>Bidir</direction>
+    <width>1</width>
+    <role>arm_sda</role>
    </port>
   </interface>
   <interface name="clock_sink" kind="clock_sink" version="18.0">
@@ -1574,7 +1574,7 @@ the requested settings for a module instance. -->
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
-  <parameter name="ENABLE_JOINTANGLE_CONTROL">
+  <parameter name="ENABLE_ARM_CONTROL">
    <type>int</type>
    <value>1</value>
    <derived>false</derived>
@@ -2095,18 +2095,6 @@ parameters are a RESULT of the module parameters. -->
     <role>gpio_n</role>
    </port>
    <port>
-    <name>joint_angle_scl</name>
-    <direction>Output</direction>
-    <width>1</width>
-    <role>joint_angle_scl</role>
-   </port>
-   <port>
-    <name>joint_angle_sda</name>
-    <direction>Bidir</direction>
-    <width>1</width>
-    <role>joint_angle_sda</role>
-   </port>
-   <port>
     <name>myobrick_scl</name>
     <direction>Output</direction>
     <width>1</width>
@@ -2117,6 +2105,18 @@ parameters are a RESULT of the module parameters. -->
     <direction>Bidir</direction>
     <width>1</width>
     <role>myobrick_sda</role>
+   </port>
+   <port>
+    <name>arm_scl</name>
+    <direction>Output</direction>
+    <width>1</width>
+    <role>arm_scl</role>
+   </port>
+   <port>
+    <name>arm_sda</name>
+    <direction>Bidir</direction>
+    <width>1</width>
+    <role>arm_sda</role>
    </port>
   </interface>
   <interface name="clock_sink" kind="clock_sink" version="18.0">
@@ -3162,12 +3162,6 @@ parameters are a RESULT of the module parameters. -->
    </port>
    <clockDomainMember>
     <isBridge>false</isBridge>
-    <moduleName>sysid_qsys</moduleName>
-    <slaveName>clk</slaveName>
-    <name>sysid_qsys.clk</name>
-   </clockDomainMember>
-   <clockDomainMember>
-    <isBridge>false</isBridge>
     <moduleName>jtag_uart</moduleName>
     <slaveName>clk</slaveName>
     <name>jtag_uart.clk</name>
@@ -3183,6 +3177,12 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>SWITCHES</moduleName>
     <slaveName>clk</slaveName>
     <name>SWITCHES.clk</name>
+   </clockDomainMember>
+   <clockDomainMember>
+    <isBridge>false</isBridge>
+    <moduleName>sysid_qsys</moduleName>
+    <slaveName>clk</slaveName>
+    <name>sysid_qsys.clk</name>
    </clockDomainMember>
    <clockDomainMember>
     <isBridge>false</isBridge>
@@ -44471,7 +44471,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.TIMESTAMP</name>
-   <value>1536620238</value>
+   <value>1536702995</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.compatible</name>
@@ -44491,7 +44491,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.timestamp</name>
-   <value>1536620238</value>
+   <value>1536702995</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.vendor</name>
@@ -44507,7 +44507,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="timestamp">
    <type>int</type>
-   <value>1536620238</value>
+   <value>1536702995</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -48661,33 +48661,6 @@ parameters are a RESULT of the module parameters. -->
   </interface>
  </module>
  <connection
-   name="clk_0.clk/sysid_qsys.clk"
-   kind="clock"
-   version="18.0"
-   start="clk_0.clk"
-   end="sysid_qsys.clk">
-  <parameter name="deviceFamily">
-   <type>java.lang.String</type>
-   <value>UNKNOWN</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="generateLegacySim">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <startModule>clk_0</startModule>
-  <startConnectionPoint>clk</startConnectionPoint>
-  <endModule>sysid_qsys</endModule>
-  <endConnectionPoint>clk</endConnectionPoint>
- </connection>
- <connection
    name="clk_0.clk/jtag_uart.clk"
    kind="clock"
    version="18.0"
@@ -48766,6 +48739,33 @@ parameters are a RESULT of the module parameters. -->
   <startModule>clk_0</startModule>
   <startConnectionPoint>clk</startConnectionPoint>
   <endModule>SWITCHES</endModule>
+  <endConnectionPoint>clk</endConnectionPoint>
+ </connection>
+ <connection
+   name="clk_0.clk/sysid_qsys.clk"
+   kind="clock"
+   version="18.0"
+   start="clk_0.clk"
+   end="sysid_qsys.clk">
+  <parameter name="deviceFamily">
+   <type>java.lang.String</type>
+   <value>UNKNOWN</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="generateLegacySim">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <startModule>clk_0</startModule>
+  <startConnectionPoint>clk</startConnectionPoint>
+  <endModule>sysid_qsys</endModule>
   <endConnectionPoint>clk</endConnectionPoint>
  </connection>
  <connection
@@ -49903,5 +49903,5 @@ parameters are a RESULT of the module parameters. -->
   <version>18.0</version>
  </plugin>
  <reportVersion>18.0 614</reportVersion>
- <uniqueIdentifier>4CCC6A6BE10F00000165C5B465BE</uniqueIdentifier>
+ <uniqueIdentifier>4CCC6A6BE10F00000165CAA37F40</uniqueIdentifier>
 </EnsembleReport>

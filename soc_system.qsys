@@ -845,6 +845,102 @@
          type = "String";
       }
    }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
    element sysid_qsys
    {
       datum _sortIndex
@@ -994,13 +1090,13 @@
  </module>
  <module name="MYOControl_0" kind="MYOControl" version="1.0" enabled="1">
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
-  <parameter name="ENABLE_JOINTANGLE_CONTROL" value="0" />
+  <parameter name="ENABLE_ARM_CONTROL" value="0" />
   <parameter name="ENABLE_MYOBRICK_CONTROL" value="0" />
   <parameter name="NUMBER_OF_MOTORS" value="9" />
  </module>
  <module name="MYOControl_1" kind="MYOControl" version="1.0" enabled="1">
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
-  <parameter name="ENABLE_JOINTANGLE_CONTROL" value="1" />
+  <parameter name="ENABLE_ARM_CONTROL" value="1" />
   <parameter name="ENABLE_MYOBRICK_CONTROL" value="0" />
   <parameter name="NUMBER_OF_MOTORS" value="4" />
  </module>
@@ -1806,15 +1902,6 @@
    kind="avalon"
    version="18.0"
    start="hps_0.h2f_lw_axi_master"
-   end="MYOControl_0.avalon_slave_0">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00040000" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="18.0"
-   start="hps_0.h2f_lw_axi_master"
    end="DarkRoomOOTXdecoder_0.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0800" />
@@ -1869,6 +1956,15 @@
    kind="avalon"
    version="18.0"
    start="hps_0.h2f_lw_axi_master"
+   end="MYOControl_0.avalon_slave_0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x00040000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.0"
+   start="hps_0.h2f_lw_axi_master"
    end="sysid_qsys.control_slave">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x1000" />
@@ -1901,20 +1997,15 @@
   <parameter name="baseAddress" value="0x00a0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
- <connection kind="clock" version="18.0" start="clk_0.clk" end="sysid_qsys.clk" />
  <connection kind="clock" version="18.0" start="clk_0.clk" end="jtag_uart.clk" />
  <connection kind="clock" version="18.0" start="clk_0.clk" end="LED.clk" />
  <connection kind="clock" version="18.0" start="clk_0.clk" end="SWITCHES.clk" />
+ <connection kind="clock" version="18.0" start="clk_0.clk" end="sysid_qsys.clk" />
  <connection
    kind="clock"
    version="18.0"
    start="clk_0.clk"
    end="MYOControl_1.clock_sink" />
- <connection
-   kind="clock"
-   version="18.0"
-   start="clk_0.clk"
-   end="MYOControl_0.clock_sink" />
  <connection
    kind="clock"
    version="18.0"
@@ -1938,6 +2029,11 @@
    kind="clock"
    version="18.0"
    start="clk_0.clk"
+   end="MYOControl_0.clock_sink" />
+ <connection
+   kind="clock"
+   version="18.0"
+   start="clk_0.clk"
    end="hps_0.h2f_lw_axi_clock" />
  <connection kind="clock" version="18.0" start="clk_0.clk" end="pll_40MHz.refclk" />
  <connection
@@ -1956,28 +2052,12 @@
    kind="reset"
    version="18.0"
    start="clk_0.clk_reset"
-   end="sysid_qsys.reset" />
- <connection
-   kind="reset"
-   version="18.0"
-   start="clk_0.clk_reset"
    end="jtag_uart.reset" />
- <connection kind="reset" version="18.0" start="clk_0.clk_reset" end="LED.reset" />
- <connection
-   kind="reset"
-   version="18.0"
-   start="clk_0.clk_reset"
-   end="SWITCHES.reset" />
  <connection
    kind="reset"
    version="18.0"
    start="clk_0.clk_reset"
    end="MYOControl_1.reset" />
- <connection
-   kind="reset"
-   version="18.0"
-   start="clk_0.clk_reset"
-   end="MYOControl_0.reset" />
  <connection
    kind="reset"
    version="18.0"
@@ -1997,6 +2077,22 @@
    end="pll_40MHz.reset" />
  <connection kind="reset" version="18.0" start="clk_0.clk_reset" end="I2C_2.reset" />
  <connection kind="reset" version="18.0" start="clk_0.clk_reset" end="I2C_3.reset" />
+ <connection
+   kind="reset"
+   version="18.0"
+   start="clk_0.clk_reset"
+   end="MYOControl_0.reset" />
+ <connection kind="reset" version="18.0" start="clk_0.clk_reset" end="LED.reset" />
+ <connection
+   kind="reset"
+   version="18.0"
+   start="clk_0.clk_reset"
+   end="SWITCHES.reset" />
+ <connection
+   kind="reset"
+   version="18.0"
+   start="clk_0.clk_reset"
+   end="sysid_qsys.reset" />
  <connection
    kind="reset"
    version="18.0"
