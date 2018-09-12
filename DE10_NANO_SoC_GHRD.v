@@ -136,15 +136,13 @@ soc_system u0(
 //						.darkroomootxdecoder_0_conduit_end_sensor_signals({GPIO_1[35],GPIO_1[33],GPIO_1[31],GPIO_1[29],GPIO_1[27],GPIO_1[25],GPIO_1[23],GPIO_1[21],GPIO_1[19],GPIO_1[17],GPIO_1[15],GPIO_1[13],GPIO_1[11],GPIO_1[9],GPIO_1[7],GPIO_1[5]}),
 //						// uart interface 
 //						.darkroomootxdecoder_0_conduit_end_uart_tx(GPIO_1[3]),
-						// two i2c buses
-//						.i2c_0_conduit_end_scl(GPIO_0[35]), 
-//						.i2c_0_conduit_end_sda(GPIO_0[33]),
-//						.i2c_1_conduit_end_scl(GPIO_0[31]),
-//						.i2c_1_conduit_end_sda(GPIO_0[30]), 
-//						.i2c_2_conduit_end_scl(GPIO_0[29]),
-//						.i2c_2_conduit_end_sda(GPIO_0[28]), 
-//						.i2c_3_conduit_end_scl(GPIO_0[27]),
-//						.i2c_3_conduit_end_sda(GPIO_0[26]), 
+						// three i2c buses
+						.i2c_0_conduit_end_scl(GPIO_0[31]), 
+						.i2c_0_conduit_end_sda(GPIO_0[30]), 
+						.i2c_1_conduit_end_scl(GPIO_0[29]),
+						.i2c_1_conduit_end_sda(GPIO_0[28]), 
+						.i2c_2_conduit_end_scl(GPIO_0[27]),
+						.i2c_2_conduit_end_sda(GPIO_0[26]), 
 						// myocontrol, two buses a 7 motors
 						.myocontrol_0_conduit_end_mosi(GPIO_0[0]),
 						.myocontrol_0_conduit_end_miso(GPIO_0[1]),
@@ -176,14 +174,12 @@ soc_system u0(
 //						// uart interface 
 //						.darkroomootxdecoder_0_conduit_end_uart_tx(GPIO_0[3]),
 						// two i2c buses
-						.i2c_0_conduit_end_scl(GPIO_1[35]), 
-						.i2c_0_conduit_end_sda(GPIO_1[33]),
-						.i2c_1_conduit_end_scl(GPIO_1[31]),
-						.i2c_1_conduit_end_sda(GPIO_1[30]), 
-						.i2c_2_conduit_end_scl(GPIO_1[29]),
-						.i2c_2_conduit_end_sda(GPIO_1[28]), 
-						.i2c_3_conduit_end_scl(GPIO_1[27]),
-						.i2c_3_conduit_end_sda(GPIO_1[26]), 
+						.i2c_0_conduit_end_scl(GPIO_1[31]), 
+						.i2c_0_conduit_end_sda(GPIO_1[30]),
+						.i2c_1_conduit_end_scl(GPIO_1[29]),
+						.i2c_1_conduit_end_sda(GPIO_1[28]), 
+						.i2c_2_conduit_end_scl(GPIO_1[27]),
+						.i2c_2_conduit_end_sda(GPIO_1[26]), 
 						// myocontrol, two buses a 7 motors
 						.myocontrol_0_conduit_end_mosi(GPIO_1[0]), 
 						.myocontrol_0_conduit_end_miso(GPIO_1[1]),
@@ -200,6 +196,8 @@ soc_system u0(
 						.myocontrol_1_conduit_end_power_sense_n(GPIO_1[21] && SW[3]),
 						.myocontrol_1_conduit_end_scl(GPIO_1[13]),
 						.myocontrol_1_conduit_end_sda(GPIO_1[12]),
+						.myocontrol_1_conduit_end_arm_scl(GPIO_1[33]),
+						.myocontrol_1_conduit_end_arm_sda(GPIO_1[32]),
 					`endif /*USE_ETHERNET_SIDE*/
 					// led
 					.led_external_connection_export(LED),
