@@ -683,10 +683,6 @@ set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to HPS_I2C1_SCLK
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to HPS_I2C1_SDAT
 set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (Verilog)"
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_1[13]
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_1[12]
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_0[13]
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_0[12]
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_0[35]
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_0[34]
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_0[33]

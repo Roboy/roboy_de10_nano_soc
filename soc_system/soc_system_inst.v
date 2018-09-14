@@ -104,6 +104,17 @@
 		.myocontrol_1_conduit_end_arm_scl              (<connected-to-myocontrol_1_conduit_end_arm_scl>),              //                             .arm_scl
 		.myocontrol_1_conduit_end_arm_sda              (<connected-to-myocontrol_1_conduit_end_arm_sda>),              //                             .arm_sda
 		.reset_reset_n                                 (<connected-to-reset_reset_n>),                                 //                        reset.reset_n
-		.switches_external_connection_export           (<connected-to-switches_external_connection_export>)            // switches_external_connection.export
+		.switches_external_connection_export           (<connected-to-switches_external_connection_export>),           // switches_external_connection.export
+		.myocontrol_2_conduit_end_miso                 (<connected-to-myocontrol_2_conduit_end_miso>),                 //     myocontrol_2_conduit_end.miso
+		.myocontrol_2_conduit_end_mosi                 (<connected-to-myocontrol_2_conduit_end_mosi>),                 //                             .mosi
+		.myocontrol_2_conduit_end_sck                  (<connected-to-myocontrol_2_conduit_end_sck>),                  //                             .sck
+		.myocontrol_2_conduit_end_ss_n                 (<connected-to-myocontrol_2_conduit_end_ss_n>),                 //                             .ss_n
+		.myocontrol_2_conduit_end_mirrored_muscle_unit (<connected-to-myocontrol_2_conduit_end_mirrored_muscle_unit>), //                             .mirrored_muscle_unit
+		.myocontrol_2_conduit_end_power_sense_n        (<connected-to-myocontrol_2_conduit_end_power_sense_n>),        //                             .power_sense_n
+		.myocontrol_2_conduit_end_gpio_n               (<connected-to-myocontrol_2_conduit_end_gpio_n>),               //                             .gpio_n
+		.myocontrol_2_conduit_end_myobrick_scl         (<connected-to-myocontrol_2_conduit_end_myobrick_scl>),         //                             .myobrick_scl
+		.myocontrol_2_conduit_end_myobrick_sda         (<connected-to-myocontrol_2_conduit_end_myobrick_sda>),         //                             .myobrick_sda
+		.myocontrol_2_conduit_end_arm_scl              (<connected-to-myocontrol_2_conduit_end_arm_scl>),              //                             .arm_scl
+		.myocontrol_2_conduit_end_arm_sda              (<connected-to-myocontrol_2_conduit_end_arm_sda>)               //                             .arm_sda
 	);
 
