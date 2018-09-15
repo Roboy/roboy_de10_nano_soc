@@ -74,16 +74,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.9862246"
-     inkscape:cx="332.17857"
-     inkscape:cy="399.09876"
+     inkscape:zoom="1.4044729"
+     inkscape:cx="326.57174"
+     inkscape:cy="403.88306"
      inkscape:document-units="px"
-     inkscape:current-layer="g4622"
+     inkscape:current-layer="g6310"
      showgrid="false"
      inkscape:window-width="1920"
-     inkscape:window-height="1051"
-     inkscape:window-x="1920"
-     inkscape:window-y="0"
+     inkscape:window-height="1026"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
      inkscape:window-maximized="1" />
   <metadata
      id="metadata7">
@@ -104,12 +104,12 @@
     <g
        id="g6310">
       <rect
-         y="45.61842"
-         x="101.91902"
-         height="261.10736"
-         width="553.29254"
+         y="45.552711"
+         x="101.85332"
+         height="226.35023"
+         width="553.42395"
          id="rect5967"
-         style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1.90945673;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1.77804327;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          inkscape:export-xdpi="300"
          inkscape:export-ydpi="300" />
       <image
@@ -745,7 +745,7 @@
            y="133.36656"
            x="111.0481"
            id="tspan4310-9-6-1-6-4"
-           sodipodi:role="line">SS1[9-11]          SPI Slave Select lines of SPI bus 1 (the [] is the motor ID)</tspan></text>
+           sodipodi:role="line">SS1[9-12]          SPI Slave Select lines of SPI bus 1 (the [] is the motor ID)</tspan></text>
       <text
          sodipodi:linespacing="125%"
          id="text5969"
@@ -786,7 +786,9 @@
          inkscape:export-ydpi="300" />
       <g
          id="g4660"
-         transform="translate(0.71202857,-2.000005)">
+         transform="translate(0.71202857,-2.000005)"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300">
         <text
            inkscape:export-ydpi="300"
            inkscape:export-xdpi="300"
@@ -931,45 +933,17 @@
       <text
          xml:space="preserve"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.62741756px;line-height:125%;font-family:Courier;-inkscape-font-specification:Courier;letter-spacing:0px;word-spacing:0px;fill:#ff00ff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         x="298.00977"
-         y="588.03491"
+         x="70.632195"
+         y="632.56354"
          id="text4308-0-0-2-9-4-6-2-1-8-3-7"
          sodipodi:linespacing="125%"
          inkscape:export-xdpi="300"
          inkscape:export-ydpi="300"><tspan
            sodipodi:role="line"
            id="tspan4310-9-6-6-22-5-8-0-5-9-6-5"
-           x="298.00977"
-           y="588.03491"
+           x="70.632195"
+           y="632.56354"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.25185966px;font-family:Courier;-inkscape-font-specification:Courier;fill:#ff00ff;fill-opacity:1">PWR_S </tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.62741756px;line-height:125%;font-family:Courier;-inkscape-font-specification:Courier;letter-spacing:0px;word-spacing:0px;fill:#808000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         x="111.62195"
-         y="274.68442"
-         id="text4308-0-0-2-9-4-6-2-1-8-3-3"
-         sodipodi:linespacing="125%"
-         inkscape:export-xdpi="300"
-         inkscape:export-ydpi="300"><tspan
-           sodipodi:role="line"
-           id="tspan4310-9-6-6-22-5-8-0-5-9-6-6"
-           x="111.62195"
-           y="274.68442"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.25185966px;font-family:Courier;-inkscape-font-specification:Courier;fill:#808000;fill-opacity:1">GPIO               gpio, controlled by myoControl[1]</tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.62741756px;line-height:125%;font-family:Courier;-inkscape-font-specification:Courier;letter-spacing:0px;word-spacing:0px;fill:#808000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         x="70.714996"
-         y="588.16925"
-         id="text4308-0-0-2-9-4-6-2-1-8-3-3-7"
-         sodipodi:linespacing="125%"
-         inkscape:export-xdpi="300"
-         inkscape:export-ydpi="300"><tspan
-           sodipodi:role="line"
-           id="tspan4310-9-6-6-22-5-8-0-5-9-6-6-5"
-           x="70.714996"
-           y="588.16925"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.25185966px;font-family:Courier;-inkscape-font-specification:Courier;fill:#808000;fill-opacity:1">GPIO </tspan></text>
       <text
          xml:space="preserve"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.62741756px;line-height:125%;font-family:Courier;-inkscape-font-specification:Courier;letter-spacing:0px;word-spacing:0px;fill:#ff8018;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -1322,7 +1296,9 @@
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.25185966px;font-family:Courier;-inkscape-font-specification:Courier;fill:#ff8018;fill-opacity:1">LS_D[15]</tspan></text>
       <g
          id="g4622"
-         transform="translate(0,-50)">
+         transform="translate(0,-66)"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300">
         <text
            inkscape:export-ydpi="300"
            inkscape:export-xdpi="300"
@@ -1378,7 +1354,7 @@
              id="tspan4310-9-6-6-29"
              x="70.317139"
              y="667.5816"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.25185966px;font-family:Courier;-inkscape-font-specification:Courier;fill:#00754a;fill-opacity:1">SS2[12]</tspan></text>
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.25185966px;font-family:Courier;-inkscape-font-specification:Courier;fill:#00754a;fill-opacity:1">SS2[13]</tspan></text>
         <text
            inkscape:export-ydpi="300"
            inkscape:export-xdpi="300"
@@ -1392,7 +1368,7 @@
              id="tspan4310-9-6-6-2-2"
              x="70.317139"
              y="652.52954"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.25185966px;font-family:Courier;-inkscape-font-specification:Courier;fill:#00754a;fill-opacity:1">SS2[14]</tspan></text>
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.25185966px;font-family:Courier;-inkscape-font-specification:Courier;fill:#00754a;fill-opacity:1">SS2[15]</tspan></text>
         <text
            inkscape:export-ydpi="300"
            inkscape:export-xdpi="300"
@@ -1406,7 +1382,7 @@
              id="tspan4310-9-6-5-0"
              x="288.28204"
              y="651.17639"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.25185966px;font-family:Courier;-inkscape-font-specification:Courier;fill:#00754a;fill-opacity:1">SS2[13]</tspan></text>
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.25185966px;font-family:Courier;-inkscape-font-specification:Courier;fill:#00754a;fill-opacity:1">SS2[14]</tspan></text>
       </g>
       <text
          sodipodi:linespacing="125%"
@@ -1449,7 +1425,21 @@
            y="145.87303"
            x="111.0481"
            id="tspan4310-9-6-1-6-4-7"
-           sodipodi:role="line">SS2[12-14]         SPI Slave Select lines of SPI bus 2 (the [] is the motor ID)</tspan></text>
+           sodipodi:role="line">SS2[13-15]         SPI Slave Select lines of SPI bus 2 (the [] is the motor ID)</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text4308-0-0-2-0-3"
+         y="631.15424"
+         x="288.28204"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.62741756px;line-height:125%;font-family:Courier;-inkscape-font-specification:Courier;letter-spacing:0px;word-spacing:0px;fill:#00754a;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.25185966px;font-family:Courier;-inkscape-font-specification:Courier;fill:#00754a;fill-opacity:1"
+           y="631.15424"
+           x="288.28204"
+           id="tspan4310-9-6-6-2-67"
+           sodipodi:role="line">SS1[12]</tspan></text>
     </g>
   </g>
 </svg>
