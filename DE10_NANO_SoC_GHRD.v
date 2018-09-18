@@ -136,13 +136,13 @@ soc_system u0(
 //						.darkroomootxdecoder_0_conduit_end_sensor_signals({GPIO_1[35],GPIO_1[33],GPIO_1[31],GPIO_1[29],GPIO_1[27],GPIO_1[25],GPIO_1[23],GPIO_1[21],GPIO_1[19],GPIO_1[17],GPIO_1[15],GPIO_1[13],GPIO_1[11],GPIO_1[9],GPIO_1[7],GPIO_1[5]}),
 //						// uart interface 
 //						.darkroomootxdecoder_0_conduit_end_uart_tx(GPIO_1[3]),
-						// three i2c buses
-						.i2c_0_conduit_end_scl(GPIO_0[35]), 
-						.i2c_0_conduit_end_sda(GPIO_0[34]), 
-						.i2c_1_conduit_end_scl(GPIO_0[33]),
-						.i2c_1_conduit_end_sda(GPIO_0[32]), 
-						.i2c_2_conduit_end_scl(GPIO_0[31]),
-						.i2c_2_conduit_end_sda(GPIO_0[30]), 
+//						// three i2c buses
+//						.i2c_0_conduit_end_scl(GPIO_0[35]), 
+//						.i2c_0_conduit_end_sda(GPIO_0[34]), 
+//						.i2c_1_conduit_end_scl(GPIO_0[33]),
+//						.i2c_1_conduit_end_sda(GPIO_0[32]), 
+//						.i2c_2_conduit_end_scl(GPIO_0[31]),
+//						.i2c_2_conduit_end_sda(GPIO_0[30]), 
 						// myocontrol, three buses (9/4/3 motors)
 						.myocontrol_0_conduit_end_mosi(GPIO_0[0]),
 						.myocontrol_0_conduit_end_miso(GPIO_0[1]),
@@ -158,8 +158,8 @@ soc_system u0(
 						.myocontrol_1_conduit_end_power_sense_n(GPIO_0[19] && SW[3]),
 						.myocontrol_1_conduit_end_myobrick_scl(GPIO_0[27]),
 						.myocontrol_1_conduit_end_myobrick_sda(GPIO_0[26]),
-						.myocontrol_1_conduit_end_arm_scl(GPIO_0[27]),
-						.myocontrol_1_conduit_end_arm_sda(GPIO_0[26]),
+						.myocontrol_1_conduit_end_arm_scl(GPIO_0[31]),
+						.myocontrol_1_conduit_end_arm_sda(GPIO_0[30]),
 						.myocontrol_2_conduit_end_mosi(GPIO_0[20]), 
 						.myocontrol_2_conduit_end_miso(GPIO_0[21]),
 						.myocontrol_2_conduit_end_sck(GPIO_0[22]),
@@ -180,13 +180,13 @@ soc_system u0(
 //						.darkroomootxdecoder_0_conduit_end_sensor_signals({GPIO_0[35],GPIO_0[33],GPIO_0[31],GPIO_0[29],GPIO_0[27],GPIO_0[25],GPIO_0[23],GPIO_0[21],GPIO_0[19],GPIO_0[17],GPIO_0[15],GPIO_0[13],GPIO_0[11],GPIO_0[9],GPIO_0[7],GPIO_0[5]}),
 //						// uart interface 
 //						.darkroomootxdecoder_0_conduit_end_uart_tx(GPIO_0[3]),
-						// two i2c buses
-						.i2c_0_conduit_end_scl(GPIO_1[35]), 
-						.i2c_0_conduit_end_sda(GPIO_1[34]), 
-						.i2c_1_conduit_end_scl(GPIO_1[33]),
-						.i2c_1_conduit_end_sda(GPIO_1[32]), 
-						.i2c_2_conduit_end_scl(GPIO_1[31]),
-						.i2c_2_conduit_end_sda(GPIO_1[30]), 
+//						// two i2c buses
+//						.i2c_0_conduit_end_scl(GPIO_1[35]), 
+//						.i2c_0_conduit_end_sda(GPIO_1[34]), 
+//						.i2c_1_conduit_end_scl(GPIO_1[33]),
+//						.i2c_1_conduit_end_sda(GPIO_1[32]), 
+//						.i2c_2_conduit_end_scl(GPIO_1[31]),
+//						.i2c_2_conduit_end_sda(GPIO_1[30]), 
 						// myocontrol, three buses (9/4/3 motors)
 						.myocontrol_0_conduit_end_mosi(GPIO_1[0]),
 						.myocontrol_0_conduit_end_miso(GPIO_1[1]),
@@ -202,8 +202,8 @@ soc_system u0(
 						.myocontrol_1_conduit_end_power_sense_n(GPIO_1[19] && SW[3]),
 						.myocontrol_1_conduit_end_myobrick_scl(GPIO_1[27]),
 						.myocontrol_1_conduit_end_myobrick_sda(GPIO_1[26]),
-						.myocontrol_1_conduit_end_arm_scl(GPIO_1[27]),
-						.myocontrol_1_conduit_end_arm_sda(GPIO_1[26]),
+						.myocontrol_1_conduit_end_arm_scl(GPIO_1[31]),
+						.myocontrol_1_conduit_end_arm_sda(GPIO_1[30]),
 						.myocontrol_2_conduit_end_mosi(GPIO_1[20]), 
 						.myocontrol_2_conduit_end_miso(GPIO_1[21]),
 						.myocontrol_2_conduit_end_sck(GPIO_1[22]),
