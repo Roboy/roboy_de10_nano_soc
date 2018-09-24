@@ -113,7 +113,7 @@ wire                hps_debug_reset;
 //=======================================================
 //  Structural coding
 //=======================================================
-//`define USE_ETHERNET_SIDE
+`define USE_ETHERNET_SIDE
 
 soc_system u0(
                //Clock&Reset
