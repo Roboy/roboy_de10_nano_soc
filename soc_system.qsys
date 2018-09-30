@@ -13,7 +13,7 @@
    {
       datum _sortIndex
       {
-         value = "7";
+         value = "8";
          type = "int";
       }
    }
@@ -29,7 +29,7 @@
    {
       datum _sortIndex
       {
-         value = "6";
+         value = "7";
          type = "int";
       }
    }
@@ -45,7 +45,7 @@
    {
       datum _sortIndex
       {
-         value = "11";
+         value = "12";
          type = "int";
       }
    }
@@ -61,7 +61,7 @@
    {
       datum _sortIndex
       {
-         value = "12";
+         value = "13";
          type = "int";
       }
    }
@@ -77,7 +77,7 @@
    {
       datum _sortIndex
       {
-         value = "13";
+         value = "14";
          type = "int";
       }
    }
@@ -93,7 +93,7 @@
    {
       datum _sortIndex
       {
-         value = "14";
+         value = "15";
          type = "int";
       }
    }
@@ -117,7 +117,7 @@
    {
       datum baseAddress
       {
-         value = "112";
+         value = "16";
          type = "String";
       }
    }
@@ -125,7 +125,7 @@
    {
       datum _sortIndex
       {
-         value = "8";
+         value = "9";
          type = "int";
       }
    }
@@ -141,7 +141,7 @@
    {
       datum _sortIndex
       {
-         value = "9";
+         value = "10";
          type = "int";
       }
    }
@@ -157,7 +157,7 @@
    {
       datum _sortIndex
       {
-         value = "10";
+         value = "11";
          type = "int";
       }
    }
@@ -181,7 +181,23 @@
    {
       datum baseAddress
       {
-         value = "96";
+         value = "0";
+         type = "String";
+      }
+   }
+   element XL320_0
+   {
+      datum _sortIndex
+      {
+         value = "6";
+         type = "int";
+      }
+   }
+   element XL320_0.avalon_slave_0
+   {
+      datum baseAddress
+      {
+         value = "262144";
          type = "String";
       }
    }
@@ -189,7 +205,7 @@
    {
       datum _sortIndex
       {
-         value = "15";
+         value = "16";
          type = "int";
       }
    }
@@ -257,7 +273,7 @@
    {
       datum _sortIndex
       {
-         value = "16";
+         value = "17";
          type = "int";
       }
    }
@@ -1106,21 +1122,9 @@
    dir="start" />
  <interface name="hps_0_h2f_user0_clock" internal="hps_0.h2f_user0_clock" />
  <interface name="hps_0_hps_io" internal="hps_0.hps_io" type="conduit" dir="end" />
- <interface
-   name="i2c_0_conduit_end"
-   internal="I2C_0.conduit_end"
-   type="conduit"
-   dir="end" />
- <interface
-   name="i2c_1_conduit_end"
-   internal="I2C_1.conduit_end"
-   type="conduit"
-   dir="end" />
- <interface
-   name="i2c_2_conduit_end"
-   internal="I2C_2.conduit_end"
-   type="conduit"
-   dir="end" />
+ <interface name="i2c_0_conduit_end" internal="I2C_0.conduit_end" />
+ <interface name="i2c_1_conduit_end" internal="I2C_1.conduit_end" />
+ <interface name="i2c_2_conduit_end" internal="I2C_2.conduit_end" />
  <interface name="i2c_3_conduit_end" internal="I2C_3.conduit_end" />
  <interface
    name="led_external_connection"
@@ -1128,25 +1132,18 @@
    type="conduit"
    dir="end" />
  <interface name="memory" internal="hps_0.memory" type="conduit" dir="end" />
- <interface
-   name="myocontrol_0_conduit_end"
-   internal="MYOControl_0.conduit_end"
-   type="conduit"
-   dir="end" />
- <interface
-   name="myocontrol_1_conduit_end"
-   internal="MYOControl_1.conduit_end"
-   type="conduit"
-   dir="end" />
- <interface
-   name="myocontrol_2_conduit_end"
-   internal="MYOControl_2.conduit_end"
-   type="conduit"
-   dir="end" />
+ <interface name="myocontrol_0_conduit_end" internal="MYOControl_0.conduit_end" />
+ <interface name="myocontrol_1_conduit_end" internal="MYOControl_1.conduit_end" />
+ <interface name="myocontrol_2_conduit_end" internal="MYOControl_2.conduit_end" />
  <interface name="reset" internal="clk_0.clk_in_reset" type="reset" dir="end" />
  <interface
    name="switches_external_connection"
    internal="SWITCHES.external_connection"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="xl320_0_conduit_end"
+   internal="XL320_0.conduit_end"
    type="conduit"
    dir="end" />
  <module
@@ -1163,15 +1160,15 @@
   <parameter name="ENABLE_SPI_TRANSMITTER" value="true" />
   <parameter name="NUMBER_OF_SENSORS" value="16" />
  </module>
- <module name="I2C_0" kind="I2C" version="1.0" enabled="1">
+ <module name="I2C_0" kind="I2C" version="1.0" enabled="0">
   <parameter name="BUS_SPEED_HZ" value="400000" />
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
  </module>
- <module name="I2C_1" kind="I2C" version="1.0" enabled="1">
+ <module name="I2C_1" kind="I2C" version="1.0" enabled="0">
   <parameter name="BUS_SPEED_HZ" value="400000" />
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
  </module>
- <module name="I2C_2" kind="I2C" version="1.0" enabled="1">
+ <module name="I2C_2" kind="I2C" version="1.0" enabled="0">
   <parameter name="BUS_SPEED_HZ" value="400000" />
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
  </module>
@@ -1193,19 +1190,19 @@
   <parameter name="simDrivenValue" value="0" />
   <parameter name="width" value="8" />
  </module>
- <module name="MYOControl_0" kind="MYOControl" version="1.0" enabled="1">
+ <module name="MYOControl_0" kind="MYOControl" version="1.0" enabled="0">
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
   <parameter name="ENABLE_ARM_CONTROL" value="0" />
   <parameter name="ENABLE_MYOBRICK_CONTROL" value="0" />
   <parameter name="NUMBER_OF_MOTORS" value="9" />
  </module>
- <module name="MYOControl_1" kind="MYOControl" version="1.0" enabled="1">
+ <module name="MYOControl_1" kind="MYOControl" version="1.0" enabled="0">
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
   <parameter name="ENABLE_ARM_CONTROL" value="1" />
   <parameter name="ENABLE_MYOBRICK_CONTROL" value="1" />
   <parameter name="NUMBER_OF_MOTORS" value="4" />
  </module>
- <module name="MYOControl_2" kind="MYOControl" version="1.0" enabled="1">
+ <module name="MYOControl_2" kind="MYOControl" version="1.0" enabled="0">
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
   <parameter name="ENABLE_ARM_CONTROL" value="0" />
   <parameter name="ENABLE_MYOBRICK_CONTROL" value="1" />
@@ -1224,6 +1221,9 @@
   <parameter name="simDoTestBenchWiring" value="false" />
   <parameter name="simDrivenValue" value="0" />
   <parameter name="width" value="4" />
+ </module>
+ <module name="XL320_0" kind="XL320" version="1.0" enabled="1">
+  <parameter name="NUMBER_OF_MOTORS" value="8" />
  </module>
  <module name="adc_ltc2308_0" kind="adc_ltc2308" version="1.1" enabled="0" />
  <module name="clk_0" kind="clock_source" version="18.0" enabled="1">
@@ -2085,6 +2085,15 @@
    kind="avalon"
    version="18.0"
    start="hps_0.h2f_lw_axi_master"
+   end="XL320_0.avalon_slave_0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x00040000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.0"
+   start="hps_0.h2f_lw_axi_master"
    end="sysid_qsys.control_slave">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x1000" />
@@ -2096,7 +2105,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="LED.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0070" />
+  <parameter name="baseAddress" value="0x0010" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2105,7 +2114,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="SWITCHES.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0060" />
+  <parameter name="baseAddress" value="0x0000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2155,6 +2164,11 @@
    version="18.0"
    start="clk_0.clk"
    end="MYOControl_2.clock_sink" />
+ <connection
+   kind="clock"
+   version="18.0"
+   start="clk_0.clk"
+   end="XL320_0.clock_sink" />
  <connection
    kind="clock"
    version="18.0"
@@ -2223,6 +2237,11 @@
    version="18.0"
    start="clk_0.clk_reset"
    end="MYOControl_2.reset" />
+ <connection
+   kind="reset"
+   version="18.0"
+   start="clk_0.clk_reset"
+   end="XL320_0.reset" />
  <connection
    kind="reset"
    version="18.0"

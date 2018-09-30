@@ -103,7 +103,7 @@ module DE10_NANO_SoC_GHRD(
 //  REG/WIRE declarations
 //=======================================================
 wire hps_fpga_reset_n;
-wire     [1: 0]     fpga_debounced_buttons;
+wire     [1: 0]     fpga_debounced_buttons; 
 wire     [6: 0]     fpga_led_internal;
 wire     [2: 0]     hps_reset_req;
 wire                hps_cold_reset; 
@@ -119,100 +119,7 @@ soc_system u0(
                //Clock&Reset
                .clk_clk(FPGA_CLK1_50),                                      //                            clk.clk
                .reset_reset_n(hps_fpga_reset_n),                            //                          reset.reset_n
-					// adc
-//					.adc_ltc2308_0_conduit_end_CONVST(ADC_CONVST), 
-//					.adc_ltc2308_0_conduit_end_SCK(ADC_SCK), 
-//					.adc_ltc2308_0_conduit_end_SDI(ADC_SDI),    
-//					.adc_ltc2308_0_conduit_end_SDO(ADC_SDO),
-					`ifndef USE_ETHERNET_SIDE
-//						// darkroom
-//						.darkroom_0_conduit_end_d_io({GPIO_1[34],GPIO_1[32],GPIO_1[30],GPIO_1[28],GPIO_1[26],GPIO_1[24],GPIO_1[22],GPIO_1[20],GPIO_1[18],GPIO_1[16],GPIO_1[14],GPIO_1[12],GPIO_1[10],GPIO_1[8],GPIO_1[6],GPIO_1[4]}),
-//						.darkroom_0_conduit_end_e_io({GPIO_1[35],GPIO_1[33],GPIO_1[31],GPIO_1[29],GPIO_1[27],GPIO_1[25],GPIO_1[23],GPIO_1[21],GPIO_1[19],GPIO_1[17],GPIO_1[15],GPIO_1[13],GPIO_1[11],GPIO_1[9],GPIO_1[7],GPIO_1[5]}),
-//						// spi interface for esp8266
-//						.darkroom_0_conduit_end_mosi_o(GPIO_1[0]),
-//						.darkroom_0_conduit_end_sck_o(GPIO_1[1]),
-//						.darkroom_0_conduit_end_ss_n_o(GPIO_1[2]),
-//						// darkroom ootx decoder
-//						.darkroomootxdecoder_0_conduit_end_sensor_signals({GPIO_1[35],GPIO_1[33],GPIO_1[31],GPIO_1[29],GPIO_1[27],GPIO_1[25],GPIO_1[23],GPIO_1[21],GPIO_1[19],GPIO_1[17],GPIO_1[15],GPIO_1[13],GPIO_1[11],GPIO_1[9],GPIO_1[7],GPIO_1[5]}),
-//						// uart interface 
-//						.darkroomootxdecoder_0_conduit_end_uart_tx(GPIO_1[3]),
-//						// three i2c buses
-//						.i2c_0_conduit_end_scl(GPIO_0[35]), 
-//						.i2c_0_conduit_end_sda(GPIO_0[34]), 
-//						.i2c_1_conduit_end_scl(GPIO_0[33]),
-//						.i2c_1_conduit_end_sda(GPIO_0[32]), 
-//						.i2c_2_conduit_end_scl(GPIO_0[31]),
-//						.i2c_2_conduit_end_sda(GPIO_0[30]), 
-						// myocontrol, three buses (9/4/3 motors)
-						.myocontrol_0_conduit_end_mosi(GPIO_0[0]),
-						.myocontrol_0_conduit_end_miso(GPIO_0[1]),
-						.myocontrol_0_conduit_end_sck(GPIO_0[2]),
-						.myocontrol_0_conduit_end_ss_n({GPIO_0[11:3]}),
-						.myocontrol_0_conduit_end_mirrored_muscle_unit(SW[2]==1 && SW[1]==0 && SW[0]==0), // true for switch ID 4
-						.myocontrol_0_conduit_end_power_sense_n(GPIO_0[19] && SW[3]),
-						.myocontrol_1_conduit_end_mosi(GPIO_0[12]), 
-						.myocontrol_1_conduit_end_miso(GPIO_0[13]),
-						.myocontrol_1_conduit_end_sck(GPIO_0[14]),
-						.myocontrol_1_conduit_end_ss_n({GPIO_0[18:15]}),
-						.myocontrol_1_conduit_end_mirrored_muscle_unit(SW[2]==1 && SW[1]==0 && SW[0]==0), // true for switch ID 4
-						.myocontrol_1_conduit_end_power_sense_n(GPIO_0[19] && SW[3]),
-						.myocontrol_1_conduit_end_myobrick_scl(GPIO_0[27]),
-						.myocontrol_1_conduit_end_myobrick_sda(GPIO_0[26]),
-						.myocontrol_1_conduit_end_arm_scl(GPIO_0[31]),
-						.myocontrol_1_conduit_end_arm_sda(GPIO_0[30]),
-						.myocontrol_2_conduit_end_mosi(GPIO_0[20]), 
-						.myocontrol_2_conduit_end_miso(GPIO_0[21]),
-						.myocontrol_2_conduit_end_sck(GPIO_0[22]),
-						.myocontrol_2_conduit_end_ss_n({GPIO_0[25:23]}),
-						.myocontrol_2_conduit_end_mirrored_muscle_unit(SW[2]==1 && SW[1]==0 && SW[0]==0), // true for switch ID 4
-						.myocontrol_2_conduit_end_power_sense_n(GPIO_0[19] && SW[3]),
-						.myocontrol_2_conduit_end_myobrick_scl(GPIO_0[29]),
-						.myocontrol_2_conduit_end_myobrick_sda(GPIO_0[28]),
-					`else /*USE_ETHERNET_SIDE*/
-//						// darkroom
-//						.darkroom_0_conduit_end_d_io({GPIO_0[34],GPIO_0[32],GPIO_0[30],GPIO_0[28],GPIO_0[26],GPIO_0[24],GPIO_0[22],GPIO_0[20],GPIO_0[18],GPIO_0[16],GPIO_0[14],GPIO_0[12],GPIO_0[10],GPIO_0[8],GPIO_0[6],GPIO_0[4]}),
-//						.darkroom_0_conduit_end_e_io({GPIO_0[35],GPIO_0[33],GPIO_0[31],GPIO_0[29],GPIO_0[27],GPIO_0[25],GPIO_0[23],GPIO_0[21],GPIO_0[19],GPIO_0[17],GPIO_0[15],GPIO_0[13],GPIO_0[11],GPIO_0[9],GPIO_0[7],GPIO_0[5]}),
-//						// spi interface for esp8266
-//						.darkroom_0_conduit_end_mosi_o(GPIO_0[0]),
-//						.darkroom_0_conduit_end_sck_o(GPIO_0[1]),
-//						.darkroom_0_conduit_end_ss_n_o(GPIO_0[2]),
-//						// darkroom ootx decoder
-//						.darkroomootxdecoder_0_conduit_end_sensor_signals({GPIO_0[35],GPIO_0[33],GPIO_0[31],GPIO_0[29],GPIO_0[27],GPIO_0[25],GPIO_0[23],GPIO_0[21],GPIO_0[19],GPIO_0[17],GPIO_0[15],GPIO_0[13],GPIO_0[11],GPIO_0[9],GPIO_0[7],GPIO_0[5]}),
-//						// uart interface 
-//						.darkroomootxdecoder_0_conduit_end_uart_tx(GPIO_0[3]),
-//						// two i2c buses
-//						.i2c_0_conduit_end_scl(GPIO_1[35]), 
-//						.i2c_0_conduit_end_sda(GPIO_1[34]), 
-//						.i2c_1_conduit_end_scl(GPIO_1[33]),
-//						.i2c_1_conduit_end_sda(GPIO_1[32]), 
-//						.i2c_2_conduit_end_scl(GPIO_1[31]),
-//						.i2c_2_conduit_end_sda(GPIO_1[30]), 
-						// myocontrol, three buses (9/4/3 motors)
-						.myocontrol_0_conduit_end_mosi(GPIO_1[0]),
-						.myocontrol_0_conduit_end_miso(GPIO_1[1]),
-						.myocontrol_0_conduit_end_sck(GPIO_1[2]),
-						.myocontrol_0_conduit_end_ss_n({GPIO_1[11:3]}),
-						.myocontrol_0_conduit_end_mirrored_muscle_unit(SW[2]==1 && SW[1]==0 && SW[0]==0), // true for switch ID 4
-						.myocontrol_0_conduit_end_power_sense_n(GPIO_1[19] && SW[3]),
-						.myocontrol_1_conduit_end_mosi(GPIO_1[12]), 
-						.myocontrol_1_conduit_end_miso(GPIO_1[13]),
-						.myocontrol_1_conduit_end_sck(GPIO_1[14]),
-						.myocontrol_1_conduit_end_ss_n({GPIO_1[18:15]}),
-						.myocontrol_1_conduit_end_mirrored_muscle_unit(SW[2]==1 && SW[1]==0 && SW[0]==0), // true for switch ID 4
-						.myocontrol_1_conduit_end_power_sense_n(GPIO_1[19] && SW[3]),
-						.myocontrol_1_conduit_end_myobrick_scl(GPIO_1[27]),
-						.myocontrol_1_conduit_end_myobrick_sda(GPIO_1[26]),
-						.myocontrol_1_conduit_end_arm_scl(GPIO_1[31]),
-						.myocontrol_1_conduit_end_arm_sda(GPIO_1[30]),
-						.myocontrol_2_conduit_end_mosi(GPIO_1[20]), 
-						.myocontrol_2_conduit_end_miso(GPIO_1[21]),
-						.myocontrol_2_conduit_end_sck(GPIO_1[22]),
-						.myocontrol_2_conduit_end_ss_n({GPIO_1[25:23]}),
-						.myocontrol_2_conduit_end_mirrored_muscle_unit(SW[2]==1 && SW[1]==0 && SW[0]==0), // true for switch ID 4
-						.myocontrol_2_conduit_end_power_sense_n(GPIO_1[19] && SW[3]),
-						.myocontrol_2_conduit_end_myobrick_scl(GPIO_1[29]),
-						.myocontrol_2_conduit_end_myobrick_sda(GPIO_1[28]),
-					`endif /*USE_ETHERNET_SIDE*/
+					.xl320_0_conduit_end_serial_io(GPIO_0[35]),
 					// led
 					.led_external_connection_export(LED),
 					// switches
