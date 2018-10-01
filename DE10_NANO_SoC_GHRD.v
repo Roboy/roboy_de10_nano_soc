@@ -13,7 +13,7 @@ module DE10_NANO_SoC_GHRD(
       ///////// ARDUINO /////////
       inout       [15:0] ARDUINO_IO, 
       inout              ARDUINO_RESET_N,
-
+ 
       ///////// FPGA /////////  
       input              FPGA_CLK1_50,
       input              FPGA_CLK2_50,
@@ -119,7 +119,13 @@ soc_system u0(
                //Clock&Reset
                .clk_clk(FPGA_CLK1_50),                                      //                            clk.clk
                .reset_reset_n(hps_fpga_reset_n),                            //                          reset.reset_n
-					.xl320_0_conduit_end_serial_io(GPIO_0[35]),
+					.xl320_0_conduit_end_serial_io(GPIO_0[7]),
+					.i2c_0_conduit_end_scl(GPIO_0[1]),
+					.i2c_0_conduit_end_sda(GPIO_0[0]),
+					.i2c_1_conduit_end_scl(GPIO_0[3]),
+					.i2c_1_conduit_end_sda(GPIO_0[2]),
+					.i2c_2_conduit_end_scl(GPIO_0[5]),
+					.i2c_2_conduit_end_sda(GPIO_0[4]),
 					// led
 					.led_external_connection_export(LED),
 					// switches
