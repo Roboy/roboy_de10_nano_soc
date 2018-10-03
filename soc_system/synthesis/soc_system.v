@@ -88,7 +88,8 @@ module soc_system (
 		input  wire        memory_oct_rzqin,                      //                             .oct_rzqin
 		input  wire        reset_reset_n,                         //                        reset.reset_n
 		input  wire [3:0]  switches_external_connection_export,   // switches_external_connection.export
-		inout  wire        xl320_0_conduit_end_serial_io          //          xl320_0_conduit_end.serial_io
+		inout  wire        xl320_0_conduit_end_serial_io,         //          xl320_0_conduit_end.serial_io
+		output wire [7:0]  xl320_0_conduit_end_leds               //                             .leds
 	);
 
 	wire   [1:0] hps_0_h2f_lw_axi_master_awburst;                           // hps_0:h2f_lw_AWBURST -> mm_interconnect_0:hps_0_h2f_lw_axi_master_awburst
@@ -257,7 +258,8 @@ module soc_system (
 		.readdata    (mm_interconnect_0_xl320_0_avalon_slave_0_readdata),    //               .readdata
 		.waitrequest (mm_interconnect_0_xl320_0_avalon_slave_0_waitrequest), //               .waitrequest
 		.clock       (clk_clk),                                              //     clock_sink.clk
-		.serial_io   (xl320_0_conduit_end_serial_io)                         //    conduit_end.serial_io
+		.serial_io   (xl320_0_conduit_end_serial_io),                        //    conduit_end.serial_io
+		.leds        (xl320_0_conduit_end_leds)                              //               .leds
 	);
 
 	soc_system_hps_0 #(

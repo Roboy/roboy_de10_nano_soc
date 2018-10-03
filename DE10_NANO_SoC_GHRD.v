@@ -120,14 +120,15 @@ soc_system u0(
                .clk_clk(FPGA_CLK1_50),                                      //                            clk.clk
                .reset_reset_n(hps_fpga_reset_n),                            //                          reset.reset_n
 					.xl320_0_conduit_end_serial_io(GPIO_0[7]),
-					.i2c_0_conduit_end_scl(GPIO_0[1]),
 					.i2c_0_conduit_end_sda(GPIO_0[0]),
-					.i2c_1_conduit_end_scl(GPIO_0[3]),
+					.i2c_0_conduit_end_scl(GPIO_0[1]),
 					.i2c_1_conduit_end_sda(GPIO_0[2]),
-					.i2c_2_conduit_end_scl(GPIO_0[5]),
+					.i2c_1_conduit_end_scl(GPIO_0[3]),
 					.i2c_2_conduit_end_sda(GPIO_0[4]),
-					// led
+					.i2c_2_conduit_end_scl(GPIO_0[5]),
 					.led_external_connection_export(LED),
+					// led
+//					.led_external_connection_export(LED), 
 					// switches
 					.switches_external_connection_export(SW),
                //HPS ddr3
