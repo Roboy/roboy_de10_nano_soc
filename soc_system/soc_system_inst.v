@@ -81,8 +81,10 @@
 		.memory_mem_odt                        (<connected-to-memory_mem_odt>),                        //                             .mem_odt
 		.memory_mem_dm                         (<connected-to-memory_mem_dm>),                         //                             .mem_dm
 		.memory_oct_rzqin                      (<connected-to-memory_oct_rzqin>),                      //                             .oct_rzqin
+		.pwm_0_conduit_end_pwm                 (<connected-to-pwm_0_conduit_end_pwm>),                 //            pwm_0_conduit_end.pwm
 		.reset_reset_n                         (<connected-to-reset_reset_n>),                         //                        reset.reset_n
 		.switches_external_connection_export   (<connected-to-switches_external_connection_export>),   // switches_external_connection.export
-		.xl320_0_conduit_end_serial_io         (<connected-to-xl320_0_conduit_end_serial_io>)          //          xl320_0_conduit_end.serial_io
+		.xl320_0_conduit_end_serial_io         (<connected-to-xl320_0_conduit_end_serial_io>),         //          xl320_0_conduit_end.serial_io
+		.xl320_0_conduit_end_leds              (<connected-to-xl320_0_conduit_end_leds>)               //                             .leds
 	);
 

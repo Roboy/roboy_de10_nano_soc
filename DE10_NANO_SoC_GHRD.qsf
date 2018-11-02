@@ -723,18 +723,6 @@ set_instance_assignment -name SLEW_RATE 0 -to GPIO_1[29]
 set_instance_assignment -name SLEW_RATE 0 -to GPIO_1[28]
 set_instance_assignment -name SLEW_RATE 0 -to GPIO_1[27]
 set_instance_assignment -name SLEW_RATE 0 -to GPIO_1[26]
-set_global_assignment -name VHDL_FILE ip/roboy_fpga_code/i2c/i2c_master.vhd
-set_global_assignment -name SYSTEMVERILOG_FILE ip/roboy_fpga_code/xl320/XL320.sv
-set_global_assignment -name VERILOG_FILE ip/roboy_fpga_code/uart/uart_tx.v
-set_global_assignment -name VERILOG_FILE ip/roboy_fpga_code/uart/uart_rx.v
-set_global_assignment -name QIP_FILE soc_system/synthesis/soc_system.qip
-set_global_assignment -name QIP_FILE ip/roboy_fpga_code/i2c/fifo.qip
-set_global_assignment -name VERILOG_FILE ip/roboy_fpga_code/i2c/oneshot.v
-set_global_assignment -name SDC_FILE DE10_NANO_SOC_GHRD.sdc
-set_global_assignment -name VERILOG_FILE ip/intr_capturer/intr_capturer.v
-set_global_assignment -name VERILOG_FILE ip/edge_detect/altera_edge_detector.v
-set_global_assignment -name VERILOG_FILE ip/debounce/debounce.v
-set_global_assignment -name QIP_FILE ip/altsource_probe/hps_reset.qip
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_0[0]
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_0[1]
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_0[2]
@@ -759,4 +747,18 @@ set_instance_assignment -name SLEW_RATE 0 -to GPIO_0[5]
 set_instance_assignment -name SLEW_RATE 0 -to GPIO_0[6]
 set_instance_assignment -name SLEW_RATE 1 -to GPIO_0[7]
 set_instance_assignment -name SLEW_RATE 0 -to GPIO_0[2]
+set_global_assignment -name VERILOG_FILE ip/roboy_fpga_code/pwm_control/pwm_avalon_bridge.v
+set_global_assignment -name VHDL_FILE ip/roboy_fpga_code/pwm_control/pwm.vhd
+set_global_assignment -name VHDL_FILE ip/roboy_fpga_code/i2c/i2c_master.vhd
+set_global_assignment -name SYSTEMVERILOG_FILE ip/roboy_fpga_code/xl320/XL320.sv
+set_global_assignment -name VERILOG_FILE ip/roboy_fpga_code/uart/uart_tx.v
+set_global_assignment -name VERILOG_FILE ip/roboy_fpga_code/uart/uart_rx.v
+set_global_assignment -name QIP_FILE soc_system/synthesis/soc_system.qip
+set_global_assignment -name QIP_FILE ip/roboy_fpga_code/i2c/fifo.qip
+set_global_assignment -name VERILOG_FILE ip/roboy_fpga_code/i2c/oneshot.v
+set_global_assignment -name SDC_FILE DE10_NANO_SOC_GHRD.sdc
+set_global_assignment -name VERILOG_FILE ip/intr_capturer/intr_capturer.v
+set_global_assignment -name VERILOG_FILE ip/edge_detect/altera_edge_detector.v
+set_global_assignment -name VERILOG_FILE ip/debounce/debounce.v
+set_global_assignment -name QIP_FILE ip/altsource_probe/hps_reset.qip
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

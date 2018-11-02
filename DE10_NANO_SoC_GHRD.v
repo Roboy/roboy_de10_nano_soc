@@ -127,6 +127,7 @@ soc_system u0(
 					.i2c_2_conduit_end_sda(GPIO_0[4]),
 					.i2c_2_conduit_end_scl(GPIO_0[5]),
 					.led_external_connection_export(LED),
+					.pwm_0_conduit_end_pwm(GPIO_1[7:0]),
 					// led
 //					.led_external_connection_export(LED), 
 					// switches

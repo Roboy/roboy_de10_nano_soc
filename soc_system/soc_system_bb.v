@@ -82,9 +82,11 @@ module soc_system (
 	memory_mem_odt,
 	memory_mem_dm,
 	memory_oct_rzqin,
+	pwm_0_conduit_end_pwm,
 	reset_reset_n,
 	switches_external_connection_export,
-	xl320_0_conduit_end_serial_io);	
+	xl320_0_conduit_end_serial_io,
+	xl320_0_conduit_end_leds);	
 
 	input		clk_clk;
 	input		hps_0_f2h_cold_reset_req_reset_n;
@@ -168,7 +170,9 @@ module soc_system (
 	output		memory_mem_odt;
 	output	[3:0]	memory_mem_dm;
 	input		memory_oct_rzqin;
+	output	[7:0]	pwm_0_conduit_end_pwm;
 	input		reset_reset_n;
 	input	[3:0]	switches_external_connection_export;
 	inout		xl320_0_conduit_end_serial_io;
+	output	[7:0]	xl320_0_conduit_end_leds;
 endmodule

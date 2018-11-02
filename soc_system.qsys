@@ -197,7 +197,7 @@
    {
       datum baseAddress
       {
-         value = "262144";
+         value = "524288";
          type = "String";
       }
    }
@@ -275,6 +275,38 @@
       {
          value = "17";
          type = "int";
+      }
+   }
+   element pwm_0
+   {
+      datum _sortIndex
+      {
+         value = "18";
+         type = "int";
+      }
+   }
+   element pwm_0.avalon_slave_0
+   {
+      datum baseAddress
+      {
+         value = "262144";
+         type = "String";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
       }
    }
    element soc_system
@@ -1187,6 +1219,11 @@
  <interface name="myocontrol_0_conduit_end" internal="MYOControl_0.conduit_end" />
  <interface name="myocontrol_1_conduit_end" internal="MYOControl_1.conduit_end" />
  <interface name="myocontrol_2_conduit_end" internal="MYOControl_2.conduit_end" />
+ <interface
+   name="pwm_0_conduit_end"
+   internal="pwm_0.conduit_end"
+   type="conduit"
+   dir="end" />
  <interface name="reset" internal="clk_0.clk_in_reset" type="reset" dir="end" />
  <interface
    name="switches_external_connection"
@@ -2036,6 +2073,14 @@
   <parameter name="gui_switchover_mode">Automatic Switchover</parameter>
   <parameter name="gui_use_locked" value="false" />
  </module>
+ <module name="pwm_0" kind="pwm" version="1.0" enabled="1">
+  <parameter name="CLOCK_SPEED_HZ" value="50000000" />
+  <parameter name="NUMBER_OF_MOTORS" value="8" />
+  <parameter name="PWM_FREQ" value="60" />
+  <parameter name="PWM_PAUSE_FREQ" value="0" />
+  <parameter name="PWM_PHASES" value="1" />
+  <parameter name="PWM_RESOLUTION" value="12" />
+ </module>
  <module
    name="sysid_qsys"
    kind="altera_avalon_sysid_qsys"
@@ -2112,7 +2157,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="XL320_0.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00040000" />
+  <parameter name="baseAddress" value="0x00080000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2140,6 +2185,15 @@
    end="I2C_2.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="17.1"
+   start="hps_0.h2f_lw_axi_master"
+   end="pwm_0.avalon_slave_0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x00040000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2221,6 +2275,7 @@
  <connection kind="clock" version="17.1" start="clk_0.clk" end="I2C_0.clock_sink" />
  <connection kind="clock" version="17.1" start="clk_0.clk" end="I2C_1.clock_sink" />
  <connection kind="clock" version="17.1" start="clk_0.clk" end="I2C_2.clock_sink" />
+ <connection kind="clock" version="17.1" start="clk_0.clk" end="pwm_0.clock_sink" />
  <connection
    kind="clock"
    version="17.1"
@@ -2294,6 +2349,7 @@
  <connection kind="reset" version="17.1" start="clk_0.clk_reset" end="I2C_0.reset" />
  <connection kind="reset" version="17.1" start="clk_0.clk_reset" end="I2C_1.reset" />
  <connection kind="reset" version="17.1" start="clk_0.clk_reset" end="I2C_2.reset" />
+ <connection kind="reset" version="17.1" start="clk_0.clk_reset" end="pwm_0.reset" />
  <connection
    kind="reset"
    version="17.1"

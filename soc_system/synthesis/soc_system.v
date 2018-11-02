@@ -86,6 +86,7 @@ module soc_system (
 		output wire        memory_mem_odt,                        //                             .mem_odt
 		output wire [3:0]  memory_mem_dm,                         //                             .mem_dm
 		input  wire        memory_oct_rzqin,                      //                             .oct_rzqin
+		output wire [7:0]  pwm_0_conduit_end_pwm,                 //            pwm_0_conduit_end.pwm
 		input  wire        reset_reset_n,                         //                        reset.reset_n
 		input  wire [3:0]  switches_external_connection_export,   // switches_external_connection.export
 		inout  wire        xl320_0_conduit_end_serial_io,         //          xl320_0_conduit_end.serial_io
@@ -159,6 +160,9 @@ module soc_system (
 	wire         mm_interconnect_0_i2c_2_avalon_slave_0_read;               // mm_interconnect_0:I2C_2_avalon_slave_0_read -> I2C_2:read
 	wire         mm_interconnect_0_i2c_2_avalon_slave_0_write;              // mm_interconnect_0:I2C_2_avalon_slave_0_write -> I2C_2:write
 	wire  [31:0] mm_interconnect_0_i2c_2_avalon_slave_0_writedata;          // mm_interconnect_0:I2C_2_avalon_slave_0_writedata -> I2C_2:writedata
+	wire  [15:0] mm_interconnect_0_pwm_0_avalon_slave_0_address;            // mm_interconnect_0:pwm_0_avalon_slave_0_address -> pwm_0:address
+	wire         mm_interconnect_0_pwm_0_avalon_slave_0_write;              // mm_interconnect_0:pwm_0_avalon_slave_0_write -> pwm_0:write
+	wire  [31:0] mm_interconnect_0_pwm_0_avalon_slave_0_writedata;          // mm_interconnect_0:pwm_0_avalon_slave_0_writedata -> pwm_0:writedata
 	wire  [31:0] mm_interconnect_0_sysid_qsys_control_slave_readdata;       // sysid_qsys:readdata -> mm_interconnect_0:sysid_qsys_control_slave_readdata
 	wire   [0:0] mm_interconnect_0_sysid_qsys_control_slave_address;        // mm_interconnect_0:sysid_qsys_control_slave_address -> sysid_qsys:address
 	wire         mm_interconnect_0_led_s1_chipselect;                       // mm_interconnect_0:LED_s1_chipselect -> LED:chipselect
@@ -171,7 +175,7 @@ module soc_system (
 	wire         irq_mapper_receiver0_irq;                                  // jtag_uart:av_irq -> irq_mapper:receiver0_irq
 	wire  [31:0] hps_0_f2h_irq0_irq;                                        // irq_mapper:sender_irq -> hps_0:f2h_irq_p0
 	wire  [31:0] hps_0_f2h_irq1_irq;                                        // irq_mapper_001:sender_irq -> hps_0:f2h_irq_p1
-	wire         rst_controller_reset_out_reset;                            // rst_controller:reset_out -> [I2C_0:reset, I2C_1:reset, I2C_2:reset, LED:reset_n, SWITCHES:reset_n, XL320_0:reset, jtag_uart:rst_n, mm_interconnect_0:jtag_uart_reset_reset_bridge_in_reset_reset, sysid_qsys:reset_n]
+	wire         rst_controller_reset_out_reset;                            // rst_controller:reset_out -> [I2C_0:reset, I2C_1:reset, I2C_2:reset, LED:reset_n, SWITCHES:reset_n, XL320_0:reset, jtag_uart:rst_n, mm_interconnect_0:jtag_uart_reset_reset_bridge_in_reset_reset, pwm_0:reset, sysid_qsys:reset_n]
 	wire         rst_controller_001_reset_out_reset;                        // rst_controller_001:reset_out -> mm_interconnect_0:hps_0_h2f_lw_axi_master_agent_clk_reset_reset_bridge_in_reset_reset
 
 	I2C_avalon_bridge #(
@@ -388,6 +392,22 @@ module soc_system (
 		.av_irq         (irq_mapper_receiver0_irq)                                   //               irq.irq
 	);
 
+	pwm_avalon_bridge #(
+		.NUMBER_OF_MOTORS (8),
+		.CLOCK_SPEED_HZ   (50000000),
+		.PWM_FREQ         (60),
+		.PWM_PAUSE_FREQ   (0),
+		.PWM_RESOLUTION   (12),
+		.PWM_PHASES       (1)
+	) pwm_0 (
+		.reset     (rst_controller_reset_out_reset),                   //          reset.reset
+		.address   (mm_interconnect_0_pwm_0_avalon_slave_0_address),   // avalon_slave_0.address
+		.write     (mm_interconnect_0_pwm_0_avalon_slave_0_write),     //               .write
+		.writedata (mm_interconnect_0_pwm_0_avalon_slave_0_writedata), //               .writedata
+		.PWM       (pwm_0_conduit_end_pwm),                            //    conduit_end.pwm
+		.clock     (clk_clk)                                           //     clock_sink.clk
+	);
+
 	soc_system_sysid_qsys sysid_qsys (
 		.clock    (clk_clk),                                             //           clk.clk
 		.reset_n  (~rst_controller_reset_out_reset),                     //         reset.reset_n
@@ -465,6 +485,9 @@ module soc_system (
 		.LED_s1_readdata                                                     (mm_interconnect_0_led_s1_readdata),                         //                                                              .readdata
 		.LED_s1_writedata                                                    (mm_interconnect_0_led_s1_writedata),                        //                                                              .writedata
 		.LED_s1_chipselect                                                   (mm_interconnect_0_led_s1_chipselect),                       //                                                              .chipselect
+		.pwm_0_avalon_slave_0_address                                        (mm_interconnect_0_pwm_0_avalon_slave_0_address),            //                                          pwm_0_avalon_slave_0.address
+		.pwm_0_avalon_slave_0_write                                          (mm_interconnect_0_pwm_0_avalon_slave_0_write),              //                                                              .write
+		.pwm_0_avalon_slave_0_writedata                                      (mm_interconnect_0_pwm_0_avalon_slave_0_writedata),          //                                                              .writedata
 		.SWITCHES_s1_address                                                 (mm_interconnect_0_switches_s1_address),                     //                                                   SWITCHES_s1.address
 		.SWITCHES_s1_readdata                                                (mm_interconnect_0_switches_s1_readdata),                    //                                                              .readdata
 		.sysid_qsys_control_slave_address                                    (mm_interconnect_0_sysid_qsys_control_slave_address),        //                                      sysid_qsys_control_slave.address
