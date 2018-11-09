@@ -17,28 +17,12 @@
          type = "int";
       }
    }
-   element DarkRoomOOTXdecoder_0.avalon_slave_0
-   {
-      datum baseAddress
-      {
-         value = "2048";
-         type = "String";
-      }
-   }
    element DarkRoom_0
    {
       datum _sortIndex
       {
          value = "6";
          type = "int";
-      }
-   }
-   element DarkRoom_0.avalon_slave_0
-   {
-      datum baseAddress
-      {
-         value = "0";
-         type = "String";
       }
    }
    element I2C_0
@@ -95,14 +79,6 @@
       {
          value = "14";
          type = "int";
-      }
-   }
-   element I2C_3.avalon_slave_0
-   {
-      datum baseAddress
-      {
-         value = "0";
-         type = "String";
       }
    }
    element LED
@@ -191,14 +167,6 @@
       {
          value = "15";
          type = "int";
-      }
-   }
-   element adc_ltc2308_0.slave
-   {
-      datum baseAddress
-      {
-         value = "160";
-         type = "String";
       }
    }
    element clk_0
@@ -1106,21 +1074,9 @@
    dir="start" />
  <interface name="hps_0_h2f_user0_clock" internal="hps_0.h2f_user0_clock" />
  <interface name="hps_0_hps_io" internal="hps_0.hps_io" type="conduit" dir="end" />
- <interface
-   name="i2c_0_conduit_end"
-   internal="I2C_0.conduit_end"
-   type="conduit"
-   dir="end" />
- <interface
-   name="i2c_1_conduit_end"
-   internal="I2C_1.conduit_end"
-   type="conduit"
-   dir="end" />
- <interface
-   name="i2c_2_conduit_end"
-   internal="I2C_2.conduit_end"
-   type="conduit"
-   dir="end" />
+ <interface name="i2c_0_conduit_end" internal="I2C_0.conduit_end" />
+ <interface name="i2c_1_conduit_end" internal="I2C_1.conduit_end" />
+ <interface name="i2c_2_conduit_end" internal="I2C_2.conduit_end" />
  <interface name="i2c_3_conduit_end" internal="I2C_3.conduit_end" />
  <interface
    name="led_external_connection"
@@ -1128,21 +1084,9 @@
    type="conduit"
    dir="end" />
  <interface name="memory" internal="hps_0.memory" type="conduit" dir="end" />
- <interface
-   name="myocontrol_0_conduit_end"
-   internal="MYOControl_0.conduit_end"
-   type="conduit"
-   dir="end" />
- <interface
-   name="myocontrol_1_conduit_end"
-   internal="MYOControl_1.conduit_end"
-   type="conduit"
-   dir="end" />
- <interface
-   name="myocontrol_2_conduit_end"
-   internal="MYOControl_2.conduit_end"
-   type="conduit"
-   dir="end" />
+ <interface name="myocontrol_0_conduit_end" internal="MYOControl_0.conduit_end" />
+ <interface name="myocontrol_1_conduit_end" internal="MYOControl_1.conduit_end" />
+ <interface name="myocontrol_2_conduit_end" internal="MYOControl_2.conduit_end" />
  <interface name="reset" internal="clk_0.clk_in_reset" type="reset" dir="end" />
  <interface
    name="switches_external_connection"

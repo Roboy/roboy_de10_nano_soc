@@ -113,7 +113,7 @@ wire                hps_debug_reset;
 //=======================================================
 //  Structural coding
 //=======================================================
-`define USE_ETHERNET_SIDE
+//`define USE_ETHERNET_SIDE
 
 soc_system u0(
                //Clock&Reset
@@ -137,12 +137,12 @@ soc_system u0(
 //						// uart interface 
 //						.darkroomootxdecoder_0_conduit_end_uart_tx(GPIO_1[3]),
 //						// three i2c buses
-//						.i2c_0_conduit_end_scl(GPIO_0[35]), 
-//						.i2c_0_conduit_end_sda(GPIO_0[34]), 
-//						.i2c_1_conduit_end_scl(GPIO_0[33]),
-//						.i2c_1_conduit_end_sda(GPIO_0[32]), 
-//						.i2c_2_conduit_end_scl(GPIO_0[31]),
-//						.i2c_2_conduit_end_sda(GPIO_0[30]), 
+						.i2c_0_conduit_end_scl(GPIO_1[35]), 
+						.i2c_0_conduit_end_sda(GPIO_1[34]), 
+						.i2c_1_conduit_end_scl(GPIO_1[33]),
+						.i2c_1_conduit_end_sda(GPIO_1[32]), 
+						.i2c_2_conduit_end_scl(GPIO_1[31]),
+						.i2c_2_conduit_end_sda(GPIO_1[30]), 
 						// myocontrol, three buses (9/4/3 motors)
 						.myocontrol_0_conduit_end_mosi(GPIO_0[0]),
 						.myocontrol_0_conduit_end_miso(GPIO_0[1]),
@@ -181,12 +181,12 @@ soc_system u0(
 //						// uart interface 
 //						.darkroomootxdecoder_0_conduit_end_uart_tx(GPIO_0[3]),
 //						// two i2c buses
-//						.i2c_0_conduit_end_scl(GPIO_1[35]), 
-//						.i2c_0_conduit_end_sda(GPIO_1[34]), 
-//						.i2c_1_conduit_end_scl(GPIO_1[33]),
-//						.i2c_1_conduit_end_sda(GPIO_1[32]), 
-//						.i2c_2_conduit_end_scl(GPIO_1[31]),
-//						.i2c_2_conduit_end_sda(GPIO_1[30]), 
+						.i2c_0_conduit_end_scl(GPIO_0[35]), 
+						.i2c_0_conduit_end_sda(GPIO_0[34]), 
+						.i2c_1_conduit_end_scl(GPIO_0[33]),
+						.i2c_1_conduit_end_sda(GPIO_0[32]), 
+						.i2c_2_conduit_end_scl(GPIO_0[31]),
+						.i2c_2_conduit_end_sda(GPIO_0[30]), 
 						// myocontrol, three buses (9/4/3 motors)
 						.myocontrol_0_conduit_end_mosi(GPIO_1[0]),
 						.myocontrol_0_conduit_end_miso(GPIO_1[1]),
