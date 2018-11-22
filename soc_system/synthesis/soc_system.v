@@ -219,7 +219,7 @@ module soc_system (
 		.NUMBER_OF_MOTORS        (6),
 		.CLOCK_SPEED_HZ          (50000000),
 		.ENABLE_MYOBRICK_CONTROL (1),
-		.SAMPLES_TO_AVERAGE      (512),
+		.SAMPLES_TO_AVERAGE      (256),
 		.ENABLE_ARM_CONTROL      (0)
 	) myocontrol_1 (
 		.reset                (rst_controller_reset_out_reset),                            //          reset.reset

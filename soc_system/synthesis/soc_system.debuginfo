@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="soc_system" kind="system" version="17.1" fabric="QSYS">
  <!-- Format version 17.1 590 (Future versions may contain additional information.) -->
- <!-- 2018.11.22.00:36:38 -->
+ <!-- 2018.11.22.18:03:27 -->
  <!-- A collection of modules and connections -->
  <parameter name="clockCrossingAdapter">
   <type>com.altera.sopcmodel.ensemble.EClockAdapter</type>
@@ -53,7 +53,7 @@
  </parameter>
  <parameter name="generationId">
   <type>int</type>
-  <value>1542843101</value>
+  <value>1542906135</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>true</visible>
@@ -1596,7 +1596,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="SAMPLES_TO_AVERAGE">
    <type>int</type>
-   <value>512</value>
+   <value>256</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -44511,7 +44511,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.TIMESTAMP</name>
-   <value>1542843101</value>
+   <value>1542906135</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.compatible</name>
@@ -44531,7 +44531,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.timestamp</name>
-   <value>1542843101</value>
+   <value>1542906135</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.vendor</name>
@@ -44547,7 +44547,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="timestamp">
    <type>int</type>
-   <value>1542843101</value>
+   <value>1542906135</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -49943,5 +49943,5 @@ parameters are a RESULT of the module parameters. -->
   <version>17.1</version>
  </plugin>
  <reportVersion>17.1 590</reportVersion>
- <uniqueIdentifier>005056C0000800000167389FC7D8</uniqueIdentifier>
+ <uniqueIdentifier>005056C00008000001673C5FD2EC</uniqueIdentifier>
 </EnsembleReport>
