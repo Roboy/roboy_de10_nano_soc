@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="soc_system" kind="system" version="17.1" fabric="QSYS">
  <!-- Format version 17.1 590 (Future versions may contain additional information.) -->
- <!-- 2018.11.20.21:01:39 -->
+ <!-- 2018.11.22.00:36:38 -->
  <!-- A collection of modules and connections -->
  <parameter name="clockCrossingAdapter">
   <type>com.altera.sopcmodel.ensemble.EClockAdapter</type>
@@ -53,7 +53,7 @@
  </parameter>
  <parameter name="generationId">
   <type>int</type>
-  <value>1542744039</value>
+  <value>1542843101</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>true</visible>
@@ -952,6 +952,14 @@ the requested settings for a module instance. -->
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
+  <parameter name="SAMPLES_TO_AVERAGE">
+   <type>int</type>
+   <value>256</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
   <parameter name="ENABLE_ARM_CONTROL">
    <type>int</type>
    <value>0</value>
@@ -1431,60 +1439,6 @@ parameters are a RESULT of the module parameters. -->
    <type>conduit</type>
    <isStart>false</isStart>
    <port>
-    <name>miso</name>
-    <direction>Input</direction>
-    <width>1</width>
-    <role>miso</role>
-   </port>
-   <port>
-    <name>mosi</name>
-    <direction>Output</direction>
-    <width>1</width>
-    <role>mosi</role>
-   </port>
-   <port>
-    <name>sck</name>
-    <direction>Output</direction>
-    <width>1</width>
-    <role>sck</role>
-   </port>
-   <port>
-    <name>ss_n_o</name>
-    <direction>Output</direction>
-    <width>9</width>
-    <role>ss_n</role>
-   </port>
-   <port>
-    <name>mirrored_muscle_unit</name>
-    <direction>Input</direction>
-    <width>1</width>
-    <role>mirrored_muscle_unit</role>
-   </port>
-   <port>
-    <name>power_sense_n</name>
-    <direction>Input</direction>
-    <width>1</width>
-    <role>power_sense_n</role>
-   </port>
-   <port>
-    <name>gpio_n</name>
-    <direction>Output</direction>
-    <width>1</width>
-    <role>gpio_n</role>
-   </port>
-   <port>
-    <name>arm_scl</name>
-    <direction>Output</direction>
-    <width>1</width>
-    <role>arm_scl</role>
-   </port>
-   <port>
-    <name>arm_sda</name>
-    <direction>Bidir</direction>
-    <width>1</width>
-    <role>arm_sda</role>
-   </port>
-   <port>
     <name>angle_miso</name>
     <direction>Input</direction>
     <width>1</width>
@@ -1507,6 +1461,60 @@ parameters are a RESULT of the module parameters. -->
     <direction>Output</direction>
     <width>9</width>
     <role>angle_ss_n_o</role>
+   </port>
+   <port>
+    <name>arm_scl</name>
+    <direction>Output</direction>
+    <width>1</width>
+    <role>arm_scl</role>
+   </port>
+   <port>
+    <name>arm_sda</name>
+    <direction>Bidir</direction>
+    <width>1</width>
+    <role>arm_sda</role>
+   </port>
+   <port>
+    <name>mirrored_muscle_unit</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>mirrored_muscle_unit</role>
+   </port>
+   <port>
+    <name>miso</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>miso</role>
+   </port>
+   <port>
+    <name>mosi</name>
+    <direction>Output</direction>
+    <width>1</width>
+    <role>mosi</role>
+   </port>
+   <port>
+    <name>power_sense_n</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>power_sense_n</role>
+   </port>
+   <port>
+    <name>sck</name>
+    <direction>Output</direction>
+    <width>1</width>
+    <role>sck</role>
+   </port>
+   <port>
+    <name>ss_n_o</name>
+    <direction>Output</direction>
+    <width>9</width>
+    <role>ss_n_o</role>
+   </port>
+   <port>
+    <name>gpio_n</name>
+    <direction>Output</direction>
+    <width>1</width>
+    <role>gpio_n</role>
    </port>
   </interface>
   <interface name="clock_sink" kind="clock_sink" version="17.1">
@@ -1586,9 +1594,17 @@ the requested settings for a module instance. -->
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
+  <parameter name="SAMPLES_TO_AVERAGE">
+   <type>int</type>
+   <value>512</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
   <parameter name="ENABLE_ARM_CONTROL">
    <type>int</type>
-   <value>1</value>
+   <value>0</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -2065,60 +2081,6 @@ parameters are a RESULT of the module parameters. -->
    <type>conduit</type>
    <isStart>false</isStart>
    <port>
-    <name>miso</name>
-    <direction>Input</direction>
-    <width>1</width>
-    <role>miso</role>
-   </port>
-   <port>
-    <name>mosi</name>
-    <direction>Output</direction>
-    <width>1</width>
-    <role>mosi</role>
-   </port>
-   <port>
-    <name>sck</name>
-    <direction>Output</direction>
-    <width>1</width>
-    <role>sck</role>
-   </port>
-   <port>
-    <name>ss_n_o</name>
-    <direction>Output</direction>
-    <width>6</width>
-    <role>ss_n</role>
-   </port>
-   <port>
-    <name>mirrored_muscle_unit</name>
-    <direction>Input</direction>
-    <width>1</width>
-    <role>mirrored_muscle_unit</role>
-   </port>
-   <port>
-    <name>power_sense_n</name>
-    <direction>Input</direction>
-    <width>1</width>
-    <role>power_sense_n</role>
-   </port>
-   <port>
-    <name>gpio_n</name>
-    <direction>Output</direction>
-    <width>1</width>
-    <role>gpio_n</role>
-   </port>
-   <port>
-    <name>arm_scl</name>
-    <direction>Output</direction>
-    <width>1</width>
-    <role>arm_scl</role>
-   </port>
-   <port>
-    <name>arm_sda</name>
-    <direction>Bidir</direction>
-    <width>1</width>
-    <role>arm_sda</role>
-   </port>
-   <port>
     <name>angle_miso</name>
     <direction>Input</direction>
     <width>1</width>
@@ -2141,6 +2103,60 @@ parameters are a RESULT of the module parameters. -->
     <direction>Output</direction>
     <width>6</width>
     <role>angle_ss_n_o</role>
+   </port>
+   <port>
+    <name>arm_scl</name>
+    <direction>Output</direction>
+    <width>1</width>
+    <role>arm_scl</role>
+   </port>
+   <port>
+    <name>arm_sda</name>
+    <direction>Bidir</direction>
+    <width>1</width>
+    <role>arm_sda</role>
+   </port>
+   <port>
+    <name>mirrored_muscle_unit</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>mirrored_muscle_unit</role>
+   </port>
+   <port>
+    <name>miso</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>miso</role>
+   </port>
+   <port>
+    <name>mosi</name>
+    <direction>Output</direction>
+    <width>1</width>
+    <role>mosi</role>
+   </port>
+   <port>
+    <name>power_sense_n</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>power_sense_n</role>
+   </port>
+   <port>
+    <name>sck</name>
+    <direction>Output</direction>
+    <width>1</width>
+    <role>sck</role>
+   </port>
+   <port>
+    <name>ss_n_o</name>
+    <direction>Output</direction>
+    <width>6</width>
+    <role>ss_n_o</role>
+   </port>
+   <port>
+    <name>gpio_n</name>
+    <direction>Output</direction>
+    <width>1</width>
+    <role>gpio_n</role>
    </port>
   </interface>
   <interface name="clock_sink" kind="clock_sink" version="17.1">
@@ -44495,7 +44511,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.TIMESTAMP</name>
-   <value>1542744039</value>
+   <value>1542843101</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.compatible</name>
@@ -44515,7 +44531,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.timestamp</name>
-   <value>1542744039</value>
+   <value>1542843101</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.vendor</name>
@@ -44531,7 +44547,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="timestamp">
    <type>int</type>
-   <value>1542744039</value>
+   <value>1542843101</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -49927,5 +49943,5 @@ parameters are a RESULT of the module parameters. -->
   <version>17.1</version>
  </plugin>
  <reportVersion>17.1 590</reportVersion>
- <uniqueIdentifier>005056C000080000016732B660F7</uniqueIdentifier>
+ <uniqueIdentifier>005056C0000800000167389FC7D8</uniqueIdentifier>
 </EnsembleReport>

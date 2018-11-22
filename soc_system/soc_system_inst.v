@@ -76,10 +76,12 @@
 		.myocontrol_0_conduit_end_mirrored_muscle_unit (<connected-to-myocontrol_0_conduit_end_mirrored_muscle_unit>), //                             .mirrored_muscle_unit
 		.myocontrol_0_conduit_end_power_sense_n        (<connected-to-myocontrol_0_conduit_end_power_sense_n>),        //                             .power_sense_n
 		.myocontrol_0_conduit_end_gpio_n               (<connected-to-myocontrol_0_conduit_end_gpio_n>),               //                             .gpio_n
-		.myocontrol_0_conduit_end_myobrick_scl         (<connected-to-myocontrol_0_conduit_end_myobrick_scl>),         //                             .myobrick_scl
-		.myocontrol_0_conduit_end_myobrick_sda         (<connected-to-myocontrol_0_conduit_end_myobrick_sda>),         //                             .myobrick_sda
 		.myocontrol_0_conduit_end_arm_scl              (<connected-to-myocontrol_0_conduit_end_arm_scl>),              //                             .arm_scl
 		.myocontrol_0_conduit_end_arm_sda              (<connected-to-myocontrol_0_conduit_end_arm_sda>),              //                             .arm_sda
+		.myocontrol_0_conduit_end_angle_miso           (<connected-to-myocontrol_0_conduit_end_angle_miso>),           //                             .angle_miso
+		.myocontrol_0_conduit_end_angle_mosi           (<connected-to-myocontrol_0_conduit_end_angle_mosi>),           //                             .angle_mosi
+		.myocontrol_0_conduit_end_angle_sck            (<connected-to-myocontrol_0_conduit_end_angle_sck>),            //                             .angle_sck
+		.myocontrol_0_conduit_end_angle_ss_n_o         (<connected-to-myocontrol_0_conduit_end_angle_ss_n_o>),         //                             .angle_ss_n_o
 		.myocontrol_1_conduit_end_miso                 (<connected-to-myocontrol_1_conduit_end_miso>),                 //     myocontrol_1_conduit_end.miso
 		.myocontrol_1_conduit_end_mosi                 (<connected-to-myocontrol_1_conduit_end_mosi>),                 //                             .mosi
 		.myocontrol_1_conduit_end_sck                  (<connected-to-myocontrol_1_conduit_end_sck>),                  //                             .sck
@@ -87,10 +89,12 @@
 		.myocontrol_1_conduit_end_mirrored_muscle_unit (<connected-to-myocontrol_1_conduit_end_mirrored_muscle_unit>), //                             .mirrored_muscle_unit
 		.myocontrol_1_conduit_end_power_sense_n        (<connected-to-myocontrol_1_conduit_end_power_sense_n>),        //                             .power_sense_n
 		.myocontrol_1_conduit_end_gpio_n               (<connected-to-myocontrol_1_conduit_end_gpio_n>),               //                             .gpio_n
-		.myocontrol_1_conduit_end_myobrick_scl         (<connected-to-myocontrol_1_conduit_end_myobrick_scl>),         //                             .myobrick_scl
-		.myocontrol_1_conduit_end_myobrick_sda         (<connected-to-myocontrol_1_conduit_end_myobrick_sda>),         //                             .myobrick_sda
 		.myocontrol_1_conduit_end_arm_scl              (<connected-to-myocontrol_1_conduit_end_arm_scl>),              //                             .arm_scl
 		.myocontrol_1_conduit_end_arm_sda              (<connected-to-myocontrol_1_conduit_end_arm_sda>),              //                             .arm_sda
+		.myocontrol_1_conduit_end_angle_miso           (<connected-to-myocontrol_1_conduit_end_angle_miso>),           //                             .angle_miso
+		.myocontrol_1_conduit_end_angle_mosi           (<connected-to-myocontrol_1_conduit_end_angle_mosi>),           //                             .angle_mosi
+		.myocontrol_1_conduit_end_angle_sck            (<connected-to-myocontrol_1_conduit_end_angle_sck>),            //                             .angle_sck
+		.myocontrol_1_conduit_end_angle_ss_n_o         (<connected-to-myocontrol_1_conduit_end_angle_ss_n_o>),         //                             .angle_ss_n_o
 		.reset_reset_n                                 (<connected-to-reset_reset_n>),                                 //                        reset.reset_n
 		.switches_external_connection_export           (<connected-to-switches_external_connection_export>)            // switches_external_connection.export
 	);
