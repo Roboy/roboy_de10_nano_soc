@@ -153,7 +153,7 @@ soc_system u0(
 						.myocontrol_1_conduit_end_mosi(GPIO_0[12]), 
 						.myocontrol_1_conduit_end_miso(GPIO_0[13]),
 						.myocontrol_1_conduit_end_sck(GPIO_0[14]),
-						.myocontrol_1_conduit_end_ss_n_o({GPIO_0[20:15]}),
+						.myocontrol_1_conduit_end_ss_n_o({GPIO_0[21:20], GPIO_0[18:15]}),
 						.myocontrol_1_conduit_end_mirrored_muscle_unit(SW[2]==1 && SW[1]==0 && SW[0]==0), // true for switch ID 4
 						.myocontrol_1_conduit_end_power_sense_n(GPIO_0[19] && SW[3]),
 						.myocontrol_1_conduit_end_arm_scl(GPIO_0[33]),
