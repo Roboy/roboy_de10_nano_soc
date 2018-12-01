@@ -6,7 +6,7 @@
 set_global_assignment -name FAMILY "Cyclone V"
 set_global_assignment -name DEVICE 5CSEBA6U23I7
 set_global_assignment -name TOP_LEVEL_ENTITY "DE10_NANO_SoC_GHRD"
-set_global_assignment -name LAST_QUARTUS_VERSION "17.1.0 Lite Edition"
+set_global_assignment -name LAST_QUARTUS_VERSION "18.0.0 Lite Edition"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "17:14:54 MARCH 04,2015"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 
@@ -723,7 +723,6 @@ set_instance_assignment -name SLEW_RATE 0 -to GPIO_1[29]
 set_instance_assignment -name SLEW_RATE 0 -to GPIO_1[28]
 set_instance_assignment -name SLEW_RATE 0 -to GPIO_1[27]
 set_instance_assignment -name SLEW_RATE 0 -to GPIO_1[26]
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name VERILOG_FILE ip/roboy_fpga_code/pwm_control/pwm_avalon_bridge.v
 set_global_assignment -name VHDL_FILE ip/roboy_fpga_code/pwm_control/pwm.vhd
 set_global_assignment -name SYSTEMVERILOG_FILE ip/roboy_fpga_code/msj_platform/MSJPlatformPDController.sv
@@ -755,3 +754,5 @@ set_global_assignment -name QIP_FILE ip/altsource_probe/hps_reset.qip
 set_global_assignment -name SYSTEMVERILOG_FILE ip/roboy_fpga_code/a133x/A1339Control.sv
 set_global_assignment -name VERILOG_FILE ip/filters/lowpass_filter.v
 set_global_assignment -name VERILOG_FILE ip/filters/lowpass_filter_tb.v
+set_global_assignment -name SYSTEMVERILOG_FILE ip/roboy_fpga_code/interfaces/A1339Interface.sv
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

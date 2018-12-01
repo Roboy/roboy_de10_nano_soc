@@ -70,15 +70,15 @@ module soc_system (
 	memory_mem_odt,
 	memory_mem_dm,
 	memory_oct_rzqin,
-	reset_reset_n,
-	switches_external_connection_export,
 	msjplatformcontroller_0_conduit_end_pwm,
 	msjplatformcontroller_0_conduit_end_angle_miso,
 	msjplatformcontroller_0_conduit_end_angle_mosi,
 	msjplatformcontroller_0_conduit_end_angle_sck,
 	msjplatformcontroller_0_conduit_end_angle_ss_n_o,
 	msjplatformcontroller_0_conduit_end_writeresponsevalid_n,
-	msjplatformcontroller_0_conduit_end_emergency_off);	
+	msjplatformcontroller_0_conduit_end_emergency_off,
+	reset_reset_n,
+	switches_external_connection_export);	
 
 	input		clk_clk;
 	input		hps_0_f2h_cold_reset_req_reset_n;
@@ -150,8 +150,6 @@ module soc_system (
 	output		memory_mem_odt;
 	output	[3:0]	memory_mem_dm;
 	input		memory_oct_rzqin;
-	input		reset_reset_n;
-	input	[3:0]	switches_external_connection_export;
 	output	[7:0]	msjplatformcontroller_0_conduit_end_pwm;
 	input		msjplatformcontroller_0_conduit_end_angle_miso;
 	output		msjplatformcontroller_0_conduit_end_angle_mosi;
@@ -159,4 +157,6 @@ module soc_system (
 	output	[7:0]	msjplatformcontroller_0_conduit_end_angle_ss_n_o;
 	output	[7:0]	msjplatformcontroller_0_conduit_end_writeresponsevalid_n;
 	input		msjplatformcontroller_0_conduit_end_emergency_off;
+	input		reset_reset_n;
+	input	[3:0]	switches_external_connection_export;
 endmodule
