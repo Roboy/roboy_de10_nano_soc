@@ -69,14 +69,14 @@
 		.memory_mem_odt                                           (<connected-to-memory_mem_odt>),                                           //                                    .mem_odt
 		.memory_mem_dm                                            (<connected-to-memory_mem_dm>),                                            //                                    .mem_dm
 		.memory_oct_rzqin                                         (<connected-to-memory_oct_rzqin>),                                         //                                    .oct_rzqin
-		.reset_reset_n                                            (<connected-to-reset_reset_n>),                                            //                               reset.reset_n
-		.switches_external_connection_export                      (<connected-to-switches_external_connection_export>),                      //        switches_external_connection.export
 		.msjplatformcontroller_0_conduit_end_pwm                  (<connected-to-msjplatformcontroller_0_conduit_end_pwm>),                  // msjplatformcontroller_0_conduit_end.pwm
 		.msjplatformcontroller_0_conduit_end_angle_miso           (<connected-to-msjplatformcontroller_0_conduit_end_angle_miso>),           //                                    .angle_miso
 		.msjplatformcontroller_0_conduit_end_angle_mosi           (<connected-to-msjplatformcontroller_0_conduit_end_angle_mosi>),           //                                    .angle_mosi
 		.msjplatformcontroller_0_conduit_end_angle_sck            (<connected-to-msjplatformcontroller_0_conduit_end_angle_sck>),            //                                    .angle_sck
 		.msjplatformcontroller_0_conduit_end_angle_ss_n_o         (<connected-to-msjplatformcontroller_0_conduit_end_angle_ss_n_o>),         //                                    .angle_ss_n_o
 		.msjplatformcontroller_0_conduit_end_writeresponsevalid_n (<connected-to-msjplatformcontroller_0_conduit_end_writeresponsevalid_n>), //                                    .writeresponsevalid_n
-		.msjplatformcontroller_0_conduit_end_emergency_off        (<connected-to-msjplatformcontroller_0_conduit_end_emergency_off>)         //                                    .emergency_off
+		.msjplatformcontroller_0_conduit_end_emergency_off        (<connected-to-msjplatformcontroller_0_conduit_end_emergency_off>),        //                                    .emergency_off
+		.reset_reset_n                                            (<connected-to-reset_reset_n>),                                            //                               reset.reset_n
+		.switches_external_connection_export                      (<connected-to-switches_external_connection_export>)                       //        switches_external_connection.export
 	);
 
