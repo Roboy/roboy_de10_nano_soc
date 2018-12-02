@@ -75,7 +75,6 @@ module soc_system (
 	msjplatformcontroller_0_conduit_end_angle_mosi,
 	msjplatformcontroller_0_conduit_end_angle_sck,
 	msjplatformcontroller_0_conduit_end_angle_ss_n_o,
-	msjplatformcontroller_0_conduit_end_writeresponsevalid_n,
 	msjplatformcontroller_0_conduit_end_emergency_off,
 	reset_reset_n,
 	switches_external_connection_export);	
@@ -155,7 +154,6 @@ module soc_system (
 	output		msjplatformcontroller_0_conduit_end_angle_mosi;
 	output		msjplatformcontroller_0_conduit_end_angle_sck;
 	output	[7:0]	msjplatformcontroller_0_conduit_end_angle_ss_n_o;
-	output	[7:0]	msjplatformcontroller_0_conduit_end_writeresponsevalid_n;
 	input		msjplatformcontroller_0_conduit_end_emergency_off;
 	input		reset_reset_n;
 	input	[3:0]	switches_external_connection_export;
