@@ -115,7 +115,7 @@ wire                hps_debug_reset;
 //=======================================================
 //`define USE_ETHERNET_SIDE
 
-soc_system u0(
+soc_system u0( 
                //Clock&Reset
                .clk_clk(FPGA_CLK1_50),                                      //                            clk.clk
                .reset_reset_n(hps_fpga_reset_n),                            //                          reset.reset_n
@@ -129,7 +129,7 @@ soc_system u0(
 						.msjplatformcontroller_0_conduit_end_angle_miso(GPIO_0[1]),
 						.msjplatformcontroller_0_conduit_end_angle_sck(GPIO_0[2]),
 						.msjplatformcontroller_0_conduit_end_angle_ss_n_o(GPIO_0[10:3]),
-						.msjplatformcontroller_0_conduit_end_pwm(GPIO_0[18:11]),
+						.msjplatformcontroller_0_conduit_end_pwm(GPIO_0[20:13]),
 						.msjplatformcontroller_0_conduit_end_emergency_off(SW[0]),
 //						// darkroom
 //						.darkroom_0_conduit_end_d_io({GPIO_1[34],GPIO_1[32],GPIO_1[30],GPIO_1[28],GPIO_1[26],GPIO_1[24],GPIO_1[22],GPIO_1[20],GPIO_1[18],GPIO_1[16],GPIO_1[14],GPIO_1[12],GPIO_1[10],GPIO_1[8],GPIO_1[6],GPIO_1[4]}),
