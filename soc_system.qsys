@@ -109,7 +109,7 @@
    {
       datum baseAddress
       {
-         value = "16";
+         value = "112";
          type = "String";
       }
    }
@@ -173,7 +173,7 @@
    {
       datum baseAddress
       {
-         value = "0";
+         value = "96";
          type = "String";
       }
    }
@@ -1235,9 +1235,21 @@
    dir="start" />
  <interface name="hps_0_h2f_user0_clock" internal="hps_0.h2f_user0_clock" />
  <interface name="hps_0_hps_io" internal="hps_0.hps_io" type="conduit" dir="end" />
- <interface name="i2c_0_conduit_end" internal="I2C_0.conduit_end" />
- <interface name="i2c_1_conduit_end" internal="I2C_1.conduit_end" />
- <interface name="i2c_2_conduit_end" internal="I2C_2.conduit_end" />
+ <interface
+   name="i2c_0_conduit_end"
+   internal="I2C_0.conduit_end"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="i2c_1_conduit_end"
+   internal="I2C_1.conduit_end"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="i2c_2_conduit_end"
+   internal="I2C_2.conduit_end"
+   type="conduit"
+   dir="end" />
  <interface name="i2c_3_conduit_end" internal="I2C_3.conduit_end" />
  <interface
    name="led_external_connection"
@@ -1275,15 +1287,15 @@
   <parameter name="ENABLE_SPI_TRANSMITTER" value="true" />
   <parameter name="NUMBER_OF_SENSORS" value="16" />
  </module>
- <module name="I2C_0" kind="I2C" version="1.0" enabled="0">
+ <module name="I2C_0" kind="I2C" version="1.0" enabled="1">
   <parameter name="BUS_SPEED_HZ" value="400000" />
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
  </module>
- <module name="I2C_1" kind="I2C" version="1.0" enabled="0">
+ <module name="I2C_1" kind="I2C" version="1.0" enabled="1">
   <parameter name="BUS_SPEED_HZ" value="400000" />
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
  </module>
- <module name="I2C_2" kind="I2C" version="1.0" enabled="0">
+ <module name="I2C_2" kind="I2C" version="1.0" enabled="1">
   <parameter name="BUS_SPEED_HZ" value="400000" />
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
  </module>
@@ -2166,6 +2178,24 @@
    kind="avalon"
    version="18.1"
    start="hps_0.h2f_lw_axi_master"
+   end="A1339_0.avalon_slave_0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="hps_0.h2f_lw_axi_master"
+   end="MSJPlatformController_0.avalon_slave_0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x00040000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="hps_0.h2f_lw_axi_master"
    end="I2C_0.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0040" />
@@ -2193,24 +2223,6 @@
    kind="avalon"
    version="18.1"
    start="hps_0.h2f_lw_axi_master"
-   end="A1339_0.avalon_slave_0">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0000" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="18.1"
-   start="hps_0.h2f_lw_axi_master"
-   end="MSJPlatformController_0.avalon_slave_0">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00040000" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="18.1"
-   start="hps_0.h2f_lw_axi_master"
    end="sysid_qsys.control_slave">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x1000" />
@@ -2222,7 +2234,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="LED.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0010" />
+  <parameter name="baseAddress" value="0x0070" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2231,7 +2243,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="SWITCHES.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="baseAddress" value="0x0060" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2273,9 +2285,6 @@
    version="18.1"
    start="clk_0.clk"
    end="MYOControl_0.clock_sink" />
- <connection kind="clock" version="18.1" start="clk_0.clk" end="I2C_0.clock_sink" />
- <connection kind="clock" version="18.1" start="clk_0.clk" end="I2C_1.clock_sink" />
- <connection kind="clock" version="18.1" start="clk_0.clk" end="I2C_2.clock_sink" />
  <connection
    kind="clock"
    version="18.1"
@@ -2286,6 +2295,9 @@
    version="18.1"
    start="clk_0.clk"
    end="MSJPlatformController_0.clock_sink" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="I2C_0.clock_sink" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="I2C_1.clock_sink" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="I2C_2.clock_sink" />
  <connection
    kind="clock"
    version="18.1"
@@ -2346,9 +2358,6 @@
    version="18.1"
    start="clk_0.clk_reset"
    end="sysid_qsys.reset" />
- <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="I2C_0.reset" />
- <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="I2C_1.reset" />
- <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="I2C_2.reset" />
  <connection
    kind="reset"
    version="18.1"
@@ -2359,6 +2368,9 @@
    version="18.1"
    start="clk_0.clk_reset"
    end="MSJPlatformController_0.reset" />
+ <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="I2C_0.reset" />
+ <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="I2C_1.reset" />
+ <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="I2C_2.reset" />
  <connection
    kind="reset"
    version="18.1"
