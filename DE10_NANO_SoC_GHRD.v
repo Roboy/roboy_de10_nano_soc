@@ -114,7 +114,7 @@ wire                hps_debug_reset;
 //  Structural coding
 //=======================================================
 //`define USE_ETHERNET_SIDE
-
+ 
 soc_system u0( 
                //Clock&Reset
                .clk_clk(FPGA_CLK1_50),                                      //                            clk.clk
