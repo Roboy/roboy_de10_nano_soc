@@ -1,0 +1,73 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/hdd/embedded_linux/roboy_de10_nano_soc/simulation/modelsim
+vpwm_gen
+Z1 !s110 1544272993
+!i10b 1
+!s100 6MCShSjKBemX[H:`d9oiO3
+IGmH]QkhjK525?=c`5N6<03
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1544272983
+Z4 8/hdd/embedded_linux/roboy_de10_nano_soc/entity_bike_highlevel/PWM.v
+Z5 F/hdd/embedded_linux/roboy_de10_nano_soc/entity_bike_highlevel/PWM.v
+L0 10
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z7 !s108 1544272993.000000
+Z8 !s107 /hdd/embedded_linux/roboy_de10_nano_soc/entity_bike_highlevel/PWM.v|
+Z9 !s90 -reportprogress|300|-work|work|/hdd/embedded_linux/roboy_de10_nano_soc/entity_bike_highlevel/PWM.v|
+!i113 1
+Z10 o-work work
+Z11 tCvgOpt 0
+vpwm_gen_tb
+R1
+!i10b 1
+!s100 nIfK<GSh;n2anWk4]jW5B1
+I6Kb1:5GTX3@I?VR0J6ed53
+R2
+R0
+R3
+R4
+R5
+L0 58
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vramp_gen
+R1
+!i10b 1
+!s100 H:j5YfXfC?PK;BRCDjFCb0
+I660WXB?Ra7bQzlVR8l;f=2
+R2
+R0
+R3
+R4
+R5
+L0 42
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11

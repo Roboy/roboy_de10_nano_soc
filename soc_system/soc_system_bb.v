@@ -53,6 +53,18 @@ module soc_system (
 	hps_0_hps_io_hps_io_gpio_inst_GPIO53,
 	hps_0_hps_io_hps_io_gpio_inst_GPIO54,
 	hps_0_hps_io_hps_io_gpio_inst_GPIO61,
+	i2c_0_conduit_end_scl,
+	i2c_0_conduit_end_sda,
+	i2c_0_conduit_end_led,
+	i2c_0_conduit_end_gpio,
+	i2c_1_conduit_end_scl,
+	i2c_1_conduit_end_sda,
+	i2c_1_conduit_end_led,
+	i2c_1_conduit_end_gpio,
+	i2c_2_conduit_end_scl,
+	i2c_2_conduit_end_sda,
+	i2c_2_conduit_end_led,
+	i2c_2_conduit_end_gpio,
 	led_external_connection_export,
 	memory_mem_a,
 	memory_mem_ba,
@@ -70,6 +82,40 @@ module soc_system (
 	memory_mem_odt,
 	memory_mem_dm,
 	memory_oct_rzqin,
+	myocontrol_0_conduit_end_miso,
+	myocontrol_0_conduit_end_mosi,
+	myocontrol_0_conduit_end_sck,
+	myocontrol_0_conduit_end_ss_n,
+	myocontrol_0_conduit_end_mirrored_muscle_unit,
+	myocontrol_0_conduit_end_power_sense_n,
+	myocontrol_0_conduit_end_gpio_n,
+	myocontrol_0_conduit_end_myobrick_scl,
+	myocontrol_0_conduit_end_myobrick_sda,
+	myocontrol_0_conduit_end_arm_scl,
+	myocontrol_0_conduit_end_arm_sda,
+	myocontrol_1_conduit_end_miso,
+	myocontrol_1_conduit_end_mosi,
+	myocontrol_1_conduit_end_sck,
+	myocontrol_1_conduit_end_ss_n,
+	myocontrol_1_conduit_end_mirrored_muscle_unit,
+	myocontrol_1_conduit_end_power_sense_n,
+	myocontrol_1_conduit_end_gpio_n,
+	myocontrol_1_conduit_end_myobrick_scl,
+	myocontrol_1_conduit_end_myobrick_sda,
+	myocontrol_1_conduit_end_arm_scl,
+	myocontrol_1_conduit_end_arm_sda,
+	myocontrol_2_conduit_end_miso,
+	myocontrol_2_conduit_end_mosi,
+	myocontrol_2_conduit_end_sck,
+	myocontrol_2_conduit_end_ss_n,
+	myocontrol_2_conduit_end_mirrored_muscle_unit,
+	myocontrol_2_conduit_end_power_sense_n,
+	myocontrol_2_conduit_end_gpio_n,
+	myocontrol_2_conduit_end_myobrick_scl,
+	myocontrol_2_conduit_end_myobrick_sda,
+	myocontrol_2_conduit_end_arm_scl,
+	myocontrol_2_conduit_end_arm_sda,
+	pll_0_outclk0_clk,
 	reset_reset_n,
 	switches_external_connection_export);	
 
@@ -126,6 +172,18 @@ module soc_system (
 	inout		hps_0_hps_io_hps_io_gpio_inst_GPIO53;
 	inout		hps_0_hps_io_hps_io_gpio_inst_GPIO54;
 	inout		hps_0_hps_io_hps_io_gpio_inst_GPIO61;
+	inout		i2c_0_conduit_end_scl;
+	inout		i2c_0_conduit_end_sda;
+	output	[6:0]	i2c_0_conduit_end_led;
+	output	[2:0]	i2c_0_conduit_end_gpio;
+	inout		i2c_1_conduit_end_scl;
+	inout		i2c_1_conduit_end_sda;
+	output	[6:0]	i2c_1_conduit_end_led;
+	output	[2:0]	i2c_1_conduit_end_gpio;
+	inout		i2c_2_conduit_end_scl;
+	inout		i2c_2_conduit_end_sda;
+	output	[6:0]	i2c_2_conduit_end_led;
+	output	[2:0]	i2c_2_conduit_end_gpio;
 	output	[7:0]	led_external_connection_export;
 	output	[14:0]	memory_mem_a;
 	output	[2:0]	memory_mem_ba;
@@ -143,6 +201,40 @@ module soc_system (
 	output		memory_mem_odt;
 	output	[3:0]	memory_mem_dm;
 	input		memory_oct_rzqin;
+	input		myocontrol_0_conduit_end_miso;
+	output		myocontrol_0_conduit_end_mosi;
+	output		myocontrol_0_conduit_end_sck;
+	output	[8:0]	myocontrol_0_conduit_end_ss_n;
+	input		myocontrol_0_conduit_end_mirrored_muscle_unit;
+	input		myocontrol_0_conduit_end_power_sense_n;
+	output		myocontrol_0_conduit_end_gpio_n;
+	output		myocontrol_0_conduit_end_myobrick_scl;
+	inout		myocontrol_0_conduit_end_myobrick_sda;
+	output		myocontrol_0_conduit_end_arm_scl;
+	inout		myocontrol_0_conduit_end_arm_sda;
+	input		myocontrol_1_conduit_end_miso;
+	output		myocontrol_1_conduit_end_mosi;
+	output		myocontrol_1_conduit_end_sck;
+	output	[3:0]	myocontrol_1_conduit_end_ss_n;
+	input		myocontrol_1_conduit_end_mirrored_muscle_unit;
+	input		myocontrol_1_conduit_end_power_sense_n;
+	output		myocontrol_1_conduit_end_gpio_n;
+	output		myocontrol_1_conduit_end_myobrick_scl;
+	inout		myocontrol_1_conduit_end_myobrick_sda;
+	output		myocontrol_1_conduit_end_arm_scl;
+	inout		myocontrol_1_conduit_end_arm_sda;
+	input		myocontrol_2_conduit_end_miso;
+	output		myocontrol_2_conduit_end_mosi;
+	output		myocontrol_2_conduit_end_sck;
+	output	[2:0]	myocontrol_2_conduit_end_ss_n;
+	input		myocontrol_2_conduit_end_mirrored_muscle_unit;
+	input		myocontrol_2_conduit_end_power_sense_n;
+	output		myocontrol_2_conduit_end_gpio_n;
+	output		myocontrol_2_conduit_end_myobrick_scl;
+	inout		myocontrol_2_conduit_end_myobrick_sda;
+	output		myocontrol_2_conduit_end_arm_scl;
+	inout		myocontrol_2_conduit_end_arm_sda;
+	output		pll_0_outclk0_clk;
 	input		reset_reset_n;
 	input	[3:0]	switches_external_connection_export;
 endmodule

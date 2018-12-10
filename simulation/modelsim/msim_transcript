@@ -1,0 +1,93 @@
+# do DE10_NANO_SoC_GHRD_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying /hdd/Quartus/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+/hdd/embedded_linux/roboy_de10_nano_soc/ip/roboy_fpga_code/myo_control {/hdd/embedded_linux/roboy_de10_nano_soc/ip/roboy_fpga_code/myo_control/ArmControl.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:39:35 on Dec 08,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/hdd/embedded_linux/roboy_de10_nano_soc/ip/roboy_fpga_code/myo_control" /hdd/embedded_linux/roboy_de10_nano_soc/ip/roboy_fpga_code/myo_control/ArmControl.v 
+# -- Compiling module ArmControl
+# ** Error: /hdd/embedded_linux/roboy_de10_nano_soc/ip/roboy_fpga_code/myo_control/ArmControl.v(89): (vlog-2730) Undefined variable: 'fifo_read_ack'.
+# ** Error: /hdd/embedded_linux/roboy_de10_nano_soc/ip/roboy_fpga_code/myo_control/ArmControl.v(205): (vlog-2730) Undefined variable: 'fifo_empty'.
+# ** Error: /hdd/embedded_linux/roboy_de10_nano_soc/ip/roboy_fpga_code/myo_control/ArmControl.v(206): (vlog-2730) Undefined variable: 'fifo_clear'.
+# End time: 13:39:36 on Dec 08,2018, Elapsed time: 0:00:01
+# Errors: 3, Warnings: 0
+# ** Error: /hdd/Quartus/modelsim_ase/linuxaloem/vlog failed.
+# Error in macro ./DE10_NANO_SoC_GHRD_run_msim_rtl_verilog.do line 8
+# /hdd/Quartus/modelsim_ase/linuxaloem/vlog failed.
+#     while executing
+# "vlog -vlog01compat -work work +incdir+/hdd/embedded_linux/roboy_de10_nano_soc/ip/roboy_fpga_code/myo_control {/hdd/embedded_linux/roboy_de10_nano_soc/..."
+vlog -reportprogress 300 -work work /hdd/embedded_linux/roboy_de10_nano_soc/entity_bike_highlevel/PWM.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:40:01 on Dec 08,2018
+# vlog -reportprogress 300 -work work /hdd/embedded_linux/roboy_de10_nano_soc/entity_bike_highlevel/PWM.v 
+# -- Compiling module pwm_gen
+# -- Compiling module ramp_gen
+# -- Compiling module pwm_gen_tb
+# 
+# Top level modules:
+# 	pwm_gen_tb
+# End time: 13:40:01 on Dec 08,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.pwm_gen_tb
+# vsim work.pwm_gen_tb 
+# Start time: 13:40:06 on Dec 08,2018
+# Loading work.pwm_gen_tb
+# Loading work.pwm_gen
+# Loading work.ramp_gen
+vsim work.pwm_gen_tb
+# End time: 13:40:11 on Dec 08,2018, Elapsed time: 0:00:05
+# Errors: 0, Warnings: 0
+# vsim work.pwm_gen_tb 
+# Start time: 13:40:11 on Dec 08,2018
+# Loading work.pwm_gen_tb
+# Loading work.pwm_gen
+# Loading work.ramp_gen
+add wave -position insertpoint  \
+sim:/pwm_gen_tb/counter_out
+# ** Error: Unable to lock WLF file "vsim.wlf". Retrying 1 times, errno 11
+# ** Error: Unable to lock WLF file "vsim.wlf". Retrying 2 times, errno 11
+# ** Error: Unable to lock WLF file "vsim.wlf". Retrying 3 times, errno 11
+# ** Error: Cannot lock WLF file: "vsim.wlf"
+#           errno 11: Resource temporarily unavailable.
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: unknown  Hostname: sausi-VM  ProcessID: 21691
+#           Attempting to use alternate WLF file "./wlftAefjsE".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftAefjsE
+add wave -position insertpoint  \
+sim:/pwm_gen_tb/CYCLE \
+sim:/pwm_gen_tb/clk \
+sim:/pwm_gen_tb/PWM_out \
+sim:/pwm_gen_tb/counter_out \
+sim:/pwm_gen_tb/Duty_Cycle
+run
+run
+run
+vlog -reportprogress 300 -work work /hdd/embedded_linux/roboy_de10_nano_soc/entity_bike_highlevel/PWM.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:43:13 on Dec 08,2018
+# vlog -reportprogress 300 -work work /hdd/embedded_linux/roboy_de10_nano_soc/entity_bike_highlevel/PWM.v 
+# -- Compiling module pwm_gen
+# -- Compiling module ramp_gen
+# -- Compiling module pwm_gen_tb
+# 
+# Top level modules:
+# 	pwm_gen_tb
+# End time: 13:43:13 on Dec 08,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+restart
+# Loading work.pwm_gen_tb
+# Loading work.pwm_gen
+# Loading work.ramp_gen
+run
+# FATAL ERROR: Unable to read lock file necessary for use of uncounted nodelocked license. Exiting.
+# End time: 13:45:11 on Dec 08,2018, Elapsed time: 0:05:00
+# Errors: 4, Warnings: 2

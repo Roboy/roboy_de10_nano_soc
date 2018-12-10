@@ -109,11 +109,17 @@ wire     [2: 0]     hps_reset_req;
 wire                hps_cold_reset; 
 wire                hps_warm_reset;
 wire                hps_debug_reset;
+wire 						PWM_out;
+wire 						clk_sabertooth;
+
 
 //=======================================================
 //  Structural coding
 //=======================================================
 //`define USE_ETHERNET_SIDE
+
+
+
 
 soc_system u0(
                //Clock&Reset
@@ -294,7 +300,9 @@ soc_system u0(
                .hps_0_h2f_reset_reset_n(hps_fpga_reset_n),                  //                hps_0_h2f_reset.reset_n
                .hps_0_f2h_cold_reset_req_reset_n(~hps_cold_reset),          //       hps_0_f2h_cold_reset_req.reset_n
                .hps_0_f2h_debug_reset_req_reset_n(~hps_debug_reset),        //      hps_0_f2h_debug_reset_req.reset_n
-               .hps_0_f2h_warm_reset_req_reset_n(~hps_warm_reset)          //       hps_0_f2h_warm_reset_req.reset_n
+               .hps_0_f2h_warm_reset_req_reset_n(~hps_warm_reset),          //       hps_0_f2h_warm_reset_req.reset_n
+					//Bike
+					.pll_0_outclk0_clk(clk_sabertooth)
            );
 //
 // Debounce logic to clean out glitches within 1ms
@@ -345,5 +353,12 @@ defparam pulse_debug_reset.PULSE_EXT = 32;
 defparam pulse_debug_reset.EDGE_TYPE = 1;
 defparam pulse_debug_reset.IGNORE_RST_WHILE_BUSY = 1;
 
+
+pwm_gen PWM_inst_1 (
+	.clk (clk_sabertooth),
+	.duty_cycle (50),
+	.PWM_OUT (ARDUINO_IO[1])
+);
+	
 
 endmodule
