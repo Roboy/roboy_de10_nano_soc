@@ -1,4 +1,6 @@
 # roboy_de10_nano_soc
+in this branch there is also a pwm 
+
 you can download the sd-card image with Ubuntu 16.04, xfce, kernel linux 4.9.78-ltsi from our servers:
 ```
 wget -nv http://bot.roboy.org:8081/~roboy/DE10_nano_lxce_4.9.78-ltsi-altera.md5sum
