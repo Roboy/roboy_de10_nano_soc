@@ -24,9 +24,9 @@
 // agreement for further details.
 
 
-// $Id: //acds/rel/18.1std/ip/merlin/altera_reset_controller/altera_reset_controller.v#1 $
+// $Id: //acds/rel/18.0std/ip/merlin/altera_reset_controller/altera_reset_controller.v#1 $
 // $Revision: #1 $
-// $Date: 2018/07/18 $
+// $Date: 2018/01/31 $
 // $Author: psgswbuild $
 
 // --------------------------------------
