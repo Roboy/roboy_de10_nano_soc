@@ -237,6 +237,22 @@
          type = "String";
       }
    }
+   element pio_0
+   {
+      datum _sortIndex
+      {
+         value = "18";
+         type = "int";
+      }
+   }
+   element pio_0.s1
+   {
+      datum baseAddress
+      {
+         value = "128";
+         type = "String";
+      }
+   }
    element pll_40MHz
    {
       datum _sortIndex
@@ -1259,11 +1275,22 @@
  <interface name="memory" internal="hps_0.memory" type="conduit" dir="end" />
  <interface
    name="msjplatformcontroller_0_conduit_end"
-   internal="MSJPlatformController_0.conduit_end"
+   internal="MSJPlatformController_0.conduit_end" />
+ <interface
+   name="myocontrol_0_conduit_end"
+   internal="MYOControl_0.conduit_end"
    type="conduit"
    dir="end" />
- <interface name="myocontrol_0_conduit_end" internal="MYOControl_0.conduit_end" />
- <interface name="myocontrol_1_conduit_end" internal="MYOControl_1.conduit_end" />
+ <interface
+   name="myocontrol_1_conduit_end"
+   internal="MYOControl_1.conduit_end"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="pio_0_external_connection"
+   internal="pio_0.external_connection"
+   type="conduit"
+   dir="end" />
  <interface name="reset" internal="clk_0.clk_in_reset" type="reset" dir="end" />
  <interface
    name="switches_external_connection"
@@ -1303,7 +1330,7 @@
   <parameter name="BUS_SPEED_HZ" value="400000" />
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
  </module>
- <module name="LED" kind="altera_avalon_pio" version="18.1" enabled="1">
+ <module name="LED" kind="altera_avalon_pio" version="18.0" enabled="1">
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
   <parameter name="captureEdge" value="false" />
@@ -1321,26 +1348,26 @@
    name="MSJPlatformController_0"
    kind="MSJPlatformController"
    version="1.0"
-   enabled="1">
+   enabled="0">
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
   <parameter name="NUMBER_OF_MOTORS" value="8" />
   <parameter name="SAMPLES_TO_AVERAGE" value="0" />
  </module>
- <module name="MYOControl_0" kind="MYOControl" version="1.0" enabled="0">
+ <module name="MYOControl_0" kind="MYOControl" version="1.0" enabled="1">
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
   <parameter name="ENABLE_ARM_CONTROL" value="0" />
   <parameter name="ENABLE_MYOBRICK_CONTROL" value="0" />
   <parameter name="NUMBER_OF_MOTORS" value="9" />
   <parameter name="SAMPLES_TO_AVERAGE" value="256" />
  </module>
- <module name="MYOControl_1" kind="MYOControl" version="1.0" enabled="0">
+ <module name="MYOControl_1" kind="MYOControl" version="1.0" enabled="1">
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
   <parameter name="ENABLE_ARM_CONTROL" value="0" />
   <parameter name="ENABLE_MYOBRICK_CONTROL" value="1" />
   <parameter name="NUMBER_OF_MOTORS" value="6" />
   <parameter name="SAMPLES_TO_AVERAGE" value="256" />
  </module>
- <module name="SWITCHES" kind="altera_avalon_pio" version="18.1" enabled="1">
+ <module name="SWITCHES" kind="altera_avalon_pio" version="18.0" enabled="1">
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
   <parameter name="captureEdge" value="false" />
@@ -1355,13 +1382,13 @@
   <parameter name="width" value="4" />
  </module>
  <module name="adc_ltc2308_0" kind="adc_ltc2308" version="1.1" enabled="0" />
- <module name="clk_0" kind="clock_source" version="18.1" enabled="1">
+ <module name="clk_0" kind="clock_source" version="18.0" enabled="1">
   <parameter name="clockFrequency" value="50000000" />
   <parameter name="clockFrequencyKnown" value="true" />
   <parameter name="inputClockFrequency" value="0" />
   <parameter name="resetSynchronousEdges" value="NONE" />
  </module>
- <module name="hps_0" kind="altera_hps" version="18.1" enabled="1">
+ <module name="hps_0" kind="altera_hps" version="18.0" enabled="1">
   <parameter name="ABSTRACT_REAL_COMPARE_TEST" value="false" />
   <parameter name="ABS_RAM_MEM_INIT_FILENAME" value="meminit" />
   <parameter name="ACV_PHY_CLK_ADD_FR_PHASE" value="0.0" />
@@ -1894,7 +1921,7 @@
  <module
    name="jtag_uart"
    kind="altera_avalon_jtag_uart"
-   version="18.1"
+   version="18.0"
    enabled="1">
   <parameter name="allowMultipleConnections" value="true" />
   <parameter name="avalonSpec" value="2.0" />
@@ -1910,7 +1937,21 @@
   <parameter name="writeBufferDepth" value="64" />
   <parameter name="writeIRQThreshold" value="8" />
  </module>
- <module name="pll_40MHz" kind="altera_pll" version="18.1" enabled="0">
+ <module name="pio_0" kind="altera_avalon_pio" version="18.0" enabled="1">
+  <parameter name="bitClearingEdgeCapReg" value="false" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="captureEdge" value="false" />
+  <parameter name="clockRate" value="50000000" />
+  <parameter name="direction" value="Output" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="generateIRQ" value="false" />
+  <parameter name="irqType" value="LEVEL" />
+  <parameter name="resetValue" value="0" />
+  <parameter name="simDoTestBenchWiring" value="false" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="width" value="1" />
+ </module>
+ <module name="pll_40MHz" kind="altera_pll" version="18.0" enabled="0">
   <parameter name="debug_print_output" value="false" />
   <parameter name="debug_use_rbc_taf_method" value="false" />
   <parameter name="device" value="5CSEBA6U23I7" />
@@ -2116,13 +2157,13 @@
  <module
    name="sysid_qsys"
    kind="altera_avalon_sysid_qsys"
-   version="18.1"
+   version="18.0"
    enabled="1">
   <parameter name="id" value="-559038737" />
  </module>
  <connection
    kind="avalon"
-   version="18.1"
+   version="18.0"
    start="hps_0.h2f_lw_axi_master"
    end="jtag_uart.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
@@ -2131,7 +2172,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="18.1"
+   version="18.0"
    start="hps_0.h2f_lw_axi_master"
    end="MYOControl_1.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
@@ -2140,7 +2181,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="18.1"
+   version="18.0"
    start="hps_0.h2f_lw_axi_master"
    end="DarkRoomOOTXdecoder_0.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
@@ -2149,7 +2190,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="18.1"
+   version="18.0"
    start="hps_0.h2f_lw_axi_master"
    end="DarkRoom_0.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
@@ -2158,7 +2199,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="18.1"
+   version="18.0"
    start="hps_0.h2f_lw_axi_master"
    end="I2C_3.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
@@ -2167,16 +2208,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="18.1"
-   start="hps_0.h2f_lw_axi_master"
-   end="MYOControl_0.avalon_slave_0">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00080000" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="18.1"
+   version="18.0"
    start="hps_0.h2f_lw_axi_master"
    end="A1339_0.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
@@ -2185,7 +2217,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="18.1"
+   version="18.0"
    start="hps_0.h2f_lw_axi_master"
    end="MSJPlatformController_0.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
@@ -2194,7 +2226,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="18.1"
+   version="18.0"
    start="hps_0.h2f_lw_axi_master"
    end="I2C_0.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
@@ -2203,7 +2235,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="18.1"
+   version="18.0"
    start="hps_0.h2f_lw_axi_master"
    end="I2C_1.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
@@ -2212,7 +2244,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="18.1"
+   version="18.0"
    start="hps_0.h2f_lw_axi_master"
    end="I2C_2.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
@@ -2221,7 +2253,16 @@
  </connection>
  <connection
    kind="avalon"
-   version="18.1"
+   version="18.0"
+   start="hps_0.h2f_lw_axi_master"
+   end="MYOControl_0.avalon_slave_0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x00080000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.0"
    start="hps_0.h2f_lw_axi_master"
    end="sysid_qsys.control_slave">
   <parameter name="arbitrationPriority" value="1" />
@@ -2230,7 +2271,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="18.1"
+   version="18.0"
    start="hps_0.h2f_lw_axi_master"
    end="LED.s1">
   <parameter name="arbitrationPriority" value="1" />
@@ -2239,7 +2280,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="18.1"
+   version="18.0"
    start="hps_0.h2f_lw_axi_master"
    end="SWITCHES.s1">
   <parameter name="arbitrationPriority" value="1" />
@@ -2248,132 +2289,143 @@
  </connection>
  <connection
    kind="avalon"
-   version="18.1"
+   version="18.0"
+   start="hps_0.h2f_lw_axi_master"
+   end="pio_0.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0080" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.0"
    start="hps_0.h2f_lw_axi_master"
    end="adc_ltc2308_0.slave">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x00a0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
- <connection kind="clock" version="18.1" start="clk_0.clk" end="jtag_uart.clk" />
- <connection kind="clock" version="18.1" start="clk_0.clk" end="LED.clk" />
- <connection kind="clock" version="18.1" start="clk_0.clk" end="SWITCHES.clk" />
- <connection kind="clock" version="18.1" start="clk_0.clk" end="sysid_qsys.clk" />
+ <connection kind="clock" version="18.0" start="clk_0.clk" end="jtag_uart.clk" />
+ <connection kind="clock" version="18.0" start="clk_0.clk" end="LED.clk" />
+ <connection kind="clock" version="18.0" start="clk_0.clk" end="SWITCHES.clk" />
+ <connection kind="clock" version="18.0" start="clk_0.clk" end="sysid_qsys.clk" />
+ <connection kind="clock" version="18.0" start="clk_0.clk" end="pio_0.clk" />
  <connection
    kind="clock"
-   version="18.1"
-   start="clk_0.clk"
-   end="MYOControl_1.clock_sink" />
- <connection
-   kind="clock"
-   version="18.1"
+   version="18.0"
    start="clk_0.clk"
    end="DarkRoomOOTXdecoder_0.clock_sink" />
  <connection
    kind="clock"
-   version="18.1"
+   version="18.0"
    start="clk_0.clk"
    end="DarkRoom_0.clock_sink" />
  <connection
    kind="clock"
-   version="18.1"
+   version="18.0"
    start="clk_0.clk"
    end="adc_ltc2308_0.clock_sink" />
- <connection kind="clock" version="18.1" start="clk_0.clk" end="I2C_3.clock_sink" />
+ <connection kind="clock" version="18.0" start="clk_0.clk" end="I2C_3.clock_sink" />
  <connection
    kind="clock"
-   version="18.1"
-   start="clk_0.clk"
-   end="MYOControl_0.clock_sink" />
- <connection
-   kind="clock"
-   version="18.1"
+   version="18.0"
    start="clk_0.clk"
    end="A1339_0.clock_sink" />
  <connection
    kind="clock"
-   version="18.1"
+   version="18.0"
    start="clk_0.clk"
    end="MSJPlatformController_0.clock_sink" />
- <connection kind="clock" version="18.1" start="clk_0.clk" end="I2C_0.clock_sink" />
- <connection kind="clock" version="18.1" start="clk_0.clk" end="I2C_1.clock_sink" />
- <connection kind="clock" version="18.1" start="clk_0.clk" end="I2C_2.clock_sink" />
+ <connection kind="clock" version="18.0" start="clk_0.clk" end="I2C_0.clock_sink" />
+ <connection kind="clock" version="18.0" start="clk_0.clk" end="I2C_1.clock_sink" />
+ <connection kind="clock" version="18.0" start="clk_0.clk" end="I2C_2.clock_sink" />
  <connection
    kind="clock"
-   version="18.1"
+   version="18.0"
+   start="clk_0.clk"
+   end="MYOControl_0.clock_sink" />
+ <connection
+   kind="clock"
+   version="18.0"
+   start="clk_0.clk"
+   end="MYOControl_1.clock_sink" />
+ <connection
+   kind="clock"
+   version="18.0"
    start="clk_0.clk"
    end="hps_0.h2f_lw_axi_clock" />
- <connection kind="clock" version="18.1" start="clk_0.clk" end="pll_40MHz.refclk" />
+ <connection kind="clock" version="18.0" start="clk_0.clk" end="pll_40MHz.refclk" />
  <connection
    kind="clock"
-   version="18.1"
+   version="18.0"
    start="pll_40MHz.outclk0"
    end="adc_ltc2308_0.clock_sink_adc" />
  <connection
    kind="interrupt"
-   version="18.1"
+   version="18.0"
    start="hps_0.f2h_irq0"
    end="jtag_uart.irq">
   <parameter name="irqNumber" value="0" />
  </connection>
  <connection
    kind="reset"
-   version="18.1"
+   version="18.0"
    start="clk_0.clk_reset"
    end="jtag_uart.reset" />
  <connection
    kind="reset"
-   version="18.1"
-   start="clk_0.clk_reset"
-   end="MYOControl_1.reset" />
- <connection
-   kind="reset"
-   version="18.1"
+   version="18.0"
    start="clk_0.clk_reset"
    end="DarkRoomOOTXdecoder_0.reset" />
  <connection
    kind="reset"
-   version="18.1"
+   version="18.0"
    start="clk_0.clk_reset"
    end="DarkRoom_0.reset" />
  <connection
    kind="reset"
-   version="18.1"
+   version="18.0"
    start="clk_0.clk_reset"
    end="pll_40MHz.reset" />
- <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="I2C_3.reset" />
+ <connection kind="reset" version="18.0" start="clk_0.clk_reset" end="I2C_3.reset" />
+ <connection kind="reset" version="18.0" start="clk_0.clk_reset" end="LED.reset" />
  <connection
    kind="reset"
-   version="18.1"
-   start="clk_0.clk_reset"
-   end="MYOControl_0.reset" />
- <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="LED.reset" />
- <connection
-   kind="reset"
-   version="18.1"
+   version="18.0"
    start="clk_0.clk_reset"
    end="SWITCHES.reset" />
  <connection
    kind="reset"
-   version="18.1"
+   version="18.0"
    start="clk_0.clk_reset"
    end="sysid_qsys.reset" />
  <connection
    kind="reset"
-   version="18.1"
+   version="18.0"
    start="clk_0.clk_reset"
    end="A1339_0.reset" />
  <connection
    kind="reset"
-   version="18.1"
+   version="18.0"
    start="clk_0.clk_reset"
    end="MSJPlatformController_0.reset" />
- <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="I2C_0.reset" />
- <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="I2C_1.reset" />
- <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="I2C_2.reset" />
+ <connection kind="reset" version="18.0" start="clk_0.clk_reset" end="I2C_0.reset" />
+ <connection kind="reset" version="18.0" start="clk_0.clk_reset" end="I2C_1.reset" />
+ <connection kind="reset" version="18.0" start="clk_0.clk_reset" end="I2C_2.reset" />
  <connection
    kind="reset"
-   version="18.1"
+   version="18.0"
+   start="clk_0.clk_reset"
+   end="MYOControl_0.reset" />
+ <connection
+   kind="reset"
+   version="18.0"
+   start="clk_0.clk_reset"
+   end="MYOControl_1.reset" />
+ <connection kind="reset" version="18.0" start="clk_0.clk_reset" end="pio_0.reset" />
+ <connection
+   kind="reset"
+   version="18.0"
    start="clk_0.clk_reset"
    end="adc_ltc2308_0.reset_sink" />
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />

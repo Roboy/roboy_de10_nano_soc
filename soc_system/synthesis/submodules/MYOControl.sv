@@ -626,7 +626,7 @@ generate
 		
 		wire [NUMBER_OF_MOTORS-1:0] cycle;
 		
-		A1339Control#(NUMBER_OF_MOTORS,SAMPLES_TO_AVERAGE) a1339(
+		/*A1339Control#(NUMBER_OF_MOTORS,SAMPLES_TO_AVERAGE) a1339(
 			.clock(clock),
 			.reset_n(~reset), // shut down spi when motors are off
 			.sensor_raw(angle_raw),
@@ -643,7 +643,7 @@ generate
 			.miso_i(angle_miso),	// miso
 			.zero_offset(power_sense_n),
 			.cycle(cycle)
-		);
+		);*/
 	end
 
 endgenerate 

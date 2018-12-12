@@ -36,6 +36,8 @@ module DE10_NANO_SoC_GHRD(
       output             HDMI_TX_HS,
       input              HDMI_TX_INT,
       output             HDMI_TX_VS,
+		
+		
 
 `ifdef ENABLE_HPS
       ///////// HPS /////////
@@ -97,6 +99,7 @@ module DE10_NANO_SoC_GHRD(
 
       ///////// SW /////////
       input       [3:0]  SW
+		
 );
 
 //=======================================================
@@ -125,12 +128,13 @@ soc_system u0(
 //					.adc_ltc2308_0_conduit_end_SDI(ADC_SDI),    
 //					.adc_ltc2308_0_conduit_end_SDO(ADC_SDO),
 					`ifndef USE_ETHERNET_SIDE
-						.msjplatformcontroller_0_conduit_end_angle_mosi(GPIO_0[0]),
+						/*.msjplatformcontroller_0_conduit_end_angle_mosi(GPIO_0[0]),
 						.msjplatformcontroller_0_conduit_end_angle_miso(GPIO_0[1]),
 						.msjplatformcontroller_0_conduit_end_angle_sck(GPIO_0[2]),
 						.msjplatformcontroller_0_conduit_end_angle_ss_n_o(GPIO_0[10:3]),
 						.msjplatformcontroller_0_conduit_end_pwm(GPIO_0[20:13]),
-						.msjplatformcontroller_0_conduit_end_emergency_off(SW[0]),
+						.msjplatformcontroller_0_conduit_end_emergency_off(SW[0])
+						,*/
 //						// darkroom
 //						.darkroom_0_conduit_end_d_io({GPIO_1[34],GPIO_1[32],GPIO_1[30],GPIO_1[28],GPIO_1[26],GPIO_1[24],GPIO_1[22],GPIO_1[20],GPIO_1[18],GPIO_1[16],GPIO_1[14],GPIO_1[12],GPIO_1[10],GPIO_1[8],GPIO_1[6],GPIO_1[4]}),
 //						.darkroom_0_conduit_end_e_io({GPIO_1[35],GPIO_1[33],GPIO_1[31],GPIO_1[29],GPIO_1[27],GPIO_1[25],GPIO_1[23],GPIO_1[21],GPIO_1[19],GPIO_1[17],GPIO_1[15],GPIO_1[13],GPIO_1[11],GPIO_1[9],GPIO_1[7],GPIO_1[5]}),
@@ -294,7 +298,9 @@ soc_system u0(
                .hps_0_h2f_reset_reset_n(hps_fpga_reset_n),                  //                hps_0_h2f_reset.reset_n
                .hps_0_f2h_cold_reset_req_reset_n(~hps_cold_reset),          //       hps_0_f2h_cold_reset_req.reset_n
                .hps_0_f2h_debug_reset_req_reset_n(~hps_debug_reset),        //      hps_0_f2h_debug_reset_req.reset_n
-               .hps_0_f2h_warm_reset_req_reset_n(~hps_warm_reset)          //       hps_0_f2h_warm_reset_req.reset_n
+               .hps_0_f2h_warm_reset_req_reset_n(~hps_warm_reset),          //       hps_0_f2h_warm_reset_req.reset_n
+					//PIO
+					.pio_0_external_connection_export(GPIO_0[0])              //    pio_0_external_connection.export
            );
 //
 // Debounce logic to clean out glitches within 1ms
