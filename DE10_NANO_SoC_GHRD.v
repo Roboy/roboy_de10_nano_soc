@@ -142,9 +142,9 @@ soc_system u0(
 //						.darkroomootxdecoder_0_conduit_end_sensor_signals({GPIO_1[35],GPIO_1[33],GPIO_1[31],GPIO_1[29],GPIO_1[27],GPIO_1[25],GPIO_1[23],GPIO_1[21],GPIO_1[19],GPIO_1[17],GPIO_1[15],GPIO_1[13],GPIO_1[11],GPIO_1[9],GPIO_1[7],GPIO_1[5]}),
 //						// uart interface 
 //						.darkroomootxdecoder_0_conduit_end_uart_tx(GPIO_1[3]),
-						.darkroom_0_conduit_end_d_io({GPIO_1[34],GPIO_1[32],GPIO_1[30],GPIO_1[28],GPIO_1[26],GPIO_1[24],GPIO_1[22],GPIO_1[20],GPIO_1[18],GPIO_1[16],GPIO_1[14],GPIO_1[12],GPIO_1[10]}),
-						.darkroom_0_conduit_end_e_io({GPIO_1[35],GPIO_1[33],GPIO_1[31],GPIO_1[29],GPIO_1[27],GPIO_1[25],GPIO_1[23],GPIO_1[21],GPIO_1[19],GPIO_1[17],GPIO_1[15],GPIO_1[13],GPIO_1[11]}),
-						.darkroomootxdecoder_0_conduit_end_sensor_signals({GPIO_1[35],GPIO_1[33],GPIO_1[31],GPIO_1[29],GPIO_1[27],GPIO_1[25],GPIO_1[23],GPIO_1[21],GPIO_1[19],GPIO_1[17],GPIO_1[15],GPIO_1[13],GPIO_1[11]}),
+						.darkroom_0_conduit_end_d_io({GPIO_1[35],GPIO_1[33],GPIO_1[31],GPIO_1[29],GPIO_1[27],GPIO_1[25],GPIO_1[23],GPIO_1[21],GPIO_1[19],GPIO_1[17],GPIO_1[15],GPIO_1[13],GPIO_1[11]}),
+						.darkroom_0_conduit_end_e_io({GPIO_1[34],GPIO_1[32],GPIO_1[30],GPIO_1[28],GPIO_1[26],GPIO_1[24],GPIO_1[22],GPIO_1[20],GPIO_1[18],GPIO_1[16],GPIO_1[14],GPIO_1[12],GPIO_1[10]}),
+						.darkroomootxdecoder_0_conduit_end_sensor_signals({GPIO_1[34],GPIO_1[32],GPIO_1[30],GPIO_1[28],GPIO_1[26],GPIO_1[24],GPIO_1[22],GPIO_1[20],GPIO_1[18],GPIO_1[16],GPIO_1[14],GPIO_1[12],GPIO_1[10]}),
 //						// three i2c buses
 						.i2c_0_conduit_end_scl(GPIO_0[35]), 
 						.i2c_0_conduit_end_sda(GPIO_0[34]), 
