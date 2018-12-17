@@ -142,14 +142,14 @@ module soc_system_mm_interconnect_0_router
     localparam PAD5 = log2ceil(64'h90 - 64'h80); 
     localparam PAD6 = log2ceil(64'h1008 - 64'h1000); 
     localparam PAD7 = log2ceil(64'h2008 - 64'h2000); 
-    localparam PAD8 = log2ceil(64'hc0000 - 64'h80000); 
-    localparam PAD9 = log2ceil(64'h100000 - 64'hc0000); 
+    localparam PAD8 = log2ceil(64'h80000 - 64'h40000); 
+    localparam PAD9 = log2ceil(64'hc0000 - 64'h80000); 
     // -------------------------------------------------------
     // Work out which address bits are significant based on the
     // address range of the slaves. If the required width is too
     // large or too small, we use the address field width instead.
     // -------------------------------------------------------
-    localparam ADDR_RANGE = 64'h100000;
+    localparam ADDR_RANGE = 64'hc0000;
     localparam RANGE_ADDR_WIDTH = log2ceil(ADDR_RANGE);
     localparam OPTIMIZED_ADDR_H = (RANGE_ADDR_WIDTH > PKT_ADDR_W) ||
                                   (RANGE_ADDR_WIDTH == 0) ?
@@ -221,21 +221,21 @@ module soc_system_mm_interconnect_0_router
     end
 
     // ( 0x60 .. 0x70 )
-    if ( {address[RG:PAD3],{PAD3{1'b0}}} == 20'h60  && read_transaction  ) begin
+    if ( {address[RG:PAD3],{PAD3{1'b0}}} == 20'h60   ) begin
+            src_channel = 10'b1000000000;
+            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 8;
+    end
+
+    // ( 0x70 .. 0x80 )
+    if ( {address[RG:PAD4],{PAD4{1'b0}}} == 20'h70  && read_transaction  ) begin
             src_channel = 10'b0100000000;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 6;
     end
 
-    // ( 0x70 .. 0x80 )
-    if ( {address[RG:PAD4],{PAD4{1'b0}}} == 20'h70   ) begin
-            src_channel = 10'b0010000000;
-            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 3;
-    end
-
     // ( 0x80 .. 0x90 )
     if ( {address[RG:PAD5],{PAD5{1'b0}}} == 20'h80   ) begin
-            src_channel = 10'b1000000000;
-            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 8;
+            src_channel = 10'b0010000000;
+            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 3;
     end
 
     // ( 0x1000 .. 0x1008 )
@@ -250,14 +250,14 @@ module soc_system_mm_interconnect_0_router
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 7;
     end
 
-    // ( 0x80000 .. 0xc0000 )
-    if ( {address[RG:PAD8],{PAD8{1'b0}}} == 20'h80000   ) begin
+    // ( 0x40000 .. 0x80000 )
+    if ( {address[RG:PAD8],{PAD8{1'b0}}} == 20'h40000   ) begin
             src_channel = 10'b0000100000;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 4;
     end
 
-    // ( 0xc0000 .. 0x100000 )
-    if ( {address[RG:PAD9],{PAD9{1'b0}}} == 20'hc0000   ) begin
+    // ( 0x80000 .. 0xc0000 )
+    if ( {address[RG:PAD9],{PAD9{1'b0}}} == 20'h80000   ) begin
             src_channel = 10'b0000000010;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 5;
     end

@@ -109,7 +109,7 @@
    {
       datum baseAddress
       {
-         value = "112";
+         value = "128";
          type = "String";
       }
    }
@@ -141,7 +141,7 @@
    {
       datum baseAddress
       {
-         value = "524288";
+         value = "262144";
          type = "String";
       }
    }
@@ -157,7 +157,7 @@
    {
       datum baseAddress
       {
-         value = "786432";
+         value = "524288";
          type = "String";
       }
    }
@@ -173,7 +173,7 @@
    {
       datum baseAddress
       {
-         value = "96";
+         value = "112";
          type = "String";
       }
    }
@@ -249,7 +249,7 @@
    {
       datum baseAddress
       {
-         value = "128";
+         value = "96";
          type = "String";
       }
    }
@@ -2176,7 +2176,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="MYOControl_1.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x000c0000" />
+  <parameter name="baseAddress" value="0x00080000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2202,15 +2202,6 @@
    version="18.0"
    start="hps_0.h2f_lw_axi_master"
    end="I2C_3.avalon_slave_0">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0000" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="18.0"
-   start="hps_0.h2f_lw_axi_master"
-   end="A1339_0.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0000" />
   <parameter name="defaultConnection" value="false" />
@@ -2257,7 +2248,16 @@
    start="hps_0.h2f_lw_axi_master"
    end="MYOControl_0.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00080000" />
+  <parameter name="baseAddress" value="0x00040000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.0"
+   start="hps_0.h2f_lw_axi_master"
+   end="A1339_0.avalon_slave_0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2275,7 +2275,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="LED.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0070" />
+  <parameter name="baseAddress" value="0x0080" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2284,7 +2284,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="SWITCHES.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0060" />
+  <parameter name="baseAddress" value="0x0070" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2293,7 +2293,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="pio_0.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0080" />
+  <parameter name="baseAddress" value="0x0060" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2330,11 +2330,6 @@
    kind="clock"
    version="18.0"
    start="clk_0.clk"
-   end="A1339_0.clock_sink" />
- <connection
-   kind="clock"
-   version="18.0"
-   start="clk_0.clk"
    end="MSJPlatformController_0.clock_sink" />
  <connection kind="clock" version="18.0" start="clk_0.clk" end="I2C_0.clock_sink" />
  <connection kind="clock" version="18.0" start="clk_0.clk" end="I2C_1.clock_sink" />
@@ -2349,6 +2344,11 @@
    version="18.0"
    start="clk_0.clk"
    end="MYOControl_1.clock_sink" />
+ <connection
+   kind="clock"
+   version="18.0"
+   start="clk_0.clk"
+   end="A1339_0.clock_sink" />
  <connection
    kind="clock"
    version="18.0"
@@ -2403,11 +2403,6 @@
    kind="reset"
    version="18.0"
    start="clk_0.clk_reset"
-   end="A1339_0.reset" />
- <connection
-   kind="reset"
-   version="18.0"
-   start="clk_0.clk_reset"
    end="MSJPlatformController_0.reset" />
  <connection kind="reset" version="18.0" start="clk_0.clk_reset" end="I2C_0.reset" />
  <connection kind="reset" version="18.0" start="clk_0.clk_reset" end="I2C_1.reset" />
@@ -2423,6 +2418,11 @@
    start="clk_0.clk_reset"
    end="MYOControl_1.reset" />
  <connection kind="reset" version="18.0" start="clk_0.clk_reset" end="pio_0.reset" />
+ <connection
+   kind="reset"
+   version="18.0"
+   start="clk_0.clk_reset"
+   end="A1339_0.reset" />
  <connection
    kind="reset"
    version="18.0"
