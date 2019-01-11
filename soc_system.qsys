@@ -9,22 +9,6 @@
    categories="System" />
  <parameter name="bonusData"><![CDATA[bonusData 
 {
-   element A1339_0
-   {
-      datum _sortIndex
-      {
-         value = "17";
-         type = "int";
-      }
-   }
-   element A1339_0.avalon_slave_0
-   {
-      datum baseAddress
-      {
-         value = "0";
-         type = "String";
-      }
-   }
    element DarkRoomOOTXdecoder_0
    {
       datum _sortIndex
@@ -45,7 +29,7 @@
    {
       datum _sortIndex
       {
-         value = "11";
+         value = "12";
          type = "int";
       }
    }
@@ -61,7 +45,7 @@
    {
       datum _sortIndex
       {
-         value = "12";
+         value = "13";
          type = "int";
       }
    }
@@ -77,7 +61,7 @@
    {
       datum _sortIndex
       {
-         value = "13";
+         value = "14";
          type = "int";
       }
    }
@@ -93,8 +77,16 @@
    {
       datum _sortIndex
       {
-         value = "14";
+         value = "15";
          type = "int";
+      }
+   }
+   element I2C_3.avalon_slave_0
+   {
+      datum baseAddress
+      {
+         value = "96";
+         type = "String";
       }
    }
    element LED
@@ -109,7 +101,7 @@
    {
       datum baseAddress
       {
-         value = "128";
+         value = "144";
          type = "String";
       }
    }
@@ -141,7 +133,7 @@
    {
       datum baseAddress
       {
-         value = "262144";
+         value = "786432";
          type = "String";
       }
    }
@@ -157,7 +149,39 @@
    {
       datum baseAddress
       {
+         value = "1048576";
+         type = "String";
+      }
+   }
+   element MYOControl_2
+   {
+      datum _sortIndex
+      {
+         value = "11";
+         type = "int";
+      }
+   }
+   element MYOControl_2.avalon_slave_0
+   {
+      datum baseAddress
+      {
          value = "524288";
+         type = "String";
+      }
+   }
+   element RikshawControl_0
+   {
+      datum _sortIndex
+      {
+         value = "18";
+         type = "int";
+      }
+   }
+   element RikshawControl_0.avalon_slave_0
+   {
+      datum baseAddress
+      {
+         value = "262144";
          type = "String";
       }
    }
@@ -173,7 +197,7 @@
    {
       datum baseAddress
       {
-         value = "112";
+         value = "128";
          type = "String";
       }
    }
@@ -181,7 +205,7 @@
    {
       datum _sortIndex
       {
-         value = "15";
+         value = "16";
          type = "int";
       }
    }
@@ -237,27 +261,11 @@
          type = "String";
       }
    }
-   element pio_0
-   {
-      datum _sortIndex
-      {
-         value = "18";
-         type = "int";
-      }
-   }
-   element pio_0.s1
-   {
-      datum baseAddress
-      {
-         value = "96";
-         type = "String";
-      }
-   }
    element pll_40MHz
    {
       datum _sortIndex
       {
-         value = "16";
+         value = "17";
          type = "int";
       }
    }
@@ -1220,7 +1228,6 @@
  <parameter name="timeStamp" value="0" />
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
- <interface name="a1339_0_conduit_end" internal="A1339_0.conduit_end" />
  <interface name="adc_ltc2308_0_conduit_end" internal="adc_ltc2308_0.conduit_end" />
  <interface name="clk" internal="clk_0.clk_in" type="clock" dir="end" />
  <interface name="darkroom_0_conduit_end" internal="DarkRoom_0.conduit_end" />
@@ -1266,7 +1273,11 @@
    internal="I2C_2.conduit_end"
    type="conduit"
    dir="end" />
- <interface name="i2c_3_conduit_end" internal="I2C_3.conduit_end" />
+ <interface
+   name="i2c_3_conduit_end"
+   internal="I2C_3.conduit_end"
+   type="conduit"
+   dir="end" />
  <interface
    name="led_external_connection"
    internal="LED.external_connection"
@@ -1287,19 +1298,21 @@
    type="conduit"
    dir="end" />
  <interface
-   name="pio_0_external_connection"
-   internal="pio_0.external_connection"
+   name="myocontrol_2_conduit_end"
+   internal="MYOControl_2.conduit_end"
    type="conduit"
    dir="end" />
  <interface name="reset" internal="clk_0.clk_in_reset" type="reset" dir="end" />
+ <interface
+   name="rikshawcontrol_0_conduit_end"
+   internal="RikshawControl_0.conduit_end"
+   type="conduit"
+   dir="end" />
  <interface
    name="switches_external_connection"
    internal="SWITCHES.external_connection"
    type="conduit"
    dir="end" />
- <module name="A1339_0" kind="A1339" version="1.0" enabled="0">
-  <parameter name="NUMBER_OF_SENSORS" value="6" />
- </module>
  <module
    name="DarkRoomOOTXdecoder_0"
    kind="DarkRoomOOTXdecoder"
@@ -1326,7 +1339,7 @@
   <parameter name="BUS_SPEED_HZ" value="400000" />
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
  </module>
- <module name="I2C_3" kind="I2C" version="1.0" enabled="0">
+ <module name="I2C_3" kind="I2C" version="1.0" enabled="1">
   <parameter name="BUS_SPEED_HZ" value="400000" />
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
  </module>
@@ -1366,6 +1379,22 @@
   <parameter name="ENABLE_MYOBRICK_CONTROL" value="1" />
   <parameter name="NUMBER_OF_MOTORS" value="6" />
   <parameter name="SAMPLES_TO_AVERAGE" value="256" />
+ </module>
+ <module name="MYOControl_2" kind="MYOControl" version="1.0" enabled="1">
+  <parameter name="CLOCK_SPEED_HZ" value="50000000" />
+  <parameter name="ENABLE_ARM_CONTROL" value="0" />
+  <parameter name="ENABLE_MYOBRICK_CONTROL" value="1" />
+  <parameter name="NUMBER_OF_MOTORS" value="6" />
+  <parameter name="SAMPLES_TO_AVERAGE" value="256" />
+ </module>
+ <module
+   name="RikshawControl_0"
+   kind="RikshawControl"
+   version="1.0"
+   enabled="1">
+  <parameter name="CLOCK_SPEED_HZ" value="50000000" />
+  <parameter name="NUMBER_OF_SENSORS" value="1" />
+  <parameter name="SAMPLES_TO_AVERAGE" value="512" />
  </module>
  <module name="SWITCHES" kind="altera_avalon_pio" version="18.0" enabled="1">
   <parameter name="bitClearingEdgeCapReg" value="false" />
@@ -1937,20 +1966,6 @@
   <parameter name="writeBufferDepth" value="64" />
   <parameter name="writeIRQThreshold" value="8" />
  </module>
- <module name="pio_0" kind="altera_avalon_pio" version="18.0" enabled="1">
-  <parameter name="bitClearingEdgeCapReg" value="false" />
-  <parameter name="bitModifyingOutReg" value="false" />
-  <parameter name="captureEdge" value="false" />
-  <parameter name="clockRate" value="50000000" />
-  <parameter name="direction" value="Output" />
-  <parameter name="edgeType" value="RISING" />
-  <parameter name="generateIRQ" value="false" />
-  <parameter name="irqType" value="LEVEL" />
-  <parameter name="resetValue" value="0" />
-  <parameter name="simDoTestBenchWiring" value="false" />
-  <parameter name="simDrivenValue" value="0" />
-  <parameter name="width" value="1" />
- </module>
  <module name="pll_40MHz" kind="altera_pll" version="18.0" enabled="0">
   <parameter name="debug_print_output" value="false" />
   <parameter name="debug_use_rbc_taf_method" value="false" />
@@ -2176,7 +2191,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="MYOControl_1.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00080000" />
+  <parameter name="baseAddress" value="0x00100000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2203,7 +2218,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="I2C_3.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="baseAddress" value="0x0060" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2248,16 +2263,25 @@
    start="hps_0.h2f_lw_axi_master"
    end="MYOControl_0.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00040000" />
+  <parameter name="baseAddress" value="0x000c0000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
    kind="avalon"
    version="18.0"
    start="hps_0.h2f_lw_axi_master"
-   end="A1339_0.avalon_slave_0">
+   end="MYOControl_2.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="baseAddress" value="0x00080000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.0"
+   start="hps_0.h2f_lw_axi_master"
+   end="RikshawControl_0.avalon_slave_0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x00040000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2275,7 +2299,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="LED.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0080" />
+  <parameter name="baseAddress" value="0x0090" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2284,16 +2308,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="SWITCHES.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0070" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="18.0"
-   start="hps_0.h2f_lw_axi_master"
-   end="pio_0.s1">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0060" />
+  <parameter name="baseAddress" value="0x0080" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2309,7 +2324,6 @@
  <connection kind="clock" version="18.0" start="clk_0.clk" end="LED.clk" />
  <connection kind="clock" version="18.0" start="clk_0.clk" end="SWITCHES.clk" />
  <connection kind="clock" version="18.0" start="clk_0.clk" end="sysid_qsys.clk" />
- <connection kind="clock" version="18.0" start="clk_0.clk" end="pio_0.clk" />
  <connection
    kind="clock"
    version="18.0"
@@ -2348,7 +2362,12 @@
    kind="clock"
    version="18.0"
    start="clk_0.clk"
-   end="A1339_0.clock_sink" />
+   end="RikshawControl_0.clock_sink" />
+ <connection
+   kind="clock"
+   version="18.0"
+   start="clk_0.clk"
+   end="MYOControl_2.clock_sink" />
  <connection
    kind="clock"
    version="18.0"
@@ -2417,12 +2436,16 @@
    version="18.0"
    start="clk_0.clk_reset"
    end="MYOControl_1.reset" />
- <connection kind="reset" version="18.0" start="clk_0.clk_reset" end="pio_0.reset" />
  <connection
    kind="reset"
    version="18.0"
    start="clk_0.clk_reset"
-   end="A1339_0.reset" />
+   end="MYOControl_2.reset" />
+ <connection
+   kind="reset"
+   version="18.0"
+   start="clk_0.clk_reset"
+   end="RikshawControl_0.reset" />
  <connection
    kind="reset"
    version="18.0"

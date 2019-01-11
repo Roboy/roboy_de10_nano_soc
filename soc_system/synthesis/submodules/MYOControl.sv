@@ -626,24 +626,24 @@ generate
 		
 		wire [NUMBER_OF_MOTORS-1:0] cycle;
 		
-		/*A1339Control#(NUMBER_OF_MOTORS,SAMPLES_TO_AVERAGE) a1339(
-			.clock(clock),
-			.reset_n(~reset), // shut down spi when motors are off
-			.sensor_raw(angle_raw),
-			.sensor_angle_prev(angle_prev),
-			.sensor_angle(angle_signed),
-			.sensor_angle_offset(angle_offset),
-			.sensor_angle_relative(angle_relative),
-			.sensor(angle_motor_index),
-			.rev_counter(angle_revolution),
-			// SPI
-			.sck_o(angle_sck), // clock
-			.ss_n_o(angle_ss_n_o), // slave select line for each sensor
-			.mosi_o(angle_mosi),	// mosi
-			.miso_i(angle_miso),	// miso
-			.zero_offset(power_sense_n),
-			.cycle(cycle)
-		);*/
+//		A1339Control#(NUMBER_OF_MOTORS,SAMPLES_TO_AVERAGE) a1339(
+//			.clock(clock),
+//			.reset_n(~reset), // shut down spi when motors are off
+//			.sensor_raw(angle_raw),
+//			.sensor_angle_prev(angle_prev),
+//			.sensor_angle(angle_signed),
+//			.sensor_angle_offset(angle_offset),
+//			.sensor_angle_relative(angle_relative),
+//			.sensor(angle_motor_index),
+//			.rev_counter(angle_revolution),
+//			// SPI
+//			.sck_o(angle_sck), // clock
+//			.ss_n_o(angle_ss_n_o), // slave select line for each sensor
+//			.mosi_o(angle_mosi),	// mosi
+//			.miso_i(angle_miso),	// miso
+//			.zero_offset(power_sense_n),
+//			.cycle(cycle)
+//		);
 	end
 
 endgenerate 

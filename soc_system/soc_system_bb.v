@@ -65,6 +65,10 @@ module soc_system (
 	i2c_2_conduit_end_sda,
 	i2c_2_conduit_end_led,
 	i2c_2_conduit_end_gpio,
+	i2c_3_conduit_end_scl,
+	i2c_3_conduit_end_sda,
+	i2c_3_conduit_end_led,
+	i2c_3_conduit_end_gpio,
 	led_external_connection_export,
 	memory_mem_a,
 	memory_mem_ba,
@@ -108,9 +112,27 @@ module soc_system (
 	myocontrol_1_conduit_end_sck,
 	myocontrol_1_conduit_end_ss_n_o,
 	myocontrol_1_conduit_end_gpio_n,
-	pio_0_external_connection_export,
+	myocontrol_2_conduit_end_angle_miso,
+	myocontrol_2_conduit_end_angle_mosi,
+	myocontrol_2_conduit_end_angle_sck,
+	myocontrol_2_conduit_end_angle_ss_n_o,
+	myocontrol_2_conduit_end_arm_scl,
+	myocontrol_2_conduit_end_arm_sda,
+	myocontrol_2_conduit_end_mirrored_muscle_unit,
+	myocontrol_2_conduit_end_miso,
+	myocontrol_2_conduit_end_mosi,
+	myocontrol_2_conduit_end_power_sense_n,
+	myocontrol_2_conduit_end_sck,
+	myocontrol_2_conduit_end_ss_n_o,
+	myocontrol_2_conduit_end_gpio_n,
 	reset_reset_n,
-	switches_external_connection_export);	
+	switches_external_connection_export,
+	rikshawcontrol_0_conduit_end_angle_miso,
+	rikshawcontrol_0_conduit_end_angle_mosi,
+	rikshawcontrol_0_conduit_end_angle_sck,
+	rikshawcontrol_0_conduit_end_angle_ss_n_o,
+	rikshawcontrol_0_conduit_end_emergency_off,
+	rikshawcontrol_0_conduit_end_throttle);	
 
 	input		clk_clk;
 	input		hps_0_f2h_cold_reset_req_reset_n;
@@ -177,6 +199,10 @@ module soc_system (
 	inout		i2c_2_conduit_end_sda;
 	output	[6:0]	i2c_2_conduit_end_led;
 	output	[2:0]	i2c_2_conduit_end_gpio;
+	inout		i2c_3_conduit_end_scl;
+	inout		i2c_3_conduit_end_sda;
+	output	[6:0]	i2c_3_conduit_end_led;
+	output	[2:0]	i2c_3_conduit_end_gpio;
 	output	[7:0]	led_external_connection_export;
 	output	[14:0]	memory_mem_a;
 	output	[2:0]	memory_mem_ba;
@@ -220,7 +246,25 @@ module soc_system (
 	output		myocontrol_1_conduit_end_sck;
 	output	[5:0]	myocontrol_1_conduit_end_ss_n_o;
 	output		myocontrol_1_conduit_end_gpio_n;
-	output		pio_0_external_connection_export;
+	input		myocontrol_2_conduit_end_angle_miso;
+	output		myocontrol_2_conduit_end_angle_mosi;
+	output		myocontrol_2_conduit_end_angle_sck;
+	output	[5:0]	myocontrol_2_conduit_end_angle_ss_n_o;
+	output		myocontrol_2_conduit_end_arm_scl;
+	inout		myocontrol_2_conduit_end_arm_sda;
+	input		myocontrol_2_conduit_end_mirrored_muscle_unit;
+	input		myocontrol_2_conduit_end_miso;
+	output		myocontrol_2_conduit_end_mosi;
+	input		myocontrol_2_conduit_end_power_sense_n;
+	output		myocontrol_2_conduit_end_sck;
+	output	[5:0]	myocontrol_2_conduit_end_ss_n_o;
+	output		myocontrol_2_conduit_end_gpio_n;
 	input		reset_reset_n;
 	input	[3:0]	switches_external_connection_export;
+	input		rikshawcontrol_0_conduit_end_angle_miso;
+	output		rikshawcontrol_0_conduit_end_angle_mosi;
+	output		rikshawcontrol_0_conduit_end_angle_sck;
+	output	[0:0]	rikshawcontrol_0_conduit_end_angle_ss_n_o;
+	input		rikshawcontrol_0_conduit_end_emergency_off;
+	output		rikshawcontrol_0_conduit_end_throttle;
 endmodule

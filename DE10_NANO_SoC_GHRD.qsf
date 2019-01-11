@@ -723,6 +723,7 @@ set_instance_assignment -name SLEW_RATE 0 -to GPIO_1[29]
 set_instance_assignment -name SLEW_RATE 0 -to GPIO_1[28]
 set_instance_assignment -name SLEW_RATE 0 -to GPIO_1[27]
 set_instance_assignment -name SLEW_RATE 0 -to GPIO_1[26]
+set_global_assignment -name SYSTEMVERILOG_FILE ip/roboy_fpga_code/rikshaw/RikshawControl.sv
 set_global_assignment -name VERILOG_FILE DE10_NANO_SoC_GHRD.v
 set_global_assignment -name VERILOG_FILE ip/roboy_fpga_code/pwm_control/pwm_avalon_bridge.v
 set_global_assignment -name VHDL_FILE ip/roboy_fpga_code/pwm_control/pwm.vhd
