@@ -24,9 +24,9 @@
 // agreement for further details.
 
 
-// $Id: //acds/rel/18.0std/ip/merlin/altera_merlin_router/altera_merlin_router.sv.terp#1 $
+// $Id: //acds/rel/18.1std/ip/merlin/altera_merlin_router/altera_merlin_router.sv.terp#1 $
 // $Revision: #1 $
-// $Date: 2018/01/31 $
+// $Date: 2018/07/18 $
 // $Author: psgswbuild $
 
 // -------------------------------------------------------
@@ -50,9 +50,9 @@ module soc_system_mm_interconnect_0_router_002_default_decode
                DEFAULT_DESTID = 0 
    )
   (output [93 - 90 : 0] default_destination_id,
-   output [10-1 : 0] default_wr_channel,
-   output [10-1 : 0] default_rd_channel,
-   output [10-1 : 0] default_src_channel
+   output [11-1 : 0] default_wr_channel,
+   output [11-1 : 0] default_rd_channel,
+   output [11-1 : 0] default_src_channel
   );
 
   assign default_destination_id = 
@@ -63,7 +63,7 @@ module soc_system_mm_interconnect_0_router_002_default_decode
       assign default_src_channel = '0;
     end
     else begin : default_channel_assignment
-      assign default_src_channel = 10'b1 << DEFAULT_CHANNEL;
+      assign default_src_channel = 11'b1 << DEFAULT_CHANNEL;
     end
   endgenerate
 
@@ -73,8 +73,8 @@ module soc_system_mm_interconnect_0_router_002_default_decode
       assign default_rd_channel = '0;
     end
     else begin : default_rw_channel_assignment
-      assign default_wr_channel = 10'b1 << DEFAULT_WR_CHANNEL;
-      assign default_rd_channel = 10'b1 << DEFAULT_RD_CHANNEL;
+      assign default_wr_channel = 11'b1 << DEFAULT_WR_CHANNEL;
+      assign default_rd_channel = 11'b1 << DEFAULT_RD_CHANNEL;
     end
   endgenerate
 
@@ -103,7 +103,7 @@ module soc_system_mm_interconnect_0_router_002
     // -------------------
     output                          src_valid,
     output reg [118-1    : 0] src_data,
-    output reg [10-1 : 0] src_channel,
+    output reg [11-1 : 0] src_channel,
     output                          src_startofpacket,
     output                          src_endofpacket,
     input                           src_ready
@@ -119,7 +119,7 @@ module soc_system_mm_interconnect_0_router_002
     localparam PKT_PROTECTION_H = 108;
     localparam PKT_PROTECTION_L = 106;
     localparam ST_DATA_W = 118;
-    localparam ST_CHANNEL_W = 10;
+    localparam ST_CHANNEL_W = 11;
     localparam DECODER_TYPE = 1;
 
     localparam PKT_TRANS_WRITE = 59;
@@ -158,8 +158,8 @@ module soc_system_mm_interconnect_0_router_002
     assign src_valid         = sink_valid;
     assign src_startofpacket = sink_startofpacket;
     assign src_endofpacket   = sink_endofpacket;
-    wire [10-1 : 0] default_rd_channel;
-    wire [10-1 : 0] default_wr_channel;
+    wire [11-1 : 0] default_rd_channel;
+    wire [11-1 : 0] default_wr_channel;
 
 
 
@@ -193,11 +193,11 @@ module soc_system_mm_interconnect_0_router_002
 
 
         if (destid == 0  && write_transaction) begin
-            src_channel = 10'b01;
+            src_channel = 11'b01;
         end
 
         if (destid == 0  && read_transaction) begin
-            src_channel = 10'b10;
+            src_channel = 11'b10;
         end
 
 
