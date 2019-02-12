@@ -129,7 +129,7 @@ soc_system u0(
 					.msjplatformcontroller_0_conduit_end_angle_sck(GPIO_0[2]),
 					.msjplatformcontroller_0_conduit_end_angle_ss_n_o(GPIO_1[35:28]),
 					.msjplatformcontroller_0_conduit_end_pwm(GPIO_1[25:18]),
-					.msjplatformcontroller_0_conduit_end_emergency_off(SW[0]),
+					.msjplatformcontroller_0_conduit_end_emergency_off(1'b0),
 					.msjplatformcontroller_0_conduit_end_zero_pose_button(GPIO_1[0]),
 					.msjplatformcontroller_0_conduit_end_release_all_button(GPIO_1[1]),
 					.msjplatformcontroller_0_conduit_end_release_buttons(GPIO_1[9:2]),

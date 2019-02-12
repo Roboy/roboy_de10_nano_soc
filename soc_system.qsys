@@ -69,7 +69,7 @@
    {
       datum baseAddress
       {
-         value = "2368";
+         value = "64";
          type = "String";
       }
    }
@@ -85,7 +85,7 @@
    {
       datum baseAddress
       {
-         value = "2336";
+         value = "32";
          type = "String";
       }
    }
@@ -101,7 +101,7 @@
    {
       datum baseAddress
       {
-         value = "2304";
+         value = "0";
          type = "String";
       }
    }
@@ -125,7 +125,7 @@
    {
       datum baseAddress
       {
-         value = "2416";
+         value = "112";
          type = "String";
       }
    }
@@ -189,7 +189,7 @@
    {
       datum baseAddress
       {
-         value = "2400";
+         value = "96";
          type = "String";
       }
    }
@@ -1173,6 +1173,22 @@
          type = "String";
       }
    }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
    element sysid_qsys
    {
       datum _sortIndex
@@ -1223,17 +1239,11 @@
  <interface name="a1339_0_conduit_end" internal="A1339_0.conduit_end" />
  <interface name="adc_ltc2308_0_conduit_end" internal="adc_ltc2308_0.conduit_end" />
  <interface name="clk" internal="clk_0.clk_in" type="clock" dir="end" />
- <interface
-   name="darkroom_0_conduit_end"
-   internal="DarkRoom_0.conduit_end"
-   type="conduit"
-   dir="end" />
+ <interface name="darkroom_0_conduit_end" internal="DarkRoom_0.conduit_end" />
  <interface name="darkroom_0_sensor_signals" internal="DarkRoom_0.sensor_signals" />
  <interface
    name="darkroomootxdecoder_0_conduit_end"
-   internal="DarkRoomOOTXdecoder_0.conduit_end"
-   type="conduit"
-   dir="end" />
+   internal="DarkRoomOOTXdecoder_0.conduit_end" />
  <interface
    name="hps_0_f2h_cold_reset_req"
    internal="hps_0.f2h_cold_reset_req"
@@ -1299,11 +1309,11 @@
    name="DarkRoomOOTXdecoder_0"
    kind="DarkRoomOOTXdecoder"
    version="1.0"
-   enabled="1">
+   enabled="0">
   <parameter name="ENABLE_UART_TRANSMITTER" value="false" />
   <parameter name="NUMBER_OF_SENSORS" value="13" />
  </module>
- <module name="DarkRoom_0" kind="DarkRoom" version="1.0" enabled="1">
+ <module name="DarkRoom_0" kind="DarkRoom" version="1.0" enabled="0">
   <parameter name="CLK_SPEED" value="50000000" />
   <parameter name="ENABLE_AVALON_INTERFACE" value="1" />
   <parameter name="ENABLE_SPI_TRANSMITTER" value="false" />
@@ -2202,7 +2212,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="I2C_0.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0940" />
+  <parameter name="baseAddress" value="0x0040" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2211,7 +2221,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="I2C_1.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0920" />
+  <parameter name="baseAddress" value="0x0020" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2220,7 +2230,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="I2C_2.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0900" />
+  <parameter name="baseAddress" value="0x0000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2256,7 +2266,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="LED.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0970" />
+  <parameter name="baseAddress" value="0x0070" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2265,7 +2275,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="SWITCHES.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0960" />
+  <parameter name="baseAddress" value="0x0060" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
