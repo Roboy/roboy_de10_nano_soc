@@ -50,8 +50,14 @@ always @(posedge clock, posedge reset) begin: AVALON_READ_INTERFACE
 		waitFlag <= 1;
 		if(read) begin
 			case(address>>8)
-				8'h00: returnvalue <= a1339_interface.sensor_angle_absolute[address[7:0]];
+				8'h00: returnvalue <= a1339_interface.sensor_angle[address[7:0]];
 				8'h01: returnvalue <= toggle;
+				8'h02: returnvalue <= a1339_interface.sensor_angle[address[7:0]];
+				8'h03: returnvalue <= a1339_interface.sensor_angle_absolute[address[7:0]];
+				8'h04: returnvalue <= a1339_interface.sensor_angle_offset[address[7:0]];
+				8'h05: returnvalue <= a1339_interface.sensor_angle_relative[address[7:0]];
+				8'h06: returnvalue <= a1339_interface.sensor_angle_velocity[address[7:0]];
+				8'h07: returnvalue <= a1339_interface.sensor_revolution_counter[address[7:0]];
 				default: returnvalue <= 32'hDEADBEEF;
 			endcase
 			if(waitFlag==1) begin // next clock cycle the returnvalue should be ready
