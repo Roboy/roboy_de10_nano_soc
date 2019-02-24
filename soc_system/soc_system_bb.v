@@ -120,7 +120,9 @@ module soc_system (
 	myocontrol_2_conduit_end_angle_sck,
 	myocontrol_2_conduit_end_angle_ss_n_o,
 	reset_reset_n,
-	switches_external_connection_export);	
+	switches_external_connection_export,
+	pwm_0_conduit_end_pwm,
+	pio_0_external_connection_export);	
 
 	input		clk_clk;
 	input		hps_0_f2h_cold_reset_req_reset_n;
@@ -243,4 +245,6 @@ module soc_system (
 	output	[5:0]	myocontrol_2_conduit_end_angle_ss_n_o;
 	input		reset_reset_n;
 	input	[3:0]	switches_external_connection_export;
+	output	[1:0]	pwm_0_conduit_end_pwm;
+	output	[9:0]	pio_0_external_connection_export;
 endmodule

@@ -101,7 +101,7 @@
    {
       datum baseAddress
       {
-         value = "144";
+         value = "160";
          type = "String";
       }
    }
@@ -117,7 +117,7 @@
    {
       datum baseAddress
       {
-         value = "524288";
+         value = "786432";
          type = "String";
       }
    }
@@ -133,7 +133,7 @@
    {
       datum baseAddress
       {
-         value = "786432";
+         value = "1048576";
          type = "String";
       }
    }
@@ -149,7 +149,7 @@
    {
       datum baseAddress
       {
-         value = "262144";
+         value = "524288";
          type = "String";
       }
    }
@@ -165,7 +165,7 @@
    {
       datum baseAddress
       {
-         value = "128";
+         value = "144";
          type = "String";
       }
    }
@@ -229,12 +229,44 @@
          type = "String";
       }
    }
+   element pio_0
+   {
+      datum _sortIndex
+      {
+         value = "18";
+         type = "int";
+      }
+   }
+   element pio_0.s1
+   {
+      datum baseAddress
+      {
+         value = "128";
+         type = "String";
+      }
+   }
    element pll_40MHz
    {
       datum _sortIndex
       {
          value = "16";
          type = "int";
+      }
+   }
+   element pwm_0
+   {
+      datum _sortIndex
+      {
+         value = "17";
+         type = "int";
+      }
+   }
+   element pwm_0.avalon_slave_0
+   {
+      datum baseAddress
+      {
+         value = "262144";
+         type = "String";
       }
    }
    element soc_system
@@ -1123,6 +1155,16 @@
    internal="MYOControl_2.conduit_end"
    type="conduit"
    dir="end" />
+ <interface
+   name="pio_0_external_connection"
+   internal="pio_0.external_connection"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="pwm_0_conduit_end"
+   internal="pwm_0.conduit_end"
+   type="conduit"
+   dir="end" />
  <interface name="reset" internal="clk_0.clk_in_reset" type="reset" dir="end" />
  <interface
    name="switches_external_connection"
@@ -1758,6 +1800,20 @@
   <parameter name="writeBufferDepth" value="64" />
   <parameter name="writeIRQThreshold" value="8" />
  </module>
+ <module name="pio_0" kind="altera_avalon_pio" version="18.1" enabled="1">
+  <parameter name="bitClearingEdgeCapReg" value="false" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="captureEdge" value="false" />
+  <parameter name="clockRate" value="50000000" />
+  <parameter name="direction" value="Output" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="generateIRQ" value="false" />
+  <parameter name="irqType" value="LEVEL" />
+  <parameter name="resetValue" value="0" />
+  <parameter name="simDoTestBenchWiring" value="false" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="width" value="10" />
+ </module>
  <module name="pll_40MHz" kind="altera_pll" version="18.1" enabled="0">
   <parameter name="debug_print_output" value="false" />
   <parameter name="debug_use_rbc_taf_method" value="false" />
@@ -1961,6 +2017,14 @@
   <parameter name="gui_switchover_mode">Automatic Switchover</parameter>
   <parameter name="gui_use_locked" value="false" />
  </module>
+ <module name="pwm_0" kind="pwm" version="1.0" enabled="1">
+  <parameter name="CLOCK_SPEED_HZ" value="50000000" />
+  <parameter name="NUMBER_OF_MOTORS" value="2" />
+  <parameter name="PWM_FREQ" value="20000" />
+  <parameter name="PWM_PAUSE_FREQ" value="20000" />
+  <parameter name="PWM_PHASES" value="1" />
+  <parameter name="PWM_RESOLUTION" value="8" />
+ </module>
  <module
    name="sysid_qsys"
    kind="altera_avalon_sysid_qsys"
@@ -1983,7 +2047,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="MYOControl_1.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x000c0000" />
+  <parameter name="baseAddress" value="0x00100000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2010,7 +2074,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="MYOControl_0.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00080000" />
+  <parameter name="baseAddress" value="0x000c0000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2046,7 +2110,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="MYOControl_2.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00040000" />
+  <parameter name="baseAddress" value="0x00080000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2056,6 +2120,15 @@
    end="I2C_3.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="hps_0.h2f_lw_axi_master"
+   end="pwm_0.avalon_slave_0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x00040000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2073,7 +2146,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="LED.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0090" />
+  <parameter name="baseAddress" value="0x00a0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2081,6 +2154,15 @@
    version="18.1"
    start="hps_0.h2f_lw_axi_master"
    end="SWITCHES.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0090" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="hps_0.h2f_lw_axi_master"
+   end="pio_0.s1">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0080" />
   <parameter name="defaultConnection" value="false" />
@@ -2098,6 +2180,7 @@
  <connection kind="clock" version="18.1" start="clk_0.clk" end="LED.clk" />
  <connection kind="clock" version="18.1" start="clk_0.clk" end="SWITCHES.clk" />
  <connection kind="clock" version="18.1" start="clk_0.clk" end="sysid_qsys.clk" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="pio_0.clk" />
  <connection
    kind="clock"
    version="18.1"
@@ -2132,6 +2215,7 @@
    start="clk_0.clk"
    end="MYOControl_2.clock_sink" />
  <connection kind="clock" version="18.1" start="clk_0.clk" end="I2C_3.clock_sink" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="pwm_0.clock_sink" />
  <connection
    kind="clock"
    version="18.1"
@@ -2200,6 +2284,8 @@
    start="clk_0.clk_reset"
    end="MYOControl_2.reset" />
  <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="I2C_3.reset" />
+ <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="pwm_0.reset" />
+ <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="pio_0.reset" />
  <connection
    kind="reset"
    version="18.1"

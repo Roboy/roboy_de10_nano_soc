@@ -119,6 +119,8 @@
 		.myocontrol_2_conduit_end_angle_sck            (<connected-to-myocontrol_2_conduit_end_angle_sck>),            //                             .angle_sck
 		.myocontrol_2_conduit_end_angle_ss_n_o         (<connected-to-myocontrol_2_conduit_end_angle_ss_n_o>),         //                             .angle_ss_n_o
 		.reset_reset_n                                 (<connected-to-reset_reset_n>),                                 //                        reset.reset_n
-		.switches_external_connection_export           (<connected-to-switches_external_connection_export>)            // switches_external_connection.export
+		.switches_external_connection_export           (<connected-to-switches_external_connection_export>),           // switches_external_connection.export
+		.pwm_0_conduit_end_pwm                         (<connected-to-pwm_0_conduit_end_pwm>),                         //            pwm_0_conduit_end.pwm
+		.pio_0_external_connection_export              (<connected-to-pio_0_external_connection_export>)               //    pio_0_external_connection.export
 	);
 

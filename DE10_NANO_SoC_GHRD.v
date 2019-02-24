@@ -160,6 +160,8 @@ soc_system u0(
 					.myocontrol_2_conduit_end_angle_mosi(GPIO_0[10]),           //                             .angle_mosi
 					.myocontrol_2_conduit_end_angle_sck(GPIO_0[11]),            //  18                           .angle_sck
 					.myocontrol_2_conduit_end_angle_ss_n_o(GPIO_0[17:12]), 
+					.pwm_0_conduit_end_pwm(ARDUINO_IO[1:0]),
+					.pio_0_external_connection_export(ARDUINO_IO[9:2]),
 					// led
 					.led_external_connection_export(LED),
 					// switches
