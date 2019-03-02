@@ -716,6 +716,7 @@ set_instance_assignment -name SLEW_RATE 0 -to GPIO_1[29]
 set_instance_assignment -name SLEW_RATE 0 -to GPIO_1[28]
 set_instance_assignment -name SLEW_RATE 0 -to GPIO_1[27]
 set_instance_assignment -name SLEW_RATE 0 -to GPIO_1[26]
+set_global_assignment -name SYSTEMVERILOG_FILE ip/roboy_fpga_code/tlv493/TLV493.sv
 set_global_assignment -name VERILOG_FILE ip/roboy_fpga_code/pwm_control/pwm_avalon_bridge.v
 set_global_assignment -name VHDL_FILE ip/roboy_fpga_code/pwm_control/pwm.vhd
 set_global_assignment -name SYSTEMVERILOG_FILE ip/roboy_fpga_code/a133x/A1339.sv

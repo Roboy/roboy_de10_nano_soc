@@ -52,18 +52,6 @@
 		.hps_0_hps_io_hps_io_gpio_inst_GPIO53          (<connected-to-hps_0_hps_io_hps_io_gpio_inst_GPIO53>),          //                             .hps_io_gpio_inst_GPIO53
 		.hps_0_hps_io_hps_io_gpio_inst_GPIO54          (<connected-to-hps_0_hps_io_hps_io_gpio_inst_GPIO54>),          //                             .hps_io_gpio_inst_GPIO54
 		.hps_0_hps_io_hps_io_gpio_inst_GPIO61          (<connected-to-hps_0_hps_io_hps_io_gpio_inst_GPIO61>),          //                             .hps_io_gpio_inst_GPIO61
-		.i2c_0_conduit_end_scl                         (<connected-to-i2c_0_conduit_end_scl>),                         //            i2c_0_conduit_end.scl
-		.i2c_0_conduit_end_sda                         (<connected-to-i2c_0_conduit_end_sda>),                         //                             .sda
-		.i2c_0_conduit_end_led                         (<connected-to-i2c_0_conduit_end_led>),                         //                             .led
-		.i2c_0_conduit_end_gpio                        (<connected-to-i2c_0_conduit_end_gpio>),                        //                             .gpio
-		.i2c_1_conduit_end_scl                         (<connected-to-i2c_1_conduit_end_scl>),                         //            i2c_1_conduit_end.scl
-		.i2c_1_conduit_end_sda                         (<connected-to-i2c_1_conduit_end_sda>),                         //                             .sda
-		.i2c_1_conduit_end_led                         (<connected-to-i2c_1_conduit_end_led>),                         //                             .led
-		.i2c_1_conduit_end_gpio                        (<connected-to-i2c_1_conduit_end_gpio>),                        //                             .gpio
-		.i2c_2_conduit_end_scl                         (<connected-to-i2c_2_conduit_end_scl>),                         //            i2c_2_conduit_end.scl
-		.i2c_2_conduit_end_sda                         (<connected-to-i2c_2_conduit_end_sda>),                         //                             .sda
-		.i2c_2_conduit_end_led                         (<connected-to-i2c_2_conduit_end_led>),                         //                             .led
-		.i2c_2_conduit_end_gpio                        (<connected-to-i2c_2_conduit_end_gpio>),                        //                             .gpio
 		.i2c_3_conduit_end_scl                         (<connected-to-i2c_3_conduit_end_scl>),                         //            i2c_3_conduit_end.scl
 		.i2c_3_conduit_end_sda                         (<connected-to-i2c_3_conduit_end_sda>),                         //                             .sda
 		.i2c_3_conduit_end_led                         (<connected-to-i2c_3_conduit_end_led>),                         //                             .led
@@ -118,9 +106,11 @@
 		.myocontrol_2_conduit_end_angle_mosi           (<connected-to-myocontrol_2_conduit_end_angle_mosi>),           //                             .angle_mosi
 		.myocontrol_2_conduit_end_angle_sck            (<connected-to-myocontrol_2_conduit_end_angle_sck>),            //                             .angle_sck
 		.myocontrol_2_conduit_end_angle_ss_n_o         (<connected-to-myocontrol_2_conduit_end_angle_ss_n_o>),         //                             .angle_ss_n_o
+		.pio_0_external_connection_export              (<connected-to-pio_0_external_connection_export>),              //    pio_0_external_connection.export
+		.pwm_0_conduit_end_pwm                         (<connected-to-pwm_0_conduit_end_pwm>),                         //            pwm_0_conduit_end.pwm
 		.reset_reset_n                                 (<connected-to-reset_reset_n>),                                 //                        reset.reset_n
 		.switches_external_connection_export           (<connected-to-switches_external_connection_export>),           // switches_external_connection.export
-		.pwm_0_conduit_end_pwm                         (<connected-to-pwm_0_conduit_end_pwm>),                         //            pwm_0_conduit_end.pwm
-		.pio_0_external_connection_export              (<connected-to-pio_0_external_connection_export>)               //    pio_0_external_connection.export
+		.tlv493_0_conduit_end_scl                      (<connected-to-tlv493_0_conduit_end_scl>),                      //         tlv493_0_conduit_end.scl
+		.tlv493_0_conduit_end_sda                      (<connected-to-tlv493_0_conduit_end_sda>)                       //                             .sda
 	);
 
