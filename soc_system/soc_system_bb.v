@@ -53,6 +53,18 @@ module soc_system (
 	hps_0_hps_io_hps_io_gpio_inst_GPIO53,
 	hps_0_hps_io_hps_io_gpio_inst_GPIO54,
 	hps_0_hps_io_hps_io_gpio_inst_GPIO61,
+	i2c_0_conduit_end_scl,
+	i2c_0_conduit_end_sda,
+	i2c_0_conduit_end_led,
+	i2c_0_conduit_end_gpio,
+	i2c_1_conduit_end_scl,
+	i2c_1_conduit_end_sda,
+	i2c_1_conduit_end_led,
+	i2c_1_conduit_end_gpio,
+	i2c_2_conduit_end_scl,
+	i2c_2_conduit_end_sda,
+	i2c_2_conduit_end_led,
+	i2c_2_conduit_end_gpio,
 	i2c_3_conduit_end_scl,
 	i2c_3_conduit_end_sda,
 	i2c_3_conduit_end_led,
@@ -110,9 +122,7 @@ module soc_system (
 	pio_0_external_connection_export,
 	pwm_0_conduit_end_pwm,
 	reset_reset_n,
-	switches_external_connection_export,
-	tlv493_0_conduit_end_scl,
-	tlv493_0_conduit_end_sda);	
+	switches_external_connection_export);	
 
 	input		clk_clk;
 	input		hps_0_f2h_cold_reset_req_reset_n;
@@ -167,6 +177,18 @@ module soc_system (
 	inout		hps_0_hps_io_hps_io_gpio_inst_GPIO53;
 	inout		hps_0_hps_io_hps_io_gpio_inst_GPIO54;
 	inout		hps_0_hps_io_hps_io_gpio_inst_GPIO61;
+	inout		i2c_0_conduit_end_scl;
+	inout		i2c_0_conduit_end_sda;
+	output	[6:0]	i2c_0_conduit_end_led;
+	output	[2:0]	i2c_0_conduit_end_gpio;
+	inout		i2c_1_conduit_end_scl;
+	inout		i2c_1_conduit_end_sda;
+	output	[6:0]	i2c_1_conduit_end_led;
+	output	[2:0]	i2c_1_conduit_end_gpio;
+	inout		i2c_2_conduit_end_scl;
+	inout		i2c_2_conduit_end_sda;
+	output	[6:0]	i2c_2_conduit_end_led;
+	output	[2:0]	i2c_2_conduit_end_gpio;
 	inout		i2c_3_conduit_end_scl;
 	inout		i2c_3_conduit_end_sda;
 	output	[6:0]	i2c_3_conduit_end_led;
@@ -225,6 +247,4 @@ module soc_system (
 	output	[1:0]	pwm_0_conduit_end_pwm;
 	input		reset_reset_n;
 	input	[3:0]	switches_external_connection_export;
-	output	[2:0]	tlv493_0_conduit_end_scl;
-	inout	[2:0]	tlv493_0_conduit_end_sda;
 endmodule
