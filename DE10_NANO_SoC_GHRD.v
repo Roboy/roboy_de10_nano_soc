@@ -154,10 +154,10 @@ soc_system u0(
 					.i2c_3_conduit_end_scl(GPIO_0[29]),
 					.i2c_3_conduit_end_sda(GPIO_0[28]), 
 //						// myocontrol, three buses (9/4/3 motors)
-					.myocontrol_0_conduit_end_mosi(GPIO_1[0]),
-					.myocontrol_0_conduit_end_miso(GPIO_1[1]),
-					.myocontrol_0_conduit_end_sck(GPIO_1[2]),
-					.myocontrol_0_conduit_end_ss_n_o({GPIO_1[11:3]}),
+					.myocontrol_0_conduit_end_mosi(GPIO_0[10]),
+					.myocontrol_0_conduit_end_miso(GPIO_0[13]),
+					.myocontrol_0_conduit_end_sck(GPIO_0[14]),
+					.myocontrol_0_conduit_end_ss_n_o({GPIO_0[20:15]}),
 					.myocontrol_0_conduit_end_mirrored_muscle_unit(SW[2]==1 && SW[1]==0 && SW[0]==0), // true for switch ID 4
 					.myocontrol_0_conduit_end_power_sense_n(GPIO_1[35] && SW[3]),
 					
@@ -183,12 +183,15 @@ soc_system u0(
 //					.myocontrol_2_conduit_end_angle_sck(GPIO_0[11]),
 //					.myocontrol_2_conduit_end_angle_ss_n_o(GPIO_0[17:12]),
 					
-					.rikshawcontrol_0_conduit_end_angle_mosi(GPIO_0[9]),
-					.rikshawcontrol_0_conduit_end_angle_miso(GPIO_0[10]),
-					.rikshawcontrol_0_conduit_end_angle_sck(GPIO_0[11]),
-					.rikshawcontrol_0_conduit_end_angle_ss_n_o(GPIO_0[12]),
-					.rikshawcontrol_0_conduit_end_emergency_off(GPIO_0[13]),    //                             .emergency_off
-					.rikshawcontrol_0_conduit_end_throttle(GPIO_0[14]), 
+					.rikshawcontrol_0_conduit_end_1_angle_mosi(GPIO_1[0]),
+					.rikshawcontrol_0_conduit_end_1_angle_miso(GPIO_1[1]),
+					.rikshawcontrol_0_conduit_end_1_angle_sck(GPIO_1[2]),
+					.rikshawcontrol_0_conduit_end_1_angle_ss_n_o(GPIO_1[3]),
+					.rikshawcontrol_0_conduit_end_1_emergency_off(GPIO_1[4]),    //                             .emergency_off
+					.rikshawcontrol_0_conduit_end_1_throttle(GPIO_1[5]),
+					.rikshawcontrol_0_conduit_end_1_hall_sensor1(GPIO_1[6]),
+					.rikshawcontrol_0_conduit_end_1_hall_sensor2(GPIO_1[7]),
+					.rikshawcontrol_0_conduit_end_1_hall_sensor3(GPIO_1[8]),	
 					// led
 					.led_external_connection_export(LED),
 					// switches

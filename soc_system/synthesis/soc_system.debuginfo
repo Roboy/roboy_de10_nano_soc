@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="soc_system" kind="system" version="18.0" fabric="QSYS">
  <!-- Format version 18.0 614 (Future versions may contain additional information.) -->
- <!-- 2019.01.11.16:13:06 -->
+ <!-- 2019.03.06.03:54:32 -->
  <!-- A collection of modules and connections -->
  <parameter name="clockCrossingAdapter">
   <type>com.altera.sopcmodel.ensemble.EClockAdapter</type>
@@ -53,7 +53,7 @@
  </parameter>
  <parameter name="generationId">
   <type>int</type>
-  <value>1547219540</value>
+  <value>1551840828</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>true</visible>
@@ -5550,7 +5550,52 @@ parameters are a RESULT of the module parameters. -->
     <role>waitrequest</role>
    </port>
   </interface>
-  <interface name="conduit_end" kind="conduit_end" version="18.0">
+  <interface name="clock_sink" kind="clock_sink" version="18.0">
+   <!-- The connection points exposed by a module instance for the
+particular module parameters. Connection points and their
+parameters are a RESULT of the module parameters. -->
+   <parameter name="externallyDriven">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="ptfSchematicName">
+    <type>java.lang.String</type>
+    <value></value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="deviceFamily">
+    <type>java.lang.String</type>
+    <value>UNKNOWN</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="generateLegacySim">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <type>clock</type>
+   <isStart>false</isStart>
+   <port>
+    <name>clock</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>clk</role>
+   </port>
+  </interface>
+  <interface name="conduit_end_1" kind="conduit_end" version="18.0">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -5624,50 +5669,23 @@ parameters are a RESULT of the module parameters. -->
     <width>1</width>
     <role>throttle</role>
    </port>
-  </interface>
-  <interface name="clock_sink" kind="clock_sink" version="18.0">
-   <!-- The connection points exposed by a module instance for the
-particular module parameters. Connection points and their
-parameters are a RESULT of the module parameters. -->
-   <parameter name="externallyDriven">
-    <type>boolean</type>
-    <value>false</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>false</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="ptfSchematicName">
-    <type>java.lang.String</type>
-    <value></value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>false</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="deviceFamily">
-    <type>java.lang.String</type>
-    <value>UNKNOWN</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>true</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="generateLegacySim">
-    <type>boolean</type>
-    <value>false</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>true</visible>
-    <valid>true</valid>
-   </parameter>
-   <type>clock</type>
-   <isStart>false</isStart>
    <port>
-    <name>clock</name>
+    <name>hall_sensor1</name>
     <direction>Input</direction>
     <width>1</width>
-    <role>clk</role>
+    <role>hall_sensor1</role>
+   </port>
+   <port>
+    <name>hall_sensor2</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>hall_sensor2</role>
+   </port>
+   <port>
+    <name>hall_sensor3</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>hall_sensor3</role>
    </port>
   </interface>
  </module>
@@ -48013,7 +48031,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.TIMESTAMP</name>
-   <value>1547219540</value>
+   <value>1551840828</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.compatible</name>
@@ -48033,7 +48051,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.timestamp</name>
-   <value>1547219540</value>
+   <value>1551840828</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.vendor</name>
@@ -48049,7 +48067,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="timestamp">
    <type>int</type>
-   <value>1547219540</value>
+   <value>1551840828</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -56005,5 +56023,5 @@ parameters are a RESULT of the module parameters. -->
   <version>18.0</version>
  </plugin>
  <reportVersion>18.0 614</reportVersion>
- <uniqueIdentifier>4CCC6A6BE10F000001683D78EECF</uniqueIdentifier>
+ <uniqueIdentifier>4CCC6A6BE10F0000016950EC30A8</uniqueIdentifier>
 </EnsembleReport>

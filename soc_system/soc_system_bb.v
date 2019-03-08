@@ -127,12 +127,13 @@ module soc_system (
 	myocontrol_2_conduit_end_gpio_n,
 	reset_reset_n,
 	switches_external_connection_export,
-	rikshawcontrol_0_conduit_end_angle_miso,
-	rikshawcontrol_0_conduit_end_angle_mosi,
-	rikshawcontrol_0_conduit_end_angle_sck,
-	rikshawcontrol_0_conduit_end_angle_ss_n_o,
-	rikshawcontrol_0_conduit_end_emergency_off,
-	rikshawcontrol_0_conduit_end_throttle);	
+	rikshawcontrol_0_conduit_end_1_angle_miso,
+	rikshawcontrol_0_conduit_end_1_angle_mosi,
+	rikshawcontrol_0_conduit_end_1_angle_sck,
+	rikshawcontrol_0_conduit_end_1_angle_ss_n_o,
+	rikshawcontrol_0_conduit_end_1_emergency_off,
+	rikshawcontrol_0_conduit_end_1_throttle,
+	rikshawcontrol_0_conduit_end_1_new_signal);	
 
 	input		clk_clk;
 	input		hps_0_f2h_cold_reset_req_reset_n;
@@ -261,10 +262,11 @@ module soc_system (
 	output		myocontrol_2_conduit_end_gpio_n;
 	input		reset_reset_n;
 	input	[3:0]	switches_external_connection_export;
-	input		rikshawcontrol_0_conduit_end_angle_miso;
-	output		rikshawcontrol_0_conduit_end_angle_mosi;
-	output		rikshawcontrol_0_conduit_end_angle_sck;
-	output	[0:0]	rikshawcontrol_0_conduit_end_angle_ss_n_o;
-	input		rikshawcontrol_0_conduit_end_emergency_off;
-	output		rikshawcontrol_0_conduit_end_throttle;
+	input		rikshawcontrol_0_conduit_end_1_angle_miso;
+	output		rikshawcontrol_0_conduit_end_1_angle_mosi;
+	output		rikshawcontrol_0_conduit_end_1_angle_sck;
+	output	[0:0]	rikshawcontrol_0_conduit_end_1_angle_ss_n_o;
+	input		rikshawcontrol_0_conduit_end_1_emergency_off;
+	output		rikshawcontrol_0_conduit_end_1_throttle;
+	input		rikshawcontrol_0_conduit_end_1_new_signal;
 endmodule

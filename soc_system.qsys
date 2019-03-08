@@ -1181,6 +1181,22 @@
          type = "String";
       }
    }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
    element sysid_qsys
    {
       datum _sortIndex
@@ -1305,7 +1321,10 @@
  <interface name="reset" internal="clk_0.clk_in_reset" type="reset" dir="end" />
  <interface
    name="rikshawcontrol_0_conduit_end"
-   internal="RikshawControl_0.conduit_end"
+   internal="RikshawControl_0.conduit_end" />
+ <interface
+   name="rikshawcontrol_0_conduit_end_1"
+   internal="RikshawControl_0.conduit_end_1"
    type="conduit"
    dir="end" />
  <interface

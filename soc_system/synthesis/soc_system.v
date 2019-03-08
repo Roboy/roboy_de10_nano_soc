@@ -4,139 +4,142 @@
 
 `timescale 1 ps / 1 ps
 module soc_system (
-		input  wire        clk_clk,                                       //                          clk.clk
-		input  wire        hps_0_f2h_cold_reset_req_reset_n,              //     hps_0_f2h_cold_reset_req.reset_n
-		input  wire        hps_0_f2h_debug_reset_req_reset_n,             //    hps_0_f2h_debug_reset_req.reset_n
-		input  wire        hps_0_f2h_warm_reset_req_reset_n,              //     hps_0_f2h_warm_reset_req.reset_n
-		output wire        hps_0_h2f_reset_reset_n,                       //              hps_0_h2f_reset.reset_n
-		output wire        hps_0_hps_io_hps_io_emac1_inst_TX_CLK,         //                 hps_0_hps_io.hps_io_emac1_inst_TX_CLK
-		output wire        hps_0_hps_io_hps_io_emac1_inst_TXD0,           //                             .hps_io_emac1_inst_TXD0
-		output wire        hps_0_hps_io_hps_io_emac1_inst_TXD1,           //                             .hps_io_emac1_inst_TXD1
-		output wire        hps_0_hps_io_hps_io_emac1_inst_TXD2,           //                             .hps_io_emac1_inst_TXD2
-		output wire        hps_0_hps_io_hps_io_emac1_inst_TXD3,           //                             .hps_io_emac1_inst_TXD3
-		input  wire        hps_0_hps_io_hps_io_emac1_inst_RXD0,           //                             .hps_io_emac1_inst_RXD0
-		inout  wire        hps_0_hps_io_hps_io_emac1_inst_MDIO,           //                             .hps_io_emac1_inst_MDIO
-		output wire        hps_0_hps_io_hps_io_emac1_inst_MDC,            //                             .hps_io_emac1_inst_MDC
-		input  wire        hps_0_hps_io_hps_io_emac1_inst_RX_CTL,         //                             .hps_io_emac1_inst_RX_CTL
-		output wire        hps_0_hps_io_hps_io_emac1_inst_TX_CTL,         //                             .hps_io_emac1_inst_TX_CTL
-		input  wire        hps_0_hps_io_hps_io_emac1_inst_RX_CLK,         //                             .hps_io_emac1_inst_RX_CLK
-		input  wire        hps_0_hps_io_hps_io_emac1_inst_RXD1,           //                             .hps_io_emac1_inst_RXD1
-		input  wire        hps_0_hps_io_hps_io_emac1_inst_RXD2,           //                             .hps_io_emac1_inst_RXD2
-		input  wire        hps_0_hps_io_hps_io_emac1_inst_RXD3,           //                             .hps_io_emac1_inst_RXD3
-		inout  wire        hps_0_hps_io_hps_io_sdio_inst_CMD,             //                             .hps_io_sdio_inst_CMD
-		inout  wire        hps_0_hps_io_hps_io_sdio_inst_D0,              //                             .hps_io_sdio_inst_D0
-		inout  wire        hps_0_hps_io_hps_io_sdio_inst_D1,              //                             .hps_io_sdio_inst_D1
-		output wire        hps_0_hps_io_hps_io_sdio_inst_CLK,             //                             .hps_io_sdio_inst_CLK
-		inout  wire        hps_0_hps_io_hps_io_sdio_inst_D2,              //                             .hps_io_sdio_inst_D2
-		inout  wire        hps_0_hps_io_hps_io_sdio_inst_D3,              //                             .hps_io_sdio_inst_D3
-		inout  wire        hps_0_hps_io_hps_io_usb1_inst_D0,              //                             .hps_io_usb1_inst_D0
-		inout  wire        hps_0_hps_io_hps_io_usb1_inst_D1,              //                             .hps_io_usb1_inst_D1
-		inout  wire        hps_0_hps_io_hps_io_usb1_inst_D2,              //                             .hps_io_usb1_inst_D2
-		inout  wire        hps_0_hps_io_hps_io_usb1_inst_D3,              //                             .hps_io_usb1_inst_D3
-		inout  wire        hps_0_hps_io_hps_io_usb1_inst_D4,              //                             .hps_io_usb1_inst_D4
-		inout  wire        hps_0_hps_io_hps_io_usb1_inst_D5,              //                             .hps_io_usb1_inst_D5
-		inout  wire        hps_0_hps_io_hps_io_usb1_inst_D6,              //                             .hps_io_usb1_inst_D6
-		inout  wire        hps_0_hps_io_hps_io_usb1_inst_D7,              //                             .hps_io_usb1_inst_D7
-		input  wire        hps_0_hps_io_hps_io_usb1_inst_CLK,             //                             .hps_io_usb1_inst_CLK
-		output wire        hps_0_hps_io_hps_io_usb1_inst_STP,             //                             .hps_io_usb1_inst_STP
-		input  wire        hps_0_hps_io_hps_io_usb1_inst_DIR,             //                             .hps_io_usb1_inst_DIR
-		input  wire        hps_0_hps_io_hps_io_usb1_inst_NXT,             //                             .hps_io_usb1_inst_NXT
-		output wire        hps_0_hps_io_hps_io_spim1_inst_CLK,            //                             .hps_io_spim1_inst_CLK
-		output wire        hps_0_hps_io_hps_io_spim1_inst_MOSI,           //                             .hps_io_spim1_inst_MOSI
-		input  wire        hps_0_hps_io_hps_io_spim1_inst_MISO,           //                             .hps_io_spim1_inst_MISO
-		output wire        hps_0_hps_io_hps_io_spim1_inst_SS0,            //                             .hps_io_spim1_inst_SS0
-		input  wire        hps_0_hps_io_hps_io_uart0_inst_RX,             //                             .hps_io_uart0_inst_RX
-		output wire        hps_0_hps_io_hps_io_uart0_inst_TX,             //                             .hps_io_uart0_inst_TX
-		inout  wire        hps_0_hps_io_hps_io_i2c0_inst_SDA,             //                             .hps_io_i2c0_inst_SDA
-		inout  wire        hps_0_hps_io_hps_io_i2c0_inst_SCL,             //                             .hps_io_i2c0_inst_SCL
-		inout  wire        hps_0_hps_io_hps_io_i2c1_inst_SDA,             //                             .hps_io_i2c1_inst_SDA
-		inout  wire        hps_0_hps_io_hps_io_i2c1_inst_SCL,             //                             .hps_io_i2c1_inst_SCL
-		inout  wire        hps_0_hps_io_hps_io_gpio_inst_GPIO09,          //                             .hps_io_gpio_inst_GPIO09
-		inout  wire        hps_0_hps_io_hps_io_gpio_inst_GPIO35,          //                             .hps_io_gpio_inst_GPIO35
-		inout  wire        hps_0_hps_io_hps_io_gpio_inst_GPIO40,          //                             .hps_io_gpio_inst_GPIO40
-		inout  wire        hps_0_hps_io_hps_io_gpio_inst_GPIO53,          //                             .hps_io_gpio_inst_GPIO53
-		inout  wire        hps_0_hps_io_hps_io_gpio_inst_GPIO54,          //                             .hps_io_gpio_inst_GPIO54
-		inout  wire        hps_0_hps_io_hps_io_gpio_inst_GPIO61,          //                             .hps_io_gpio_inst_GPIO61
-		inout  wire        i2c_0_conduit_end_scl,                         //            i2c_0_conduit_end.scl
-		inout  wire        i2c_0_conduit_end_sda,                         //                             .sda
-		output wire [6:0]  i2c_0_conduit_end_led,                         //                             .led
-		output wire [2:0]  i2c_0_conduit_end_gpio,                        //                             .gpio
-		inout  wire        i2c_1_conduit_end_scl,                         //            i2c_1_conduit_end.scl
-		inout  wire        i2c_1_conduit_end_sda,                         //                             .sda
-		output wire [6:0]  i2c_1_conduit_end_led,                         //                             .led
-		output wire [2:0]  i2c_1_conduit_end_gpio,                        //                             .gpio
-		inout  wire        i2c_2_conduit_end_scl,                         //            i2c_2_conduit_end.scl
-		inout  wire        i2c_2_conduit_end_sda,                         //                             .sda
-		output wire [6:0]  i2c_2_conduit_end_led,                         //                             .led
-		output wire [2:0]  i2c_2_conduit_end_gpio,                        //                             .gpio
-		inout  wire        i2c_3_conduit_end_scl,                         //            i2c_3_conduit_end.scl
-		inout  wire        i2c_3_conduit_end_sda,                         //                             .sda
-		output wire [6:0]  i2c_3_conduit_end_led,                         //                             .led
-		output wire [2:0]  i2c_3_conduit_end_gpio,                        //                             .gpio
-		output wire [7:0]  led_external_connection_export,                //      led_external_connection.export
-		output wire [14:0] memory_mem_a,                                  //                       memory.mem_a
-		output wire [2:0]  memory_mem_ba,                                 //                             .mem_ba
-		output wire        memory_mem_ck,                                 //                             .mem_ck
-		output wire        memory_mem_ck_n,                               //                             .mem_ck_n
-		output wire        memory_mem_cke,                                //                             .mem_cke
-		output wire        memory_mem_cs_n,                               //                             .mem_cs_n
-		output wire        memory_mem_ras_n,                              //                             .mem_ras_n
-		output wire        memory_mem_cas_n,                              //                             .mem_cas_n
-		output wire        memory_mem_we_n,                               //                             .mem_we_n
-		output wire        memory_mem_reset_n,                            //                             .mem_reset_n
-		inout  wire [31:0] memory_mem_dq,                                 //                             .mem_dq
-		inout  wire [3:0]  memory_mem_dqs,                                //                             .mem_dqs
-		inout  wire [3:0]  memory_mem_dqs_n,                              //                             .mem_dqs_n
-		output wire        memory_mem_odt,                                //                             .mem_odt
-		output wire [3:0]  memory_mem_dm,                                 //                             .mem_dm
-		input  wire        memory_oct_rzqin,                              //                             .oct_rzqin
-		input  wire        myocontrol_0_conduit_end_angle_miso,           //     myocontrol_0_conduit_end.angle_miso
-		output wire        myocontrol_0_conduit_end_angle_mosi,           //                             .angle_mosi
-		output wire        myocontrol_0_conduit_end_angle_sck,            //                             .angle_sck
-		output wire [8:0]  myocontrol_0_conduit_end_angle_ss_n_o,         //                             .angle_ss_n_o
-		output wire        myocontrol_0_conduit_end_arm_scl,              //                             .arm_scl
-		inout  wire        myocontrol_0_conduit_end_arm_sda,              //                             .arm_sda
-		input  wire        myocontrol_0_conduit_end_mirrored_muscle_unit, //                             .mirrored_muscle_unit
-		input  wire        myocontrol_0_conduit_end_miso,                 //                             .miso
-		output wire        myocontrol_0_conduit_end_mosi,                 //                             .mosi
-		input  wire        myocontrol_0_conduit_end_power_sense_n,        //                             .power_sense_n
-		output wire        myocontrol_0_conduit_end_sck,                  //                             .sck
-		output wire [8:0]  myocontrol_0_conduit_end_ss_n_o,               //                             .ss_n_o
-		output wire        myocontrol_0_conduit_end_gpio_n,               //                             .gpio_n
-		input  wire        myocontrol_1_conduit_end_angle_miso,           //     myocontrol_1_conduit_end.angle_miso
-		output wire        myocontrol_1_conduit_end_angle_mosi,           //                             .angle_mosi
-		output wire        myocontrol_1_conduit_end_angle_sck,            //                             .angle_sck
-		output wire [5:0]  myocontrol_1_conduit_end_angle_ss_n_o,         //                             .angle_ss_n_o
-		output wire        myocontrol_1_conduit_end_arm_scl,              //                             .arm_scl
-		inout  wire        myocontrol_1_conduit_end_arm_sda,              //                             .arm_sda
-		input  wire        myocontrol_1_conduit_end_mirrored_muscle_unit, //                             .mirrored_muscle_unit
-		input  wire        myocontrol_1_conduit_end_miso,                 //                             .miso
-		output wire        myocontrol_1_conduit_end_mosi,                 //                             .mosi
-		input  wire        myocontrol_1_conduit_end_power_sense_n,        //                             .power_sense_n
-		output wire        myocontrol_1_conduit_end_sck,                  //                             .sck
-		output wire [5:0]  myocontrol_1_conduit_end_ss_n_o,               //                             .ss_n_o
-		output wire        myocontrol_1_conduit_end_gpio_n,               //                             .gpio_n
-		input  wire        myocontrol_2_conduit_end_angle_miso,           //     myocontrol_2_conduit_end.angle_miso
-		output wire        myocontrol_2_conduit_end_angle_mosi,           //                             .angle_mosi
-		output wire        myocontrol_2_conduit_end_angle_sck,            //                             .angle_sck
-		output wire [5:0]  myocontrol_2_conduit_end_angle_ss_n_o,         //                             .angle_ss_n_o
-		output wire        myocontrol_2_conduit_end_arm_scl,              //                             .arm_scl
-		inout  wire        myocontrol_2_conduit_end_arm_sda,              //                             .arm_sda
-		input  wire        myocontrol_2_conduit_end_mirrored_muscle_unit, //                             .mirrored_muscle_unit
-		input  wire        myocontrol_2_conduit_end_miso,                 //                             .miso
-		output wire        myocontrol_2_conduit_end_mosi,                 //                             .mosi
-		input  wire        myocontrol_2_conduit_end_power_sense_n,        //                             .power_sense_n
-		output wire        myocontrol_2_conduit_end_sck,                  //                             .sck
-		output wire [5:0]  myocontrol_2_conduit_end_ss_n_o,               //                             .ss_n_o
-		output wire        myocontrol_2_conduit_end_gpio_n,               //                             .gpio_n
-		input  wire        reset_reset_n,                                 //                        reset.reset_n
-		input  wire        rikshawcontrol_0_conduit_end_angle_miso,       // rikshawcontrol_0_conduit_end.angle_miso
-		output wire        rikshawcontrol_0_conduit_end_angle_mosi,       //                             .angle_mosi
-		output wire        rikshawcontrol_0_conduit_end_angle_sck,        //                             .angle_sck
-		output wire [0:0]  rikshawcontrol_0_conduit_end_angle_ss_n_o,     //                             .angle_ss_n_o
-		input  wire        rikshawcontrol_0_conduit_end_emergency_off,    //                             .emergency_off
-		output wire        rikshawcontrol_0_conduit_end_throttle,         //                             .throttle
-		input  wire [3:0]  switches_external_connection_export            // switches_external_connection.export
+		input  wire        clk_clk,                                       //                            clk.clk
+		input  wire        hps_0_f2h_cold_reset_req_reset_n,              //       hps_0_f2h_cold_reset_req.reset_n
+		input  wire        hps_0_f2h_debug_reset_req_reset_n,             //      hps_0_f2h_debug_reset_req.reset_n
+		input  wire        hps_0_f2h_warm_reset_req_reset_n,              //       hps_0_f2h_warm_reset_req.reset_n
+		output wire        hps_0_h2f_reset_reset_n,                       //                hps_0_h2f_reset.reset_n
+		output wire        hps_0_hps_io_hps_io_emac1_inst_TX_CLK,         //                   hps_0_hps_io.hps_io_emac1_inst_TX_CLK
+		output wire        hps_0_hps_io_hps_io_emac1_inst_TXD0,           //                               .hps_io_emac1_inst_TXD0
+		output wire        hps_0_hps_io_hps_io_emac1_inst_TXD1,           //                               .hps_io_emac1_inst_TXD1
+		output wire        hps_0_hps_io_hps_io_emac1_inst_TXD2,           //                               .hps_io_emac1_inst_TXD2
+		output wire        hps_0_hps_io_hps_io_emac1_inst_TXD3,           //                               .hps_io_emac1_inst_TXD3
+		input  wire        hps_0_hps_io_hps_io_emac1_inst_RXD0,           //                               .hps_io_emac1_inst_RXD0
+		inout  wire        hps_0_hps_io_hps_io_emac1_inst_MDIO,           //                               .hps_io_emac1_inst_MDIO
+		output wire        hps_0_hps_io_hps_io_emac1_inst_MDC,            //                               .hps_io_emac1_inst_MDC
+		input  wire        hps_0_hps_io_hps_io_emac1_inst_RX_CTL,         //                               .hps_io_emac1_inst_RX_CTL
+		output wire        hps_0_hps_io_hps_io_emac1_inst_TX_CTL,         //                               .hps_io_emac1_inst_TX_CTL
+		input  wire        hps_0_hps_io_hps_io_emac1_inst_RX_CLK,         //                               .hps_io_emac1_inst_RX_CLK
+		input  wire        hps_0_hps_io_hps_io_emac1_inst_RXD1,           //                               .hps_io_emac1_inst_RXD1
+		input  wire        hps_0_hps_io_hps_io_emac1_inst_RXD2,           //                               .hps_io_emac1_inst_RXD2
+		input  wire        hps_0_hps_io_hps_io_emac1_inst_RXD3,           //                               .hps_io_emac1_inst_RXD3
+		inout  wire        hps_0_hps_io_hps_io_sdio_inst_CMD,             //                               .hps_io_sdio_inst_CMD
+		inout  wire        hps_0_hps_io_hps_io_sdio_inst_D0,              //                               .hps_io_sdio_inst_D0
+		inout  wire        hps_0_hps_io_hps_io_sdio_inst_D1,              //                               .hps_io_sdio_inst_D1
+		output wire        hps_0_hps_io_hps_io_sdio_inst_CLK,             //                               .hps_io_sdio_inst_CLK
+		inout  wire        hps_0_hps_io_hps_io_sdio_inst_D2,              //                               .hps_io_sdio_inst_D2
+		inout  wire        hps_0_hps_io_hps_io_sdio_inst_D3,              //                               .hps_io_sdio_inst_D3
+		inout  wire        hps_0_hps_io_hps_io_usb1_inst_D0,              //                               .hps_io_usb1_inst_D0
+		inout  wire        hps_0_hps_io_hps_io_usb1_inst_D1,              //                               .hps_io_usb1_inst_D1
+		inout  wire        hps_0_hps_io_hps_io_usb1_inst_D2,              //                               .hps_io_usb1_inst_D2
+		inout  wire        hps_0_hps_io_hps_io_usb1_inst_D3,              //                               .hps_io_usb1_inst_D3
+		inout  wire        hps_0_hps_io_hps_io_usb1_inst_D4,              //                               .hps_io_usb1_inst_D4
+		inout  wire        hps_0_hps_io_hps_io_usb1_inst_D5,              //                               .hps_io_usb1_inst_D5
+		inout  wire        hps_0_hps_io_hps_io_usb1_inst_D6,              //                               .hps_io_usb1_inst_D6
+		inout  wire        hps_0_hps_io_hps_io_usb1_inst_D7,              //                               .hps_io_usb1_inst_D7
+		input  wire        hps_0_hps_io_hps_io_usb1_inst_CLK,             //                               .hps_io_usb1_inst_CLK
+		output wire        hps_0_hps_io_hps_io_usb1_inst_STP,             //                               .hps_io_usb1_inst_STP
+		input  wire        hps_0_hps_io_hps_io_usb1_inst_DIR,             //                               .hps_io_usb1_inst_DIR
+		input  wire        hps_0_hps_io_hps_io_usb1_inst_NXT,             //                               .hps_io_usb1_inst_NXT
+		output wire        hps_0_hps_io_hps_io_spim1_inst_CLK,            //                               .hps_io_spim1_inst_CLK
+		output wire        hps_0_hps_io_hps_io_spim1_inst_MOSI,           //                               .hps_io_spim1_inst_MOSI
+		input  wire        hps_0_hps_io_hps_io_spim1_inst_MISO,           //                               .hps_io_spim1_inst_MISO
+		output wire        hps_0_hps_io_hps_io_spim1_inst_SS0,            //                               .hps_io_spim1_inst_SS0
+		input  wire        hps_0_hps_io_hps_io_uart0_inst_RX,             //                               .hps_io_uart0_inst_RX
+		output wire        hps_0_hps_io_hps_io_uart0_inst_TX,             //                               .hps_io_uart0_inst_TX
+		inout  wire        hps_0_hps_io_hps_io_i2c0_inst_SDA,             //                               .hps_io_i2c0_inst_SDA
+		inout  wire        hps_0_hps_io_hps_io_i2c0_inst_SCL,             //                               .hps_io_i2c0_inst_SCL
+		inout  wire        hps_0_hps_io_hps_io_i2c1_inst_SDA,             //                               .hps_io_i2c1_inst_SDA
+		inout  wire        hps_0_hps_io_hps_io_i2c1_inst_SCL,             //                               .hps_io_i2c1_inst_SCL
+		inout  wire        hps_0_hps_io_hps_io_gpio_inst_GPIO09,          //                               .hps_io_gpio_inst_GPIO09
+		inout  wire        hps_0_hps_io_hps_io_gpio_inst_GPIO35,          //                               .hps_io_gpio_inst_GPIO35
+		inout  wire        hps_0_hps_io_hps_io_gpio_inst_GPIO40,          //                               .hps_io_gpio_inst_GPIO40
+		inout  wire        hps_0_hps_io_hps_io_gpio_inst_GPIO53,          //                               .hps_io_gpio_inst_GPIO53
+		inout  wire        hps_0_hps_io_hps_io_gpio_inst_GPIO54,          //                               .hps_io_gpio_inst_GPIO54
+		inout  wire        hps_0_hps_io_hps_io_gpio_inst_GPIO61,          //                               .hps_io_gpio_inst_GPIO61
+		inout  wire        i2c_0_conduit_end_scl,                         //              i2c_0_conduit_end.scl
+		inout  wire        i2c_0_conduit_end_sda,                         //                               .sda
+		output wire [6:0]  i2c_0_conduit_end_led,                         //                               .led
+		output wire [2:0]  i2c_0_conduit_end_gpio,                        //                               .gpio
+		inout  wire        i2c_1_conduit_end_scl,                         //              i2c_1_conduit_end.scl
+		inout  wire        i2c_1_conduit_end_sda,                         //                               .sda
+		output wire [6:0]  i2c_1_conduit_end_led,                         //                               .led
+		output wire [2:0]  i2c_1_conduit_end_gpio,                        //                               .gpio
+		inout  wire        i2c_2_conduit_end_scl,                         //              i2c_2_conduit_end.scl
+		inout  wire        i2c_2_conduit_end_sda,                         //                               .sda
+		output wire [6:0]  i2c_2_conduit_end_led,                         //                               .led
+		output wire [2:0]  i2c_2_conduit_end_gpio,                        //                               .gpio
+		inout  wire        i2c_3_conduit_end_scl,                         //              i2c_3_conduit_end.scl
+		inout  wire        i2c_3_conduit_end_sda,                         //                               .sda
+		output wire [6:0]  i2c_3_conduit_end_led,                         //                               .led
+		output wire [2:0]  i2c_3_conduit_end_gpio,                        //                               .gpio
+		output wire [7:0]  led_external_connection_export,                //        led_external_connection.export
+		output wire [14:0] memory_mem_a,                                  //                         memory.mem_a
+		output wire [2:0]  memory_mem_ba,                                 //                               .mem_ba
+		output wire        memory_mem_ck,                                 //                               .mem_ck
+		output wire        memory_mem_ck_n,                               //                               .mem_ck_n
+		output wire        memory_mem_cke,                                //                               .mem_cke
+		output wire        memory_mem_cs_n,                               //                               .mem_cs_n
+		output wire        memory_mem_ras_n,                              //                               .mem_ras_n
+		output wire        memory_mem_cas_n,                              //                               .mem_cas_n
+		output wire        memory_mem_we_n,                               //                               .mem_we_n
+		output wire        memory_mem_reset_n,                            //                               .mem_reset_n
+		inout  wire [31:0] memory_mem_dq,                                 //                               .mem_dq
+		inout  wire [3:0]  memory_mem_dqs,                                //                               .mem_dqs
+		inout  wire [3:0]  memory_mem_dqs_n,                              //                               .mem_dqs_n
+		output wire        memory_mem_odt,                                //                               .mem_odt
+		output wire [3:0]  memory_mem_dm,                                 //                               .mem_dm
+		input  wire        memory_oct_rzqin,                              //                               .oct_rzqin
+		input  wire        myocontrol_0_conduit_end_angle_miso,           //       myocontrol_0_conduit_end.angle_miso
+		output wire        myocontrol_0_conduit_end_angle_mosi,           //                               .angle_mosi
+		output wire        myocontrol_0_conduit_end_angle_sck,            //                               .angle_sck
+		output wire [8:0]  myocontrol_0_conduit_end_angle_ss_n_o,         //                               .angle_ss_n_o
+		output wire        myocontrol_0_conduit_end_arm_scl,              //                               .arm_scl
+		inout  wire        myocontrol_0_conduit_end_arm_sda,              //                               .arm_sda
+		input  wire        myocontrol_0_conduit_end_mirrored_muscle_unit, //                               .mirrored_muscle_unit
+		input  wire        myocontrol_0_conduit_end_miso,                 //                               .miso
+		output wire        myocontrol_0_conduit_end_mosi,                 //                               .mosi
+		input  wire        myocontrol_0_conduit_end_power_sense_n,        //                               .power_sense_n
+		output wire        myocontrol_0_conduit_end_sck,                  //                               .sck
+		output wire [8:0]  myocontrol_0_conduit_end_ss_n_o,               //                               .ss_n_o
+		output wire        myocontrol_0_conduit_end_gpio_n,               //                               .gpio_n
+		input  wire        myocontrol_1_conduit_end_angle_miso,           //       myocontrol_1_conduit_end.angle_miso
+		output wire        myocontrol_1_conduit_end_angle_mosi,           //                               .angle_mosi
+		output wire        myocontrol_1_conduit_end_angle_sck,            //                               .angle_sck
+		output wire [5:0]  myocontrol_1_conduit_end_angle_ss_n_o,         //                               .angle_ss_n_o
+		output wire        myocontrol_1_conduit_end_arm_scl,              //                               .arm_scl
+		inout  wire        myocontrol_1_conduit_end_arm_sda,              //                               .arm_sda
+		input  wire        myocontrol_1_conduit_end_mirrored_muscle_unit, //                               .mirrored_muscle_unit
+		input  wire        myocontrol_1_conduit_end_miso,                 //                               .miso
+		output wire        myocontrol_1_conduit_end_mosi,                 //                               .mosi
+		input  wire        myocontrol_1_conduit_end_power_sense_n,        //                               .power_sense_n
+		output wire        myocontrol_1_conduit_end_sck,                  //                               .sck
+		output wire [5:0]  myocontrol_1_conduit_end_ss_n_o,               //                               .ss_n_o
+		output wire        myocontrol_1_conduit_end_gpio_n,               //                               .gpio_n
+		input  wire        myocontrol_2_conduit_end_angle_miso,           //       myocontrol_2_conduit_end.angle_miso
+		output wire        myocontrol_2_conduit_end_angle_mosi,           //                               .angle_mosi
+		output wire        myocontrol_2_conduit_end_angle_sck,            //                               .angle_sck
+		output wire [5:0]  myocontrol_2_conduit_end_angle_ss_n_o,         //                               .angle_ss_n_o
+		output wire        myocontrol_2_conduit_end_arm_scl,              //                               .arm_scl
+		inout  wire        myocontrol_2_conduit_end_arm_sda,              //                               .arm_sda
+		input  wire        myocontrol_2_conduit_end_mirrored_muscle_unit, //                               .mirrored_muscle_unit
+		input  wire        myocontrol_2_conduit_end_miso,                 //                               .miso
+		output wire        myocontrol_2_conduit_end_mosi,                 //                               .mosi
+		input  wire        myocontrol_2_conduit_end_power_sense_n,        //                               .power_sense_n
+		output wire        myocontrol_2_conduit_end_sck,                  //                               .sck
+		output wire [5:0]  myocontrol_2_conduit_end_ss_n_o,               //                               .ss_n_o
+		output wire        myocontrol_2_conduit_end_gpio_n,               //                               .gpio_n
+		input  wire        reset_reset_n,                                 //                          reset.reset_n
+		input  wire        rikshawcontrol_0_conduit_end_1_angle_miso,     // rikshawcontrol_0_conduit_end_1.angle_miso
+		output wire        rikshawcontrol_0_conduit_end_1_angle_mosi,     //                               .angle_mosi
+		output wire        rikshawcontrol_0_conduit_end_1_angle_sck,      //                               .angle_sck
+		output wire [0:0]  rikshawcontrol_0_conduit_end_1_angle_ss_n_o,   //                               .angle_ss_n_o
+		input  wire        rikshawcontrol_0_conduit_end_1_emergency_off,  //                               .emergency_off
+		output wire        rikshawcontrol_0_conduit_end_1_throttle,       //                               .throttle
+		input  wire        rikshawcontrol_0_conduit_end_1_hall_sensor1,   //                               .hall_sensor1
+		input  wire        rikshawcontrol_0_conduit_end_1_hall_sensor2,   //                               .hall_sensor2
+		input  wire        rikshawcontrol_0_conduit_end_1_hall_sensor3,   //                               .hall_sensor3
+		input  wire [3:0]  switches_external_connection_export            //   switches_external_connection.export
 	);
 
 	wire   [1:0] hps_0_h2f_lw_axi_master_awburst;                               // hps_0:h2f_lw_AWBURST -> mm_interconnect_0:hps_0_h2f_lw_axi_master_awburst
@@ -430,13 +433,16 @@ module soc_system (
 		.read          (mm_interconnect_0_rikshawcontrol_0_avalon_slave_0_read),        //               .read
 		.readdata      (mm_interconnect_0_rikshawcontrol_0_avalon_slave_0_readdata),    //               .readdata
 		.waitrequest   (mm_interconnect_0_rikshawcontrol_0_avalon_slave_0_waitrequest), //               .waitrequest
-		.angle_miso    (rikshawcontrol_0_conduit_end_angle_miso),                       //    conduit_end.angle_miso
-		.angle_mosi    (rikshawcontrol_0_conduit_end_angle_mosi),                       //               .angle_mosi
-		.angle_sck     (rikshawcontrol_0_conduit_end_angle_sck),                        //               .angle_sck
-		.angle_ss_n_o  (rikshawcontrol_0_conduit_end_angle_ss_n_o),                     //               .angle_ss_n_o
-		.emergency_off (rikshawcontrol_0_conduit_end_emergency_off),                    //               .emergency_off
-		.throttle      (rikshawcontrol_0_conduit_end_throttle),                         //               .throttle
-		.clock         (clk_clk)                                                        //     clock_sink.clk
+		.clock         (clk_clk),                                                       //     clock_sink.clk
+		.angle_miso    (rikshawcontrol_0_conduit_end_1_angle_miso),                     //  conduit_end_1.angle_miso
+		.angle_mosi    (rikshawcontrol_0_conduit_end_1_angle_mosi),                     //               .angle_mosi
+		.angle_sck     (rikshawcontrol_0_conduit_end_1_angle_sck),                      //               .angle_sck
+		.angle_ss_n_o  (rikshawcontrol_0_conduit_end_1_angle_ss_n_o),                   //               .angle_ss_n_o
+		.emergency_off (rikshawcontrol_0_conduit_end_1_emergency_off),                  //               .emergency_off
+		.throttle      (rikshawcontrol_0_conduit_end_1_throttle),                       //               .throttle
+		.hall_sensor1  (rikshawcontrol_0_conduit_end_1_hall_sensor1),                   //               .hall_sensor1
+		.hall_sensor2  (rikshawcontrol_0_conduit_end_1_hall_sensor2),                   //               .hall_sensor2
+		.hall_sensor3  (rikshawcontrol_0_conduit_end_1_hall_sensor3)                    //               .hall_sensor3
 	);
 
 	soc_system_SWITCHES switches (
