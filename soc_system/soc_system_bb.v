@@ -65,10 +65,6 @@ module soc_system (
 	i2c_2_conduit_end_sda,
 	i2c_2_conduit_end_led,
 	i2c_2_conduit_end_gpio,
-	i2c_3_conduit_end_scl,
-	i2c_3_conduit_end_sda,
-	i2c_3_conduit_end_led,
-	i2c_3_conduit_end_gpio,
 	led_external_connection_export,
 	memory_mem_a,
 	memory_mem_ba,
@@ -86,35 +82,20 @@ module soc_system (
 	memory_mem_odt,
 	memory_mem_dm,
 	memory_oct_rzqin,
+	msjplatformcontroller_0_conduit_end_led,
 	msjplatformcontroller_0_conduit_end_pwm,
+	msjplatformcontroller_0_conduit_end_emergency_off,
+	msjplatformcontroller_0_conduit_end_pull_all_button,
+	msjplatformcontroller_0_conduit_end_pull_buttons,
+	msjplatformcontroller_0_conduit_end_angle_ss_n_o,
+	msjplatformcontroller_0_conduit_end_release_all_button,
+	msjplatformcontroller_0_conduit_end_release_buttons,
+	msjplatformcontroller_0_conduit_end_zero_pose_button,
 	msjplatformcontroller_0_conduit_end_angle_miso,
 	msjplatformcontroller_0_conduit_end_angle_mosi,
 	msjplatformcontroller_0_conduit_end_angle_sck,
-	msjplatformcontroller_0_conduit_end_angle_ss_n_o,
-	msjplatformcontroller_0_conduit_end_emergency_off,
-	msjplatformcontroller_0_conduit_end_zero_pose_button,
-	msjplatformcontroller_0_conduit_end_release_all_button,
-	msjplatformcontroller_0_conduit_end_release_buttons,
-	msjplatformcontroller_0_conduit_end_led,
-	msjplatformcontroller_0_conduit_end_pull_buttons,
 	reset_reset_n,
-	switches_external_connection_export,
-	i2c_4_conduit_end_scl,
-	i2c_4_conduit_end_sda,
-	i2c_4_conduit_end_led,
-	i2c_4_conduit_end_gpio,
-	i2c_5_conduit_end_scl,
-	i2c_5_conduit_end_sda,
-	i2c_5_conduit_end_led,
-	i2c_5_conduit_end_gpio,
-	i2c_6_conduit_end_scl,
-	i2c_6_conduit_end_sda,
-	i2c_6_conduit_end_led,
-	i2c_6_conduit_end_gpio,
-	i2c_7_conduit_end_scl,
-	i2c_7_conduit_end_sda,
-	i2c_7_conduit_end_led,
-	i2c_7_conduit_end_gpio);	
+	switches_external_connection_export);	
 
 	input		clk_clk;
 	input		hps_0_f2h_cold_reset_req_reset_n;
@@ -181,10 +162,6 @@ module soc_system (
 	inout		i2c_2_conduit_end_sda;
 	output	[6:0]	i2c_2_conduit_end_led;
 	output	[2:0]	i2c_2_conduit_end_gpio;
-	inout		i2c_3_conduit_end_scl;
-	inout		i2c_3_conduit_end_sda;
-	output	[6:0]	i2c_3_conduit_end_led;
-	output	[2:0]	i2c_3_conduit_end_gpio;
 	output	[7:0]	led_external_connection_export;
 	output	[14:0]	memory_mem_a;
 	output	[2:0]	memory_mem_ba;
@@ -202,33 +179,18 @@ module soc_system (
 	output		memory_mem_odt;
 	output	[3:0]	memory_mem_dm;
 	input		memory_oct_rzqin;
+	output	[1:0]	msjplatformcontroller_0_conduit_end_led;
 	output	[7:0]	msjplatformcontroller_0_conduit_end_pwm;
+	input		msjplatformcontroller_0_conduit_end_emergency_off;
+	input		msjplatformcontroller_0_conduit_end_pull_all_button;
+	input	[7:0]	msjplatformcontroller_0_conduit_end_pull_buttons;
+	output	[7:0]	msjplatformcontroller_0_conduit_end_angle_ss_n_o;
+	input		msjplatformcontroller_0_conduit_end_release_all_button;
+	input	[7:0]	msjplatformcontroller_0_conduit_end_release_buttons;
+	input		msjplatformcontroller_0_conduit_end_zero_pose_button;
 	input		msjplatformcontroller_0_conduit_end_angle_miso;
 	output		msjplatformcontroller_0_conduit_end_angle_mosi;
 	output		msjplatformcontroller_0_conduit_end_angle_sck;
-	output	[7:0]	msjplatformcontroller_0_conduit_end_angle_ss_n_o;
-	input		msjplatformcontroller_0_conduit_end_emergency_off;
-	input		msjplatformcontroller_0_conduit_end_zero_pose_button;
-	input		msjplatformcontroller_0_conduit_end_release_all_button;
-	input	[7:0]	msjplatformcontroller_0_conduit_end_release_buttons;
-	output	[1:0]	msjplatformcontroller_0_conduit_end_led;
-	input	[7:0]	msjplatformcontroller_0_conduit_end_pull_buttons;
 	input		reset_reset_n;
 	input	[3:0]	switches_external_connection_export;
-	inout		i2c_4_conduit_end_scl;
-	inout		i2c_4_conduit_end_sda;
-	output	[6:0]	i2c_4_conduit_end_led;
-	output	[2:0]	i2c_4_conduit_end_gpio;
-	inout		i2c_5_conduit_end_scl;
-	inout		i2c_5_conduit_end_sda;
-	output	[6:0]	i2c_5_conduit_end_led;
-	output	[2:0]	i2c_5_conduit_end_gpio;
-	inout		i2c_6_conduit_end_scl;
-	inout		i2c_6_conduit_end_sda;
-	output	[6:0]	i2c_6_conduit_end_led;
-	output	[2:0]	i2c_6_conduit_end_gpio;
-	inout		i2c_7_conduit_end_scl;
-	inout		i2c_7_conduit_end_sda;
-	output	[6:0]	i2c_7_conduit_end_led;
-	output	[2:0]	i2c_7_conduit_end_gpio;
 endmodule

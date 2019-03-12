@@ -1189,6 +1189,102 @@
          type = "String";
       }
    }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
    element sysid_qsys
    {
       datum _sortIndex
@@ -1275,31 +1371,11 @@
    internal="I2C_2.conduit_end"
    type="conduit"
    dir="end" />
- <interface
-   name="i2c_3_conduit_end"
-   internal="I2C_3.conduit_end"
-   type="conduit"
-   dir="end" />
- <interface
-   name="i2c_4_conduit_end"
-   internal="I2C_4.conduit_end"
-   type="conduit"
-   dir="end" />
- <interface
-   name="i2c_5_conduit_end"
-   internal="I2C_5.conduit_end"
-   type="conduit"
-   dir="end" />
- <interface
-   name="i2c_6_conduit_end"
-   internal="I2C_6.conduit_end"
-   type="conduit"
-   dir="end" />
- <interface
-   name="i2c_7_conduit_end"
-   internal="I2C_7.conduit_end"
-   type="conduit"
-   dir="end" />
+ <interface name="i2c_3_conduit_end" internal="I2C_3.conduit_end" />
+ <interface name="i2c_4_conduit_end" internal="I2C_4.conduit_end" />
+ <interface name="i2c_5_conduit_end" internal="I2C_5.conduit_end" />
+ <interface name="i2c_6_conduit_end" internal="I2C_6.conduit_end" />
+ <interface name="i2c_7_conduit_end" internal="I2C_7.conduit_end" />
  <interface
    name="led_external_connection"
    internal="LED.external_connection"
@@ -1329,23 +1405,23 @@
   <parameter name="BUS_SPEED_HZ" value="400000" />
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
  </module>
- <module name="I2C_3" kind="I2C" version="1.0" enabled="1">
+ <module name="I2C_3" kind="I2C" version="1.0" enabled="0">
   <parameter name="BUS_SPEED_HZ" value="400000" />
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
  </module>
- <module name="I2C_4" kind="I2C" version="1.0" enabled="1">
+ <module name="I2C_4" kind="I2C" version="1.0" enabled="0">
   <parameter name="BUS_SPEED_HZ" value="400000" />
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
  </module>
- <module name="I2C_5" kind="I2C" version="1.0" enabled="1">
+ <module name="I2C_5" kind="I2C" version="1.0" enabled="0">
   <parameter name="BUS_SPEED_HZ" value="400000" />
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
  </module>
- <module name="I2C_6" kind="I2C" version="1.0" enabled="1">
+ <module name="I2C_6" kind="I2C" version="1.0" enabled="0">
   <parameter name="BUS_SPEED_HZ" value="400000" />
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
  </module>
- <module name="I2C_7" kind="I2C" version="1.0" enabled="1">
+ <module name="I2C_7" kind="I2C" version="1.0" enabled="0">
   <parameter name="BUS_SPEED_HZ" value="400000" />
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
  </module>
