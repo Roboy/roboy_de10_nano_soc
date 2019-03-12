@@ -695,9 +695,39 @@ set_instance_assignment -name SLEW_RATE 0 -to GPIO_0[33]
 set_instance_assignment -name SLEW_RATE 0 -to GPIO_0[32]
 set_instance_assignment -name SLEW_RATE 0 -to GPIO_0[31]
 set_instance_assignment -name SLEW_RATE 0 -to GPIO_0[30]
+set_global_assignment -name IP_SEARCH_PATHS /home/roboy/workspace/roboy_control/src/roboy_plexus/roboy_de10_nano_soc/ip
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_1[7]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_1[6]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_1[5]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_1[4]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_0[29]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_0[28]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_0[27]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_0[26]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_1[33]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_1[32]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_0[0]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_0[1]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_0[2]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_0[10]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_0[11]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_0[12]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_0[13]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_0[14]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_0[15]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_0[16]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_0[17]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_0[18]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_0[19]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_0[20]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_0[21]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_0[22]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_0[23]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_0[24]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_0[25]
+set_global_assignment -name SYSTEMVERILOG_FILE ip/roboy_fpga_code/msj_platform/MSJPlatformPIDController.sv
 set_global_assignment -name VERILOG_FILE ip/roboy_fpga_code/pwm_control/pwm_avalon_bridge.v
 set_global_assignment -name VHDL_FILE ip/roboy_fpga_code/pwm_control/pwm.vhd
-set_global_assignment -name SYSTEMVERILOG_FILE ip/roboy_fpga_code/msj_platform/MSJPlatformPDController.sv
 set_global_assignment -name SYSTEMVERILOG_FILE ip/roboy_fpga_code/msj_platform/MSJPlatformControl.sv
 set_global_assignment -name QIP_FILE soc_system/synthesis/soc_system.qip
 set_global_assignment -name SYSTEMVERILOG_FILE ip/roboy_fpga_code/myo_control/MYOControl.sv
@@ -727,23 +757,4 @@ set_global_assignment -name SYSTEMVERILOG_FILE ip/roboy_fpga_code/a133x/A1339Con
 set_global_assignment -name VERILOG_FILE ip/filters/lowpass_filter.v
 set_global_assignment -name VERILOG_FILE ip/filters/lowpass_filter_tb.v
 set_global_assignment -name SYSTEMVERILOG_FILE ip/roboy_fpga_code/interfaces/A1339Interface.sv
-set_global_assignment -name IP_SEARCH_PATHS /home/roboy/workspace/roboy_control/src/roboy_plexus/roboy_de10_nano_soc/ip
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_1[17]
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_1[16]
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_1[15]
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_1[14]
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_1[13]
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_1[12]
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_1[11]
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_1[10]
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_1[9]
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_1[8]
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_1[7]
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_1[6]
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_1[5]
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_1[4]
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_1[3]
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_1[2]
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_1[1]
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_1[0]
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
