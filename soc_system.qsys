@@ -53,7 +53,7 @@
    {
       datum baseAddress
       {
-         value = "64";
+         value = "32";
          type = "String";
       }
    }
@@ -69,7 +69,7 @@
    {
       datum baseAddress
       {
-         value = "32";
+         value = "64";
          type = "String";
       }
    }
@@ -2030,7 +2030,7 @@
    kind="altera_avalon_sysid_qsys"
    version="18.1"
    enabled="1">
-  <parameter name="id" value="48879" />
+  <parameter name="id" value="114415" />
  </module>
  <connection
    kind="avalon"
@@ -2090,15 +2090,6 @@
    kind="avalon"
    version="18.1"
    start="hps_0.h2f_lw_axi_master"
-   end="I2C_3.avalon_slave_0">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0000" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="18.1"
-   start="hps_0.h2f_lw_axi_master"
    end="pwm_0.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x00040000" />
@@ -2119,7 +2110,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="I2C_2.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0020" />
+  <parameter name="baseAddress" value="0x0040" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2128,7 +2119,16 @@
    start="hps_0.h2f_lw_axi_master"
    end="I2C_1.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0040" />
+  <parameter name="baseAddress" value="0x0020" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="hps_0.h2f_lw_axi_master"
+   end="I2C_3.avalon_slave_0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2215,6 +2215,7 @@
  <connection kind="clock" version="18.1" start="clk_0.clk" end="I2C_0.clock_sink" />
  <connection kind="clock" version="18.1" start="clk_0.clk" end="I2C_1.clock_sink" />
  <connection kind="clock" version="18.1" start="clk_0.clk" end="I2C_2.clock_sink" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="I2C_3.clock_sink" />
  <connection
    kind="clock"
    version="18.1"
@@ -2284,6 +2285,7 @@
  <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="I2C_0.reset" />
  <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="I2C_1.reset" />
  <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="I2C_2.reset" />
+ <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="I2C_3.reset" />
  <connection
    kind="reset"
    version="18.1"

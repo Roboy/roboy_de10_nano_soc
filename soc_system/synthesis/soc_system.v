@@ -199,45 +199,24 @@ module soc_system (
 	wire         mm_interconnect_0_i2c_0_avalon_slave_0_read;               // mm_interconnect_0:I2C_0_avalon_slave_0_read -> I2C_0:read
 	wire         mm_interconnect_0_i2c_0_avalon_slave_0_write;              // mm_interconnect_0:I2C_0_avalon_slave_0_write -> I2C_0:write
 	wire  [31:0] mm_interconnect_0_i2c_0_avalon_slave_0_writedata;          // mm_interconnect_0:I2C_0_avalon_slave_0_writedata -> I2C_0:writedata
-	wire  [31:0] mm_interconnect_0_i2c_1_avalon_slave_0_readdata;           // I2C_1:readdata -> mm_interconnect_0:I2C_1_avalon_slave_0_readdata
-	wire         mm_interconnect_0_i2c_1_avalon_slave_0_waitrequest;        // I2C_1:waitrequest -> mm_interconnect_0:I2C_1_avalon_slave_0_waitrequest
-	wire   [2:0] mm_interconnect_0_i2c_1_avalon_slave_0_address;            // mm_interconnect_0:I2C_1_avalon_slave_0_address -> I2C_1:address
-	wire         mm_interconnect_0_i2c_1_avalon_slave_0_read;               // mm_interconnect_0:I2C_1_avalon_slave_0_read -> I2C_1:read
-	wire         mm_interconnect_0_i2c_1_avalon_slave_0_write;              // mm_interconnect_0:I2C_1_avalon_slave_0_write -> I2C_1:write
-	wire  [31:0] mm_interconnect_0_i2c_1_avalon_slave_0_writedata;          // mm_interconnect_0:I2C_1_avalon_slave_0_writedata -> I2C_1:writedata
 	wire  [31:0] mm_interconnect_0_i2c_2_avalon_slave_0_readdata;           // I2C_2:readdata -> mm_interconnect_0:I2C_2_avalon_slave_0_readdata
 	wire         mm_interconnect_0_i2c_2_avalon_slave_0_waitrequest;        // I2C_2:waitrequest -> mm_interconnect_0:I2C_2_avalon_slave_0_waitrequest
 	wire   [2:0] mm_interconnect_0_i2c_2_avalon_slave_0_address;            // mm_interconnect_0:I2C_2_avalon_slave_0_address -> I2C_2:address
 	wire         mm_interconnect_0_i2c_2_avalon_slave_0_read;               // mm_interconnect_0:I2C_2_avalon_slave_0_read -> I2C_2:read
 	wire         mm_interconnect_0_i2c_2_avalon_slave_0_write;              // mm_interconnect_0:I2C_2_avalon_slave_0_write -> I2C_2:write
 	wire  [31:0] mm_interconnect_0_i2c_2_avalon_slave_0_writedata;          // mm_interconnect_0:I2C_2_avalon_slave_0_writedata -> I2C_2:writedata
+	wire  [31:0] mm_interconnect_0_i2c_1_avalon_slave_0_readdata;           // I2C_1:readdata -> mm_interconnect_0:I2C_1_avalon_slave_0_readdata
+	wire         mm_interconnect_0_i2c_1_avalon_slave_0_waitrequest;        // I2C_1:waitrequest -> mm_interconnect_0:I2C_1_avalon_slave_0_waitrequest
+	wire   [2:0] mm_interconnect_0_i2c_1_avalon_slave_0_address;            // mm_interconnect_0:I2C_1_avalon_slave_0_address -> I2C_1:address
+	wire         mm_interconnect_0_i2c_1_avalon_slave_0_read;               // mm_interconnect_0:I2C_1_avalon_slave_0_read -> I2C_1:read
+	wire         mm_interconnect_0_i2c_1_avalon_slave_0_write;              // mm_interconnect_0:I2C_1_avalon_slave_0_write -> I2C_1:write
+	wire  [31:0] mm_interconnect_0_i2c_1_avalon_slave_0_writedata;          // mm_interconnect_0:I2C_1_avalon_slave_0_writedata -> I2C_1:writedata
 	wire  [31:0] mm_interconnect_0_i2c_3_avalon_slave_0_readdata;           // I2C_3:readdata -> mm_interconnect_0:I2C_3_avalon_slave_0_readdata
 	wire         mm_interconnect_0_i2c_3_avalon_slave_0_waitrequest;        // I2C_3:waitrequest -> mm_interconnect_0:I2C_3_avalon_slave_0_waitrequest
 	wire   [2:0] mm_interconnect_0_i2c_3_avalon_slave_0_address;            // mm_interconnect_0:I2C_3_avalon_slave_0_address -> I2C_3:address
 	wire         mm_interconnect_0_i2c_3_avalon_slave_0_read;               // mm_interconnect_0:I2C_3_avalon_slave_0_read -> I2C_3:read
 	wire         mm_interconnect_0_i2c_3_avalon_slave_0_write;              // mm_interconnect_0:I2C_3_avalon_slave_0_write -> I2C_3:write
 	wire  [31:0] mm_interconnect_0_i2c_3_avalon_slave_0_writedata;          // mm_interconnect_0:I2C_3_avalon_slave_0_writedata -> I2C_3:writedata
-	wire  [15:0] mm_interconnect_0_pwm_0_avalon_slave_0_address;            // mm_interconnect_0:pwm_0_avalon_slave_0_address -> pwm_0:address
-	wire         mm_interconnect_0_pwm_0_avalon_slave_0_write;              // mm_interconnect_0:pwm_0_avalon_slave_0_write -> pwm_0:write
-	wire  [31:0] mm_interconnect_0_pwm_0_avalon_slave_0_writedata;          // mm_interconnect_0:pwm_0_avalon_slave_0_writedata -> pwm_0:writedata
-	wire  [31:0] mm_interconnect_0_i2c_0_avalon_slave_0_readdata;           // I2C_0:readdata -> mm_interconnect_0:I2C_0_avalon_slave_0_readdata
-	wire         mm_interconnect_0_i2c_0_avalon_slave_0_waitrequest;        // I2C_0:waitrequest -> mm_interconnect_0:I2C_0_avalon_slave_0_waitrequest
-	wire   [2:0] mm_interconnect_0_i2c_0_avalon_slave_0_address;            // mm_interconnect_0:I2C_0_avalon_slave_0_address -> I2C_0:address
-	wire         mm_interconnect_0_i2c_0_avalon_slave_0_read;               // mm_interconnect_0:I2C_0_avalon_slave_0_read -> I2C_0:read
-	wire         mm_interconnect_0_i2c_0_avalon_slave_0_write;              // mm_interconnect_0:I2C_0_avalon_slave_0_write -> I2C_0:write
-	wire  [31:0] mm_interconnect_0_i2c_0_avalon_slave_0_writedata;          // mm_interconnect_0:I2C_0_avalon_slave_0_writedata -> I2C_0:writedata
-	wire  [31:0] mm_interconnect_0_i2c_2_avalon_slave_0_readdata;           // I2C_2:readdata -> mm_interconnect_0:I2C_2_avalon_slave_0_readdata
-	wire         mm_interconnect_0_i2c_2_avalon_slave_0_waitrequest;        // I2C_2:waitrequest -> mm_interconnect_0:I2C_2_avalon_slave_0_waitrequest
-	wire   [2:0] mm_interconnect_0_i2c_2_avalon_slave_0_address;            // mm_interconnect_0:I2C_2_avalon_slave_0_address -> I2C_2:address
-	wire         mm_interconnect_0_i2c_2_avalon_slave_0_read;               // mm_interconnect_0:I2C_2_avalon_slave_0_read -> I2C_2:read
-	wire         mm_interconnect_0_i2c_2_avalon_slave_0_write;              // mm_interconnect_0:I2C_2_avalon_slave_0_write -> I2C_2:write
-	wire  [31:0] mm_interconnect_0_i2c_2_avalon_slave_0_writedata;          // mm_interconnect_0:I2C_2_avalon_slave_0_writedata -> I2C_2:writedata
-	wire  [31:0] mm_interconnect_0_i2c_1_avalon_slave_0_readdata;           // I2C_1:readdata -> mm_interconnect_0:I2C_1_avalon_slave_0_readdata
-	wire         mm_interconnect_0_i2c_1_avalon_slave_0_waitrequest;        // I2C_1:waitrequest -> mm_interconnect_0:I2C_1_avalon_slave_0_waitrequest
-	wire   [2:0] mm_interconnect_0_i2c_1_avalon_slave_0_address;            // mm_interconnect_0:I2C_1_avalon_slave_0_address -> I2C_1:address
-	wire         mm_interconnect_0_i2c_1_avalon_slave_0_read;               // mm_interconnect_0:I2C_1_avalon_slave_0_read -> I2C_1:read
-	wire         mm_interconnect_0_i2c_1_avalon_slave_0_write;              // mm_interconnect_0:I2C_1_avalon_slave_0_write -> I2C_1:write
-	wire  [31:0] mm_interconnect_0_i2c_1_avalon_slave_0_writedata;          // mm_interconnect_0:I2C_1_avalon_slave_0_writedata -> I2C_1:writedata
 	wire  [31:0] mm_interconnect_0_sysid_qsys_control_slave_readdata;       // sysid_qsys:readdata -> mm_interconnect_0:sysid_qsys_control_slave_readdata
 	wire   [0:0] mm_interconnect_0_sysid_qsys_control_slave_address;        // mm_interconnect_0:sysid_qsys_control_slave_address -> sysid_qsys:address
 	wire         mm_interconnect_0_led_s1_chipselect;                       // mm_interconnect_0:LED_s1_chipselect -> LED:chipselect
