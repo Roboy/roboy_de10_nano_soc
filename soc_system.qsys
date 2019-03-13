@@ -1446,7 +1446,7 @@
    enabled="1">
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
   <parameter name="NUMBER_OF_MOTORS" value="8" />
-  <parameter name="SAMPLES_TO_AVERAGE" value="1" />
+  <parameter name="SAMPLES_TO_AVERAGE" value="0" />
  </module>
  <module name="SWITCHES" kind="altera_avalon_pio" version="18.1" enabled="1">
   <parameter name="bitClearingEdgeCapReg" value="false" />

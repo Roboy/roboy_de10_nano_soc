@@ -252,7 +252,7 @@ module soc_system (
 	MSJPlatformControl #(
 		.NUMBER_OF_MOTORS   (8),
 		.CLOCK_SPEED_HZ     (50000000),
-		.SAMPLES_TO_AVERAGE (1)
+		.SAMPLES_TO_AVERAGE (0)
 	) msjplatformcontroller_0 (
 		.reset              (rst_controller_reset_out_reset),                                       //          reset.reset
 		.address            (mm_interconnect_0_msjplatformcontroller_0_avalon_slave_0_address),     // avalon_slave_0.address
