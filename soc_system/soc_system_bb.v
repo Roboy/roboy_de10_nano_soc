@@ -65,6 +65,26 @@ module soc_system (
 	i2c_2_conduit_end_sda,
 	i2c_2_conduit_end_led,
 	i2c_2_conduit_end_gpio,
+	i2c_3_conduit_end_scl,
+	i2c_3_conduit_end_sda,
+	i2c_3_conduit_end_led,
+	i2c_3_conduit_end_gpio,
+	i2c_4_conduit_end_scl,
+	i2c_4_conduit_end_sda,
+	i2c_4_conduit_end_led,
+	i2c_4_conduit_end_gpio,
+	i2c_5_conduit_end_scl,
+	i2c_5_conduit_end_sda,
+	i2c_5_conduit_end_led,
+	i2c_5_conduit_end_gpio,
+	i2c_6_conduit_end_scl,
+	i2c_6_conduit_end_sda,
+	i2c_6_conduit_end_led,
+	i2c_6_conduit_end_gpio,
+	i2c_7_conduit_end_scl,
+	i2c_7_conduit_end_sda,
+	i2c_7_conduit_end_led,
+	i2c_7_conduit_end_gpio,
 	led_external_connection_export,
 	memory_mem_a,
 	memory_mem_ba,
@@ -162,6 +182,26 @@ module soc_system (
 	inout		i2c_2_conduit_end_sda;
 	output	[6:0]	i2c_2_conduit_end_led;
 	output	[2:0]	i2c_2_conduit_end_gpio;
+	inout		i2c_3_conduit_end_scl;
+	inout		i2c_3_conduit_end_sda;
+	output	[6:0]	i2c_3_conduit_end_led;
+	output	[2:0]	i2c_3_conduit_end_gpio;
+	inout		i2c_4_conduit_end_scl;
+	inout		i2c_4_conduit_end_sda;
+	output	[6:0]	i2c_4_conduit_end_led;
+	output	[2:0]	i2c_4_conduit_end_gpio;
+	inout		i2c_5_conduit_end_scl;
+	inout		i2c_5_conduit_end_sda;
+	output	[6:0]	i2c_5_conduit_end_led;
+	output	[2:0]	i2c_5_conduit_end_gpio;
+	inout		i2c_6_conduit_end_scl;
+	inout		i2c_6_conduit_end_sda;
+	output	[6:0]	i2c_6_conduit_end_led;
+	output	[2:0]	i2c_6_conduit_end_gpio;
+	inout		i2c_7_conduit_end_scl;
+	inout		i2c_7_conduit_end_sda;
+	output	[6:0]	i2c_7_conduit_end_led;
+	output	[2:0]	i2c_7_conduit_end_gpio;
 	output	[7:0]	led_external_connection_export;
 	output	[14:0]	memory_mem_a;
 	output	[2:0]	memory_mem_ba;
