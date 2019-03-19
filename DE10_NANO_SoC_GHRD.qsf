@@ -725,6 +725,7 @@ set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_0[22]
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_0[23]
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_0[24]
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_0[25]
+set_global_assignment -name SYSTEMVERILOG_FILE ip/roboy_fpga_code/tlv493/TLV493.sv
 set_global_assignment -name QIP_FILE soc_system/synthesis/soc_system.qip
 set_global_assignment -name SYSTEMVERILOG_FILE ip/roboy_fpga_code/msj_platform/MSJPlatformPIDController.sv
 set_global_assignment -name SYSTEMVERILOG_FILE ip/roboy_fpga_code/msj_platform/MSJPlatformControl.sv
