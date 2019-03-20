@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="soc_system" kind="soc_system" version="1.0" fabric="QSYS">
  <!-- Format version 18.1 625 (Future versions may contain additional information.) -->
- <!-- 2019.03.19.20:48:26 -->
+ <!-- 2019.03.20.00:48:03 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1553024905</value>
+  <value>1553039282</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -213,7 +213,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="addressSpan">
     <type>java.math.BigInteger</type>
-    <value>32</value>
+    <value>64</value>
     <derived>true</derived>
     <enabled>true</enabled>
     <visible>false</visible>
@@ -512,7 +512,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>address</name>
     <direction>Input</direction>
-    <width>3</width>
+    <width>4</width>
     <role>address</role>
    </port>
    <port>
@@ -773,7 +773,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="addressSpan">
     <type>java.math.BigInteger</type>
-    <value>32</value>
+    <value>64</value>
     <derived>true</derived>
     <enabled>true</enabled>
     <visible>false</visible>
@@ -1072,7 +1072,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>address</name>
     <direction>Input</direction>
-    <width>3</width>
+    <width>4</width>
     <role>address</role>
    </port>
    <port>
@@ -1333,7 +1333,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="addressSpan">
     <type>java.math.BigInteger</type>
-    <value>32</value>
+    <value>64</value>
     <derived>true</derived>
     <enabled>true</enabled>
     <visible>false</visible>
@@ -1632,7 +1632,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>address</name>
     <direction>Input</direction>
-    <width>3</width>
+    <width>4</width>
     <role>address</role>
    </port>
    <port>
@@ -1893,7 +1893,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="addressSpan">
     <type>java.math.BigInteger</type>
-    <value>32</value>
+    <value>64</value>
     <derived>true</derived>
     <enabled>true</enabled>
     <visible>false</visible>
@@ -2192,7 +2192,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>address</name>
     <direction>Input</direction>
-    <width>3</width>
+    <width>4</width>
     <role>address</role>
    </port>
    <port>
@@ -2453,7 +2453,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="addressSpan">
     <type>java.math.BigInteger</type>
-    <value>32</value>
+    <value>64</value>
     <derived>true</derived>
     <enabled>true</enabled>
     <visible>false</visible>
@@ -2752,7 +2752,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>address</name>
     <direction>Input</direction>
-    <width>3</width>
+    <width>4</width>
     <role>address</role>
    </port>
    <port>
@@ -3013,7 +3013,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="addressSpan">
     <type>java.math.BigInteger</type>
-    <value>32</value>
+    <value>64</value>
     <derived>true</derived>
     <enabled>true</enabled>
     <visible>false</visible>
@@ -3312,7 +3312,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>address</name>
     <direction>Input</direction>
-    <width>3</width>
+    <width>4</width>
     <role>address</role>
    </port>
    <port>
@@ -3573,7 +3573,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="addressSpan">
     <type>java.math.BigInteger</type>
-    <value>32</value>
+    <value>64</value>
     <derived>true</derived>
     <enabled>true</enabled>
     <visible>false</visible>
@@ -3872,7 +3872,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>address</name>
     <direction>Input</direction>
-    <width>3</width>
+    <width>4</width>
     <role>address</role>
    </port>
    <port>
@@ -4133,7 +4133,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="addressSpan">
     <type>java.math.BigInteger</type>
-    <value>32</value>
+    <value>64</value>
     <derived>true</derived>
     <enabled>true</enabled>
     <visible>false</visible>
@@ -4432,7 +4432,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>address</name>
     <direction>Input</direction>
-    <width>3</width>
+    <width>4</width>
     <role>address</role>
    </port>
    <port>
@@ -22851,56 +22851,56 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>I2C_0</moduleName>
     <slaveName>avalon_slave_0</slaveName>
     <name>I2C_0.avalon_slave_0</name>
-    <baseAddress>224</baseAddress>
-    <span>32</span>
+    <baseAddress>448</baseAddress>
+    <span>64</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
     <moduleName>I2C_1</moduleName>
     <slaveName>avalon_slave_0</slaveName>
     <name>I2C_1.avalon_slave_0</name>
-    <baseAddress>192</baseAddress>
-    <span>32</span>
+    <baseAddress>384</baseAddress>
+    <span>64</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
     <moduleName>I2C_2</moduleName>
     <slaveName>avalon_slave_0</slaveName>
     <name>I2C_2.avalon_slave_0</name>
-    <baseAddress>160</baseAddress>
-    <span>32</span>
+    <baseAddress>320</baseAddress>
+    <span>64</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
     <moduleName>I2C_3</moduleName>
     <slaveName>avalon_slave_0</slaveName>
     <name>I2C_3.avalon_slave_0</name>
-    <baseAddress>128</baseAddress>
-    <span>32</span>
+    <baseAddress>256</baseAddress>
+    <span>64</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
     <moduleName>I2C_4</moduleName>
     <slaveName>avalon_slave_0</slaveName>
     <name>I2C_4.avalon_slave_0</name>
-    <baseAddress>96</baseAddress>
-    <span>32</span>
+    <baseAddress>192</baseAddress>
+    <span>64</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
     <moduleName>I2C_5</moduleName>
     <slaveName>avalon_slave_0</slaveName>
     <name>I2C_5.avalon_slave_0</name>
-    <baseAddress>64</baseAddress>
-    <span>32</span>
+    <baseAddress>128</baseAddress>
+    <span>64</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
     <moduleName>I2C_6</moduleName>
     <slaveName>avalon_slave_0</slaveName>
     <name>I2C_6.avalon_slave_0</name>
-    <baseAddress>32</baseAddress>
-    <span>32</span>
+    <baseAddress>64</baseAddress>
+    <span>64</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
@@ -22908,7 +22908,7 @@ parameters are a RESULT of the module parameters. -->
     <slaveName>avalon_slave_0</slaveName>
     <name>I2C_7.avalon_slave_0</name>
     <baseAddress>0</baseAddress>
-    <span>32</span>
+    <span>64</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
@@ -22923,7 +22923,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>LED</moduleName>
     <slaveName>s1</slaveName>
     <name>LED.s1</name>
-    <baseAddress>272</baseAddress>
+    <baseAddress>528</baseAddress>
     <span>16</span>
    </memoryBlock>
    <memoryBlock>
@@ -22931,7 +22931,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>SWITCHES</moduleName>
     <slaveName>s1</slaveName>
     <name>SWITCHES.s1</name>
-    <baseAddress>256</baseAddress>
+    <baseAddress>512</baseAddress>
     <span>16</span>
    </memoryBlock>
   </interface>
@@ -49077,56 +49077,56 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>I2C_0</moduleName>
     <slaveName>avalon_slave_0</slaveName>
     <name>I2C_0.avalon_slave_0</name>
-    <baseAddress>224</baseAddress>
-    <span>32</span>
+    <baseAddress>448</baseAddress>
+    <span>64</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
     <moduleName>I2C_1</moduleName>
     <slaveName>avalon_slave_0</slaveName>
     <name>I2C_1.avalon_slave_0</name>
-    <baseAddress>192</baseAddress>
-    <span>32</span>
+    <baseAddress>384</baseAddress>
+    <span>64</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
     <moduleName>I2C_2</moduleName>
     <slaveName>avalon_slave_0</slaveName>
     <name>I2C_2.avalon_slave_0</name>
-    <baseAddress>160</baseAddress>
-    <span>32</span>
+    <baseAddress>320</baseAddress>
+    <span>64</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
     <moduleName>I2C_3</moduleName>
     <slaveName>avalon_slave_0</slaveName>
     <name>I2C_3.avalon_slave_0</name>
-    <baseAddress>128</baseAddress>
-    <span>32</span>
+    <baseAddress>256</baseAddress>
+    <span>64</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
     <moduleName>I2C_4</moduleName>
     <slaveName>avalon_slave_0</slaveName>
     <name>I2C_4.avalon_slave_0</name>
-    <baseAddress>96</baseAddress>
-    <span>32</span>
+    <baseAddress>192</baseAddress>
+    <span>64</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
     <moduleName>I2C_5</moduleName>
     <slaveName>avalon_slave_0</slaveName>
     <name>I2C_5.avalon_slave_0</name>
-    <baseAddress>64</baseAddress>
-    <span>32</span>
+    <baseAddress>128</baseAddress>
+    <span>64</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
     <moduleName>I2C_6</moduleName>
     <slaveName>avalon_slave_0</slaveName>
     <name>I2C_6.avalon_slave_0</name>
-    <baseAddress>32</baseAddress>
-    <span>32</span>
+    <baseAddress>64</baseAddress>
+    <span>64</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
@@ -49134,7 +49134,7 @@ parameters are a RESULT of the module parameters. -->
     <slaveName>avalon_slave_0</slaveName>
     <name>I2C_7.avalon_slave_0</name>
     <baseAddress>0</baseAddress>
-    <span>32</span>
+    <span>64</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
@@ -49149,7 +49149,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>LED</moduleName>
     <slaveName>s1</slaveName>
     <name>LED.s1</name>
-    <baseAddress>272</baseAddress>
+    <baseAddress>528</baseAddress>
     <span>16</span>
    </memoryBlock>
    <memoryBlock>
@@ -49157,7 +49157,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>SWITCHES</moduleName>
     <slaveName>s1</slaveName>
     <name>SWITCHES.s1</name>
-    <baseAddress>256</baseAddress>
+    <baseAddress>512</baseAddress>
     <span>16</span>
    </memoryBlock>
   </interface>
@@ -50300,56 +50300,56 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>I2C_0</moduleName>
     <slaveName>avalon_slave_0</slaveName>
     <name>I2C_0.avalon_slave_0</name>
-    <baseAddress>4280287456</baseAddress>
-    <span>32</span>
+    <baseAddress>4280287680</baseAddress>
+    <span>64</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
     <moduleName>I2C_1</moduleName>
     <slaveName>avalon_slave_0</slaveName>
     <name>I2C_1.avalon_slave_0</name>
-    <baseAddress>4280287424</baseAddress>
-    <span>32</span>
+    <baseAddress>4280287616</baseAddress>
+    <span>64</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
     <moduleName>I2C_2</moduleName>
     <slaveName>avalon_slave_0</slaveName>
     <name>I2C_2.avalon_slave_0</name>
-    <baseAddress>4280287392</baseAddress>
-    <span>32</span>
+    <baseAddress>4280287552</baseAddress>
+    <span>64</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
     <moduleName>I2C_3</moduleName>
     <slaveName>avalon_slave_0</slaveName>
     <name>I2C_3.avalon_slave_0</name>
-    <baseAddress>4280287360</baseAddress>
-    <span>32</span>
+    <baseAddress>4280287488</baseAddress>
+    <span>64</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
     <moduleName>I2C_4</moduleName>
     <slaveName>avalon_slave_0</slaveName>
     <name>I2C_4.avalon_slave_0</name>
-    <baseAddress>4280287328</baseAddress>
-    <span>32</span>
+    <baseAddress>4280287424</baseAddress>
+    <span>64</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
     <moduleName>I2C_5</moduleName>
     <slaveName>avalon_slave_0</slaveName>
     <name>I2C_5.avalon_slave_0</name>
-    <baseAddress>4280287296</baseAddress>
-    <span>32</span>
+    <baseAddress>4280287360</baseAddress>
+    <span>64</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
     <moduleName>I2C_6</moduleName>
     <slaveName>avalon_slave_0</slaveName>
     <name>I2C_6.avalon_slave_0</name>
-    <baseAddress>4280287264</baseAddress>
-    <span>32</span>
+    <baseAddress>4280287296</baseAddress>
+    <span>64</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
@@ -50357,7 +50357,7 @@ parameters are a RESULT of the module parameters. -->
     <slaveName>avalon_slave_0</slaveName>
     <name>I2C_7.avalon_slave_0</name>
     <baseAddress>4280287232</baseAddress>
-    <span>32</span>
+    <span>64</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
@@ -50372,7 +50372,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>LED</moduleName>
     <slaveName>s1</slaveName>
     <name>LED.s1</name>
-    <baseAddress>4280287504</baseAddress>
+    <baseAddress>4280287760</baseAddress>
     <span>16</span>
    </memoryBlock>
    <memoryBlock>
@@ -50380,7 +50380,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>SWITCHES</moduleName>
     <slaveName>s1</slaveName>
     <name>SWITCHES.s1</name>
-    <baseAddress>4280287488</baseAddress>
+    <baseAddress>4280287744</baseAddress>
     <span>16</span>
    </memoryBlock>
    <memoryBlock>
@@ -51219,56 +51219,56 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>I2C_0</moduleName>
     <slaveName>avalon_slave_0</slaveName>
     <name>I2C_0.avalon_slave_0</name>
-    <baseAddress>4280287456</baseAddress>
-    <span>32</span>
+    <baseAddress>4280287680</baseAddress>
+    <span>64</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
     <moduleName>I2C_1</moduleName>
     <slaveName>avalon_slave_0</slaveName>
     <name>I2C_1.avalon_slave_0</name>
-    <baseAddress>4280287424</baseAddress>
-    <span>32</span>
+    <baseAddress>4280287616</baseAddress>
+    <span>64</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
     <moduleName>I2C_2</moduleName>
     <slaveName>avalon_slave_0</slaveName>
     <name>I2C_2.avalon_slave_0</name>
-    <baseAddress>4280287392</baseAddress>
-    <span>32</span>
+    <baseAddress>4280287552</baseAddress>
+    <span>64</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
     <moduleName>I2C_3</moduleName>
     <slaveName>avalon_slave_0</slaveName>
     <name>I2C_3.avalon_slave_0</name>
-    <baseAddress>4280287360</baseAddress>
-    <span>32</span>
+    <baseAddress>4280287488</baseAddress>
+    <span>64</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
     <moduleName>I2C_4</moduleName>
     <slaveName>avalon_slave_0</slaveName>
     <name>I2C_4.avalon_slave_0</name>
-    <baseAddress>4280287328</baseAddress>
-    <span>32</span>
+    <baseAddress>4280287424</baseAddress>
+    <span>64</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
     <moduleName>I2C_5</moduleName>
     <slaveName>avalon_slave_0</slaveName>
     <name>I2C_5.avalon_slave_0</name>
-    <baseAddress>4280287296</baseAddress>
-    <span>32</span>
+    <baseAddress>4280287360</baseAddress>
+    <span>64</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
     <moduleName>I2C_6</moduleName>
     <slaveName>avalon_slave_0</slaveName>
     <name>I2C_6.avalon_slave_0</name>
-    <baseAddress>4280287264</baseAddress>
-    <span>32</span>
+    <baseAddress>4280287296</baseAddress>
+    <span>64</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
@@ -51276,7 +51276,7 @@ parameters are a RESULT of the module parameters. -->
     <slaveName>avalon_slave_0</slaveName>
     <name>I2C_7.avalon_slave_0</name>
     <baseAddress>4280287232</baseAddress>
-    <span>32</span>
+    <span>64</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
@@ -51291,7 +51291,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>LED</moduleName>
     <slaveName>s1</slaveName>
     <name>LED.s1</name>
-    <baseAddress>4280287504</baseAddress>
+    <baseAddress>4280287760</baseAddress>
     <span>16</span>
    </memoryBlock>
    <memoryBlock>
@@ -51299,7 +51299,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>SWITCHES</moduleName>
     <slaveName>s1</slaveName>
     <name>SWITCHES.s1</name>
-    <baseAddress>4280287488</baseAddress>
+    <baseAddress>4280287744</baseAddress>
     <span>16</span>
    </memoryBlock>
    <memoryBlock>
@@ -79664,7 +79664,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.TIMESTAMP</name>
-   <value>1553024905</value>
+   <value>1553039282</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.compatible</name>
@@ -79684,7 +79684,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.timestamp</name>
-   <value>1553024905</value>
+   <value>1553039282</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.vendor</name>
@@ -79700,7 +79700,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="timestamp">
    <type>int</type>
-   <value>1553024905</value>
+   <value>1553039282</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -88259,7 +88259,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x00e0</value>
+   <value>0x01c0</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -88310,7 +88310,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x00c0</value>
+   <value>0x0180</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -88361,7 +88361,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x00a0</value>
+   <value>0x0140</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -88412,7 +88412,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x0080</value>
+   <value>0x0100</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -88463,7 +88463,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x0060</value>
+   <value>0x00c0</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -88514,7 +88514,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x0040</value>
+   <value>0x0080</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -88565,7 +88565,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x0020</value>
+   <value>0x0040</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -88718,7 +88718,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x0110</value>
+   <value>0x0210</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -88769,7 +88769,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x0100</value>
+   <value>0x0200</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>

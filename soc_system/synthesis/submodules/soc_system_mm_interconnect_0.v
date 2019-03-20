@@ -46,49 +46,49 @@ module soc_system_mm_interconnect_0 (
 		input  wire        clk_0_clk_clk,                                                       //                                                     clk_0_clk.clk
 		input  wire        hps_0_h2f_lw_axi_master_agent_clk_reset_reset_bridge_in_reset_reset, // hps_0_h2f_lw_axi_master_agent_clk_reset_reset_bridge_in_reset.reset
 		input  wire        jtag_uart_reset_reset_bridge_in_reset_reset,                         //                         jtag_uart_reset_reset_bridge_in_reset.reset
-		output wire [2:0]  I2C_0_avalon_slave_0_address,                                        //                                          I2C_0_avalon_slave_0.address
+		output wire [3:0]  I2C_0_avalon_slave_0_address,                                        //                                          I2C_0_avalon_slave_0.address
 		output wire        I2C_0_avalon_slave_0_write,                                          //                                                              .write
 		output wire        I2C_0_avalon_slave_0_read,                                           //                                                              .read
 		input  wire [31:0] I2C_0_avalon_slave_0_readdata,                                       //                                                              .readdata
 		output wire [31:0] I2C_0_avalon_slave_0_writedata,                                      //                                                              .writedata
 		input  wire        I2C_0_avalon_slave_0_waitrequest,                                    //                                                              .waitrequest
-		output wire [2:0]  I2C_1_avalon_slave_0_address,                                        //                                          I2C_1_avalon_slave_0.address
+		output wire [3:0]  I2C_1_avalon_slave_0_address,                                        //                                          I2C_1_avalon_slave_0.address
 		output wire        I2C_1_avalon_slave_0_write,                                          //                                                              .write
 		output wire        I2C_1_avalon_slave_0_read,                                           //                                                              .read
 		input  wire [31:0] I2C_1_avalon_slave_0_readdata,                                       //                                                              .readdata
 		output wire [31:0] I2C_1_avalon_slave_0_writedata,                                      //                                                              .writedata
 		input  wire        I2C_1_avalon_slave_0_waitrequest,                                    //                                                              .waitrequest
-		output wire [2:0]  I2C_2_avalon_slave_0_address,                                        //                                          I2C_2_avalon_slave_0.address
+		output wire [3:0]  I2C_2_avalon_slave_0_address,                                        //                                          I2C_2_avalon_slave_0.address
 		output wire        I2C_2_avalon_slave_0_write,                                          //                                                              .write
 		output wire        I2C_2_avalon_slave_0_read,                                           //                                                              .read
 		input  wire [31:0] I2C_2_avalon_slave_0_readdata,                                       //                                                              .readdata
 		output wire [31:0] I2C_2_avalon_slave_0_writedata,                                      //                                                              .writedata
 		input  wire        I2C_2_avalon_slave_0_waitrequest,                                    //                                                              .waitrequest
-		output wire [2:0]  I2C_3_avalon_slave_0_address,                                        //                                          I2C_3_avalon_slave_0.address
+		output wire [3:0]  I2C_3_avalon_slave_0_address,                                        //                                          I2C_3_avalon_slave_0.address
 		output wire        I2C_3_avalon_slave_0_write,                                          //                                                              .write
 		output wire        I2C_3_avalon_slave_0_read,                                           //                                                              .read
 		input  wire [31:0] I2C_3_avalon_slave_0_readdata,                                       //                                                              .readdata
 		output wire [31:0] I2C_3_avalon_slave_0_writedata,                                      //                                                              .writedata
 		input  wire        I2C_3_avalon_slave_0_waitrequest,                                    //                                                              .waitrequest
-		output wire [2:0]  I2C_4_avalon_slave_0_address,                                        //                                          I2C_4_avalon_slave_0.address
+		output wire [3:0]  I2C_4_avalon_slave_0_address,                                        //                                          I2C_4_avalon_slave_0.address
 		output wire        I2C_4_avalon_slave_0_write,                                          //                                                              .write
 		output wire        I2C_4_avalon_slave_0_read,                                           //                                                              .read
 		input  wire [31:0] I2C_4_avalon_slave_0_readdata,                                       //                                                              .readdata
 		output wire [31:0] I2C_4_avalon_slave_0_writedata,                                      //                                                              .writedata
 		input  wire        I2C_4_avalon_slave_0_waitrequest,                                    //                                                              .waitrequest
-		output wire [2:0]  I2C_5_avalon_slave_0_address,                                        //                                          I2C_5_avalon_slave_0.address
+		output wire [3:0]  I2C_5_avalon_slave_0_address,                                        //                                          I2C_5_avalon_slave_0.address
 		output wire        I2C_5_avalon_slave_0_write,                                          //                                                              .write
 		output wire        I2C_5_avalon_slave_0_read,                                           //                                                              .read
 		input  wire [31:0] I2C_5_avalon_slave_0_readdata,                                       //                                                              .readdata
 		output wire [31:0] I2C_5_avalon_slave_0_writedata,                                      //                                                              .writedata
 		input  wire        I2C_5_avalon_slave_0_waitrequest,                                    //                                                              .waitrequest
-		output wire [2:0]  I2C_6_avalon_slave_0_address,                                        //                                          I2C_6_avalon_slave_0.address
+		output wire [3:0]  I2C_6_avalon_slave_0_address,                                        //                                          I2C_6_avalon_slave_0.address
 		output wire        I2C_6_avalon_slave_0_write,                                          //                                                              .write
 		output wire        I2C_6_avalon_slave_0_read,                                           //                                                              .read
 		input  wire [31:0] I2C_6_avalon_slave_0_readdata,                                       //                                                              .readdata
 		output wire [31:0] I2C_6_avalon_slave_0_writedata,                                      //                                                              .writedata
 		input  wire        I2C_6_avalon_slave_0_waitrequest,                                    //                                                              .waitrequest
-		output wire [2:0]  I2C_7_avalon_slave_0_address,                                        //                                          I2C_7_avalon_slave_0.address
+		output wire [3:0]  I2C_7_avalon_slave_0_address,                                        //                                          I2C_7_avalon_slave_0.address
 		output wire        I2C_7_avalon_slave_0_write,                                          //                                                              .write
 		output wire        I2C_7_avalon_slave_0_read,                                           //                                                              .read
 		input  wire [31:0] I2C_7_avalon_slave_0_readdata,                                       //                                                              .readdata
@@ -1320,7 +1320,7 @@ module soc_system_mm_interconnect_0 (
 	);
 
 	altera_merlin_slave_translator #(
-		.AV_ADDRESS_W                   (3),
+		.AV_ADDRESS_W                   (4),
 		.AV_DATA_W                      (32),
 		.UAV_DATA_W                     (32),
 		.AV_BURSTCOUNT_W                (1),
@@ -1384,7 +1384,7 @@ module soc_system_mm_interconnect_0 (
 	);
 
 	altera_merlin_slave_translator #(
-		.AV_ADDRESS_W                   (3),
+		.AV_ADDRESS_W                   (4),
 		.AV_DATA_W                      (32),
 		.UAV_DATA_W                     (32),
 		.AV_BURSTCOUNT_W                (1),
@@ -1448,7 +1448,7 @@ module soc_system_mm_interconnect_0 (
 	);
 
 	altera_merlin_slave_translator #(
-		.AV_ADDRESS_W                   (3),
+		.AV_ADDRESS_W                   (4),
 		.AV_DATA_W                      (32),
 		.UAV_DATA_W                     (32),
 		.AV_BURSTCOUNT_W                (1),
@@ -1512,7 +1512,7 @@ module soc_system_mm_interconnect_0 (
 	);
 
 	altera_merlin_slave_translator #(
-		.AV_ADDRESS_W                   (3),
+		.AV_ADDRESS_W                   (4),
 		.AV_DATA_W                      (32),
 		.UAV_DATA_W                     (32),
 		.AV_BURSTCOUNT_W                (1),
@@ -1576,7 +1576,7 @@ module soc_system_mm_interconnect_0 (
 	);
 
 	altera_merlin_slave_translator #(
-		.AV_ADDRESS_W                   (3),
+		.AV_ADDRESS_W                   (4),
 		.AV_DATA_W                      (32),
 		.UAV_DATA_W                     (32),
 		.AV_BURSTCOUNT_W                (1),
@@ -1640,7 +1640,7 @@ module soc_system_mm_interconnect_0 (
 	);
 
 	altera_merlin_slave_translator #(
-		.AV_ADDRESS_W                   (3),
+		.AV_ADDRESS_W                   (4),
 		.AV_DATA_W                      (32),
 		.UAV_DATA_W                     (32),
 		.AV_BURSTCOUNT_W                (1),
@@ -1704,7 +1704,7 @@ module soc_system_mm_interconnect_0 (
 	);
 
 	altera_merlin_slave_translator #(
-		.AV_ADDRESS_W                   (3),
+		.AV_ADDRESS_W                   (4),
 		.AV_DATA_W                      (32),
 		.UAV_DATA_W                     (32),
 		.AV_BURSTCOUNT_W                (1),
@@ -1768,7 +1768,7 @@ module soc_system_mm_interconnect_0 (
 	);
 
 	altera_merlin_slave_translator #(
-		.AV_ADDRESS_W                   (3),
+		.AV_ADDRESS_W                   (4),
 		.AV_DATA_W                      (32),
 		.UAV_DATA_W                     (32),
 		.AV_BURSTCOUNT_W                (1),
