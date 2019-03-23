@@ -118,7 +118,7 @@ wire                hps_debug_reset;
 assign GPIO_0[4] = ~GPIO_0[0];
 assign GPIO_0[5] = ~GPIO_0[1];
  
-soc_system u0( 
+soc_system u0(  
                //Clock&Reset
                .clk_clk(FPGA_CLK1_50),                                      //                            clk.clk
                .reset_reset_n(hps_fpga_reset_n),                
@@ -133,22 +133,24 @@ soc_system u0(
 					.msjplatformcontroller_0_conduit_end_release_buttons({GPIO_0[24],GPIO_0[22],GPIO_0[20],GPIO_0[18],GPIO_0[16],GPIO_0[14],GPIO_0[12],GPIO_0[10]}),
 					.msjplatformcontroller_0_conduit_end_pull_buttons({GPIO_0[25],GPIO_0[23],GPIO_0[21],GPIO_0[19],GPIO_0[17],GPIO_0[15],GPIO_0[13],GPIO_0[11]}),
 					// three i2c buses
-					.i2c_0_conduit_end_scl(GPIO_0[35]), 
-					.i2c_0_conduit_end_sda(GPIO_0[34]), 
+					.tlv493_0_conduit_end_scl(GPIO_0[35]),
+					.tlv493_0_conduit_end_sda(GPIO_0[34]),
+//					.i2c_0_conduit_end_scl(GPIO_0[35]), 
+//					.i2c_0_conduit_end_sda(GPIO_0[34]), 
 					.i2c_1_conduit_end_scl(GPIO_0[33]),
 					.i2c_1_conduit_end_sda(GPIO_0[32]), 
-					.i2c_2_conduit_end_scl(GPIO_0[31]),
-					.i2c_2_conduit_end_sda(GPIO_0[30]), 
-					.i2c_3_conduit_end_scl(GPIO_0[29]),
-					.i2c_3_conduit_end_sda(GPIO_0[28]), 
-					.i2c_4_conduit_end_scl(GPIO_0[27]),
-					.i2c_4_conduit_end_sda(GPIO_0[26]),
-					.i2c_5_conduit_end_scl(GPIO_1[5]),
-					.i2c_5_conduit_end_sda(GPIO_1[4]),
-					.i2c_6_conduit_end_scl(GPIO_1[7]),
-					.i2c_6_conduit_end_sda(GPIO_1[6]),
-					.i2c_7_conduit_end_scl(GPIO_1[33]),
-					.i2c_7_conduit_end_sda(GPIO_1[32]),
+//					.i2c_2_conduit_end_scl(GPIO_0[31]),
+//					.i2c_2_conduit_end_sda(GPIO_0[30]), 
+//					.i2c_3_conduit_end_scl(GPIO_0[29]),
+//					.i2c_3_conduit_end_sda(GPIO_0[28]), 
+//					.i2c_4_conduit_end_scl(GPIO_0[27]),
+//					.i2c_4_conduit_end_sda(GPIO_0[26]),
+//					.i2c_5_conduit_end_scl(GPIO_1[5]),
+//					.i2c_5_conduit_end_sda(GPIO_1[4]),
+//					.i2c_6_conduit_end_scl(GPIO_1[7]),
+//					.i2c_6_conduit_end_sda(GPIO_1[6]),
+//					.i2c_7_conduit_end_scl(GPIO_1[33]),
+//					.i2c_7_conduit_end_sda(GPIO_1[32]),
 					// led
 					.led_external_connection_export(LED),
 					// switches
