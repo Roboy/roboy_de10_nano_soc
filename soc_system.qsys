@@ -1485,6 +1485,46 @@
          type = "String";
       }
    }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
    element sysid_qsys
    {
       datum _sortIndex
@@ -1576,9 +1616,7 @@
  <interface name="memory" internal="hps_0.memory" type="conduit" dir="end" />
  <interface
    name="msjplatformcontroller_0_conduit_end"
-   internal="MSJPlatformController_0.conduit_end"
-   type="conduit"
-   dir="end" />
+   internal="MSJPlatformController_0.conduit_end" />
  <interface name="reset" internal="clk_0.clk_in_reset" type="reset" dir="end" />
  <interface
    name="switches_external_connection"
@@ -1640,7 +1678,7 @@
    name="MSJPlatformController_0"
    kind="MSJPlatformController"
    version="1.0"
-   enabled="1">
+   enabled="0">
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
   <parameter name="NUMBER_OF_MOTORS" value="8" />
   <parameter name="SAMPLES_TO_AVERAGE" value="0" />
@@ -1662,7 +1700,6 @@
  <module name="TLV493_0" kind="TLV493" version="1.0" enabled="1">
   <parameter name="BUS_SPEED_HZ" value="400000" />
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
-  <parameter name="NUMBER_OF_SENSORS" value="1" />
  </module>
  <module name="clk_0" kind="clock_source" version="18.1" enabled="1">
   <parameter name="clockFrequency" value="50000000" />

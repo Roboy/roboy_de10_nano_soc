@@ -74,18 +74,6 @@ module soc_system (
 	memory_mem_odt,
 	memory_mem_dm,
 	memory_oct_rzqin,
-	msjplatformcontroller_0_conduit_end_led,
-	msjplatformcontroller_0_conduit_end_pwm,
-	msjplatformcontroller_0_conduit_end_emergency_off,
-	msjplatformcontroller_0_conduit_end_pull_all_button,
-	msjplatformcontroller_0_conduit_end_pull_buttons,
-	msjplatformcontroller_0_conduit_end_angle_ss_n_o,
-	msjplatformcontroller_0_conduit_end_release_all_button,
-	msjplatformcontroller_0_conduit_end_release_buttons,
-	msjplatformcontroller_0_conduit_end_zero_pose_button,
-	msjplatformcontroller_0_conduit_end_angle_miso,
-	msjplatformcontroller_0_conduit_end_angle_mosi,
-	msjplatformcontroller_0_conduit_end_angle_sck,
 	reset_reset_n,
 	switches_external_connection_export,
 	tlv493_0_conduit_end_scl,
@@ -165,20 +153,8 @@ module soc_system (
 	output		memory_mem_odt;
 	output	[3:0]	memory_mem_dm;
 	input		memory_oct_rzqin;
-	output	[1:0]	msjplatformcontroller_0_conduit_end_led;
-	output	[7:0]	msjplatformcontroller_0_conduit_end_pwm;
-	input		msjplatformcontroller_0_conduit_end_emergency_off;
-	input		msjplatformcontroller_0_conduit_end_pull_all_button;
-	input	[7:0]	msjplatformcontroller_0_conduit_end_pull_buttons;
-	output	[7:0]	msjplatformcontroller_0_conduit_end_angle_ss_n_o;
-	input		msjplatformcontroller_0_conduit_end_release_all_button;
-	input	[7:0]	msjplatformcontroller_0_conduit_end_release_buttons;
-	input		msjplatformcontroller_0_conduit_end_zero_pose_button;
-	input		msjplatformcontroller_0_conduit_end_angle_miso;
-	output		msjplatformcontroller_0_conduit_end_angle_mosi;
-	output		msjplatformcontroller_0_conduit_end_angle_sck;
 	input		reset_reset_n;
 	input	[3:0]	switches_external_connection_export;
-	output	[0:0]	tlv493_0_conduit_end_scl;
-	inout	[0:0]	tlv493_0_conduit_end_sda;
+	output		tlv493_0_conduit_end_scl;
+	inout		tlv493_0_conduit_end_sda;
 endmodule
