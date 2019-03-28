@@ -53,10 +53,6 @@ module soc_system (
 	hps_0_hps_io_hps_io_gpio_inst_GPIO53,
 	hps_0_hps_io_hps_io_gpio_inst_GPIO54,
 	hps_0_hps_io_hps_io_gpio_inst_GPIO61,
-	i2c_1_conduit_end_scl,
-	i2c_1_conduit_end_sda,
-	i2c_1_conduit_end_led,
-	i2c_1_conduit_end_gpio,
 	led_external_connection_export,
 	memory_mem_a,
 	memory_mem_ba,
@@ -74,10 +70,35 @@ module soc_system (
 	memory_mem_odt,
 	memory_mem_dm,
 	memory_oct_rzqin,
+	msjplatformcontroller_0_conduit_end_led,
+	msjplatformcontroller_0_conduit_end_pwm,
+	msjplatformcontroller_0_conduit_end_emergency_off,
+	msjplatformcontroller_0_conduit_end_pull_all_button,
+	msjplatformcontroller_0_conduit_end_pull_buttons,
+	msjplatformcontroller_0_conduit_end_angle_ss_n_o,
+	msjplatformcontroller_0_conduit_end_release_all_button,
+	msjplatformcontroller_0_conduit_end_release_buttons,
+	msjplatformcontroller_0_conduit_end_zero_pose_button,
+	msjplatformcontroller_0_conduit_end_angle_miso,
+	msjplatformcontroller_0_conduit_end_angle_mosi,
+	msjplatformcontroller_0_conduit_end_angle_sck,
 	reset_reset_n,
 	switches_external_connection_export,
-	tlv493_0_conduit_end_scl,
-	tlv493_0_conduit_end_sda);	
+	tlv_0_conduit_end_scl,
+	tlv_0_conduit_end_sda,
+	tlv_0_conduit_end_trigger_read,
+	tlv_0_conduit_end_trigger_reset,
+	tlv_0_conduit_end_fifo_write_ack_out,
+	tlv_1_conduit_end_scl,
+	tlv_1_conduit_end_sda,
+	tlv_1_conduit_end_trigger_read,
+	tlv_1_conduit_end_trigger_reset,
+	tlv_1_conduit_end_fifo_write_ack_out,
+	tlv_2_conduit_end_scl,
+	tlv_2_conduit_end_sda,
+	tlv_2_conduit_end_trigger_read,
+	tlv_2_conduit_end_trigger_reset,
+	tlv_2_conduit_end_fifo_write_ack_out);	
 
 	input		clk_clk;
 	input		hps_0_f2h_cold_reset_req_reset_n;
@@ -132,10 +153,6 @@ module soc_system (
 	inout		hps_0_hps_io_hps_io_gpio_inst_GPIO53;
 	inout		hps_0_hps_io_hps_io_gpio_inst_GPIO54;
 	inout		hps_0_hps_io_hps_io_gpio_inst_GPIO61;
-	inout		i2c_1_conduit_end_scl;
-	inout		i2c_1_conduit_end_sda;
-	output	[6:0]	i2c_1_conduit_end_led;
-	output	[2:0]	i2c_1_conduit_end_gpio;
 	output	[7:0]	led_external_connection_export;
 	output	[14:0]	memory_mem_a;
 	output	[2:0]	memory_mem_ba;
@@ -153,8 +170,33 @@ module soc_system (
 	output		memory_mem_odt;
 	output	[3:0]	memory_mem_dm;
 	input		memory_oct_rzqin;
+	output	[1:0]	msjplatformcontroller_0_conduit_end_led;
+	output	[7:0]	msjplatformcontroller_0_conduit_end_pwm;
+	input		msjplatformcontroller_0_conduit_end_emergency_off;
+	input		msjplatformcontroller_0_conduit_end_pull_all_button;
+	input	[7:0]	msjplatformcontroller_0_conduit_end_pull_buttons;
+	output	[7:0]	msjplatformcontroller_0_conduit_end_angle_ss_n_o;
+	input		msjplatformcontroller_0_conduit_end_release_all_button;
+	input	[7:0]	msjplatformcontroller_0_conduit_end_release_buttons;
+	input		msjplatformcontroller_0_conduit_end_zero_pose_button;
+	input		msjplatformcontroller_0_conduit_end_angle_miso;
+	output		msjplatformcontroller_0_conduit_end_angle_mosi;
+	output		msjplatformcontroller_0_conduit_end_angle_sck;
 	input		reset_reset_n;
 	input	[3:0]	switches_external_connection_export;
-	output		tlv493_0_conduit_end_scl;
-	inout		tlv493_0_conduit_end_sda;
+	output		tlv_0_conduit_end_scl;
+	inout		tlv_0_conduit_end_sda;
+	input		tlv_0_conduit_end_trigger_read;
+	input		tlv_0_conduit_end_trigger_reset;
+	output		tlv_0_conduit_end_fifo_write_ack_out;
+	output		tlv_1_conduit_end_scl;
+	inout		tlv_1_conduit_end_sda;
+	input		tlv_1_conduit_end_trigger_read;
+	input		tlv_1_conduit_end_trigger_reset;
+	output		tlv_1_conduit_end_fifo_write_ack_out;
+	output		tlv_2_conduit_end_scl;
+	inout		tlv_2_conduit_end_sda;
+	input		tlv_2_conduit_end_trigger_read;
+	input		tlv_2_conduit_end_trigger_reset;
+	output		tlv_2_conduit_end_fifo_write_ack_out;
 endmodule
