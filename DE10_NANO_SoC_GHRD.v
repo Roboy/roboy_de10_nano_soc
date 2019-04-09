@@ -120,10 +120,10 @@ soc_system u0(
                .clk_clk(FPGA_CLK1_50),                                      //                            clk.clk
                .reset_reset_n(hps_fpga_reset_n),                            //                          reset.reset_n
 					// adc
-//					.adc_ltc2308_0_conduit_end_CONVST(ADC_CONVST), 
-//					.adc_ltc2308_0_conduit_end_SCK(ADC_SCK), 
-//					.adc_ltc2308_0_conduit_end_SDI(ADC_SDI),    
-//					.adc_ltc2308_0_conduit_end_SDO(ADC_SDO),
+					.adc_ltc2308_0_conduit_end_CONVST(ADC_CONVST), 
+					.adc_ltc2308_0_conduit_end_SCK(ADC_SCK), 
+					.adc_ltc2308_0_conduit_end_SDI(ADC_SDI),    
+					.adc_ltc2308_0_conduit_end_SDO(ADC_SDO),
 					// three i2c buses
 					.i2c_0_conduit_end_scl(GPIO_0[35]), 
 					.i2c_0_conduit_end_sda(GPIO_0[34]), 

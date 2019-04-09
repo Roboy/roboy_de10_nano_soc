@@ -177,6 +177,14 @@
          type = "int";
       }
    }
+   element adc_ltc2308_0.slave
+   {
+      datum baseAddress
+      {
+         value = "176";
+         type = "String";
+      }
+   }
    element clk_0
    {
       datum _sortIndex
@@ -1084,7 +1092,11 @@
  <parameter name="timeStamp" value="0" />
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
- <interface name="adc_ltc2308_0_conduit_end" internal="adc_ltc2308_0.conduit_end" />
+ <interface
+   name="adc_ltc2308_0_conduit_end"
+   internal="adc_ltc2308_0.conduit_end"
+   type="conduit"
+   dir="end" />
  <interface name="clk" internal="clk_0.clk_in" type="clock" dir="end" />
  <interface name="darkroom_0_conduit_end" internal="DarkRoom_0.conduit_end" />
  <interface name="darkroom_0_sensor_signals" internal="DarkRoom_0.sensor_signals" />
@@ -1244,7 +1256,7 @@
   <parameter name="simDrivenValue" value="0" />
   <parameter name="width" value="4" />
  </module>
- <module name="adc_ltc2308_0" kind="adc_ltc2308" version="1.1" enabled="0" />
+ <module name="adc_ltc2308_0" kind="adc_ltc2308" version="1.1" enabled="1" />
  <module name="clk_0" kind="clock_source" version="18.1" enabled="1">
   <parameter name="clockFrequency" value="50000000" />
   <parameter name="clockFrequencyKnown" value="true" />
@@ -1814,7 +1826,7 @@
   <parameter name="simDrivenValue" value="0" />
   <parameter name="width" value="10" />
  </module>
- <module name="pll_40MHz" kind="altera_pll" version="18.1" enabled="0">
+ <module name="pll_40MHz" kind="altera_pll" version="18.1" enabled="1">
   <parameter name="debug_print_output" value="false" />
   <parameter name="debug_use_rbc_taf_method" value="false" />
   <parameter name="device" value="5CSEBA6U23I7" />
@@ -2173,7 +2185,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="adc_ltc2308_0.slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00a0" />
+  <parameter name="baseAddress" value="0x00b0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection kind="clock" version="18.1" start="clk_0.clk" end="jtag_uart.clk" />
@@ -2200,11 +2212,6 @@
    kind="clock"
    version="18.1"
    start="clk_0.clk"
-   end="adc_ltc2308_0.clock_sink" />
- <connection
-   kind="clock"
-   version="18.1"
-   start="clk_0.clk"
    end="MYOControl_0.clock_sink" />
  <connection
    kind="clock"
@@ -2216,6 +2223,11 @@
  <connection kind="clock" version="18.1" start="clk_0.clk" end="I2C_1.clock_sink" />
  <connection kind="clock" version="18.1" start="clk_0.clk" end="I2C_2.clock_sink" />
  <connection kind="clock" version="18.1" start="clk_0.clk" end="I2C_3.clock_sink" />
+ <connection
+   kind="clock"
+   version="18.1"
+   start="clk_0.clk"
+   end="adc_ltc2308_0.clock_sink" />
  <connection
    kind="clock"
    version="18.1"
@@ -2258,11 +2270,6 @@
    kind="reset"
    version="18.1"
    start="clk_0.clk_reset"
-   end="pll_40MHz.reset" />
- <connection
-   kind="reset"
-   version="18.1"
-   start="clk_0.clk_reset"
    end="MYOControl_0.reset" />
  <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="LED.reset" />
  <connection
@@ -2286,6 +2293,11 @@
  <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="I2C_1.reset" />
  <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="I2C_2.reset" />
  <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="I2C_3.reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="clk_0.clk_reset"
+   end="pll_40MHz.reset" />
  <connection
    kind="reset"
    version="18.1"
