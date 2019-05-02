@@ -119,12 +119,12 @@ soc_system u0(
                //Clock&Reset
                .clk_clk(FPGA_CLK1_50),                                      //                            clk.clk
                .reset_reset_n(hps_fpga_reset_n),                            //                          reset.reset_n
-					// adc
-					.adc_ltc2308_0_conduit_end_CONVST(ADC_CONVST), 
-					.adc_ltc2308_0_conduit_end_SCK(ADC_SCK), 
-					.adc_ltc2308_0_conduit_end_SDI(ADC_SDI),    
-					.adc_ltc2308_0_conduit_end_SDO(ADC_SDO),
-					// three i2c buses
+//					// adc
+//					.adc_ltc2308_0_conduit_end_CONVST(ADC_CONVST), 
+//					.adc_ltc2308_0_conduit_end_SCK(ADC_SCK), 
+//					.adc_ltc2308_0_conduit_end_SDI(ADC_SDI),    
+//					.adc_ltc2308_0_conduit_end_SDO(ADC_SDO),
+//					// three i2c buses
 					.i2c_0_conduit_end_scl(GPIO_0[35]), 
 					.i2c_0_conduit_end_sda(GPIO_0[34]), 
 					.i2c_1_conduit_end_scl(GPIO_0[33]),
@@ -149,9 +149,9 @@ soc_system u0(
 					.myocontrol_1_conduit_end_ss_n({GPIO_1[20:15]}),
 					.myocontrol_1_conduit_end_mirrored_muscle_unit(1'b0), 
 					.myocontrol_1_conduit_end_power_sense_n(GPIO_1[35] && SW[3]),
-					.myocontrol_1_conduit_end_angle_miso(GPIO_0[0]),           //                             .angle_miso
-					.myocontrol_1_conduit_end_angle_mosi(GPIO_0[1]),           //                             .angle_mosi
-					.myocontrol_1_conduit_end_angle_sck(GPIO_0[2]),            //  18                           .angle_sck
+					.myocontrol_1_conduit_end_angle_mosi(GPIO_0[0]),            
+					.myocontrol_1_conduit_end_angle_miso(GPIO_0[1]),           
+					.myocontrol_1_conduit_end_angle_sck(GPIO_0[2]),           
 					.myocontrol_1_conduit_end_angle_ss_n_o(GPIO_0[8:3]), 
 					.myocontrol_2_conduit_end_mosi(GPIO_1[21]), 
 					.myocontrol_2_conduit_end_miso(GPIO_1[22]),
@@ -159,12 +159,12 @@ soc_system u0(
 					.myocontrol_2_conduit_end_ss_n({GPIO_1[29:24]}),
 					.myocontrol_2_conduit_end_mirrored_muscle_unit(1'b0), 
 					.myocontrol_2_conduit_end_power_sense_n(GPIO_1[35] && SW[3]),
-					.myocontrol_2_conduit_end_angle_miso(GPIO_0[9]),           //                             .angle_miso
-					.myocontrol_2_conduit_end_angle_mosi(GPIO_0[10]),           //                             .angle_mosi
-					.myocontrol_2_conduit_end_angle_sck(GPIO_0[11]),            //  18                           .angle_sck
+					.myocontrol_2_conduit_end_angle_mosi(GPIO_0[9]),          
+					.myocontrol_2_conduit_end_angle_miso(GPIO_0[10]),        
+					.myocontrol_2_conduit_end_angle_sck(GPIO_0[11]),            
 					.myocontrol_2_conduit_end_angle_ss_n_o(GPIO_0[17:12]), 
-					.pwm_0_conduit_end_pwm(ARDUINO_IO[1:0]),
-					.pio_0_external_connection_export(ARDUINO_IO[9:2]),
+//					.pwm_0_conduit_end_pwm(ARDUINO_IO[1:0]),
+//					.pio_0_external_connection_export(ARDUINO_IO[9:2]),
 					// led
 					.led_external_connection_export(LED),
 					// switches

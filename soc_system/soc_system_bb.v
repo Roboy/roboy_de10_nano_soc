@@ -1,9 +1,5 @@
 
 module soc_system (
-	adc_ltc2308_0_conduit_end_CONVST,
-	adc_ltc2308_0_conduit_end_SCK,
-	adc_ltc2308_0_conduit_end_SDI,
-	adc_ltc2308_0_conduit_end_SDO,
 	clk_clk,
 	hps_0_f2h_cold_reset_req_reset_n,
 	hps_0_f2h_debug_reset_req_reset_n,
@@ -123,15 +119,9 @@ module soc_system (
 	myocontrol_2_conduit_end_angle_mosi,
 	myocontrol_2_conduit_end_angle_sck,
 	myocontrol_2_conduit_end_angle_ss_n_o,
-	pio_0_external_connection_export,
-	pwm_0_conduit_end_pwm,
 	reset_reset_n,
 	switches_external_connection_export);	
 
-	output		adc_ltc2308_0_conduit_end_CONVST;
-	output		adc_ltc2308_0_conduit_end_SCK;
-	output		adc_ltc2308_0_conduit_end_SDI;
-	input		adc_ltc2308_0_conduit_end_SDO;
 	input		clk_clk;
 	input		hps_0_f2h_cold_reset_req_reset_n;
 	input		hps_0_f2h_debug_reset_req_reset_n;
@@ -251,8 +241,6 @@ module soc_system (
 	output		myocontrol_2_conduit_end_angle_mosi;
 	output		myocontrol_2_conduit_end_angle_sck;
 	output	[5:0]	myocontrol_2_conduit_end_angle_ss_n_o;
-	output	[9:0]	pio_0_external_connection_export;
-	output	[1:0]	pwm_0_conduit_end_pwm;
 	input		reset_reset_n;
 	input	[3:0]	switches_external_connection_export;
 endmodule
