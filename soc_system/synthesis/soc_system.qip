@@ -2,7 +2,7 @@ set_global_assignment -entity "soc_system" -library "soc_system" -name IP_TOOL_N
 set_global_assignment -entity "soc_system" -library "soc_system" -name IP_TOOL_VERSION "18.1"
 set_global_assignment -entity "soc_system" -library "soc_system" -name IP_TOOL_ENV "Qsys"
 set_global_assignment -library "soc_system" -name SOPCINFO_FILE [file join $::quartus(qip_path) "../../soc_system.sopcinfo"]
-set_global_assignment -entity "soc_system" -library "soc_system" -name SLD_INFO "QSYS_NAME soc_system HAS_SOPCINFO 1 GENERATION_ID 1556629630"
+set_global_assignment -entity "soc_system" -library "soc_system" -name SLD_INFO "QSYS_NAME soc_system HAS_SOPCINFO 1 GENERATION_ID 1556799568"
 set_global_assignment -library "soc_system" -name MISC_FILE [file join $::quartus(qip_path) "../soc_system.cmp"]
 set_global_assignment -library "soc_system" -name SLD_FILE [file join $::quartus(qip_path) "soc_system.regmap"]
 set_global_assignment -library "soc_system" -name MISC_FILE [file join $::quartus(qip_path) "soc_system_hps_0_hps.svd"]
@@ -17,7 +17,7 @@ set_global_assignment -entity "soc_system" -library "soc_system" -name IP_COMPON
 set_global_assignment -entity "soc_system" -library "soc_system" -name IP_COMPONENT_REPORT_HIERARCHY "On"
 set_global_assignment -entity "soc_system" -library "soc_system" -name IP_COMPONENT_INTERNAL "Off"
 set_global_assignment -entity "soc_system" -library "soc_system" -name IP_COMPONENT_VERSION "MS4w"
-set_global_assignment -entity "soc_system" -library "soc_system" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTU1NjYyOTYzMA==::QXV0byBHRU5FUkFUSU9OX0lE"
+set_global_assignment -entity "soc_system" -library "soc_system" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTU1Njc5OTU2OA==::QXV0byBHRU5FUkFUSU9OX0lE"
 set_global_assignment -entity "soc_system" -library "soc_system" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::Q3ljbG9uZSBW::QXV0byBERVZJQ0VfRkFNSUxZ"
 set_global_assignment -entity "soc_system" -library "soc_system" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0U=::NUNTRUJBNlUyM0k3::QXV0byBERVZJQ0U="
 set_global_assignment -entity "soc_system" -library "soc_system" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfU1BFRURHUkFERQ==::Nw==::QXV0byBERVZJQ0VfU1BFRURHUkFERQ=="
@@ -302,11 +302,11 @@ set_global_assignment -entity "soc_system_mm_interconnect_0_router" -library "so
 set_global_assignment -entity "soc_system_mm_interconnect_0_router" -library "soc_system" -name IP_COMPONENT_AUTHOR "QWx0ZXJhIENvcnBvcmF0aW9u"
 set_global_assignment -entity "soc_system_mm_interconnect_0_router" -library "soc_system" -name IP_COMPONENT_VERSION "MTguMQ=="
 set_global_assignment -entity "soc_system_mm_interconnect_0_router" -library "soc_system" -name IP_COMPONENT_DESCRIPTION "Um91dGVzIGNvbW1hbmQgcGFja2V0cyBmcm9tIHRoZSBtYXN0ZXIgdG8gdGhlIHNsYXZlIGFuZCByZXNwb25zZSBwYWNrZXRzIGZyb20gdGhlIHNsYXZlIHRvIHRoZSBtYXN0ZXIu"
-set_global_assignment -entity "soc_system_mm_interconnect_0_router" -library "soc_system" -name IP_COMPONENT_PARAMETER "REVTVElOQVRJT05fSUQ=::MywxLDIsMCw4LDQsMTAsOSw3LDUsNg==::RGVzdGluYXRpb24gSUQ="
-set_global_assignment -entity "soc_system_mm_interconnect_0_router" -library "soc_system" -name IP_COMPONENT_PARAMETER "Q0hBTk5FTF9JRA==::MDAwMTAwMDAwMDAsMDAwMDAxMDAwMDAsMDAwMDEwMDAwMDAsMDAwMDAwMTAwMDAsMTAwMDAwMDAwMDAsMDEwMDAwMDAwMDAsMDAxMDAwMDAwMDAsMDAwMDAwMDAwMDEsMDAwMDAwMDEwMDAsMDAwMDAwMDAxMDAsMDAwMDAwMDAwMTA=::QmluYXJ5IENoYW5uZWwgU3RyaW5n"
+set_global_assignment -entity "soc_system_mm_interconnect_0_router" -library "soc_system" -name IP_COMPONENT_PARAMETER "REVTVElOQVRJT05fSUQ=::MywyLDEsMCw4LDQsMTAsOSw3LDUsNg==::RGVzdGluYXRpb24gSUQ="
+set_global_assignment -entity "soc_system_mm_interconnect_0_router" -library "soc_system" -name IP_COMPONENT_PARAMETER "Q0hBTk5FTF9JRA==::MDAwMTAwMDAwMDAsMDAwMDEwMDAwMDAsMDAwMDAxMDAwMDAsMDAwMDAwMTAwMDAsMTAwMDAwMDAwMDAsMDEwMDAwMDAwMDAsMDAxMDAwMDAwMDAsMDAwMDAwMDAwMDEsMDAwMDAwMDEwMDAsMDAwMDAwMDAxMDAsMDAwMDAwMDAwMTA=::QmluYXJ5IENoYW5uZWwgU3RyaW5n"
 set_global_assignment -entity "soc_system_mm_interconnect_0_router" -library "soc_system" -name IP_COMPONENT_PARAMETER "VFlQRV9PRl9UUkFOU0FDVElPTg==::Ym90aCxib3RoLGJvdGgsYm90aCxyZWFkLGJvdGgscmVhZCxib3RoLGJvdGgsYm90aCxib3Ro::VHlwZSBvZiBUcmFuc2FjdGlvbg=="
-set_global_assignment -entity "soc_system_mm_interconnect_0_router" -library "soc_system" -name IP_COMPONENT_PARAMETER "U1RBUlRfQUREUkVTUw==::MHgwLDB4MjAsMHg0MCwweDYwLDB4OTAsMHhhMCwweDEwMDAsMHgyMDAwLDB4ODAwMDAsMHhjMDAwMCwweDEwMDAwMA==::U3RhcnQgYWRkcmVzc2VzIChpbmNsdXNpdmUp"
-set_global_assignment -entity "soc_system_mm_interconnect_0_router" -library "soc_system" -name IP_COMPONENT_PARAMETER "RU5EX0FERFJFU1M=::MHgyMCwweDQwLDB4NjAsMHg4MCwweGEwLDB4YjAsMHgxMDA4LDB4MjAwOCwweGMwMDAwLDB4MTAwMDAwLDB4MTQwMDAw::RW5kIGFkZHJlc3NlcyAoZXhjbHVzaXZlKQ=="
+set_global_assignment -entity "soc_system_mm_interconnect_0_router" -library "soc_system" -name IP_COMPONENT_PARAMETER "U1RBUlRfQUREUkVTUw==::MHgwLDB4NDAsMHg4MCwweGMwLDB4MTAwLDB4MTEwLDB4MTAwMCwweDIwMDAsMHg0MDAwMCwweDgwMDAwLDB4YzAwMDA=::U3RhcnQgYWRkcmVzc2VzIChpbmNsdXNpdmUp"
+set_global_assignment -entity "soc_system_mm_interconnect_0_router" -library "soc_system" -name IP_COMPONENT_PARAMETER "RU5EX0FERFJFU1M=::MHg0MCwweDgwLDB4YzAsMHgxMDAsMHgxMTAsMHgxMjAsMHgxMDA4LDB4MjAwOCwweDgwMDAwLDB4YzAwMDAsMHgxMDAwMDA=::RW5kIGFkZHJlc3NlcyAoZXhjbHVzaXZlKQ=="
 set_global_assignment -entity "soc_system_mm_interconnect_0_router" -library "soc_system" -name IP_COMPONENT_PARAMETER "Tk9OX1NFQ1VSRURfVEFH::MSwxLDEsMSwxLDEsMSwxLDEsMSwx::Tm9uLXNlY3VyZWQgdGFncw=="
 set_global_assignment -entity "soc_system_mm_interconnect_0_router" -library "soc_system" -name IP_COMPONENT_PARAMETER "U0VDVVJFRF9SQU5HRV9QQUlSUw==::MCwwLDAsMCwwLDAsMCwwLDAsMCww::TnVtYmVyIG9mIHNlY3VyZWQgcmFuZ2UgcGFpcnM="
 set_global_assignment -entity "soc_system_mm_interconnect_0_router" -library "soc_system" -name IP_COMPONENT_PARAMETER "U0VDVVJFRF9SQU5HRV9MSVNU::MCwwLDAsMCwwLDAsMCwwLDAsMCww::U2VjdXJlZCByYW5nZSBwYWlycw=="
@@ -320,7 +320,7 @@ set_global_assignment -entity "soc_system_mm_interconnect_0_router" -library "so
 set_global_assignment -entity "soc_system_mm_interconnect_0_router" -library "soc_system" -name IP_COMPONENT_PARAMETER "UEtUX1RSQU5TX1JFQUQ=::NjA=::UGFja2V0IHJlYWQgdHJhbnNhY3Rpb24gZmllbGQgaW5kZXg="
 set_global_assignment -entity "soc_system_mm_interconnect_0_router" -library "soc_system" -name IP_COMPONENT_PARAMETER "U1RfREFUQV9X::MTE4::U3RyZWFtaW5nIGRhdGEgd2lkdGg="
 set_global_assignment -entity "soc_system_mm_interconnect_0_router" -library "soc_system" -name IP_COMPONENT_PARAMETER "U1RfQ0hBTk5FTF9X::MTE=::U3RyZWFtaW5nIGNoYW5uZWwgd2lkdGg="
-set_global_assignment -entity "soc_system_mm_interconnect_0_router" -library "soc_system" -name IP_COMPONENT_PARAMETER "U0xBVkVTX0lORk8=::MzowMDAxMDAwMDAwMDoweDA6MHgyMDpib3RoOjE6MDowOjEsMTowMDAwMDEwMDAwMDoweDIwOjB4NDA6Ym90aDoxOjA6MDoxLDI6MDAwMDEwMDAwMDA6MHg0MDoweDYwOmJvdGg6MTowOjA6MSwwOjAwMDAwMDEwMDAwOjB4NjA6MHg4MDpib3RoOjE6MDowOjEsODoxMDAwMDAwMDAwMDoweDkwOjB4YTA6cmVhZDoxOjA6MDoxLDQ6MDEwMDAwMDAwMDA6MHhhMDoweGIwOmJvdGg6MTowOjA6MSwxMDowMDEwMDAwMDAwMDoweDEwMDA6MHgxMDA4OnJlYWQ6MTowOjA6MSw5OjAwMDAwMDAwMDAxOjB4MjAwMDoweDIwMDg6Ym90aDoxOjA6MDoxLDc6MDAwMDAwMDEwMDA6MHg4MDAwMDoweGMwMDAwOmJvdGg6MTowOjA6MSw1OjAwMDAwMDAwMTAwOjB4YzAwMDA6MHgxMDAwMDA6Ym90aDoxOjA6MDoxLDY6MDAwMDAwMDAwMTA6MHgxMDAwMDA6MHgxNDAwMDA6Ym90aDoxOjA6MDox::U0xBVkVTX0lORk8="
+set_global_assignment -entity "soc_system_mm_interconnect_0_router" -library "soc_system" -name IP_COMPONENT_PARAMETER "U0xBVkVTX0lORk8=::MzowMDAxMDAwMDAwMDoweDA6MHg0MDpib3RoOjE6MDowOjEsMjowMDAwMTAwMDAwMDoweDQwOjB4ODA6Ym90aDoxOjA6MDoxLDE6MDAwMDAxMDAwMDA6MHg4MDoweGMwOmJvdGg6MTowOjA6MSwwOjAwMDAwMDEwMDAwOjB4YzA6MHgxMDA6Ym90aDoxOjA6MDoxLDg6MTAwMDAwMDAwMDA6MHgxMDA6MHgxMTA6cmVhZDoxOjA6MDoxLDQ6MDEwMDAwMDAwMDA6MHgxMTA6MHgxMjA6Ym90aDoxOjA6MDoxLDEwOjAwMTAwMDAwMDAwOjB4MTAwMDoweDEwMDg6cmVhZDoxOjA6MDoxLDk6MDAwMDAwMDAwMDE6MHgyMDAwOjB4MjAwODpib3RoOjE6MDowOjEsNzowMDAwMDAwMTAwMDoweDQwMDAwOjB4ODAwMDA6Ym90aDoxOjA6MDoxLDU6MDAwMDAwMDAxMDA6MHg4MDAwMDoweGMwMDAwOmJvdGg6MTowOjA6MSw2OjAwMDAwMDAwMDEwOjB4YzAwMDA6MHgxMDAwMDA6Ym90aDoxOjA6MDox::U0xBVkVTX0lORk8="
 set_global_assignment -entity "soc_system_mm_interconnect_0_router" -library "soc_system" -name IP_COMPONENT_PARAMETER "REVDT0RFUl9UWVBF::MA==::RGVjb2RlciB0eXBl"
 set_global_assignment -entity "soc_system_mm_interconnect_0_router" -library "soc_system" -name IP_COMPONENT_PARAMETER "REVGQVVMVF9DSEFOTkVM::Mw==::RGVmYXVsdCBjaGFubmVs"
 set_global_assignment -entity "soc_system_mm_interconnect_0_router" -library "soc_system" -name IP_COMPONENT_PARAMETER "REVGQVVMVF9XUl9DSEFOTkVM::LTE=::RGVmYXVsdCB3ciBjaGFubmVs"
@@ -6333,7 +6333,7 @@ set_global_assignment -entity "MYOControl" -library "soc_system" -name IP_COMPON
 set_global_assignment -entity "MYOControl" -library "soc_system" -name IP_COMPONENT_AUTHOR "U2ltb24gVHJlbmRlbA=="
 set_global_assignment -entity "MYOControl" -library "soc_system" -name IP_COMPONENT_VERSION "MS4w"
 set_global_assignment -entity "MYOControl" -library "soc_system" -name IP_COMPONENT_DESCRIPTION "Y29udHJvbCBsb2dpYyBmb3IgbXlvIG11c2NsZXM="
-set_global_assignment -entity "MYOControl" -library "soc_system" -name IP_COMPONENT_PARAMETER "TlVNQkVSX09GX01PVE9SUw==::OQ==::TlVNQkVSX09GX01PVE9SUw=="
+set_global_assignment -entity "MYOControl" -library "soc_system" -name IP_COMPONENT_PARAMETER "TlVNQkVSX09GX01PVE9SUw==::Ng==::TlVNQkVSX09GX01PVE9SUw=="
 set_global_assignment -entity "MYOControl" -library "soc_system" -name IP_COMPONENT_PARAMETER "Q0xPQ0tfU1BFRURfSFo=::NTAwMDAwMDA=::Q0xPQ0tfU1BFRURfSFo="
 set_global_assignment -entity "MYOControl" -library "soc_system" -name IP_COMPONENT_PARAMETER "RU5BQkxFX01ZT0JSSUNLX0NPTlRST0w=::MA==::RU5BQkxFX01ZT0JSSUNLX0NPTlRST0w="
 set_global_assignment -entity "soc_system_LED" -library "soc_system" -name IP_COMPONENT_NAME "c29jX3N5c3RlbV9MRUQ="
@@ -6461,10 +6461,12 @@ set_instance_assignment -entity "soc_system_hps_0_hps_io_border" -library "soc_s
 set_global_assignment -library "soc_system" -name MISC_FILE [file join $::quartus(qip_path) "submodules/hps.pre.xml"]
 set_global_assignment -library "soc_system" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/soc_system_hps_0_fpga_interfaces.sv"]
 set_global_assignment -library "soc_system" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/soc_system_SWITCHES.v"]
-set_global_assignment -library "soc_system" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/MYOControl.v"]
+set_global_assignment -library "soc_system" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/MYOControl.sv"]
 set_global_assignment -library "soc_system" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/PIDController.v"]
 set_global_assignment -library "soc_system" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/SpiControl.v"]
+set_global_assignment -library "soc_system" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/A1339.sv"]
 set_global_assignment -library "soc_system" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/A1339Control.sv"]
+set_global_assignment -library "soc_system" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/A1339Interface.sv"]
 set_global_assignment -library "soc_system" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/soc_system_LED.v"]
 set_global_assignment -library "soc_system" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/I2C_avalon_bridge.v"]
 

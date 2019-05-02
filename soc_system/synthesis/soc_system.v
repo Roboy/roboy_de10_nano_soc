@@ -90,39 +90,39 @@ module soc_system (
 		output wire        memory_mem_odt,                                //                             .mem_odt
 		output wire [3:0]  memory_mem_dm,                                 //                             .mem_dm
 		input  wire        memory_oct_rzqin,                              //                             .oct_rzqin
-		input  wire        myocontrol_0_conduit_end_miso,                 //     myocontrol_0_conduit_end.miso
-		output wire        myocontrol_0_conduit_end_mosi,                 //                             .mosi
-		output wire        myocontrol_0_conduit_end_sck,                  //                             .sck
-		output wire [8:0]  myocontrol_0_conduit_end_ss_n,                 //                             .ss_n
-		input  wire        myocontrol_0_conduit_end_mirrored_muscle_unit, //                             .mirrored_muscle_unit
-		input  wire        myocontrol_0_conduit_end_power_sense_n,        //                             .power_sense_n
-		output wire        myocontrol_0_conduit_end_gpio_n,               //                             .gpio_n
-		input  wire        myocontrol_0_conduit_end_angle_miso,           //                             .angle_miso
+		input  wire        myocontrol_0_conduit_end_angle_miso,           //     myocontrol_0_conduit_end.angle_miso
 		output wire        myocontrol_0_conduit_end_angle_mosi,           //                             .angle_mosi
 		output wire        myocontrol_0_conduit_end_angle_sck,            //                             .angle_sck
-		output wire [8:0]  myocontrol_0_conduit_end_angle_ss_n_o,         //                             .angle_ss_n_o
-		input  wire        myocontrol_1_conduit_end_miso,                 //     myocontrol_1_conduit_end.miso
-		output wire        myocontrol_1_conduit_end_mosi,                 //                             .mosi
-		output wire        myocontrol_1_conduit_end_sck,                  //                             .sck
-		output wire [5:0]  myocontrol_1_conduit_end_ss_n,                 //                             .ss_n
-		input  wire        myocontrol_1_conduit_end_mirrored_muscle_unit, //                             .mirrored_muscle_unit
-		input  wire        myocontrol_1_conduit_end_power_sense_n,        //                             .power_sense_n
-		output wire        myocontrol_1_conduit_end_gpio_n,               //                             .gpio_n
-		input  wire        myocontrol_1_conduit_end_angle_miso,           //                             .angle_miso
+		output wire [5:0]  myocontrol_0_conduit_end_angle_ss_n_o,         //                             .angle_ss_n_o
+		output wire        myocontrol_0_conduit_end_gpio_n,               //                             .gpio_n
+		input  wire        myocontrol_0_conduit_end_mirrored_muscle_unit, //                             .mirrored_muscle_unit
+		input  wire        myocontrol_0_conduit_end_miso,                 //                             .miso
+		output wire        myocontrol_0_conduit_end_mosi,                 //                             .mosi
+		input  wire        myocontrol_0_conduit_end_power_sense_n,        //                             .power_sense_n
+		output wire [5:0]  myocontrol_0_conduit_end_ss_n_o,               //                             .ss_n_o
+		output wire        myocontrol_0_conduit_end_sck,                  //                             .sck
+		input  wire        myocontrol_1_conduit_end_angle_miso,           //     myocontrol_1_conduit_end.angle_miso
 		output wire        myocontrol_1_conduit_end_angle_mosi,           //                             .angle_mosi
 		output wire        myocontrol_1_conduit_end_angle_sck,            //                             .angle_sck
 		output wire [5:0]  myocontrol_1_conduit_end_angle_ss_n_o,         //                             .angle_ss_n_o
-		input  wire        myocontrol_2_conduit_end_miso,                 //     myocontrol_2_conduit_end.miso
-		output wire        myocontrol_2_conduit_end_mosi,                 //                             .mosi
-		output wire        myocontrol_2_conduit_end_sck,                  //                             .sck
-		output wire [5:0]  myocontrol_2_conduit_end_ss_n,                 //                             .ss_n
-		input  wire        myocontrol_2_conduit_end_mirrored_muscle_unit, //                             .mirrored_muscle_unit
-		input  wire        myocontrol_2_conduit_end_power_sense_n,        //                             .power_sense_n
-		output wire        myocontrol_2_conduit_end_gpio_n,               //                             .gpio_n
-		input  wire        myocontrol_2_conduit_end_angle_miso,           //                             .angle_miso
+		output wire        myocontrol_1_conduit_end_gpio_n,               //                             .gpio_n
+		input  wire        myocontrol_1_conduit_end_mirrored_muscle_unit, //                             .mirrored_muscle_unit
+		input  wire        myocontrol_1_conduit_end_miso,                 //                             .miso
+		output wire        myocontrol_1_conduit_end_mosi,                 //                             .mosi
+		input  wire        myocontrol_1_conduit_end_power_sense_n,        //                             .power_sense_n
+		output wire [5:0]  myocontrol_1_conduit_end_ss_n_o,               //                             .ss_n_o
+		output wire        myocontrol_1_conduit_end_sck,                  //                             .sck
+		input  wire        myocontrol_2_conduit_end_angle_miso,           //     myocontrol_2_conduit_end.angle_miso
 		output wire        myocontrol_2_conduit_end_angle_mosi,           //                             .angle_mosi
 		output wire        myocontrol_2_conduit_end_angle_sck,            //                             .angle_sck
 		output wire [5:0]  myocontrol_2_conduit_end_angle_ss_n_o,         //                             .angle_ss_n_o
+		output wire        myocontrol_2_conduit_end_gpio_n,               //                             .gpio_n
+		input  wire        myocontrol_2_conduit_end_mirrored_muscle_unit, //                             .mirrored_muscle_unit
+		input  wire        myocontrol_2_conduit_end_miso,                 //                             .miso
+		output wire        myocontrol_2_conduit_end_mosi,                 //                             .mosi
+		input  wire        myocontrol_2_conduit_end_power_sense_n,        //                             .power_sense_n
+		output wire [5:0]  myocontrol_2_conduit_end_ss_n_o,               //                             .ss_n_o
+		output wire        myocontrol_2_conduit_end_sck,                  //                             .sck
 		input  wire        reset_reset_n,                                 //                        reset.reset_n
 		input  wire [3:0]  switches_external_connection_export            // switches_external_connection.export
 	);
@@ -190,25 +190,25 @@ module soc_system (
 	wire  [31:0] mm_interconnect_0_myocontrol_2_avalon_slave_0_writedata;   // mm_interconnect_0:MYOControl_2_avalon_slave_0_writedata -> MYOControl_2:writedata
 	wire  [31:0] mm_interconnect_0_i2c_0_avalon_slave_0_readdata;           // I2C_0:readdata -> mm_interconnect_0:I2C_0_avalon_slave_0_readdata
 	wire         mm_interconnect_0_i2c_0_avalon_slave_0_waitrequest;        // I2C_0:waitrequest -> mm_interconnect_0:I2C_0_avalon_slave_0_waitrequest
-	wire   [2:0] mm_interconnect_0_i2c_0_avalon_slave_0_address;            // mm_interconnect_0:I2C_0_avalon_slave_0_address -> I2C_0:address
+	wire   [3:0] mm_interconnect_0_i2c_0_avalon_slave_0_address;            // mm_interconnect_0:I2C_0_avalon_slave_0_address -> I2C_0:address
 	wire         mm_interconnect_0_i2c_0_avalon_slave_0_read;               // mm_interconnect_0:I2C_0_avalon_slave_0_read -> I2C_0:read
 	wire         mm_interconnect_0_i2c_0_avalon_slave_0_write;              // mm_interconnect_0:I2C_0_avalon_slave_0_write -> I2C_0:write
 	wire  [31:0] mm_interconnect_0_i2c_0_avalon_slave_0_writedata;          // mm_interconnect_0:I2C_0_avalon_slave_0_writedata -> I2C_0:writedata
 	wire  [31:0] mm_interconnect_0_i2c_1_avalon_slave_0_readdata;           // I2C_1:readdata -> mm_interconnect_0:I2C_1_avalon_slave_0_readdata
 	wire         mm_interconnect_0_i2c_1_avalon_slave_0_waitrequest;        // I2C_1:waitrequest -> mm_interconnect_0:I2C_1_avalon_slave_0_waitrequest
-	wire   [2:0] mm_interconnect_0_i2c_1_avalon_slave_0_address;            // mm_interconnect_0:I2C_1_avalon_slave_0_address -> I2C_1:address
+	wire   [3:0] mm_interconnect_0_i2c_1_avalon_slave_0_address;            // mm_interconnect_0:I2C_1_avalon_slave_0_address -> I2C_1:address
 	wire         mm_interconnect_0_i2c_1_avalon_slave_0_read;               // mm_interconnect_0:I2C_1_avalon_slave_0_read -> I2C_1:read
 	wire         mm_interconnect_0_i2c_1_avalon_slave_0_write;              // mm_interconnect_0:I2C_1_avalon_slave_0_write -> I2C_1:write
 	wire  [31:0] mm_interconnect_0_i2c_1_avalon_slave_0_writedata;          // mm_interconnect_0:I2C_1_avalon_slave_0_writedata -> I2C_1:writedata
 	wire  [31:0] mm_interconnect_0_i2c_2_avalon_slave_0_readdata;           // I2C_2:readdata -> mm_interconnect_0:I2C_2_avalon_slave_0_readdata
 	wire         mm_interconnect_0_i2c_2_avalon_slave_0_waitrequest;        // I2C_2:waitrequest -> mm_interconnect_0:I2C_2_avalon_slave_0_waitrequest
-	wire   [2:0] mm_interconnect_0_i2c_2_avalon_slave_0_address;            // mm_interconnect_0:I2C_2_avalon_slave_0_address -> I2C_2:address
+	wire   [3:0] mm_interconnect_0_i2c_2_avalon_slave_0_address;            // mm_interconnect_0:I2C_2_avalon_slave_0_address -> I2C_2:address
 	wire         mm_interconnect_0_i2c_2_avalon_slave_0_read;               // mm_interconnect_0:I2C_2_avalon_slave_0_read -> I2C_2:read
 	wire         mm_interconnect_0_i2c_2_avalon_slave_0_write;              // mm_interconnect_0:I2C_2_avalon_slave_0_write -> I2C_2:write
 	wire  [31:0] mm_interconnect_0_i2c_2_avalon_slave_0_writedata;          // mm_interconnect_0:I2C_2_avalon_slave_0_writedata -> I2C_2:writedata
 	wire  [31:0] mm_interconnect_0_i2c_3_avalon_slave_0_readdata;           // I2C_3:readdata -> mm_interconnect_0:I2C_3_avalon_slave_0_readdata
 	wire         mm_interconnect_0_i2c_3_avalon_slave_0_waitrequest;        // I2C_3:waitrequest -> mm_interconnect_0:I2C_3_avalon_slave_0_waitrequest
-	wire   [2:0] mm_interconnect_0_i2c_3_avalon_slave_0_address;            // mm_interconnect_0:I2C_3_avalon_slave_0_address -> I2C_3:address
+	wire   [3:0] mm_interconnect_0_i2c_3_avalon_slave_0_address;            // mm_interconnect_0:I2C_3_avalon_slave_0_address -> I2C_3:address
 	wire         mm_interconnect_0_i2c_3_avalon_slave_0_read;               // mm_interconnect_0:I2C_3_avalon_slave_0_read -> I2C_3:read
 	wire         mm_interconnect_0_i2c_3_avalon_slave_0_write;              // mm_interconnect_0:I2C_3_avalon_slave_0_write -> I2C_3:write
 	wire  [31:0] mm_interconnect_0_i2c_3_avalon_slave_0_writedata;          // mm_interconnect_0:I2C_3_avalon_slave_0_writedata -> I2C_3:writedata
@@ -311,7 +311,7 @@ module soc_system (
 	);
 
 	MYOControl #(
-		.NUMBER_OF_MOTORS        (9),
+		.NUMBER_OF_MOTORS        (6),
 		.CLOCK_SPEED_HZ          (50000000),
 		.ENABLE_MYOBRICK_CONTROL (0)
 	) myocontrol_0 (
@@ -322,24 +322,24 @@ module soc_system (
 		.read                 (mm_interconnect_0_myocontrol_0_avalon_slave_0_read),        //               .read
 		.readdata             (mm_interconnect_0_myocontrol_0_avalon_slave_0_readdata),    //               .readdata
 		.waitrequest          (mm_interconnect_0_myocontrol_0_avalon_slave_0_waitrequest), //               .waitrequest
-		.miso                 (myocontrol_0_conduit_end_miso),                             //    conduit_end.miso
-		.mosi                 (myocontrol_0_conduit_end_mosi),                             //               .mosi
-		.sck                  (myocontrol_0_conduit_end_sck),                              //               .sck
-		.ss_n_o               (myocontrol_0_conduit_end_ss_n),                             //               .ss_n
-		.mirrored_muscle_unit (myocontrol_0_conduit_end_mirrored_muscle_unit),             //               .mirrored_muscle_unit
-		.power_sense_n        (myocontrol_0_conduit_end_power_sense_n),                    //               .power_sense_n
-		.gpio_n               (myocontrol_0_conduit_end_gpio_n),                           //               .gpio_n
-		.angle_miso           (myocontrol_0_conduit_end_angle_miso),                       //               .angle_miso
+		.angle_miso           (myocontrol_0_conduit_end_angle_miso),                       //    conduit_end.angle_miso
 		.angle_mosi           (myocontrol_0_conduit_end_angle_mosi),                       //               .angle_mosi
 		.angle_sck            (myocontrol_0_conduit_end_angle_sck),                        //               .angle_sck
 		.angle_ss_n_o         (myocontrol_0_conduit_end_angle_ss_n_o),                     //               .angle_ss_n_o
+		.gpio_n               (myocontrol_0_conduit_end_gpio_n),                           //               .gpio_n
+		.mirrored_muscle_unit (myocontrol_0_conduit_end_mirrored_muscle_unit),             //               .mirrored_muscle_unit
+		.miso                 (myocontrol_0_conduit_end_miso),                             //               .miso
+		.mosi                 (myocontrol_0_conduit_end_mosi),                             //               .mosi
+		.power_sense_n        (myocontrol_0_conduit_end_power_sense_n),                    //               .power_sense_n
+		.ss_n_o               (myocontrol_0_conduit_end_ss_n_o),                           //               .ss_n_o
+		.sck                  (myocontrol_0_conduit_end_sck),                              //               .sck
 		.clock                (clk_clk)                                                    //     clock_sink.clk
 	);
 
 	MYOControl #(
 		.NUMBER_OF_MOTORS        (6),
 		.CLOCK_SPEED_HZ          (50000000),
-		.ENABLE_MYOBRICK_CONTROL (1)
+		.ENABLE_MYOBRICK_CONTROL (0)
 	) myocontrol_1 (
 		.reset                (rst_controller_reset_out_reset),                            //          reset.reset
 		.address              (mm_interconnect_0_myocontrol_1_avalon_slave_0_address),     // avalon_slave_0.address
@@ -348,17 +348,17 @@ module soc_system (
 		.read                 (mm_interconnect_0_myocontrol_1_avalon_slave_0_read),        //               .read
 		.readdata             (mm_interconnect_0_myocontrol_1_avalon_slave_0_readdata),    //               .readdata
 		.waitrequest          (mm_interconnect_0_myocontrol_1_avalon_slave_0_waitrequest), //               .waitrequest
-		.miso                 (myocontrol_1_conduit_end_miso),                             //    conduit_end.miso
-		.mosi                 (myocontrol_1_conduit_end_mosi),                             //               .mosi
-		.sck                  (myocontrol_1_conduit_end_sck),                              //               .sck
-		.ss_n_o               (myocontrol_1_conduit_end_ss_n),                             //               .ss_n
-		.mirrored_muscle_unit (myocontrol_1_conduit_end_mirrored_muscle_unit),             //               .mirrored_muscle_unit
-		.power_sense_n        (myocontrol_1_conduit_end_power_sense_n),                    //               .power_sense_n
-		.gpio_n               (myocontrol_1_conduit_end_gpio_n),                           //               .gpio_n
-		.angle_miso           (myocontrol_1_conduit_end_angle_miso),                       //               .angle_miso
+		.angle_miso           (myocontrol_1_conduit_end_angle_miso),                       //    conduit_end.angle_miso
 		.angle_mosi           (myocontrol_1_conduit_end_angle_mosi),                       //               .angle_mosi
 		.angle_sck            (myocontrol_1_conduit_end_angle_sck),                        //               .angle_sck
 		.angle_ss_n_o         (myocontrol_1_conduit_end_angle_ss_n_o),                     //               .angle_ss_n_o
+		.gpio_n               (myocontrol_1_conduit_end_gpio_n),                           //               .gpio_n
+		.mirrored_muscle_unit (myocontrol_1_conduit_end_mirrored_muscle_unit),             //               .mirrored_muscle_unit
+		.miso                 (myocontrol_1_conduit_end_miso),                             //               .miso
+		.mosi                 (myocontrol_1_conduit_end_mosi),                             //               .mosi
+		.power_sense_n        (myocontrol_1_conduit_end_power_sense_n),                    //               .power_sense_n
+		.ss_n_o               (myocontrol_1_conduit_end_ss_n_o),                           //               .ss_n_o
+		.sck                  (myocontrol_1_conduit_end_sck),                              //               .sck
 		.clock                (clk_clk)                                                    //     clock_sink.clk
 	);
 
@@ -374,17 +374,17 @@ module soc_system (
 		.read                 (mm_interconnect_0_myocontrol_2_avalon_slave_0_read),        //               .read
 		.readdata             (mm_interconnect_0_myocontrol_2_avalon_slave_0_readdata),    //               .readdata
 		.waitrequest          (mm_interconnect_0_myocontrol_2_avalon_slave_0_waitrequest), //               .waitrequest
-		.miso                 (myocontrol_2_conduit_end_miso),                             //    conduit_end.miso
-		.mosi                 (myocontrol_2_conduit_end_mosi),                             //               .mosi
-		.sck                  (myocontrol_2_conduit_end_sck),                              //               .sck
-		.ss_n_o               (myocontrol_2_conduit_end_ss_n),                             //               .ss_n
-		.mirrored_muscle_unit (myocontrol_2_conduit_end_mirrored_muscle_unit),             //               .mirrored_muscle_unit
-		.power_sense_n        (myocontrol_2_conduit_end_power_sense_n),                    //               .power_sense_n
-		.gpio_n               (myocontrol_2_conduit_end_gpio_n),                           //               .gpio_n
-		.angle_miso           (myocontrol_2_conduit_end_angle_miso),                       //               .angle_miso
+		.angle_miso           (myocontrol_2_conduit_end_angle_miso),                       //    conduit_end.angle_miso
 		.angle_mosi           (myocontrol_2_conduit_end_angle_mosi),                       //               .angle_mosi
 		.angle_sck            (myocontrol_2_conduit_end_angle_sck),                        //               .angle_sck
 		.angle_ss_n_o         (myocontrol_2_conduit_end_angle_ss_n_o),                     //               .angle_ss_n_o
+		.gpio_n               (myocontrol_2_conduit_end_gpio_n),                           //               .gpio_n
+		.mirrored_muscle_unit (myocontrol_2_conduit_end_mirrored_muscle_unit),             //               .mirrored_muscle_unit
+		.miso                 (myocontrol_2_conduit_end_miso),                             //               .miso
+		.mosi                 (myocontrol_2_conduit_end_mosi),                             //               .mosi
+		.power_sense_n        (myocontrol_2_conduit_end_power_sense_n),                    //               .power_sense_n
+		.ss_n_o               (myocontrol_2_conduit_end_ss_n_o),                           //               .ss_n_o
+		.sck                  (myocontrol_2_conduit_end_sck),                              //               .sck
 		.clock                (clk_clk)                                                    //     clock_sink.clk
 	);
 
