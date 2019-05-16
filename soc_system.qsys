@@ -1306,16 +1306,16 @@
  <module name="MYOControl_0" kind="MYOControl" version="1.0" enabled="1">
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
   <parameter name="ENABLE_MYOBRICK_CONTROL" value="0" />
-  <parameter name="NUMBER_OF_MOTORS" value="6" />
+  <parameter name="NUMBER_OF_MOTORS" value="9" />
  </module>
  <module name="MYOControl_1" kind="MYOControl" version="1.0" enabled="1">
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
-  <parameter name="ENABLE_MYOBRICK_CONTROL" value="0" />
+  <parameter name="ENABLE_MYOBRICK_CONTROL" value="1" />
   <parameter name="NUMBER_OF_MOTORS" value="6" />
  </module>
  <module name="MYOControl_2" kind="MYOControl" version="1.0" enabled="1">
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
-  <parameter name="ENABLE_MYOBRICK_CONTROL" value="0" />
+  <parameter name="ENABLE_MYOBRICK_CONTROL" value="1" />
   <parameter name="NUMBER_OF_MOTORS" value="6" />
  </module>
  <module name="SWITCHES" kind="altera_avalon_pio" version="18.1" enabled="1">

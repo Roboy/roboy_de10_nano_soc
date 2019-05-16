@@ -211,13 +211,13 @@ module soc_system (
 	input		myocontrol_0_conduit_end_angle_miso;
 	output		myocontrol_0_conduit_end_angle_mosi;
 	output		myocontrol_0_conduit_end_angle_sck;
-	output	[5:0]	myocontrol_0_conduit_end_angle_ss_n_o;
+	output	[8:0]	myocontrol_0_conduit_end_angle_ss_n_o;
 	output		myocontrol_0_conduit_end_gpio_n;
 	input		myocontrol_0_conduit_end_mirrored_muscle_unit;
 	input		myocontrol_0_conduit_end_miso;
 	output		myocontrol_0_conduit_end_mosi;
 	input		myocontrol_0_conduit_end_power_sense_n;
-	output	[5:0]	myocontrol_0_conduit_end_ss_n_o;
+	output	[8:0]	myocontrol_0_conduit_end_ss_n_o;
 	output		myocontrol_0_conduit_end_sck;
 	input		myocontrol_1_conduit_end_angle_miso;
 	output		myocontrol_1_conduit_end_angle_mosi;

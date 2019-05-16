@@ -93,13 +93,13 @@ module soc_system (
 		input  wire        myocontrol_0_conduit_end_angle_miso,           //     myocontrol_0_conduit_end.angle_miso
 		output wire        myocontrol_0_conduit_end_angle_mosi,           //                             .angle_mosi
 		output wire        myocontrol_0_conduit_end_angle_sck,            //                             .angle_sck
-		output wire [5:0]  myocontrol_0_conduit_end_angle_ss_n_o,         //                             .angle_ss_n_o
+		output wire [8:0]  myocontrol_0_conduit_end_angle_ss_n_o,         //                             .angle_ss_n_o
 		output wire        myocontrol_0_conduit_end_gpio_n,               //                             .gpio_n
 		input  wire        myocontrol_0_conduit_end_mirrored_muscle_unit, //                             .mirrored_muscle_unit
 		input  wire        myocontrol_0_conduit_end_miso,                 //                             .miso
 		output wire        myocontrol_0_conduit_end_mosi,                 //                             .mosi
 		input  wire        myocontrol_0_conduit_end_power_sense_n,        //                             .power_sense_n
-		output wire [5:0]  myocontrol_0_conduit_end_ss_n_o,               //                             .ss_n_o
+		output wire [8:0]  myocontrol_0_conduit_end_ss_n_o,               //                             .ss_n_o
 		output wire        myocontrol_0_conduit_end_sck,                  //                             .sck
 		input  wire        myocontrol_1_conduit_end_angle_miso,           //     myocontrol_1_conduit_end.angle_miso
 		output wire        myocontrol_1_conduit_end_angle_mosi,           //                             .angle_mosi
@@ -311,7 +311,7 @@ module soc_system (
 	);
 
 	MYOControl #(
-		.NUMBER_OF_MOTORS        (6),
+		.NUMBER_OF_MOTORS        (9),
 		.CLOCK_SPEED_HZ          (50000000),
 		.ENABLE_MYOBRICK_CONTROL (0)
 	) myocontrol_0 (
@@ -339,7 +339,7 @@ module soc_system (
 	MYOControl #(
 		.NUMBER_OF_MOTORS        (6),
 		.CLOCK_SPEED_HZ          (50000000),
-		.ENABLE_MYOBRICK_CONTROL (0)
+		.ENABLE_MYOBRICK_CONTROL (1)
 	) myocontrol_1 (
 		.reset                (rst_controller_reset_out_reset),                            //          reset.reset
 		.address              (mm_interconnect_0_myocontrol_1_avalon_slave_0_address),     // avalon_slave_0.address
@@ -365,7 +365,7 @@ module soc_system (
 	MYOControl #(
 		.NUMBER_OF_MOTORS        (6),
 		.CLOCK_SPEED_HZ          (50000000),
-		.ENABLE_MYOBRICK_CONTROL (0)
+		.ENABLE_MYOBRICK_CONTROL (1)
 	) myocontrol_2 (
 		.reset                (rst_controller_reset_out_reset),                            //          reset.reset
 		.address              (mm_interconnect_0_myocontrol_2_avalon_slave_0_address),     // avalon_slave_0.address
