@@ -124,7 +124,7 @@ soc_system u0(
 //					.adc_ltc2308_0_conduit_end_SCK(ADC_SCK), 
 //					.adc_ltc2308_0_conduit_end_SDI(ADC_SDI),    
 //					.adc_ltc2308_0_conduit_end_SDO(ADC_SDO),
-//					// three i2c buses
+//					// six i2c buses
 					.i2c_0_conduit_end_scl(GPIO_0[35]), 
 					.i2c_0_conduit_end_sda(GPIO_0[34]), 
 					.i2c_1_conduit_end_scl(GPIO_0[33]),
@@ -133,6 +133,12 @@ soc_system u0(
 					.i2c_2_conduit_end_sda(GPIO_0[30]), 
 					.i2c_3_conduit_end_scl(GPIO_0[29]), 
 					.i2c_3_conduit_end_sda(GPIO_0[28]),  
+					.i2c_4_conduit_end_scl(GPIO_1[33]),
+					.i2c_4_conduit_end_sda(GPIO_1[32]), 
+					.i2c_5_conduit_end_scl(GPIO_1[31]), 
+					.i2c_5_conduit_end_sda(GPIO_1[30]),  
+					// neopixel
+					.neopixel_0_conduit_end_one_wire(GPIO_1[34]),
 //					// tlv493d
 //					.tlv493_0_conduit_end_scl({GPIO_0[35],GPIO_0[33],GPIO_0[31]}), 
 //		         .tlv493_0_conduit_end_sda({GPIO_0[34],GPIO_0[32],GPIO_0[30]}),
@@ -163,8 +169,8 @@ soc_system u0(
 					.myocontrol_2_conduit_end_angle_miso(GPIO_0[10]),        
 					.myocontrol_2_conduit_end_angle_sck(GPIO_0[11]),            
 					.myocontrol_2_conduit_end_angle_ss_n_o(GPIO_0[17:12]), 
-//					.pwm_0_conduit_end_pwm(ARDUINO_IO[1:0]),
-//					.pio_0_external_connection_export(ARDUINO_IO[9:2]),
+					.pwm_0_conduit_end_pwm(ARDUINO_IO[1:0]),
+					.pio_0_external_connection_export(ARDUINO_IO[9:2]),
 					// led
 					.led_external_connection_export(LED),
 					// switches

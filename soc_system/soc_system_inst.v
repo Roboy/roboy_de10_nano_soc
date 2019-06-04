@@ -68,6 +68,14 @@
 		.i2c_3_conduit_end_sda                         (<connected-to-i2c_3_conduit_end_sda>),                         //                             .sda
 		.i2c_3_conduit_end_led                         (<connected-to-i2c_3_conduit_end_led>),                         //                             .led
 		.i2c_3_conduit_end_gpio                        (<connected-to-i2c_3_conduit_end_gpio>),                        //                             .gpio
+		.i2c_4_conduit_end_scl                         (<connected-to-i2c_4_conduit_end_scl>),                         //            i2c_4_conduit_end.scl
+		.i2c_4_conduit_end_sda                         (<connected-to-i2c_4_conduit_end_sda>),                         //                             .sda
+		.i2c_4_conduit_end_led                         (<connected-to-i2c_4_conduit_end_led>),                         //                             .led
+		.i2c_4_conduit_end_gpio                        (<connected-to-i2c_4_conduit_end_gpio>),                        //                             .gpio
+		.i2c_5_conduit_end_scl                         (<connected-to-i2c_5_conduit_end_scl>),                         //            i2c_5_conduit_end.scl
+		.i2c_5_conduit_end_sda                         (<connected-to-i2c_5_conduit_end_sda>),                         //                             .sda
+		.i2c_5_conduit_end_led                         (<connected-to-i2c_5_conduit_end_led>),                         //                             .led
+		.i2c_5_conduit_end_gpio                        (<connected-to-i2c_5_conduit_end_gpio>),                        //                             .gpio
 		.led_external_connection_export                (<connected-to-led_external_connection_export>),                //      led_external_connection.export
 		.memory_mem_a                                  (<connected-to-memory_mem_a>),                                  //                       memory.mem_a
 		.memory_mem_ba                                 (<connected-to-memory_mem_ba>),                                 //                             .mem_ba
@@ -118,6 +126,9 @@
 		.myocontrol_2_conduit_end_power_sense_n        (<connected-to-myocontrol_2_conduit_end_power_sense_n>),        //                             .power_sense_n
 		.myocontrol_2_conduit_end_ss_n_o               (<connected-to-myocontrol_2_conduit_end_ss_n_o>),               //                             .ss_n_o
 		.myocontrol_2_conduit_end_sck                  (<connected-to-myocontrol_2_conduit_end_sck>),                  //                             .sck
+		.neopixel_0_conduit_end_one_wire               (<connected-to-neopixel_0_conduit_end_one_wire>),               //       neopixel_0_conduit_end.one_wire
+		.pio_0_external_connection_export              (<connected-to-pio_0_external_connection_export>),              //    pio_0_external_connection.export
+		.pwm_0_conduit_end_pwm                         (<connected-to-pwm_0_conduit_end_pwm>),                         //            pwm_0_conduit_end.pwm
 		.reset_reset_n                                 (<connected-to-reset_reset_n>),                                 //                        reset.reset_n
 		.switches_external_connection_export           (<connected-to-switches_external_connection_export>)            // switches_external_connection.export
 	);

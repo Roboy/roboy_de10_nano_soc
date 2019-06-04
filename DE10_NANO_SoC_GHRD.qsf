@@ -706,6 +706,9 @@ set_instance_assignment -name SLEW_RATE 0 -to GPIO_1[29]
 set_instance_assignment -name SLEW_RATE 0 -to GPIO_1[28]
 set_instance_assignment -name SLEW_RATE 0 -to GPIO_1[27]
 set_instance_assignment -name SLEW_RATE 0 -to GPIO_1[26]
+set_global_assignment -name VERILOG_FILE ip/roboy_fpga_code/neopixel/Counter.v
+set_global_assignment -name VERILOG_FILE ip/roboy_fpga_code/neopixel/neopixel.v
+set_global_assignment -name QIP_FILE ip/roboy_fpga_code/neopixel/neopixel_fifo.qip
 set_global_assignment -name SYSTEMVERILOG_FILE ip/roboy_fpga_code/myo_control/MYOControl.sv
 set_global_assignment -name SYSTEMVERILOG_FILE ip/roboy_fpga_code/tlv493/TLV493.sv
 set_global_assignment -name VERILOG_FILE ip/roboy_fpga_code/pwm_control/pwm_avalon_bridge.v
