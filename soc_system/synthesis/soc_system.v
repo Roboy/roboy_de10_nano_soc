@@ -596,6 +596,7 @@ module soc_system (
 	);
 
 	neopixel #(
+		.CLOCK_SPEED_HZ     (50000000),
 		.NUMBER_OF_NEOPIXEL (10),
 		.RGBW               (0)
 	) neopixel_0 (
