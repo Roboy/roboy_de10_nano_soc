@@ -143,12 +143,12 @@ soc_system u0(
 //					.tlv493_0_conduit_end_scl({GPIO_0[35],GPIO_0[33],GPIO_0[31]}), 
 //		         .tlv493_0_conduit_end_sda({GPIO_0[34],GPIO_0[32],GPIO_0[30]}),
 					// myocontrol, three buses (9/6/6 motors)
-//					.myocontrol_0_conduit_end_mosi(GPIO_1[1]),
-//					.myocontrol_0_conduit_end_miso(GPIO_1[0]),
-//					.myocontrol_0_conduit_end_sck(GPIO_1[2]),
-//					.myocontrol_0_conduit_end_ss_n_o({GPIO_1[11:3]}),
-//					.myocontrol_0_conduit_end_mirrored_muscle_unit(SW[2]==1 && SW[1]==0 && SW[0]==0), // true for switch ID 4
-//					.myocontrol_0_conduit_end_power_sense_n(GPIO_1[35] && SW[3]),
+					.myocontrol_0_conduit_end_mosi(GPIO_1[1]),
+					.myocontrol_0_conduit_end_miso(GPIO_1[0]),
+					.myocontrol_0_conduit_end_sck(GPIO_1[2]),
+					.myocontrol_0_conduit_end_ss_n_o({GPIO_1[11:3]}),
+					.myocontrol_0_conduit_end_mirrored_muscle_unit(SW[2]==1 && SW[1]==0 && SW[0]==0), // true for switch ID 4
+					.myocontrol_0_conduit_end_power_sense_n(GPIO_1[35] && SW[3]),
 //					.myocontrol_1_conduit_end_mosi(GPIO_1[13]), 
 //					.myocontrol_1_conduit_end_miso(GPIO_1[12]),
 //					.myocontrol_1_conduit_end_sck(GPIO_1[14]),

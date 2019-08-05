@@ -71,7 +71,13 @@ module soc_system (
 	memory_mem_dm,
 	memory_oct_rzqin,
 	reset_reset_n,
-	switches_external_connection_export);	
+	switches_external_connection_export,
+	myocontrol_0_conduit_end_mirrored_muscle_unit,
+	myocontrol_0_conduit_end_miso,
+	myocontrol_0_conduit_end_mosi,
+	myocontrol_0_conduit_end_power_sense_n,
+	myocontrol_0_conduit_end_ss_n_o,
+	myocontrol_0_conduit_end_sck);	
 
 	input		clk_clk;
 	input		hps_0_f2h_cold_reset_req_reset_n;
@@ -145,4 +151,10 @@ module soc_system (
 	input		memory_oct_rzqin;
 	input		reset_reset_n;
 	input	[3:0]	switches_external_connection_export;
+	input		myocontrol_0_conduit_end_mirrored_muscle_unit;
+	input		myocontrol_0_conduit_end_miso;
+	output		myocontrol_0_conduit_end_mosi;
+	input		myocontrol_0_conduit_end_power_sense_n;
+	output	[5:0]	myocontrol_0_conduit_end_ss_n_o;
+	output		myocontrol_0_conduit_end_sck;
 endmodule

@@ -24,9 +24,9 @@
 // agreement for further details.
 
 
-// $Id: //acds/rel/18.1std/ip/merlin/altera_merlin_router/altera_merlin_router.sv.terp#1 $
+// $Id: //acds/rel/18.0std/ip/merlin/altera_merlin_router/altera_merlin_router.sv.terp#1 $
 // $Revision: #1 $
-// $Date: 2018/07/18 $
+// $Date: 2018/01/31 $
 // $Author: psgswbuild $
 
 // -------------------------------------------------------
@@ -47,7 +47,7 @@ module soc_system_mm_interconnect_0_router_default_decode
      parameter DEFAULT_CHANNEL = 1,
                DEFAULT_WR_CHANNEL = -1,
                DEFAULT_RD_CHANNEL = -1,
-               DEFAULT_DESTID = 0 
+               DEFAULT_DESTID = 1 
    )
   (output [91 - 89 : 0] default_destination_id,
    output [5-1 : 0] default_wr_channel,
@@ -134,17 +134,17 @@ module soc_system_mm_interconnect_0_router
     // Figure out the number of bits to mask off for each slave span
     // during address decoding
     // -------------------------------------------------------
-    localparam PAD0 = log2ceil(64'h400 - 64'h0); 
-    localparam PAD1 = log2ceil(64'h5a0 - 64'h590); 
-    localparam PAD2 = log2ceil(64'h5b0 - 64'h5a0); 
-    localparam PAD3 = log2ceil(64'h1008 - 64'h1000); 
-    localparam PAD4 = log2ceil(64'h2008 - 64'h2000); 
+    localparam PAD0 = log2ceil(64'h10 - 64'h0); 
+    localparam PAD1 = log2ceil(64'h20 - 64'h10); 
+    localparam PAD2 = log2ceil(64'h1008 - 64'h1000); 
+    localparam PAD3 = log2ceil(64'h2008 - 64'h2000); 
+    localparam PAD4 = log2ceil(64'h80000 - 64'h40000); 
     // -------------------------------------------------------
     // Work out which address bits are significant based on the
     // address range of the slaves. If the required width is too
     // large or too small, we use the address field width instead.
     // -------------------------------------------------------
-    localparam ADDR_RANGE = 64'h2008;
+    localparam ADDR_RANGE = 64'h80000;
     localparam RANGE_ADDR_WIDTH = log2ceil(ADDR_RANGE);
     localparam OPTIMIZED_ADDR_H = (RANGE_ADDR_WIDTH > PKT_ADDR_W) ||
                                   (RANGE_ADDR_WIDTH == 0) ?
@@ -197,34 +197,34 @@ module soc_system_mm_interconnect_0_router
         // Sets the channel and destination ID based on the address
         // --------------------------------------------------
 
-    // ( 0x0 .. 0x400 )
-    if ( {address[RG:PAD0],{PAD0{1'b0}}} == 14'h0   ) begin
-            src_channel = 5'b00010;
-            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 0;
-    end
-
-    // ( 0x590 .. 0x5a0 )
-    if ( {address[RG:PAD1],{PAD1{1'b0}}} == 14'h590  && read_transaction  ) begin
+    // ( 0x0 .. 0x10 )
+    if ( {address[RG:PAD0],{PAD0{1'b0}}} == 19'h0  && read_transaction  ) begin
             src_channel = 5'b10000;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 2;
     end
 
-    // ( 0x5a0 .. 0x5b0 )
-    if ( {address[RG:PAD2],{PAD2{1'b0}}} == 14'h5a0   ) begin
+    // ( 0x10 .. 0x20 )
+    if ( {address[RG:PAD1],{PAD1{1'b0}}} == 19'h10   ) begin
             src_channel = 5'b01000;
-            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 1;
+            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 0;
     end
 
     // ( 0x1000 .. 0x1008 )
-    if ( {address[RG:PAD3],{PAD3{1'b0}}} == 14'h1000  && read_transaction  ) begin
+    if ( {address[RG:PAD2],{PAD2{1'b0}}} == 19'h1000  && read_transaction  ) begin
             src_channel = 5'b00100;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 4;
     end
 
     // ( 0x2000 .. 0x2008 )
-    if ( {address[RG:PAD4],{PAD4{1'b0}}} == 14'h2000   ) begin
+    if ( {address[RG:PAD3],{PAD3{1'b0}}} == 19'h2000   ) begin
             src_channel = 5'b00001;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 3;
+    end
+
+    // ( 0x40000 .. 0x80000 )
+    if ( {address[RG:PAD4],{PAD4{1'b0}}} == 19'h40000   ) begin
+            src_channel = 5'b00010;
+            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 1;
     end
 
 end
