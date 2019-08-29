@@ -6,7 +6,7 @@
 set_global_assignment -name FAMILY "Cyclone V"
 set_global_assignment -name DEVICE 5CSEBA6U23I7
 set_global_assignment -name TOP_LEVEL_ENTITY DE10_NANO_SoC_GHRD
-set_global_assignment -name LAST_QUARTUS_VERSION "18.0.0 Lite Edition"
+set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Lite Edition"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "17:14:54 MARCH 04,2015"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 
@@ -735,7 +735,6 @@ set_global_assignment -name SYSTEMVERILOG_FILE ip/roboy_fpga_code/myo_control/MY
 set_global_assignment -name SYSTEMVERILOG_FILE ip/roboy_fpga_code/a133x/A1339.sv
 set_global_assignment -name VERILOG_FILE ip/roboy_fpga_code/myo_control/ArmControl.v
 set_global_assignment -name VERILOG_FILE ip/roboy_fpga_code/lighthouse_tracking/ts4231.v
-set_global_assignment -name VERILOG_FILE ip/roboy_fpga_code/myo_control/A1335Control.v
 set_global_assignment -name VERILOG_FILE ip/roboy_fpga_code/lighthouse_tracking/uart_tx.v
 set_global_assignment -name VERILOG_FILE ip/roboy_fpga_code/lighthouse_tracking/SpiControl_esp8266.v
 set_global_assignment -name VERILOG_FILE ip/roboy_fpga_code/lighthouse_tracking/DarkRoomOOTXdecoder.v

@@ -165,3 +165,4 @@ module clock_divider (
 		end
 	assign out_clk = out_clk_reg;
 endmodule
+

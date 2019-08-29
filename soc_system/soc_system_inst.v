@@ -125,13 +125,15 @@
 		.myocontrol_2_conduit_end_ss_n_o               (<connected-to-myocontrol_2_conduit_end_ss_n_o>),               //                               .ss_n_o
 		.myocontrol_2_conduit_end_gpio_n               (<connected-to-myocontrol_2_conduit_end_gpio_n>),               //                               .gpio_n
 		.reset_reset_n                                 (<connected-to-reset_reset_n>),                                 //                          reset.reset_n
-		.switches_external_connection_export           (<connected-to-switches_external_connection_export>),           //   switches_external_connection.export
 		.rikshawcontrol_0_conduit_end_1_angle_miso     (<connected-to-rikshawcontrol_0_conduit_end_1_angle_miso>),     // rikshawcontrol_0_conduit_end_1.angle_miso
 		.rikshawcontrol_0_conduit_end_1_angle_mosi     (<connected-to-rikshawcontrol_0_conduit_end_1_angle_mosi>),     //                               .angle_mosi
 		.rikshawcontrol_0_conduit_end_1_angle_sck      (<connected-to-rikshawcontrol_0_conduit_end_1_angle_sck>),      //                               .angle_sck
 		.rikshawcontrol_0_conduit_end_1_angle_ss_n_o   (<connected-to-rikshawcontrol_0_conduit_end_1_angle_ss_n_o>),   //                               .angle_ss_n_o
 		.rikshawcontrol_0_conduit_end_1_emergency_off  (<connected-to-rikshawcontrol_0_conduit_end_1_emergency_off>),  //                               .emergency_off
 		.rikshawcontrol_0_conduit_end_1_throttle       (<connected-to-rikshawcontrol_0_conduit_end_1_throttle>),       //                               .throttle
-		.rikshawcontrol_0_conduit_end_1_new_signal     (<connected-to-rikshawcontrol_0_conduit_end_1_new_signal>)      //                               .new_signal
+		.rikshawcontrol_0_conduit_end_1_hall_sensor1   (<connected-to-rikshawcontrol_0_conduit_end_1_hall_sensor1>),   //                               .hall_sensor1
+		.rikshawcontrol_0_conduit_end_1_hall_sensor2   (<connected-to-rikshawcontrol_0_conduit_end_1_hall_sensor2>),   //                               .hall_sensor2
+		.rikshawcontrol_0_conduit_end_1_hall_sensor3   (<connected-to-rikshawcontrol_0_conduit_end_1_hall_sensor3>),   //                               .hall_sensor3
+		.switches_external_connection_export           (<connected-to-switches_external_connection_export>)            //   switches_external_connection.export
 	);
 
