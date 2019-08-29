@@ -154,39 +154,39 @@ soc_system u0(
 					.i2c_3_conduit_end_scl(GPIO_0[29]),
 					.i2c_3_conduit_end_sda(GPIO_0[28]), 
 //						// myocontrol, three buses (9/4/3 motors)
-					.myocontrol_0_conduit_end_mosi(GPIO_1[21]),
-					.myocontrol_0_conduit_end_miso(GPIO_1[22]),
-					.myocontrol_0_conduit_end_sck(GPIO_1[23]),
-					.myocontrol_0_conduit_end_ss_n_o({GPIO_1[29:24]}),
+					.myocontrol_0_conduit_end_mosi(GPIO_0[10]),
+					.myocontrol_0_conduit_end_miso(GPIO_0[13]),
+					.myocontrol_0_conduit_end_sck(GPIO_0[14]),
+					.myocontrol_0_conduit_end_ss_n_o({GPIO_0[20:15]}),
 					.myocontrol_0_conduit_end_mirrored_muscle_unit(SW[2]==1 && SW[1]==0 && SW[0]==0), // true for switch ID 4
 					.myocontrol_0_conduit_end_power_sense_n(GPIO_1[35] && SW[3]),
 					
-					.myocontrol_1_conduit_end_mosi(GPIO_1[12]), 
-					.myocontrol_1_conduit_end_miso(GPIO_1[13]),
-					.myocontrol_1_conduit_end_sck(GPIO_1[14]),
-					.myocontrol_1_conduit_end_ss_n_o({GPIO_1[20:15]}),
+					.myocontrol_1_conduit_end_mosi(GPIO_1[21]), 
+					.myocontrol_1_conduit_end_miso(GPIO_1[22]),
+					.myocontrol_1_conduit_end_sck(GPIO_1[23]),
+					.myocontrol_1_conduit_end_ss_n_o({GPIO_1[29:24]}),
 					.myocontrol_1_conduit_end_mirrored_muscle_unit(SW[2]==1 && SW[1]==0 && SW[0]==0), // true for switch ID 4
 					.myocontrol_1_conduit_end_power_sense_n(GPIO_1[35] && SW[3]),
-					//.myocontrol_1_conduit_end_angle_mosi(GPIO_0[0]),
-					//.myocontrol_1_conduit_end_angle_miso(GPIO_0[1]),
-					//.myocontrol_1_conduit_end_angle_sck(GPIO_0[2]),
-					//.myocontrol_1_conduit_end_angle_ss_n_o(GPIO_0[8:3]),
+					.myocontrol_1_conduit_end_angle_mosi(GPIO_0[0]),
+					.myocontrol_1_conduit_end_angle_miso(GPIO_0[1]),
+					.myocontrol_1_conduit_end_angle_sck(GPIO_0[2]),
+					.myocontrol_1_conduit_end_angle_ss_n_o(GPIO_0[8:3]),
 					
-					.myocontrol_2_conduit_end_mosi(GPIO_0[10]),
-					.myocontrol_2_conduit_end_miso(GPIO_0[13]),
-					.myocontrol_2_conduit_end_sck(GPIO_0[14]),
-					.myocontrol_2_conduit_end_ss_n_o({GPIO_0[20:15]}),
+					.myocontrol_2_conduit_end_mosi(GPIO_1[12]), 
+					.myocontrol_2_conduit_end_miso(GPIO_1[13]),
+					.myocontrol_2_conduit_end_sck(GPIO_1[14]),
+					.myocontrol_2_conduit_end_ss_n_o({GPIO_1[20:15]}),
 					.myocontrol_2_conduit_end_mirrored_muscle_unit(SW[2]==1 && SW[1]==0 && SW[0]==0), // true for switch ID 4
 					.myocontrol_2_conduit_end_power_sense_n(GPIO_1[35] && SW[3]),
-
-					
-					
-				/*	.myocontrol_2_conduit_end_mosi(GPIO_1[21]), 
-					.myocontrol_2_conduit_end_miso(GPIO_1[22]),
-					.myocontrol_2_conduit_end_sck(GPIO_1[23]),
-					.myocontrol_2_conduit_end_ss_n_o({GPIO_1[29:24]}),
+					/*
+					.myocontrol_2_conduit_end_mosi(GPIO_1[12]), 
+					.myocontrol_2_conduit_end_miso(GPIO_1[13]),
+					.myocontrol_2_conduit_end_sck(GPIO_1[14]),
+					.myocontrol_2_conduit_end_ss_n_o({GPIO_1[20:15]}),
 					.myocontrol_2_conduit_end_mirrored_muscle_unit(SW[2]==1 && SW[1]==0 && SW[0]==0), // true for switch ID 4
-					.myocontrol_2_conduit_end_power_sense_n(GPIO_1[35] && SW[3]),*/
+					.myocontrol_2_conduit_end_power_sense_n(GPIO_1[35] && SW[3]),
+					
+					*/
 //					.myocontrol_2_conduit_end_angle_mosi(GPIO_0[9]),
 //					.myocontrol_2_conduit_end_angle_miso(GPIO_0[10]),
 //					.myocontrol_2_conduit_end_angle_sck(GPIO_0[11]),
