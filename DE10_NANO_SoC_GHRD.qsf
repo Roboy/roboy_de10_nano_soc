@@ -683,18 +683,6 @@ set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to HPS_I2C1_SCLK
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to HPS_I2C1_SDAT
 set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (Verilog)"
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_0[35]
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_0[34]
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_0[33]
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_0[32]
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_0[31]
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_0[30]
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_0[29]
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_0[28]
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_1[33]
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_1[32]
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_1[31]
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_1[30]
 set_instance_assignment -name SLEW_RATE 0 -to GPIO_1[35]
 set_instance_assignment -name SLEW_RATE 0 -to GPIO_1[33]
 set_instance_assignment -name SLEW_RATE 0 -to GPIO_1[32]
@@ -704,25 +692,16 @@ set_instance_assignment -name SLEW_RATE 0 -to GPIO_1[29]
 set_instance_assignment -name SLEW_RATE 0 -to GPIO_1[28]
 set_instance_assignment -name SLEW_RATE 0 -to GPIO_1[27]
 set_instance_assignment -name SLEW_RATE 0 -to GPIO_1[26]
+set_global_assignment -name SYSTEMVERILOG_FILE ip/roboy_fpga_code/iceboard/coms.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ip/roboy_fpga_code/iceboard/iCEboardControl.sv
 set_global_assignment -name VERILOG_FILE ip/roboy_fpga_code/neopixel/Counter.v
 set_global_assignment -name VERILOG_FILE ip/roboy_fpga_code/neopixel/neopixel.v
 set_global_assignment -name QIP_FILE ip/roboy_fpga_code/neopixel/neopixel_fifo.qip
-set_global_assignment -name SYSTEMVERILOG_FILE ip/roboy_fpga_code/myo_control/MYOControl.sv
-set_global_assignment -name SYSTEMVERILOG_FILE ip/roboy_fpga_code/tlv493/TLV493.sv
-set_global_assignment -name VERILOG_FILE ip/roboy_fpga_code/pwm_control/pwm_avalon_bridge.v
-set_global_assignment -name VHDL_FILE ip/roboy_fpga_code/pwm_control/pwm.vhd
-set_global_assignment -name SYSTEMVERILOG_FILE ip/roboy_fpga_code/a133x/A1339.sv
-set_global_assignment -name SYSTEMVERILOG_FILE ip/roboy_fpga_code/a133x/A1339Control.sv
 set_global_assignment -name QIP_FILE soc_system/synthesis/soc_system.qip
-set_global_assignment -name VERILOG_FILE ip/roboy_fpga_code/myo_control/A1335Control.v
 set_global_assignment -name QIP_FILE ip/roboy_fpga_code/i2c/fifo.qip
 set_global_assignment -name VERILOG_FILE ip/roboy_fpga_code/i2c/oneshot.v
 set_global_assignment -name VERILOG_FILE ip/roboy_fpga_code/i2c/I2C_avalon_bridge.v
-set_global_assignment -name VHDL_FILE ip/roboy_fpga_code/myo_control/spi_master_slave/trunk/rtl/spi_master_slave/spi_master.vhd
 set_global_assignment -name VHDL_FILE ip/roboy_fpga_code/i2c/i2c_master.vhd
-set_global_assignment -name VERILOG_FILE ip/roboy_fpga_code/myo_control/SpiControl.v
-set_global_assignment -name VERILOG_FILE ip/roboy_fpga_code/myo_control/PIDController.v
-set_global_assignment -name VHDL_FILE ip/roboy_fpga_code/lighthouse_tracking/lighthouse_sensor.vhd
 set_global_assignment -name SDC_FILE DE10_NANO_SOC_GHRD.sdc
 set_global_assignment -name VERILOG_FILE ip/intr_capturer/intr_capturer.v
 set_global_assignment -name VERILOG_FILE ip/edge_detect/altera_edge_detector.v
