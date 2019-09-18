@@ -1037,7 +1037,7 @@
    kind="ICEboardControl"
    version="1.0"
    enabled="1">
-  <parameter name="BAUDRATE" value="115200" />
+  <parameter name="BAUDRATE" value="1000000" />
   <parameter name="CLOCK_FREQ_HZ" value="50000000" />
   <parameter name="NUMBER_OF_MOTORS" value="2" />
  </module>

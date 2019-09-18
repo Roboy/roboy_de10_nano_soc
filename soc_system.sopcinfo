@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="soc_system" kind="soc_system" version="1.0" fabric="QSYS">
  <!-- Format version 18.1 625 (Future versions may contain additional information.) -->
- <!-- 2019.09.18.15:18:14 -->
+ <!-- 2019.09.19.00:21:58 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1568812694</value>
+  <value>1568845318</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -120,7 +120,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="BAUDRATE">
    <type>int</type>
-   <value>115200</value>
+   <value>1000000</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -658,6 +658,12 @@ parameters are a RESULT of the module parameters. -->
     <direction>Output</direction>
     <width>1</width>
     <role>tx</role>
+   </port>
+   <port>
+    <name>debug_signals</name>
+    <direction>Output</direction>
+    <width>4</width>
+    <role>debug_signals</role>
    </port>
   </interface>
  </module>
@@ -74028,7 +74034,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.TIMESTAMP</name>
-   <value>1568812694</value>
+   <value>1568845318</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.compatible</name>
@@ -74048,7 +74054,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.timestamp</name>
-   <value>1568812694</value>
+   <value>1568845318</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.vendor</name>
@@ -74064,7 +74070,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="timestamp">
    <type>int</type>
-   <value>1568812694</value>
+   <value>1568845318</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
