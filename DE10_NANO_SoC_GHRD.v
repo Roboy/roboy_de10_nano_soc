@@ -123,8 +123,6 @@ soc_system u0(
 			.led_external_connection_export(LED),
 			.iceboardcontrol_0_conduit_end_rx(GPIO_0[2]),
 			.iceboardcontrol_0_conduit_end_tx(GPIO_0[3]),
-			.iceboardcontrol_0_conduit_end_rx_receive(GPIO_0[4]),
-			.iceboardcontrol_0_conduit_end_debug_signals(GPIO_0[8:5]),
 			//HPS ddr3
 			.memory_mem_a(HPS_DDR3_ADDR),                                //                         memory.mem_a
 			.memory_mem_ba(HPS_DDR3_BA),                                 //                               .mem_ba

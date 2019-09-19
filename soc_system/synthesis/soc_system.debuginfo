@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="soc_system" kind="system" version="18.1" fabric="QSYS">
  <!-- Format version 18.1 625 (Future versions may contain additional information.) -->
- <!-- 2019.09.19.00:22:27 -->
+ <!-- 2019.09.19.17:13:39 -->
  <!-- A collection of modules and connections -->
  <parameter name="clockCrossingAdapter">
   <type>com.altera.sopcmodel.ensemble.EClockAdapter</type>
@@ -53,7 +53,7 @@
  </parameter>
  <parameter name="generationId">
   <type>int</type>
-  <value>1568845318</value>
+  <value>1568905990</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>true</visible>
@@ -694,12 +694,6 @@ parameters are a RESULT of the module parameters. -->
    <type>conduit</type>
    <isStart>false</isStart>
    <port>
-    <name>rx_receive</name>
-    <direction>Bidir</direction>
-    <width>1</width>
-    <role>rx_receive</role>
-   </port>
-   <port>
     <name>rx</name>
     <direction>Input</direction>
     <width>1</width>
@@ -710,12 +704,6 @@ parameters are a RESULT of the module parameters. -->
     <direction>Output</direction>
     <width>1</width>
     <role>tx</role>
-   </port>
-   <port>
-    <name>debug_signals</name>
-    <direction>Output</direction>
-    <width>4</width>
-    <role>debug_signals</role>
    </port>
   </interface>
  </module>
@@ -43027,7 +43015,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.TIMESTAMP</name>
-   <value>1568845318</value>
+   <value>1568905990</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.compatible</name>
@@ -43047,7 +43035,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.timestamp</name>
-   <value>1568845318</value>
+   <value>1568905990</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.vendor</name>
@@ -43063,7 +43051,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="timestamp">
    <type>int</type>
-   <value>1568845318</value>
+   <value>1568905990</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -47634,5 +47622,5 @@ parameters are a RESULT of the module parameters. -->
   <version>18.1</version>
  </plugin>
  <reportVersion>18.1 625</reportVersion>
- <uniqueIdentifier>60F6770088180000016D4677D9EE</uniqueIdentifier>
+ <uniqueIdentifier>60F6770088180000016D4A15A0C7</uniqueIdentifier>
 </EnsembleReport>
