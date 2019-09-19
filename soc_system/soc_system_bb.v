@@ -53,7 +53,6 @@ module soc_system (
 	hps_0_hps_io_hps_io_gpio_inst_GPIO53,
 	hps_0_hps_io_hps_io_gpio_inst_GPIO54,
 	hps_0_hps_io_hps_io_gpio_inst_GPIO61,
-	iceboardcontrol_0_conduit_end_rx_receive,
 	iceboardcontrol_0_conduit_end_rx,
 	iceboardcontrol_0_conduit_end_tx,
 	led_external_connection_export,
@@ -128,7 +127,6 @@ module soc_system (
 	inout		hps_0_hps_io_hps_io_gpio_inst_GPIO53;
 	inout		hps_0_hps_io_hps_io_gpio_inst_GPIO54;
 	inout		hps_0_hps_io_hps_io_gpio_inst_GPIO61;
-	inout		iceboardcontrol_0_conduit_end_rx_receive;
 	input		iceboardcontrol_0_conduit_end_rx;
 	output		iceboardcontrol_0_conduit_end_tx;
 	output	[7:0]	led_external_connection_export;
