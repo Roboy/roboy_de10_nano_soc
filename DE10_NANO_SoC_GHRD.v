@@ -117,7 +117,7 @@ wire                hps_debug_reset;
 
 soc_system u0(
 			//Clock&Reset
-			.clk_clk(FPGA_CLK1_50),                                      //                            clk.clk
+			.clk_clk(FPGA_CLK1_50),                                       //                            clk.clk
 			.reset_reset_n(hps_fpga_reset_n),
 			// neopixel
 			.led_external_connection_export(LED),
