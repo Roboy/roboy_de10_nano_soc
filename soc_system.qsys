@@ -1049,7 +1049,7 @@
   <parameter name="CLOCK_FREQ_HZ" value="50000000" />
   <parameter name="NUMBER_OF_MOTORS" value="2" />
  </module>
- <module name="LED" kind="altera_avalon_pio" version="18.1" enabled="1">
+ <module name="LED" kind="altera_avalon_pio" version="18.0" enabled="1">
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
   <parameter name="captureEdge" value="false" />
@@ -1063,13 +1063,13 @@
   <parameter name="simDrivenValue" value="0" />
   <parameter name="width" value="8" />
  </module>
- <module name="clk_0" kind="clock_source" version="18.1" enabled="1">
+ <module name="clk_0" kind="clock_source" version="18.0" enabled="1">
   <parameter name="clockFrequency" value="50000000" />
   <parameter name="clockFrequencyKnown" value="true" />
   <parameter name="inputClockFrequency" value="0" />
   <parameter name="resetSynchronousEdges" value="NONE" />
  </module>
- <module name="hps_0" kind="altera_hps" version="18.1" enabled="1">
+ <module name="hps_0" kind="altera_hps" version="18.0" enabled="1">
   <parameter name="ABSTRACT_REAL_COMPARE_TEST" value="false" />
   <parameter name="ABS_RAM_MEM_INIT_FILENAME" value="meminit" />
   <parameter name="ACV_PHY_CLK_ADD_FR_PHASE" value="0.0" />
@@ -1602,7 +1602,7 @@
  <module
    name="jtag_uart"
    kind="altera_avalon_jtag_uart"
-   version="18.1"
+   version="18.0"
    enabled="1">
   <parameter name="allowMultipleConnections" value="true" />
   <parameter name="avalonSpec" value="2.0" />
@@ -1621,13 +1621,13 @@
  <module
    name="sysid_qsys"
    kind="altera_avalon_sysid_qsys"
-   version="18.1"
+   version="18.0"
    enabled="1">
   <parameter name="id" value="-1318387531" />
  </module>
  <connection
    kind="avalon"
-   version="18.1"
+   version="18.0"
    start="hps_0.h2f_lw_axi_master"
    end="jtag_uart.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
@@ -1636,7 +1636,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="18.1"
+   version="18.0"
    start="hps_0.h2f_lw_axi_master"
    end="ICEboardControl_0.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
@@ -1645,7 +1645,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="18.1"
+   version="18.0"
    start="hps_0.h2f_lw_axi_master"
    end="sysid_qsys.control_slave">
   <parameter name="arbitrationPriority" value="1" />
@@ -1654,47 +1654,47 @@
  </connection>
  <connection
    kind="avalon"
-   version="18.1"
+   version="18.0"
    start="hps_0.h2f_lw_axi_master"
    end="LED.s1">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0410" />
   <parameter name="defaultConnection" value="false" />
  </connection>
- <connection kind="clock" version="18.1" start="clk_0.clk" end="jtag_uart.clk" />
- <connection kind="clock" version="18.1" start="clk_0.clk" end="LED.clk" />
- <connection kind="clock" version="18.1" start="clk_0.clk" end="sysid_qsys.clk" />
+ <connection kind="clock" version="18.0" start="clk_0.clk" end="jtag_uart.clk" />
+ <connection kind="clock" version="18.0" start="clk_0.clk" end="LED.clk" />
+ <connection kind="clock" version="18.0" start="clk_0.clk" end="sysid_qsys.clk" />
  <connection
    kind="clock"
-   version="18.1"
+   version="18.0"
    start="clk_0.clk"
    end="ICEboardControl_0.clock" />
  <connection
    kind="clock"
-   version="18.1"
+   version="18.0"
    start="clk_0.clk"
    end="hps_0.h2f_lw_axi_clock" />
  <connection
    kind="interrupt"
-   version="18.1"
+   version="18.0"
    start="hps_0.f2h_irq0"
    end="jtag_uart.irq">
   <parameter name="irqNumber" value="0" />
  </connection>
  <connection
    kind="reset"
-   version="18.1"
+   version="18.0"
    start="clk_0.clk_reset"
    end="jtag_uart.reset" />
- <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="LED.reset" />
+ <connection kind="reset" version="18.0" start="clk_0.clk_reset" end="LED.reset" />
  <connection
    kind="reset"
-   version="18.1"
+   version="18.0"
    start="clk_0.clk_reset"
    end="sysid_qsys.reset" />
  <connection
    kind="reset"
-   version="18.1"
+   version="18.0"
    start="clk_0.clk_reset"
    end="ICEboardControl_0.reset" />
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
