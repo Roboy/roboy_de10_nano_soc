@@ -142,9 +142,9 @@ module soc_system (
 	wire         rst_controller_001_reset_out_reset;                             // rst_controller_001:reset_out -> mm_interconnect_0:hps_0_h2f_lw_axi_master_agent_clk_reset_reset_bridge_in_reset_reset
 
 	ICEboardControl #(
-		.NUMBER_OF_MOTORS (2),
+		.NUMBER_OF_MOTORS (8),
 		.CLOCK_FREQ_HZ    (50000000),
-		.BAUDRATE         (1000000)
+		.BAUDRATE         (2000000)
 	) iceboardcontrol_0 (
 		.clk         (clk_clk),                                                        //          clock.clk
 		.reset       (rst_controller_reset_out_reset),                                 //          reset.reset
