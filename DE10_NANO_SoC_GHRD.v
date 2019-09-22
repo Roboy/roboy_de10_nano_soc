@@ -121,8 +121,8 @@ soc_system u0(
 			.reset_reset_n(hps_fpga_reset_n),
 			// neopixel
 			.led_external_connection_export(LED),
-			.iceboardcontrol_0_conduit_end_rx(GPIO_0[2]),
-			.iceboardcontrol_0_conduit_end_tx(GPIO_0[3]),
+			.iceboardcontrol_0_conduit_end_rx(GPIO_1[30]),
+			.iceboardcontrol_0_conduit_end_tx(GPIO_1[31]),
 			//HPS ddr3
 			.memory_mem_a(HPS_DDR3_ADDR),                                //                         memory.mem_a
 			.memory_mem_ba(HPS_DDR3_BA),                                 //                               .mem_ba
