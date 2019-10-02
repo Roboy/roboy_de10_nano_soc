@@ -17,7 +17,7 @@ module DE10_NANO_SoC_GHRD(
       ///////// FPGA /////////  
       input              FPGA_CLK1_50,
       input              FPGA_CLK2_50,
-      input              FPGA_CLK3_50,
+      input              FPGA_CLK3_50, 
 
       ///////// GPIO /////////
       inout       [35:0] GPIO_0,
