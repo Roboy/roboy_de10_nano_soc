@@ -29,7 +29,7 @@ module DE10_NANO_SoC_GHRD(
       inout              HDMI_I2S, 
       inout              HDMI_LRCLK,
       inout              HDMI_MCLK,
-      inout              HDMI_SCLK,
+      inout              HDMI_SCLK, 
       output             HDMI_TX_CLK,
       output      [23:0] HDMI_TX_D,
       output             HDMI_TX_DE,
