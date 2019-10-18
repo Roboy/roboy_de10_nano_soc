@@ -72,7 +72,18 @@ module soc_system (
 	memory_mem_odt,
 	memory_mem_dm,
 	memory_oct_rzqin,
-	reset_reset_n);	
+	reset_reset_n,
+	iceboardcontrol_1_conduit_end_rx,
+	iceboardcontrol_1_conduit_end_tx,
+	iceboardcontrol_2_conduit_end_rx,
+	iceboardcontrol_2_conduit_end_tx,
+	iceboardcontrol_4_conduit_end_rx,
+	iceboardcontrol_4_conduit_end_tx,
+	iceboardcontrol_3_conduit_end_rx,
+	iceboardcontrol_3_conduit_end_tx,
+	iceboardcontrol_5_conduit_end_rx,
+	iceboardcontrol_5_conduit_end_tx,
+	neopixel_0_conduit_end_one_wire);	
 
 	input		clk_clk;
 	input		hps_0_f2h_cold_reset_req_reset_n;
@@ -147,4 +158,15 @@ module soc_system (
 	output	[3:0]	memory_mem_dm;
 	input		memory_oct_rzqin;
 	input		reset_reset_n;
+	input		iceboardcontrol_1_conduit_end_rx;
+	output		iceboardcontrol_1_conduit_end_tx;
+	input		iceboardcontrol_2_conduit_end_rx;
+	output		iceboardcontrol_2_conduit_end_tx;
+	input		iceboardcontrol_4_conduit_end_rx;
+	output		iceboardcontrol_4_conduit_end_tx;
+	input		iceboardcontrol_3_conduit_end_rx;
+	output		iceboardcontrol_3_conduit_end_tx;
+	input		iceboardcontrol_5_conduit_end_rx;
+	output		iceboardcontrol_5_conduit_end_tx;
+	output		neopixel_0_conduit_end_one_wire;
 endmodule
