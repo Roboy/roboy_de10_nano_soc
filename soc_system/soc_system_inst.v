@@ -54,6 +54,8 @@
 		.hps_0_hps_io_hps_io_gpio_inst_GPIO61  (<connected-to-hps_0_hps_io_hps_io_gpio_inst_GPIO61>),  //                              .hps_io_gpio_inst_GPIO61
 		.iceboardcontrol_0_conduit_end_rx      (<connected-to-iceboardcontrol_0_conduit_end_rx>),      // iceboardcontrol_0_conduit_end.rx
 		.iceboardcontrol_0_conduit_end_tx      (<connected-to-iceboardcontrol_0_conduit_end_tx>),      //                              .tx
+		.iceboardcontrol_1_conduit_end_rx      (<connected-to-iceboardcontrol_1_conduit_end_rx>),      // iceboardcontrol_1_conduit_end.rx
+		.iceboardcontrol_1_conduit_end_tx      (<connected-to-iceboardcontrol_1_conduit_end_tx>),      //                              .tx
 		.led_external_connection_export        (<connected-to-led_external_connection_export>),        //       led_external_connection.export
 		.memory_mem_a                          (<connected-to-memory_mem_a>),                          //                        memory.mem_a
 		.memory_mem_ba                         (<connected-to-memory_mem_ba>),                         //                              .mem_ba
@@ -71,17 +73,7 @@
 		.memory_mem_odt                        (<connected-to-memory_mem_odt>),                        //                              .mem_odt
 		.memory_mem_dm                         (<connected-to-memory_mem_dm>),                         //                              .mem_dm
 		.memory_oct_rzqin                      (<connected-to-memory_oct_rzqin>),                      //                              .oct_rzqin
-		.reset_reset_n                         (<connected-to-reset_reset_n>),                         //                         reset.reset_n
-		.iceboardcontrol_1_conduit_end_rx      (<connected-to-iceboardcontrol_1_conduit_end_rx>),      // iceboardcontrol_1_conduit_end.rx
-		.iceboardcontrol_1_conduit_end_tx      (<connected-to-iceboardcontrol_1_conduit_end_tx>),      //                              .tx
-		.iceboardcontrol_2_conduit_end_rx      (<connected-to-iceboardcontrol_2_conduit_end_rx>),      // iceboardcontrol_2_conduit_end.rx
-		.iceboardcontrol_2_conduit_end_tx      (<connected-to-iceboardcontrol_2_conduit_end_tx>),      //                              .tx
-		.iceboardcontrol_4_conduit_end_rx      (<connected-to-iceboardcontrol_4_conduit_end_rx>),      // iceboardcontrol_4_conduit_end.rx
-		.iceboardcontrol_4_conduit_end_tx      (<connected-to-iceboardcontrol_4_conduit_end_tx>),      //                              .tx
-		.iceboardcontrol_3_conduit_end_rx      (<connected-to-iceboardcontrol_3_conduit_end_rx>),      // iceboardcontrol_3_conduit_end.rx
-		.iceboardcontrol_3_conduit_end_tx      (<connected-to-iceboardcontrol_3_conduit_end_tx>),      //                              .tx
-		.iceboardcontrol_5_conduit_end_rx      (<connected-to-iceboardcontrol_5_conduit_end_rx>),      // iceboardcontrol_5_conduit_end.rx
-		.iceboardcontrol_5_conduit_end_tx      (<connected-to-iceboardcontrol_5_conduit_end_tx>),      //                              .tx
-		.neopixel_0_conduit_end_one_wire       (<connected-to-neopixel_0_conduit_end_one_wire>)        //        neopixel_0_conduit_end.one_wire
+		.neopixel_0_conduit_end_one_wire       (<connected-to-neopixel_0_conduit_end_one_wire>),       //        neopixel_0_conduit_end.one_wire
+		.reset_reset_n                         (<connected-to-reset_reset_n>)                          //                         reset.reset_n
 	);
 

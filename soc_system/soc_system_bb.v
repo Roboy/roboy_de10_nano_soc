@@ -55,6 +55,8 @@ module soc_system (
 	hps_0_hps_io_hps_io_gpio_inst_GPIO61,
 	iceboardcontrol_0_conduit_end_rx,
 	iceboardcontrol_0_conduit_end_tx,
+	iceboardcontrol_1_conduit_end_rx,
+	iceboardcontrol_1_conduit_end_tx,
 	led_external_connection_export,
 	memory_mem_a,
 	memory_mem_ba,
@@ -72,18 +74,8 @@ module soc_system (
 	memory_mem_odt,
 	memory_mem_dm,
 	memory_oct_rzqin,
-	reset_reset_n,
-	iceboardcontrol_1_conduit_end_rx,
-	iceboardcontrol_1_conduit_end_tx,
-	iceboardcontrol_2_conduit_end_rx,
-	iceboardcontrol_2_conduit_end_tx,
-	iceboardcontrol_4_conduit_end_rx,
-	iceboardcontrol_4_conduit_end_tx,
-	iceboardcontrol_3_conduit_end_rx,
-	iceboardcontrol_3_conduit_end_tx,
-	iceboardcontrol_5_conduit_end_rx,
-	iceboardcontrol_5_conduit_end_tx,
-	neopixel_0_conduit_end_one_wire);	
+	neopixel_0_conduit_end_one_wire,
+	reset_reset_n);	
 
 	input		clk_clk;
 	input		hps_0_f2h_cold_reset_req_reset_n;
@@ -140,6 +132,8 @@ module soc_system (
 	inout		hps_0_hps_io_hps_io_gpio_inst_GPIO61;
 	input		iceboardcontrol_0_conduit_end_rx;
 	output		iceboardcontrol_0_conduit_end_tx;
+	input		iceboardcontrol_1_conduit_end_rx;
+	output		iceboardcontrol_1_conduit_end_tx;
 	output	[7:0]	led_external_connection_export;
 	output	[14:0]	memory_mem_a;
 	output	[2:0]	memory_mem_ba;
@@ -157,16 +151,6 @@ module soc_system (
 	output		memory_mem_odt;
 	output	[3:0]	memory_mem_dm;
 	input		memory_oct_rzqin;
-	input		reset_reset_n;
-	input		iceboardcontrol_1_conduit_end_rx;
-	output		iceboardcontrol_1_conduit_end_tx;
-	input		iceboardcontrol_2_conduit_end_rx;
-	output		iceboardcontrol_2_conduit_end_tx;
-	input		iceboardcontrol_4_conduit_end_rx;
-	output		iceboardcontrol_4_conduit_end_tx;
-	input		iceboardcontrol_3_conduit_end_rx;
-	output		iceboardcontrol_3_conduit_end_tx;
-	input		iceboardcontrol_5_conduit_end_rx;
-	output		iceboardcontrol_5_conduit_end_tx;
 	output		neopixel_0_conduit_end_one_wire;
+	input		reset_reset_n;
 endmodule

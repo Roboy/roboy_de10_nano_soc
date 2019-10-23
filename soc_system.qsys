@@ -1053,6 +1053,14 @@
          type = "String";
       }
    }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
    element sysid_qsys
    {
       datum _sortIndex
@@ -1136,24 +1144,16 @@
    dir="end" />
  <interface
    name="iceboardcontrol_2_conduit_end"
-   internal="ICEboardControl_2.conduit_end"
-   type="conduit"
-   dir="end" />
+   internal="ICEboardControl_2.conduit_end" />
  <interface
    name="iceboardcontrol_3_conduit_end"
-   internal="ICEboardControl_3.conduit_end"
-   type="conduit"
-   dir="end" />
+   internal="ICEboardControl_3.conduit_end" />
  <interface
    name="iceboardcontrol_4_conduit_end"
-   internal="ICEboardControl_4.conduit_end"
-   type="conduit"
-   dir="end" />
+   internal="ICEboardControl_4.conduit_end" />
  <interface
    name="iceboardcontrol_5_conduit_end"
-   internal="ICEboardControl_5.conduit_end"
-   type="conduit"
-   dir="end" />
+   internal="ICEboardControl_5.conduit_end" />
  <interface
    name="led_external_connection"
    internal="LED.external_connection"
@@ -1188,7 +1188,7 @@
    name="ICEboardControl_2"
    kind="ICEboardControl"
    version="1.0"
-   enabled="1">
+   enabled="0">
   <parameter name="BAUDRATE" value="2000000" />
   <parameter name="CLOCK_FREQ_HZ" value="50000000" />
   <parameter name="NUMBER_OF_MOTORS" value="8" />
@@ -1197,7 +1197,7 @@
    name="ICEboardControl_3"
    kind="ICEboardControl"
    version="1.0"
-   enabled="1">
+   enabled="0">
   <parameter name="BAUDRATE" value="2000000" />
   <parameter name="CLOCK_FREQ_HZ" value="50000000" />
   <parameter name="NUMBER_OF_MOTORS" value="8" />
@@ -1206,7 +1206,7 @@
    name="ICEboardControl_4"
    kind="ICEboardControl"
    version="1.0"
-   enabled="1">
+   enabled="0">
   <parameter name="BAUDRATE" value="2000000" />
   <parameter name="CLOCK_FREQ_HZ" value="50000000" />
   <parameter name="NUMBER_OF_MOTORS" value="8" />
@@ -1215,7 +1215,7 @@
    name="ICEboardControl_5"
    kind="ICEboardControl"
    version="1.0"
-   enabled="1">
+   enabled="0">
   <parameter name="BAUDRATE" value="2000000" />
   <parameter name="CLOCK_FREQ_HZ" value="50000000" />
   <parameter name="NUMBER_OF_MOTORS" value="8" />
@@ -1792,7 +1792,6 @@
  <module name="neopixel_0" kind="neopixel" version="1.0" enabled="1">
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
   <parameter name="NUMBER_OF_NEOPIXEL" value="10" />
-  <parameter name="RGBW" value="1" />
  </module>
  <module
    name="sysid_qsys"
