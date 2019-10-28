@@ -54,8 +54,6 @@
 		.hps_0_hps_io_hps_io_gpio_inst_GPIO61  (<connected-to-hps_0_hps_io_hps_io_gpio_inst_GPIO61>),  //                              .hps_io_gpio_inst_GPIO61
 		.iceboardcontrol_0_conduit_end_rx      (<connected-to-iceboardcontrol_0_conduit_end_rx>),      // iceboardcontrol_0_conduit_end.rx
 		.iceboardcontrol_0_conduit_end_tx      (<connected-to-iceboardcontrol_0_conduit_end_tx>),      //                              .tx
-		.iceboardcontrol_1_conduit_end_rx      (<connected-to-iceboardcontrol_1_conduit_end_rx>),      // iceboardcontrol_1_conduit_end.rx
-		.iceboardcontrol_1_conduit_end_tx      (<connected-to-iceboardcontrol_1_conduit_end_tx>),      //                              .tx
 		.led_external_connection_export        (<connected-to-led_external_connection_export>),        //       led_external_connection.export
 		.memory_mem_a                          (<connected-to-memory_mem_a>),                          //                        memory.mem_a
 		.memory_mem_ba                         (<connected-to-memory_mem_ba>),                         //                              .mem_ba
