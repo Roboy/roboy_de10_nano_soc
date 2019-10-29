@@ -21,7 +21,7 @@ module DE10_NANO_SoC_GHRD(
 
       ///////// GPIO /////////
       inout       [35:0] GPIO_0,
-      inout       [35:0] GPIO_1,
+      inout       [35:0] GPIO_1, 
 
       ///////// HDMI /////////
       inout              HDMI_I2C_SCL,
@@ -123,11 +123,17 @@ soc_system u0(
 			.led_external_connection_export(LED),
 			.iceboardcontrol_0_conduit_end_rx(GPIO_0[0]),
 			.iceboardcontrol_0_conduit_end_tx(GPIO_0[1]),
-//			.myocontrol_0_conduit_end_miso(GPIO_1[0]),
-//			.myocontrol_0_conduit_end_mosi(GPIO_1[1]),
-//			.myocontrol_0_conduit_end_sck(GPIO_1[2]),
-//			.myocontrol_0_conduit_end_ss_n_o(GPIO_1[6:3]),
-//			.myocontrol_0_conduit_end_power_sense_n(1'b0),
+			.iceboardcontrol_1_conduit_end_rx(GPIO_0[2]),
+			.iceboardcontrol_1_conduit_end_tx(GPIO_0[3]),
+			.iceboardcontrol_2_conduit_end_rx(GPIO_0[4]),
+			.iceboardcontrol_2_conduit_end_tx(GPIO_0[5]),
+			.iceboardcontrol_3_conduit_end_rx(GPIO_1[35]),
+			.iceboardcontrol_3_conduit_end_tx(GPIO_1[34]),
+			.myocontrol_0_conduit_end_miso(GPIO_1[0]),
+			.myocontrol_0_conduit_end_mosi(GPIO_1[1]),
+			.myocontrol_0_conduit_end_sck(GPIO_1[2]),
+			.myocontrol_0_conduit_end_ss_n_o(GPIO_1[11:8]),
+			.myocontrol_0_conduit_end_power_sense_n(1'b0),
 			.neopixel_0_conduit_end_one_wire(GPIO_1[24]),
 			//HPS ddr3
 			.memory_mem_a(HPS_DDR3_ADDR),                                //                         memory.mem_a

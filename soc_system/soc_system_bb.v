@@ -72,8 +72,25 @@ module soc_system (
 	memory_mem_odt,
 	memory_mem_dm,
 	memory_oct_rzqin,
+	myocontrol_0_conduit_end_angle_miso,
+	myocontrol_0_conduit_end_angle_mosi,
+	myocontrol_0_conduit_end_angle_sck,
+	myocontrol_0_conduit_end_angle_ss_n_o,
+	myocontrol_0_conduit_end_gpio_n,
+	myocontrol_0_conduit_end_mirrored_muscle_unit,
+	myocontrol_0_conduit_end_miso,
+	myocontrol_0_conduit_end_mosi,
+	myocontrol_0_conduit_end_power_sense_n,
+	myocontrol_0_conduit_end_ss_n_o,
+	myocontrol_0_conduit_end_sck,
 	neopixel_0_conduit_end_one_wire,
-	reset_reset_n);	
+	reset_reset_n,
+	iceboardcontrol_1_conduit_end_rx,
+	iceboardcontrol_1_conduit_end_tx,
+	iceboardcontrol_2_conduit_end_rx,
+	iceboardcontrol_2_conduit_end_tx,
+	iceboardcontrol_3_conduit_end_rx,
+	iceboardcontrol_3_conduit_end_tx);	
 
 	input		clk_clk;
 	input		hps_0_f2h_cold_reset_req_reset_n;
@@ -147,6 +164,23 @@ module soc_system (
 	output		memory_mem_odt;
 	output	[3:0]	memory_mem_dm;
 	input		memory_oct_rzqin;
+	input		myocontrol_0_conduit_end_angle_miso;
+	output		myocontrol_0_conduit_end_angle_mosi;
+	output		myocontrol_0_conduit_end_angle_sck;
+	output	[3:0]	myocontrol_0_conduit_end_angle_ss_n_o;
+	output		myocontrol_0_conduit_end_gpio_n;
+	input		myocontrol_0_conduit_end_mirrored_muscle_unit;
+	input		myocontrol_0_conduit_end_miso;
+	output		myocontrol_0_conduit_end_mosi;
+	input		myocontrol_0_conduit_end_power_sense_n;
+	output	[3:0]	myocontrol_0_conduit_end_ss_n_o;
+	output		myocontrol_0_conduit_end_sck;
 	output		neopixel_0_conduit_end_one_wire;
 	input		reset_reset_n;
+	input		iceboardcontrol_1_conduit_end_rx;
+	output		iceboardcontrol_1_conduit_end_tx;
+	input		iceboardcontrol_2_conduit_end_rx;
+	output		iceboardcontrol_2_conduit_end_tx;
+	input		iceboardcontrol_3_conduit_end_rx;
+	output		iceboardcontrol_3_conduit_end_tx;
 endmodule

@@ -4,80 +4,97 @@
 
 `timescale 1 ps / 1 ps
 module soc_system (
-		input  wire        clk_clk,                               //                           clk.clk
-		input  wire        hps_0_f2h_cold_reset_req_reset_n,      //      hps_0_f2h_cold_reset_req.reset_n
-		input  wire        hps_0_f2h_debug_reset_req_reset_n,     //     hps_0_f2h_debug_reset_req.reset_n
-		input  wire        hps_0_f2h_warm_reset_req_reset_n,      //      hps_0_f2h_warm_reset_req.reset_n
-		output wire        hps_0_h2f_reset_reset_n,               //               hps_0_h2f_reset.reset_n
-		output wire        hps_0_hps_io_hps_io_emac1_inst_TX_CLK, //                  hps_0_hps_io.hps_io_emac1_inst_TX_CLK
-		output wire        hps_0_hps_io_hps_io_emac1_inst_TXD0,   //                              .hps_io_emac1_inst_TXD0
-		output wire        hps_0_hps_io_hps_io_emac1_inst_TXD1,   //                              .hps_io_emac1_inst_TXD1
-		output wire        hps_0_hps_io_hps_io_emac1_inst_TXD2,   //                              .hps_io_emac1_inst_TXD2
-		output wire        hps_0_hps_io_hps_io_emac1_inst_TXD3,   //                              .hps_io_emac1_inst_TXD3
-		input  wire        hps_0_hps_io_hps_io_emac1_inst_RXD0,   //                              .hps_io_emac1_inst_RXD0
-		inout  wire        hps_0_hps_io_hps_io_emac1_inst_MDIO,   //                              .hps_io_emac1_inst_MDIO
-		output wire        hps_0_hps_io_hps_io_emac1_inst_MDC,    //                              .hps_io_emac1_inst_MDC
-		input  wire        hps_0_hps_io_hps_io_emac1_inst_RX_CTL, //                              .hps_io_emac1_inst_RX_CTL
-		output wire        hps_0_hps_io_hps_io_emac1_inst_TX_CTL, //                              .hps_io_emac1_inst_TX_CTL
-		input  wire        hps_0_hps_io_hps_io_emac1_inst_RX_CLK, //                              .hps_io_emac1_inst_RX_CLK
-		input  wire        hps_0_hps_io_hps_io_emac1_inst_RXD1,   //                              .hps_io_emac1_inst_RXD1
-		input  wire        hps_0_hps_io_hps_io_emac1_inst_RXD2,   //                              .hps_io_emac1_inst_RXD2
-		input  wire        hps_0_hps_io_hps_io_emac1_inst_RXD3,   //                              .hps_io_emac1_inst_RXD3
-		inout  wire        hps_0_hps_io_hps_io_sdio_inst_CMD,     //                              .hps_io_sdio_inst_CMD
-		inout  wire        hps_0_hps_io_hps_io_sdio_inst_D0,      //                              .hps_io_sdio_inst_D0
-		inout  wire        hps_0_hps_io_hps_io_sdio_inst_D1,      //                              .hps_io_sdio_inst_D1
-		output wire        hps_0_hps_io_hps_io_sdio_inst_CLK,     //                              .hps_io_sdio_inst_CLK
-		inout  wire        hps_0_hps_io_hps_io_sdio_inst_D2,      //                              .hps_io_sdio_inst_D2
-		inout  wire        hps_0_hps_io_hps_io_sdio_inst_D3,      //                              .hps_io_sdio_inst_D3
-		inout  wire        hps_0_hps_io_hps_io_usb1_inst_D0,      //                              .hps_io_usb1_inst_D0
-		inout  wire        hps_0_hps_io_hps_io_usb1_inst_D1,      //                              .hps_io_usb1_inst_D1
-		inout  wire        hps_0_hps_io_hps_io_usb1_inst_D2,      //                              .hps_io_usb1_inst_D2
-		inout  wire        hps_0_hps_io_hps_io_usb1_inst_D3,      //                              .hps_io_usb1_inst_D3
-		inout  wire        hps_0_hps_io_hps_io_usb1_inst_D4,      //                              .hps_io_usb1_inst_D4
-		inout  wire        hps_0_hps_io_hps_io_usb1_inst_D5,      //                              .hps_io_usb1_inst_D5
-		inout  wire        hps_0_hps_io_hps_io_usb1_inst_D6,      //                              .hps_io_usb1_inst_D6
-		inout  wire        hps_0_hps_io_hps_io_usb1_inst_D7,      //                              .hps_io_usb1_inst_D7
-		input  wire        hps_0_hps_io_hps_io_usb1_inst_CLK,     //                              .hps_io_usb1_inst_CLK
-		output wire        hps_0_hps_io_hps_io_usb1_inst_STP,     //                              .hps_io_usb1_inst_STP
-		input  wire        hps_0_hps_io_hps_io_usb1_inst_DIR,     //                              .hps_io_usb1_inst_DIR
-		input  wire        hps_0_hps_io_hps_io_usb1_inst_NXT,     //                              .hps_io_usb1_inst_NXT
-		output wire        hps_0_hps_io_hps_io_spim1_inst_CLK,    //                              .hps_io_spim1_inst_CLK
-		output wire        hps_0_hps_io_hps_io_spim1_inst_MOSI,   //                              .hps_io_spim1_inst_MOSI
-		input  wire        hps_0_hps_io_hps_io_spim1_inst_MISO,   //                              .hps_io_spim1_inst_MISO
-		output wire        hps_0_hps_io_hps_io_spim1_inst_SS0,    //                              .hps_io_spim1_inst_SS0
-		input  wire        hps_0_hps_io_hps_io_uart0_inst_RX,     //                              .hps_io_uart0_inst_RX
-		output wire        hps_0_hps_io_hps_io_uart0_inst_TX,     //                              .hps_io_uart0_inst_TX
-		inout  wire        hps_0_hps_io_hps_io_i2c0_inst_SDA,     //                              .hps_io_i2c0_inst_SDA
-		inout  wire        hps_0_hps_io_hps_io_i2c0_inst_SCL,     //                              .hps_io_i2c0_inst_SCL
-		inout  wire        hps_0_hps_io_hps_io_i2c1_inst_SDA,     //                              .hps_io_i2c1_inst_SDA
-		inout  wire        hps_0_hps_io_hps_io_i2c1_inst_SCL,     //                              .hps_io_i2c1_inst_SCL
-		inout  wire        hps_0_hps_io_hps_io_gpio_inst_GPIO09,  //                              .hps_io_gpio_inst_GPIO09
-		inout  wire        hps_0_hps_io_hps_io_gpio_inst_GPIO35,  //                              .hps_io_gpio_inst_GPIO35
-		inout  wire        hps_0_hps_io_hps_io_gpio_inst_GPIO40,  //                              .hps_io_gpio_inst_GPIO40
-		inout  wire        hps_0_hps_io_hps_io_gpio_inst_GPIO53,  //                              .hps_io_gpio_inst_GPIO53
-		inout  wire        hps_0_hps_io_hps_io_gpio_inst_GPIO54,  //                              .hps_io_gpio_inst_GPIO54
-		inout  wire        hps_0_hps_io_hps_io_gpio_inst_GPIO61,  //                              .hps_io_gpio_inst_GPIO61
-		input  wire        iceboardcontrol_0_conduit_end_rx,      // iceboardcontrol_0_conduit_end.rx
-		output wire        iceboardcontrol_0_conduit_end_tx,      //                              .tx
-		output wire [7:0]  led_external_connection_export,        //       led_external_connection.export
-		output wire [14:0] memory_mem_a,                          //                        memory.mem_a
-		output wire [2:0]  memory_mem_ba,                         //                              .mem_ba
-		output wire        memory_mem_ck,                         //                              .mem_ck
-		output wire        memory_mem_ck_n,                       //                              .mem_ck_n
-		output wire        memory_mem_cke,                        //                              .mem_cke
-		output wire        memory_mem_cs_n,                       //                              .mem_cs_n
-		output wire        memory_mem_ras_n,                      //                              .mem_ras_n
-		output wire        memory_mem_cas_n,                      //                              .mem_cas_n
-		output wire        memory_mem_we_n,                       //                              .mem_we_n
-		output wire        memory_mem_reset_n,                    //                              .mem_reset_n
-		inout  wire [31:0] memory_mem_dq,                         //                              .mem_dq
-		inout  wire [3:0]  memory_mem_dqs,                        //                              .mem_dqs
-		inout  wire [3:0]  memory_mem_dqs_n,                      //                              .mem_dqs_n
-		output wire        memory_mem_odt,                        //                              .mem_odt
-		output wire [3:0]  memory_mem_dm,                         //                              .mem_dm
-		input  wire        memory_oct_rzqin,                      //                              .oct_rzqin
-		output wire        neopixel_0_conduit_end_one_wire,       //        neopixel_0_conduit_end.one_wire
-		input  wire        reset_reset_n                          //                         reset.reset_n
+		input  wire        clk_clk,                                       //                           clk.clk
+		input  wire        hps_0_f2h_cold_reset_req_reset_n,              //      hps_0_f2h_cold_reset_req.reset_n
+		input  wire        hps_0_f2h_debug_reset_req_reset_n,             //     hps_0_f2h_debug_reset_req.reset_n
+		input  wire        hps_0_f2h_warm_reset_req_reset_n,              //      hps_0_f2h_warm_reset_req.reset_n
+		output wire        hps_0_h2f_reset_reset_n,                       //               hps_0_h2f_reset.reset_n
+		output wire        hps_0_hps_io_hps_io_emac1_inst_TX_CLK,         //                  hps_0_hps_io.hps_io_emac1_inst_TX_CLK
+		output wire        hps_0_hps_io_hps_io_emac1_inst_TXD0,           //                              .hps_io_emac1_inst_TXD0
+		output wire        hps_0_hps_io_hps_io_emac1_inst_TXD1,           //                              .hps_io_emac1_inst_TXD1
+		output wire        hps_0_hps_io_hps_io_emac1_inst_TXD2,           //                              .hps_io_emac1_inst_TXD2
+		output wire        hps_0_hps_io_hps_io_emac1_inst_TXD3,           //                              .hps_io_emac1_inst_TXD3
+		input  wire        hps_0_hps_io_hps_io_emac1_inst_RXD0,           //                              .hps_io_emac1_inst_RXD0
+		inout  wire        hps_0_hps_io_hps_io_emac1_inst_MDIO,           //                              .hps_io_emac1_inst_MDIO
+		output wire        hps_0_hps_io_hps_io_emac1_inst_MDC,            //                              .hps_io_emac1_inst_MDC
+		input  wire        hps_0_hps_io_hps_io_emac1_inst_RX_CTL,         //                              .hps_io_emac1_inst_RX_CTL
+		output wire        hps_0_hps_io_hps_io_emac1_inst_TX_CTL,         //                              .hps_io_emac1_inst_TX_CTL
+		input  wire        hps_0_hps_io_hps_io_emac1_inst_RX_CLK,         //                              .hps_io_emac1_inst_RX_CLK
+		input  wire        hps_0_hps_io_hps_io_emac1_inst_RXD1,           //                              .hps_io_emac1_inst_RXD1
+		input  wire        hps_0_hps_io_hps_io_emac1_inst_RXD2,           //                              .hps_io_emac1_inst_RXD2
+		input  wire        hps_0_hps_io_hps_io_emac1_inst_RXD3,           //                              .hps_io_emac1_inst_RXD3
+		inout  wire        hps_0_hps_io_hps_io_sdio_inst_CMD,             //                              .hps_io_sdio_inst_CMD
+		inout  wire        hps_0_hps_io_hps_io_sdio_inst_D0,              //                              .hps_io_sdio_inst_D0
+		inout  wire        hps_0_hps_io_hps_io_sdio_inst_D1,              //                              .hps_io_sdio_inst_D1
+		output wire        hps_0_hps_io_hps_io_sdio_inst_CLK,             //                              .hps_io_sdio_inst_CLK
+		inout  wire        hps_0_hps_io_hps_io_sdio_inst_D2,              //                              .hps_io_sdio_inst_D2
+		inout  wire        hps_0_hps_io_hps_io_sdio_inst_D3,              //                              .hps_io_sdio_inst_D3
+		inout  wire        hps_0_hps_io_hps_io_usb1_inst_D0,              //                              .hps_io_usb1_inst_D0
+		inout  wire        hps_0_hps_io_hps_io_usb1_inst_D1,              //                              .hps_io_usb1_inst_D1
+		inout  wire        hps_0_hps_io_hps_io_usb1_inst_D2,              //                              .hps_io_usb1_inst_D2
+		inout  wire        hps_0_hps_io_hps_io_usb1_inst_D3,              //                              .hps_io_usb1_inst_D3
+		inout  wire        hps_0_hps_io_hps_io_usb1_inst_D4,              //                              .hps_io_usb1_inst_D4
+		inout  wire        hps_0_hps_io_hps_io_usb1_inst_D5,              //                              .hps_io_usb1_inst_D5
+		inout  wire        hps_0_hps_io_hps_io_usb1_inst_D6,              //                              .hps_io_usb1_inst_D6
+		inout  wire        hps_0_hps_io_hps_io_usb1_inst_D7,              //                              .hps_io_usb1_inst_D7
+		input  wire        hps_0_hps_io_hps_io_usb1_inst_CLK,             //                              .hps_io_usb1_inst_CLK
+		output wire        hps_0_hps_io_hps_io_usb1_inst_STP,             //                              .hps_io_usb1_inst_STP
+		input  wire        hps_0_hps_io_hps_io_usb1_inst_DIR,             //                              .hps_io_usb1_inst_DIR
+		input  wire        hps_0_hps_io_hps_io_usb1_inst_NXT,             //                              .hps_io_usb1_inst_NXT
+		output wire        hps_0_hps_io_hps_io_spim1_inst_CLK,            //                              .hps_io_spim1_inst_CLK
+		output wire        hps_0_hps_io_hps_io_spim1_inst_MOSI,           //                              .hps_io_spim1_inst_MOSI
+		input  wire        hps_0_hps_io_hps_io_spim1_inst_MISO,           //                              .hps_io_spim1_inst_MISO
+		output wire        hps_0_hps_io_hps_io_spim1_inst_SS0,            //                              .hps_io_spim1_inst_SS0
+		input  wire        hps_0_hps_io_hps_io_uart0_inst_RX,             //                              .hps_io_uart0_inst_RX
+		output wire        hps_0_hps_io_hps_io_uart0_inst_TX,             //                              .hps_io_uart0_inst_TX
+		inout  wire        hps_0_hps_io_hps_io_i2c0_inst_SDA,             //                              .hps_io_i2c0_inst_SDA
+		inout  wire        hps_0_hps_io_hps_io_i2c0_inst_SCL,             //                              .hps_io_i2c0_inst_SCL
+		inout  wire        hps_0_hps_io_hps_io_i2c1_inst_SDA,             //                              .hps_io_i2c1_inst_SDA
+		inout  wire        hps_0_hps_io_hps_io_i2c1_inst_SCL,             //                              .hps_io_i2c1_inst_SCL
+		inout  wire        hps_0_hps_io_hps_io_gpio_inst_GPIO09,          //                              .hps_io_gpio_inst_GPIO09
+		inout  wire        hps_0_hps_io_hps_io_gpio_inst_GPIO35,          //                              .hps_io_gpio_inst_GPIO35
+		inout  wire        hps_0_hps_io_hps_io_gpio_inst_GPIO40,          //                              .hps_io_gpio_inst_GPIO40
+		inout  wire        hps_0_hps_io_hps_io_gpio_inst_GPIO53,          //                              .hps_io_gpio_inst_GPIO53
+		inout  wire        hps_0_hps_io_hps_io_gpio_inst_GPIO54,          //                              .hps_io_gpio_inst_GPIO54
+		inout  wire        hps_0_hps_io_hps_io_gpio_inst_GPIO61,          //                              .hps_io_gpio_inst_GPIO61
+		input  wire        iceboardcontrol_0_conduit_end_rx,              // iceboardcontrol_0_conduit_end.rx
+		output wire        iceboardcontrol_0_conduit_end_tx,              //                              .tx
+		input  wire        iceboardcontrol_1_conduit_end_rx,              // iceboardcontrol_1_conduit_end.rx
+		output wire        iceboardcontrol_1_conduit_end_tx,              //                              .tx
+		input  wire        iceboardcontrol_2_conduit_end_rx,              // iceboardcontrol_2_conduit_end.rx
+		output wire        iceboardcontrol_2_conduit_end_tx,              //                              .tx
+		input  wire        iceboardcontrol_3_conduit_end_rx,              // iceboardcontrol_3_conduit_end.rx
+		output wire        iceboardcontrol_3_conduit_end_tx,              //                              .tx
+		output wire [7:0]  led_external_connection_export,                //       led_external_connection.export
+		output wire [14:0] memory_mem_a,                                  //                        memory.mem_a
+		output wire [2:0]  memory_mem_ba,                                 //                              .mem_ba
+		output wire        memory_mem_ck,                                 //                              .mem_ck
+		output wire        memory_mem_ck_n,                               //                              .mem_ck_n
+		output wire        memory_mem_cke,                                //                              .mem_cke
+		output wire        memory_mem_cs_n,                               //                              .mem_cs_n
+		output wire        memory_mem_ras_n,                              //                              .mem_ras_n
+		output wire        memory_mem_cas_n,                              //                              .mem_cas_n
+		output wire        memory_mem_we_n,                               //                              .mem_we_n
+		output wire        memory_mem_reset_n,                            //                              .mem_reset_n
+		inout  wire [31:0] memory_mem_dq,                                 //                              .mem_dq
+		inout  wire [3:0]  memory_mem_dqs,                                //                              .mem_dqs
+		inout  wire [3:0]  memory_mem_dqs_n,                              //                              .mem_dqs_n
+		output wire        memory_mem_odt,                                //                              .mem_odt
+		output wire [3:0]  memory_mem_dm,                                 //                              .mem_dm
+		input  wire        memory_oct_rzqin,                              //                              .oct_rzqin
+		input  wire        myocontrol_0_conduit_end_angle_miso,           //      myocontrol_0_conduit_end.angle_miso
+		output wire        myocontrol_0_conduit_end_angle_mosi,           //                              .angle_mosi
+		output wire        myocontrol_0_conduit_end_angle_sck,            //                              .angle_sck
+		output wire [3:0]  myocontrol_0_conduit_end_angle_ss_n_o,         //                              .angle_ss_n_o
+		output wire        myocontrol_0_conduit_end_gpio_n,               //                              .gpio_n
+		input  wire        myocontrol_0_conduit_end_mirrored_muscle_unit, //                              .mirrored_muscle_unit
+		input  wire        myocontrol_0_conduit_end_miso,                 //                              .miso
+		output wire        myocontrol_0_conduit_end_mosi,                 //                              .mosi
+		input  wire        myocontrol_0_conduit_end_power_sense_n,        //                              .power_sense_n
+		output wire [3:0]  myocontrol_0_conduit_end_ss_n_o,               //                              .ss_n_o
+		output wire        myocontrol_0_conduit_end_sck,                  //                              .sck
+		output wire        neopixel_0_conduit_end_one_wire,               //        neopixel_0_conduit_end.one_wire
+		input  wire        reset_reset_n                                  //                         reset.reset_n
 	);
 
 	wire   [1:0] hps_0_h2f_lw_axi_master_awburst;                                // hps_0:h2f_lw_AWBURST -> mm_interconnect_0:hps_0_h2f_lw_axi_master_awburst
@@ -135,6 +152,30 @@ module soc_system (
 	wire         mm_interconnect_0_neopixel_0_avalon_slave_0_read;               // mm_interconnect_0:neopixel_0_avalon_slave_0_read -> neopixel_0:read
 	wire         mm_interconnect_0_neopixel_0_avalon_slave_0_write;              // mm_interconnect_0:neopixel_0_avalon_slave_0_write -> neopixel_0:write
 	wire  [31:0] mm_interconnect_0_neopixel_0_avalon_slave_0_writedata;          // mm_interconnect_0:neopixel_0_avalon_slave_0_writedata -> neopixel_0:writedata
+	wire  [31:0] mm_interconnect_0_myocontrol_0_avalon_slave_0_readdata;         // MYOControl_0:readdata -> mm_interconnect_0:MYOControl_0_avalon_slave_0_readdata
+	wire         mm_interconnect_0_myocontrol_0_avalon_slave_0_waitrequest;      // MYOControl_0:waitrequest -> mm_interconnect_0:MYOControl_0_avalon_slave_0_waitrequest
+	wire  [15:0] mm_interconnect_0_myocontrol_0_avalon_slave_0_address;          // mm_interconnect_0:MYOControl_0_avalon_slave_0_address -> MYOControl_0:address
+	wire         mm_interconnect_0_myocontrol_0_avalon_slave_0_read;             // mm_interconnect_0:MYOControl_0_avalon_slave_0_read -> MYOControl_0:read
+	wire         mm_interconnect_0_myocontrol_0_avalon_slave_0_write;            // mm_interconnect_0:MYOControl_0_avalon_slave_0_write -> MYOControl_0:write
+	wire  [31:0] mm_interconnect_0_myocontrol_0_avalon_slave_0_writedata;        // mm_interconnect_0:MYOControl_0_avalon_slave_0_writedata -> MYOControl_0:writedata
+	wire  [31:0] mm_interconnect_0_iceboardcontrol_1_avalon_slave_0_readdata;    // ICEboardControl_1:readdata -> mm_interconnect_0:ICEboardControl_1_avalon_slave_0_readdata
+	wire         mm_interconnect_0_iceboardcontrol_1_avalon_slave_0_waitrequest; // ICEboardControl_1:waitrequest -> mm_interconnect_0:ICEboardControl_1_avalon_slave_0_waitrequest
+	wire  [15:0] mm_interconnect_0_iceboardcontrol_1_avalon_slave_0_address;     // mm_interconnect_0:ICEboardControl_1_avalon_slave_0_address -> ICEboardControl_1:address
+	wire         mm_interconnect_0_iceboardcontrol_1_avalon_slave_0_read;        // mm_interconnect_0:ICEboardControl_1_avalon_slave_0_read -> ICEboardControl_1:read
+	wire         mm_interconnect_0_iceboardcontrol_1_avalon_slave_0_write;       // mm_interconnect_0:ICEboardControl_1_avalon_slave_0_write -> ICEboardControl_1:write
+	wire  [31:0] mm_interconnect_0_iceboardcontrol_1_avalon_slave_0_writedata;   // mm_interconnect_0:ICEboardControl_1_avalon_slave_0_writedata -> ICEboardControl_1:writedata
+	wire  [31:0] mm_interconnect_0_iceboardcontrol_2_avalon_slave_0_readdata;    // ICEboardControl_2:readdata -> mm_interconnect_0:ICEboardControl_2_avalon_slave_0_readdata
+	wire         mm_interconnect_0_iceboardcontrol_2_avalon_slave_0_waitrequest; // ICEboardControl_2:waitrequest -> mm_interconnect_0:ICEboardControl_2_avalon_slave_0_waitrequest
+	wire  [15:0] mm_interconnect_0_iceboardcontrol_2_avalon_slave_0_address;     // mm_interconnect_0:ICEboardControl_2_avalon_slave_0_address -> ICEboardControl_2:address
+	wire         mm_interconnect_0_iceboardcontrol_2_avalon_slave_0_read;        // mm_interconnect_0:ICEboardControl_2_avalon_slave_0_read -> ICEboardControl_2:read
+	wire         mm_interconnect_0_iceboardcontrol_2_avalon_slave_0_write;       // mm_interconnect_0:ICEboardControl_2_avalon_slave_0_write -> ICEboardControl_2:write
+	wire  [31:0] mm_interconnect_0_iceboardcontrol_2_avalon_slave_0_writedata;   // mm_interconnect_0:ICEboardControl_2_avalon_slave_0_writedata -> ICEboardControl_2:writedata
+	wire  [31:0] mm_interconnect_0_iceboardcontrol_3_avalon_slave_0_readdata;    // ICEboardControl_3:readdata -> mm_interconnect_0:ICEboardControl_3_avalon_slave_0_readdata
+	wire         mm_interconnect_0_iceboardcontrol_3_avalon_slave_0_waitrequest; // ICEboardControl_3:waitrequest -> mm_interconnect_0:ICEboardControl_3_avalon_slave_0_waitrequest
+	wire  [15:0] mm_interconnect_0_iceboardcontrol_3_avalon_slave_0_address;     // mm_interconnect_0:ICEboardControl_3_avalon_slave_0_address -> ICEboardControl_3:address
+	wire         mm_interconnect_0_iceboardcontrol_3_avalon_slave_0_read;        // mm_interconnect_0:ICEboardControl_3_avalon_slave_0_read -> ICEboardControl_3:read
+	wire         mm_interconnect_0_iceboardcontrol_3_avalon_slave_0_write;       // mm_interconnect_0:ICEboardControl_3_avalon_slave_0_write -> ICEboardControl_3:write
+	wire  [31:0] mm_interconnect_0_iceboardcontrol_3_avalon_slave_0_writedata;   // mm_interconnect_0:ICEboardControl_3_avalon_slave_0_writedata -> ICEboardControl_3:writedata
 	wire  [31:0] mm_interconnect_0_sysid_qsys_control_slave_readdata;            // sysid_qsys:readdata -> mm_interconnect_0:sysid_qsys_control_slave_readdata
 	wire   [0:0] mm_interconnect_0_sysid_qsys_control_slave_address;             // mm_interconnect_0:sysid_qsys_control_slave_address -> sysid_qsys:address
 	wire         mm_interconnect_0_led_s1_chipselect;                            // mm_interconnect_0:LED_s1_chipselect -> LED:chipselect
@@ -145,11 +186,11 @@ module soc_system (
 	wire         irq_mapper_receiver0_irq;                                       // jtag_uart:av_irq -> irq_mapper:receiver0_irq
 	wire  [31:0] hps_0_f2h_irq0_irq;                                             // irq_mapper:sender_irq -> hps_0:f2h_irq_p0
 	wire  [31:0] hps_0_f2h_irq1_irq;                                             // irq_mapper_001:sender_irq -> hps_0:f2h_irq_p1
-	wire         rst_controller_reset_out_reset;                                 // rst_controller:reset_out -> [ICEboardControl_0:reset, LED:reset_n, jtag_uart:rst_n, mm_interconnect_0:jtag_uart_reset_reset_bridge_in_reset_reset, neopixel_0:reset, sysid_qsys:reset_n]
+	wire         rst_controller_reset_out_reset;                                 // rst_controller:reset_out -> [ICEboardControl_0:reset, ICEboardControl_1:reset, ICEboardControl_2:reset, ICEboardControl_3:reset, LED:reset_n, MYOControl_0:reset, jtag_uart:rst_n, mm_interconnect_0:jtag_uart_reset_reset_bridge_in_reset_reset, neopixel_0:reset, sysid_qsys:reset_n]
 	wire         rst_controller_001_reset_out_reset;                             // rst_controller_001:reset_out -> mm_interconnect_0:hps_0_h2f_lw_axi_master_agent_clk_reset_reset_bridge_in_reset_reset
 
 	ICEboardControl #(
-		.NUMBER_OF_MOTORS (4),
+		.NUMBER_OF_MOTORS (1),
 		.CLOCK_FREQ_HZ    (50000000),
 		.BAUDRATE         (500000)
 	) iceboardcontrol_0 (
@@ -165,6 +206,57 @@ module soc_system (
 		.tx          (iceboardcontrol_0_conduit_end_tx)                                //               .tx
 	);
 
+	ICEboardControl #(
+		.NUMBER_OF_MOTORS (1),
+		.CLOCK_FREQ_HZ    (50000000),
+		.BAUDRATE         (500000)
+	) iceboardcontrol_1 (
+		.clk         (clk_clk),                                                        //          clock.clk
+		.reset       (rst_controller_reset_out_reset),                                 //          reset.reset
+		.address     (mm_interconnect_0_iceboardcontrol_1_avalon_slave_0_address),     // avalon_slave_0.address
+		.write       (mm_interconnect_0_iceboardcontrol_1_avalon_slave_0_write),       //               .write
+		.writedata   (mm_interconnect_0_iceboardcontrol_1_avalon_slave_0_writedata),   //               .writedata
+		.read        (mm_interconnect_0_iceboardcontrol_1_avalon_slave_0_read),        //               .read
+		.readdata    (mm_interconnect_0_iceboardcontrol_1_avalon_slave_0_readdata),    //               .readdata
+		.waitrequest (mm_interconnect_0_iceboardcontrol_1_avalon_slave_0_waitrequest), //               .waitrequest
+		.rx          (iceboardcontrol_1_conduit_end_rx),                               //    conduit_end.rx
+		.tx          (iceboardcontrol_1_conduit_end_tx)                                //               .tx
+	);
+
+	ICEboardControl #(
+		.NUMBER_OF_MOTORS (1),
+		.CLOCK_FREQ_HZ    (50000000),
+		.BAUDRATE         (500000)
+	) iceboardcontrol_2 (
+		.clk         (clk_clk),                                                        //          clock.clk
+		.reset       (rst_controller_reset_out_reset),                                 //          reset.reset
+		.address     (mm_interconnect_0_iceboardcontrol_2_avalon_slave_0_address),     // avalon_slave_0.address
+		.write       (mm_interconnect_0_iceboardcontrol_2_avalon_slave_0_write),       //               .write
+		.writedata   (mm_interconnect_0_iceboardcontrol_2_avalon_slave_0_writedata),   //               .writedata
+		.read        (mm_interconnect_0_iceboardcontrol_2_avalon_slave_0_read),        //               .read
+		.readdata    (mm_interconnect_0_iceboardcontrol_2_avalon_slave_0_readdata),    //               .readdata
+		.waitrequest (mm_interconnect_0_iceboardcontrol_2_avalon_slave_0_waitrequest), //               .waitrequest
+		.rx          (iceboardcontrol_2_conduit_end_rx),                               //    conduit_end.rx
+		.tx          (iceboardcontrol_2_conduit_end_tx)                                //               .tx
+	);
+
+	ICEboardControl #(
+		.NUMBER_OF_MOTORS (1),
+		.CLOCK_FREQ_HZ    (50000000),
+		.BAUDRATE         (500000)
+	) iceboardcontrol_3 (
+		.clk         (clk_clk),                                                        //          clock.clk
+		.reset       (rst_controller_reset_out_reset),                                 //          reset.reset
+		.address     (mm_interconnect_0_iceboardcontrol_3_avalon_slave_0_address),     // avalon_slave_0.address
+		.write       (mm_interconnect_0_iceboardcontrol_3_avalon_slave_0_write),       //               .write
+		.writedata   (mm_interconnect_0_iceboardcontrol_3_avalon_slave_0_writedata),   //               .writedata
+		.read        (mm_interconnect_0_iceboardcontrol_3_avalon_slave_0_read),        //               .read
+		.readdata    (mm_interconnect_0_iceboardcontrol_3_avalon_slave_0_readdata),    //               .readdata
+		.waitrequest (mm_interconnect_0_iceboardcontrol_3_avalon_slave_0_waitrequest), //               .waitrequest
+		.rx          (iceboardcontrol_3_conduit_end_rx),                               //    conduit_end.rx
+		.tx          (iceboardcontrol_3_conduit_end_tx)                                //               .tx
+	);
+
 	soc_system_LED led (
 		.clk        (clk_clk),                             //                 clk.clk
 		.reset_n    (~rst_controller_reset_out_reset),     //               reset.reset_n
@@ -174,6 +266,32 @@ module soc_system (
 		.chipselect (mm_interconnect_0_led_s1_chipselect), //                    .chipselect
 		.readdata   (mm_interconnect_0_led_s1_readdata),   //                    .readdata
 		.out_port   (led_external_connection_export)       // external_connection.export
+	);
+
+	MYOControl #(
+		.NUMBER_OF_MOTORS        (4),
+		.CLOCK_SPEED_HZ          (50000000),
+		.ENABLE_MYOBRICK_CONTROL (0)
+	) myocontrol_0 (
+		.reset                (rst_controller_reset_out_reset),                            //          reset.reset
+		.address              (mm_interconnect_0_myocontrol_0_avalon_slave_0_address),     // avalon_slave_0.address
+		.write                (mm_interconnect_0_myocontrol_0_avalon_slave_0_write),       //               .write
+		.writedata            (mm_interconnect_0_myocontrol_0_avalon_slave_0_writedata),   //               .writedata
+		.read                 (mm_interconnect_0_myocontrol_0_avalon_slave_0_read),        //               .read
+		.readdata             (mm_interconnect_0_myocontrol_0_avalon_slave_0_readdata),    //               .readdata
+		.waitrequest          (mm_interconnect_0_myocontrol_0_avalon_slave_0_waitrequest), //               .waitrequest
+		.angle_miso           (myocontrol_0_conduit_end_angle_miso),                       //    conduit_end.angle_miso
+		.angle_mosi           (myocontrol_0_conduit_end_angle_mosi),                       //               .angle_mosi
+		.angle_sck            (myocontrol_0_conduit_end_angle_sck),                        //               .angle_sck
+		.angle_ss_n_o         (myocontrol_0_conduit_end_angle_ss_n_o),                     //               .angle_ss_n_o
+		.gpio_n               (myocontrol_0_conduit_end_gpio_n),                           //               .gpio_n
+		.mirrored_muscle_unit (myocontrol_0_conduit_end_mirrored_muscle_unit),             //               .mirrored_muscle_unit
+		.miso                 (myocontrol_0_conduit_end_miso),                             //               .miso
+		.mosi                 (myocontrol_0_conduit_end_mosi),                             //               .mosi
+		.power_sense_n        (myocontrol_0_conduit_end_power_sense_n),                    //               .power_sense_n
+		.ss_n_o               (myocontrol_0_conduit_end_ss_n_o),                           //               .ss_n_o
+		.sck                  (myocontrol_0_conduit_end_sck),                              //               .sck
+		.clock                (clk_clk)                                                    //     clock_sink.clk
 	);
 
 	soc_system_hps_0 #(
@@ -370,6 +488,24 @@ module soc_system (
 		.ICEboardControl_0_avalon_slave_0_readdata                           (mm_interconnect_0_iceboardcontrol_0_avalon_slave_0_readdata),    //                                                              .readdata
 		.ICEboardControl_0_avalon_slave_0_writedata                          (mm_interconnect_0_iceboardcontrol_0_avalon_slave_0_writedata),   //                                                              .writedata
 		.ICEboardControl_0_avalon_slave_0_waitrequest                        (mm_interconnect_0_iceboardcontrol_0_avalon_slave_0_waitrequest), //                                                              .waitrequest
+		.ICEboardControl_1_avalon_slave_0_address                            (mm_interconnect_0_iceboardcontrol_1_avalon_slave_0_address),     //                              ICEboardControl_1_avalon_slave_0.address
+		.ICEboardControl_1_avalon_slave_0_write                              (mm_interconnect_0_iceboardcontrol_1_avalon_slave_0_write),       //                                                              .write
+		.ICEboardControl_1_avalon_slave_0_read                               (mm_interconnect_0_iceboardcontrol_1_avalon_slave_0_read),        //                                                              .read
+		.ICEboardControl_1_avalon_slave_0_readdata                           (mm_interconnect_0_iceboardcontrol_1_avalon_slave_0_readdata),    //                                                              .readdata
+		.ICEboardControl_1_avalon_slave_0_writedata                          (mm_interconnect_0_iceboardcontrol_1_avalon_slave_0_writedata),   //                                                              .writedata
+		.ICEboardControl_1_avalon_slave_0_waitrequest                        (mm_interconnect_0_iceboardcontrol_1_avalon_slave_0_waitrequest), //                                                              .waitrequest
+		.ICEboardControl_2_avalon_slave_0_address                            (mm_interconnect_0_iceboardcontrol_2_avalon_slave_0_address),     //                              ICEboardControl_2_avalon_slave_0.address
+		.ICEboardControl_2_avalon_slave_0_write                              (mm_interconnect_0_iceboardcontrol_2_avalon_slave_0_write),       //                                                              .write
+		.ICEboardControl_2_avalon_slave_0_read                               (mm_interconnect_0_iceboardcontrol_2_avalon_slave_0_read),        //                                                              .read
+		.ICEboardControl_2_avalon_slave_0_readdata                           (mm_interconnect_0_iceboardcontrol_2_avalon_slave_0_readdata),    //                                                              .readdata
+		.ICEboardControl_2_avalon_slave_0_writedata                          (mm_interconnect_0_iceboardcontrol_2_avalon_slave_0_writedata),   //                                                              .writedata
+		.ICEboardControl_2_avalon_slave_0_waitrequest                        (mm_interconnect_0_iceboardcontrol_2_avalon_slave_0_waitrequest), //                                                              .waitrequest
+		.ICEboardControl_3_avalon_slave_0_address                            (mm_interconnect_0_iceboardcontrol_3_avalon_slave_0_address),     //                              ICEboardControl_3_avalon_slave_0.address
+		.ICEboardControl_3_avalon_slave_0_write                              (mm_interconnect_0_iceboardcontrol_3_avalon_slave_0_write),       //                                                              .write
+		.ICEboardControl_3_avalon_slave_0_read                               (mm_interconnect_0_iceboardcontrol_3_avalon_slave_0_read),        //                                                              .read
+		.ICEboardControl_3_avalon_slave_0_readdata                           (mm_interconnect_0_iceboardcontrol_3_avalon_slave_0_readdata),    //                                                              .readdata
+		.ICEboardControl_3_avalon_slave_0_writedata                          (mm_interconnect_0_iceboardcontrol_3_avalon_slave_0_writedata),   //                                                              .writedata
+		.ICEboardControl_3_avalon_slave_0_waitrequest                        (mm_interconnect_0_iceboardcontrol_3_avalon_slave_0_waitrequest), //                                                              .waitrequest
 		.jtag_uart_avalon_jtag_slave_address                                 (mm_interconnect_0_jtag_uart_avalon_jtag_slave_address),          //                                   jtag_uart_avalon_jtag_slave.address
 		.jtag_uart_avalon_jtag_slave_write                                   (mm_interconnect_0_jtag_uart_avalon_jtag_slave_write),            //                                                              .write
 		.jtag_uart_avalon_jtag_slave_read                                    (mm_interconnect_0_jtag_uart_avalon_jtag_slave_read),             //                                                              .read
@@ -382,6 +518,12 @@ module soc_system (
 		.LED_s1_readdata                                                     (mm_interconnect_0_led_s1_readdata),                              //                                                              .readdata
 		.LED_s1_writedata                                                    (mm_interconnect_0_led_s1_writedata),                             //                                                              .writedata
 		.LED_s1_chipselect                                                   (mm_interconnect_0_led_s1_chipselect),                            //                                                              .chipselect
+		.MYOControl_0_avalon_slave_0_address                                 (mm_interconnect_0_myocontrol_0_avalon_slave_0_address),          //                                   MYOControl_0_avalon_slave_0.address
+		.MYOControl_0_avalon_slave_0_write                                   (mm_interconnect_0_myocontrol_0_avalon_slave_0_write),            //                                                              .write
+		.MYOControl_0_avalon_slave_0_read                                    (mm_interconnect_0_myocontrol_0_avalon_slave_0_read),             //                                                              .read
+		.MYOControl_0_avalon_slave_0_readdata                                (mm_interconnect_0_myocontrol_0_avalon_slave_0_readdata),         //                                                              .readdata
+		.MYOControl_0_avalon_slave_0_writedata                               (mm_interconnect_0_myocontrol_0_avalon_slave_0_writedata),        //                                                              .writedata
+		.MYOControl_0_avalon_slave_0_waitrequest                             (mm_interconnect_0_myocontrol_0_avalon_slave_0_waitrequest),      //                                                              .waitrequest
 		.neopixel_0_avalon_slave_0_address                                   (mm_interconnect_0_neopixel_0_avalon_slave_0_address),            //                                     neopixel_0_avalon_slave_0.address
 		.neopixel_0_avalon_slave_0_write                                     (mm_interconnect_0_neopixel_0_avalon_slave_0_write),              //                                                              .write
 		.neopixel_0_avalon_slave_0_read                                      (mm_interconnect_0_neopixel_0_avalon_slave_0_read),               //                                                              .read
