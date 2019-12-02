@@ -704,6 +704,7 @@ set_instance_assignment -name SLEW_RATE 0 -to GPIO_1[29]
 set_instance_assignment -name SLEW_RATE 0 -to GPIO_1[28]
 set_instance_assignment -name SLEW_RATE 0 -to GPIO_1[27]
 set_instance_assignment -name SLEW_RATE 0 -to GPIO_1[26]
+set_global_assignment -name SYSTEMVERILOG_FILE ip/roboy_fpga_code/tli4970/tli4970.sv
 set_global_assignment -name VERILOG_FILE ip/roboy_fpga_code/neopixel/Counter.v
 set_global_assignment -name VERILOG_FILE ip/roboy_fpga_code/neopixel/neopixel.v
 set_global_assignment -name QIP_FILE ip/roboy_fpga_code/neopixel/neopixel_fifo.qip

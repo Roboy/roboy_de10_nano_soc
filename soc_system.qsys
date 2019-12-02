@@ -9,15 +9,7 @@
    categories="System" />
  <parameter name="bonusData"><![CDATA[bonusData 
 {
-   element DarkRoomOOTXdecoder_0
-   {
-      datum _sortIndex
-      {
-         value = "7";
-         type = "int";
-      }
-   }
-   element DarkRoom_0
+   element I2C_0
    {
       datum _sortIndex
       {
@@ -25,95 +17,7 @@
          type = "int";
       }
    }
-   element I2C_0
-   {
-      datum _sortIndex
-      {
-         value = "11";
-         type = "int";
-      }
-   }
    element I2C_0.avalon_slave_0
-   {
-      datum baseAddress
-      {
-         value = "1344";
-         type = "String";
-      }
-   }
-   element I2C_1
-   {
-      datum _sortIndex
-      {
-         value = "12";
-         type = "int";
-      }
-   }
-   element I2C_1.avalon_slave_0
-   {
-      datum baseAddress
-      {
-         value = "1280";
-         type = "String";
-      }
-   }
-   element I2C_2
-   {
-      datum _sortIndex
-      {
-         value = "13";
-         type = "int";
-      }
-   }
-   element I2C_2.avalon_slave_0
-   {
-      datum baseAddress
-      {
-         value = "1216";
-         type = "String";
-      }
-   }
-   element I2C_3
-   {
-      datum _sortIndex
-      {
-         value = "14";
-         type = "int";
-      }
-   }
-   element I2C_3.avalon_slave_0
-   {
-      datum baseAddress
-      {
-         value = "1152";
-         type = "String";
-      }
-   }
-   element I2C_4
-   {
-      datum _sortIndex
-      {
-         value = "15";
-         type = "int";
-      }
-   }
-   element I2C_4.avalon_slave_0
-   {
-      datum baseAddress
-      {
-         value = "1088";
-         type = "String";
-      }
-   }
-   element I2C_5
-   {
-      datum _sortIndex
-      {
-         value = "16";
-         type = "int";
-      }
-   }
-   element I2C_5.avalon_slave_0
    {
       datum baseAddress
       {
@@ -133,55 +37,7 @@
    {
       datum baseAddress
       {
-         value = "1440";
-         type = "String";
-      }
-   }
-   element MYOControl_0
-   {
-      datum _sortIndex
-      {
-         value = "8";
-         type = "int";
-      }
-   }
-   element MYOControl_0.avalon_slave_0
-   {
-      datum baseAddress
-      {
-         value = "786432";
-         type = "String";
-      }
-   }
-   element MYOControl_1
-   {
-      datum _sortIndex
-      {
-         value = "9";
-         type = "int";
-      }
-   }
-   element MYOControl_1.avalon_slave_0
-   {
-      datum baseAddress
-      {
-         value = "1048576";
-         type = "String";
-      }
-   }
-   element MYOControl_2
-   {
-      datum _sortIndex
-      {
-         value = "10";
-         type = "int";
-      }
-   }
-   element MYOControl_2.avalon_slave_0
-   {
-      datum baseAddress
-      {
-         value = "524288";
+         value = "1120";
          type = "String";
       }
    }
@@ -197,7 +53,23 @@
    {
       datum baseAddress
       {
-         value = "1424";
+         value = "1104";
+         type = "String";
+      }
+   }
+   element TLI4970_0
+   {
+      datum _sortIndex
+      {
+         value = "11";
+         type = "int";
+      }
+   }
+   element TLI4970_0.avalon_slave_0
+   {
+      datum baseAddress
+      {
+         value = "0";
          type = "String";
       }
    }
@@ -205,7 +77,7 @@
    {
       datum _sortIndex
       {
-         value = "17";
+         value = "7";
          type = "int";
       }
    }
@@ -213,7 +85,7 @@
    {
       datum baseAddress
       {
-         value = "176";
+         value = "1136";
          type = "String";
       }
    }
@@ -269,27 +141,11 @@
          type = "String";
       }
    }
-   element neopixel_0
-   {
-      datum _sortIndex
-      {
-         value = "21";
-         type = "int";
-      }
-   }
-   element neopixel_0.avalon_slave_0
-   {
-      datum baseAddress
-      {
-         value = "0";
-         type = "String";
-      }
-   }
    element pio_0
    {
       datum _sortIndex
       {
-         value = "20";
+         value = "10";
          type = "int";
       }
    }
@@ -297,7 +153,7 @@
    {
       datum baseAddress
       {
-         value = "1408";
+         value = "1088";
          type = "String";
       }
    }
@@ -305,7 +161,7 @@
    {
       datum _sortIndex
       {
-         value = "18";
+         value = "8";
          type = "int";
       }
    }
@@ -313,7 +169,7 @@
    {
       datum _sortIndex
       {
-         value = "19";
+         value = "9";
          type = "int";
       }
    }
@@ -1228,13 +1084,12 @@
  <parameter name="timeStamp" value="0" />
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
- <interface name="adc_ltc2308_0_conduit_end" internal="adc_ltc2308_0.conduit_end" />
- <interface name="clk" internal="clk_0.clk_in" type="clock" dir="end" />
- <interface name="darkroom_0_conduit_end" internal="DarkRoom_0.conduit_end" />
- <interface name="darkroom_0_sensor_signals" internal="DarkRoom_0.sensor_signals" />
  <interface
-   name="darkroomootxdecoder_0_conduit_end"
-   internal="DarkRoomOOTXdecoder_0.conduit_end" />
+   name="adc_ltc2308_0_conduit_end"
+   internal="adc_ltc2308_0.conduit_end"
+   type="conduit"
+   dir="end" />
+ <interface name="clk" internal="clk_0.clk_in" type="clock" dir="end" />
  <interface
    name="hps_0_f2h_cold_reset_req"
    internal="hps_0.f2h_cold_reset_req"
@@ -1264,56 +1119,11 @@
    type="conduit"
    dir="end" />
  <interface
-   name="i2c_1_conduit_end"
-   internal="I2C_1.conduit_end"
-   type="conduit"
-   dir="end" />
- <interface
-   name="i2c_2_conduit_end"
-   internal="I2C_2.conduit_end"
-   type="conduit"
-   dir="end" />
- <interface
-   name="i2c_3_conduit_end"
-   internal="I2C_3.conduit_end"
-   type="conduit"
-   dir="end" />
- <interface
-   name="i2c_4_conduit_end"
-   internal="I2C_4.conduit_end"
-   type="conduit"
-   dir="end" />
- <interface
-   name="i2c_5_conduit_end"
-   internal="I2C_5.conduit_end"
-   type="conduit"
-   dir="end" />
- <interface
    name="led_external_connection"
    internal="LED.external_connection"
    type="conduit"
    dir="end" />
  <interface name="memory" internal="hps_0.memory" type="conduit" dir="end" />
- <interface
-   name="myocontrol_0_conduit_end"
-   internal="MYOControl_0.conduit_end"
-   type="conduit"
-   dir="end" />
- <interface
-   name="myocontrol_1_conduit_end"
-   internal="MYOControl_1.conduit_end"
-   type="conduit"
-   dir="end" />
- <interface
-   name="myocontrol_2_conduit_end"
-   internal="MYOControl_2.conduit_end"
-   type="conduit"
-   dir="end" />
- <interface
-   name="neopixel_0_conduit_end"
-   internal="neopixel_0.conduit_end"
-   type="conduit"
-   dir="end" />
  <interface
    name="pio_0_external_connection"
    internal="pio_0.external_connection"
@@ -1330,41 +1140,12 @@
    internal="SWITCHES.external_connection"
    type="conduit"
    dir="end" />
- <module
-   name="DarkRoomOOTXdecoder_0"
-   kind="DarkRoomOOTXdecoder"
-   version="1.0"
-   enabled="0">
-  <parameter name="ENABLE_UART_TRANSMITTER" value="true" />
-  <parameter name="NUMBER_OF_SENSORS" value="16" />
- </module>
- <module name="DarkRoom_0" kind="DarkRoom" version="1.0" enabled="0">
-  <parameter name="CLK_SPEED" value="50000000" />
-  <parameter name="ENABLE_AVALON_INTERFACE" value="1" />
-  <parameter name="ENABLE_SPI_TRANSMITTER" value="true" />
-  <parameter name="NUMBER_OF_SENSORS" value="16" />
- </module>
+ <interface
+   name="tli4970_0_conduit_end"
+   internal="TLI4970_0.conduit_end"
+   type="conduit"
+   dir="end" />
  <module name="I2C_0" kind="I2C" version="1.0" enabled="1">
-  <parameter name="BUS_SPEED_HZ" value="400000" />
-  <parameter name="CLOCK_SPEED_HZ" value="50000000" />
- </module>
- <module name="I2C_1" kind="I2C" version="1.0" enabled="1">
-  <parameter name="BUS_SPEED_HZ" value="400000" />
-  <parameter name="CLOCK_SPEED_HZ" value="50000000" />
- </module>
- <module name="I2C_2" kind="I2C" version="1.0" enabled="1">
-  <parameter name="BUS_SPEED_HZ" value="400000" />
-  <parameter name="CLOCK_SPEED_HZ" value="50000000" />
- </module>
- <module name="I2C_3" kind="I2C" version="1.0" enabled="1">
-  <parameter name="BUS_SPEED_HZ" value="400000" />
-  <parameter name="CLOCK_SPEED_HZ" value="50000000" />
- </module>
- <module name="I2C_4" kind="I2C" version="1.0" enabled="1">
-  <parameter name="BUS_SPEED_HZ" value="400000" />
-  <parameter name="CLOCK_SPEED_HZ" value="50000000" />
- </module>
- <module name="I2C_5" kind="I2C" version="1.0" enabled="1">
   <parameter name="BUS_SPEED_HZ" value="400000" />
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
  </module>
@@ -1382,21 +1163,6 @@
   <parameter name="simDrivenValue" value="0" />
   <parameter name="width" value="8" />
  </module>
- <module name="MYOControl_0" kind="MYOControl" version="1.0" enabled="1">
-  <parameter name="CLOCK_SPEED_HZ" value="50000000" />
-  <parameter name="ENABLE_MYOBRICK_CONTROL" value="0" />
-  <parameter name="NUMBER_OF_MOTORS" value="9" />
- </module>
- <module name="MYOControl_1" kind="MYOControl" version="1.0" enabled="1">
-  <parameter name="CLOCK_SPEED_HZ" value="50000000" />
-  <parameter name="ENABLE_MYOBRICK_CONTROL" value="1" />
-  <parameter name="NUMBER_OF_MOTORS" value="6" />
- </module>
- <module name="MYOControl_2" kind="MYOControl" version="1.0" enabled="1">
-  <parameter name="CLOCK_SPEED_HZ" value="50000000" />
-  <parameter name="ENABLE_MYOBRICK_CONTROL" value="1" />
-  <parameter name="NUMBER_OF_MOTORS" value="6" />
- </module>
  <module name="SWITCHES" kind="altera_avalon_pio" version="18.1" enabled="1">
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
@@ -1411,7 +1177,12 @@
   <parameter name="simDrivenValue" value="0" />
   <parameter name="width" value="4" />
  </module>
- <module name="adc_ltc2308_0" kind="adc_ltc2308" version="1.1" enabled="0" />
+ <module name="TLI4970_0" kind="TLI4970" version="1.0" enabled="1">
+  <parameter name="CLOCK_SPEED_HZ" value="50000000" />
+  <parameter name="NUMBER_OF_SENSORS" value="2" />
+  <parameter name="UPDATE_FREQUENCY" value="1000" />
+ </module>
+ <module name="adc_ltc2308_0" kind="adc_ltc2308" version="1.1" enabled="1" />
  <module name="clk_0" kind="clock_source" version="18.1" enabled="1">
   <parameter name="clockFrequency" value="50000000" />
   <parameter name="clockFrequencyKnown" value="true" />
@@ -1967,16 +1738,12 @@
   <parameter name="writeBufferDepth" value="64" />
   <parameter name="writeIRQThreshold" value="8" />
  </module>
- <module name="neopixel_0" kind="neopixel" version="1.0" enabled="1">
-  <parameter name="NUMBER_OF_NEOPIXEL" value="10" />
-  <parameter name="RGBW" value="0" />
- </module>
  <module name="pio_0" kind="altera_avalon_pio" version="18.1" enabled="1">
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
   <parameter name="captureEdge" value="false" />
   <parameter name="clockRate" value="50000000" />
-  <parameter name="direction" value="Output" />
+  <parameter name="direction" value="Input" />
   <parameter name="edgeType" value="RISING" />
   <parameter name="generateIRQ" value="false" />
   <parameter name="irqType" value="LEVEL" />
@@ -1985,7 +1752,7 @@
   <parameter name="simDrivenValue" value="0" />
   <parameter name="width" value="2" />
  </module>
- <module name="pll_40MHz" kind="altera_pll" version="18.1" enabled="0">
+ <module name="pll_40MHz" kind="altera_pll" version="18.1" enabled="1">
   <parameter name="debug_print_output" value="false" />
   <parameter name="debug_use_rbc_taf_method" value="false" />
   <parameter name="device" value="5CSEBA6U23I7" />
@@ -2190,11 +1957,11 @@
  </module>
  <module name="pwm_0" kind="pwm" version="1.0" enabled="1">
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
-  <parameter name="NUMBER_OF_MOTORS" value="2" />
-  <parameter name="PWM_FREQ" value="20000" />
-  <parameter name="PWM_PAUSE_FREQ" value="20000" />
+  <parameter name="NUMBER_OF_MOTORS" value="6" />
+  <parameter name="PWM_FREQ" value="32000" />
+  <parameter name="PWM_PAUSE_FREQ" value="10000000" />
   <parameter name="PWM_PHASES" value="1" />
-  <parameter name="PWM_RESOLUTION" value="8" />
+  <parameter name="PWM_RESOLUTION" value="15" />
  </module>
  <module
    name="sysid_qsys"
@@ -2216,45 +1983,9 @@
    kind="avalon"
    version="18.1"
    start="hps_0.h2f_lw_axi_master"
-   end="MYOControl_1.avalon_slave_0">
+   end="pwm_0.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00100000" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="18.1"
-   start="hps_0.h2f_lw_axi_master"
-   end="DarkRoomOOTXdecoder_0.avalon_slave_0">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0800" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="18.1"
-   start="hps_0.h2f_lw_axi_master"
-   end="DarkRoom_0.avalon_slave_0">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0000" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="18.1"
-   start="hps_0.h2f_lw_axi_master"
-   end="MYOControl_0.avalon_slave_0">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x000c0000" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="18.1"
-   start="hps_0.h2f_lw_axi_master"
-   end="MYOControl_2.avalon_slave_0">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00080000" />
+  <parameter name="baseAddress" value="0x00040000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2263,60 +1994,6 @@
    start="hps_0.h2f_lw_axi_master"
    end="I2C_0.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0540" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="18.1"
-   start="hps_0.h2f_lw_axi_master"
-   end="I2C_1.avalon_slave_0">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0500" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="18.1"
-   start="hps_0.h2f_lw_axi_master"
-   end="I2C_2.avalon_slave_0">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x04c0" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="18.1"
-   start="hps_0.h2f_lw_axi_master"
-   end="I2C_3.avalon_slave_0">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0480" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="18.1"
-   start="hps_0.h2f_lw_axi_master"
-   end="neopixel_0.avalon_slave_0">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0000" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="18.1"
-   start="hps_0.h2f_lw_axi_master"
-   end="I2C_4.avalon_slave_0">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0440" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="18.1"
-   start="hps_0.h2f_lw_axi_master"
-   end="I2C_5.avalon_slave_0">
-  <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0400" />
   <parameter name="defaultConnection" value="false" />
  </connection>
@@ -2324,9 +2001,9 @@
    kind="avalon"
    version="18.1"
    start="hps_0.h2f_lw_axi_master"
-   end="pwm_0.avalon_slave_0">
+   end="TLI4970_0.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00040000" />
+  <parameter name="baseAddress" value="0x0000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2344,7 +2021,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="LED.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x05a0" />
+  <parameter name="baseAddress" value="0x0460" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2353,7 +2030,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="SWITCHES.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0590" />
+  <parameter name="baseAddress" value="0x0450" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2362,7 +2039,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="pio_0.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0580" />
+  <parameter name="baseAddress" value="0x0440" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2371,7 +2048,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="adc_ltc2308_0.slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00b0" />
+  <parameter name="baseAddress" value="0x0470" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection kind="clock" version="18.1" start="clk_0.clk" end="jtag_uart.clk" />
@@ -2379,48 +2056,18 @@
  <connection kind="clock" version="18.1" start="clk_0.clk" end="SWITCHES.clk" />
  <connection kind="clock" version="18.1" start="clk_0.clk" end="sysid_qsys.clk" />
  <connection kind="clock" version="18.1" start="clk_0.clk" end="pio_0.clk" />
- <connection
-   kind="clock"
-   version="18.1"
-   start="clk_0.clk"
-   end="MYOControl_1.clock_sink" />
- <connection
-   kind="clock"
-   version="18.1"
-   start="clk_0.clk"
-   end="DarkRoomOOTXdecoder_0.clock_sink" />
- <connection
-   kind="clock"
-   version="18.1"
-   start="clk_0.clk"
-   end="DarkRoom_0.clock_sink" />
- <connection
-   kind="clock"
-   version="18.1"
-   start="clk_0.clk"
-   end="MYOControl_0.clock_sink" />
- <connection
-   kind="clock"
-   version="18.1"
-   start="clk_0.clk"
-   end="MYOControl_2.clock_sink" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="pwm_0.clock_sink" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="I2C_0.clock_sink" />
  <connection
    kind="clock"
    version="18.1"
    start="clk_0.clk"
    end="adc_ltc2308_0.clock_sink" />
- <connection kind="clock" version="18.1" start="clk_0.clk" end="I2C_0.clock_sink" />
- <connection kind="clock" version="18.1" start="clk_0.clk" end="I2C_1.clock_sink" />
- <connection kind="clock" version="18.1" start="clk_0.clk" end="I2C_2.clock_sink" />
- <connection kind="clock" version="18.1" start="clk_0.clk" end="I2C_3.clock_sink" />
  <connection
    kind="clock"
    version="18.1"
    start="clk_0.clk"
-   end="neopixel_0.clock_sink" />
- <connection kind="clock" version="18.1" start="clk_0.clk" end="I2C_4.clock_sink" />
- <connection kind="clock" version="18.1" start="clk_0.clk" end="I2C_5.clock_sink" />
- <connection kind="clock" version="18.1" start="clk_0.clk" end="pwm_0.clock_sink" />
+   end="TLI4970_0.clock_sink" />
  <connection
    kind="clock"
    version="18.1"
@@ -2444,26 +2091,6 @@
    version="18.1"
    start="clk_0.clk_reset"
    end="jtag_uart.reset" />
- <connection
-   kind="reset"
-   version="18.1"
-   start="clk_0.clk_reset"
-   end="MYOControl_1.reset" />
- <connection
-   kind="reset"
-   version="18.1"
-   start="clk_0.clk_reset"
-   end="DarkRoomOOTXdecoder_0.reset" />
- <connection
-   kind="reset"
-   version="18.1"
-   start="clk_0.clk_reset"
-   end="DarkRoom_0.reset" />
- <connection
-   kind="reset"
-   version="18.1"
-   start="clk_0.clk_reset"
-   end="MYOControl_0.reset" />
  <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="LED.reset" />
  <connection
    kind="reset"
@@ -2475,29 +2102,19 @@
    version="18.1"
    start="clk_0.clk_reset"
    end="sysid_qsys.reset" />
- <connection
-   kind="reset"
-   version="18.1"
-   start="clk_0.clk_reset"
-   end="MYOControl_2.reset" />
+ <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="pio_0.reset" />
+ <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="pwm_0.reset" />
+ <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="I2C_0.reset" />
  <connection
    kind="reset"
    version="18.1"
    start="clk_0.clk_reset"
    end="pll_40MHz.reset" />
- <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="I2C_0.reset" />
- <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="I2C_1.reset" />
- <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="I2C_2.reset" />
- <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="I2C_3.reset" />
- <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="I2C_4.reset" />
- <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="I2C_5.reset" />
  <connection
    kind="reset"
    version="18.1"
    start="clk_0.clk_reset"
-   end="neopixel_0.reset" />
- <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="pio_0.reset" />
- <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="pwm_0.reset" />
+   end="TLI4970_0.reset" />
  <connection
    kind="reset"
    version="18.1"
