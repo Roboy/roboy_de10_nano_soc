@@ -53,8 +53,22 @@ module soc_system (
 	hps_0_hps_io_hps_io_gpio_inst_GPIO53,
 	hps_0_hps_io_hps_io_gpio_inst_GPIO54,
 	hps_0_hps_io_hps_io_gpio_inst_GPIO61,
+	i2c_0_conduit_end_scl,
+	i2c_0_conduit_end_sda,
+	i2c_0_conduit_end_led,
+	i2c_0_conduit_end_gpio,
+	i2c_1_conduit_end_scl,
+	i2c_1_conduit_end_sda,
+	i2c_1_conduit_end_led,
+	i2c_1_conduit_end_gpio,
 	iceboardcontrol_0_conduit_end_rx,
 	iceboardcontrol_0_conduit_end_tx,
+	iceboardcontrol_1_conduit_end_rx,
+	iceboardcontrol_1_conduit_end_tx,
+	iceboardcontrol_2_conduit_end_rx,
+	iceboardcontrol_2_conduit_end_tx,
+	iceboardcontrol_3_conduit_end_rx,
+	iceboardcontrol_3_conduit_end_tx,
 	led_external_connection_export,
 	memory_mem_a,
 	memory_mem_ba,
@@ -84,13 +98,7 @@ module soc_system (
 	myocontrol_0_conduit_end_ss_n_o,
 	myocontrol_0_conduit_end_sck,
 	neopixel_0_conduit_end_one_wire,
-	reset_reset_n,
-	iceboardcontrol_1_conduit_end_rx,
-	iceboardcontrol_1_conduit_end_tx,
-	iceboardcontrol_2_conduit_end_rx,
-	iceboardcontrol_2_conduit_end_tx,
-	iceboardcontrol_3_conduit_end_rx,
-	iceboardcontrol_3_conduit_end_tx);	
+	reset_reset_n);	
 
 	input		clk_clk;
 	input		hps_0_f2h_cold_reset_req_reset_n;
@@ -145,8 +153,22 @@ module soc_system (
 	inout		hps_0_hps_io_hps_io_gpio_inst_GPIO53;
 	inout		hps_0_hps_io_hps_io_gpio_inst_GPIO54;
 	inout		hps_0_hps_io_hps_io_gpio_inst_GPIO61;
+	inout		i2c_0_conduit_end_scl;
+	inout		i2c_0_conduit_end_sda;
+	output	[6:0]	i2c_0_conduit_end_led;
+	output	[2:0]	i2c_0_conduit_end_gpio;
+	inout		i2c_1_conduit_end_scl;
+	inout		i2c_1_conduit_end_sda;
+	output	[6:0]	i2c_1_conduit_end_led;
+	output	[2:0]	i2c_1_conduit_end_gpio;
 	input		iceboardcontrol_0_conduit_end_rx;
 	output		iceboardcontrol_0_conduit_end_tx;
+	input		iceboardcontrol_1_conduit_end_rx;
+	output		iceboardcontrol_1_conduit_end_tx;
+	input		iceboardcontrol_2_conduit_end_rx;
+	output		iceboardcontrol_2_conduit_end_tx;
+	input		iceboardcontrol_3_conduit_end_rx;
+	output		iceboardcontrol_3_conduit_end_tx;
 	output	[7:0]	led_external_connection_export;
 	output	[14:0]	memory_mem_a;
 	output	[2:0]	memory_mem_ba;
@@ -177,10 +199,4 @@ module soc_system (
 	output		myocontrol_0_conduit_end_sck;
 	output		neopixel_0_conduit_end_one_wire;
 	input		reset_reset_n;
-	input		iceboardcontrol_1_conduit_end_rx;
-	output		iceboardcontrol_1_conduit_end_tx;
-	input		iceboardcontrol_2_conduit_end_rx;
-	output		iceboardcontrol_2_conduit_end_tx;
-	input		iceboardcontrol_3_conduit_end_rx;
-	output		iceboardcontrol_3_conduit_end_tx;
 endmodule

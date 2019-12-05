@@ -12,11 +12,11 @@ module DE10_NANO_SoC_GHRD(
  
       ///////// ARDUINO /////////
       inout       [15:0] ARDUINO_IO, 
-      inout              ARDUINO_RESET_N,
+      inout              ARDUINO_RESET_N, 
 
       ///////// FPGA /////////  
       input              FPGA_CLK1_50,
-      input              FPGA_CLK2_50,
+      input              FPGA_CLK2_50, 
       input              FPGA_CLK3_50,
 
       ///////// GPIO /////////
@@ -135,6 +135,10 @@ soc_system u0(
 			.myocontrol_0_conduit_end_ss_n_o(GPIO_1[11:8]),
 			.myocontrol_0_conduit_end_power_sense_n(1'b0),
 			.neopixel_0_conduit_end_one_wire(GPIO_1[24]),
+			.i2c_0_conduit_end_sda(GPIO_0[35]),
+			.i2c_0_conduit_end_scl(GPIO_0[34]),
+			.i2c_1_conduit_end_sda(GPIO_0[33]),
+			.i2c_1_conduit_end_scl(GPIO_0[32]),
 			//HPS ddr3
 			.memory_mem_a(HPS_DDR3_ADDR),                                //                         memory.mem_a
 			.memory_mem_ba(HPS_DDR3_BA),                                 //                               .mem_ba

@@ -9,6 +9,38 @@
    categories="System" />
  <parameter name="bonusData"><![CDATA[bonusData 
 {
+   element I2C_0
+   {
+      datum _sortIndex
+      {
+         value = "11";
+         type = "int";
+      }
+   }
+   element I2C_0.avalon_slave_0
+   {
+      datum baseAddress
+      {
+         value = "1088";
+         type = "String";
+      }
+   }
+   element I2C_1
+   {
+      datum _sortIndex
+      {
+         value = "12";
+         type = "int";
+      }
+   }
+   element I2C_1.avalon_slave_0
+   {
+      datum baseAddress
+      {
+         value = "1024";
+         type = "String";
+      }
+   }
    element ICEboardControl_0
    {
       datum _sortIndex
@@ -85,7 +117,7 @@
    {
       datum baseAddress
       {
-         value = "1024";
+         value = "1152";
          type = "String";
       }
    }
@@ -1117,6 +1149,16 @@
  <interface name="hps_0_h2f_user0_clock" internal="hps_0.h2f_user0_clock" />
  <interface name="hps_0_hps_io" internal="hps_0.hps_io" type="conduit" dir="end" />
  <interface
+   name="i2c_0_conduit_end"
+   internal="I2C_0.conduit_end"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="i2c_1_conduit_end"
+   internal="I2C_1.conduit_end"
+   type="conduit"
+   dir="end" />
+ <interface
    name="iceboardcontrol_0_conduit_end"
    internal="ICEboardControl_0.conduit_end"
    type="conduit"
@@ -1153,6 +1195,14 @@
    type="conduit"
    dir="end" />
  <interface name="reset" internal="clk_0.clk_in_reset" type="reset" dir="end" />
+ <module name="I2C_0" kind="I2C" version="1.0" enabled="1">
+  <parameter name="BUS_SPEED_HZ" value="400000" />
+  <parameter name="CLOCK_SPEED_HZ" value="50000000" />
+ </module>
+ <module name="I2C_1" kind="I2C" version="1.0" enabled="1">
+  <parameter name="BUS_SPEED_HZ" value="400000" />
+  <parameter name="CLOCK_SPEED_HZ" value="50000000" />
+ </module>
  <module
    name="ICEboardControl_0"
    kind="ICEboardControl"
@@ -1160,7 +1210,7 @@
    enabled="1">
   <parameter name="BAUDRATE" value="500000" />
   <parameter name="CLOCK_FREQ_HZ" value="50000000" />
-  <parameter name="NUMBER_OF_MOTORS" value="1" />
+  <parameter name="NUMBER_OF_MOTORS" value="8" />
  </module>
  <module
    name="ICEboardControl_1"
@@ -1169,7 +1219,7 @@
    enabled="1">
   <parameter name="BAUDRATE" value="500000" />
   <parameter name="CLOCK_FREQ_HZ" value="50000000" />
-  <parameter name="NUMBER_OF_MOTORS" value="1" />
+  <parameter name="NUMBER_OF_MOTORS" value="8" />
  </module>
  <module
    name="ICEboardControl_2"
@@ -1178,7 +1228,7 @@
    enabled="1">
   <parameter name="BAUDRATE" value="500000" />
   <parameter name="CLOCK_FREQ_HZ" value="50000000" />
-  <parameter name="NUMBER_OF_MOTORS" value="1" />
+  <parameter name="NUMBER_OF_MOTORS" value="8" />
  </module>
  <module
    name="ICEboardControl_3"
@@ -1187,7 +1237,7 @@
    enabled="1">
   <parameter name="BAUDRATE" value="500000" />
   <parameter name="CLOCK_FREQ_HZ" value="50000000" />
-  <parameter name="NUMBER_OF_MOTORS" value="1" />
+  <parameter name="NUMBER_OF_MOTORS" value="8" />
  </module>
  <module name="LED" kind="altera_avalon_pio" version="18.1" enabled="1">
   <parameter name="bitClearingEdgeCapReg" value="false" />
@@ -1841,6 +1891,24 @@
    kind="avalon"
    version="18.1"
    start="hps_0.h2f_lw_axi_master"
+   end="I2C_0.avalon_slave_0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0440" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="hps_0.h2f_lw_axi_master"
+   end="I2C_1.avalon_slave_0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0400" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="hps_0.h2f_lw_axi_master"
    end="sysid_qsys.control_slave">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x1000" />
@@ -1852,7 +1920,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="LED.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0400" />
+  <parameter name="baseAddress" value="0x0480" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection kind="clock" version="18.1" start="clk_0.clk" end="jtag_uart.clk" />
@@ -1888,6 +1956,8 @@
    version="18.1"
    start="clk_0.clk"
    end="MYOControl_0.clock_sink" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="I2C_0.clock_sink" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="I2C_1.clock_sink" />
  <connection
    kind="clock"
    version="18.1"
@@ -1941,6 +2011,8 @@
    version="18.1"
    start="clk_0.clk_reset"
    end="ICEboardControl_3.reset" />
+ <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="I2C_0.reset" />
+ <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="I2C_1.reset" />
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
  <interconnectRequirement for="$system" name="qsys_mm.maxAdditionalLatency" value="1" />
 </system>
