@@ -56,6 +56,10 @@
 		.hps_0_hps_io_hps_io_gpio_inst_GPIO53  (<connected-to-hps_0_hps_io_hps_io_gpio_inst_GPIO53>),  //                             .hps_io_gpio_inst_GPIO53
 		.hps_0_hps_io_hps_io_gpio_inst_GPIO54  (<connected-to-hps_0_hps_io_hps_io_gpio_inst_GPIO54>),  //                             .hps_io_gpio_inst_GPIO54
 		.hps_0_hps_io_hps_io_gpio_inst_GPIO61  (<connected-to-hps_0_hps_io_hps_io_gpio_inst_GPIO61>),  //                             .hps_io_gpio_inst_GPIO61
+		.i2c_0_conduit_end_scl                 (<connected-to-i2c_0_conduit_end_scl>),                 //            i2c_0_conduit_end.scl
+		.i2c_0_conduit_end_sda                 (<connected-to-i2c_0_conduit_end_sda>),                 //                             .sda
+		.i2c_0_conduit_end_led                 (<connected-to-i2c_0_conduit_end_led>),                 //                             .led
+		.i2c_0_conduit_end_gpio                (<connected-to-i2c_0_conduit_end_gpio>),                //                             .gpio
 		.led_external_connection_export        (<connected-to-led_external_connection_export>),        //      led_external_connection.export
 		.memory_mem_a                          (<connected-to-memory_mem_a>),                          //                       memory.mem_a
 		.memory_mem_ba                         (<connected-to-memory_mem_ba>),                         //                             .mem_ba
@@ -77,12 +81,14 @@
 		.pwm_0_conduit_end_pwm                 (<connected-to-pwm_0_conduit_end_pwm>),                 //            pwm_0_conduit_end.pwm
 		.reset_reset_n                         (<connected-to-reset_reset_n>),                         //                        reset.reset_n
 		.switches_external_connection_export   (<connected-to-switches_external_connection_export>),   // switches_external_connection.export
-		.i2c_0_conduit_end_scl                 (<connected-to-i2c_0_conduit_end_scl>),                 //            i2c_0_conduit_end.scl
-		.i2c_0_conduit_end_sda                 (<connected-to-i2c_0_conduit_end_sda>),                 //                             .sda
-		.i2c_0_conduit_end_led                 (<connected-to-i2c_0_conduit_end_led>),                 //                             .led
-		.i2c_0_conduit_end_gpio                (<connected-to-i2c_0_conduit_end_gpio>),                //                             .gpio
-		.tli4970_0_conduit_end_miso            (<connected-to-tli4970_0_conduit_end_miso>),            //        tli4970_0_conduit_end.miso
-		.tli4970_0_conduit_end_sck             (<connected-to-tli4970_0_conduit_end_sck>),             //                             .sck
-		.tli4970_0_conduit_end_ss_n_o          (<connected-to-tli4970_0_conduit_end_ss_n_o>)           //                             .ss_n_o
+		.tli_0_conduit_end_miso                (<connected-to-tli_0_conduit_end_miso>),                //            tli_0_conduit_end.miso
+		.tli_0_conduit_end_sck                 (<connected-to-tli_0_conduit_end_sck>),                 //                             .sck
+		.tli_0_conduit_end_ss_n_o              (<connected-to-tli_0_conduit_end_ss_n_o>),              //                             .ss_n_o
+		.tli_1_conduit_end_miso                (<connected-to-tli_1_conduit_end_miso>),                //            tli_1_conduit_end.miso
+		.tli_1_conduit_end_sck                 (<connected-to-tli_1_conduit_end_sck>),                 //                             .sck
+		.tli_1_conduit_end_ss_n_o              (<connected-to-tli_1_conduit_end_ss_n_o>),              //                             .ss_n_o
+		.tli_2_conduit_end_miso                (<connected-to-tli_2_conduit_end_miso>),                //            tli_2_conduit_end.miso
+		.tli_2_conduit_end_sck                 (<connected-to-tli_2_conduit_end_sck>),                 //                             .sck
+		.tli_2_conduit_end_ss_n_o              (<connected-to-tli_2_conduit_end_ss_n_o>)               //                             .ss_n_o
 	);
 

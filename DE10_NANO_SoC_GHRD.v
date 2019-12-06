@@ -133,9 +133,15 @@ soc_system u0(
 				.led_external_connection_export(LED), 
 				// switches
 				.switches_external_connection_export(SW),
-				.tli4970_0_conduit_end_miso(GPIO_0[10]),            
-				.tli4970_0_conduit_end_sck(GPIO_0[11]),             //                             .sck
-				.tli4970_0_conduit_end_ss_n_o(GPIO_0[13:12]), 
+				.tli_0_conduit_end_miso(GPIO_1[0]),            
+				.tli_0_conduit_end_sck(GPIO_1[2]),
+				.tli_0_conduit_end_ss_n_o(GPIO_1[4]), 
+				.tli_1_conduit_end_miso(GPIO_1[1]),            
+				.tli_1_conduit_end_sck(GPIO_1[3]),
+				.tli_1_conduit_end_ss_n_o(GPIO_1[5]), 
+				.tli_2_conduit_end_miso(GPIO_1[10]),            
+				.tli_2_conduit_end_sck(GPIO_1[12]),
+				.tli_2_conduit_end_ss_n_o(GPIO_1[14]), 
                //HPS ddr3
                .memory_mem_a(HPS_DDR3_ADDR),                                //                         memory.mem_a
                .memory_mem_ba(HPS_DDR3_BA),                                 //                               .mem_ba

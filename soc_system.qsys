@@ -21,7 +21,7 @@
    {
       datum baseAddress
       {
-         value = "1024";
+         value = "4160";
          type = "String";
       }
    }
@@ -37,7 +37,7 @@
    {
       datum baseAddress
       {
-         value = "1120";
+         value = "4144";
          type = "String";
       }
    }
@@ -53,11 +53,11 @@
    {
       datum baseAddress
       {
-         value = "1104";
+         value = "4128";
          type = "String";
       }
    }
-   element TLI4970_0
+   element TLI_0
    {
       datum _sortIndex
       {
@@ -65,7 +65,39 @@
          type = "int";
       }
    }
-   element TLI4970_0.avalon_slave_0
+   element TLI_0.avalon_slave_0
+   {
+      datum baseAddress
+      {
+         value = "2048";
+         type = "String";
+      }
+   }
+   element TLI_1
+   {
+      datum _sortIndex
+      {
+         value = "12";
+         type = "int";
+      }
+   }
+   element TLI_1.avalon_slave_0
+   {
+      datum baseAddress
+      {
+         value = "1024";
+         type = "String";
+      }
+   }
+   element TLI_2
+   {
+      datum _sortIndex
+      {
+         value = "13";
+         type = "int";
+      }
+   }
+   element TLI_2.avalon_slave_0
    {
       datum baseAddress
       {
@@ -85,7 +117,7 @@
    {
       datum baseAddress
       {
-         value = "1136";
+         value = "4104";
          type = "String";
       }
    }
@@ -153,7 +185,7 @@
    {
       datum baseAddress
       {
-         value = "1088";
+         value = "4112";
          type = "String";
       }
    }
@@ -1141,8 +1173,18 @@
    type="conduit"
    dir="end" />
  <interface
-   name="tli4970_0_conduit_end"
-   internal="TLI4970_0.conduit_end"
+   name="tli_0_conduit_end"
+   internal="TLI_0.conduit_end"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="tli_1_conduit_end"
+   internal="TLI_1.conduit_end"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="tli_2_conduit_end"
+   internal="TLI_2.conduit_end"
    type="conduit"
    dir="end" />
  <module name="I2C_0" kind="I2C" version="1.0" enabled="1">
@@ -1177,10 +1219,20 @@
   <parameter name="simDrivenValue" value="0" />
   <parameter name="width" value="4" />
  </module>
- <module name="TLI4970_0" kind="TLI4970" version="1.0" enabled="1">
+ <module name="TLI_0" kind="TLI4970" version="1.0" enabled="1">
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
-  <parameter name="NUMBER_OF_SENSORS" value="2" />
-  <parameter name="UPDATE_FREQUENCY" value="1000" />
+  <parameter name="NUMBER_OF_SENSORS" value="1" />
+  <parameter name="UPDATE_FREQUENCY" value="100" />
+ </module>
+ <module name="TLI_1" kind="TLI4970" version="1.0" enabled="1">
+  <parameter name="CLOCK_SPEED_HZ" value="50000000" />
+  <parameter name="NUMBER_OF_SENSORS" value="1" />
+  <parameter name="UPDATE_FREQUENCY" value="100" />
+ </module>
+ <module name="TLI_2" kind="TLI4970" version="1.0" enabled="1">
+  <parameter name="CLOCK_SPEED_HZ" value="50000000" />
+  <parameter name="NUMBER_OF_SENSORS" value="1" />
+  <parameter name="UPDATE_FREQUENCY" value="100" />
  </module>
  <module name="adc_ltc2308_0" kind="adc_ltc2308" version="1.1" enabled="1" />
  <module name="clk_0" kind="clock_source" version="18.1" enabled="1">
@@ -1994,6 +2046,24 @@
    start="hps_0.h2f_lw_axi_master"
    end="I2C_0.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x1040" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="hps_0.h2f_lw_axi_master"
+   end="TLI_0.avalon_slave_0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0800" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="hps_0.h2f_lw_axi_master"
+   end="TLI_1.avalon_slave_0">
+  <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0400" />
   <parameter name="defaultConnection" value="false" />
  </connection>
@@ -2001,7 +2071,7 @@
    kind="avalon"
    version="18.1"
    start="hps_0.h2f_lw_axi_master"
-   end="TLI4970_0.avalon_slave_0">
+   end="TLI_2.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0000" />
   <parameter name="defaultConnection" value="false" />
@@ -2021,7 +2091,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="LED.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0460" />
+  <parameter name="baseAddress" value="0x1030" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2030,7 +2100,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="SWITCHES.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0450" />
+  <parameter name="baseAddress" value="0x1020" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2039,7 +2109,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="pio_0.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0440" />
+  <parameter name="baseAddress" value="0x1010" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2048,7 +2118,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="adc_ltc2308_0.slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0470" />
+  <parameter name="baseAddress" value="0x1008" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection kind="clock" version="18.1" start="clk_0.clk" end="jtag_uart.clk" />
@@ -2063,11 +2133,9 @@
    version="18.1"
    start="clk_0.clk"
    end="adc_ltc2308_0.clock_sink" />
- <connection
-   kind="clock"
-   version="18.1"
-   start="clk_0.clk"
-   end="TLI4970_0.clock_sink" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="TLI_0.clock_sink" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="TLI_1.clock_sink" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="TLI_2.clock_sink" />
  <connection
    kind="clock"
    version="18.1"
@@ -2110,11 +2178,9 @@
    version="18.1"
    start="clk_0.clk_reset"
    end="pll_40MHz.reset" />
- <connection
-   kind="reset"
-   version="18.1"
-   start="clk_0.clk_reset"
-   end="TLI4970_0.reset" />
+ <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="TLI_0.reset" />
+ <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="TLI_1.reset" />
+ <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="TLI_2.reset" />
  <connection
    kind="reset"
    version="18.1"
