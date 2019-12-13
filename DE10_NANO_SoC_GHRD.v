@@ -132,7 +132,7 @@ soc_system u0(
 			.myocontrol_0_conduit_end_miso(GPIO_1[0]),
 			.myocontrol_0_conduit_end_mosi(GPIO_1[1]),
 			.myocontrol_0_conduit_end_sck(GPIO_1[2]),
-			.myocontrol_0_conduit_end_ss_n_o(GPIO_1[11:8]),
+			.myocontrol_0_conduit_end_ss_n_o(GPIO_1[23:16]),
 			.myocontrol_0_conduit_end_power_sense_n(1'b0),
 			.neopixel_0_conduit_end_one_wire(GPIO_1[24]),
 			.i2c_0_conduit_end_sda(GPIO_0[35]),

@@ -93,13 +93,13 @@ module soc_system (
 		input  wire        myocontrol_0_conduit_end_angle_miso,           //      myocontrol_0_conduit_end.angle_miso
 		output wire        myocontrol_0_conduit_end_angle_mosi,           //                              .angle_mosi
 		output wire        myocontrol_0_conduit_end_angle_sck,            //                              .angle_sck
-		output wire [3:0]  myocontrol_0_conduit_end_angle_ss_n_o,         //                              .angle_ss_n_o
+		output wire [7:0]  myocontrol_0_conduit_end_angle_ss_n_o,         //                              .angle_ss_n_o
 		output wire        myocontrol_0_conduit_end_gpio_n,               //                              .gpio_n
 		input  wire        myocontrol_0_conduit_end_mirrored_muscle_unit, //                              .mirrored_muscle_unit
 		input  wire        myocontrol_0_conduit_end_miso,                 //                              .miso
 		output wire        myocontrol_0_conduit_end_mosi,                 //                              .mosi
 		input  wire        myocontrol_0_conduit_end_power_sense_n,        //                              .power_sense_n
-		output wire [3:0]  myocontrol_0_conduit_end_ss_n_o,               //                              .ss_n_o
+		output wire [7:0]  myocontrol_0_conduit_end_ss_n_o,               //                              .ss_n_o
 		output wire        myocontrol_0_conduit_end_sck,                  //                              .sck
 		output wire        neopixel_0_conduit_end_one_wire,               //        neopixel_0_conduit_end.one_wire
 		input  wire        reset_reset_n                                  //                         reset.reset_n
@@ -325,7 +325,7 @@ module soc_system (
 	);
 
 	MYOControl #(
-		.NUMBER_OF_MOTORS        (4),
+		.NUMBER_OF_MOTORS        (8),
 		.CLOCK_SPEED_HZ          (50000000),
 		.ENABLE_MYOBRICK_CONTROL (0)
 	) myocontrol_0 (
