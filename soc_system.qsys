@@ -1170,14 +1170,10 @@
    dir="end" />
  <interface
    name="iceboardcontrol_2_conduit_end"
-   internal="ICEboardControl_2.conduit_end"
-   type="conduit"
-   dir="end" />
+   internal="ICEboardControl_2.conduit_end" />
  <interface
    name="iceboardcontrol_3_conduit_end"
-   internal="ICEboardControl_3.conduit_end"
-   type="conduit"
-   dir="end" />
+   internal="ICEboardControl_3.conduit_end" />
  <interface
    name="led_external_connection"
    internal="LED.external_connection"
@@ -1225,7 +1221,7 @@
    name="ICEboardControl_2"
    kind="ICEboardControl"
    version="1.0"
-   enabled="1">
+   enabled="0">
   <parameter name="BAUDRATE" value="500000" />
   <parameter name="CLOCK_FREQ_HZ" value="50000000" />
   <parameter name="NUMBER_OF_MOTORS" value="8" />
@@ -1234,7 +1230,7 @@
    name="ICEboardControl_3"
    kind="ICEboardControl"
    version="1.0"
-   enabled="1">
+   enabled="0">
   <parameter name="BAUDRATE" value="500000" />
   <parameter name="CLOCK_FREQ_HZ" value="50000000" />
   <parameter name="NUMBER_OF_MOTORS" value="8" />

@@ -65,10 +65,6 @@ module soc_system (
 	iceboardcontrol_0_conduit_end_tx,
 	iceboardcontrol_1_conduit_end_rx,
 	iceboardcontrol_1_conduit_end_tx,
-	iceboardcontrol_2_conduit_end_rx,
-	iceboardcontrol_2_conduit_end_tx,
-	iceboardcontrol_3_conduit_end_rx,
-	iceboardcontrol_3_conduit_end_tx,
 	led_external_connection_export,
 	memory_mem_a,
 	memory_mem_ba,
@@ -165,10 +161,6 @@ module soc_system (
 	output		iceboardcontrol_0_conduit_end_tx;
 	input		iceboardcontrol_1_conduit_end_rx;
 	output		iceboardcontrol_1_conduit_end_tx;
-	input		iceboardcontrol_2_conduit_end_rx;
-	output		iceboardcontrol_2_conduit_end_tx;
-	input		iceboardcontrol_3_conduit_end_rx;
-	output		iceboardcontrol_3_conduit_end_tx;
 	output	[7:0]	led_external_connection_export;
 	output	[14:0]	memory_mem_a;
 	output	[2:0]	memory_mem_ba;
