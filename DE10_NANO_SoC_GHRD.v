@@ -155,7 +155,7 @@ soc_system u0(
 					.myocontrol_1_conduit_end_ss_n_o({GPIO_1[20:15]}),
 					.myocontrol_1_conduit_end_mirrored_muscle_unit(1'b0), 
 					.myocontrol_1_conduit_end_power_sense_n(GPIO_1[35] && SW[3]),
-					.myocontrol_1_conduit_end_angle_mosi(GPIO_0[1]),            
+					.myocontrol_1_conduit_end_angle_mosi(GPIO_0[1]),             
 					.myocontrol_1_conduit_end_angle_miso(GPIO_0[0]),           
 					.myocontrol_1_conduit_end_angle_sck(GPIO_0[2]),           
 					.myocontrol_1_conduit_end_angle_ss_n_o(GPIO_0[8:3]), 
@@ -168,9 +168,17 @@ soc_system u0(
 					.myocontrol_2_conduit_end_angle_mosi(GPIO_0[10]),          
 					.myocontrol_2_conduit_end_angle_miso(GPIO_0[9]),        
 					.myocontrol_2_conduit_end_angle_sck(GPIO_0[11]),            
-					.myocontrol_2_conduit_end_angle_ss_n_o(GPIO_0[17:12]), 
+					.myocontrol_2_conduit_end_angle_ss_n_o(GPIO_0[17:12]),  
 					.pwm_0_conduit_end_pwm(ARDUINO_IO[1:0]),
-					.pio_0_external_connection_export(ARDUINO_IO[9:2]),
+//					.pio_0_external_connection_export(ARDUINO_IO[9:2]),
+					.myoquad_0_conduit_end_quad0_aneg(ARDUINO_IO[8]),              //        .quad0_aneg
+					.myoquad_0_conduit_end_quad0_apos(ARDUINO_IO[9]),              //                              .quad0_apos
+					.myoquad_0_conduit_end_quad0_bneg(ARDUINO_IO[10]),              //                              .quad0_bneg
+					.myoquad_0_conduit_end_quad0_bpos(ARDUINO_IO[11]),              //                              .quad0_bpos
+					.myoquad_0_conduit_end_quad1_aneg(ARDUINO_IO[4]),              //                              .quad1_aneg
+					.myoquad_0_conduit_end_quad1_apos(ARDUINO_IO[5]),              //                              .quad1_apos
+					.myoquad_0_conduit_end_quad1_bneg(ARDUINO_IO[6]),              //                              .quad1_bneg
+					.myoquad_0_conduit_end_quad1_bpos(ARDUINO_IO[7]),  
 					// led
 					.led_external_connection_export(LED),
 					// switches

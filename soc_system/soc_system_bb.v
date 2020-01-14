@@ -127,6 +127,14 @@ module soc_system (
 	myocontrol_2_conduit_end_power_sense_n,
 	myocontrol_2_conduit_end_ss_n_o,
 	myocontrol_2_conduit_end_sck,
+	myoquad_0_conduit_end_quad0_aneg,
+	myoquad_0_conduit_end_quad0_apos,
+	myoquad_0_conduit_end_quad0_bneg,
+	myoquad_0_conduit_end_quad0_bpos,
+	myoquad_0_conduit_end_quad1_aneg,
+	myoquad_0_conduit_end_quad1_apos,
+	myoquad_0_conduit_end_quad1_bneg,
+	myoquad_0_conduit_end_quad1_bpos,
 	neopixel_0_conduit_end_one_wire,
 	pio_0_external_connection_export,
 	pwm_0_conduit_end_pwm,
@@ -260,6 +268,14 @@ module soc_system (
 	input		myocontrol_2_conduit_end_power_sense_n;
 	output	[5:0]	myocontrol_2_conduit_end_ss_n_o;
 	output		myocontrol_2_conduit_end_sck;
+	input		myoquad_0_conduit_end_quad0_aneg;
+	input		myoquad_0_conduit_end_quad0_apos;
+	input		myoquad_0_conduit_end_quad0_bneg;
+	input		myoquad_0_conduit_end_quad0_bpos;
+	input		myoquad_0_conduit_end_quad1_aneg;
+	input		myoquad_0_conduit_end_quad1_apos;
+	input		myoquad_0_conduit_end_quad1_bneg;
+	input		myoquad_0_conduit_end_quad1_bpos;
 	output		neopixel_0_conduit_end_one_wire;
 	output	[1:0]	pio_0_external_connection_export;
 	output	[1:0]	pwm_0_conduit_end_pwm;

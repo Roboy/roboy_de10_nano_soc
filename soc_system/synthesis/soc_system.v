@@ -131,6 +131,14 @@ module soc_system (
 		input  wire        myocontrol_2_conduit_end_power_sense_n,        //                             .power_sense_n
 		output wire [5:0]  myocontrol_2_conduit_end_ss_n_o,               //                             .ss_n_o
 		output wire        myocontrol_2_conduit_end_sck,                  //                             .sck
+		input  wire        myoquad_0_conduit_end_quad0_aneg,              //        myoquad_0_conduit_end.quad0_aneg
+		input  wire        myoquad_0_conduit_end_quad0_apos,              //                             .quad0_apos
+		input  wire        myoquad_0_conduit_end_quad0_bneg,              //                             .quad0_bneg
+		input  wire        myoquad_0_conduit_end_quad0_bpos,              //                             .quad0_bpos
+		input  wire        myoquad_0_conduit_end_quad1_aneg,              //                             .quad1_aneg
+		input  wire        myoquad_0_conduit_end_quad1_apos,              //                             .quad1_apos
+		input  wire        myoquad_0_conduit_end_quad1_bneg,              //                             .quad1_bneg
+		input  wire        myoquad_0_conduit_end_quad1_bpos,              //                             .quad1_bpos
 		output wire        neopixel_0_conduit_end_one_wire,               //       neopixel_0_conduit_end.one_wire
 		output wire [1:0]  pio_0_external_connection_export,              //    pio_0_external_connection.export
 		output wire [1:0]  pwm_0_conduit_end_pwm,                         //            pwm_0_conduit_end.pwm
@@ -244,6 +252,12 @@ module soc_system (
 	wire  [15:0] mm_interconnect_0_pwm_0_avalon_slave_0_address;            // mm_interconnect_0:pwm_0_avalon_slave_0_address -> pwm_0:address
 	wire         mm_interconnect_0_pwm_0_avalon_slave_0_write;              // mm_interconnect_0:pwm_0_avalon_slave_0_write -> pwm_0:write
 	wire  [31:0] mm_interconnect_0_pwm_0_avalon_slave_0_writedata;          // mm_interconnect_0:pwm_0_avalon_slave_0_writedata -> pwm_0:writedata
+	wire  [31:0] mm_interconnect_0_myoquad_0_avalon_slave_0_readdata;       // MYOQuad_0:readdata -> mm_interconnect_0:MYOQuad_0_avalon_slave_0_readdata
+	wire         mm_interconnect_0_myoquad_0_avalon_slave_0_waitrequest;    // MYOQuad_0:waitrequest -> mm_interconnect_0:MYOQuad_0_avalon_slave_0_waitrequest
+	wire   [3:0] mm_interconnect_0_myoquad_0_avalon_slave_0_address;        // mm_interconnect_0:MYOQuad_0_avalon_slave_0_address -> MYOQuad_0:address
+	wire         mm_interconnect_0_myoquad_0_avalon_slave_0_read;           // mm_interconnect_0:MYOQuad_0_avalon_slave_0_read -> MYOQuad_0:read
+	wire         mm_interconnect_0_myoquad_0_avalon_slave_0_write;          // mm_interconnect_0:MYOQuad_0_avalon_slave_0_write -> MYOQuad_0:write
+	wire  [31:0] mm_interconnect_0_myoquad_0_avalon_slave_0_writedata;      // mm_interconnect_0:MYOQuad_0_avalon_slave_0_writedata -> MYOQuad_0:writedata
 	wire  [31:0] mm_interconnect_0_sysid_qsys_control_slave_readdata;       // sysid_qsys:readdata -> mm_interconnect_0:sysid_qsys_control_slave_readdata
 	wire   [0:0] mm_interconnect_0_sysid_qsys_control_slave_address;        // mm_interconnect_0:sysid_qsys_control_slave_address -> sysid_qsys:address
 	wire         mm_interconnect_0_led_s1_chipselect;                       // mm_interconnect_0:LED_s1_chipselect -> LED:chipselect
@@ -261,7 +275,7 @@ module soc_system (
 	wire         irq_mapper_receiver0_irq;                                  // jtag_uart:av_irq -> irq_mapper:receiver0_irq
 	wire  [31:0] hps_0_f2h_irq0_irq;                                        // irq_mapper:sender_irq -> hps_0:f2h_irq_p0
 	wire  [31:0] hps_0_f2h_irq1_irq;                                        // irq_mapper_001:sender_irq -> hps_0:f2h_irq_p1
-	wire         rst_controller_reset_out_reset;                            // rst_controller:reset_out -> [I2C_0:reset, I2C_1:reset, I2C_2:reset, I2C_3:reset, I2C_4:reset, I2C_5:reset, LED:reset_n, MYOControl_0:reset, MYOControl_1:reset, MYOControl_2:reset, SWITCHES:reset_n, jtag_uart:rst_n, mm_interconnect_0:jtag_uart_reset_reset_bridge_in_reset_reset, neopixel_0:reset, pio_0:reset_n, pwm_0:reset, sysid_qsys:reset_n]
+	wire         rst_controller_reset_out_reset;                            // rst_controller:reset_out -> [I2C_0:reset, I2C_1:reset, I2C_2:reset, I2C_3:reset, I2C_4:reset, I2C_5:reset, LED:reset_n, MYOControl_0:reset, MYOControl_1:reset, MYOControl_2:reset, MYOQuad_0:reset, SWITCHES:reset_n, jtag_uart:rst_n, mm_interconnect_0:jtag_uart_reset_reset_bridge_in_reset_reset, neopixel_0:reset, pio_0:reset_n, pwm_0:reset, sysid_qsys:reset_n]
 	wire         rst_controller_001_reset_out_reset;                        // rst_controller_001:reset_out -> mm_interconnect_0:hps_0_h2f_lw_axi_master_agent_clk_reset_reset_bridge_in_reset_reset
 
 	I2C_avalon_bridge #(
@@ -461,6 +475,28 @@ module soc_system (
 		.clock                (clk_clk)                                                    //     clock_sink.clk
 	);
 
+	MyoQuad #(
+		.CLOCK_FREQ_HZ  (50000000),
+		.DEBOUNCE_TICKS (50)
+	) myoquad_0 (
+		.clk         (clk_clk),                                                //          clock.clk
+		.reset       (rst_controller_reset_out_reset),                         //          reset.reset
+		.address     (mm_interconnect_0_myoquad_0_avalon_slave_0_address),     // avalon_slave_0.address
+		.write       (mm_interconnect_0_myoquad_0_avalon_slave_0_write),       //               .write
+		.writedata   (mm_interconnect_0_myoquad_0_avalon_slave_0_writedata),   //               .writedata
+		.read        (mm_interconnect_0_myoquad_0_avalon_slave_0_read),        //               .read
+		.readdata    (mm_interconnect_0_myoquad_0_avalon_slave_0_readdata),    //               .readdata
+		.waitrequest (mm_interconnect_0_myoquad_0_avalon_slave_0_waitrequest), //               .waitrequest
+		.quad0_Aneg  (myoquad_0_conduit_end_quad0_aneg),                       //    conduit_end.quad0_aneg
+		.quad0_Apos  (myoquad_0_conduit_end_quad0_apos),                       //               .quad0_apos
+		.quad0_Bneg  (myoquad_0_conduit_end_quad0_bneg),                       //               .quad0_bneg
+		.quad0_Bpos  (myoquad_0_conduit_end_quad0_bpos),                       //               .quad0_bpos
+		.quad1_Aneg  (myoquad_0_conduit_end_quad1_aneg),                       //               .quad1_aneg
+		.quad1_Apos  (myoquad_0_conduit_end_quad1_apos),                       //               .quad1_apos
+		.quad1_Bneg  (myoquad_0_conduit_end_quad1_bneg),                       //               .quad1_bneg
+		.quad1_Bpos  (myoquad_0_conduit_end_quad1_bpos)                        //               .quad1_bpos
+	);
+
 	soc_system_SWITCHES switches (
 		.clk      (clk_clk),                                //                 clk.clk
 		.reset_n  (~rst_controller_reset_out_reset),        //               reset.reset_n
@@ -597,8 +633,7 @@ module soc_system (
 
 	neopixel #(
 		.CLOCK_SPEED_HZ     (50000000),
-		.NUMBER_OF_NEOPIXEL (10),
-		.RGBW               (0)
+		.NUMBER_OF_NEOPIXEL (10)
 	) neopixel_0 (
 		.reset       (rst_controller_reset_out_reset),                          //          reset.reset
 		.address     (mm_interconnect_0_neopixel_0_avalon_slave_0_address),     // avalon_slave_0.address
@@ -751,6 +786,12 @@ module soc_system (
 		.MYOControl_2_avalon_slave_0_readdata                                (mm_interconnect_0_myocontrol_2_avalon_slave_0_readdata),    //                                                              .readdata
 		.MYOControl_2_avalon_slave_0_writedata                               (mm_interconnect_0_myocontrol_2_avalon_slave_0_writedata),   //                                                              .writedata
 		.MYOControl_2_avalon_slave_0_waitrequest                             (mm_interconnect_0_myocontrol_2_avalon_slave_0_waitrequest), //                                                              .waitrequest
+		.MYOQuad_0_avalon_slave_0_address                                    (mm_interconnect_0_myoquad_0_avalon_slave_0_address),        //                                      MYOQuad_0_avalon_slave_0.address
+		.MYOQuad_0_avalon_slave_0_write                                      (mm_interconnect_0_myoquad_0_avalon_slave_0_write),          //                                                              .write
+		.MYOQuad_0_avalon_slave_0_read                                       (mm_interconnect_0_myoquad_0_avalon_slave_0_read),           //                                                              .read
+		.MYOQuad_0_avalon_slave_0_readdata                                   (mm_interconnect_0_myoquad_0_avalon_slave_0_readdata),       //                                                              .readdata
+		.MYOQuad_0_avalon_slave_0_writedata                                  (mm_interconnect_0_myoquad_0_avalon_slave_0_writedata),      //                                                              .writedata
+		.MYOQuad_0_avalon_slave_0_waitrequest                                (mm_interconnect_0_myoquad_0_avalon_slave_0_waitrequest),    //                                                              .waitrequest
 		.neopixel_0_avalon_slave_0_address                                   (mm_interconnect_0_neopixel_0_avalon_slave_0_address),       //                                     neopixel_0_avalon_slave_0.address
 		.neopixel_0_avalon_slave_0_write                                     (mm_interconnect_0_neopixel_0_avalon_slave_0_write),         //                                                              .write
 		.neopixel_0_avalon_slave_0_read                                      (mm_interconnect_0_neopixel_0_avalon_slave_0_read),          //                                                              .read

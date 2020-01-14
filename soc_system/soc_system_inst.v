@@ -126,6 +126,14 @@
 		.myocontrol_2_conduit_end_power_sense_n        (<connected-to-myocontrol_2_conduit_end_power_sense_n>),        //                             .power_sense_n
 		.myocontrol_2_conduit_end_ss_n_o               (<connected-to-myocontrol_2_conduit_end_ss_n_o>),               //                             .ss_n_o
 		.myocontrol_2_conduit_end_sck                  (<connected-to-myocontrol_2_conduit_end_sck>),                  //                             .sck
+		.myoquad_0_conduit_end_quad0_aneg              (<connected-to-myoquad_0_conduit_end_quad0_aneg>),              //        myoquad_0_conduit_end.quad0_aneg
+		.myoquad_0_conduit_end_quad0_apos              (<connected-to-myoquad_0_conduit_end_quad0_apos>),              //                             .quad0_apos
+		.myoquad_0_conduit_end_quad0_bneg              (<connected-to-myoquad_0_conduit_end_quad0_bneg>),              //                             .quad0_bneg
+		.myoquad_0_conduit_end_quad0_bpos              (<connected-to-myoquad_0_conduit_end_quad0_bpos>),              //                             .quad0_bpos
+		.myoquad_0_conduit_end_quad1_aneg              (<connected-to-myoquad_0_conduit_end_quad1_aneg>),              //                             .quad1_aneg
+		.myoquad_0_conduit_end_quad1_apos              (<connected-to-myoquad_0_conduit_end_quad1_apos>),              //                             .quad1_apos
+		.myoquad_0_conduit_end_quad1_bneg              (<connected-to-myoquad_0_conduit_end_quad1_bneg>),              //                             .quad1_bneg
+		.myoquad_0_conduit_end_quad1_bpos              (<connected-to-myoquad_0_conduit_end_quad1_bpos>),              //                             .quad1_bpos
 		.neopixel_0_conduit_end_one_wire               (<connected-to-neopixel_0_conduit_end_one_wire>),               //       neopixel_0_conduit_end.one_wire
 		.pio_0_external_connection_export              (<connected-to-pio_0_external_connection_export>),              //    pio_0_external_connection.export
 		.pwm_0_conduit_end_pwm                         (<connected-to-pwm_0_conduit_end_pwm>),                         //            pwm_0_conduit_end.pwm
