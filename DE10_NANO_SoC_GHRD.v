@@ -129,16 +129,28 @@ soc_system u0(
 //			.iceboardcontrol_2_conduit_end_tx(GPIO_0[5]),
 //			.iceboardcontrol_3_conduit_end_rx(GPIO_1[35]),
 //			.iceboardcontrol_3_conduit_end_tx(GPIO_1[34]),
-			.myocontrol_0_conduit_end_miso(GPIO_1[0]),
-			.myocontrol_0_conduit_end_mosi(GPIO_1[1]),
-			.myocontrol_0_conduit_end_sck(GPIO_1[2]),
-			.myocontrol_0_conduit_end_ss_n_o(GPIO_1[23:16]),
-			.myocontrol_0_conduit_end_power_sense_n(1'b0),
+//			.myocontrol_0_conduit_end_miso(GPIO_1[0]),
+//			.myocontrol_0_conduit_end_mosi(GPIO_1[1]),
+//			.myocontrol_0_conduit_end_sck(GPIO_1[2]),
+//			.myocontrol_0_conduit_end_ss_n_o(GPIO_1[23:16]),
+//			.myocontrol_0_conduit_end_power_sense_n(1'b0),
 			.neopixel_0_conduit_end_one_wire(GPIO_1[24]),
-			.i2c_0_conduit_end_sda(GPIO_0[35]),
-			.i2c_0_conduit_end_scl(GPIO_0[34]),
-			.i2c_1_conduit_end_sda(GPIO_0[33]),
-			.i2c_1_conduit_end_scl(GPIO_0[32]),
+			.i2c_0_conduit_end_sda(GPIO_1[16]),
+			.i2c_0_conduit_end_scl(GPIO_1[17]),
+			.i2c_1_conduit_end_sda(GPIO_1[18]),
+			.i2c_1_conduit_end_scl(GPIO_1[19]),
+			.i2c_2_conduit_end_sda(GPIO_1[20]),
+			.i2c_2_conduit_end_scl(GPIO_1[21]),
+			.i2c_3_conduit_end_sda(GPIO_1[22]),
+			.i2c_3_conduit_end_scl(GPIO_1[23]),
+//			.myoquad_0_conduit_end_quad0_aneg(GPIO_1[0]),              //        .quad0_aneg
+//			.myoquad_0_conduit_end_quad0_apos(GPIO_1[1]),              //                              .quad0_apos
+//			.myoquad_0_conduit_end_quad0_bneg(GPIO_1[2]),              //                              .quad0_bneg
+//			.myoquad_0_conduit_end_quad0_bpos(GPIO_1[3]),              //                              .quad0_bpos
+//			.myoquad_0_conduit_end_quad1_aneg(GPIO_1[4]),              //                              .quad1_aneg
+//			.myoquad_0_conduit_end_quad1_apos(GPIO_1[5]),              //                              .quad1_apos
+//			.myoquad_0_conduit_end_quad1_bneg(GPIO_1[6]),              //                              .quad1_bneg
+//			.myoquad_0_conduit_end_quad1_bpos(GPIO_1[7]), 
 			//HPS ddr3
 			.memory_mem_a(HPS_DDR3_ADDR),                                //                         memory.mem_a
 			.memory_mem_ba(HPS_DDR3_BA),                                 //                               .mem_ba
