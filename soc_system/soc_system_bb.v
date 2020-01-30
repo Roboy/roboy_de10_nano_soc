@@ -139,7 +139,9 @@ module soc_system (
 	pio_0_external_connection_export,
 	pwm_0_conduit_end_pwm,
 	reset_reset_n,
-	switches_external_connection_export);	
+	switches_external_connection_export,
+	uart_hand_i_rx_serial,
+	uart_hand_o_tx_serial);	
 
 	input		clk_clk;
 	input		hps_0_f2h_cold_reset_req_reset_n;
@@ -281,4 +283,6 @@ module soc_system (
 	output	[1:0]	pwm_0_conduit_end_pwm;
 	input		reset_reset_n;
 	input	[3:0]	switches_external_connection_export;
+	input		uart_hand_i_rx_serial;
+	output		uart_hand_o_tx_serial;
 endmodule

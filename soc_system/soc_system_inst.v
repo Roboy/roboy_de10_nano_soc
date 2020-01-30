@@ -138,6 +138,8 @@
 		.pio_0_external_connection_export              (<connected-to-pio_0_external_connection_export>),              //    pio_0_external_connection.export
 		.pwm_0_conduit_end_pwm                         (<connected-to-pwm_0_conduit_end_pwm>),                         //            pwm_0_conduit_end.pwm
 		.reset_reset_n                                 (<connected-to-reset_reset_n>),                                 //                        reset.reset_n
-		.switches_external_connection_export           (<connected-to-switches_external_connection_export>)            // switches_external_connection.export
+		.switches_external_connection_export           (<connected-to-switches_external_connection_export>),           // switches_external_connection.export
+		.uart_hand_i_rx_serial                         (<connected-to-uart_hand_i_rx_serial>),                         //                    uart_hand.i_rx_serial
+		.uart_hand_o_tx_serial                         (<connected-to-uart_hand_o_tx_serial>)                          //                             .o_tx_serial
 	);
 

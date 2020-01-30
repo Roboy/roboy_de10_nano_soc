@@ -143,7 +143,9 @@ module soc_system (
 		output wire [1:0]  pio_0_external_connection_export,              //    pio_0_external_connection.export
 		output wire [1:0]  pwm_0_conduit_end_pwm,                         //            pwm_0_conduit_end.pwm
 		input  wire        reset_reset_n,                                 //                        reset.reset_n
-		input  wire [3:0]  switches_external_connection_export            // switches_external_connection.export
+		input  wire [3:0]  switches_external_connection_export,           // switches_external_connection.export
+		input  wire        uart_hand_i_rx_serial,                         //                    uart_hand.i_rx_serial
+		output wire        uart_hand_o_tx_serial                          //                             .o_tx_serial
 	);
 
 	wire   [1:0] hps_0_h2f_lw_axi_master_awburst;                           // hps_0:h2f_lw_AWBURST -> mm_interconnect_0:hps_0_h2f_lw_axi_master_awburst
@@ -189,6 +191,12 @@ module soc_system (
 	wire         mm_interconnect_0_jtag_uart_avalon_jtag_slave_read;        // mm_interconnect_0:jtag_uart_avalon_jtag_slave_read -> jtag_uart:av_read_n
 	wire         mm_interconnect_0_jtag_uart_avalon_jtag_slave_write;       // mm_interconnect_0:jtag_uart_avalon_jtag_slave_write -> jtag_uart:av_write_n
 	wire  [31:0] mm_interconnect_0_jtag_uart_avalon_jtag_slave_writedata;   // mm_interconnect_0:jtag_uart_avalon_jtag_slave_writedata -> jtag_uart:av_writedata
+	wire  [31:0] mm_interconnect_0_uart_hand_avalon_slave_readdata;         // Uart_hand:readdata -> mm_interconnect_0:Uart_hand_avalon_slave_readdata
+	wire         mm_interconnect_0_uart_hand_avalon_slave_waitrequest;      // Uart_hand:waitrequest -> mm_interconnect_0:Uart_hand_avalon_slave_waitrequest
+	wire  [15:0] mm_interconnect_0_uart_hand_avalon_slave_address;          // mm_interconnect_0:Uart_hand_avalon_slave_address -> Uart_hand:address
+	wire         mm_interconnect_0_uart_hand_avalon_slave_read;             // mm_interconnect_0:Uart_hand_avalon_slave_read -> Uart_hand:read
+	wire         mm_interconnect_0_uart_hand_avalon_slave_write;            // mm_interconnect_0:Uart_hand_avalon_slave_write -> Uart_hand:write
+	wire  [31:0] mm_interconnect_0_uart_hand_avalon_slave_writedata;        // mm_interconnect_0:Uart_hand_avalon_slave_writedata -> Uart_hand:writedata
 	wire  [31:0] mm_interconnect_0_myocontrol_1_avalon_slave_0_readdata;    // MYOControl_1:readdata -> mm_interconnect_0:MYOControl_1_avalon_slave_0_readdata
 	wire         mm_interconnect_0_myocontrol_1_avalon_slave_0_waitrequest; // MYOControl_1:waitrequest -> mm_interconnect_0:MYOControl_1_avalon_slave_0_waitrequest
 	wire  [15:0] mm_interconnect_0_myocontrol_1_avalon_slave_0_address;     // mm_interconnect_0:MYOControl_1_avalon_slave_0_address -> MYOControl_1:address
@@ -275,7 +283,7 @@ module soc_system (
 	wire         irq_mapper_receiver0_irq;                                  // jtag_uart:av_irq -> irq_mapper:receiver0_irq
 	wire  [31:0] hps_0_f2h_irq0_irq;                                        // irq_mapper:sender_irq -> hps_0:f2h_irq_p0
 	wire  [31:0] hps_0_f2h_irq1_irq;                                        // irq_mapper_001:sender_irq -> hps_0:f2h_irq_p1
-	wire         rst_controller_reset_out_reset;                            // rst_controller:reset_out -> [I2C_0:reset, I2C_1:reset, I2C_2:reset, I2C_3:reset, I2C_4:reset, I2C_5:reset, LED:reset_n, MYOControl_0:reset, MYOControl_1:reset, MYOControl_2:reset, MYOQuad_0:reset, SWITCHES:reset_n, jtag_uart:rst_n, mm_interconnect_0:jtag_uart_reset_reset_bridge_in_reset_reset, neopixel_0:reset, pio_0:reset_n, pwm_0:reset, sysid_qsys:reset_n]
+	wire         rst_controller_reset_out_reset;                            // rst_controller:reset_out -> [I2C_0:reset, I2C_1:reset, I2C_2:reset, I2C_3:reset, I2C_4:reset, I2C_5:reset, LED:reset_n, MYOControl_0:reset, MYOControl_1:reset, MYOControl_2:reset, MYOQuad_0:reset, SWITCHES:reset_n, Uart_hand:i_Reset, jtag_uart:rst_n, mm_interconnect_0:jtag_uart_reset_reset_bridge_in_reset_reset, neopixel_0:reset, pio_0:reset_n, pwm_0:reset, sysid_qsys:reset_n]
 	wire         rst_controller_001_reset_out_reset;                        // rst_controller_001:reset_out -> mm_interconnect_0:hps_0_h2f_lw_axi_master_agent_clk_reset_reset_bridge_in_reset_reset
 
 	I2C_avalon_bridge #(
@@ -503,6 +511,22 @@ module soc_system (
 		.address  (mm_interconnect_0_switches_s1_address),  //                  s1.address
 		.readdata (mm_interconnect_0_switches_s1_readdata), //                    .readdata
 		.in_port  (switches_external_connection_export)     // external_connection.export
+	);
+
+	uart #(
+		.CLK_FREQ_HZ (48000000),
+		.BAUDRATE    (115200)
+	) uart_hand (
+		.address     (mm_interconnect_0_uart_hand_avalon_slave_address),     // avalon_slave.address
+		.write       (mm_interconnect_0_uart_hand_avalon_slave_write),       //             .write
+		.writedata   (mm_interconnect_0_uart_hand_avalon_slave_writedata),   //             .writedata
+		.read        (mm_interconnect_0_uart_hand_avalon_slave_read),        //             .read
+		.readdata    (mm_interconnect_0_uart_hand_avalon_slave_readdata),    //             .readdata
+		.waitrequest (mm_interconnect_0_uart_hand_avalon_slave_waitrequest), //             .waitrequest
+		.i_Clock     (clk_clk),                                              //        clock.clk
+		.i_Rx_Serial (uart_hand_i_rx_serial),                                //      conduit.i_rx_serial
+		.o_Tx_Serial (uart_hand_o_tx_serial),                                //             .o_tx_serial
+		.i_Reset     (rst_controller_reset_out_reset)                        //   reset_sink.reset
 	);
 
 	soc_system_hps_0 #(
@@ -809,7 +833,13 @@ module soc_system (
 		.SWITCHES_s1_address                                                 (mm_interconnect_0_switches_s1_address),                     //                                                   SWITCHES_s1.address
 		.SWITCHES_s1_readdata                                                (mm_interconnect_0_switches_s1_readdata),                    //                                                              .readdata
 		.sysid_qsys_control_slave_address                                    (mm_interconnect_0_sysid_qsys_control_slave_address),        //                                      sysid_qsys_control_slave.address
-		.sysid_qsys_control_slave_readdata                                   (mm_interconnect_0_sysid_qsys_control_slave_readdata)        //                                                              .readdata
+		.sysid_qsys_control_slave_readdata                                   (mm_interconnect_0_sysid_qsys_control_slave_readdata),       //                                                              .readdata
+		.Uart_hand_avalon_slave_address                                      (mm_interconnect_0_uart_hand_avalon_slave_address),          //                                        Uart_hand_avalon_slave.address
+		.Uart_hand_avalon_slave_write                                        (mm_interconnect_0_uart_hand_avalon_slave_write),            //                                                              .write
+		.Uart_hand_avalon_slave_read                                         (mm_interconnect_0_uart_hand_avalon_slave_read),             //                                                              .read
+		.Uart_hand_avalon_slave_readdata                                     (mm_interconnect_0_uart_hand_avalon_slave_readdata),         //                                                              .readdata
+		.Uart_hand_avalon_slave_writedata                                    (mm_interconnect_0_uart_hand_avalon_slave_writedata),        //                                                              .writedata
+		.Uart_hand_avalon_slave_waitrequest                                  (mm_interconnect_0_uart_hand_avalon_slave_waitrequest)       //                                                              .waitrequest
 	);
 
 	soc_system_irq_mapper irq_mapper (

@@ -260,7 +260,9 @@ soc_system u0(
                .hps_0_h2f_reset_reset_n(hps_fpga_reset_n),                  //                hps_0_h2f_reset.reset_n
                .hps_0_f2h_cold_reset_req_reset_n(~hps_cold_reset),          //       hps_0_f2h_cold_reset_req.reset_n
                .hps_0_f2h_debug_reset_req_reset_n(~hps_debug_reset),        //      hps_0_f2h_debug_reset_req.reset_n
-               .hps_0_f2h_warm_reset_req_reset_n(~hps_warm_reset)          //       hps_0_f2h_warm_reset_req.reset_n
+               .hps_0_f2h_warm_reset_req_reset_n(~hps_warm_reset),          //       hps_0_f2h_warm_reset_req.reset_n
+					.uart_hand_i_rx_serial(GPIO_0[26]),  //                    uart_hand.i_rx_serial
+					.uart_hand_o_tx_serial(GPIO_0[27])
            );
 //
 // Debounce logic to clean out glitches within 1ms

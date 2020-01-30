@@ -5,7 +5,7 @@
    displayName="$${FILENAME}"
    version="1.0"
    description=""
-   tags=""
+   tags="INTERNAL_COMPONENT=false"
    categories="System" />
  <parameter name="bonusData"><![CDATA[bonusData 
 {
@@ -35,6 +35,11 @@
    }
    element I2C_0.avalon_slave_0
    {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
       datum baseAddress
       {
          value = "1408";
@@ -51,6 +56,11 @@
    }
    element I2C_1.avalon_slave_0
    {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
       datum baseAddress
       {
          value = "1344";
@@ -67,6 +77,11 @@
    }
    element I2C_2.avalon_slave_0
    {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
       datum baseAddress
       {
          value = "1280";
@@ -83,6 +98,11 @@
    }
    element I2C_3.avalon_slave_0
    {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
       datum baseAddress
       {
          value = "1216";
@@ -99,6 +119,11 @@
    }
    element I2C_4.avalon_slave_0
    {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
       datum baseAddress
       {
          value = "1152";
@@ -115,6 +140,11 @@
    }
    element I2C_5.avalon_slave_0
    {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
       datum baseAddress
       {
          value = "1088";
@@ -131,6 +161,11 @@
    }
    element LED.s1
    {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
       datum baseAddress
       {
          value = "1504";
@@ -147,6 +182,11 @@
    }
    element MYOControl_0.avalon_slave_0
    {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
       datum baseAddress
       {
          value = "786432";
@@ -163,6 +203,11 @@
    }
    element MYOControl_1.avalon_slave_0
    {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
       datum baseAddress
       {
          value = "1048576";
@@ -179,6 +224,11 @@
    }
    element MYOControl_2.avalon_slave_0
    {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
       datum baseAddress
       {
          value = "524288";
@@ -195,6 +245,11 @@
    }
    element MYOQuad_0.avalon_slave_0
    {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
       datum baseAddress
       {
          value = "1024";
@@ -211,9 +266,30 @@
    }
    element SWITCHES.s1
    {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
       datum baseAddress
       {
          value = "1488";
+         type = "String";
+      }
+   }
+   element Uart_hand
+   {
+      datum _sortIndex
+      {
+         value = "23";
+         type = "int";
+      }
+   }
+   element Uart_hand.avalon_slave
+   {
+      datum baseAddress
+      {
+         value = "1310720";
          type = "String";
       }
    }
@@ -295,6 +371,11 @@
    }
    element neopixel_0.avalon_slave_0
    {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
       datum baseAddress
       {
          value = "0";
@@ -311,6 +392,11 @@
    }
    element pio_0.s1
    {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
       datum baseAddress
       {
          value = "1472";
@@ -335,9 +421,22 @@
    }
    element pwm_0.avalon_slave_0
    {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
       datum baseAddress
       {
          value = "262144";
+         type = "String";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
          type = "String";
       }
    }
@@ -1351,6 +1450,11 @@
    internal="SWITCHES.external_connection"
    type="conduit"
    dir="end" />
+ <interface
+   name="uart_hand"
+   internal="Uart_hand.conduit"
+   type="conduit"
+   dir="end" />
  <module
    name="DarkRoomOOTXdecoder_0"
    kind="DarkRoomOOTXdecoder"
@@ -1435,6 +1539,10 @@
   <parameter name="simDoTestBenchWiring" value="false" />
   <parameter name="simDrivenValue" value="0" />
   <parameter name="width" value="4" />
+ </module>
+ <module name="Uart_hand" kind="Uart" version="1.0" enabled="1">
+  <parameter name="BAUDRATE" value="115200" />
+  <parameter name="CLK_FREQ_HZ" value="48000000" />
  </module>
  <module name="adc_ltc2308_0" kind="adc_ltc2308" version="1.1" enabled="0" />
  <module name="clk_0" kind="clock_source" version="18.1" enabled="1">
@@ -2241,6 +2349,15 @@
    kind="avalon"
    version="18.1"
    start="hps_0.h2f_lw_axi_master"
+   end="Uart_hand.avalon_slave">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x00140000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="hps_0.h2f_lw_axi_master"
    end="MYOControl_1.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x00100000" />
@@ -2414,6 +2531,7 @@
  <connection kind="clock" version="18.1" start="clk_0.clk" end="sysid_qsys.clk" />
  <connection kind="clock" version="18.1" start="clk_0.clk" end="pio_0.clk" />
  <connection kind="clock" version="18.1" start="clk_0.clk" end="MYOQuad_0.clock" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="Uart_hand.clock" />
  <connection
    kind="clock"
    version="18.1"
@@ -2543,6 +2661,11 @@
    version="18.1"
    start="clk_0.clk_reset"
    end="adc_ltc2308_0.reset_sink" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="clk_0.clk_reset"
+   end="Uart_hand.reset_sink" />
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
  <interconnectRequirement for="$system" name="qsys_mm.maxAdditionalLatency" value="1" />
 </system>
