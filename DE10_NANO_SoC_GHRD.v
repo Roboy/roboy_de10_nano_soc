@@ -19,10 +19,10 @@ module DE10_NANO_SoC_GHRD(
       input              FPGA_CLK2_50, 
       input              FPGA_CLK3_50,
 
-      ///////// GPIO /////////
+      ///////// GPIO ///////// 
       inout       [35:0] GPIO_0,
       inout       [35:0] GPIO_1, 
-
+ 
       ///////// HDMI /////////
       inout              HDMI_I2C_SCL, 
       inout              HDMI_I2C_SDA,

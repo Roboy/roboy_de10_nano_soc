@@ -169,14 +169,6 @@
          type = "String";
       }
    }
-   element MyoQuad_0.avalon_slave_0
-   {
-      datum baseAddress
-      {
-         value = "1152";
-         type = "String";
-      }
-   }
    element SWITCHES
    {
       datum _sortIndex
@@ -1283,7 +1275,7 @@
    kind="ICEboardControl"
    version="1.0"
    enabled="1">
-  <parameter name="BAUDRATE" value="500000" />
+  <parameter name="BAUDRATE" value="1000000" />
   <parameter name="CLOCK_FREQ_HZ" value="50000000" />
   <parameter name="NUMBER_OF_MOTORS" value="8" />
  </module>
@@ -1292,7 +1284,7 @@
    kind="ICEboardControl"
    version="1.0"
    enabled="1">
-  <parameter name="BAUDRATE" value="500000" />
+  <parameter name="BAUDRATE" value="1000000" />
   <parameter name="CLOCK_FREQ_HZ" value="50000000" />
   <parameter name="NUMBER_OF_MOTORS" value="8" />
  </module>
