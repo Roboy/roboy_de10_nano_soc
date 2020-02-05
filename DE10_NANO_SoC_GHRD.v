@@ -115,12 +115,15 @@ wire                hps_debug_reset;
 //=======================================================
 //`define USE_ETHERNET_SIDE
 
-soc_system u0( 
+soc_system u0(  
 			//Clock&Reset 
 			.clk_clk(FPGA_CLK1_50),                                       //                            clk.clk
 			.reset_reset_n(hps_fpga_reset_n),
 			// neopixel
+			// led
 			.led_external_connection_export(LED),
+			// switches
+			.switches_0_external_connection_export(SW),
 			.iceboardcontrol_0_conduit_end_rx(GPIO_0[0]),
 			.iceboardcontrol_0_conduit_end_tx(GPIO_0[1]),
 			.iceboardcontrol_1_conduit_end_rx(GPIO_0[2]),
@@ -129,12 +132,14 @@ soc_system u0(
 //			.iceboardcontrol_2_conduit_end_tx(GPIO_0[5]),
 //			.iceboardcontrol_3_conduit_end_rx(GPIO_1[35]),
 //			.iceboardcontrol_3_conduit_end_tx(GPIO_1[34]),
-//			.myocontrol_0_conduit_end_miso(GPIO_1[0]),
-//			.myocontrol_0_conduit_end_mosi(GPIO_1[1]),
-//			.myocontrol_0_conduit_end_sck(GPIO_1[2]),
-//			.myocontrol_0_conduit_end_ss_n_o(GPIO_1[23:16]),
-//			.myocontrol_0_conduit_end_power_sense_n(1'b0),
+			.myocontrol_0_conduit_end_mosi(GPIO_1[1]),
+			.myocontrol_0_conduit_end_miso(GPIO_1[0]),
+			.myocontrol_0_conduit_end_sck(GPIO_1[2]),
+			.myocontrol_0_conduit_end_ss_n_o({GPIO_1[11:3]}),
+			.myocontrol_0_conduit_end_mirrored_muscle_unit(SW[2]==1 && SW[1]==0 && SW[0]==0), // true for switch ID 4
+			.myocontrol_0_conduit_end_power_sense_n(GPIO_1[35] && SW[3]),
 			.neopixel_0_conduit_end_one_wire(GPIO_1[24]),
+			// right_shoulder_joint sensors
 			.i2c_0_conduit_end_sda(GPIO_1[16]),
 			.i2c_0_conduit_end_scl(GPIO_1[17]),
 			.i2c_1_conduit_end_sda(GPIO_1[18]),
@@ -143,6 +148,15 @@ soc_system u0(
 			.i2c_2_conduit_end_scl(GPIO_1[21]),
 			.i2c_3_conduit_end_sda(GPIO_1[22]),
 			.i2c_3_conduit_end_scl(GPIO_1[23]),
+			// auxiliary sensors
+			.i2c_4_conduit_end_sda(GPIO_0[34]),
+			.i2c_4_conduit_end_scl(GPIO_0[35]),
+			.i2c_5_conduit_end_sda(GPIO_0[32]),
+			.i2c_5_conduit_end_scl(GPIO_0[33]),
+			.i2c_6_conduit_end_sda(GPIO_0[30]),
+			.i2c_6_conduit_end_scl(GPIO_0[31]),
+			.i2c_7_conduit_end_sda(GPIO_0[28]),
+			.i2c_7_conduit_end_scl(GPIO_0[29]),
 //			.myoquad_0_conduit_end_quad0_aneg(GPIO_1[0]),              //        .quad0_aneg
 //			.myoquad_0_conduit_end_quad0_apos(GPIO_1[1]),              //                              .quad0_apos
 //			.myoquad_0_conduit_end_quad0_bneg(GPIO_1[2]),              //                              .quad0_bneg

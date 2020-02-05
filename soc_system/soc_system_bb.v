@@ -102,8 +102,24 @@ module soc_system (
 	myocontrol_0_conduit_end_ss_n_o,
 	myocontrol_0_conduit_end_sck,
 	neopixel_0_conduit_end_one_wire,
-	pio_0_external_connection_export,
-	reset_reset_n);	
+	switches_0_external_connection_export,
+	reset_reset_n,
+	i2c_5_conduit_end_scl,
+	i2c_5_conduit_end_sda,
+	i2c_5_conduit_end_led,
+	i2c_5_conduit_end_gpio,
+	i2c_4_conduit_end_scl,
+	i2c_4_conduit_end_sda,
+	i2c_4_conduit_end_led,
+	i2c_4_conduit_end_gpio,
+	i2c_6_conduit_end_scl,
+	i2c_6_conduit_end_sda,
+	i2c_6_conduit_end_led,
+	i2c_6_conduit_end_gpio,
+	i2c_7_conduit_end_scl,
+	i2c_7_conduit_end_sda,
+	i2c_7_conduit_end_led,
+	i2c_7_conduit_end_gpio);	
 
 	input		clk_clk;
 	input		hps_0_f2h_cold_reset_req_reset_n;
@@ -198,15 +214,31 @@ module soc_system (
 	input		myocontrol_0_conduit_end_angle_miso;
 	output		myocontrol_0_conduit_end_angle_mosi;
 	output		myocontrol_0_conduit_end_angle_sck;
-	output	[7:0]	myocontrol_0_conduit_end_angle_ss_n_o;
+	output	[8:0]	myocontrol_0_conduit_end_angle_ss_n_o;
 	output		myocontrol_0_conduit_end_gpio_n;
 	input		myocontrol_0_conduit_end_mirrored_muscle_unit;
 	input		myocontrol_0_conduit_end_miso;
 	output		myocontrol_0_conduit_end_mosi;
 	input		myocontrol_0_conduit_end_power_sense_n;
-	output	[7:0]	myocontrol_0_conduit_end_ss_n_o;
+	output	[8:0]	myocontrol_0_conduit_end_ss_n_o;
 	output		myocontrol_0_conduit_end_sck;
 	output		neopixel_0_conduit_end_one_wire;
-	input	[3:0]	pio_0_external_connection_export;
+	input	[3:0]	switches_0_external_connection_export;
 	input		reset_reset_n;
+	inout		i2c_5_conduit_end_scl;
+	inout		i2c_5_conduit_end_sda;
+	output	[6:0]	i2c_5_conduit_end_led;
+	output	[2:0]	i2c_5_conduit_end_gpio;
+	inout		i2c_4_conduit_end_scl;
+	inout		i2c_4_conduit_end_sda;
+	output	[6:0]	i2c_4_conduit_end_led;
+	output	[2:0]	i2c_4_conduit_end_gpio;
+	inout		i2c_6_conduit_end_scl;
+	inout		i2c_6_conduit_end_sda;
+	output	[6:0]	i2c_6_conduit_end_led;
+	output	[2:0]	i2c_6_conduit_end_gpio;
+	inout		i2c_7_conduit_end_scl;
+	inout		i2c_7_conduit_end_sda;
+	output	[6:0]	i2c_7_conduit_end_led;
+	output	[2:0]	i2c_7_conduit_end_gpio;
 endmodule
