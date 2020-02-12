@@ -9,151 +9,7 @@
    categories="System" />
  <parameter name="bonusData"><![CDATA[bonusData 
 {
-   element I2C_0
-   {
-      datum _sortIndex
-      {
-         value = "12";
-         type = "int";
-      }
-   }
-   element I2C_0.avalon_slave_0
-   {
-      datum baseAddress
-      {
-         value = "1472";
-         type = "String";
-      }
-   }
-   element I2C_1
-   {
-      datum _sortIndex
-      {
-         value = "13";
-         type = "int";
-      }
-   }
-   element I2C_1.avalon_slave_0
-   {
-      datum baseAddress
-      {
-         value = "1408";
-         type = "String";
-      }
-   }
-   element I2C_2
-   {
-      datum _sortIndex
-      {
-         value = "14";
-         type = "int";
-      }
-   }
-   element I2C_2.avalon_slave_0
-   {
-      datum baseAddress
-      {
-         value = "1280";
-         type = "String";
-      }
-   }
-   element I2C_3
-   {
-      datum _sortIndex
-      {
-         value = "15";
-         type = "int";
-      }
-   }
-   element I2C_3.avalon_slave_0
-   {
-      datum baseAddress
-      {
-         value = "1344";
-         type = "String";
-      }
-   }
-   element I2C_4
-   {
-      datum _sortIndex
-      {
-         value = "16";
-         type = "int";
-      }
-   }
-   element I2C_4.avalon_slave_0
-   {
-      datum baseAddress
-      {
-         value = "1216";
-         type = "String";
-      }
-   }
-   element I2C_5
-   {
-      datum _sortIndex
-      {
-         value = "17";
-         type = "int";
-      }
-   }
-   element I2C_5.avalon_slave_0
-   {
-      datum baseAddress
-      {
-         value = "1152";
-         type = "String";
-      }
-   }
-   element I2C_6
-   {
-      datum _sortIndex
-      {
-         value = "18";
-         type = "int";
-      }
-   }
-   element I2C_6.avalon_slave_0
-   {
-      datum baseAddress
-      {
-         value = "1088";
-         type = "String";
-      }
-   }
-   element I2C_7
-   {
-      datum _sortIndex
-      {
-         value = "19";
-         type = "int";
-      }
-   }
-   element I2C_7.avalon_slave_0
-   {
-      datum baseAddress
-      {
-         value = "1024";
-         type = "String";
-      }
-   }
    element ICEboardControl_0
-   {
-      datum _sortIndex
-      {
-         value = "8";
-         type = "int";
-      }
-   }
-   element ICEboardControl_0.avalon_slave_0
-   {
-      datum baseAddress
-      {
-         value = "786432";
-         type = "String";
-      }
-   }
-   element ICEboardControl_1
    {
       datum _sortIndex
       {
@@ -161,15 +17,15 @@
          type = "int";
       }
    }
-   element ICEboardControl_1.avalon_slave_0
+   element ICEboardControl_0.avalon_slave_0
    {
       datum baseAddress
       {
-         value = "262144";
+         value = "1310720";
          type = "String";
       }
    }
-   element ICEboardControl_2
+   element ICEboardControl_1
    {
       datum _sortIndex
       {
@@ -177,11 +33,27 @@
          type = "int";
       }
    }
+   element ICEboardControl_1.avalon_slave_0
+   {
+      datum baseAddress
+      {
+         value = "786432";
+         type = "String";
+      }
+   }
+   element ICEboardControl_2
+   {
+      datum _sortIndex
+      {
+         value = "11";
+         type = "int";
+      }
+   }
    element ICEboardControl_2.avalon_slave_0
    {
       datum baseAddress
       {
-         value = "524288";
+         value = "262144";
          type = "String";
       }
    }
@@ -189,7 +61,7 @@
    {
       datum _sortIndex
       {
-         value = "11";
+         value = "12";
          type = "int";
       }
    }
@@ -213,7 +85,7 @@
    {
       datum baseAddress
       {
-         value = "1552";
+         value = "2064";
          type = "String";
       }
    }
@@ -226,6 +98,22 @@
       }
    }
    element MYOControl_0.avalon_slave_0
+   {
+      datum baseAddress
+      {
+         value = "1048576";
+         type = "String";
+      }
+   }
+   element MYOControl_1
+   {
+      datum _sortIndex
+      {
+         value = "8";
+         type = "int";
+      }
+   }
+   element MYOControl_1.avalon_slave_0
    {
       datum baseAddress
       {
@@ -245,7 +133,47 @@
    {
       datum baseAddress
       {
-         value = "1536";
+         value = "2048";
+         type = "String";
+      }
+   }
+   element auxilliary
+   {
+      datum _sortIndex
+      {
+         value = "16";
+         type = "int";
+      }
+   }
+   element auxilliary.I2C_0_avalon_slave_0
+   {
+      datum baseAddress
+      {
+         value = "1216";
+         type = "String";
+      }
+   }
+   element auxilliary.I2C_1_avalon_slave_0
+   {
+      datum baseAddress
+      {
+         value = "1152";
+         type = "String";
+      }
+   }
+   element auxilliary.I2C_2_avalon_slave_0
+   {
+      datum baseAddress
+      {
+         value = "1088";
+         type = "String";
+      }
+   }
+   element auxilliary.I2C_3_avalon_slave_0
+   {
+      datum baseAddress
+      {
+         value = "1024";
          type = "String";
       }
    }
@@ -301,7 +229,7 @@
          type = "String";
       }
    }
-   element neopixel_0
+   element neopixel
    {
       datum _sortIndex
       {
@@ -309,11 +237,131 @@
          type = "int";
       }
    }
-   element neopixel_0.avalon_slave_0
+   element neopixel.avalon_slave_0
    {
       datum baseAddress
       {
          value = "0";
+         type = "String";
+      }
+   }
+   element sensor_0
+   {
+      datum _sortIndex
+      {
+         value = "13";
+         type = "int";
+      }
+   }
+   element sensor_0.I2C_0_avalon_slave_0
+   {
+      datum baseAddress
+      {
+         value = "1984";
+         type = "String";
+      }
+   }
+   element sensor_0.I2C_1_avalon_slave_0
+   {
+      datum baseAddress
+      {
+         value = "1920";
+         type = "String";
+      }
+   }
+   element sensor_0.I2C_2_avalon_slave_0
+   {
+      datum baseAddress
+      {
+         value = "1856";
+         type = "String";
+      }
+   }
+   element sensor_0.I2C_3_avalon_slave_0
+   {
+      datum baseAddress
+      {
+         value = "1792";
+         type = "String";
+      }
+   }
+   element sensor_1
+   {
+      datum _sortIndex
+      {
+         value = "14";
+         type = "int";
+      }
+   }
+   element sensor_1.I2C_0_avalon_slave_0
+   {
+      datum baseAddress
+      {
+         value = "1728";
+         type = "String";
+      }
+   }
+   element sensor_1.I2C_1_avalon_slave_0
+   {
+      datum baseAddress
+      {
+         value = "1664";
+         type = "String";
+      }
+   }
+   element sensor_1.I2C_2_avalon_slave_0
+   {
+      datum baseAddress
+      {
+         value = "1600";
+         type = "String";
+      }
+   }
+   element sensor_1.I2C_3_avalon_slave_0
+   {
+      datum baseAddress
+      {
+         value = "1536";
+         type = "String";
+      }
+   }
+   element sensor_2
+   {
+      datum _sortIndex
+      {
+         value = "15";
+         type = "int";
+      }
+   }
+   element sensor_2.I2C_0_avalon_slave_0
+   {
+      datum baseAddress
+      {
+         value = "1472";
+         type = "String";
+      }
+   }
+   element sensor_2.I2C_1_avalon_slave_0
+   {
+      datum baseAddress
+      {
+         value = "1408";
+         type = "String";
+      }
+   }
+   element sensor_2.I2C_2_avalon_slave_0
+   {
+      datum baseAddress
+      {
+         value = "1344";
+         type = "String";
+      }
+   }
+   element sensor_2.I2C_3_avalon_slave_0
+   {
+      datum baseAddress
+      {
+         value = "1280";
          type = "String";
       }
    }
@@ -1236,6 +1284,26 @@
  <parameter name="timeStamp" value="0" />
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
+ <interface
+   name="auxilliary_i2c_0_conduit_end"
+   internal="auxilliary.I2C_0_conduit_end"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="auxilliary_i2c_1_conduit_end"
+   internal="auxilliary.I2C_1_conduit_end"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="auxilliary_i2c_2_conduit_end"
+   internal="auxilliary.I2C_2_conduit_end"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="auxilliary_i2c_3_conduit_end"
+   internal="auxilliary.I2C_3_conduit_end"
+   type="conduit"
+   dir="end" />
  <interface name="clk" internal="clk_0.clk_in" type="clock" dir="end" />
  <interface
    name="hps_0_f2h_cold_reset_req"
@@ -1261,46 +1329,6 @@
  <interface name="hps_0_h2f_user0_clock" internal="hps_0.h2f_user0_clock" />
  <interface name="hps_0_hps_io" internal="hps_0.hps_io" type="conduit" dir="end" />
  <interface
-   name="i2c_0_conduit_end"
-   internal="I2C_0.conduit_end"
-   type="conduit"
-   dir="end" />
- <interface
-   name="i2c_1_conduit_end"
-   internal="I2C_1.conduit_end"
-   type="conduit"
-   dir="end" />
- <interface
-   name="i2c_2_conduit_end"
-   internal="I2C_2.conduit_end"
-   type="conduit"
-   dir="end" />
- <interface
-   name="i2c_3_conduit_end"
-   internal="I2C_3.conduit_end"
-   type="conduit"
-   dir="end" />
- <interface
-   name="i2c_4_conduit_end"
-   internal="I2C_4.conduit_end"
-   type="conduit"
-   dir="end" />
- <interface
-   name="i2c_5_conduit_end"
-   internal="I2C_5.conduit_end"
-   type="conduit"
-   dir="end" />
- <interface
-   name="i2c_6_conduit_end"
-   internal="I2C_6.conduit_end"
-   type="conduit"
-   dir="end" />
- <interface
-   name="i2c_7_conduit_end"
-   internal="I2C_7.conduit_end"
-   type="conduit"
-   dir="end" />
- <interface
    name="iceboardcontrol_0_conduit_end"
    internal="ICEboardControl_0.conduit_end"
    type="conduit"
@@ -1312,7 +1340,9 @@
    dir="end" />
  <interface
    name="iceboardcontrol_2_conduit_end"
-   internal="ICEboardControl_2.conduit_end" />
+   internal="ICEboardControl_2.conduit_end"
+   type="conduit"
+   dir="end" />
  <interface
    name="iceboardcontrol_3_conduit_end"
    internal="ICEboardControl_3.conduit_end" />
@@ -1328,48 +1358,81 @@
    type="conduit"
    dir="end" />
  <interface
-   name="neopixel_0_conduit_end"
-   internal="neopixel_0.conduit_end"
+   name="myocontrol_1_conduit_end"
+   internal="MYOControl_1.conduit_end"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="neopixel_conduit_end"
+   internal="neopixel.conduit_end"
    type="conduit"
    dir="end" />
  <interface name="reset" internal="clk_0.clk_in_reset" type="reset" dir="end" />
+ <interface
+   name="sensor_0_i2c_0_conduit_end"
+   internal="sensor_0.I2C_0_conduit_end"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="sensor_0_i2c_1_conduit_end"
+   internal="sensor_0.I2C_1_conduit_end"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="sensor_0_i2c_2_conduit_end"
+   internal="sensor_0.I2C_2_conduit_end"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="sensor_0_i2c_3_conduit_end"
+   internal="sensor_0.I2C_3_conduit_end"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="sensor_1_i2c_0_conduit_end"
+   internal="sensor_1.I2C_0_conduit_end"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="sensor_1_i2c_1_conduit_end"
+   internal="sensor_1.I2C_1_conduit_end"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="sensor_1_i2c_2_conduit_end"
+   internal="sensor_1.I2C_2_conduit_end"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="sensor_1_i2c_3_conduit_end"
+   internal="sensor_1.I2C_3_conduit_end"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="sensor_2_i2c_0_conduit_end"
+   internal="sensor_2.I2C_0_conduit_end"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="sensor_2_i2c_1_conduit_end"
+   internal="sensor_2.I2C_1_conduit_end"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="sensor_2_i2c_2_conduit_end"
+   internal="sensor_2.I2C_2_conduit_end"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="sensor_2_i2c_3_conduit_end"
+   internal="sensor_2.I2C_3_conduit_end"
+   type="conduit"
+   dir="end" />
  <interface
    name="switches_0_external_connection"
    internal="SWITCHES.external_connection"
    type="conduit"
    dir="end" />
- <module name="I2C_0" kind="I2C" version="1.0" enabled="1">
-  <parameter name="BUS_SPEED_HZ" value="400000" />
-  <parameter name="CLOCK_SPEED_HZ" value="50000000" />
- </module>
- <module name="I2C_1" kind="I2C" version="1.0" enabled="1">
-  <parameter name="BUS_SPEED_HZ" value="400000" />
-  <parameter name="CLOCK_SPEED_HZ" value="50000000" />
- </module>
- <module name="I2C_2" kind="I2C" version="1.0" enabled="1">
-  <parameter name="BUS_SPEED_HZ" value="400000" />
-  <parameter name="CLOCK_SPEED_HZ" value="50000000" />
- </module>
- <module name="I2C_3" kind="I2C" version="1.0" enabled="1">
-  <parameter name="BUS_SPEED_HZ" value="400000" />
-  <parameter name="CLOCK_SPEED_HZ" value="50000000" />
- </module>
- <module name="I2C_4" kind="I2C" version="1.0" enabled="1">
-  <parameter name="BUS_SPEED_HZ" value="400000" />
-  <parameter name="CLOCK_SPEED_HZ" value="50000000" />
- </module>
- <module name="I2C_5" kind="I2C" version="1.0" enabled="1">
-  <parameter name="BUS_SPEED_HZ" value="400000" />
-  <parameter name="CLOCK_SPEED_HZ" value="50000000" />
- </module>
- <module name="I2C_6" kind="I2C" version="1.0" enabled="1">
-  <parameter name="BUS_SPEED_HZ" value="400000" />
-  <parameter name="CLOCK_SPEED_HZ" value="50000000" />
- </module>
- <module name="I2C_7" kind="I2C" version="1.0" enabled="1">
-  <parameter name="BUS_SPEED_HZ" value="400000" />
-  <parameter name="CLOCK_SPEED_HZ" value="50000000" />
- </module>
  <module
    name="ICEboardControl_0"
    kind="ICEboardControl"
@@ -1392,7 +1455,7 @@
    name="ICEboardControl_2"
    kind="ICEboardControl"
    version="1.0"
-   enabled="0">
+   enabled="1">
   <parameter name="BAUDRATE" value="500000" />
   <parameter name="CLOCK_FREQ_HZ" value="50000000" />
   <parameter name="NUMBER_OF_MOTORS" value="8" />
@@ -1423,7 +1486,12 @@
  <module name="MYOControl_0" kind="MYOControl" version="1.0" enabled="1">
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
   <parameter name="ENABLE_MYOBRICK_CONTROL" value="0" />
-  <parameter name="NUMBER_OF_MOTORS" value="9" />
+  <parameter name="NUMBER_OF_MOTORS" value="8" />
+ </module>
+ <module name="MYOControl_1" kind="MYOControl" version="1.0" enabled="1">
+  <parameter name="CLOCK_SPEED_HZ" value="50000000" />
+  <parameter name="ENABLE_MYOBRICK_CONTROL" value="0" />
+  <parameter name="NUMBER_OF_MOTORS" value="8" />
  </module>
  <module name="SWITCHES" kind="altera_avalon_pio" version="18.1" enabled="1">
   <parameter name="bitClearingEdgeCapReg" value="false" />
@@ -1438,6 +1506,25 @@
   <parameter name="simDoTestBenchWiring" value="false" />
   <parameter name="simDrivenValue" value="0" />
   <parameter name="width" value="4" />
+ </module>
+ <module name="auxilliary" kind="subsystemA" version="1.0" enabled="1">
+  <parameter name="AUTO_DEVICE" value="5CSEBA6U23I7" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="7" />
+  <parameter name="AUTO_GENERATION_ID" value="0" />
+  <parameter name="AUTO_I2C_0_CLOCK_SINK_CLOCK_DOMAIN" value="1" />
+  <parameter name="AUTO_I2C_0_CLOCK_SINK_CLOCK_RATE" value="50000000" />
+  <parameter name="AUTO_I2C_0_CLOCK_SINK_RESET_DOMAIN" value="1" />
+  <parameter name="AUTO_I2C_1_CLOCK_SINK_CLOCK_DOMAIN" value="1" />
+  <parameter name="AUTO_I2C_1_CLOCK_SINK_CLOCK_RATE" value="50000000" />
+  <parameter name="AUTO_I2C_1_CLOCK_SINK_RESET_DOMAIN" value="1" />
+  <parameter name="AUTO_I2C_2_CLOCK_SINK_CLOCK_DOMAIN" value="1" />
+  <parameter name="AUTO_I2C_2_CLOCK_SINK_CLOCK_RATE" value="50000000" />
+  <parameter name="AUTO_I2C_2_CLOCK_SINK_RESET_DOMAIN" value="1" />
+  <parameter name="AUTO_I2C_3_CLOCK_SINK_CLOCK_DOMAIN" value="1" />
+  <parameter name="AUTO_I2C_3_CLOCK_SINK_CLOCK_RATE" value="50000000" />
+  <parameter name="AUTO_I2C_3_CLOCK_SINK_RESET_DOMAIN" value="1" />
+  <parameter name="AUTO_UNIQUE_ID">$${FILENAME}_auxilliary</parameter>
  </module>
  <module name="clk_0" kind="clock_source" version="18.1" enabled="1">
   <parameter name="clockFrequency" value="50000000" />
@@ -1994,9 +2081,66 @@
   <parameter name="writeBufferDepth" value="64" />
   <parameter name="writeIRQThreshold" value="8" />
  </module>
- <module name="neopixel_0" kind="neopixel" version="1.0" enabled="1">
+ <module name="neopixel" kind="neopixel" version="1.0" enabled="1">
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
   <parameter name="NUMBER_OF_NEOPIXEL" value="10" />
+ </module>
+ <module name="sensor_0" kind="subsystemA" version="1.0" enabled="1">
+  <parameter name="AUTO_DEVICE" value="5CSEBA6U23I7" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="7" />
+  <parameter name="AUTO_GENERATION_ID" value="0" />
+  <parameter name="AUTO_I2C_0_CLOCK_SINK_CLOCK_DOMAIN" value="1" />
+  <parameter name="AUTO_I2C_0_CLOCK_SINK_CLOCK_RATE" value="50000000" />
+  <parameter name="AUTO_I2C_0_CLOCK_SINK_RESET_DOMAIN" value="1" />
+  <parameter name="AUTO_I2C_1_CLOCK_SINK_CLOCK_DOMAIN" value="1" />
+  <parameter name="AUTO_I2C_1_CLOCK_SINK_CLOCK_RATE" value="50000000" />
+  <parameter name="AUTO_I2C_1_CLOCK_SINK_RESET_DOMAIN" value="1" />
+  <parameter name="AUTO_I2C_2_CLOCK_SINK_CLOCK_DOMAIN" value="1" />
+  <parameter name="AUTO_I2C_2_CLOCK_SINK_CLOCK_RATE" value="50000000" />
+  <parameter name="AUTO_I2C_2_CLOCK_SINK_RESET_DOMAIN" value="1" />
+  <parameter name="AUTO_I2C_3_CLOCK_SINK_CLOCK_DOMAIN" value="1" />
+  <parameter name="AUTO_I2C_3_CLOCK_SINK_CLOCK_RATE" value="50000000" />
+  <parameter name="AUTO_I2C_3_CLOCK_SINK_RESET_DOMAIN" value="1" />
+  <parameter name="AUTO_UNIQUE_ID">$${FILENAME}_sensor_0</parameter>
+ </module>
+ <module name="sensor_1" kind="subsystemA" version="1.0" enabled="1">
+  <parameter name="AUTO_DEVICE" value="5CSEBA6U23I7" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="7" />
+  <parameter name="AUTO_GENERATION_ID" value="0" />
+  <parameter name="AUTO_I2C_0_CLOCK_SINK_CLOCK_DOMAIN" value="1" />
+  <parameter name="AUTO_I2C_0_CLOCK_SINK_CLOCK_RATE" value="50000000" />
+  <parameter name="AUTO_I2C_0_CLOCK_SINK_RESET_DOMAIN" value="1" />
+  <parameter name="AUTO_I2C_1_CLOCK_SINK_CLOCK_DOMAIN" value="1" />
+  <parameter name="AUTO_I2C_1_CLOCK_SINK_CLOCK_RATE" value="50000000" />
+  <parameter name="AUTO_I2C_1_CLOCK_SINK_RESET_DOMAIN" value="1" />
+  <parameter name="AUTO_I2C_2_CLOCK_SINK_CLOCK_DOMAIN" value="1" />
+  <parameter name="AUTO_I2C_2_CLOCK_SINK_CLOCK_RATE" value="50000000" />
+  <parameter name="AUTO_I2C_2_CLOCK_SINK_RESET_DOMAIN" value="1" />
+  <parameter name="AUTO_I2C_3_CLOCK_SINK_CLOCK_DOMAIN" value="1" />
+  <parameter name="AUTO_I2C_3_CLOCK_SINK_CLOCK_RATE" value="50000000" />
+  <parameter name="AUTO_I2C_3_CLOCK_SINK_RESET_DOMAIN" value="1" />
+  <parameter name="AUTO_UNIQUE_ID">$${FILENAME}_sensor_1</parameter>
+ </module>
+ <module name="sensor_2" kind="subsystemA" version="1.0" enabled="1">
+  <parameter name="AUTO_DEVICE" value="5CSEBA6U23I7" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="7" />
+  <parameter name="AUTO_GENERATION_ID" value="0" />
+  <parameter name="AUTO_I2C_0_CLOCK_SINK_CLOCK_DOMAIN" value="1" />
+  <parameter name="AUTO_I2C_0_CLOCK_SINK_CLOCK_RATE" value="50000000" />
+  <parameter name="AUTO_I2C_0_CLOCK_SINK_RESET_DOMAIN" value="1" />
+  <parameter name="AUTO_I2C_1_CLOCK_SINK_CLOCK_DOMAIN" value="1" />
+  <parameter name="AUTO_I2C_1_CLOCK_SINK_CLOCK_RATE" value="50000000" />
+  <parameter name="AUTO_I2C_1_CLOCK_SINK_RESET_DOMAIN" value="1" />
+  <parameter name="AUTO_I2C_2_CLOCK_SINK_CLOCK_DOMAIN" value="1" />
+  <parameter name="AUTO_I2C_2_CLOCK_SINK_CLOCK_RATE" value="50000000" />
+  <parameter name="AUTO_I2C_2_CLOCK_SINK_RESET_DOMAIN" value="1" />
+  <parameter name="AUTO_I2C_3_CLOCK_SINK_CLOCK_DOMAIN" value="1" />
+  <parameter name="AUTO_I2C_3_CLOCK_SINK_CLOCK_RATE" value="50000000" />
+  <parameter name="AUTO_I2C_3_CLOCK_SINK_RESET_DOMAIN" value="1" />
+  <parameter name="AUTO_UNIQUE_ID">$${FILENAME}_sensor_2</parameter>
  </module>
  <module
    name="sysid_qsys"
@@ -2005,6 +2149,150 @@
    enabled="1">
   <parameter name="id" value="-1318387531" />
  </module>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="hps_0.h2f_lw_axi_master"
+   end="sensor_0.I2C_0_avalon_slave_0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x07c0" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="hps_0.h2f_lw_axi_master"
+   end="sensor_1.I2C_0_avalon_slave_0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x06c0" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="hps_0.h2f_lw_axi_master"
+   end="sensor_2.I2C_0_avalon_slave_0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x05c0" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="hps_0.h2f_lw_axi_master"
+   end="auxilliary.I2C_0_avalon_slave_0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x04c0" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="hps_0.h2f_lw_axi_master"
+   end="sensor_0.I2C_1_avalon_slave_0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0780" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="hps_0.h2f_lw_axi_master"
+   end="sensor_1.I2C_1_avalon_slave_0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0680" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="hps_0.h2f_lw_axi_master"
+   end="sensor_2.I2C_1_avalon_slave_0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0580" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="hps_0.h2f_lw_axi_master"
+   end="auxilliary.I2C_1_avalon_slave_0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0480" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="hps_0.h2f_lw_axi_master"
+   end="sensor_0.I2C_2_avalon_slave_0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0740" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="hps_0.h2f_lw_axi_master"
+   end="sensor_1.I2C_2_avalon_slave_0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0640" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="hps_0.h2f_lw_axi_master"
+   end="sensor_2.I2C_2_avalon_slave_0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0540" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="hps_0.h2f_lw_axi_master"
+   end="auxilliary.I2C_2_avalon_slave_0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0440" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="hps_0.h2f_lw_axi_master"
+   end="sensor_0.I2C_3_avalon_slave_0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0700" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="hps_0.h2f_lw_axi_master"
+   end="sensor_1.I2C_3_avalon_slave_0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0600" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="hps_0.h2f_lw_axi_master"
+   end="sensor_2.I2C_3_avalon_slave_0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0500" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="hps_0.h2f_lw_axi_master"
+   end="auxilliary.I2C_3_avalon_slave_0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0400" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
  <connection
    kind="avalon"
    version="18.1"
@@ -2020,14 +2308,14 @@
    start="hps_0.h2f_lw_axi_master"
    end="ICEboardControl_0.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x000c0000" />
+  <parameter name="baseAddress" value="0x00140000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
    kind="avalon"
    version="18.1"
    start="hps_0.h2f_lw_axi_master"
-   end="neopixel_0.avalon_slave_0">
+   end="neopixel.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0000" />
   <parameter name="defaultConnection" value="false" />
@@ -2038,7 +2326,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="MYOControl_0.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00080000" />
+  <parameter name="baseAddress" value="0x00100000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2047,16 +2335,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="ICEboardControl_1.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00040000" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="18.1"
-   start="hps_0.h2f_lw_axi_master"
-   end="ICEboardControl_2.avalon_slave_0">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00080000" />
+  <parameter name="baseAddress" value="0x000c0000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2072,72 +2351,18 @@
    kind="avalon"
    version="18.1"
    start="hps_0.h2f_lw_axi_master"
-   end="I2C_0.avalon_slave_0">
+   end="MYOControl_1.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x05c0" />
+  <parameter name="baseAddress" value="0x00080000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
    kind="avalon"
    version="18.1"
    start="hps_0.h2f_lw_axi_master"
-   end="I2C_1.avalon_slave_0">
+   end="ICEboardControl_2.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0580" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="18.1"
-   start="hps_0.h2f_lw_axi_master"
-   end="I2C_3.avalon_slave_0">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0540" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="18.1"
-   start="hps_0.h2f_lw_axi_master"
-   end="I2C_2.avalon_slave_0">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0500" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="18.1"
-   start="hps_0.h2f_lw_axi_master"
-   end="I2C_4.avalon_slave_0">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x04c0" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="18.1"
-   start="hps_0.h2f_lw_axi_master"
-   end="I2C_5.avalon_slave_0">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0480" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="18.1"
-   start="hps_0.h2f_lw_axi_master"
-   end="I2C_6.avalon_slave_0">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0440" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="18.1"
-   start="hps_0.h2f_lw_axi_master"
-   end="I2C_7.avalon_slave_0">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0400" />
+  <parameter name="baseAddress" value="0x00040000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2155,7 +2380,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="LED.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0610" />
+  <parameter name="baseAddress" value="0x0810" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2164,9 +2389,89 @@
    start="hps_0.h2f_lw_axi_master"
    end="SWITCHES.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0600" />
+  <parameter name="baseAddress" value="0x0800" />
   <parameter name="defaultConnection" value="false" />
  </connection>
+ <connection
+   kind="clock"
+   version="18.1"
+   start="clk_0.clk"
+   end="sensor_0.I2C_0_clock_sink" />
+ <connection
+   kind="clock"
+   version="18.1"
+   start="clk_0.clk"
+   end="sensor_1.I2C_0_clock_sink" />
+ <connection
+   kind="clock"
+   version="18.1"
+   start="clk_0.clk"
+   end="sensor_2.I2C_0_clock_sink" />
+ <connection
+   kind="clock"
+   version="18.1"
+   start="clk_0.clk"
+   end="auxilliary.I2C_0_clock_sink" />
+ <connection
+   kind="clock"
+   version="18.1"
+   start="clk_0.clk"
+   end="sensor_0.I2C_1_clock_sink" />
+ <connection
+   kind="clock"
+   version="18.1"
+   start="clk_0.clk"
+   end="sensor_1.I2C_1_clock_sink" />
+ <connection
+   kind="clock"
+   version="18.1"
+   start="clk_0.clk"
+   end="sensor_2.I2C_1_clock_sink" />
+ <connection
+   kind="clock"
+   version="18.1"
+   start="clk_0.clk"
+   end="auxilliary.I2C_1_clock_sink" />
+ <connection
+   kind="clock"
+   version="18.1"
+   start="clk_0.clk"
+   end="sensor_1.I2C_2_clock_sink" />
+ <connection
+   kind="clock"
+   version="18.1"
+   start="clk_0.clk"
+   end="sensor_2.I2C_2_clock_sink" />
+ <connection
+   kind="clock"
+   version="18.1"
+   start="clk_0.clk"
+   end="auxilliary.I2C_2_clock_sink" />
+ <connection
+   kind="clock"
+   version="18.1"
+   start="clk_0.clk"
+   end="sensor_0.I2C_2_clock_sink" />
+ <connection
+   kind="clock"
+   version="18.1"
+   start="clk_0.clk"
+   end="sensor_0.I2C_3_clock_sink" />
+ <connection
+   kind="clock"
+   version="18.1"
+   start="clk_0.clk"
+   end="sensor_1.I2C_3_clock_sink" />
+ <connection
+   kind="clock"
+   version="18.1"
+   start="clk_0.clk"
+   end="sensor_2.I2C_3_clock_sink" />
+ <connection
+   kind="clock"
+   version="18.1"
+   start="clk_0.clk"
+   end="auxilliary.I2C_3_clock_sink" />
  <connection kind="clock" version="18.1" start="clk_0.clk" end="jtag_uart.clk" />
  <connection kind="clock" version="18.1" start="clk_0.clk" end="LED.clk" />
  <connection kind="clock" version="18.1" start="clk_0.clk" end="sysid_qsys.clk" />
@@ -2185,30 +2490,27 @@
    kind="clock"
    version="18.1"
    start="clk_0.clk"
-   end="ICEboardControl_2.clock" />
- <connection
-   kind="clock"
-   version="18.1"
-   start="clk_0.clk"
    end="ICEboardControl_3.clock" />
  <connection
    kind="clock"
    version="18.1"
    start="clk_0.clk"
-   end="neopixel_0.clock_sink" />
+   end="ICEboardControl_2.clock" />
+ <connection
+   kind="clock"
+   version="18.1"
+   start="clk_0.clk"
+   end="neopixel.clock_sink" />
  <connection
    kind="clock"
    version="18.1"
    start="clk_0.clk"
    end="MYOControl_0.clock_sink" />
- <connection kind="clock" version="18.1" start="clk_0.clk" end="I2C_0.clock_sink" />
- <connection kind="clock" version="18.1" start="clk_0.clk" end="I2C_1.clock_sink" />
- <connection kind="clock" version="18.1" start="clk_0.clk" end="I2C_2.clock_sink" />
- <connection kind="clock" version="18.1" start="clk_0.clk" end="I2C_3.clock_sink" />
- <connection kind="clock" version="18.1" start="clk_0.clk" end="I2C_5.clock_sink" />
- <connection kind="clock" version="18.1" start="clk_0.clk" end="I2C_6.clock_sink" />
- <connection kind="clock" version="18.1" start="clk_0.clk" end="I2C_7.clock_sink" />
- <connection kind="clock" version="18.1" start="clk_0.clk" end="I2C_4.clock_sink" />
+ <connection
+   kind="clock"
+   version="18.1"
+   start="clk_0.clk"
+   end="MYOControl_1.clock_sink" />
  <connection
    kind="clock"
    version="18.1"
@@ -2221,6 +2523,86 @@
    end="jtag_uart.irq">
   <parameter name="irqNumber" value="0" />
  </connection>
+ <connection
+   kind="reset"
+   version="18.1"
+   start="clk_0.clk_reset"
+   end="sensor_0.I2C_0_reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="clk_0.clk_reset"
+   end="sensor_1.I2C_0_reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="clk_0.clk_reset"
+   end="sensor_2.I2C_0_reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="clk_0.clk_reset"
+   end="auxilliary.I2C_0_reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="clk_0.clk_reset"
+   end="sensor_0.I2C_1_reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="clk_0.clk_reset"
+   end="sensor_1.I2C_1_reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="clk_0.clk_reset"
+   end="sensor_2.I2C_1_reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="clk_0.clk_reset"
+   end="auxilliary.I2C_1_reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="clk_0.clk_reset"
+   end="sensor_0.I2C_2_reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="clk_0.clk_reset"
+   end="sensor_1.I2C_2_reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="clk_0.clk_reset"
+   end="sensor_2.I2C_2_reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="clk_0.clk_reset"
+   end="auxilliary.I2C_2_reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="clk_0.clk_reset"
+   end="sensor_0.I2C_3_reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="clk_0.clk_reset"
+   end="sensor_1.I2C_3_reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="clk_0.clk_reset"
+   end="sensor_2.I2C_3_reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="clk_0.clk_reset"
+   end="auxilliary.I2C_3_reset" />
  <connection
    kind="reset"
    version="18.1"
@@ -2241,7 +2623,7 @@
    kind="reset"
    version="18.1"
    start="clk_0.clk_reset"
-   end="neopixel_0.reset" />
+   end="neopixel.reset" />
  <connection
    kind="reset"
    version="18.1"
@@ -2256,25 +2638,22 @@
    kind="reset"
    version="18.1"
    start="clk_0.clk_reset"
-   end="ICEboardControl_2.reset" />
- <connection
-   kind="reset"
-   version="18.1"
-   start="clk_0.clk_reset"
    end="ICEboardControl_3.reset" />
- <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="I2C_0.reset" />
- <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="I2C_1.reset" />
- <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="I2C_2.reset" />
- <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="I2C_3.reset" />
  <connection
    kind="reset"
    version="18.1"
    start="clk_0.clk_reset"
    end="SWITCHES.reset" />
- <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="I2C_4.reset" />
- <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="I2C_5.reset" />
- <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="I2C_6.reset" />
- <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="I2C_7.reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="clk_0.clk_reset"
+   end="MYOControl_1.reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="clk_0.clk_reset"
+   end="ICEboardControl_2.reset" />
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
  <interconnectRequirement for="$system" name="qsys_mm.maxAdditionalLatency" value="1" />
 </system>
