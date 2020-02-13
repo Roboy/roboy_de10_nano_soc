@@ -146,7 +146,7 @@ soc_system u0(
 			// neopixel
 			// led
 			.led_external_connection_export(LED),
-			.neopixel_conduit_end_one_wire(neopixel),
+			.neopixel_conduit_end_one_wire(neopixel), 
 			// switches
 			.switches_0_external_connection_export(SW),
 			.iceboardcontrol_0_conduit_end_rx(GPIO_0[0]),
