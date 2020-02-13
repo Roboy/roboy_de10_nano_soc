@@ -20,8 +20,8 @@ module DE10_NANO_SoC_GHRD(
       input              FPGA_CLK3_50,
 
       ///////// GPIO ///////// 
-      inout       [35:0] GPIO_0,
-      inout       [35:0] GPIO_1, 
+      inout       [35:0] GPIO_0, 
+      inout       [35:0] GPIO_1,  
  
       ///////// HDMI /////////
       inout              HDMI_I2C_SCL, 
@@ -128,8 +128,8 @@ soc_system u0(
 			.iceboardcontrol_0_conduit_end_tx(GPIO_0[1]),
 			.iceboardcontrol_1_conduit_end_rx(GPIO_0[2]),
 			.iceboardcontrol_1_conduit_end_tx(GPIO_0[3]),
-//			.iceboardcontrol_2_conduit_end_rx(GPIO_0[4]),
-//			.iceboardcontrol_2_conduit_end_tx(GPIO_0[5]),
+			.iceboardcontrol_2_conduit_end_rx(GPIO_0[4]),
+			.iceboardcontrol_2_conduit_end_tx(GPIO_0[5]),
 //			.iceboardcontrol_3_conduit_end_rx(GPIO_1[35]),
 //			.iceboardcontrol_3_conduit_end_tx(GPIO_1[34]),
 			.myocontrol_0_conduit_end_mosi(GPIO_1[1]),
@@ -144,9 +144,9 @@ soc_system u0(
 			.i2c_0_conduit_end_scl(GPIO_1[17]),
 			.i2c_1_conduit_end_sda(GPIO_1[18]),
 			.i2c_1_conduit_end_scl(GPIO_1[19]),
-			.i2c_2_conduit_end_sda(GPIO_1[20]),
+			.i2c_2_conduit_end_sda(GPIO_1[20]), 
 			.i2c_2_conduit_end_scl(GPIO_1[21]),
-			.i2c_3_conduit_end_sda(GPIO_1[22]),
+			.i2c_3_conduit_end_sda(GPIO_1[22]), 
 			.i2c_3_conduit_end_scl(GPIO_1[23]),
 			// auxiliary sensors
 			.i2c_4_conduit_end_sda(GPIO_0[34]),

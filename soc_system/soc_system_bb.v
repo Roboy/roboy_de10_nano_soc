@@ -55,24 +55,26 @@ module soc_system (
 	hps_0_hps_io_hps_io_gpio_inst_GPIO61,
 	i2c_0_conduit_end_scl,
 	i2c_0_conduit_end_sda,
-	i2c_0_conduit_end_led,
-	i2c_0_conduit_end_gpio,
 	i2c_1_conduit_end_scl,
 	i2c_1_conduit_end_sda,
-	i2c_1_conduit_end_led,
-	i2c_1_conduit_end_gpio,
 	i2c_2_conduit_end_scl,
 	i2c_2_conduit_end_sda,
-	i2c_2_conduit_end_led,
-	i2c_2_conduit_end_gpio,
 	i2c_3_conduit_end_scl,
 	i2c_3_conduit_end_sda,
-	i2c_3_conduit_end_led,
-	i2c_3_conduit_end_gpio,
+	i2c_4_conduit_end_scl,
+	i2c_4_conduit_end_sda,
+	i2c_5_conduit_end_scl,
+	i2c_5_conduit_end_sda,
+	i2c_6_conduit_end_scl,
+	i2c_6_conduit_end_sda,
+	i2c_7_conduit_end_scl,
+	i2c_7_conduit_end_sda,
 	iceboardcontrol_0_conduit_end_rx,
 	iceboardcontrol_0_conduit_end_tx,
 	iceboardcontrol_1_conduit_end_rx,
 	iceboardcontrol_1_conduit_end_tx,
+	iceboardcontrol_2_conduit_end_rx,
+	iceboardcontrol_2_conduit_end_tx,
 	led_external_connection_export,
 	memory_mem_a,
 	memory_mem_ba,
@@ -102,24 +104,8 @@ module soc_system (
 	myocontrol_0_conduit_end_ss_n_o,
 	myocontrol_0_conduit_end_sck,
 	neopixel_0_conduit_end_one_wire,
-	switches_0_external_connection_export,
 	reset_reset_n,
-	i2c_5_conduit_end_scl,
-	i2c_5_conduit_end_sda,
-	i2c_5_conduit_end_led,
-	i2c_5_conduit_end_gpio,
-	i2c_4_conduit_end_scl,
-	i2c_4_conduit_end_sda,
-	i2c_4_conduit_end_led,
-	i2c_4_conduit_end_gpio,
-	i2c_6_conduit_end_scl,
-	i2c_6_conduit_end_sda,
-	i2c_6_conduit_end_led,
-	i2c_6_conduit_end_gpio,
-	i2c_7_conduit_end_scl,
-	i2c_7_conduit_end_sda,
-	i2c_7_conduit_end_led,
-	i2c_7_conduit_end_gpio);	
+	switches_0_external_connection_export);	
 
 	input		clk_clk;
 	input		hps_0_f2h_cold_reset_req_reset_n;
@@ -176,24 +162,26 @@ module soc_system (
 	inout		hps_0_hps_io_hps_io_gpio_inst_GPIO61;
 	inout		i2c_0_conduit_end_scl;
 	inout		i2c_0_conduit_end_sda;
-	output	[6:0]	i2c_0_conduit_end_led;
-	output	[2:0]	i2c_0_conduit_end_gpio;
 	inout		i2c_1_conduit_end_scl;
 	inout		i2c_1_conduit_end_sda;
-	output	[6:0]	i2c_1_conduit_end_led;
-	output	[2:0]	i2c_1_conduit_end_gpio;
 	inout		i2c_2_conduit_end_scl;
 	inout		i2c_2_conduit_end_sda;
-	output	[6:0]	i2c_2_conduit_end_led;
-	output	[2:0]	i2c_2_conduit_end_gpio;
 	inout		i2c_3_conduit_end_scl;
 	inout		i2c_3_conduit_end_sda;
-	output	[6:0]	i2c_3_conduit_end_led;
-	output	[2:0]	i2c_3_conduit_end_gpio;
+	inout		i2c_4_conduit_end_scl;
+	inout		i2c_4_conduit_end_sda;
+	inout		i2c_5_conduit_end_scl;
+	inout		i2c_5_conduit_end_sda;
+	inout		i2c_6_conduit_end_scl;
+	inout		i2c_6_conduit_end_sda;
+	inout		i2c_7_conduit_end_scl;
+	inout		i2c_7_conduit_end_sda;
 	input		iceboardcontrol_0_conduit_end_rx;
 	output		iceboardcontrol_0_conduit_end_tx;
 	input		iceboardcontrol_1_conduit_end_rx;
 	output		iceboardcontrol_1_conduit_end_tx;
+	input		iceboardcontrol_2_conduit_end_rx;
+	output		iceboardcontrol_2_conduit_end_tx;
 	output	[7:0]	led_external_connection_export;
 	output	[14:0]	memory_mem_a;
 	output	[2:0]	memory_mem_ba;
@@ -223,22 +211,6 @@ module soc_system (
 	output	[8:0]	myocontrol_0_conduit_end_ss_n_o;
 	output		myocontrol_0_conduit_end_sck;
 	output		neopixel_0_conduit_end_one_wire;
-	input	[3:0]	switches_0_external_connection_export;
 	input		reset_reset_n;
-	inout		i2c_5_conduit_end_scl;
-	inout		i2c_5_conduit_end_sda;
-	output	[6:0]	i2c_5_conduit_end_led;
-	output	[2:0]	i2c_5_conduit_end_gpio;
-	inout		i2c_4_conduit_end_scl;
-	inout		i2c_4_conduit_end_sda;
-	output	[6:0]	i2c_4_conduit_end_led;
-	output	[2:0]	i2c_4_conduit_end_gpio;
-	inout		i2c_6_conduit_end_scl;
-	inout		i2c_6_conduit_end_sda;
-	output	[6:0]	i2c_6_conduit_end_led;
-	output	[2:0]	i2c_6_conduit_end_gpio;
-	inout		i2c_7_conduit_end_scl;
-	inout		i2c_7_conduit_end_sda;
-	output	[6:0]	i2c_7_conduit_end_led;
-	output	[2:0]	i2c_7_conduit_end_gpio;
+	input	[3:0]	switches_0_external_connection_export;
 endmodule
