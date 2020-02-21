@@ -10,13 +10,13 @@ module DE10_NANO_SoC_GHRD(
       output             ADC_SDI,
       input              ADC_SDO,
  
-      ///////// ARDUINO /////////
+      ///////// ARDUINO ///////// 
       inout       [15:0] ARDUINO_IO, 
       inout              ARDUINO_RESET_N, 
 
       ///////// FPGA /////////  
       input              FPGA_CLK1_50,
-      input              FPGA_CLK2_50, 
+      input              FPGA_CLK2_50,  
       input              FPGA_CLK3_50,
 
       ///////// GPIO ///////// 

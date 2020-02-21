@@ -2,7 +2,7 @@ set_global_assignment -entity "soc_system" -library "soc_system" -name IP_TOOL_N
 set_global_assignment -entity "soc_system" -library "soc_system" -name IP_TOOL_VERSION "18.1"
 set_global_assignment -entity "soc_system" -library "soc_system" -name IP_TOOL_ENV "Qsys"
 set_global_assignment -library "soc_system" -name SOPCINFO_FILE [file join $::quartus(qip_path) "../../soc_system.sopcinfo"]
-set_global_assignment -entity "soc_system" -library "soc_system" -name SLD_INFO "QSYS_NAME soc_system HAS_SOPCINFO 1 GENERATION_ID 1581958371"
+set_global_assignment -entity "soc_system" -library "soc_system" -name SLD_INFO "QSYS_NAME soc_system HAS_SOPCINFO 1 GENERATION_ID 1582292400"
 set_global_assignment -library "soc_system" -name MISC_FILE [file join $::quartus(qip_path) "../soc_system.cmp"]
 set_global_assignment -library "soc_system" -name SLD_FILE [file join $::quartus(qip_path) "soc_system.regmap"]
 set_global_assignment -library "soc_system" -name MISC_FILE [file join $::quartus(qip_path) "soc_system_hps_0_hps.svd"]
@@ -17,7 +17,7 @@ set_global_assignment -entity "soc_system" -library "soc_system" -name IP_COMPON
 set_global_assignment -entity "soc_system" -library "soc_system" -name IP_COMPONENT_REPORT_HIERARCHY "On"
 set_global_assignment -entity "soc_system" -library "soc_system" -name IP_COMPONENT_INTERNAL "Off"
 set_global_assignment -entity "soc_system" -library "soc_system" -name IP_COMPONENT_VERSION "MS4w"
-set_global_assignment -entity "soc_system" -library "soc_system" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTU4MTk1ODM3MQ==::QXV0byBHRU5FUkFUSU9OX0lE"
+set_global_assignment -entity "soc_system" -library "soc_system" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTU4MjI5MjQwMA==::QXV0byBHRU5FUkFUSU9OX0lE"
 set_global_assignment -entity "soc_system" -library "soc_system" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::Q3ljbG9uZSBW::QXV0byBERVZJQ0VfRkFNSUxZ"
 set_global_assignment -entity "soc_system" -library "soc_system" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0U=::NUNTRUJBNlUyM0k3::QXV0byBERVZJQ0U="
 set_global_assignment -entity "soc_system" -library "soc_system" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfU1BFRURHUkFERQ==::Nw==::QXV0byBERVZJQ0VfU1BFRURHUkFERQ=="
@@ -539,7 +539,7 @@ set_global_assignment -entity "soc_system_sensor_2" -library "soc_system" -name 
 set_global_assignment -entity "soc_system_sensor_2" -library "soc_system" -name IP_COMPONENT_REPORT_HIERARCHY "On"
 set_global_assignment -entity "soc_system_sensor_2" -library "soc_system" -name IP_COMPONENT_INTERNAL "Off"
 set_global_assignment -entity "soc_system_sensor_2" -library "soc_system" -name IP_COMPONENT_VERSION "MS4w"
-set_global_assignment -entity "soc_system_sensor_2" -library "soc_system" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTU4MTk1ODM3MQ==::QXV0byBHRU5FUkFUSU9OX0lE"
+set_global_assignment -entity "soc_system_sensor_2" -library "soc_system" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTU4MjI5MjQwMA==::QXV0byBHRU5FUkFUSU9OX0lE"
 set_global_assignment -entity "soc_system_sensor_2" -library "soc_system" -name IP_COMPONENT_PARAMETER "QVVUT19VTklRVUVfSUQ=::c29jX3N5c3RlbV9zZW5zb3JfMg==::QXV0byBVTklRVUVfSUQ="
 set_global_assignment -entity "soc_system_sensor_2" -library "soc_system" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::Q3ljbG9uZSBW::QXV0byBERVZJQ0VfRkFNSUxZ"
 set_global_assignment -entity "soc_system_sensor_2" -library "soc_system" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0U=::NUNTRUJBNlUyM0k3::QXV0byBERVZJQ0U="
@@ -570,7 +570,7 @@ set_global_assignment -entity "soc_system_sensor_1" -library "soc_system" -name 
 set_global_assignment -entity "soc_system_sensor_1" -library "soc_system" -name IP_COMPONENT_REPORT_HIERARCHY "On"
 set_global_assignment -entity "soc_system_sensor_1" -library "soc_system" -name IP_COMPONENT_INTERNAL "Off"
 set_global_assignment -entity "soc_system_sensor_1" -library "soc_system" -name IP_COMPONENT_VERSION "MS4w"
-set_global_assignment -entity "soc_system_sensor_1" -library "soc_system" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTU4MTk1ODM3MQ==::QXV0byBHRU5FUkFUSU9OX0lE"
+set_global_assignment -entity "soc_system_sensor_1" -library "soc_system" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTU4MjI5MjQwMA==::QXV0byBHRU5FUkFUSU9OX0lE"
 set_global_assignment -entity "soc_system_sensor_1" -library "soc_system" -name IP_COMPONENT_PARAMETER "QVVUT19VTklRVUVfSUQ=::c29jX3N5c3RlbV9zZW5zb3JfMQ==::QXV0byBVTklRVUVfSUQ="
 set_global_assignment -entity "soc_system_sensor_1" -library "soc_system" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::Q3ljbG9uZSBW::QXV0byBERVZJQ0VfRkFNSUxZ"
 set_global_assignment -entity "soc_system_sensor_1" -library "soc_system" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0U=::NUNTRUJBNlUyM0k3::QXV0byBERVZJQ0U="
@@ -592,7 +592,7 @@ set_global_assignment -entity "soc_system_sensor_0" -library "soc_system" -name 
 set_global_assignment -entity "soc_system_sensor_0" -library "soc_system" -name IP_COMPONENT_REPORT_HIERARCHY "On"
 set_global_assignment -entity "soc_system_sensor_0" -library "soc_system" -name IP_COMPONENT_INTERNAL "Off"
 set_global_assignment -entity "soc_system_sensor_0" -library "soc_system" -name IP_COMPONENT_VERSION "MS4w"
-set_global_assignment -entity "soc_system_sensor_0" -library "soc_system" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTU4MTk1ODM3MQ==::QXV0byBHRU5FUkFUSU9OX0lE"
+set_global_assignment -entity "soc_system_sensor_0" -library "soc_system" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTU4MjI5MjQwMA==::QXV0byBHRU5FUkFUSU9OX0lE"
 set_global_assignment -entity "soc_system_sensor_0" -library "soc_system" -name IP_COMPONENT_PARAMETER "QVVUT19VTklRVUVfSUQ=::c29jX3N5c3RlbV9zZW5zb3JfMA==::QXV0byBVTklRVUVfSUQ="
 set_global_assignment -entity "soc_system_sensor_0" -library "soc_system" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::Q3ljbG9uZSBW::QXV0byBERVZJQ0VfRkFNSUxZ"
 set_global_assignment -entity "soc_system_sensor_0" -library "soc_system" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0U=::NUNTRUJBNlUyM0k3::QXV0byBERVZJQ0U="
@@ -6395,7 +6395,7 @@ set_global_assignment -entity "soc_system_auxilliary" -library "soc_system" -nam
 set_global_assignment -entity "soc_system_auxilliary" -library "soc_system" -name IP_COMPONENT_REPORT_HIERARCHY "On"
 set_global_assignment -entity "soc_system_auxilliary" -library "soc_system" -name IP_COMPONENT_INTERNAL "Off"
 set_global_assignment -entity "soc_system_auxilliary" -library "soc_system" -name IP_COMPONENT_VERSION "MS4w"
-set_global_assignment -entity "soc_system_auxilliary" -library "soc_system" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTU4MTk1ODM3MQ==::QXV0byBHRU5FUkFUSU9OX0lE"
+set_global_assignment -entity "soc_system_auxilliary" -library "soc_system" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTU4MjI5MjQwMA==::QXV0byBHRU5FUkFUSU9OX0lE"
 set_global_assignment -entity "soc_system_auxilliary" -library "soc_system" -name IP_COMPONENT_PARAMETER "QVVUT19VTklRVUVfSUQ=::c29jX3N5c3RlbV9hdXhpbGxpYXJ5::QXV0byBVTklRVUVfSUQ="
 set_global_assignment -entity "soc_system_auxilliary" -library "soc_system" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::Q3ljbG9uZSBW::QXV0byBERVZJQ0VfRkFNSUxZ"
 set_global_assignment -entity "soc_system_auxilliary" -library "soc_system" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0U=::NUNTRUJBNlUyM0k3::QXV0byBERVZJQ0U="
@@ -6467,7 +6467,7 @@ set_global_assignment -entity "ICEboardControl" -library "soc_system" -name IP_C
 set_global_assignment -entity "ICEboardControl" -library "soc_system" -name IP_COMPONENT_INTERNAL "Off"
 set_global_assignment -entity "ICEboardControl" -library "soc_system" -name IP_COMPONENT_AUTHOR "U2ltb24gVHJlbmRlbA=="
 set_global_assignment -entity "ICEboardControl" -library "soc_system" -name IP_COMPONENT_VERSION "MS4w"
-set_global_assignment -entity "ICEboardControl" -library "soc_system" -name IP_COMPONENT_PARAMETER "TlVNQkVSX09GX01PVE9SUw==::Mg==::TlVNQkVSX09GX01PVE9SUw=="
+set_global_assignment -entity "ICEboardControl" -library "soc_system" -name IP_COMPONENT_PARAMETER "TlVNQkVSX09GX01PVE9SUw==::MTA=::TlVNQkVSX09GX01PVE9SUw=="
 set_global_assignment -entity "ICEboardControl" -library "soc_system" -name IP_COMPONENT_PARAMETER "Q0xPQ0tfRlJFUV9IWg==::NTAwMDAwMDA=::Q0xPQ0tfRlJFUV9IWg=="
 set_global_assignment -entity "ICEboardControl" -library "soc_system" -name IP_COMPONENT_PARAMETER "QkFVRFJBVEU=::MTAwMDAwMA==::QkFVRFJBVEU="
 
