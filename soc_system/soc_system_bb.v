@@ -84,28 +84,6 @@ module soc_system (
 	memory_mem_odt,
 	memory_mem_dm,
 	memory_oct_rzqin,
-	myocontrol_0_conduit_end_angle_miso,
-	myocontrol_0_conduit_end_angle_mosi,
-	myocontrol_0_conduit_end_angle_sck,
-	myocontrol_0_conduit_end_angle_ss_n_o,
-	myocontrol_0_conduit_end_gpio_n,
-	myocontrol_0_conduit_end_mirrored_muscle_unit,
-	myocontrol_0_conduit_end_miso,
-	myocontrol_0_conduit_end_mosi,
-	myocontrol_0_conduit_end_power_sense_n,
-	myocontrol_0_conduit_end_ss_n_o,
-	myocontrol_0_conduit_end_sck,
-	myocontrol_1_conduit_end_angle_miso,
-	myocontrol_1_conduit_end_angle_mosi,
-	myocontrol_1_conduit_end_angle_sck,
-	myocontrol_1_conduit_end_angle_ss_n_o,
-	myocontrol_1_conduit_end_gpio_n,
-	myocontrol_1_conduit_end_mirrored_muscle_unit,
-	myocontrol_1_conduit_end_miso,
-	myocontrol_1_conduit_end_mosi,
-	myocontrol_1_conduit_end_power_sense_n,
-	myocontrol_1_conduit_end_ss_n_o,
-	myocontrol_1_conduit_end_sck,
 	neopixel_conduit_end_one_wire,
 	reset_reset_n,
 	sensor_0_i2c_0_conduit_end_scl,
@@ -218,28 +196,6 @@ module soc_system (
 	output		memory_mem_odt;
 	output	[3:0]	memory_mem_dm;
 	input		memory_oct_rzqin;
-	input		myocontrol_0_conduit_end_angle_miso;
-	output		myocontrol_0_conduit_end_angle_mosi;
-	output		myocontrol_0_conduit_end_angle_sck;
-	output	[7:0]	myocontrol_0_conduit_end_angle_ss_n_o;
-	output		myocontrol_0_conduit_end_gpio_n;
-	input		myocontrol_0_conduit_end_mirrored_muscle_unit;
-	input		myocontrol_0_conduit_end_miso;
-	output		myocontrol_0_conduit_end_mosi;
-	input		myocontrol_0_conduit_end_power_sense_n;
-	output	[7:0]	myocontrol_0_conduit_end_ss_n_o;
-	output		myocontrol_0_conduit_end_sck;
-	input		myocontrol_1_conduit_end_angle_miso;
-	output		myocontrol_1_conduit_end_angle_mosi;
-	output		myocontrol_1_conduit_end_angle_sck;
-	output	[7:0]	myocontrol_1_conduit_end_angle_ss_n_o;
-	output		myocontrol_1_conduit_end_gpio_n;
-	input		myocontrol_1_conduit_end_mirrored_muscle_unit;
-	input		myocontrol_1_conduit_end_miso;
-	output		myocontrol_1_conduit_end_mosi;
-	input		myocontrol_1_conduit_end_power_sense_n;
-	output	[7:0]	myocontrol_1_conduit_end_ss_n_o;
-	output		myocontrol_1_conduit_end_sck;
 	output		neopixel_conduit_end_one_wire;
 	input		reset_reset_n;
 	inout		sensor_0_i2c_0_conduit_end_scl;
