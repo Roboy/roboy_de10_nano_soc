@@ -1,12 +1,6 @@
 	soc_system u0 (
-		.auxilliary_i2c_0_conduit_end_scl      (<connected-to-auxilliary_i2c_0_conduit_end_scl>),      //   auxilliary_i2c_0_conduit_end.scl
-		.auxilliary_i2c_0_conduit_end_sda      (<connected-to-auxilliary_i2c_0_conduit_end_sda>),      //                               .sda
-		.auxilliary_i2c_1_conduit_end_scl      (<connected-to-auxilliary_i2c_1_conduit_end_scl>),      //   auxilliary_i2c_1_conduit_end.scl
-		.auxilliary_i2c_1_conduit_end_sda      (<connected-to-auxilliary_i2c_1_conduit_end_sda>),      //                               .sda
-		.auxilliary_i2c_2_conduit_end_scl      (<connected-to-auxilliary_i2c_2_conduit_end_scl>),      //   auxilliary_i2c_2_conduit_end.scl
-		.auxilliary_i2c_2_conduit_end_sda      (<connected-to-auxilliary_i2c_2_conduit_end_sda>),      //                               .sda
-		.auxilliary_i2c_3_conduit_end_scl      (<connected-to-auxilliary_i2c_3_conduit_end_scl>),      //   auxilliary_i2c_3_conduit_end.scl
-		.auxilliary_i2c_3_conduit_end_sda      (<connected-to-auxilliary_i2c_3_conduit_end_sda>),      //                               .sda
+		.balljoint_0_conduit_end_scl           (<connected-to-balljoint_0_conduit_end_scl>),           //        balljoint_0_conduit_end.scl
+		.balljoint_0_conduit_end_sda           (<connected-to-balljoint_0_conduit_end_sda>),           //                               .sda
 		.clk_clk                               (<connected-to-clk_clk>),                               //                            clk.clk
 		.hps_0_f2h_cold_reset_req_reset_n      (<connected-to-hps_0_f2h_cold_reset_req_reset_n>),      //       hps_0_f2h_cold_reset_req.reset_n
 		.hps_0_f2h_debug_reset_req_reset_n     (<connected-to-hps_0_f2h_debug_reset_req_reset_n>),     //      hps_0_f2h_debug_reset_req.reset_n
@@ -60,12 +54,6 @@
 		.hps_0_hps_io_hps_io_gpio_inst_GPIO53  (<connected-to-hps_0_hps_io_hps_io_gpio_inst_GPIO53>),  //                               .hps_io_gpio_inst_GPIO53
 		.hps_0_hps_io_hps_io_gpio_inst_GPIO54  (<connected-to-hps_0_hps_io_hps_io_gpio_inst_GPIO54>),  //                               .hps_io_gpio_inst_GPIO54
 		.hps_0_hps_io_hps_io_gpio_inst_GPIO61  (<connected-to-hps_0_hps_io_hps_io_gpio_inst_GPIO61>),  //                               .hps_io_gpio_inst_GPIO61
-		.iceboardcontrol_0_conduit_end_rx      (<connected-to-iceboardcontrol_0_conduit_end_rx>),      //  iceboardcontrol_0_conduit_end.rx
-		.iceboardcontrol_0_conduit_end_tx      (<connected-to-iceboardcontrol_0_conduit_end_tx>),      //                               .tx
-		.iceboardcontrol_1_conduit_end_rx      (<connected-to-iceboardcontrol_1_conduit_end_rx>),      //  iceboardcontrol_1_conduit_end.rx
-		.iceboardcontrol_1_conduit_end_tx      (<connected-to-iceboardcontrol_1_conduit_end_tx>),      //                               .tx
-		.iceboardcontrol_2_conduit_end_rx      (<connected-to-iceboardcontrol_2_conduit_end_rx>),      //  iceboardcontrol_2_conduit_end.rx
-		.iceboardcontrol_2_conduit_end_tx      (<connected-to-iceboardcontrol_2_conduit_end_tx>),      //                               .tx
 		.led_external_connection_export        (<connected-to-led_external_connection_export>),        //        led_external_connection.export
 		.memory_mem_a                          (<connected-to-memory_mem_a>),                          //                         memory.mem_a
 		.memory_mem_ba                         (<connected-to-memory_mem_ba>),                         //                               .mem_ba
@@ -83,32 +71,7 @@
 		.memory_mem_odt                        (<connected-to-memory_mem_odt>),                        //                               .mem_odt
 		.memory_mem_dm                         (<connected-to-memory_mem_dm>),                         //                               .mem_dm
 		.memory_oct_rzqin                      (<connected-to-memory_oct_rzqin>),                      //                               .oct_rzqin
-		.neopixel_conduit_end_one_wire         (<connected-to-neopixel_conduit_end_one_wire>),         //           neopixel_conduit_end.one_wire
 		.reset_reset_n                         (<connected-to-reset_reset_n>),                         //                          reset.reset_n
-		.sensor_0_i2c_0_conduit_end_scl        (<connected-to-sensor_0_i2c_0_conduit_end_scl>),        //     sensor_0_i2c_0_conduit_end.scl
-		.sensor_0_i2c_0_conduit_end_sda        (<connected-to-sensor_0_i2c_0_conduit_end_sda>),        //                               .sda
-		.sensor_0_i2c_1_conduit_end_scl        (<connected-to-sensor_0_i2c_1_conduit_end_scl>),        //     sensor_0_i2c_1_conduit_end.scl
-		.sensor_0_i2c_1_conduit_end_sda        (<connected-to-sensor_0_i2c_1_conduit_end_sda>),        //                               .sda
-		.sensor_0_i2c_2_conduit_end_scl        (<connected-to-sensor_0_i2c_2_conduit_end_scl>),        //     sensor_0_i2c_2_conduit_end.scl
-		.sensor_0_i2c_2_conduit_end_sda        (<connected-to-sensor_0_i2c_2_conduit_end_sda>),        //                               .sda
-		.sensor_0_i2c_3_conduit_end_scl        (<connected-to-sensor_0_i2c_3_conduit_end_scl>),        //     sensor_0_i2c_3_conduit_end.scl
-		.sensor_0_i2c_3_conduit_end_sda        (<connected-to-sensor_0_i2c_3_conduit_end_sda>),        //                               .sda
-		.sensor_1_i2c_0_conduit_end_scl        (<connected-to-sensor_1_i2c_0_conduit_end_scl>),        //     sensor_1_i2c_0_conduit_end.scl
-		.sensor_1_i2c_0_conduit_end_sda        (<connected-to-sensor_1_i2c_0_conduit_end_sda>),        //                               .sda
-		.sensor_1_i2c_1_conduit_end_scl        (<connected-to-sensor_1_i2c_1_conduit_end_scl>),        //     sensor_1_i2c_1_conduit_end.scl
-		.sensor_1_i2c_1_conduit_end_sda        (<connected-to-sensor_1_i2c_1_conduit_end_sda>),        //                               .sda
-		.sensor_1_i2c_2_conduit_end_scl        (<connected-to-sensor_1_i2c_2_conduit_end_scl>),        //     sensor_1_i2c_2_conduit_end.scl
-		.sensor_1_i2c_2_conduit_end_sda        (<connected-to-sensor_1_i2c_2_conduit_end_sda>),        //                               .sda
-		.sensor_1_i2c_3_conduit_end_scl        (<connected-to-sensor_1_i2c_3_conduit_end_scl>),        //     sensor_1_i2c_3_conduit_end.scl
-		.sensor_1_i2c_3_conduit_end_sda        (<connected-to-sensor_1_i2c_3_conduit_end_sda>),        //                               .sda
-		.sensor_2_i2c_0_conduit_end_scl        (<connected-to-sensor_2_i2c_0_conduit_end_scl>),        //     sensor_2_i2c_0_conduit_end.scl
-		.sensor_2_i2c_0_conduit_end_sda        (<connected-to-sensor_2_i2c_0_conduit_end_sda>),        //                               .sda
-		.sensor_2_i2c_1_conduit_end_scl        (<connected-to-sensor_2_i2c_1_conduit_end_scl>),        //     sensor_2_i2c_1_conduit_end.scl
-		.sensor_2_i2c_1_conduit_end_sda        (<connected-to-sensor_2_i2c_1_conduit_end_sda>),        //                               .sda
-		.sensor_2_i2c_2_conduit_end_scl        (<connected-to-sensor_2_i2c_2_conduit_end_scl>),        //     sensor_2_i2c_2_conduit_end.scl
-		.sensor_2_i2c_2_conduit_end_sda        (<connected-to-sensor_2_i2c_2_conduit_end_sda>),        //                               .sda
-		.sensor_2_i2c_3_conduit_end_scl        (<connected-to-sensor_2_i2c_3_conduit_end_scl>),        //     sensor_2_i2c_3_conduit_end.scl
-		.sensor_2_i2c_3_conduit_end_sda        (<connected-to-sensor_2_i2c_3_conduit_end_sda>),        //                               .sda
 		.switches_0_external_connection_export (<connected-to-switches_0_external_connection_export>)  // switches_0_external_connection.export
 	);
 

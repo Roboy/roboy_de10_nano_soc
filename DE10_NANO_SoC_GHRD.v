@@ -114,31 +114,31 @@ wire                hps_debug_reset;
 //  Structural coding
 //=======================================================
 
-wire [1:0] mosi;
-wire [1:0] miso;
-wire [1:0] sck;
-wire neopixel;
-wire [7:0] ss_n[1:0];
-wire [3:0] sda[2:0];
-wire [3:0] scl[2:0];
-wire sensor_config = (SW[2]==0 && SW[1]==0 && SW[0]==0);
-// GPIO_1, right side
-assign GPIO_1[0] = (sensor_config?sda[0][3]:miso[0]);		assign GPIO_1[1] = (sensor_config?scl[0][3]:mosi[0]);
-assign GPIO_1[2] = (sensor_config?sda[0][2]:sck[0]);		assign GPIO_1[3] = (sensor_config?scl[0][2]:ss_n[0][0]);
-assign GPIO_1[4] = (sensor_config?sda[0][1]:ss_n[0][1]);	assign GPIO_1[5] = (sensor_config?scl[0][1]:ss_n[0][2]);	
-assign GPIO_1[6] = (sensor_config?sda[0][0]:ss_n[0][3]);	assign GPIO_1[7] = (sensor_config?scl[0][0]:ss_n[0][4]);
-assign GPIO_1[8] = (sensor_config?sda[1][3]:ss_n[0][5]);	assign GPIO_1[9] = (sensor_config?scl[1][3]:ss_n[0][6]);
-// 5V														GND
-assign GPIO_1[10] = (sensor_config?sda[1][2]:ss_n[0][7]);	assign GPIO_1[11] = (sensor_config?scl[1][2]:1'bz);
-assign GPIO_1[12] = (sensor_config?sda[1][1]:miso[1]);		assign GPIO_1[13] = (sensor_config?scl[1][1]:mosi[1]);
-assign GPIO_1[14] = (sensor_config?sda[1][0]:sck[1]);		assign GPIO_1[15] = (sensor_config?scl[1][0]:ss_n[1][0]);
-assign GPIO_1[16] = (sensor_config?sda[2][3]:ss_n[1][1]);	assign GPIO_1[17] = (sensor_config?scl[2][3]:ss_n[1][2]);
-assign GPIO_1[18] = (sensor_config?sda[2][2]:ss_n[1][3]);	assign GPIO_1[19] = (sensor_config?scl[2][2]:ss_n[1][4]);
-assign GPIO_1[20] = (sensor_config?sda[2][1]:ss_n[1][5]);	assign GPIO_1[21] = (sensor_config?scl[2][1]:1'bz);
-assign GPIO_1[22] = (sensor_config?sda[2][0]:1'bz);			assign GPIO_1[23] = (sensor_config?scl[2][0]:1'bz);
-assign GPIO_1[24] = (sensor_config?neopixel:ss_n[1][6]);	assign GPIO_1[25] = (sensor_config?1'bz:ss_n[1][7]);
-
-assign GPIO_1[34] = (sensor_config?1'bz:neopixel);	
+//wire [1:0] mosi;
+//wire [1:0] miso;
+//wire [1:0] sck;
+//wire neopixel;
+//wire [7:0] ss_n[1:0];
+//wire [3:0] sda[2:0];
+//wire [3:0] scl[2:0];
+//
+//// GPIO_1, right side
+//assign GPIO_1[0] = sda[0][3];	assign GPIO_1[1] = scl[0][3]:mosi[0];
+//assign GPIO_1[2] = sda[0][2];	assign GPIO_1[3] = scl[0][2]:ss_n[0][0];
+//assign GPIO_1[4] = sda[0][1];	assign GPIO_1[5] = scl[0][1]:ss_n[0][2];	
+//assign GPIO_1[6] = sda[0][0];	assign GPIO_1[7] = scl[0][0]:ss_n[0][4];
+//assign GPIO_1[8] = sda[1][3];	assign GPIO_1[9] = scl[1][3]:ss_n[0][6];
+//// 5V														GND
+//assign GPIO_1[10] = sda[1][2];	assign GPIO_1[11] = scl[1][2]:1'bz;
+//assign GPIO_1[12] = sda[1][1];		assign GPIO_1[13] = scl[1][1]:mosi[1];
+//assign GPIO_1[14] = sda[1][0];		assign GPIO_1[15] = scl[1][0]:ss_n[1][0];
+//assign GPIO_1[16] = sda[2][3];	assign GPIO_1[17] = scl[2][3]:ss_n[1][2];
+//assign GPIO_1[18] = sda[2][2];	assign GPIO_1[19] = scl[2][2]:ss_n[1][4];
+//assign GPIO_1[20] = sda[2][1];	assign GPIO_1[21] = scl[2][1]:1'bz;
+//assign GPIO_1[22] = sda[2][0];			assign GPIO_1[23] = scl[2][0]:1'bz;
+//assign GPIO_1[24] = neopixel;	assign GPIO_1[25] = 1'bz:ss_n[1][7];
+// 3.3V														GND
+//assign GPIO_1[34] = 1'bz:neopixel);	
 soc_system u0(  
 			//Clock&Reset 
 			.clk_clk(FPGA_CLK1_50),                                       //                            clk.clk
@@ -146,71 +146,28 @@ soc_system u0(
 			// neopixel
 			// led
 			.led_external_connection_export(LED),
-			.neopixel_conduit_end_one_wire(neopixel), 
-			// switches
-			.switches_0_external_connection_export(SW),
-			.iceboardcontrol_0_conduit_end_rx(GPIO_0[0]),
-			.iceboardcontrol_0_conduit_end_tx(GPIO_0[1]),
-			.iceboardcontrol_1_conduit_end_rx(GPIO_0[2]),
-			.iceboardcontrol_1_conduit_end_tx(GPIO_0[3]),
-			.iceboardcontrol_2_conduit_end_rx(GPIO_0[4]),
-			.iceboardcontrol_2_conduit_end_tx(GPIO_0[5]),
+			.balljoint_0_conduit_end_sda(GPIO_0[34]), 
+			.balljoint_0_conduit_end_scl(GPIO_0[35]),          
+//			// switches
+//			.switches_0_external_connection_export(SW),
+//			.iceboardcontrol_0_conduit_end_rx(GPIO_0[0]),  
+//			.iceboardcontrol_0_conduit_end_tx(GPIO_0[1]),
+//			.iceboardcontrol_1_conduit_end_rx(GPIO_0[2]),
+//			.iceboardcontrol_1_conduit_end_tx(GPIO_0[3]),
+//			.iceboardcontrol_2_conduit_end_rx(GPIO_0[4]),
+//			.iceboardcontrol_2_conduit_end_tx(GPIO_0[5]),
 //			.iceboardcontrol_3_conduit_end_rx(GPIO_1[35]),
 //			.iceboardcontrol_3_conduit_end_tx(GPIO_1[34]),
-//			.myocontrol_0_conduit_end_miso(miso[0]),
-//			.myocontrol_0_conduit_end_mosi(mosi[0]),
-//			.myocontrol_0_conduit_end_sck(sck[0]),
-//			.myocontrol_0_conduit_end_ss_n_o(ss_n[0]),
-//			.myocontrol_0_conduit_end_power_sense_n(GPIO_1[35] && SW[3]),
-//			.myocontrol_1_conduit_end_miso(miso[1]),
-//			.myocontrol_1_conduit_end_mosi(mosi[1]), 
-//			.myocontrol_1_conduit_end_sck(sck[1]),
-//			.myocontrol_1_conduit_end_ss_n_o(ss_n[1]),
-//			.myocontrol_1_conduit_end_power_sense_n(GPIO_1[35] && SW[3]),
-			// sensor_0
-			.sensor_0_i2c_0_conduit_end_sda(sda[0][3]),
-			.sensor_0_i2c_0_conduit_end_scl(scl[0][3]),
-			.sensor_0_i2c_1_conduit_end_sda(sda[0][2]),
-			.sensor_0_i2c_1_conduit_end_scl(scl[0][2]),
-			.sensor_0_i2c_2_conduit_end_sda(sda[0][1]),
-			.sensor_0_i2c_2_conduit_end_scl(scl[0][1]),
-			.sensor_0_i2c_3_conduit_end_sda(sda[0][0]),
-			.sensor_0_i2c_3_conduit_end_scl(scl[0][0]),
-			// right_shoulder_joint sensors
-			.sensor_1_i2c_0_conduit_end_sda(sda[1][3]),
-			.sensor_1_i2c_0_conduit_end_scl(scl[1][3]),
-			.sensor_1_i2c_1_conduit_end_sda(sda[1][2]),
-			.sensor_1_i2c_1_conduit_end_scl(scl[1][2]),
-			.sensor_1_i2c_2_conduit_end_sda(sda[1][1]),
-			.sensor_1_i2c_2_conduit_end_scl(scl[1][1]),
-			.sensor_1_i2c_3_conduit_end_sda(sda[1][0]),
-			.sensor_1_i2c_3_conduit_end_scl(scl[1][0]),
-			// right_shoulder_joint sensors
-			.sensor_2_i2c_0_conduit_end_sda(sda[2][3]),
-			.sensor_2_i2c_0_conduit_end_scl(scl[2][3]),
-			.sensor_2_i2c_1_conduit_end_sda(sda[2][2]),
-			.sensor_2_i2c_1_conduit_end_scl(scl[2][2]),
-			.sensor_2_i2c_2_conduit_end_sda(sda[2][1]),
-			.sensor_2_i2c_2_conduit_end_scl(scl[2][1]),
-			.sensor_2_i2c_3_conduit_end_sda(sda[2][0]),
-			.sensor_2_i2c_3_conduit_end_scl(scl[2][0]),
-			// auxiliary sensors
-			.auxilliary_i2c_0_conduit_end_sda(GPIO_0[34]),
-			.auxilliary_i2c_0_conduit_end_scl(GPIO_0[35]),
-			.auxilliary_i2c_1_conduit_end_sda(GPIO_0[32]),
-			.auxilliary_i2c_1_conduit_end_scl(GPIO_0[33]),
-			.auxilliary_i2c_2_conduit_end_sda(GPIO_0[30]),
-			.auxilliary_i2c_2_conduit_end_scl(GPIO_0[31]),
-			.auxilliary_i2c_3_conduit_end_sda(GPIO_0[28]),
-			.auxilliary_i2c_3_conduit_end_scl(GPIO_0[29]),
-//			.myoquad_0_conduit_end_quad0_aneg(GPIO_1[0]),              //        .quad0_aneg
-//			.myoquad_0_conduit_end_quad0_apos(GPIO_1[1]),              //                              .quad0_apos
-//			.myoquad_0_conduit_end_quad0_bneg(GPIO_1[2]),              //                              .quad0_bneg
-//			.myoquad_0_conduit_end_quad0_bpos(GPIO_1[3]),              //                              .quad0_bpos
-//			.myoquad_0_conduit_end_quad1_aneg(GPIO_1[4]),              //                              .quad1_aneg
-//			.myoquad_0_conduit_end_quad1_apos(GPIO_1[5]),              //                              .quad1_apos
-//			.myoquad_0_conduit_end_quad1_bneg(GPIO_1[6]),              //                              .quad1_bneg
-//			.myoquad_0_conduit_end_quad1_bpos(GPIO_1[7]), 
+//			// sensor_0
+//			// auxiliary sensors
+//			.auxilliary_i2c_0_conduit_end_sda(GPIO_0[34]),
+//			.auxilliary_i2c_0_conduit_end_scl(GPIO_0[35]),
+//			.auxilliary_i2c_1_conduit_end_sda(GPIO_0[32]),
+//			.auxilliary_i2c_1_conduit_end_scl(GPIO_0[33]),
+//			.auxilliary_i2c_2_conduit_end_sda(GPIO_0[30]),
+//			.auxilliary_i2c_2_conduit_end_scl(GPIO_0[31]),
+//			.auxilliary_i2c_3_conduit_end_sda(GPIO_0[28]),
+//			.auxilliary_i2c_3_conduit_end_scl(GPIO_0[29]),
 			//HPS ddr3
 			.memory_mem_a(HPS_DDR3_ADDR),                                //                         memory.mem_a
 			.memory_mem_ba(HPS_DDR3_BA),                                 //                               .mem_ba

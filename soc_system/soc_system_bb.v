@@ -1,13 +1,7 @@
 
 module soc_system (
-	auxilliary_i2c_0_conduit_end_scl,
-	auxilliary_i2c_0_conduit_end_sda,
-	auxilliary_i2c_1_conduit_end_scl,
-	auxilliary_i2c_1_conduit_end_sda,
-	auxilliary_i2c_2_conduit_end_scl,
-	auxilliary_i2c_2_conduit_end_sda,
-	auxilliary_i2c_3_conduit_end_scl,
-	auxilliary_i2c_3_conduit_end_sda,
+	balljoint_0_conduit_end_scl,
+	balljoint_0_conduit_end_sda,
 	clk_clk,
 	hps_0_f2h_cold_reset_req_reset_n,
 	hps_0_f2h_debug_reset_req_reset_n,
@@ -61,12 +55,6 @@ module soc_system (
 	hps_0_hps_io_hps_io_gpio_inst_GPIO53,
 	hps_0_hps_io_hps_io_gpio_inst_GPIO54,
 	hps_0_hps_io_hps_io_gpio_inst_GPIO61,
-	iceboardcontrol_0_conduit_end_rx,
-	iceboardcontrol_0_conduit_end_tx,
-	iceboardcontrol_1_conduit_end_rx,
-	iceboardcontrol_1_conduit_end_tx,
-	iceboardcontrol_2_conduit_end_rx,
-	iceboardcontrol_2_conduit_end_tx,
 	led_external_connection_export,
 	memory_mem_a,
 	memory_mem_ba,
@@ -84,42 +72,11 @@ module soc_system (
 	memory_mem_odt,
 	memory_mem_dm,
 	memory_oct_rzqin,
-	neopixel_conduit_end_one_wire,
 	reset_reset_n,
-	sensor_0_i2c_0_conduit_end_scl,
-	sensor_0_i2c_0_conduit_end_sda,
-	sensor_0_i2c_1_conduit_end_scl,
-	sensor_0_i2c_1_conduit_end_sda,
-	sensor_0_i2c_2_conduit_end_scl,
-	sensor_0_i2c_2_conduit_end_sda,
-	sensor_0_i2c_3_conduit_end_scl,
-	sensor_0_i2c_3_conduit_end_sda,
-	sensor_1_i2c_0_conduit_end_scl,
-	sensor_1_i2c_0_conduit_end_sda,
-	sensor_1_i2c_1_conduit_end_scl,
-	sensor_1_i2c_1_conduit_end_sda,
-	sensor_1_i2c_2_conduit_end_scl,
-	sensor_1_i2c_2_conduit_end_sda,
-	sensor_1_i2c_3_conduit_end_scl,
-	sensor_1_i2c_3_conduit_end_sda,
-	sensor_2_i2c_0_conduit_end_scl,
-	sensor_2_i2c_0_conduit_end_sda,
-	sensor_2_i2c_1_conduit_end_scl,
-	sensor_2_i2c_1_conduit_end_sda,
-	sensor_2_i2c_2_conduit_end_scl,
-	sensor_2_i2c_2_conduit_end_sda,
-	sensor_2_i2c_3_conduit_end_scl,
-	sensor_2_i2c_3_conduit_end_sda,
 	switches_0_external_connection_export);	
 
-	inout		auxilliary_i2c_0_conduit_end_scl;
-	inout		auxilliary_i2c_0_conduit_end_sda;
-	inout		auxilliary_i2c_1_conduit_end_scl;
-	inout		auxilliary_i2c_1_conduit_end_sda;
-	inout		auxilliary_i2c_2_conduit_end_scl;
-	inout		auxilliary_i2c_2_conduit_end_sda;
-	inout		auxilliary_i2c_3_conduit_end_scl;
-	inout		auxilliary_i2c_3_conduit_end_sda;
+	inout		balljoint_0_conduit_end_scl;
+	output		balljoint_0_conduit_end_sda;
 	input		clk_clk;
 	input		hps_0_f2h_cold_reset_req_reset_n;
 	input		hps_0_f2h_debug_reset_req_reset_n;
@@ -173,12 +130,6 @@ module soc_system (
 	inout		hps_0_hps_io_hps_io_gpio_inst_GPIO53;
 	inout		hps_0_hps_io_hps_io_gpio_inst_GPIO54;
 	inout		hps_0_hps_io_hps_io_gpio_inst_GPIO61;
-	input		iceboardcontrol_0_conduit_end_rx;
-	output		iceboardcontrol_0_conduit_end_tx;
-	input		iceboardcontrol_1_conduit_end_rx;
-	output		iceboardcontrol_1_conduit_end_tx;
-	input		iceboardcontrol_2_conduit_end_rx;
-	output		iceboardcontrol_2_conduit_end_tx;
 	output	[7:0]	led_external_connection_export;
 	output	[14:0]	memory_mem_a;
 	output	[2:0]	memory_mem_ba;
@@ -196,31 +147,6 @@ module soc_system (
 	output		memory_mem_odt;
 	output	[3:0]	memory_mem_dm;
 	input		memory_oct_rzqin;
-	output		neopixel_conduit_end_one_wire;
 	input		reset_reset_n;
-	inout		sensor_0_i2c_0_conduit_end_scl;
-	inout		sensor_0_i2c_0_conduit_end_sda;
-	inout		sensor_0_i2c_1_conduit_end_scl;
-	inout		sensor_0_i2c_1_conduit_end_sda;
-	inout		sensor_0_i2c_2_conduit_end_scl;
-	inout		sensor_0_i2c_2_conduit_end_sda;
-	inout		sensor_0_i2c_3_conduit_end_scl;
-	inout		sensor_0_i2c_3_conduit_end_sda;
-	inout		sensor_1_i2c_0_conduit_end_scl;
-	inout		sensor_1_i2c_0_conduit_end_sda;
-	inout		sensor_1_i2c_1_conduit_end_scl;
-	inout		sensor_1_i2c_1_conduit_end_sda;
-	inout		sensor_1_i2c_2_conduit_end_scl;
-	inout		sensor_1_i2c_2_conduit_end_sda;
-	inout		sensor_1_i2c_3_conduit_end_scl;
-	inout		sensor_1_i2c_3_conduit_end_sda;
-	inout		sensor_2_i2c_0_conduit_end_scl;
-	inout		sensor_2_i2c_0_conduit_end_sda;
-	inout		sensor_2_i2c_1_conduit_end_scl;
-	inout		sensor_2_i2c_1_conduit_end_sda;
-	inout		sensor_2_i2c_2_conduit_end_scl;
-	inout		sensor_2_i2c_2_conduit_end_sda;
-	inout		sensor_2_i2c_3_conduit_end_scl;
-	inout		sensor_2_i2c_3_conduit_end_sda;
 	input	[3:0]	switches_0_external_connection_export;
 endmodule
