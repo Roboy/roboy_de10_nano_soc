@@ -15,7 +15,7 @@ module DE10_NANO_SoC_GHRD(
       inout              ARDUINO_RESET_N, 
 
       ///////// FPGA /////////  
-      input              FPGA_CLK1_50,
+      input              FPGA_CLK1_50, 
       input              FPGA_CLK2_50,  
       input              FPGA_CLK3_50,
 
@@ -139,19 +139,23 @@ wire                hps_debug_reset;
 //assign GPIO_1[24] = neopixel;	assign GPIO_1[25] = 1'bz:ss_n[1][7];
 // 3.3V														GND
 //assign GPIO_1[34] = 1'bz:neopixel);	
+
+wire signed [31:0] current_average;
+
 soc_system u0(  
 			//Clock&Reset 
 			.clk_clk(FPGA_CLK1_50),                                       //                            clk.clk
 			.reset_reset_n(hps_fpga_reset_n),
-			// neopixel
 			// led
 			.led_external_connection_export(LED),
-			.balljoint_0_conduit_end_sda(GPIO_0[34]), 
-			.balljoint_0_conduit_end_scl(GPIO_0[35]),          
-//			// switches
-//			.switches_0_external_connection_export(SW),
-//			.iceboardcontrol_0_conduit_end_rx(GPIO_0[0]),  
-//			.iceboardcontrol_0_conduit_end_tx(GPIO_0[1]),
+			// balljoints
+//			.balljoint_0_conduit_end_sda(GPIO_0[34]), 
+//			.balljoint_0_conduit_end_scl(GPIO_0[35]),          
+			.iceboardcontrol_0_conduit_end_rx(GPIO_0[0]),  
+			.iceboardcontrol_0_conduit_end_tx(GPIO_0[1]),
+			.iceboardcontrol_0_conduit_end_current_average(current_average),
+			.fancontrol_0_conduit_end_pwm(GPIO_0[33]),
+			.fancontrol_0_conduit_end_current_average(current_average),
 //			.iceboardcontrol_1_conduit_end_rx(GPIO_0[2]),
 //			.iceboardcontrol_1_conduit_end_tx(GPIO_0[3]),
 //			.iceboardcontrol_2_conduit_end_rx(GPIO_0[4]),

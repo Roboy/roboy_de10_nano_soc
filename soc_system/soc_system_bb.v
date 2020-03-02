@@ -1,7 +1,5 @@
 
 module soc_system (
-	balljoint_0_conduit_end_scl,
-	balljoint_0_conduit_end_sda,
 	clk_clk,
 	hps_0_f2h_cold_reset_req_reset_n,
 	hps_0_f2h_debug_reset_req_reset_n,
@@ -55,6 +53,8 @@ module soc_system (
 	hps_0_hps_io_hps_io_gpio_inst_GPIO53,
 	hps_0_hps_io_hps_io_gpio_inst_GPIO54,
 	hps_0_hps_io_hps_io_gpio_inst_GPIO61,
+	iceboardcontrol_0_conduit_end_rx,
+	iceboardcontrol_0_conduit_end_tx,
 	led_external_connection_export,
 	memory_mem_a,
 	memory_mem_ba,
@@ -73,10 +73,10 @@ module soc_system (
 	memory_mem_dm,
 	memory_oct_rzqin,
 	reset_reset_n,
-	switches_0_external_connection_export);	
+	switches_0_external_connection_export,
+	fancontrol_0_conduit_end_current_average,
+	fancontrol_0_conduit_end_pwm);	
 
-	inout		balljoint_0_conduit_end_scl;
-	output		balljoint_0_conduit_end_sda;
 	input		clk_clk;
 	input		hps_0_f2h_cold_reset_req_reset_n;
 	input		hps_0_f2h_debug_reset_req_reset_n;
@@ -130,6 +130,8 @@ module soc_system (
 	inout		hps_0_hps_io_hps_io_gpio_inst_GPIO53;
 	inout		hps_0_hps_io_hps_io_gpio_inst_GPIO54;
 	inout		hps_0_hps_io_hps_io_gpio_inst_GPIO61;
+	input		iceboardcontrol_0_conduit_end_rx;
+	output		iceboardcontrol_0_conduit_end_tx;
 	output	[7:0]	led_external_connection_export;
 	output	[14:0]	memory_mem_a;
 	output	[2:0]	memory_mem_ba;
@@ -149,4 +151,6 @@ module soc_system (
 	input		memory_oct_rzqin;
 	input		reset_reset_n;
 	input	[3:0]	switches_0_external_connection_export;
+	input	[31:0]	fancontrol_0_conduit_end_current_average;
+	output		fancontrol_0_conduit_end_pwm;
 endmodule

@@ -13,7 +13,7 @@
    {
       datum _sortIndex
       {
-         value = "11";
+         value = "12";
          type = "int";
       }
    }
@@ -22,6 +22,22 @@
       datum baseAddress
       {
          value = "262144";
+         type = "String";
+      }
+   }
+   element FanControl_0
+   {
+      datum _sortIndex
+      {
+         value = "10";
+         type = "int";
+      }
+   }
+   element FanControl_0.avalon_slave_0
+   {
+      datum baseAddress
+      {
+         value = "0";
          type = "String";
       }
    }
@@ -37,7 +53,7 @@
    {
       datum baseAddress
       {
-         value = "1310720";
+         value = "524288";
          type = "String";
       }
    }
@@ -101,7 +117,7 @@
    {
       datum baseAddress
       {
-         value = "16";
+         value = "48";
          type = "String";
       }
    }
@@ -117,7 +133,7 @@
    {
       datum baseAddress
       {
-         value = "0";
+         value = "32";
          type = "String";
       }
    }
@@ -125,7 +141,7 @@
    {
       datum _sortIndex
       {
-         value = "10";
+         value = "11";
          type = "int";
       }
    }
@@ -1160,12 +1176,13 @@
  <interface
    name="auxilliary_i2c_3_conduit_end"
    internal="auxilliary.I2C_3_conduit_end" />
+ <interface name="balljoint_0_conduit_end" internal="BallJoint_0.conduit_end" />
+ <interface name="clk" internal="clk_0.clk_in" type="clock" dir="end" />
  <interface
-   name="balljoint_0_conduit_end"
-   internal="BallJoint_0.conduit_end"
+   name="fancontrol_0_conduit_end"
+   internal="FanControl_0.conduit_end"
    type="conduit"
    dir="end" />
- <interface name="clk" internal="clk_0.clk_in" type="clock" dir="end" />
  <interface
    name="hps_0_f2h_cold_reset_req"
    internal="hps_0.f2h_cold_reset_req"
@@ -1191,7 +1208,9 @@
  <interface name="hps_0_hps_io" internal="hps_0.hps_io" type="conduit" dir="end" />
  <interface
    name="iceboardcontrol_0_conduit_end"
-   internal="ICEboardControl_0.conduit_end" />
+   internal="ICEboardControl_0.conduit_end"
+   type="conduit"
+   dir="end" />
  <interface
    name="iceboardcontrol_1_conduit_end"
    internal="ICEboardControl_1.conduit_end" />
@@ -1213,16 +1232,19 @@
    internal="SWITCHES.external_connection"
    type="conduit"
    dir="end" />
- <module name="BallJoint_0" kind="BallJoint" version="1.0" enabled="1">
+ <module name="BallJoint_0" kind="BallJoint" version="1.0" enabled="0">
   <parameter name="BUS_SPEED_HZ" value="400000" />
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
   <parameter name="NUMBER_OF_SENSORS" value="4" />
+ </module>
+ <module name="FanControl_0" kind="FanControl" version="1.0" enabled="1">
+  <parameter name="CLOCK_SPEED_HZ" value="50000000" />
  </module>
  <module
    name="ICEboardControl_0"
    kind="ICEboardControl"
    version="1.0"
-   enabled="0">
+   enabled="1">
   <parameter name="BAUDRATE" value="1000000" />
   <parameter name="CLOCK_FREQ_HZ" value="50000000" />
   <parameter name="NUMBER_OF_MOTORS" value="10" />
@@ -1912,15 +1934,6 @@
    kind="avalon"
    version="18.1"
    start="hps_0.h2f_lw_axi_master"
-   end="ICEboardControl_0.avalon_slave_0">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00140000" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="18.1"
-   start="hps_0.h2f_lw_axi_master"
    end="ICEboardControl_1.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x000c0000" />
@@ -1957,6 +1970,24 @@
    kind="avalon"
    version="18.1"
    start="hps_0.h2f_lw_axi_master"
+   end="FanControl_0.avalon_slave_0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="hps_0.h2f_lw_axi_master"
+   end="ICEboardControl_0.avalon_slave_0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x00080000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="hps_0.h2f_lw_axi_master"
    end="sysid_qsys.control_slave">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x1000" />
@@ -1968,7 +1999,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="LED.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0010" />
+  <parameter name="baseAddress" value="0x0030" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1977,7 +2008,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="SWITCHES.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="baseAddress" value="0x0020" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2008,11 +2039,6 @@
    kind="clock"
    version="18.1"
    start="clk_0.clk"
-   end="ICEboardControl_0.clock" />
- <connection
-   kind="clock"
-   version="18.1"
-   start="clk_0.clk"
    end="ICEboardControl_1.clock" />
  <connection
    kind="clock"
@@ -2025,6 +2051,16 @@
    start="clk_0.clk"
    end="ICEboardControl_2.clock" />
  <connection kind="clock" version="18.1" start="clk_0.clk" end="BallJoint_0.clock" />
+ <connection
+   kind="clock"
+   version="18.1"
+   start="clk_0.clk"
+   end="FanControl_0.clock" />
+ <connection
+   kind="clock"
+   version="18.1"
+   start="clk_0.clk"
+   end="ICEboardControl_0.clock" />
  <connection
    kind="clock"
    version="18.1"
@@ -2072,11 +2108,6 @@
    kind="reset"
    version="18.1"
    start="clk_0.clk_reset"
-   end="ICEboardControl_0.reset" />
- <connection
-   kind="reset"
-   version="18.1"
-   start="clk_0.clk_reset"
    end="ICEboardControl_1.reset" />
  <connection
    kind="reset"
@@ -2098,6 +2129,16 @@
    version="18.1"
    start="clk_0.clk_reset"
    end="BallJoint_0.reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="clk_0.clk_reset"
+   end="FanControl_0.reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="clk_0.clk_reset"
+   end="ICEboardControl_0.reset" />
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
  <interconnectRequirement for="$system" name="qsys_mm.maxAdditionalLatency" value="1" />
 </system>
