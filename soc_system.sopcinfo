@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="soc_system" kind="soc_system" version="1.0" fabric="QSYS">
  <!-- Format version 18.1 625 (Future versions may contain additional information.) -->
- <!-- 2020.03.02.13:20:29 -->
+ <!-- 2020.03.06.13:13:23 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1583151629</value>
+  <value>1583496803</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -657,14 +657,6 @@ the requested settings for a module instance. -->
   <parameter name="CLOCK_FREQ_HZ">
    <type>int</type>
    <value>50000000</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="BAUDRATE">
-   <type>int</type>
-   <value>1000000</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -75408,7 +75400,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.TIMESTAMP</name>
-   <value>1583151629</value>
+   <value>1583496803</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.compatible</name>
@@ -75428,7 +75420,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.timestamp</name>
-   <value>1583151629</value>
+   <value>1583496803</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.vendor</name>
@@ -75444,7 +75436,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="timestamp">
    <type>int</type>
-   <value>1583151629</value>
+   <value>1583496803</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>

@@ -170,8 +170,7 @@ module soc_system (
 
 	ICEboardControl #(
 		.NUMBER_OF_MOTORS (10),
-		.CLOCK_FREQ_HZ    (50000000),
-		.BAUDRATE         (1000000)
+		.CLOCK_FREQ_HZ    (50000000)
 	) iceboardcontrol_0 (
 		.clk             (clk_clk),                                                        //          clock.clk
 		.reset           (rst_controller_reset_out_reset),                                 //          reset.reset

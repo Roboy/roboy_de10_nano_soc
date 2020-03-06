@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="soc_system" kind="system" version="18.1" fabric="QSYS">
  <!-- Format version 18.1 625 (Future versions may contain additional information.) -->
- <!-- 2020.03.02.13:20:58 -->
+ <!-- 2020.03.06.13:13:54 -->
  <!-- A collection of modules and connections -->
  <parameter name="clockCrossingAdapter">
   <type>com.altera.sopcmodel.ensemble.EClockAdapter</type>
@@ -53,7 +53,7 @@
  </parameter>
  <parameter name="generationId">
   <type>int</type>
-  <value>1583151629</value>
+  <value>1583496803</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>true</visible>
@@ -709,14 +709,6 @@ the requested settings for a module instance. -->
   <parameter name="CLOCK_FREQ_HZ">
    <type>int</type>
    <value>50000000</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="BAUDRATE">
-   <type>int</type>
-   <value>1000000</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -44337,7 +44329,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.TIMESTAMP</name>
-   <value>1583151629</value>
+   <value>1583496803</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.compatible</name>
@@ -44357,7 +44349,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.timestamp</name>
-   <value>1583151629</value>
+   <value>1583496803</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.vendor</name>
@@ -44373,7 +44365,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="timestamp">
    <type>int</type>
-   <value>1583151629</value>
+   <value>1583496803</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -49777,5 +49769,5 @@ parameters are a RESULT of the module parameters. -->
   <version>18.1</version>
  </plugin>
  <reportVersion>18.1 625</reportVersion>
- <uniqueIdentifier>60F677008818000001709B30D341</uniqueIdentifier>
+ <uniqueIdentifier>60F67700881800000170AFC3C6AA</uniqueIdentifier>
 </EnsembleReport>
