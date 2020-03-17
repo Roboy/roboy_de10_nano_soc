@@ -1,4 +1,4 @@
-module coms #(parameter NUMBER_OF_MOTORS = 8, parameter CLK_FREQ_HZ = 50_000_000)(
+module ArmBusComs #(parameter NUMBER_OF_MOTORS = 10, parameter CLK_FREQ_HZ = 50_000_000)(
 	input clk,
 	input reset,
 	output tx_o,
@@ -7,40 +7,36 @@ module coms #(parameter NUMBER_OF_MOTORS = 8, parameter CLK_FREQ_HZ = 50_000_000
 	input wire [31:0] update_frequency_Hz,
 	input wire [31:0] baudrate,
 	input wire [7:0] id[NUMBER_OF_MOTORS-1:0],
-	output wire signed [23:0] duty[NUMBER_OF_MOTORS-1:0],
-	output wire signed [23:0] encoder0_position[NUMBER_OF_MOTORS-1:0],
-	output wire signed [23:0] encoder1_position[NUMBER_OF_MOTORS-1:0],
-	output wire signed [15:0] current[NUMBER_OF_MOTORS-1:0],
-	output wire signed [23:0] displacement[NUMBER_OF_MOTORS-1:0],
-	input wire signed [23:0] setpoint[NUMBER_OF_MOTORS-1:0],
-	input wire [23:0] neopxl_color[NUMBER_OF_MOTORS-1:0],
+	output wire [31:0] duty[NUMBER_OF_MOTORS-1:0],
+	output wire [31:0] encoder0_position[NUMBER_OF_MOTORS-1:0],
+	output wire [31:0] encoder1_position[NUMBER_OF_MOTORS-1:0],
+	output wire [31:0] current[NUMBER_OF_MOTORS-1:0],
+	input wire [31:0] setpoint[NUMBER_OF_MOTORS-1:0],
 	input wire [7:0] control_mode[NUMBER_OF_MOTORS-1:0],
-	input wire signed [15:0] Kp[NUMBER_OF_MOTORS-1:0],
-	input wire signed [15:0] Ki[NUMBER_OF_MOTORS-1:0],
-	input wire signed [15:0] Kd[NUMBER_OF_MOTORS-1:0],
-	input wire signed [23:0] PWMLimit[NUMBER_OF_MOTORS-1:0],
-	input wire signed [23:0] IntegralLimit[NUMBER_OF_MOTORS-1:0],
-	input wire signed [23:0] deadband[NUMBER_OF_MOTORS-1:0],
-	input wire signed [15:0] current_limit[NUMBER_OF_MOTORS-1:0],
+	input wire [31:0] Kp[NUMBER_OF_MOTORS-1:0],
+	input wire [31:0] Ki[NUMBER_OF_MOTORS-1:0],
+	input wire [31:0] Kd[NUMBER_OF_MOTORS-1:0],
+	input wire [31:0] PWMLimit[NUMBER_OF_MOTORS-1:0],
+	input wire [31:0] IntegralLimit[NUMBER_OF_MOTORS-1:0],
+	input wire [31:0] deadband[NUMBER_OF_MOTORS-1:0],
+	input wire [31:0] current_limit[NUMBER_OF_MOTORS-1:0],
 	output wire [31:0] error_code[NUMBER_OF_MOTORS-1:0],
-	output wire [31:0] crc_checksum[NUMBER_OF_MOTORS-1:0],
-	output wire [31:0] communication_quality[NUMBER_OF_MOTORS-1:0],
-	output wire [7:0] current_motor,
-	output reg signed [31:0] current_average
+	output wire [15:0] crc_checksum[NUMBER_OF_MOTORS-1:0],
+	output wire [31:0] communication_quality[NUMBER_OF_MOTORS-1:0]
 );
 
 //	`define DEBUG
 
 	localparam  MAGIC_NUMBER_LENGTH = 4;
-	localparam  STATUS_REQUEST_FRAME_MAGICNUMBER = 32'h1CE1CEBB;
+	localparam  STATUS_REQUEST_FRAME_MAGICNUMBER = 32'hBAADBABE;
 	localparam	STATUS_REQUEST_FRAME_LENGTH = 7;
-	localparam 	STATUS_FRAME_MAGICNUMBER = 32'h1CEB00DA;
-	localparam  STATUS_FRAME_LENGTH = 28;
-	localparam 	SETPOINT_FRAME_MAGICNUMBER = 32'hD0D0D0D0;
-	localparam  SETPOINT_FRAME_LENGTH = 13;
-	localparam 	CONTROL_MODE_FRAME_MAGICNUMBER = 32'hBAADA555;
-	localparam  CONTROL_MODE_FRAME_LENGTH = 28;
-	localparam  MAX_FRAME_LENGTH = STATUS_FRAME_LENGTH;
+	localparam 	HAND_STATUS_FRAME_MAGICNUMBER = 32'hB000B135;
+	localparam  HAND_STATUS_FRAME_LENGTH = 35;
+	localparam 	HAND_COMMAND_FRAME_MAGICNUMBER = 32'hB105F00D;
+	localparam  HAND_COMMAND_FRAME_LENGTH = 15;
+	localparam 	CONTROL_MODE_FRAME_MAGICNUMBER = 32'hB16B00B5;
+	localparam  CONTROL_MODE_FRAME_LENGTH = 11;
+	localparam  MAX_FRAME_LENGTH = HAND_STATUS_FRAME_LENGTH;
 
 	////////////////////////////////////////////////////////////////////////////////
 	// Copyright (C) 1999-2008 Easics NV.
@@ -103,7 +99,7 @@ module coms #(parameter NUMBER_OF_MOTORS = 8, parameter CLK_FREQ_HZ = 50_000_000
 	wire tx_done ;
 	reg tx_transmit ;
 	wire rx_data_ready;
-	
+
 	assign tx_data = data_out[byte_transmit_counter];
 
 	uart_tx #(CLK_FREQ_HZ) tx(clk,baudrate,tx_transmit,tx_data,tx_active,tx_o,tx_enable,tx_done);
@@ -113,21 +109,19 @@ module coms #(parameter NUMBER_OF_MOTORS = 8, parameter CLK_FREQ_HZ = 50_000_000
 	reg [31:0]delay_counter;
 	reg tx_active_prev;
 	reg [7:0] motor;
-	assign current_motor = motor;
+	assign current_id = motor;
 	reg timeout;
 	reg [31:0] status_requests[NUMBER_OF_MOTORS-1:0];
 	reg [31:0] status_received[NUMBER_OF_MOTORS-1:0];
 	reg trigger_control_mode_update[NUMBER_OF_MOTORS-1:0];
 	reg trigger_setpoint_update[NUMBER_OF_MOTORS-1:0];
-	reg signed [31:0] setpoint_actual[NUMBER_OF_MOTORS-1:0];
-	reg signed [31:0] neopxl_color_actual[NUMBER_OF_MOTORS-1:0];
-	reg signed [31:0] current_sum;
-	
+	reg [31:0] setpoint_actual[NUMBER_OF_MOTORS-1:0];
+
 	always @(posedge clk, posedge reset) begin: UART_TRANSMITTER
-		localparam IDLE=8'h0, 
-				PREPARE_CONTROL_MODE = 8'h1, GENERATE_CONTROL_MODE_CRC = 8'h2, SEND_CONTROL_MODE = 8'h3, 
-				PREPARE_SETPOINT  = 8'h4, GENERATE_SETPOINT_CRC = 8'h5, SEND_SETPOINT = 8'h6,
-				PREPARE_STATUS_REQUEST = 8'h7, GENERATE_STATUS_REQUEST_CRC = 8'h8, SEND_STATUS_REQUEST = 8'h9, 
+		localparam IDLE=8'h0,
+				PREPARE_CONTROL_MODE = 8'h1, GENERATE_CONTROL_MODE_CRC = 8'h2, SEND_CONTROL_MODE = 8'h3,
+				PREPARE_COMMAND  = 8'h4, GENERATE_COMMAND_CRC = 8'h5, SEND_COMMAND = 8'h6,
+				PREPARE_STATUS_REQUEST = 8'h7, GENERATE_STATUS_REQUEST_CRC = 8'h8, SEND_STATUS_REQUEST = 8'h9,
 				WAIT_UNTIL_BUS_FREE = 8'hA;
 		reg [7:0] state;
 		reg done;
@@ -144,11 +138,11 @@ module coms #(parameter NUMBER_OF_MOTORS = 8, parameter CLK_FREQ_HZ = 50_000_000
 			tx_active_prev <= tx_active;
 			tx_transmit <= 0;
 			timeout <= 0;
-			
+
 			if(update_delay_counter!=0)begin
 				update_delay_counter <= update_delay_counter - 1;
 			end
-			
+
 			`ifdef DEBUG
 			if(status_byte_received)begin
 				byte_transmit_counter = receive_byte_counter-1;
@@ -156,7 +150,7 @@ module coms #(parameter NUMBER_OF_MOTORS = 8, parameter CLK_FREQ_HZ = 50_000_000
 				tx_transmit <= 1;
 			end
 			`endif
-			
+
 			case(state)
 				IDLE: begin
 					if(update_delay_counter==0) begin
@@ -165,15 +159,13 @@ module coms #(parameter NUMBER_OF_MOTORS = 8, parameter CLK_FREQ_HZ = 50_000_000
 						if(motor<NUMBER_OF_MOTORS-1) begin
 							motor <= motor + 1;
 						end else begin
-							current_average <= current_sum/NUMBER_OF_MOTORS;
-							current_sum <= 0;
 							motor <= 0;
 						end
-					end 
+					end
 				end
 				PREPARE_CONTROL_MODE: begin
 					data_out[0] <= CONTROL_MODE_FRAME_MAGICNUMBER[31:24];
-					data_out[1] <= CONTROL_MODE_FRAME_MAGICNUMBER[23:16];
+					data_out[1] <= CONTROL_MODE_FRAME_MAGICNUMBER[31:16];
 					data_out[2] <= CONTROL_MODE_FRAME_MAGICNUMBER[15:8];
 					data_out[3] <= CONTROL_MODE_FRAME_MAGICNUMBER[7:0];
 					data_out[4] <= id[motor]; // motor id
@@ -184,18 +176,18 @@ module coms #(parameter NUMBER_OF_MOTORS = 8, parameter CLK_FREQ_HZ = 50_000_000
 					data_out[9] <= Ki[motor][7:0];
 					data_out[10] <= Kd[motor][15:8];
 					data_out[11] <= Kd[motor][7:0];
-					data_out[12] <= PWMLimit[motor][23:16];
+					data_out[12] <= PWMLimit[motor][31:16];
 					data_out[13] <= PWMLimit[motor][15:8];
 					data_out[14] <= PWMLimit[motor][7:0];
-					data_out[15] <= IntegralLimit[motor][23:16];
+					data_out[15] <= IntegralLimit[motor][31:16];
 					data_out[16] <= IntegralLimit[motor][15:8];
 					data_out[17] <= IntegralLimit[motor][7:0];
-					data_out[18] <= deadband[motor][23:16];
+					data_out[18] <= deadband[motor][31:16];
 					data_out[19] <= deadband[motor][15:8];
 					data_out[20] <= deadband[motor][7:0];
-					data_out[21] <= setpoint[motor][23:16];
+					data_out[21] <= setpoint[motor][31:16];
 					data_out[22] <= setpoint[motor][15:8];
-					data_out[23] <= setpoint[motor][7:0];
+					data_out[31] <= setpoint[motor][7:0];
 					data_out[24] <= current_limit[motor][15:8];
 					data_out[25] <= current_limit[motor][7:0];
 					state <= GENERATE_CONTROL_MODE_CRC;
@@ -223,37 +215,34 @@ module coms #(parameter NUMBER_OF_MOTORS = 8, parameter CLK_FREQ_HZ = 50_000_000
 						end
 					end
 				end
-				PREPARE_SETPOINT: begin
-					data_out[0] <= SETPOINT_FRAME_MAGICNUMBER[31:24];
-					data_out[1] <= SETPOINT_FRAME_MAGICNUMBER[23:16];
-					data_out[2] <= SETPOINT_FRAME_MAGICNUMBER[15:8];
-					data_out[3] <= SETPOINT_FRAME_MAGICNUMBER[7:0];
+				PREPARE_COMMAND: begin
+					data_out[0] <= HAND_COMMAND_FRAME_MAGICNUMBER[31:24];
+					data_out[1] <= HAND_COMMAND_FRAME_MAGICNUMBER[31:16];
+					data_out[2] <= HAND_COMMAND_FRAME_MAGICNUMBER[15:8];
+					data_out[3] <= HAND_COMMAND_FRAME_MAGICNUMBER[7:0];
 					data_out[4] <= id[motor]; // motor id
-					data_out[5] <= setpoint[motor][23:16];
+					data_out[5] <= setpoint[motor][31:16];
 					data_out[6] <= setpoint[motor][15:8];
 					data_out[7] <= setpoint[motor][7:0];
-					data_out[8] <= neopxl_color[motor][23:16];
-					data_out[9] <= neopxl_color[motor][15:8];
-					data_out[10] <= neopxl_color[motor][7:0];
-					state <= GENERATE_SETPOINT_CRC;
+					state <= GENERATE_COMMAND_CRC;
 				end
-				GENERATE_SETPOINT_CRC: begin
+				GENERATE_COMMAND_CRC: begin
 					tx_crc = 16'hFFFF;
-					for(i=MAGIC_NUMBER_LENGTH;i<SETPOINT_FRAME_LENGTH-2;i=i+1) begin
+					for(i=MAGIC_NUMBER_LENGTH;i<HAND_COMMAND_FRAME_LENGTH-2;i=i+1) begin
 						tx_crc = nextCRC16_D8(data_out[i],tx_crc);
 					end
-					data_out[SETPOINT_FRAME_LENGTH-2] = tx_crc[15:8];
-					data_out[SETPOINT_FRAME_LENGTH-1] = tx_crc[7:0];
+					data_out[HAND_COMMAND_FRAME_LENGTH-2] = tx_crc[15:8];
+					data_out[HAND_COMMAND_FRAME_LENGTH-1] = tx_crc[7:0];
 					byte_transmit_counter = 0;
 					tx_transmit <= 1;
-					state <= SEND_SETPOINT;
+					state <= SEND_COMMAND;
 				end
-				SEND_SETPOINT: begin
+				SEND_COMMAND: begin
 					if(!tx_active && tx_active_prev)begin
 						byte_transmit_counter = byte_transmit_counter+1;
 					end
 					if(!tx_active && !tx_transmit)begin
-						if(byte_transmit_counter<SETPOINT_FRAME_LENGTH)begin
+						if(byte_transmit_counter<HAND_COMMAND_FRAME_LENGTH)begin
 							tx_transmit <= 1;
 						end else begin
 							state <= IDLE;
@@ -262,7 +251,7 @@ module coms #(parameter NUMBER_OF_MOTORS = 8, parameter CLK_FREQ_HZ = 50_000_000
 				end
 				PREPARE_STATUS_REQUEST: begin
 					data_out[0] <= STATUS_REQUEST_FRAME_MAGICNUMBER[31:24];
-					data_out[1] <= STATUS_REQUEST_FRAME_MAGICNUMBER[23:16];
+					data_out[1] <= STATUS_REQUEST_FRAME_MAGICNUMBER[31:16];
 					data_out[2] <= STATUS_REQUEST_FRAME_MAGICNUMBER[15:8];
 					data_out[3] <= STATUS_REQUEST_FRAME_MAGICNUMBER[7:0];
 					data_out[4] <= id[motor]; // motor id
@@ -296,16 +285,15 @@ module coms #(parameter NUMBER_OF_MOTORS = 8, parameter CLK_FREQ_HZ = 50_000_000
 				end
 				WAIT_UNTIL_BUS_FREE: begin
 					// either timeout or we know the bus is free now
-					if(delay_counter==0 || trigger_control_mode_update[motor] || trigger_setpoint_update[motor]) begin 
+					if(delay_counter==0 || trigger_control_mode_update[motor] || trigger_setpoint_update[motor]) begin
 						// control_mode update has higher priority because it also sends a new setpoint
-						if(trigger_control_mode_update[motor])begin 
+						if(trigger_control_mode_update[motor])begin
 							state <= PREPARE_CONTROL_MODE;
 						end else if (trigger_setpoint_update[motor]) begin
-							state <= PREPARE_SETPOINT;
+							state <= PREPARE_COMMAND;
 						end else begin
 							state <= IDLE;
 						end
-						current_sum <= current_sum + current[motor];
 						timeout <= 1;
 						if(status_requests[motor]>update_frequency_Hz)begin
 							status_requests[motor] <= 0;
@@ -319,7 +307,7 @@ module coms #(parameter NUMBER_OF_MOTORS = 8, parameter CLK_FREQ_HZ = 50_000_000
 			endcase
 		end
 	end
-	
+
 	wire [7:0] rx_data ;
 
 	uart_rx #(CLK_FREQ_HZ) rx(clk,baudrate,rx_i,rx_data_ready,rx_data);
@@ -329,7 +317,7 @@ module coms #(parameter NUMBER_OF_MOTORS = 8, parameter CLK_FREQ_HZ = 50_000_000
 
 	reg [15:0] rx_crc;
 	reg status_byte_received;
-	
+
 	always @(posedge clk, posedge reset) begin: FRAME_MATCHER
 		localparam IDLE = 8'h0, RECEIVE_STATUS = 8'h1, CHECK_CRC_STATUS = 8'h2;
 		reg [7:0] state;
@@ -357,7 +345,7 @@ module coms #(parameter NUMBER_OF_MOTORS = 8, parameter CLK_FREQ_HZ = 50_000_000
 			end
 			case(state)
 				IDLE: begin
-					if({data_in[0],data_in[1],data_in[2],data_in[3]}==STATUS_FRAME_MAGICNUMBER)begin
+					if({data_in[0],data_in[1],data_in[2],data_in[3]}==HAND_STATUS_FRAME_MAGICNUMBER)begin
 						receive_byte_counter <= 0;
 						error_code[motor] <= 32'h1;
 						state = RECEIVE_STATUS;
@@ -370,7 +358,7 @@ module coms #(parameter NUMBER_OF_MOTORS = 8, parameter CLK_FREQ_HZ = 50_000_000
 							data_in_frame[receive_byte_counter] <= rx_data;
 							receive_byte_counter <= receive_byte_counter + 1;
 						end
-						if(receive_byte_counter>(STATUS_FRAME_LENGTH-MAGIC_NUMBER_LENGTH-1)) begin
+						if(receive_byte_counter>(HAND_STATUS_FRAME_LENGTH-MAGIC_NUMBER_LENGTH-1)) begin
 							state = CHECK_CRC_STATUS;
 							motor_id <= data_in_frame[0];
 							error_code[motor] <= 32'h2;
@@ -383,14 +371,14 @@ module coms #(parameter NUMBER_OF_MOTORS = 8, parameter CLK_FREQ_HZ = 50_000_000
 				end
 				CHECK_CRC_STATUS: begin
 					rx_crc = 16'hFFFF;
-					for(k=0;k<(STATUS_FRAME_LENGTH-MAGIC_NUMBER_LENGTH-2);k=k+1) begin
+					for(k=0;k<(HAND_STATUS_FRAME_LENGTH-MAGIC_NUMBER_LENGTH-2);k=k+1) begin
 						rx_crc = nextCRC16_D8(data_in_frame[k],rx_crc);
 					end
 					crc_checksum[motor] = {rx_crc,
-									data_in_frame[STATUS_FRAME_LENGTH-MAGIC_NUMBER_LENGTH-2],
-									data_in_frame[STATUS_FRAME_LENGTH-MAGIC_NUMBER_LENGTH-1]};
-					if(rx_crc[15:8]==data_in_frame[STATUS_FRAME_LENGTH-MAGIC_NUMBER_LENGTH-2]
-						  && rx_crc[7:0]==data_in_frame[STATUS_FRAME_LENGTH-MAGIC_NUMBER_LENGTH-1]
+									data_in_frame[HAND_STATUS_FRAME_LENGTH-MAGIC_NUMBER_LENGTH-2],
+									data_in_frame[HAND_STATUS_FRAME_LENGTH-MAGIC_NUMBER_LENGTH-1]};
+					if(rx_crc[15:8]==data_in_frame[HAND_STATUS_FRAME_LENGTH-MAGIC_NUMBER_LENGTH-2]
+						  && rx_crc[7:0]==data_in_frame[HAND_STATUS_FRAME_LENGTH-MAGIC_NUMBER_LENGTH-1]
 						  && (motor_id==id[motor])) begin // MATCH! and from the motor we requested
 						// if the control_mode of the motor does not match the one we want or the motor lost connection we trigger an update
 						if(data_in_frame[1]!=control_mode[data_in_frame[0]] || status_received[motor_id]==0) begin
@@ -398,29 +386,22 @@ module coms #(parameter NUMBER_OF_MOTORS = 8, parameter CLK_FREQ_HZ = 50_000_000
 						end else begin
 							error_code[data_in_frame[0]] <= 8'h0;
 						end
-						encoder0_position[motor][23:16] <= data_in_frame[2];
+						encoder0_position[motor][31:16] <= data_in_frame[2];
 						encoder0_position[motor][15:8] <= data_in_frame[3];
 						encoder0_position[motor][7:0] <= data_in_frame[4];
-						encoder1_position[motor][23:16] <= data_in_frame[5];
+						encoder1_position[motor][31:16] <= data_in_frame[5];
 						encoder1_position[motor][15:8] <= data_in_frame[6];
 						encoder1_position[motor][7:0] <= data_in_frame[7];
-						setpoint_actual[motor][23:16] <= data_in_frame[8];
+						setpoint_actual[motor][31:16] <= data_in_frame[8];
 						setpoint_actual[motor][15:8] <= data_in_frame[9];
 						setpoint_actual[motor][7:0] <= data_in_frame[10];
-						duty[motor][23:16] <= data_in_frame[11];
+						duty[motor][31:16] <= data_in_frame[11];
 						duty[motor][15:8] <= data_in_frame[12];
 						duty[motor][7:0] <= data_in_frame[13];
-						displacement[motor][23:16] <= data_in_frame[14];
-						displacement[motor][15:8] <= data_in_frame[15];
-						displacement[motor][7:0] <= data_in_frame[16];
 						current[motor][15:8] <= data_in_frame[17];
 						current[motor][7:0] <= data_in_frame[18];
-						neopxl_color_actual[motor][23:16] <= data_in_frame[19];
-						neopxl_color_actual[motor][15:8] <= data_in_frame[20];
-						neopxl_color_actual[motor][7:0] <= data_in_frame[21];
 						status_received[motor] <= status_received[motor_id] + 1;
-						if(setpoint_actual[motor]!=setpoint[motor] || 
-							neopxl_color_actual[motor]!=neopxl_color[motor] )begin
+						if(setpoint_actual[motor]!=setpoint[motor])begin
 							trigger_setpoint_update[motor] <= 1;
 						end
 						state = IDLE;

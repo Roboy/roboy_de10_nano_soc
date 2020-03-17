@@ -141,27 +141,44 @@ wire                hps_debug_reset;
 //assign GPIO_1[34] = 1'bz:neopixel);	
 
 wire signed [31:0] current_average;
+wire rx,tx;
+assign GPIO_0[0] = rx;
+assign GPIO_0[1] = tx;
 
+assign LED[0] = rx; 
+assign LED[1] = tx;
+  
+//ArmBusControl arm(
+//	.clk(FPGA_CLK1_50),
+//	.reset(~hps_fpga_reset_n),     
+//	.rx(rx), 
+//	.tx(tx)
+//); 
+
+ 
 soc_system u0(  
-			//Clock&Reset 
-			.clk_clk(FPGA_CLK1_50),                                       //                            clk.clk
+			//Clock&Reset  
+			.clk_clk(FPGA_CLK1_50), 
 			.reset_reset_n(hps_fpga_reset_n),
+			.armbuscontrol_0_conduit_end_rx(rx),       
+			.armbuscontrol_0_conduit_end_tx(tx),
 			// led
-			.led_external_connection_export(LED),
+//			.led_external_connection_export(LED),
 			// balljoints
 //			.balljoint_0_conduit_end_sda(GPIO_0[34]), 
 //			.balljoint_0_conduit_end_scl(GPIO_0[35]),          
-			.iceboardcontrol_0_conduit_end_rx(GPIO_0[0]),  
-			.iceboardcontrol_0_conduit_end_tx(GPIO_0[1]),
-			.iceboardcontrol_0_conduit_end_current_average(current_average),
-			.fancontrol_0_conduit_end_pwm(GPIO_0[33]),
-			.fancontrol_0_conduit_end_current_average(current_average),
+//			.iceboardcontrol_0_conduit_end_rx(GPIO_0[0]),  
+//			.iceboardcontrol_0_conduit_end_tx(GPIO_0[1]),
+//			.iceboardcontrol_0_conduit_end_current_average(current_average),
+//			.fancontrol_0_conduit_end_pwm(GPIO_0[33]),
+//			.fancontrol_0_conduit_end_current_average(current_average),
 //			.iceboardcontrol_1_conduit_end_rx(GPIO_0[2]),
 //			.iceboardcontrol_1_conduit_end_tx(GPIO_0[3]),
 //			.iceboardcontrol_2_conduit_end_rx(GPIO_0[4]),
 //			.iceboardcontrol_2_conduit_end_tx(GPIO_0[5]),
 //			.iceboardcontrol_3_conduit_end_rx(GPIO_1[35]),
 //			.iceboardcontrol_3_conduit_end_tx(GPIO_1[34]),
+
 //			// sensor_0
 //			// auxiliary sensors
 //			.auxilliary_i2c_0_conduit_end_sda(GPIO_0[34]),
@@ -254,7 +271,7 @@ soc_system u0(
 //
 // Debounce logic to clean out glitches within 1ms
 debounce debounce_inst(
-             .clk(FPGA_CLK1_50),
+             .clk(FPGA_CLK1_50), 
              .reset_n(hps_fpga_reset_n),
              .data_in(KEY),
              .data_out(fpga_debounced_buttons)

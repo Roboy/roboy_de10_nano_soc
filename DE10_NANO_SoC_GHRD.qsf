@@ -725,6 +725,9 @@ set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_1[12]
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_1[13]
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_1[14]
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_1[15]
+set_global_assignment -name SYSTEMVERILOG_FILE ip/roboy_fpga_code/icebus/ArmBusControl.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ip/roboy_fpga_code/icebus/ArmBusComs.sv
+set_global_assignment -name QIP_FILE soc_system/synthesis/soc_system.qip
 set_global_assignment -name SYSTEMVERILOG_FILE ip/roboy_fpga_code/pwm_control/fan_control.sv
 set_global_assignment -name SYSTEMVERILOG_FILE ip/roboy_fpga_code/ball_joint/ball_joint.sv
 set_global_assignment -name VERILOG_FILE ip/roboy_fpga_code/quadrature/quad.v
@@ -732,7 +735,6 @@ set_global_assignment -name VERILOG_FILE ip/roboy_fpga_code/uart/uart_tx.v
 set_global_assignment -name VERILOG_FILE ip/roboy_fpga_code/uart/uart_rx.v
 set_global_assignment -name SYSTEMVERILOG_FILE ip/roboy_fpga_code/iceboard/coms.sv
 set_global_assignment -name SYSTEMVERILOG_FILE ip/roboy_fpga_code/iceboard/iCEboardControl.sv
-set_global_assignment -name QIP_FILE soc_system/synthesis/soc_system.qip
 set_global_assignment -name QIP_FILE ip/roboy_fpga_code/i2c/fifo.qip
 set_global_assignment -name VERILOG_FILE ip/roboy_fpga_code/i2c/oneshot.v
 set_global_assignment -name VERILOG_FILE ip/roboy_fpga_code/i2c/I2C_avalon_bridge.v
