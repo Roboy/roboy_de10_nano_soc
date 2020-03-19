@@ -68,3 +68,5 @@ incremental_db/
 *.txt
 #software/
 *.inc
+simulation/
+stamp/

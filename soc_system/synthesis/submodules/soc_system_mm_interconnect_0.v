@@ -46,12 +46,12 @@ module soc_system_mm_interconnect_0 (
 		input  wire        clk_0_clk_clk,                                                       //                                                     clk_0_clk.clk
 		input  wire        hps_0_h2f_lw_axi_master_agent_clk_reset_reset_bridge_in_reset_reset, // hps_0_h2f_lw_axi_master_agent_clk_reset_reset_bridge_in_reset.reset
 		input  wire        jtag_uart_reset_reset_bridge_in_reset_reset,                         //                         jtag_uart_reset_reset_bridge_in_reset.reset
-		output wire [15:0] ArmBusControl_0_avalon_slave_0_address,                              //                                ArmBusControl_0_avalon_slave_0.address
-		output wire        ArmBusControl_0_avalon_slave_0_write,                                //                                                              .write
-		output wire        ArmBusControl_0_avalon_slave_0_read,                                 //                                                              .read
-		input  wire [31:0] ArmBusControl_0_avalon_slave_0_readdata,                             //                                                              .readdata
-		output wire [31:0] ArmBusControl_0_avalon_slave_0_writedata,                            //                                                              .writedata
-		input  wire        ArmBusControl_0_avalon_slave_0_waitrequest,                          //                                                              .waitrequest
+		output wire [15:0] iCEbusControl_0_avalon_slave_0_address,                              //                                iCEbusControl_0_avalon_slave_0.address
+		output wire        iCEbusControl_0_avalon_slave_0_write,                                //                                                              .write
+		output wire        iCEbusControl_0_avalon_slave_0_read,                                 //                                                              .read
+		input  wire [31:0] iCEbusControl_0_avalon_slave_0_readdata,                             //                                                              .readdata
+		output wire [31:0] iCEbusControl_0_avalon_slave_0_writedata,                            //                                                              .writedata
+		input  wire        iCEbusControl_0_avalon_slave_0_waitrequest,                          //                                                              .waitrequest
 		output wire [0:0]  jtag_uart_avalon_jtag_slave_address,                                 //                                   jtag_uart_avalon_jtag_slave.address
 		output wire        jtag_uart_avalon_jtag_slave_write,                                   //                                                              .write
 		output wire        jtag_uart_avalon_jtag_slave_read,                                    //                                                              .read
@@ -87,30 +87,30 @@ module soc_system_mm_interconnect_0 (
 	wire          jtag_uart_avalon_jtag_slave_agent_rdata_fifo_src_valid;             // jtag_uart_avalon_jtag_slave_agent:rdata_fifo_src_valid -> jtag_uart_avalon_jtag_slave_agent_rdata_fifo:in_valid
 	wire   [33:0] jtag_uart_avalon_jtag_slave_agent_rdata_fifo_src_data;              // jtag_uart_avalon_jtag_slave_agent:rdata_fifo_src_data -> jtag_uart_avalon_jtag_slave_agent_rdata_fifo:in_data
 	wire          jtag_uart_avalon_jtag_slave_agent_rdata_fifo_src_ready;             // jtag_uart_avalon_jtag_slave_agent_rdata_fifo:in_ready -> jtag_uart_avalon_jtag_slave_agent:rdata_fifo_src_ready
-	wire   [31:0] armbuscontrol_0_avalon_slave_0_agent_m0_readdata;                   // ArmBusControl_0_avalon_slave_0_translator:uav_readdata -> ArmBusControl_0_avalon_slave_0_agent:m0_readdata
-	wire          armbuscontrol_0_avalon_slave_0_agent_m0_waitrequest;                // ArmBusControl_0_avalon_slave_0_translator:uav_waitrequest -> ArmBusControl_0_avalon_slave_0_agent:m0_waitrequest
-	wire          armbuscontrol_0_avalon_slave_0_agent_m0_debugaccess;                // ArmBusControl_0_avalon_slave_0_agent:m0_debugaccess -> ArmBusControl_0_avalon_slave_0_translator:uav_debugaccess
-	wire   [20:0] armbuscontrol_0_avalon_slave_0_agent_m0_address;                    // ArmBusControl_0_avalon_slave_0_agent:m0_address -> ArmBusControl_0_avalon_slave_0_translator:uav_address
-	wire    [3:0] armbuscontrol_0_avalon_slave_0_agent_m0_byteenable;                 // ArmBusControl_0_avalon_slave_0_agent:m0_byteenable -> ArmBusControl_0_avalon_slave_0_translator:uav_byteenable
-	wire          armbuscontrol_0_avalon_slave_0_agent_m0_read;                       // ArmBusControl_0_avalon_slave_0_agent:m0_read -> ArmBusControl_0_avalon_slave_0_translator:uav_read
-	wire          armbuscontrol_0_avalon_slave_0_agent_m0_readdatavalid;              // ArmBusControl_0_avalon_slave_0_translator:uav_readdatavalid -> ArmBusControl_0_avalon_slave_0_agent:m0_readdatavalid
-	wire          armbuscontrol_0_avalon_slave_0_agent_m0_lock;                       // ArmBusControl_0_avalon_slave_0_agent:m0_lock -> ArmBusControl_0_avalon_slave_0_translator:uav_lock
-	wire   [31:0] armbuscontrol_0_avalon_slave_0_agent_m0_writedata;                  // ArmBusControl_0_avalon_slave_0_agent:m0_writedata -> ArmBusControl_0_avalon_slave_0_translator:uav_writedata
-	wire          armbuscontrol_0_avalon_slave_0_agent_m0_write;                      // ArmBusControl_0_avalon_slave_0_agent:m0_write -> ArmBusControl_0_avalon_slave_0_translator:uav_write
-	wire    [2:0] armbuscontrol_0_avalon_slave_0_agent_m0_burstcount;                 // ArmBusControl_0_avalon_slave_0_agent:m0_burstcount -> ArmBusControl_0_avalon_slave_0_translator:uav_burstcount
-	wire          armbuscontrol_0_avalon_slave_0_agent_rf_source_valid;               // ArmBusControl_0_avalon_slave_0_agent:rf_source_valid -> ArmBusControl_0_avalon_slave_0_agent_rsp_fifo:in_valid
-	wire  [114:0] armbuscontrol_0_avalon_slave_0_agent_rf_source_data;                // ArmBusControl_0_avalon_slave_0_agent:rf_source_data -> ArmBusControl_0_avalon_slave_0_agent_rsp_fifo:in_data
-	wire          armbuscontrol_0_avalon_slave_0_agent_rf_source_ready;               // ArmBusControl_0_avalon_slave_0_agent_rsp_fifo:in_ready -> ArmBusControl_0_avalon_slave_0_agent:rf_source_ready
-	wire          armbuscontrol_0_avalon_slave_0_agent_rf_source_startofpacket;       // ArmBusControl_0_avalon_slave_0_agent:rf_source_startofpacket -> ArmBusControl_0_avalon_slave_0_agent_rsp_fifo:in_startofpacket
-	wire          armbuscontrol_0_avalon_slave_0_agent_rf_source_endofpacket;         // ArmBusControl_0_avalon_slave_0_agent:rf_source_endofpacket -> ArmBusControl_0_avalon_slave_0_agent_rsp_fifo:in_endofpacket
-	wire          armbuscontrol_0_avalon_slave_0_agent_rsp_fifo_out_valid;            // ArmBusControl_0_avalon_slave_0_agent_rsp_fifo:out_valid -> ArmBusControl_0_avalon_slave_0_agent:rf_sink_valid
-	wire  [114:0] armbuscontrol_0_avalon_slave_0_agent_rsp_fifo_out_data;             // ArmBusControl_0_avalon_slave_0_agent_rsp_fifo:out_data -> ArmBusControl_0_avalon_slave_0_agent:rf_sink_data
-	wire          armbuscontrol_0_avalon_slave_0_agent_rsp_fifo_out_ready;            // ArmBusControl_0_avalon_slave_0_agent:rf_sink_ready -> ArmBusControl_0_avalon_slave_0_agent_rsp_fifo:out_ready
-	wire          armbuscontrol_0_avalon_slave_0_agent_rsp_fifo_out_startofpacket;    // ArmBusControl_0_avalon_slave_0_agent_rsp_fifo:out_startofpacket -> ArmBusControl_0_avalon_slave_0_agent:rf_sink_startofpacket
-	wire          armbuscontrol_0_avalon_slave_0_agent_rsp_fifo_out_endofpacket;      // ArmBusControl_0_avalon_slave_0_agent_rsp_fifo:out_endofpacket -> ArmBusControl_0_avalon_slave_0_agent:rf_sink_endofpacket
-	wire          armbuscontrol_0_avalon_slave_0_agent_rdata_fifo_src_valid;          // ArmBusControl_0_avalon_slave_0_agent:rdata_fifo_src_valid -> ArmBusControl_0_avalon_slave_0_agent_rdata_fifo:in_valid
-	wire   [33:0] armbuscontrol_0_avalon_slave_0_agent_rdata_fifo_src_data;           // ArmBusControl_0_avalon_slave_0_agent:rdata_fifo_src_data -> ArmBusControl_0_avalon_slave_0_agent_rdata_fifo:in_data
-	wire          armbuscontrol_0_avalon_slave_0_agent_rdata_fifo_src_ready;          // ArmBusControl_0_avalon_slave_0_agent_rdata_fifo:in_ready -> ArmBusControl_0_avalon_slave_0_agent:rdata_fifo_src_ready
+	wire   [31:0] icebuscontrol_0_avalon_slave_0_agent_m0_readdata;                   // iCEbusControl_0_avalon_slave_0_translator:uav_readdata -> iCEbusControl_0_avalon_slave_0_agent:m0_readdata
+	wire          icebuscontrol_0_avalon_slave_0_agent_m0_waitrequest;                // iCEbusControl_0_avalon_slave_0_translator:uav_waitrequest -> iCEbusControl_0_avalon_slave_0_agent:m0_waitrequest
+	wire          icebuscontrol_0_avalon_slave_0_agent_m0_debugaccess;                // iCEbusControl_0_avalon_slave_0_agent:m0_debugaccess -> iCEbusControl_0_avalon_slave_0_translator:uav_debugaccess
+	wire   [20:0] icebuscontrol_0_avalon_slave_0_agent_m0_address;                    // iCEbusControl_0_avalon_slave_0_agent:m0_address -> iCEbusControl_0_avalon_slave_0_translator:uav_address
+	wire    [3:0] icebuscontrol_0_avalon_slave_0_agent_m0_byteenable;                 // iCEbusControl_0_avalon_slave_0_agent:m0_byteenable -> iCEbusControl_0_avalon_slave_0_translator:uav_byteenable
+	wire          icebuscontrol_0_avalon_slave_0_agent_m0_read;                       // iCEbusControl_0_avalon_slave_0_agent:m0_read -> iCEbusControl_0_avalon_slave_0_translator:uav_read
+	wire          icebuscontrol_0_avalon_slave_0_agent_m0_readdatavalid;              // iCEbusControl_0_avalon_slave_0_translator:uav_readdatavalid -> iCEbusControl_0_avalon_slave_0_agent:m0_readdatavalid
+	wire          icebuscontrol_0_avalon_slave_0_agent_m0_lock;                       // iCEbusControl_0_avalon_slave_0_agent:m0_lock -> iCEbusControl_0_avalon_slave_0_translator:uav_lock
+	wire   [31:0] icebuscontrol_0_avalon_slave_0_agent_m0_writedata;                  // iCEbusControl_0_avalon_slave_0_agent:m0_writedata -> iCEbusControl_0_avalon_slave_0_translator:uav_writedata
+	wire          icebuscontrol_0_avalon_slave_0_agent_m0_write;                      // iCEbusControl_0_avalon_slave_0_agent:m0_write -> iCEbusControl_0_avalon_slave_0_translator:uav_write
+	wire    [2:0] icebuscontrol_0_avalon_slave_0_agent_m0_burstcount;                 // iCEbusControl_0_avalon_slave_0_agent:m0_burstcount -> iCEbusControl_0_avalon_slave_0_translator:uav_burstcount
+	wire          icebuscontrol_0_avalon_slave_0_agent_rf_source_valid;               // iCEbusControl_0_avalon_slave_0_agent:rf_source_valid -> iCEbusControl_0_avalon_slave_0_agent_rsp_fifo:in_valid
+	wire  [114:0] icebuscontrol_0_avalon_slave_0_agent_rf_source_data;                // iCEbusControl_0_avalon_slave_0_agent:rf_source_data -> iCEbusControl_0_avalon_slave_0_agent_rsp_fifo:in_data
+	wire          icebuscontrol_0_avalon_slave_0_agent_rf_source_ready;               // iCEbusControl_0_avalon_slave_0_agent_rsp_fifo:in_ready -> iCEbusControl_0_avalon_slave_0_agent:rf_source_ready
+	wire          icebuscontrol_0_avalon_slave_0_agent_rf_source_startofpacket;       // iCEbusControl_0_avalon_slave_0_agent:rf_source_startofpacket -> iCEbusControl_0_avalon_slave_0_agent_rsp_fifo:in_startofpacket
+	wire          icebuscontrol_0_avalon_slave_0_agent_rf_source_endofpacket;         // iCEbusControl_0_avalon_slave_0_agent:rf_source_endofpacket -> iCEbusControl_0_avalon_slave_0_agent_rsp_fifo:in_endofpacket
+	wire          icebuscontrol_0_avalon_slave_0_agent_rsp_fifo_out_valid;            // iCEbusControl_0_avalon_slave_0_agent_rsp_fifo:out_valid -> iCEbusControl_0_avalon_slave_0_agent:rf_sink_valid
+	wire  [114:0] icebuscontrol_0_avalon_slave_0_agent_rsp_fifo_out_data;             // iCEbusControl_0_avalon_slave_0_agent_rsp_fifo:out_data -> iCEbusControl_0_avalon_slave_0_agent:rf_sink_data
+	wire          icebuscontrol_0_avalon_slave_0_agent_rsp_fifo_out_ready;            // iCEbusControl_0_avalon_slave_0_agent:rf_sink_ready -> iCEbusControl_0_avalon_slave_0_agent_rsp_fifo:out_ready
+	wire          icebuscontrol_0_avalon_slave_0_agent_rsp_fifo_out_startofpacket;    // iCEbusControl_0_avalon_slave_0_agent_rsp_fifo:out_startofpacket -> iCEbusControl_0_avalon_slave_0_agent:rf_sink_startofpacket
+	wire          icebuscontrol_0_avalon_slave_0_agent_rsp_fifo_out_endofpacket;      // iCEbusControl_0_avalon_slave_0_agent_rsp_fifo:out_endofpacket -> iCEbusControl_0_avalon_slave_0_agent:rf_sink_endofpacket
+	wire          icebuscontrol_0_avalon_slave_0_agent_rdata_fifo_src_valid;          // iCEbusControl_0_avalon_slave_0_agent:rdata_fifo_src_valid -> iCEbusControl_0_avalon_slave_0_agent_rdata_fifo:in_valid
+	wire   [33:0] icebuscontrol_0_avalon_slave_0_agent_rdata_fifo_src_data;           // iCEbusControl_0_avalon_slave_0_agent:rdata_fifo_src_data -> iCEbusControl_0_avalon_slave_0_agent_rdata_fifo:in_data
+	wire          icebuscontrol_0_avalon_slave_0_agent_rdata_fifo_src_ready;          // iCEbusControl_0_avalon_slave_0_agent_rdata_fifo:in_ready -> iCEbusControl_0_avalon_slave_0_agent:rdata_fifo_src_ready
 	wire   [31:0] sysid_qsys_control_slave_agent_m0_readdata;                         // sysid_qsys_control_slave_translator:uav_readdata -> sysid_qsys_control_slave_agent:m0_readdata
 	wire          sysid_qsys_control_slave_agent_m0_waitrequest;                      // sysid_qsys_control_slave_translator:uav_waitrequest -> sysid_qsys_control_slave_agent:m0_waitrequest
 	wire          sysid_qsys_control_slave_agent_m0_debugaccess;                      // sysid_qsys_control_slave_agent:m0_debugaccess -> sysid_qsys_control_slave_translator:uav_debugaccess
@@ -156,11 +156,11 @@ module soc_system_mm_interconnect_0 (
 	wire    [2:0] router_002_src_channel;                                             // router_002:src_channel -> rsp_demux:sink_channel
 	wire          router_002_src_startofpacket;                                       // router_002:src_startofpacket -> rsp_demux:sink_startofpacket
 	wire          router_002_src_endofpacket;                                         // router_002:src_endofpacket -> rsp_demux:sink_endofpacket
-	wire          armbuscontrol_0_avalon_slave_0_agent_rp_valid;                      // ArmBusControl_0_avalon_slave_0_agent:rp_valid -> router_003:sink_valid
-	wire  [113:0] armbuscontrol_0_avalon_slave_0_agent_rp_data;                       // ArmBusControl_0_avalon_slave_0_agent:rp_data -> router_003:sink_data
-	wire          armbuscontrol_0_avalon_slave_0_agent_rp_ready;                      // router_003:sink_ready -> ArmBusControl_0_avalon_slave_0_agent:rp_ready
-	wire          armbuscontrol_0_avalon_slave_0_agent_rp_startofpacket;              // ArmBusControl_0_avalon_slave_0_agent:rp_startofpacket -> router_003:sink_startofpacket
-	wire          armbuscontrol_0_avalon_slave_0_agent_rp_endofpacket;                // ArmBusControl_0_avalon_slave_0_agent:rp_endofpacket -> router_003:sink_endofpacket
+	wire          icebuscontrol_0_avalon_slave_0_agent_rp_valid;                      // iCEbusControl_0_avalon_slave_0_agent:rp_valid -> router_003:sink_valid
+	wire  [113:0] icebuscontrol_0_avalon_slave_0_agent_rp_data;                       // iCEbusControl_0_avalon_slave_0_agent:rp_data -> router_003:sink_data
+	wire          icebuscontrol_0_avalon_slave_0_agent_rp_ready;                      // router_003:sink_ready -> iCEbusControl_0_avalon_slave_0_agent:rp_ready
+	wire          icebuscontrol_0_avalon_slave_0_agent_rp_startofpacket;              // iCEbusControl_0_avalon_slave_0_agent:rp_startofpacket -> router_003:sink_startofpacket
+	wire          icebuscontrol_0_avalon_slave_0_agent_rp_endofpacket;                // iCEbusControl_0_avalon_slave_0_agent:rp_endofpacket -> router_003:sink_endofpacket
 	wire          router_003_src_valid;                                               // router_003:src_valid -> rsp_demux_001:sink_valid
 	wire  [113:0] router_003_src_data;                                                // router_003:src_data -> rsp_demux_001:sink_data
 	wire          router_003_src_ready;                                               // rsp_demux_001:sink_ready -> router_003:src_ready
@@ -236,18 +236,18 @@ module soc_system_mm_interconnect_0 (
 	wire    [2:0] jtag_uart_avalon_jtag_slave_burst_adapter_source0_channel;          // jtag_uart_avalon_jtag_slave_burst_adapter:source0_channel -> jtag_uart_avalon_jtag_slave_agent:cp_channel
 	wire          jtag_uart_avalon_jtag_slave_burst_adapter_source0_startofpacket;    // jtag_uart_avalon_jtag_slave_burst_adapter:source0_startofpacket -> jtag_uart_avalon_jtag_slave_agent:cp_startofpacket
 	wire          jtag_uart_avalon_jtag_slave_burst_adapter_source0_endofpacket;      // jtag_uart_avalon_jtag_slave_burst_adapter:source0_endofpacket -> jtag_uart_avalon_jtag_slave_agent:cp_endofpacket
-	wire          cmd_mux_001_src_valid;                                              // cmd_mux_001:src_valid -> ArmBusControl_0_avalon_slave_0_burst_adapter:sink0_valid
-	wire  [113:0] cmd_mux_001_src_data;                                               // cmd_mux_001:src_data -> ArmBusControl_0_avalon_slave_0_burst_adapter:sink0_data
-	wire          cmd_mux_001_src_ready;                                              // ArmBusControl_0_avalon_slave_0_burst_adapter:sink0_ready -> cmd_mux_001:src_ready
-	wire    [2:0] cmd_mux_001_src_channel;                                            // cmd_mux_001:src_channel -> ArmBusControl_0_avalon_slave_0_burst_adapter:sink0_channel
-	wire          cmd_mux_001_src_startofpacket;                                      // cmd_mux_001:src_startofpacket -> ArmBusControl_0_avalon_slave_0_burst_adapter:sink0_startofpacket
-	wire          cmd_mux_001_src_endofpacket;                                        // cmd_mux_001:src_endofpacket -> ArmBusControl_0_avalon_slave_0_burst_adapter:sink0_endofpacket
-	wire          armbuscontrol_0_avalon_slave_0_burst_adapter_source0_valid;         // ArmBusControl_0_avalon_slave_0_burst_adapter:source0_valid -> ArmBusControl_0_avalon_slave_0_agent:cp_valid
-	wire  [113:0] armbuscontrol_0_avalon_slave_0_burst_adapter_source0_data;          // ArmBusControl_0_avalon_slave_0_burst_adapter:source0_data -> ArmBusControl_0_avalon_slave_0_agent:cp_data
-	wire          armbuscontrol_0_avalon_slave_0_burst_adapter_source0_ready;         // ArmBusControl_0_avalon_slave_0_agent:cp_ready -> ArmBusControl_0_avalon_slave_0_burst_adapter:source0_ready
-	wire    [2:0] armbuscontrol_0_avalon_slave_0_burst_adapter_source0_channel;       // ArmBusControl_0_avalon_slave_0_burst_adapter:source0_channel -> ArmBusControl_0_avalon_slave_0_agent:cp_channel
-	wire          armbuscontrol_0_avalon_slave_0_burst_adapter_source0_startofpacket; // ArmBusControl_0_avalon_slave_0_burst_adapter:source0_startofpacket -> ArmBusControl_0_avalon_slave_0_agent:cp_startofpacket
-	wire          armbuscontrol_0_avalon_slave_0_burst_adapter_source0_endofpacket;   // ArmBusControl_0_avalon_slave_0_burst_adapter:source0_endofpacket -> ArmBusControl_0_avalon_slave_0_agent:cp_endofpacket
+	wire          cmd_mux_001_src_valid;                                              // cmd_mux_001:src_valid -> iCEbusControl_0_avalon_slave_0_burst_adapter:sink0_valid
+	wire  [113:0] cmd_mux_001_src_data;                                               // cmd_mux_001:src_data -> iCEbusControl_0_avalon_slave_0_burst_adapter:sink0_data
+	wire          cmd_mux_001_src_ready;                                              // iCEbusControl_0_avalon_slave_0_burst_adapter:sink0_ready -> cmd_mux_001:src_ready
+	wire    [2:0] cmd_mux_001_src_channel;                                            // cmd_mux_001:src_channel -> iCEbusControl_0_avalon_slave_0_burst_adapter:sink0_channel
+	wire          cmd_mux_001_src_startofpacket;                                      // cmd_mux_001:src_startofpacket -> iCEbusControl_0_avalon_slave_0_burst_adapter:sink0_startofpacket
+	wire          cmd_mux_001_src_endofpacket;                                        // cmd_mux_001:src_endofpacket -> iCEbusControl_0_avalon_slave_0_burst_adapter:sink0_endofpacket
+	wire          icebuscontrol_0_avalon_slave_0_burst_adapter_source0_valid;         // iCEbusControl_0_avalon_slave_0_burst_adapter:source0_valid -> iCEbusControl_0_avalon_slave_0_agent:cp_valid
+	wire  [113:0] icebuscontrol_0_avalon_slave_0_burst_adapter_source0_data;          // iCEbusControl_0_avalon_slave_0_burst_adapter:source0_data -> iCEbusControl_0_avalon_slave_0_agent:cp_data
+	wire          icebuscontrol_0_avalon_slave_0_burst_adapter_source0_ready;         // iCEbusControl_0_avalon_slave_0_agent:cp_ready -> iCEbusControl_0_avalon_slave_0_burst_adapter:source0_ready
+	wire    [2:0] icebuscontrol_0_avalon_slave_0_burst_adapter_source0_channel;       // iCEbusControl_0_avalon_slave_0_burst_adapter:source0_channel -> iCEbusControl_0_avalon_slave_0_agent:cp_channel
+	wire          icebuscontrol_0_avalon_slave_0_burst_adapter_source0_startofpacket; // iCEbusControl_0_avalon_slave_0_burst_adapter:source0_startofpacket -> iCEbusControl_0_avalon_slave_0_agent:cp_startofpacket
+	wire          icebuscontrol_0_avalon_slave_0_burst_adapter_source0_endofpacket;   // iCEbusControl_0_avalon_slave_0_burst_adapter:source0_endofpacket -> iCEbusControl_0_avalon_slave_0_agent:cp_endofpacket
 	wire          cmd_mux_002_src_valid;                                              // cmd_mux_002:src_valid -> sysid_qsys_control_slave_burst_adapter:sink0_valid
 	wire  [113:0] cmd_mux_002_src_data;                                               // cmd_mux_002:src_data -> sysid_qsys_control_slave_burst_adapter:sink0_data
 	wire          cmd_mux_002_src_ready;                                              // sysid_qsys_control_slave_burst_adapter:sink0_ready -> cmd_mux_002:src_ready
@@ -341,13 +341,13 @@ module soc_system_mm_interconnect_0 (
 	wire   [33:0] avalon_st_adapter_out_0_data;                                       // avalon_st_adapter:out_0_data -> jtag_uart_avalon_jtag_slave_agent:rdata_fifo_sink_data
 	wire          avalon_st_adapter_out_0_ready;                                      // jtag_uart_avalon_jtag_slave_agent:rdata_fifo_sink_ready -> avalon_st_adapter:out_0_ready
 	wire    [0:0] avalon_st_adapter_out_0_error;                                      // avalon_st_adapter:out_0_error -> jtag_uart_avalon_jtag_slave_agent:rdata_fifo_sink_error
-	wire          armbuscontrol_0_avalon_slave_0_agent_rdata_fifo_out_valid;          // ArmBusControl_0_avalon_slave_0_agent_rdata_fifo:out_valid -> avalon_st_adapter_001:in_0_valid
-	wire   [33:0] armbuscontrol_0_avalon_slave_0_agent_rdata_fifo_out_data;           // ArmBusControl_0_avalon_slave_0_agent_rdata_fifo:out_data -> avalon_st_adapter_001:in_0_data
-	wire          armbuscontrol_0_avalon_slave_0_agent_rdata_fifo_out_ready;          // avalon_st_adapter_001:in_0_ready -> ArmBusControl_0_avalon_slave_0_agent_rdata_fifo:out_ready
-	wire          avalon_st_adapter_001_out_0_valid;                                  // avalon_st_adapter_001:out_0_valid -> ArmBusControl_0_avalon_slave_0_agent:rdata_fifo_sink_valid
-	wire   [33:0] avalon_st_adapter_001_out_0_data;                                   // avalon_st_adapter_001:out_0_data -> ArmBusControl_0_avalon_slave_0_agent:rdata_fifo_sink_data
-	wire          avalon_st_adapter_001_out_0_ready;                                  // ArmBusControl_0_avalon_slave_0_agent:rdata_fifo_sink_ready -> avalon_st_adapter_001:out_0_ready
-	wire    [0:0] avalon_st_adapter_001_out_0_error;                                  // avalon_st_adapter_001:out_0_error -> ArmBusControl_0_avalon_slave_0_agent:rdata_fifo_sink_error
+	wire          icebuscontrol_0_avalon_slave_0_agent_rdata_fifo_out_valid;          // iCEbusControl_0_avalon_slave_0_agent_rdata_fifo:out_valid -> avalon_st_adapter_001:in_0_valid
+	wire   [33:0] icebuscontrol_0_avalon_slave_0_agent_rdata_fifo_out_data;           // iCEbusControl_0_avalon_slave_0_agent_rdata_fifo:out_data -> avalon_st_adapter_001:in_0_data
+	wire          icebuscontrol_0_avalon_slave_0_agent_rdata_fifo_out_ready;          // avalon_st_adapter_001:in_0_ready -> iCEbusControl_0_avalon_slave_0_agent_rdata_fifo:out_ready
+	wire          avalon_st_adapter_001_out_0_valid;                                  // avalon_st_adapter_001:out_0_valid -> iCEbusControl_0_avalon_slave_0_agent:rdata_fifo_sink_valid
+	wire   [33:0] avalon_st_adapter_001_out_0_data;                                   // avalon_st_adapter_001:out_0_data -> iCEbusControl_0_avalon_slave_0_agent:rdata_fifo_sink_data
+	wire          avalon_st_adapter_001_out_0_ready;                                  // iCEbusControl_0_avalon_slave_0_agent:rdata_fifo_sink_ready -> avalon_st_adapter_001:out_0_ready
+	wire    [0:0] avalon_st_adapter_001_out_0_error;                                  // avalon_st_adapter_001:out_0_error -> iCEbusControl_0_avalon_slave_0_agent:rdata_fifo_sink_error
 	wire          sysid_qsys_control_slave_agent_rdata_fifo_out_valid;                // sysid_qsys_control_slave_agent_rdata_fifo:out_valid -> avalon_st_adapter_002:in_0_valid
 	wire   [33:0] sysid_qsys_control_slave_agent_rdata_fifo_out_data;                 // sysid_qsys_control_slave_agent_rdata_fifo:out_data -> avalon_st_adapter_002:in_0_data
 	wire          sysid_qsys_control_slave_agent_rdata_fifo_out_ready;                // avalon_st_adapter_002:in_0_ready -> sysid_qsys_control_slave_agent_rdata_fifo:out_ready
@@ -446,26 +446,26 @@ module soc_system_mm_interconnect_0 (
 		.AV_WRITE_WAIT_CYCLES           (0),
 		.AV_SETUP_WAIT_CYCLES           (0),
 		.AV_DATA_HOLD_CYCLES            (0)
-	) armbuscontrol_0_avalon_slave_0_translator (
+	) icebuscontrol_0_avalon_slave_0_translator (
 		.clk                    (clk_0_clk_clk),                                         //                      clk.clk
 		.reset                  (jtag_uart_reset_reset_bridge_in_reset_reset),           //                    reset.reset
-		.uav_address            (armbuscontrol_0_avalon_slave_0_agent_m0_address),       // avalon_universal_slave_0.address
-		.uav_burstcount         (armbuscontrol_0_avalon_slave_0_agent_m0_burstcount),    //                         .burstcount
-		.uav_read               (armbuscontrol_0_avalon_slave_0_agent_m0_read),          //                         .read
-		.uav_write              (armbuscontrol_0_avalon_slave_0_agent_m0_write),         //                         .write
-		.uav_waitrequest        (armbuscontrol_0_avalon_slave_0_agent_m0_waitrequest),   //                         .waitrequest
-		.uav_readdatavalid      (armbuscontrol_0_avalon_slave_0_agent_m0_readdatavalid), //                         .readdatavalid
-		.uav_byteenable         (armbuscontrol_0_avalon_slave_0_agent_m0_byteenable),    //                         .byteenable
-		.uav_readdata           (armbuscontrol_0_avalon_slave_0_agent_m0_readdata),      //                         .readdata
-		.uav_writedata          (armbuscontrol_0_avalon_slave_0_agent_m0_writedata),     //                         .writedata
-		.uav_lock               (armbuscontrol_0_avalon_slave_0_agent_m0_lock),          //                         .lock
-		.uav_debugaccess        (armbuscontrol_0_avalon_slave_0_agent_m0_debugaccess),   //                         .debugaccess
-		.av_address             (ArmBusControl_0_avalon_slave_0_address),                //      avalon_anti_slave_0.address
-		.av_write               (ArmBusControl_0_avalon_slave_0_write),                  //                         .write
-		.av_read                (ArmBusControl_0_avalon_slave_0_read),                   //                         .read
-		.av_readdata            (ArmBusControl_0_avalon_slave_0_readdata),               //                         .readdata
-		.av_writedata           (ArmBusControl_0_avalon_slave_0_writedata),              //                         .writedata
-		.av_waitrequest         (ArmBusControl_0_avalon_slave_0_waitrequest),            //                         .waitrequest
+		.uav_address            (icebuscontrol_0_avalon_slave_0_agent_m0_address),       // avalon_universal_slave_0.address
+		.uav_burstcount         (icebuscontrol_0_avalon_slave_0_agent_m0_burstcount),    //                         .burstcount
+		.uav_read               (icebuscontrol_0_avalon_slave_0_agent_m0_read),          //                         .read
+		.uav_write              (icebuscontrol_0_avalon_slave_0_agent_m0_write),         //                         .write
+		.uav_waitrequest        (icebuscontrol_0_avalon_slave_0_agent_m0_waitrequest),   //                         .waitrequest
+		.uav_readdatavalid      (icebuscontrol_0_avalon_slave_0_agent_m0_readdatavalid), //                         .readdatavalid
+		.uav_byteenable         (icebuscontrol_0_avalon_slave_0_agent_m0_byteenable),    //                         .byteenable
+		.uav_readdata           (icebuscontrol_0_avalon_slave_0_agent_m0_readdata),      //                         .readdata
+		.uav_writedata          (icebuscontrol_0_avalon_slave_0_agent_m0_writedata),     //                         .writedata
+		.uav_lock               (icebuscontrol_0_avalon_slave_0_agent_m0_lock),          //                         .lock
+		.uav_debugaccess        (icebuscontrol_0_avalon_slave_0_agent_m0_debugaccess),   //                         .debugaccess
+		.av_address             (iCEbusControl_0_avalon_slave_0_address),                //      avalon_anti_slave_0.address
+		.av_write               (iCEbusControl_0_avalon_slave_0_write),                  //                         .write
+		.av_read                (iCEbusControl_0_avalon_slave_0_read),                   //                         .read
+		.av_readdata            (iCEbusControl_0_avalon_slave_0_readdata),               //                         .readdata
+		.av_writedata           (iCEbusControl_0_avalon_slave_0_writedata),              //                         .writedata
+		.av_waitrequest         (iCEbusControl_0_avalon_slave_0_waitrequest),            //                         .waitrequest
 		.av_begintransfer       (),                                                      //              (terminated)
 		.av_beginbursttransfer  (),                                                      //              (terminated)
 		.av_burstcount          (),                                                      //              (terminated)
@@ -880,48 +880,48 @@ module soc_system_mm_interconnect_0 (
 		.USE_READRESPONSE          (0),
 		.USE_WRITERESPONSE         (0),
 		.ECC_ENABLE                (0)
-	) armbuscontrol_0_avalon_slave_0_agent (
+	) icebuscontrol_0_avalon_slave_0_agent (
 		.clk                     (clk_0_clk_clk),                                                      //             clk.clk
 		.reset                   (jtag_uart_reset_reset_bridge_in_reset_reset),                        //       clk_reset.reset
-		.m0_address              (armbuscontrol_0_avalon_slave_0_agent_m0_address),                    //              m0.address
-		.m0_burstcount           (armbuscontrol_0_avalon_slave_0_agent_m0_burstcount),                 //                .burstcount
-		.m0_byteenable           (armbuscontrol_0_avalon_slave_0_agent_m0_byteenable),                 //                .byteenable
-		.m0_debugaccess          (armbuscontrol_0_avalon_slave_0_agent_m0_debugaccess),                //                .debugaccess
-		.m0_lock                 (armbuscontrol_0_avalon_slave_0_agent_m0_lock),                       //                .lock
-		.m0_readdata             (armbuscontrol_0_avalon_slave_0_agent_m0_readdata),                   //                .readdata
-		.m0_readdatavalid        (armbuscontrol_0_avalon_slave_0_agent_m0_readdatavalid),              //                .readdatavalid
-		.m0_read                 (armbuscontrol_0_avalon_slave_0_agent_m0_read),                       //                .read
-		.m0_waitrequest          (armbuscontrol_0_avalon_slave_0_agent_m0_waitrequest),                //                .waitrequest
-		.m0_writedata            (armbuscontrol_0_avalon_slave_0_agent_m0_writedata),                  //                .writedata
-		.m0_write                (armbuscontrol_0_avalon_slave_0_agent_m0_write),                      //                .write
-		.rp_endofpacket          (armbuscontrol_0_avalon_slave_0_agent_rp_endofpacket),                //              rp.endofpacket
-		.rp_ready                (armbuscontrol_0_avalon_slave_0_agent_rp_ready),                      //                .ready
-		.rp_valid                (armbuscontrol_0_avalon_slave_0_agent_rp_valid),                      //                .valid
-		.rp_data                 (armbuscontrol_0_avalon_slave_0_agent_rp_data),                       //                .data
-		.rp_startofpacket        (armbuscontrol_0_avalon_slave_0_agent_rp_startofpacket),              //                .startofpacket
-		.cp_ready                (armbuscontrol_0_avalon_slave_0_burst_adapter_source0_ready),         //              cp.ready
-		.cp_valid                (armbuscontrol_0_avalon_slave_0_burst_adapter_source0_valid),         //                .valid
-		.cp_data                 (armbuscontrol_0_avalon_slave_0_burst_adapter_source0_data),          //                .data
-		.cp_startofpacket        (armbuscontrol_0_avalon_slave_0_burst_adapter_source0_startofpacket), //                .startofpacket
-		.cp_endofpacket          (armbuscontrol_0_avalon_slave_0_burst_adapter_source0_endofpacket),   //                .endofpacket
-		.cp_channel              (armbuscontrol_0_avalon_slave_0_burst_adapter_source0_channel),       //                .channel
-		.rf_sink_ready           (armbuscontrol_0_avalon_slave_0_agent_rsp_fifo_out_ready),            //         rf_sink.ready
-		.rf_sink_valid           (armbuscontrol_0_avalon_slave_0_agent_rsp_fifo_out_valid),            //                .valid
-		.rf_sink_startofpacket   (armbuscontrol_0_avalon_slave_0_agent_rsp_fifo_out_startofpacket),    //                .startofpacket
-		.rf_sink_endofpacket     (armbuscontrol_0_avalon_slave_0_agent_rsp_fifo_out_endofpacket),      //                .endofpacket
-		.rf_sink_data            (armbuscontrol_0_avalon_slave_0_agent_rsp_fifo_out_data),             //                .data
-		.rf_source_ready         (armbuscontrol_0_avalon_slave_0_agent_rf_source_ready),               //       rf_source.ready
-		.rf_source_valid         (armbuscontrol_0_avalon_slave_0_agent_rf_source_valid),               //                .valid
-		.rf_source_startofpacket (armbuscontrol_0_avalon_slave_0_agent_rf_source_startofpacket),       //                .startofpacket
-		.rf_source_endofpacket   (armbuscontrol_0_avalon_slave_0_agent_rf_source_endofpacket),         //                .endofpacket
-		.rf_source_data          (armbuscontrol_0_avalon_slave_0_agent_rf_source_data),                //                .data
+		.m0_address              (icebuscontrol_0_avalon_slave_0_agent_m0_address),                    //              m0.address
+		.m0_burstcount           (icebuscontrol_0_avalon_slave_0_agent_m0_burstcount),                 //                .burstcount
+		.m0_byteenable           (icebuscontrol_0_avalon_slave_0_agent_m0_byteenable),                 //                .byteenable
+		.m0_debugaccess          (icebuscontrol_0_avalon_slave_0_agent_m0_debugaccess),                //                .debugaccess
+		.m0_lock                 (icebuscontrol_0_avalon_slave_0_agent_m0_lock),                       //                .lock
+		.m0_readdata             (icebuscontrol_0_avalon_slave_0_agent_m0_readdata),                   //                .readdata
+		.m0_readdatavalid        (icebuscontrol_0_avalon_slave_0_agent_m0_readdatavalid),              //                .readdatavalid
+		.m0_read                 (icebuscontrol_0_avalon_slave_0_agent_m0_read),                       //                .read
+		.m0_waitrequest          (icebuscontrol_0_avalon_slave_0_agent_m0_waitrequest),                //                .waitrequest
+		.m0_writedata            (icebuscontrol_0_avalon_slave_0_agent_m0_writedata),                  //                .writedata
+		.m0_write                (icebuscontrol_0_avalon_slave_0_agent_m0_write),                      //                .write
+		.rp_endofpacket          (icebuscontrol_0_avalon_slave_0_agent_rp_endofpacket),                //              rp.endofpacket
+		.rp_ready                (icebuscontrol_0_avalon_slave_0_agent_rp_ready),                      //                .ready
+		.rp_valid                (icebuscontrol_0_avalon_slave_0_agent_rp_valid),                      //                .valid
+		.rp_data                 (icebuscontrol_0_avalon_slave_0_agent_rp_data),                       //                .data
+		.rp_startofpacket        (icebuscontrol_0_avalon_slave_0_agent_rp_startofpacket),              //                .startofpacket
+		.cp_ready                (icebuscontrol_0_avalon_slave_0_burst_adapter_source0_ready),         //              cp.ready
+		.cp_valid                (icebuscontrol_0_avalon_slave_0_burst_adapter_source0_valid),         //                .valid
+		.cp_data                 (icebuscontrol_0_avalon_slave_0_burst_adapter_source0_data),          //                .data
+		.cp_startofpacket        (icebuscontrol_0_avalon_slave_0_burst_adapter_source0_startofpacket), //                .startofpacket
+		.cp_endofpacket          (icebuscontrol_0_avalon_slave_0_burst_adapter_source0_endofpacket),   //                .endofpacket
+		.cp_channel              (icebuscontrol_0_avalon_slave_0_burst_adapter_source0_channel),       //                .channel
+		.rf_sink_ready           (icebuscontrol_0_avalon_slave_0_agent_rsp_fifo_out_ready),            //         rf_sink.ready
+		.rf_sink_valid           (icebuscontrol_0_avalon_slave_0_agent_rsp_fifo_out_valid),            //                .valid
+		.rf_sink_startofpacket   (icebuscontrol_0_avalon_slave_0_agent_rsp_fifo_out_startofpacket),    //                .startofpacket
+		.rf_sink_endofpacket     (icebuscontrol_0_avalon_slave_0_agent_rsp_fifo_out_endofpacket),      //                .endofpacket
+		.rf_sink_data            (icebuscontrol_0_avalon_slave_0_agent_rsp_fifo_out_data),             //                .data
+		.rf_source_ready         (icebuscontrol_0_avalon_slave_0_agent_rf_source_ready),               //       rf_source.ready
+		.rf_source_valid         (icebuscontrol_0_avalon_slave_0_agent_rf_source_valid),               //                .valid
+		.rf_source_startofpacket (icebuscontrol_0_avalon_slave_0_agent_rf_source_startofpacket),       //                .startofpacket
+		.rf_source_endofpacket   (icebuscontrol_0_avalon_slave_0_agent_rf_source_endofpacket),         //                .endofpacket
+		.rf_source_data          (icebuscontrol_0_avalon_slave_0_agent_rf_source_data),                //                .data
 		.rdata_fifo_sink_ready   (avalon_st_adapter_001_out_0_ready),                                  // rdata_fifo_sink.ready
 		.rdata_fifo_sink_valid   (avalon_st_adapter_001_out_0_valid),                                  //                .valid
 		.rdata_fifo_sink_data    (avalon_st_adapter_001_out_0_data),                                   //                .data
 		.rdata_fifo_sink_error   (avalon_st_adapter_001_out_0_error),                                  //                .error
-		.rdata_fifo_src_ready    (armbuscontrol_0_avalon_slave_0_agent_rdata_fifo_src_ready),          //  rdata_fifo_src.ready
-		.rdata_fifo_src_valid    (armbuscontrol_0_avalon_slave_0_agent_rdata_fifo_src_valid),          //                .valid
-		.rdata_fifo_src_data     (armbuscontrol_0_avalon_slave_0_agent_rdata_fifo_src_data),           //                .data
+		.rdata_fifo_src_ready    (icebuscontrol_0_avalon_slave_0_agent_rdata_fifo_src_ready),          //  rdata_fifo_src.ready
+		.rdata_fifo_src_valid    (icebuscontrol_0_avalon_slave_0_agent_rdata_fifo_src_valid),          //                .valid
+		.rdata_fifo_src_data     (icebuscontrol_0_avalon_slave_0_agent_rdata_fifo_src_data),           //                .data
 		.m0_response             (2'b00),                                                              //     (terminated)
 		.m0_writeresponsevalid   (1'b0)                                                                //     (terminated)
 	);
@@ -939,19 +939,19 @@ module soc_system_mm_interconnect_0 (
 		.USE_STORE_FORWARD   (0),
 		.USE_ALMOST_FULL_IF  (0),
 		.USE_ALMOST_EMPTY_IF (0)
-	) armbuscontrol_0_avalon_slave_0_agent_rsp_fifo (
+	) icebuscontrol_0_avalon_slave_0_agent_rsp_fifo (
 		.clk               (clk_0_clk_clk),                                                   //       clk.clk
 		.reset             (jtag_uart_reset_reset_bridge_in_reset_reset),                     // clk_reset.reset
-		.in_data           (armbuscontrol_0_avalon_slave_0_agent_rf_source_data),             //        in.data
-		.in_valid          (armbuscontrol_0_avalon_slave_0_agent_rf_source_valid),            //          .valid
-		.in_ready          (armbuscontrol_0_avalon_slave_0_agent_rf_source_ready),            //          .ready
-		.in_startofpacket  (armbuscontrol_0_avalon_slave_0_agent_rf_source_startofpacket),    //          .startofpacket
-		.in_endofpacket    (armbuscontrol_0_avalon_slave_0_agent_rf_source_endofpacket),      //          .endofpacket
-		.out_data          (armbuscontrol_0_avalon_slave_0_agent_rsp_fifo_out_data),          //       out.data
-		.out_valid         (armbuscontrol_0_avalon_slave_0_agent_rsp_fifo_out_valid),         //          .valid
-		.out_ready         (armbuscontrol_0_avalon_slave_0_agent_rsp_fifo_out_ready),         //          .ready
-		.out_startofpacket (armbuscontrol_0_avalon_slave_0_agent_rsp_fifo_out_startofpacket), //          .startofpacket
-		.out_endofpacket   (armbuscontrol_0_avalon_slave_0_agent_rsp_fifo_out_endofpacket),   //          .endofpacket
+		.in_data           (icebuscontrol_0_avalon_slave_0_agent_rf_source_data),             //        in.data
+		.in_valid          (icebuscontrol_0_avalon_slave_0_agent_rf_source_valid),            //          .valid
+		.in_ready          (icebuscontrol_0_avalon_slave_0_agent_rf_source_ready),            //          .ready
+		.in_startofpacket  (icebuscontrol_0_avalon_slave_0_agent_rf_source_startofpacket),    //          .startofpacket
+		.in_endofpacket    (icebuscontrol_0_avalon_slave_0_agent_rf_source_endofpacket),      //          .endofpacket
+		.out_data          (icebuscontrol_0_avalon_slave_0_agent_rsp_fifo_out_data),          //       out.data
+		.out_valid         (icebuscontrol_0_avalon_slave_0_agent_rsp_fifo_out_valid),         //          .valid
+		.out_ready         (icebuscontrol_0_avalon_slave_0_agent_rsp_fifo_out_ready),         //          .ready
+		.out_startofpacket (icebuscontrol_0_avalon_slave_0_agent_rsp_fifo_out_startofpacket), //          .startofpacket
+		.out_endofpacket   (icebuscontrol_0_avalon_slave_0_agent_rsp_fifo_out_endofpacket),   //          .endofpacket
 		.csr_address       (2'b00),                                                           // (terminated)
 		.csr_read          (1'b0),                                                            // (terminated)
 		.csr_write         (1'b0),                                                            // (terminated)
@@ -980,15 +980,15 @@ module soc_system_mm_interconnect_0 (
 		.USE_STORE_FORWARD   (0),
 		.USE_ALMOST_FULL_IF  (0),
 		.USE_ALMOST_EMPTY_IF (0)
-	) armbuscontrol_0_avalon_slave_0_agent_rdata_fifo (
+	) icebuscontrol_0_avalon_slave_0_agent_rdata_fifo (
 		.clk               (clk_0_clk_clk),                                             //       clk.clk
 		.reset             (jtag_uart_reset_reset_bridge_in_reset_reset),               // clk_reset.reset
-		.in_data           (armbuscontrol_0_avalon_slave_0_agent_rdata_fifo_src_data),  //        in.data
-		.in_valid          (armbuscontrol_0_avalon_slave_0_agent_rdata_fifo_src_valid), //          .valid
-		.in_ready          (armbuscontrol_0_avalon_slave_0_agent_rdata_fifo_src_ready), //          .ready
-		.out_data          (armbuscontrol_0_avalon_slave_0_agent_rdata_fifo_out_data),  //       out.data
-		.out_valid         (armbuscontrol_0_avalon_slave_0_agent_rdata_fifo_out_valid), //          .valid
-		.out_ready         (armbuscontrol_0_avalon_slave_0_agent_rdata_fifo_out_ready), //          .ready
+		.in_data           (icebuscontrol_0_avalon_slave_0_agent_rdata_fifo_src_data),  //        in.data
+		.in_valid          (icebuscontrol_0_avalon_slave_0_agent_rdata_fifo_src_valid), //          .valid
+		.in_ready          (icebuscontrol_0_avalon_slave_0_agent_rdata_fifo_src_ready), //          .ready
+		.out_data          (icebuscontrol_0_avalon_slave_0_agent_rdata_fifo_out_data),  //       out.data
+		.out_valid         (icebuscontrol_0_avalon_slave_0_agent_rdata_fifo_out_valid), //          .valid
+		.out_ready         (icebuscontrol_0_avalon_slave_0_agent_rdata_fifo_out_ready), //          .ready
 		.csr_address       (2'b00),                                                     // (terminated)
 		.csr_read          (1'b0),                                                      // (terminated)
 		.csr_write         (1'b0),                                                      // (terminated)
@@ -1223,11 +1223,11 @@ module soc_system_mm_interconnect_0 (
 	);
 
 	soc_system_mm_interconnect_0_router_002 router_003 (
-		.sink_ready         (armbuscontrol_0_avalon_slave_0_agent_rp_ready),         //      sink.ready
-		.sink_valid         (armbuscontrol_0_avalon_slave_0_agent_rp_valid),         //          .valid
-		.sink_data          (armbuscontrol_0_avalon_slave_0_agent_rp_data),          //          .data
-		.sink_startofpacket (armbuscontrol_0_avalon_slave_0_agent_rp_startofpacket), //          .startofpacket
-		.sink_endofpacket   (armbuscontrol_0_avalon_slave_0_agent_rp_endofpacket),   //          .endofpacket
+		.sink_ready         (icebuscontrol_0_avalon_slave_0_agent_rp_ready),         //      sink.ready
+		.sink_valid         (icebuscontrol_0_avalon_slave_0_agent_rp_valid),         //          .valid
+		.sink_data          (icebuscontrol_0_avalon_slave_0_agent_rp_data),          //          .data
+		.sink_startofpacket (icebuscontrol_0_avalon_slave_0_agent_rp_startofpacket), //          .startofpacket
+		.sink_endofpacket   (icebuscontrol_0_avalon_slave_0_agent_rp_endofpacket),   //          .endofpacket
 		.clk                (clk_0_clk_clk),                                         //       clk.clk
 		.reset              (jtag_uart_reset_reset_bridge_in_reset_reset),           // clk_reset.reset
 		.src_ready          (router_003_src_ready),                                  //       src.ready
@@ -1437,7 +1437,7 @@ module soc_system_mm_interconnect_0 (
 		.BURSTWRAP_CONST_MASK      (0),
 		.BURSTWRAP_CONST_VALUE     (0),
 		.ADAPTER_VERSION           ("13.1")
-	) armbuscontrol_0_avalon_slave_0_burst_adapter (
+	) icebuscontrol_0_avalon_slave_0_burst_adapter (
 		.clk                   (clk_0_clk_clk),                                                      //       cr0.clk
 		.reset                 (jtag_uart_reset_reset_bridge_in_reset_reset),                        // cr0_reset.reset
 		.sink0_valid           (cmd_mux_001_src_valid),                                              //     sink0.valid
@@ -1446,12 +1446,12 @@ module soc_system_mm_interconnect_0 (
 		.sink0_startofpacket   (cmd_mux_001_src_startofpacket),                                      //          .startofpacket
 		.sink0_endofpacket     (cmd_mux_001_src_endofpacket),                                        //          .endofpacket
 		.sink0_ready           (cmd_mux_001_src_ready),                                              //          .ready
-		.source0_valid         (armbuscontrol_0_avalon_slave_0_burst_adapter_source0_valid),         //   source0.valid
-		.source0_data          (armbuscontrol_0_avalon_slave_0_burst_adapter_source0_data),          //          .data
-		.source0_channel       (armbuscontrol_0_avalon_slave_0_burst_adapter_source0_channel),       //          .channel
-		.source0_startofpacket (armbuscontrol_0_avalon_slave_0_burst_adapter_source0_startofpacket), //          .startofpacket
-		.source0_endofpacket   (armbuscontrol_0_avalon_slave_0_burst_adapter_source0_endofpacket),   //          .endofpacket
-		.source0_ready         (armbuscontrol_0_avalon_slave_0_burst_adapter_source0_ready)          //          .ready
+		.source0_valid         (icebuscontrol_0_avalon_slave_0_burst_adapter_source0_valid),         //   source0.valid
+		.source0_data          (icebuscontrol_0_avalon_slave_0_burst_adapter_source0_data),          //          .data
+		.source0_channel       (icebuscontrol_0_avalon_slave_0_burst_adapter_source0_channel),       //          .channel
+		.source0_startofpacket (icebuscontrol_0_avalon_slave_0_burst_adapter_source0_startofpacket), //          .startofpacket
+		.source0_endofpacket   (icebuscontrol_0_avalon_slave_0_burst_adapter_source0_endofpacket),   //          .endofpacket
+		.source0_ready         (icebuscontrol_0_avalon_slave_0_burst_adapter_source0_ready)          //          .ready
 	);
 
 	altera_merlin_burst_adapter #(
@@ -1807,9 +1807,9 @@ module soc_system_mm_interconnect_0 (
 	) avalon_st_adapter_001 (
 		.in_clk_0_clk   (clk_0_clk_clk),                                             // in_clk_0.clk
 		.in_rst_0_reset (jtag_uart_reset_reset_bridge_in_reset_reset),               // in_rst_0.reset
-		.in_0_data      (armbuscontrol_0_avalon_slave_0_agent_rdata_fifo_out_data),  //     in_0.data
-		.in_0_valid     (armbuscontrol_0_avalon_slave_0_agent_rdata_fifo_out_valid), //         .valid
-		.in_0_ready     (armbuscontrol_0_avalon_slave_0_agent_rdata_fifo_out_ready), //         .ready
+		.in_0_data      (icebuscontrol_0_avalon_slave_0_agent_rdata_fifo_out_data),  //     in_0.data
+		.in_0_valid     (icebuscontrol_0_avalon_slave_0_agent_rdata_fifo_out_valid), //         .valid
+		.in_0_ready     (icebuscontrol_0_avalon_slave_0_agent_rdata_fifo_out_ready), //         .ready
 		.out_0_data     (avalon_st_adapter_001_out_0_data),                          //    out_0.data
 		.out_0_valid    (avalon_st_adapter_001_out_0_valid),                         //         .valid
 		.out_0_ready    (avalon_st_adapter_001_out_0_ready),                         //         .ready

@@ -1,7 +1,5 @@
 
 module soc_system (
-	armbuscontrol_0_conduit_end_rx,
-	armbuscontrol_0_conduit_end_tx,
 	clk_clk,
 	hps_0_f2h_cold_reset_req_reset_n,
 	hps_0_f2h_debug_reset_req_reset_n,
@@ -71,10 +69,11 @@ module soc_system (
 	memory_mem_odt,
 	memory_mem_dm,
 	memory_oct_rzqin,
-	reset_reset_n);	
+	reset_reset_n,
+	icebuscontrol_0_conduit_end_rx,
+	icebuscontrol_0_conduit_end_tx,
+	icebuscontrol_0_conduit_end_current_average);	
 
-	input		armbuscontrol_0_conduit_end_rx;
-	output		armbuscontrol_0_conduit_end_tx;
 	input		clk_clk;
 	input		hps_0_f2h_cold_reset_req_reset_n;
 	input		hps_0_f2h_debug_reset_req_reset_n;
@@ -145,4 +144,7 @@ module soc_system (
 	output	[3:0]	memory_mem_dm;
 	input		memory_oct_rzqin;
 	input		reset_reset_n;
+	input		icebuscontrol_0_conduit_end_rx;
+	output		icebuscontrol_0_conduit_end_tx;
+	output	[31:0]	icebuscontrol_0_conduit_end_current_average;
 endmodule
