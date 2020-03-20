@@ -731,8 +731,6 @@ set_global_assignment -name SYSTEMVERILOG_FILE ip/roboy_fpga_code/ball_joint/bal
 set_global_assignment -name VERILOG_FILE ip/roboy_fpga_code/quadrature/quad.v
 set_global_assignment -name VERILOG_FILE ip/roboy_fpga_code/uart/uart_tx.v
 set_global_assignment -name VERILOG_FILE ip/roboy_fpga_code/uart/uart_rx.v
-set_global_assignment -name SYSTEMVERILOG_FILE ip/roboy_fpga_code/iceboard/coms.sv
-set_global_assignment -name SYSTEMVERILOG_FILE ip/roboy_fpga_code/iceboard/iCEboardControl.sv
 set_global_assignment -name QIP_FILE ip/roboy_fpga_code/i2c/fifo.qip
 set_global_assignment -name VERILOG_FILE ip/roboy_fpga_code/i2c/oneshot.v
 set_global_assignment -name VERILOG_FILE ip/roboy_fpga_code/i2c/I2C_avalon_bridge.v

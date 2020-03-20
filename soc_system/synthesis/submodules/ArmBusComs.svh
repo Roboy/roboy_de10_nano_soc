@@ -1,7 +1,5 @@
-localparam  MAGIC_NUMBER_LENGTH = 4;
-
 typedef reg [31:0] uint32_t;
-typedef reg [16:0] uint16_t;
+typedef reg [15:0] uint16_t;
 typedef reg [7:0] uint8_t;
 
 typedef struct packed{
@@ -54,12 +52,13 @@ typedef struct packed{
   uint16_t crc;
 }hand_control_mode_t;
 
+localparam  MAGIC_NUMBER_LENGTH = 4;
 localparam	STATUS_REQUEST_FRAME_LENGTH = $bits(status_request_t)/8;
 localparam	HAND_STATUS_RESPONSE_FRAME_LENGTH = $bits(hand_status_response_t)/8;
 localparam	HAND_COMMAND_FRAME_LENGTH = $bits(hand_command_t)/8;
 localparam	HAND_CONTROL_MODE_FRAME_LENGTH = $bits(hand_control_mode_t)/8;
 
-localparam  MAX_FRAME_LENGTH = HAND_STATUS_RESPONSE_FRAME_LENGTH;
+localparam  MAX_FRAME_LENGTH = HAND_CONTROL_MODE_FRAME_LENGTH;
 
 status_request_t status_request = '{32'hABADBABE,0,0};
 hand_status_response_t hand_status_response = '{32'hB000B135,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
