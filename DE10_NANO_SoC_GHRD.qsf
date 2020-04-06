@@ -725,6 +725,10 @@ set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_1[12]
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_1[13]
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_1[14]
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GPIO_1[15]
+set_global_assignment -name SYSTEMVERILOG_FILE ip/roboy_fpga_code/icebus/iCEboardComs.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ip/roboy_fpga_code/icebus/crc16.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ip/roboy_fpga_code/icebus/ArmBusComs.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ip/roboy_fpga_code/icebus/iCEbusControl.sv
 set_global_assignment -name QIP_FILE soc_system/synthesis/soc_system.qip
 set_global_assignment -name SYSTEMVERILOG_FILE ip/roboy_fpga_code/pwm_control/fan_control.sv
 set_global_assignment -name SYSTEMVERILOG_FILE ip/roboy_fpga_code/ball_joint/ball_joint.sv
