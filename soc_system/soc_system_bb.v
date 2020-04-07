@@ -10,31 +10,24 @@ module soc_system (
 	auxilliary_i2c_3_conduit_end_sda,
 	balljoint_0_conduit_end_scl,
 	balljoint_0_conduit_end_sda,
+	balljoint_0_conduit_end_reset_n,
 	balljoint_1_conduit_end_scl,
 	balljoint_1_conduit_end_sda,
+	balljoint_1_conduit_end_reset_n,
 	balljoint_2_conduit_end_scl,
 	balljoint_2_conduit_end_sda,
+	balljoint_2_conduit_end_reset_n,
 	balljoint_3_conduit_end_scl,
 	balljoint_3_conduit_end_sda,
+	balljoint_3_conduit_end_reset_n,
 	balljoint_4_conduit_end_scl,
 	balljoint_4_conduit_end_sda,
-	balljoint_5_conduit_end_scl,
-	balljoint_5_conduit_end_sda,
-	balljoint_6_conduit_end_scl,
-	balljoint_6_conduit_end_sda,
+	balljoint_4_conduit_end_reset_n,
 	clk_clk,
 	fancontrol_0_conduit_end_current_average,
 	fancontrol_0_conduit_end_pwm,
 	fancontrol_1_conduit_end_current_average,
 	fancontrol_1_conduit_end_pwm,
-	fancontrol_2_conduit_end_current_average,
-	fancontrol_2_conduit_end_pwm,
-	fancontrol_3_conduit_end_current_average,
-	fancontrol_3_conduit_end_pwm,
-	fancontrol_4_conduit_end_current_average,
-	fancontrol_4_conduit_end_pwm,
-	fancontrol_5_conduit_end_current_average,
-	fancontrol_5_conduit_end_pwm,
 	hps_0_f2h_cold_reset_req_reset_n,
 	hps_0_f2h_debug_reset_req_reset_n,
 	hps_0_f2h_warm_reset_req_reset_n,
@@ -96,15 +89,6 @@ module soc_system (
 	icebuscontrol_2_conduit_end_rx,
 	icebuscontrol_2_conduit_end_tx,
 	icebuscontrol_2_conduit_end_current_average,
-	icebuscontrol_3_conduit_end_rx,
-	icebuscontrol_3_conduit_end_tx,
-	icebuscontrol_3_conduit_end_current_average,
-	icebuscontrol_4_conduit_end_rx,
-	icebuscontrol_4_conduit_end_tx,
-	icebuscontrol_4_conduit_end_current_average,
-	icebuscontrol_5_conduit_end_rx,
-	icebuscontrol_5_conduit_end_tx,
-	icebuscontrol_5_conduit_end_current_average,
 	icebuscontrol_6_conduit_end_rx,
 	icebuscontrol_6_conduit_end_tx,
 	icebuscontrol_6_conduit_end_current_average,
@@ -129,9 +113,9 @@ module soc_system (
 	memory_mem_dm,
 	memory_oct_rzqin,
 	power_control_0_external_connection_export,
+	power_sense_0_external_connection_export,
 	reset_reset_n,
-	switches_0_external_connection_export,
-	power_sense_0_external_connection_export);	
+	switches_0_external_connection_export);	
 
 	inout		auxilliary_i2c_0_conduit_end_scl;
 	inout		auxilliary_i2c_0_conduit_end_sda;
@@ -143,31 +127,24 @@ module soc_system (
 	inout		auxilliary_i2c_3_conduit_end_sda;
 	inout		balljoint_0_conduit_end_scl;
 	output		balljoint_0_conduit_end_sda;
+	output		balljoint_0_conduit_end_reset_n;
 	inout		balljoint_1_conduit_end_scl;
 	output		balljoint_1_conduit_end_sda;
+	output		balljoint_1_conduit_end_reset_n;
 	inout		balljoint_2_conduit_end_scl;
 	output		balljoint_2_conduit_end_sda;
+	output		balljoint_2_conduit_end_reset_n;
 	inout		balljoint_3_conduit_end_scl;
 	output		balljoint_3_conduit_end_sda;
+	output		balljoint_3_conduit_end_reset_n;
 	inout		balljoint_4_conduit_end_scl;
 	output		balljoint_4_conduit_end_sda;
-	inout		balljoint_5_conduit_end_scl;
-	output		balljoint_5_conduit_end_sda;
-	inout		balljoint_6_conduit_end_scl;
-	output		balljoint_6_conduit_end_sda;
+	output		balljoint_4_conduit_end_reset_n;
 	input		clk_clk;
 	input	[31:0]	fancontrol_0_conduit_end_current_average;
 	output		fancontrol_0_conduit_end_pwm;
 	input	[31:0]	fancontrol_1_conduit_end_current_average;
 	output		fancontrol_1_conduit_end_pwm;
-	input	[31:0]	fancontrol_2_conduit_end_current_average;
-	output		fancontrol_2_conduit_end_pwm;
-	input	[31:0]	fancontrol_3_conduit_end_current_average;
-	output		fancontrol_3_conduit_end_pwm;
-	input	[31:0]	fancontrol_4_conduit_end_current_average;
-	output		fancontrol_4_conduit_end_pwm;
-	input	[31:0]	fancontrol_5_conduit_end_current_average;
-	output		fancontrol_5_conduit_end_pwm;
 	input		hps_0_f2h_cold_reset_req_reset_n;
 	input		hps_0_f2h_debug_reset_req_reset_n;
 	input		hps_0_f2h_warm_reset_req_reset_n;
@@ -229,15 +206,6 @@ module soc_system (
 	input		icebuscontrol_2_conduit_end_rx;
 	output		icebuscontrol_2_conduit_end_tx;
 	output	[31:0]	icebuscontrol_2_conduit_end_current_average;
-	input		icebuscontrol_3_conduit_end_rx;
-	output		icebuscontrol_3_conduit_end_tx;
-	output	[31:0]	icebuscontrol_3_conduit_end_current_average;
-	input		icebuscontrol_4_conduit_end_rx;
-	output		icebuscontrol_4_conduit_end_tx;
-	output	[31:0]	icebuscontrol_4_conduit_end_current_average;
-	input		icebuscontrol_5_conduit_end_rx;
-	output		icebuscontrol_5_conduit_end_tx;
-	output	[31:0]	icebuscontrol_5_conduit_end_current_average;
 	input		icebuscontrol_6_conduit_end_rx;
 	output		icebuscontrol_6_conduit_end_tx;
 	output	[31:0]	icebuscontrol_6_conduit_end_current_average;
@@ -262,7 +230,7 @@ module soc_system (
 	output	[3:0]	memory_mem_dm;
 	input		memory_oct_rzqin;
 	output	[1:0]	power_control_0_external_connection_export;
+	input	[5:0]	power_sense_0_external_connection_export;
 	input		reset_reset_n;
 	input	[3:0]	switches_0_external_connection_export;
-	input	[5:0]	power_sense_0_external_connection_export;
 endmodule

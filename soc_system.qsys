@@ -1529,16 +1529,8 @@
    internal="BallJoint_4.conduit_end"
    type="conduit"
    dir="end" />
- <interface
-   name="balljoint_5_conduit_end"
-   internal="BallJoint_5.conduit_end"
-   type="conduit"
-   dir="end" />
- <interface
-   name="balljoint_6_conduit_end"
-   internal="BallJoint_6.conduit_end"
-   type="conduit"
-   dir="end" />
+ <interface name="balljoint_5_conduit_end" internal="BallJoint_5.conduit_end" />
+ <interface name="balljoint_6_conduit_end" internal="BallJoint_6.conduit_end" />
  <interface name="clk" internal="clk_0.clk_in" type="clock" dir="end" />
  <interface
    name="fancontrol_0_conduit_end"
@@ -1550,26 +1542,10 @@
    internal="FanControl_1.conduit_end"
    type="conduit"
    dir="end" />
- <interface
-   name="fancontrol_2_conduit_end"
-   internal="FanControl_2.conduit_end"
-   type="conduit"
-   dir="end" />
- <interface
-   name="fancontrol_3_conduit_end"
-   internal="FanControl_3.conduit_end"
-   type="conduit"
-   dir="end" />
- <interface
-   name="fancontrol_4_conduit_end"
-   internal="FanControl_4.conduit_end"
-   type="conduit"
-   dir="end" />
- <interface
-   name="fancontrol_5_conduit_end"
-   internal="FanControl_5.conduit_end"
-   type="conduit"
-   dir="end" />
+ <interface name="fancontrol_2_conduit_end" internal="FanControl_2.conduit_end" />
+ <interface name="fancontrol_3_conduit_end" internal="FanControl_3.conduit_end" />
+ <interface name="fancontrol_4_conduit_end" internal="FanControl_4.conduit_end" />
+ <interface name="fancontrol_5_conduit_end" internal="FanControl_5.conduit_end" />
  <interface
    name="hps_0_f2h_cold_reset_req"
    internal="hps_0.f2h_cold_reset_req"
@@ -1610,19 +1586,13 @@
    dir="end" />
  <interface
    name="icebuscontrol_3_conduit_end"
-   internal="iCEbusControl_3.conduit_end"
-   type="conduit"
-   dir="end" />
+   internal="iCEbusControl_3.conduit_end" />
  <interface
    name="icebuscontrol_4_conduit_end"
-   internal="iCEbusControl_4.conduit_end"
-   type="conduit"
-   dir="end" />
+   internal="iCEbusControl_4.conduit_end" />
  <interface
    name="icebuscontrol_5_conduit_end"
-   internal="iCEbusControl_5.conduit_end"
-   type="conduit"
-   dir="end" />
+   internal="iCEbusControl_5.conduit_end" />
  <interface
    name="icebuscontrol_6_conduit_end"
    internal="iCEbusControl_6.conduit_end"
@@ -1680,12 +1650,12 @@
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
   <parameter name="NUMBER_OF_SENSORS" value="4" />
  </module>
- <module name="BallJoint_5" kind="BallJoint" version="1.0" enabled="1">
+ <module name="BallJoint_5" kind="BallJoint" version="1.0" enabled="0">
   <parameter name="BUS_SPEED_HZ" value="400000" />
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
   <parameter name="NUMBER_OF_SENSORS" value="4" />
  </module>
- <module name="BallJoint_6" kind="BallJoint" version="1.0" enabled="1">
+ <module name="BallJoint_6" kind="BallJoint" version="1.0" enabled="0">
   <parameter name="BUS_SPEED_HZ" value="400000" />
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
   <parameter name="NUMBER_OF_SENSORS" value="4" />
@@ -1696,16 +1666,16 @@
  <module name="FanControl_1" kind="FanControl" version="1.0" enabled="1">
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
  </module>
- <module name="FanControl_2" kind="FanControl" version="1.0" enabled="1">
+ <module name="FanControl_2" kind="FanControl" version="1.0" enabled="0">
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
  </module>
- <module name="FanControl_3" kind="FanControl" version="1.0" enabled="1">
+ <module name="FanControl_3" kind="FanControl" version="1.0" enabled="0">
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
  </module>
- <module name="FanControl_4" kind="FanControl" version="1.0" enabled="1">
+ <module name="FanControl_4" kind="FanControl" version="1.0" enabled="0">
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
  </module>
- <module name="FanControl_5" kind="FanControl" version="1.0" enabled="1">
+ <module name="FanControl_5" kind="FanControl" version="1.0" enabled="0">
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
  </module>
  <module name="LED" kind="altera_avalon_pio" version="18.1" enabled="1">
@@ -2330,38 +2300,38 @@
  <module name="iCEbusControl_0" kind="iCEbusControl" version="1.0" enabled="1">
   <parameter name="CLOCK_FREQ_HZ" value="50000000" />
   <parameter name="NUMBER_OF_MOTORS" value="10" />
-  <parameter name="arm_coms" value="true" />
-  <parameter name="iceboard_coms" value="false" />
+  <parameter name="arm_coms" value="false" />
+  <parameter name="iceboard_coms" value="true" />
  </module>
  <module name="iCEbusControl_1" kind="iCEbusControl" version="1.0" enabled="1">
   <parameter name="CLOCK_FREQ_HZ" value="50000000" />
   <parameter name="NUMBER_OF_MOTORS" value="10" />
-  <parameter name="arm_coms" value="true" />
-  <parameter name="iceboard_coms" value="false" />
+  <parameter name="arm_coms" value="false" />
+  <parameter name="iceboard_coms" value="true" />
  </module>
  <module name="iCEbusControl_2" kind="iCEbusControl" version="1.0" enabled="1">
   <parameter name="CLOCK_FREQ_HZ" value="50000000" />
-  <parameter name="NUMBER_OF_MOTORS" value="10" />
-  <parameter name="arm_coms" value="true" />
-  <parameter name="iceboard_coms" value="false" />
+  <parameter name="NUMBER_OF_MOTORS" value="6" />
+  <parameter name="arm_coms" value="false" />
+  <parameter name="iceboard_coms" value="true" />
  </module>
- <module name="iCEbusControl_3" kind="iCEbusControl" version="1.0" enabled="1">
+ <module name="iCEbusControl_3" kind="iCEbusControl" version="1.0" enabled="0">
   <parameter name="CLOCK_FREQ_HZ" value="50000000" />
-  <parameter name="NUMBER_OF_MOTORS" value="10" />
-  <parameter name="arm_coms" value="true" />
-  <parameter name="iceboard_coms" value="false" />
+  <parameter name="NUMBER_OF_MOTORS" value="6" />
+  <parameter name="arm_coms" value="false" />
+  <parameter name="iceboard_coms" value="true" />
  </module>
- <module name="iCEbusControl_4" kind="iCEbusControl" version="1.0" enabled="1">
+ <module name="iCEbusControl_4" kind="iCEbusControl" version="1.0" enabled="0">
   <parameter name="CLOCK_FREQ_HZ" value="50000000" />
-  <parameter name="NUMBER_OF_MOTORS" value="10" />
-  <parameter name="arm_coms" value="true" />
-  <parameter name="iceboard_coms" value="false" />
+  <parameter name="NUMBER_OF_MOTORS" value="6" />
+  <parameter name="arm_coms" value="false" />
+  <parameter name="iceboard_coms" value="true" />
  </module>
- <module name="iCEbusControl_5" kind="iCEbusControl" version="1.0" enabled="1">
+ <module name="iCEbusControl_5" kind="iCEbusControl" version="1.0" enabled="0">
   <parameter name="CLOCK_FREQ_HZ" value="50000000" />
-  <parameter name="NUMBER_OF_MOTORS" value="10" />
-  <parameter name="arm_coms" value="true" />
-  <parameter name="iceboard_coms" value="false" />
+  <parameter name="NUMBER_OF_MOTORS" value="6" />
+  <parameter name="arm_coms" value="false" />
+  <parameter name="iceboard_coms" value="true" />
  </module>
  <module name="iCEbusControl_6" kind="iCEbusControl" version="1.0" enabled="1">
   <parameter name="CLOCK_FREQ_HZ" value="50000000" />
@@ -2513,24 +2483,6 @@
    kind="avalon"
    version="18.1"
    start="hps_0.h2f_lw_axi_master"
-   end="BallJoint_5.avalon_slave_0">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0040" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="18.1"
-   start="hps_0.h2f_lw_axi_master"
-   end="BallJoint_6.avalon_slave_0">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0000" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="18.1"
-   start="hps_0.h2f_lw_axi_master"
    end="iCEbusControl_1.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0001c000" />
@@ -2639,6 +2591,24 @@
    kind="avalon"
    version="18.1"
    start="hps_0.h2f_lw_axi_master"
+   end="BallJoint_5.avalon_slave_0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0040" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="hps_0.h2f_lw_axi_master"
+   end="BallJoint_6.avalon_slave_0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="hps_0.h2f_lw_axi_master"
    end="sysid_qsys.control_slave">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x1000" />
@@ -2721,8 +2691,6 @@
  <connection kind="clock" version="18.1" start="clk_0.clk" end="BallJoint_2.clock" />
  <connection kind="clock" version="18.1" start="clk_0.clk" end="BallJoint_3.clock" />
  <connection kind="clock" version="18.1" start="clk_0.clk" end="BallJoint_4.clock" />
- <connection kind="clock" version="18.1" start="clk_0.clk" end="BallJoint_5.clock" />
- <connection kind="clock" version="18.1" start="clk_0.clk" end="BallJoint_6.clock" />
  <connection
    kind="clock"
    version="18.1"
@@ -2783,6 +2751,8 @@
    version="18.1"
    start="clk_0.clk"
    end="FanControl_5.clock" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="BallJoint_5.clock" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="BallJoint_6.clock" />
  <connection
    kind="clock"
    version="18.1"
@@ -2870,16 +2840,6 @@
    kind="reset"
    version="18.1"
    start="clk_0.clk_reset"
-   end="BallJoint_5.reset" />
- <connection
-   kind="reset"
-   version="18.1"
-   start="clk_0.clk_reset"
-   end="BallJoint_6.reset" />
- <connection
-   kind="reset"
-   version="18.1"
-   start="clk_0.clk_reset"
    end="iCEbusControl_1.reset" />
  <connection
    kind="reset"
@@ -2946,6 +2906,16 @@
    version="18.1"
    start="clk_0.clk_reset"
    end="POWER_CONTROL.reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="clk_0.clk_reset"
+   end="BallJoint_5.reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="clk_0.clk_reset"
+   end="BallJoint_6.reset" />
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
  <interconnectRequirement for="$system" name="qsys_mm.maxAdditionalLatency" value="1" />
 </system>
