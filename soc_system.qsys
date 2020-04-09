@@ -1437,6 +1437,14 @@
          type = "String";
       }
    }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
    element sysid_qsys
    {
       datum _sortIndex
@@ -1486,62 +1494,26 @@
  <instanceScript></instanceScript>
  <interface
    name="auxilliary_i2c_0_conduit_end"
-   internal="auxilliary.I2C_0_conduit_end"
-   type="conduit"
-   dir="end" />
+   internal="auxilliary.I2C_0_conduit_end" />
  <interface
    name="auxilliary_i2c_1_conduit_end"
-   internal="auxilliary.I2C_1_conduit_end"
-   type="conduit"
-   dir="end" />
+   internal="auxilliary.I2C_1_conduit_end" />
  <interface
    name="auxilliary_i2c_2_conduit_end"
-   internal="auxilliary.I2C_2_conduit_end"
-   type="conduit"
-   dir="end" />
+   internal="auxilliary.I2C_2_conduit_end" />
  <interface
    name="auxilliary_i2c_3_conduit_end"
-   internal="auxilliary.I2C_3_conduit_end"
-   type="conduit"
-   dir="end" />
- <interface
-   name="balljoint_0_conduit_end"
-   internal="BallJoint_0.conduit_end"
-   type="conduit"
-   dir="end" />
- <interface
-   name="balljoint_1_conduit_end"
-   internal="BallJoint_1.conduit_end"
-   type="conduit"
-   dir="end" />
- <interface
-   name="balljoint_2_conduit_end"
-   internal="BallJoint_2.conduit_end"
-   type="conduit"
-   dir="end" />
- <interface
-   name="balljoint_3_conduit_end"
-   internal="BallJoint_3.conduit_end"
-   type="conduit"
-   dir="end" />
- <interface
-   name="balljoint_4_conduit_end"
-   internal="BallJoint_4.conduit_end"
-   type="conduit"
-   dir="end" />
+   internal="auxilliary.I2C_3_conduit_end" />
+ <interface name="balljoint_0_conduit_end" internal="BallJoint_0.conduit_end" />
+ <interface name="balljoint_1_conduit_end" internal="BallJoint_1.conduit_end" />
+ <interface name="balljoint_2_conduit_end" internal="BallJoint_2.conduit_end" />
+ <interface name="balljoint_3_conduit_end" internal="BallJoint_3.conduit_end" />
+ <interface name="balljoint_4_conduit_end" internal="BallJoint_4.conduit_end" />
  <interface name="balljoint_5_conduit_end" internal="BallJoint_5.conduit_end" />
  <interface name="balljoint_6_conduit_end" internal="BallJoint_6.conduit_end" />
  <interface name="clk" internal="clk_0.clk_in" type="clock" dir="end" />
- <interface
-   name="fancontrol_0_conduit_end"
-   internal="FanControl_0.conduit_end"
-   type="conduit"
-   dir="end" />
- <interface
-   name="fancontrol_1_conduit_end"
-   internal="FanControl_1.conduit_end"
-   type="conduit"
-   dir="end" />
+ <interface name="fancontrol_0_conduit_end" internal="FanControl_0.conduit_end" />
+ <interface name="fancontrol_1_conduit_end" internal="FanControl_1.conduit_end" />
  <interface name="fancontrol_2_conduit_end" internal="FanControl_2.conduit_end" />
  <interface name="fancontrol_3_conduit_end" internal="FanControl_3.conduit_end" />
  <interface name="fancontrol_4_conduit_end" internal="FanControl_4.conduit_end" />
@@ -1571,19 +1543,13 @@
  <interface name="hps_0_hps_io" internal="hps_0.hps_io" type="conduit" dir="end" />
  <interface
    name="icebuscontrol_0_conduit_end"
-   internal="iCEbusControl_0.conduit_end"
-   type="conduit"
-   dir="end" />
+   internal="iCEbusControl_0.conduit_end" />
  <interface
    name="icebuscontrol_1_conduit_end"
-   internal="iCEbusControl_1.conduit_end"
-   type="conduit"
-   dir="end" />
+   internal="iCEbusControl_1.conduit_end" />
  <interface
    name="icebuscontrol_2_conduit_end"
-   internal="iCEbusControl_2.conduit_end"
-   type="conduit"
-   dir="end" />
+   internal="iCEbusControl_2.conduit_end" />
  <interface
    name="icebuscontrol_3_conduit_end"
    internal="iCEbusControl_3.conduit_end" />
@@ -1600,9 +1566,7 @@
    dir="end" />
  <interface
    name="icebuscontrol_7_conduit_end"
-   internal="iCEbusControl_7.conduit_end"
-   type="conduit"
-   dir="end" />
+   internal="iCEbusControl_7.conduit_end" />
  <interface
    name="led_external_connection"
    internal="LED.external_connection"
@@ -1625,27 +1589,27 @@
    internal="SWITCHES.external_connection"
    type="conduit"
    dir="end" />
- <module name="BallJoint_0" kind="BallJoint" version="1.0" enabled="1">
+ <module name="BallJoint_0" kind="BallJoint" version="1.0" enabled="0">
   <parameter name="BUS_SPEED_HZ" value="400000" />
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
   <parameter name="NUMBER_OF_SENSORS" value="4" />
  </module>
- <module name="BallJoint_1" kind="BallJoint" version="1.0" enabled="1">
+ <module name="BallJoint_1" kind="BallJoint" version="1.0" enabled="0">
   <parameter name="BUS_SPEED_HZ" value="400000" />
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
   <parameter name="NUMBER_OF_SENSORS" value="4" />
  </module>
- <module name="BallJoint_2" kind="BallJoint" version="1.0" enabled="1">
+ <module name="BallJoint_2" kind="BallJoint" version="1.0" enabled="0">
   <parameter name="BUS_SPEED_HZ" value="400000" />
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
   <parameter name="NUMBER_OF_SENSORS" value="4" />
  </module>
- <module name="BallJoint_3" kind="BallJoint" version="1.0" enabled="1">
+ <module name="BallJoint_3" kind="BallJoint" version="1.0" enabled="0">
   <parameter name="BUS_SPEED_HZ" value="400000" />
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
   <parameter name="NUMBER_OF_SENSORS" value="4" />
  </module>
- <module name="BallJoint_4" kind="BallJoint" version="1.0" enabled="1">
+ <module name="BallJoint_4" kind="BallJoint" version="1.0" enabled="0">
   <parameter name="BUS_SPEED_HZ" value="400000" />
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
   <parameter name="NUMBER_OF_SENSORS" value="4" />
@@ -1660,10 +1624,10 @@
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
   <parameter name="NUMBER_OF_SENSORS" value="4" />
  </module>
- <module name="FanControl_0" kind="FanControl" version="1.0" enabled="1">
+ <module name="FanControl_0" kind="FanControl" version="1.0" enabled="0">
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
  </module>
- <module name="FanControl_1" kind="FanControl" version="1.0" enabled="1">
+ <module name="FanControl_1" kind="FanControl" version="1.0" enabled="0">
   <parameter name="CLOCK_SPEED_HZ" value="50000000" />
  </module>
  <module name="FanControl_2" kind="FanControl" version="1.0" enabled="0">
@@ -1742,7 +1706,7 @@
   <parameter name="simDrivenValue" value="0" />
   <parameter name="width" value="4" />
  </module>
- <module name="auxilliary" kind="subsystemA" version="1.0" enabled="1">
+ <module name="auxilliary" kind="subsystemA" version="1.0" enabled="0">
   <parameter name="AUTO_DEVICE" value="5CSEBA6U23I7" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
   <parameter name="AUTO_DEVICE_SPEEDGRADE" value="7" />
@@ -1759,7 +1723,7 @@
   <parameter name="AUTO_I2C_3_CLOCK_SINK_CLOCK_DOMAIN" value="1" />
   <parameter name="AUTO_I2C_3_CLOCK_SINK_CLOCK_RATE" value="50000000" />
   <parameter name="AUTO_I2C_3_CLOCK_SINK_RESET_DOMAIN" value="1" />
-  <parameter name="AUTO_UNIQUE_ID">$${FILENAME}_auxilliary</parameter>
+  <parameter name="AUTO_UNIQUE_ID">soc_system_auxilliary</parameter>
  </module>
  <module name="clk_0" kind="clock_source" version="18.1" enabled="1">
   <parameter name="clockFrequency" value="50000000" />
@@ -2297,19 +2261,19 @@
   <parameter name="usb_mp_clk_div" value="0" />
   <parameter name="use_default_mpu_clk" value="true" />
  </module>
- <module name="iCEbusControl_0" kind="iCEbusControl" version="1.0" enabled="1">
+ <module name="iCEbusControl_0" kind="iCEbusControl" version="1.0" enabled="0">
   <parameter name="CLOCK_FREQ_HZ" value="50000000" />
   <parameter name="NUMBER_OF_MOTORS" value="10" />
   <parameter name="arm_coms" value="false" />
   <parameter name="iceboard_coms" value="true" />
  </module>
- <module name="iCEbusControl_1" kind="iCEbusControl" version="1.0" enabled="1">
+ <module name="iCEbusControl_1" kind="iCEbusControl" version="1.0" enabled="0">
   <parameter name="CLOCK_FREQ_HZ" value="50000000" />
   <parameter name="NUMBER_OF_MOTORS" value="10" />
   <parameter name="arm_coms" value="false" />
   <parameter name="iceboard_coms" value="true" />
  </module>
- <module name="iCEbusControl_2" kind="iCEbusControl" version="1.0" enabled="1">
+ <module name="iCEbusControl_2" kind="iCEbusControl" version="1.0" enabled="0">
   <parameter name="CLOCK_FREQ_HZ" value="50000000" />
   <parameter name="NUMBER_OF_MOTORS" value="6" />
   <parameter name="arm_coms" value="false" />
@@ -2339,7 +2303,7 @@
   <parameter name="arm_coms" value="true" />
   <parameter name="iceboard_coms" value="false" />
  </module>
- <module name="iCEbusControl_7" kind="iCEbusControl" version="1.0" enabled="1">
+ <module name="iCEbusControl_7" kind="iCEbusControl" version="1.0" enabled="0">
   <parameter name="CLOCK_FREQ_HZ" value="50000000" />
   <parameter name="NUMBER_OF_MOTORS" value="10" />
   <parameter name="arm_coms" value="true" />

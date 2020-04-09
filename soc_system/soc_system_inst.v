@@ -1,32 +1,5 @@
 	soc_system u0 (
-		.auxilliary_i2c_0_conduit_end_scl            (<connected-to-auxilliary_i2c_0_conduit_end_scl>),            //        auxilliary_i2c_0_conduit_end.scl
-		.auxilliary_i2c_0_conduit_end_sda            (<connected-to-auxilliary_i2c_0_conduit_end_sda>),            //                                    .sda
-		.auxilliary_i2c_1_conduit_end_scl            (<connected-to-auxilliary_i2c_1_conduit_end_scl>),            //        auxilliary_i2c_1_conduit_end.scl
-		.auxilliary_i2c_1_conduit_end_sda            (<connected-to-auxilliary_i2c_1_conduit_end_sda>),            //                                    .sda
-		.auxilliary_i2c_2_conduit_end_scl            (<connected-to-auxilliary_i2c_2_conduit_end_scl>),            //        auxilliary_i2c_2_conduit_end.scl
-		.auxilliary_i2c_2_conduit_end_sda            (<connected-to-auxilliary_i2c_2_conduit_end_sda>),            //                                    .sda
-		.auxilliary_i2c_3_conduit_end_scl            (<connected-to-auxilliary_i2c_3_conduit_end_scl>),            //        auxilliary_i2c_3_conduit_end.scl
-		.auxilliary_i2c_3_conduit_end_sda            (<connected-to-auxilliary_i2c_3_conduit_end_sda>),            //                                    .sda
-		.balljoint_0_conduit_end_scl                 (<connected-to-balljoint_0_conduit_end_scl>),                 //             balljoint_0_conduit_end.scl
-		.balljoint_0_conduit_end_sda                 (<connected-to-balljoint_0_conduit_end_sda>),                 //                                    .sda
-		.balljoint_0_conduit_end_reset_n             (<connected-to-balljoint_0_conduit_end_reset_n>),             //                                    .reset_n
-		.balljoint_1_conduit_end_scl                 (<connected-to-balljoint_1_conduit_end_scl>),                 //             balljoint_1_conduit_end.scl
-		.balljoint_1_conduit_end_sda                 (<connected-to-balljoint_1_conduit_end_sda>),                 //                                    .sda
-		.balljoint_1_conduit_end_reset_n             (<connected-to-balljoint_1_conduit_end_reset_n>),             //                                    .reset_n
-		.balljoint_2_conduit_end_scl                 (<connected-to-balljoint_2_conduit_end_scl>),                 //             balljoint_2_conduit_end.scl
-		.balljoint_2_conduit_end_sda                 (<connected-to-balljoint_2_conduit_end_sda>),                 //                                    .sda
-		.balljoint_2_conduit_end_reset_n             (<connected-to-balljoint_2_conduit_end_reset_n>),             //                                    .reset_n
-		.balljoint_3_conduit_end_scl                 (<connected-to-balljoint_3_conduit_end_scl>),                 //             balljoint_3_conduit_end.scl
-		.balljoint_3_conduit_end_sda                 (<connected-to-balljoint_3_conduit_end_sda>),                 //                                    .sda
-		.balljoint_3_conduit_end_reset_n             (<connected-to-balljoint_3_conduit_end_reset_n>),             //                                    .reset_n
-		.balljoint_4_conduit_end_scl                 (<connected-to-balljoint_4_conduit_end_scl>),                 //             balljoint_4_conduit_end.scl
-		.balljoint_4_conduit_end_sda                 (<connected-to-balljoint_4_conduit_end_sda>),                 //                                    .sda
-		.balljoint_4_conduit_end_reset_n             (<connected-to-balljoint_4_conduit_end_reset_n>),             //                                    .reset_n
 		.clk_clk                                     (<connected-to-clk_clk>),                                     //                                 clk.clk
-		.fancontrol_0_conduit_end_current_average    (<connected-to-fancontrol_0_conduit_end_current_average>),    //            fancontrol_0_conduit_end.current_average
-		.fancontrol_0_conduit_end_pwm                (<connected-to-fancontrol_0_conduit_end_pwm>),                //                                    .pwm
-		.fancontrol_1_conduit_end_current_average    (<connected-to-fancontrol_1_conduit_end_current_average>),    //            fancontrol_1_conduit_end.current_average
-		.fancontrol_1_conduit_end_pwm                (<connected-to-fancontrol_1_conduit_end_pwm>),                //                                    .pwm
 		.hps_0_f2h_cold_reset_req_reset_n            (<connected-to-hps_0_f2h_cold_reset_req_reset_n>),            //            hps_0_f2h_cold_reset_req.reset_n
 		.hps_0_f2h_debug_reset_req_reset_n           (<connected-to-hps_0_f2h_debug_reset_req_reset_n>),           //           hps_0_f2h_debug_reset_req.reset_n
 		.hps_0_f2h_warm_reset_req_reset_n            (<connected-to-hps_0_f2h_warm_reset_req_reset_n>),            //            hps_0_f2h_warm_reset_req.reset_n
@@ -79,21 +52,9 @@
 		.hps_0_hps_io_hps_io_gpio_inst_GPIO53        (<connected-to-hps_0_hps_io_hps_io_gpio_inst_GPIO53>),        //                                    .hps_io_gpio_inst_GPIO53
 		.hps_0_hps_io_hps_io_gpio_inst_GPIO54        (<connected-to-hps_0_hps_io_hps_io_gpio_inst_GPIO54>),        //                                    .hps_io_gpio_inst_GPIO54
 		.hps_0_hps_io_hps_io_gpio_inst_GPIO61        (<connected-to-hps_0_hps_io_hps_io_gpio_inst_GPIO61>),        //                                    .hps_io_gpio_inst_GPIO61
-		.icebuscontrol_0_conduit_end_rx              (<connected-to-icebuscontrol_0_conduit_end_rx>),              //         icebuscontrol_0_conduit_end.rx
-		.icebuscontrol_0_conduit_end_tx              (<connected-to-icebuscontrol_0_conduit_end_tx>),              //                                    .tx
-		.icebuscontrol_0_conduit_end_current_average (<connected-to-icebuscontrol_0_conduit_end_current_average>), //                                    .current_average
-		.icebuscontrol_1_conduit_end_rx              (<connected-to-icebuscontrol_1_conduit_end_rx>),              //         icebuscontrol_1_conduit_end.rx
-		.icebuscontrol_1_conduit_end_tx              (<connected-to-icebuscontrol_1_conduit_end_tx>),              //                                    .tx
-		.icebuscontrol_1_conduit_end_current_average (<connected-to-icebuscontrol_1_conduit_end_current_average>), //                                    .current_average
-		.icebuscontrol_2_conduit_end_rx              (<connected-to-icebuscontrol_2_conduit_end_rx>),              //         icebuscontrol_2_conduit_end.rx
-		.icebuscontrol_2_conduit_end_tx              (<connected-to-icebuscontrol_2_conduit_end_tx>),              //                                    .tx
-		.icebuscontrol_2_conduit_end_current_average (<connected-to-icebuscontrol_2_conduit_end_current_average>), //                                    .current_average
 		.icebuscontrol_6_conduit_end_rx              (<connected-to-icebuscontrol_6_conduit_end_rx>),              //         icebuscontrol_6_conduit_end.rx
 		.icebuscontrol_6_conduit_end_tx              (<connected-to-icebuscontrol_6_conduit_end_tx>),              //                                    .tx
 		.icebuscontrol_6_conduit_end_current_average (<connected-to-icebuscontrol_6_conduit_end_current_average>), //                                    .current_average
-		.icebuscontrol_7_conduit_end_rx              (<connected-to-icebuscontrol_7_conduit_end_rx>),              //         icebuscontrol_7_conduit_end.rx
-		.icebuscontrol_7_conduit_end_tx              (<connected-to-icebuscontrol_7_conduit_end_tx>),              //                                    .tx
-		.icebuscontrol_7_conduit_end_current_average (<connected-to-icebuscontrol_7_conduit_end_current_average>), //                                    .current_average
 		.led_external_connection_export              (<connected-to-led_external_connection_export>),              //             led_external_connection.export
 		.memory_mem_a                                (<connected-to-memory_mem_a>),                                //                              memory.mem_a
 		.memory_mem_ba                               (<connected-to-memory_mem_ba>),                               //                                    .mem_ba
