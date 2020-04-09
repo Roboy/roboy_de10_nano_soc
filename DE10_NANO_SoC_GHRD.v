@@ -175,7 +175,7 @@ soc_system u0(
 //			.fancontrol_1_conduit_end_pwm(GPIO_1[34]),
 //			.fancontrol_1_conduit_end_current_average(current_average[1]),
 ////			.fancontrol_2_conduit_end_pwm(GPIO_1[33]),
-////			.fancontrol_2_conduit_end_current_average(current_average[2]),
+////			.fancontrol_2_conduit_end_current_average(current_average[2]), 
 ////			.fancontrol_3_conduit_end_pwm(GPIO_1[32]),
 ////			.fancontrol_3_conduit_end_current_average(current_average[3]), 
 ////			.fancontrol_4_conduit_end_pwm(GPIO_1[31]),
