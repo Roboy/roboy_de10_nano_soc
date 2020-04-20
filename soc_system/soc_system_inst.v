@@ -1,5 +1,26 @@
 	soc_system u0 (
+		.balljoint_0_conduit_end_scl                 (<connected-to-balljoint_0_conduit_end_scl>),                 //             balljoint_0_conduit_end.scl
+		.balljoint_0_conduit_end_sda                 (<connected-to-balljoint_0_conduit_end_sda>),                 //                                    .sda
+		.balljoint_0_conduit_end_reset_n             (<connected-to-balljoint_0_conduit_end_reset_n>),             //                                    .reset_n
+		.balljoint_1_conduit_end_scl                 (<connected-to-balljoint_1_conduit_end_scl>),                 //             balljoint_1_conduit_end.scl
+		.balljoint_1_conduit_end_sda                 (<connected-to-balljoint_1_conduit_end_sda>),                 //                                    .sda
+		.balljoint_1_conduit_end_reset_n             (<connected-to-balljoint_1_conduit_end_reset_n>),             //                                    .reset_n
+		.balljoint_2_conduit_end_scl                 (<connected-to-balljoint_2_conduit_end_scl>),                 //             balljoint_2_conduit_end.scl
+		.balljoint_2_conduit_end_sda                 (<connected-to-balljoint_2_conduit_end_sda>),                 //                                    .sda
+		.balljoint_2_conduit_end_reset_n             (<connected-to-balljoint_2_conduit_end_reset_n>),             //                                    .reset_n
 		.clk_clk                                     (<connected-to-clk_clk>),                                     //                                 clk.clk
+		.fancontrol_0_conduit_end_current_average    (<connected-to-fancontrol_0_conduit_end_current_average>),    //            fancontrol_0_conduit_end.current_average
+		.fancontrol_0_conduit_end_pwm                (<connected-to-fancontrol_0_conduit_end_pwm>),                //                                    .pwm
+		.fancontrol_1_conduit_end_current_average    (<connected-to-fancontrol_1_conduit_end_current_average>),    //            fancontrol_1_conduit_end.current_average
+		.fancontrol_1_conduit_end_pwm                (<connected-to-fancontrol_1_conduit_end_pwm>),                //                                    .pwm
+		.fancontrol_2_conduit_end_current_average    (<connected-to-fancontrol_2_conduit_end_current_average>),    //            fancontrol_2_conduit_end.current_average
+		.fancontrol_2_conduit_end_pwm                (<connected-to-fancontrol_2_conduit_end_pwm>),                //                                    .pwm
+		.fancontrol_3_conduit_end_current_average    (<connected-to-fancontrol_3_conduit_end_current_average>),    //            fancontrol_3_conduit_end.current_average
+		.fancontrol_3_conduit_end_pwm                (<connected-to-fancontrol_3_conduit_end_pwm>),                //                                    .pwm
+		.fancontrol_4_conduit_end_current_average    (<connected-to-fancontrol_4_conduit_end_current_average>),    //            fancontrol_4_conduit_end.current_average
+		.fancontrol_4_conduit_end_pwm                (<connected-to-fancontrol_4_conduit_end_pwm>),                //                                    .pwm
+		.fancontrol_5_conduit_end_current_average    (<connected-to-fancontrol_5_conduit_end_current_average>),    //            fancontrol_5_conduit_end.current_average
+		.fancontrol_5_conduit_end_pwm                (<connected-to-fancontrol_5_conduit_end_pwm>),                //                                    .pwm
 		.hps_0_f2h_cold_reset_req_reset_n            (<connected-to-hps_0_f2h_cold_reset_req_reset_n>),            //            hps_0_f2h_cold_reset_req.reset_n
 		.hps_0_f2h_debug_reset_req_reset_n           (<connected-to-hps_0_f2h_debug_reset_req_reset_n>),           //           hps_0_f2h_debug_reset_req.reset_n
 		.hps_0_f2h_warm_reset_req_reset_n            (<connected-to-hps_0_f2h_warm_reset_req_reset_n>),            //            hps_0_f2h_warm_reset_req.reset_n

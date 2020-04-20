@@ -1,6 +1,27 @@
 
 module soc_system (
+	balljoint_0_conduit_end_scl,
+	balljoint_0_conduit_end_sda,
+	balljoint_0_conduit_end_reset_n,
+	balljoint_1_conduit_end_scl,
+	balljoint_1_conduit_end_sda,
+	balljoint_1_conduit_end_reset_n,
+	balljoint_2_conduit_end_scl,
+	balljoint_2_conduit_end_sda,
+	balljoint_2_conduit_end_reset_n,
 	clk_clk,
+	fancontrol_0_conduit_end_current_average,
+	fancontrol_0_conduit_end_pwm,
+	fancontrol_1_conduit_end_current_average,
+	fancontrol_1_conduit_end_pwm,
+	fancontrol_2_conduit_end_current_average,
+	fancontrol_2_conduit_end_pwm,
+	fancontrol_3_conduit_end_current_average,
+	fancontrol_3_conduit_end_pwm,
+	fancontrol_4_conduit_end_current_average,
+	fancontrol_4_conduit_end_pwm,
+	fancontrol_5_conduit_end_current_average,
+	fancontrol_5_conduit_end_pwm,
 	hps_0_f2h_cold_reset_req_reset_n,
 	hps_0_f2h_debug_reset_req_reset_n,
 	hps_0_f2h_warm_reset_req_reset_n,
@@ -78,7 +99,28 @@ module soc_system (
 	reset_reset_n,
 	switches_0_external_connection_export);	
 
+	inout		balljoint_0_conduit_end_scl;
+	output		balljoint_0_conduit_end_sda;
+	output		balljoint_0_conduit_end_reset_n;
+	inout		balljoint_1_conduit_end_scl;
+	output		balljoint_1_conduit_end_sda;
+	output		balljoint_1_conduit_end_reset_n;
+	inout		balljoint_2_conduit_end_scl;
+	output		balljoint_2_conduit_end_sda;
+	output		balljoint_2_conduit_end_reset_n;
 	input		clk_clk;
+	input	[31:0]	fancontrol_0_conduit_end_current_average;
+	output		fancontrol_0_conduit_end_pwm;
+	input	[31:0]	fancontrol_1_conduit_end_current_average;
+	output		fancontrol_1_conduit_end_pwm;
+	input	[31:0]	fancontrol_2_conduit_end_current_average;
+	output		fancontrol_2_conduit_end_pwm;
+	input	[31:0]	fancontrol_3_conduit_end_current_average;
+	output		fancontrol_3_conduit_end_pwm;
+	input	[31:0]	fancontrol_4_conduit_end_current_average;
+	output		fancontrol_4_conduit_end_pwm;
+	input	[31:0]	fancontrol_5_conduit_end_current_average;
+	output		fancontrol_5_conduit_end_pwm;
 	input		hps_0_f2h_cold_reset_req_reset_n;
 	input		hps_0_f2h_debug_reset_req_reset_n;
 	input		hps_0_f2h_warm_reset_req_reset_n;
