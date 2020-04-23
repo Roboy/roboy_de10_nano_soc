@@ -114,26 +114,39 @@ wire                hps_debug_reset;
 //  Structural coding
 //=======================================================
 
-wire signed [31:0] current_average[7:0];
+assign GPIO_1[30] = ~GPIO_1[18]; // fan control 5V dc-dc converter
+assign GPIO_1[31] = ~GPIO_1[19]; // fan control 12V dc-dc converter
 
+wire signed [31:0] current_average[7:0];
+`ifdef ENABLE_HPS
 soc_system u0(
 			//Clock&Reset
 			.clk_clk(FPGA_CLK1_50),
 			.reset_reset_n(hps_fpga_reset_n),
 			// led
 			.led_external_connection_export(LED),
-			// switches
+			// switches 
 			.switches_0_external_connection_export(SW),
+//			// myocontrol
+//			.myocontrol_0_conduit_end_mosi(ARDUINO_IO[1]),
+//			.myocontrol_0_conduit_end_miso(ARDUINO_IO[0]),
+//			.myocontrol_0_conduit_end_sck(ARDUINO_IO[2]),
+//			.myocontrol_0_conduit_end_ss_n_o({ARDUINO_IO[15:3],GPIO_1[6:4]}),
+//			.myocontrol_0_conduit_end_mirrored_muscle_unit(1'b0), 
+//			.myocontrol_0_conduit_end_power_sense_n(~GPIO_1[24] && SW[3]),
 			// balljoints
 			.balljoint_0_conduit_end_sda(GPIO_0[13]),
 			.balljoint_0_conduit_end_scl(GPIO_0[15]),
-			.balljoint_0_conduit_end_reset_n(GPIO_0[12]),
-			.balljoint_1_conduit_end_sda(GPIO_0[17]),
-			.balljoint_1_conduit_end_scl(GPIO_0[19]),
-			.balljoint_1_conduit_end_reset_n(GPIO_0[14]),
-			.balljoint_2_conduit_end_sda(GPIO_0[21]),
-			.balljoint_2_conduit_end_scl(GPIO_0[23]),
-			.balljoint_2_conduit_end_reset_n(GPIO_0[16]),
+//			.balljoint_0_conduit_end_reset_n(GPIO_0[12]),
+//			.balljoint_0_conduit_end_sda(GPIO_0[13]),
+//			.balljoint_0_conduit_end_scl(GPIO_0[15]),
+//			.balljoint_0_conduit_end_reset_n(GPIO_0[12]),
+//			.balljoint_1_conduit_end_sda(GPIO_0[17]),
+//			.balljoint_1_conduit_end_scl(GPIO_0[19]),
+//			.balljoint_1_conduit_end_reset_n(GPIO_0[14]),
+//			.balljoint_2_conduit_end_sda(GPIO_0[21]),
+//			.balljoint_2_conduit_end_scl(GPIO_0[23]),
+//			.balljoint_2_conduit_end_reset_n(GPIO_0[16]),
 //			.balljoint_3_conduit_end_sda(GPIO_0[25]),
 //			.balljoint_3_conduit_end_scl(GPIO_0[27]),
 //			.balljoint_3_conduit_end_reset_n(GPIO_0[18]),
@@ -164,33 +177,33 @@ soc_system u0(
 ////			.icebuscontrol_5_conduit_end_rx(GPIO_0[10]),
 ////			.icebuscontrol_5_conduit_end_tx(GPIO_0[11]),
 ////			.icebuscontrol_5_conduit_end_current_average(current_average[5]),
-			.icebuscontrol_6_conduit_end_rx(GPIO_1[8]),
-			.icebuscontrol_6_conduit_end_tx(GPIO_1[9]),
-			.icebuscontrol_6_conduit_end_current_average(current_average[6]),
+//			.icebuscontrol_6_conduit_end_rx(GPIO_1[8]),
+//			.icebuscontrol_6_conduit_end_tx(GPIO_1[9]),
+//			.icebuscontrol_6_conduit_end_current_average(current_average[6]),
 //			.icebuscontrol_7_conduit_end_rx(GPIO_1[10]),
 //			.icebuscontrol_7_conduit_end_tx(GPIO_1[11]),
 //			.icebuscontrol_7_conduit_end_current_average(current_average[7]),
-			.fancontrol_0_conduit_end_pwm(GPIO_1[35]),
-			.fancontrol_0_conduit_end_current_average(current_average[0]),
-			.fancontrol_1_conduit_end_pwm(GPIO_1[34]),
-			.fancontrol_1_conduit_end_current_average(current_average[1]),
-			.fancontrol_2_conduit_end_pwm(GPIO_1[33]),
-			.fancontrol_2_conduit_end_current_average(current_average[2]), 
-			.fancontrol_3_conduit_end_pwm(GPIO_1[32]),
-			.fancontrol_3_conduit_end_current_average(current_average[3]), 
-			.fancontrol_4_conduit_end_pwm(GPIO_1[31]),
-			.fancontrol_4_conduit_end_current_average(current_average[4]),
-			.fancontrol_5_conduit_end_pwm(GPIO_1[30]),
-			.fancontrol_5_conduit_end_current_average(current_average[5]),
+//			.fancontrol_0_conduit_end_pwm(GPIO_1[35]),
+//			.fancontrol_0_conduit_end_current_average(current_average[0]),
+//			.fancontrol_1_conduit_end_pwm(GPIO_1[34]),
+//			.fancontrol_1_conduit_end_current_average(current_average[1]),
+//			.fancontrol_2_conduit_end_pwm(GPIO_1[33]),
+//			.fancontrol_2_conduit_end_current_average(current_average[2]), 
+//			.fancontrol_3_conduit_end_pwm(GPIO_1[32]),
+//			.fancontrol_3_conduit_end_current_average(current_average[3]), 
+//			.fancontrol_4_conduit_end_pwm(GPIO_1[31]),
+//			.fancontrol_4_conduit_end_current_average(current_average[4]),
+//			.fancontrol_5_conduit_end_pwm(GPIO_1[30]),
+//			.fancontrol_5_conduit_end_current_average(current_average[5]),
 			.power_sense_0_external_connection_export(GPIO_1[29:24]),
 			.power_control_0_external_connection_export(GPIO_1[19:18]),
 			// auxiliary sensors
 //			.auxilliary_i2c_0_conduit_end_sda(GPIO_1[0]),
 //			.auxilliary_i2c_0_conduit_end_scl(GPIO_1[1]),
 //			.auxilliary_i2c_1_conduit_end_sda(GPIO_1[2]),
-//			.auxilliary_i2c_1_conduit_end_scl(GPIO_1[3]),
+//			.auxilliary_i2c_1_conduit_end_scl(GPIO_1[3]), 
 //			.auxilliary_i2c_2_conduit_end_sda(GPIO_1[4]),
-//			.auxilliary_i2c_2_conduit_end_scl(GPIO_1[5]),
+//			.auxilliary_i2c_2_conduit_end_scl(GPIO_1[5]), 
 //			.auxilliary_i2c_3_conduit_end_sda(GPIO_1[6]),
 //			.auxilliary_i2c_3_conduit_end_scl(GPIO_1[7]),
 			//HPS ddr3
@@ -272,7 +285,33 @@ soc_system u0(
 			.hps_0_f2h_debug_reset_req_reset_n(~hps_debug_reset),        //      hps_0_f2h_debug_reset_req.reset_n
 			.hps_0_f2h_warm_reset_req_reset_n(~hps_warm_reset)          //       hps_0_f2h_warm_reset_req.reset_n
            );
-//
+`else
+	
+	reg reset_this;
+	
+	
+	always @(posedge FPGA_CLK1_50) begin: RESET_THIS
+		integer counter;
+		counter <= counter+1;
+		if(counter>100_000_000)begin
+			reset_this <= 1;
+			counter <= 0;
+		end
+		if(reset_this)begin
+			reset_this<=0;
+		end
+	end 
+
+	soc_system u0(
+		.clk_clk(FPGA_CLK1_50),
+			.reset_reset_n(1'b1),
+			.balljoint_0_conduit_end_sda(GPIO_0[13]),
+			.balljoint_0_conduit_end_scl(GPIO_0[15]),
+			.balljoint_0_conduit_end_reset_n(GPIO_0[12])
+	);
+			  
+`endif /*ENABLE_HPS*/
+			  
 // Debounce logic to clean out glitches within 1ms
 debounce debounce_inst(
              .clk(FPGA_CLK1_50),
