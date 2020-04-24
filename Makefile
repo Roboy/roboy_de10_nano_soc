@@ -402,7 +402,7 @@ HELP_TARGETS += generate_header
 generate_header.HELP := generates base addresses for lightweight axi bridge
 .PHONY: generate_header
 generate_header:
-	$(call sopc-create-header-files "$PWD/soc_system.sopcinfo" --single hps_0.h --module hps_0)
+	$(call sopc-create-header-files "$PWD/soc_system.sopcinfo" --single ../include/roboy_plexus/hps_0.h --module hps_0)
 
 # GHRD HPS Reset Targets
 ifneq ($(wildcard ghrd_reset.tcl),)

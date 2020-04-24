@@ -1,6 +1,24 @@
 
 module soc_system (
+	auxilliary_i2c_0_conduit_end_scl,
+	auxilliary_i2c_0_conduit_end_sda,
+	auxilliary_i2c_1_conduit_end_scl,
+	auxilliary_i2c_1_conduit_end_sda,
+	auxilliary_i2c_2_conduit_end_scl,
+	auxilliary_i2c_2_conduit_end_sda,
+	auxilliary_i2c_3_conduit_end_scl,
+	auxilliary_i2c_3_conduit_end_sda,
+	balljoint_0_conduit_end_scl,
+	balljoint_0_conduit_end_sda,
 	clk_clk,
+	fancontrol_0_conduit_end_current_average,
+	fancontrol_0_conduit_end_pwm,
+	fancontrol_1_conduit_end_current_average,
+	fancontrol_1_conduit_end_pwm,
+	fancontrol_2_conduit_end_current_average,
+	fancontrol_2_conduit_end_pwm,
+	fancontrol_3_conduit_end_current_average,
+	fancontrol_3_conduit_end_pwm,
 	hps_0_f2h_cold_reset_req_reset_n,
 	hps_0_f2h_debug_reset_req_reset_n,
 	hps_0_f2h_warm_reset_req_reset_n,
@@ -53,6 +71,9 @@ module soc_system (
 	hps_0_hps_io_hps_io_gpio_inst_GPIO53,
 	hps_0_hps_io_hps_io_gpio_inst_GPIO54,
 	hps_0_hps_io_hps_io_gpio_inst_GPIO61,
+	icebuscontrol_6_conduit_end_rx,
+	icebuscontrol_6_conduit_end_tx,
+	icebuscontrol_6_conduit_end_current_average,
 	led_external_connection_export,
 	memory_mem_a,
 	memory_mem_ba,
@@ -70,14 +91,45 @@ module soc_system (
 	memory_mem_odt,
 	memory_mem_dm,
 	memory_oct_rzqin,
+	myocontrol_0_conduit_end_angle_miso,
+	myocontrol_0_conduit_end_angle_mosi,
+	myocontrol_0_conduit_end_angle_sck,
+	myocontrol_0_conduit_end_angle_ss_n_o,
+	myocontrol_0_conduit_end_gpio_n,
+	myocontrol_0_conduit_end_mirrored_muscle_unit,
+	myocontrol_0_conduit_end_miso,
+	myocontrol_0_conduit_end_mosi,
+	myocontrol_0_conduit_end_power_sense_n,
+	myocontrol_0_conduit_end_ss_n_o,
+	myocontrol_0_conduit_end_sck,
 	power_control_0_external_connection_export,
 	power_sense_0_external_connection_export,
 	reset_reset_n,
 	switches_0_external_connection_export,
-	balljoint_0_conduit_end_scl,
-	balljoint_0_conduit_end_sda);	
+	balljoint_1_conduit_end_scl,
+	balljoint_1_conduit_end_sda,
+	balljoint_2_conduit_end_scl,
+	balljoint_2_conduit_end_sda);	
 
+	inout		auxilliary_i2c_0_conduit_end_scl;
+	inout		auxilliary_i2c_0_conduit_end_sda;
+	inout		auxilliary_i2c_1_conduit_end_scl;
+	inout		auxilliary_i2c_1_conduit_end_sda;
+	inout		auxilliary_i2c_2_conduit_end_scl;
+	inout		auxilliary_i2c_2_conduit_end_sda;
+	inout		auxilliary_i2c_3_conduit_end_scl;
+	inout		auxilliary_i2c_3_conduit_end_sda;
+	inout		balljoint_0_conduit_end_scl;
+	inout		balljoint_0_conduit_end_sda;
 	input		clk_clk;
+	input	[31:0]	fancontrol_0_conduit_end_current_average;
+	output		fancontrol_0_conduit_end_pwm;
+	input	[31:0]	fancontrol_1_conduit_end_current_average;
+	output		fancontrol_1_conduit_end_pwm;
+	input	[31:0]	fancontrol_2_conduit_end_current_average;
+	output		fancontrol_2_conduit_end_pwm;
+	input	[31:0]	fancontrol_3_conduit_end_current_average;
+	output		fancontrol_3_conduit_end_pwm;
 	input		hps_0_f2h_cold_reset_req_reset_n;
 	input		hps_0_f2h_debug_reset_req_reset_n;
 	input		hps_0_f2h_warm_reset_req_reset_n;
@@ -130,6 +182,9 @@ module soc_system (
 	inout		hps_0_hps_io_hps_io_gpio_inst_GPIO53;
 	inout		hps_0_hps_io_hps_io_gpio_inst_GPIO54;
 	inout		hps_0_hps_io_hps_io_gpio_inst_GPIO61;
+	input		icebuscontrol_6_conduit_end_rx;
+	output		icebuscontrol_6_conduit_end_tx;
+	output	[31:0]	icebuscontrol_6_conduit_end_current_average;
 	output	[7:0]	led_external_connection_export;
 	output	[14:0]	memory_mem_a;
 	output	[2:0]	memory_mem_ba;
@@ -147,10 +202,23 @@ module soc_system (
 	output		memory_mem_odt;
 	output	[3:0]	memory_mem_dm;
 	input		memory_oct_rzqin;
+	input		myocontrol_0_conduit_end_angle_miso;
+	output		myocontrol_0_conduit_end_angle_mosi;
+	output		myocontrol_0_conduit_end_angle_sck;
+	output	[9:0]	myocontrol_0_conduit_end_angle_ss_n_o;
+	output		myocontrol_0_conduit_end_gpio_n;
+	input		myocontrol_0_conduit_end_mirrored_muscle_unit;
+	input		myocontrol_0_conduit_end_miso;
+	output		myocontrol_0_conduit_end_mosi;
+	input		myocontrol_0_conduit_end_power_sense_n;
+	output	[9:0]	myocontrol_0_conduit_end_ss_n_o;
+	output		myocontrol_0_conduit_end_sck;
 	output	[1:0]	power_control_0_external_connection_export;
 	input	[5:0]	power_sense_0_external_connection_export;
 	input		reset_reset_n;
 	input	[3:0]	switches_0_external_connection_export;
-	inout		balljoint_0_conduit_end_scl;
-	inout		balljoint_0_conduit_end_sda;
+	inout		balljoint_1_conduit_end_scl;
+	inout		balljoint_1_conduit_end_sda;
+	inout		balljoint_2_conduit_end_scl;
+	inout		balljoint_2_conduit_end_sda;
 endmodule
