@@ -9,6 +9,10 @@
 		.auxilliary_i2c_3_conduit_end_sda              (<connected-to-auxilliary_i2c_3_conduit_end_sda>),              //                                    .sda
 		.balljoint_0_conduit_end_scl                   (<connected-to-balljoint_0_conduit_end_scl>),                   //             balljoint_0_conduit_end.scl
 		.balljoint_0_conduit_end_sda                   (<connected-to-balljoint_0_conduit_end_sda>),                   //                                    .sda
+		.balljoint_1_conduit_end_scl                   (<connected-to-balljoint_1_conduit_end_scl>),                   //             balljoint_1_conduit_end.scl
+		.balljoint_1_conduit_end_sda                   (<connected-to-balljoint_1_conduit_end_sda>),                   //                                    .sda
+		.balljoint_2_conduit_end_scl                   (<connected-to-balljoint_2_conduit_end_scl>),                   //             balljoint_2_conduit_end.scl
+		.balljoint_2_conduit_end_sda                   (<connected-to-balljoint_2_conduit_end_sda>),                   //                                    .sda
 		.clk_clk                                       (<connected-to-clk_clk>),                                       //                                 clk.clk
 		.fancontrol_0_conduit_end_current_average      (<connected-to-fancontrol_0_conduit_end_current_average>),      //            fancontrol_0_conduit_end.current_average
 		.fancontrol_0_conduit_end_pwm                  (<connected-to-fancontrol_0_conduit_end_pwm>),                  //                                    .pwm
@@ -73,7 +77,6 @@
 		.icebuscontrol_6_conduit_end_rx                (<connected-to-icebuscontrol_6_conduit_end_rx>),                //         icebuscontrol_6_conduit_end.rx
 		.icebuscontrol_6_conduit_end_tx                (<connected-to-icebuscontrol_6_conduit_end_tx>),                //                                    .tx
 		.icebuscontrol_6_conduit_end_current_average   (<connected-to-icebuscontrol_6_conduit_end_current_average>),   //                                    .current_average
-		.led_external_connection_export                (<connected-to-led_external_connection_export>),                //             led_external_connection.export
 		.memory_mem_a                                  (<connected-to-memory_mem_a>),                                  //                              memory.mem_a
 		.memory_mem_ba                                 (<connected-to-memory_mem_ba>),                                 //                                    .mem_ba
 		.memory_mem_ck                                 (<connected-to-memory_mem_ck>),                                 //                                    .mem_ck
@@ -105,9 +108,7 @@
 		.power_sense_0_external_connection_export      (<connected-to-power_sense_0_external_connection_export>),      //   power_sense_0_external_connection.export
 		.reset_reset_n                                 (<connected-to-reset_reset_n>),                                 //                               reset.reset_n
 		.switches_0_external_connection_export         (<connected-to-switches_0_external_connection_export>),         //      switches_0_external_connection.export
-		.balljoint_1_conduit_end_scl                   (<connected-to-balljoint_1_conduit_end_scl>),                   //             balljoint_1_conduit_end.scl
-		.balljoint_1_conduit_end_sda                   (<connected-to-balljoint_1_conduit_end_sda>),                   //                                    .sda
-		.balljoint_2_conduit_end_scl                   (<connected-to-balljoint_2_conduit_end_scl>),                   //             balljoint_2_conduit_end.scl
-		.balljoint_2_conduit_end_sda                   (<connected-to-balljoint_2_conduit_end_sda>)                    //                                    .sda
+		.led_external_connection_1_export              (<connected-to-led_external_connection_1_export>),              //           led_external_connection_1.export
+		.led_external_connection_export                (<connected-to-led_external_connection_export>)                 //             led_external_connection.export
 	);
 

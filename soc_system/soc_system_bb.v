@@ -10,6 +10,10 @@ module soc_system (
 	auxilliary_i2c_3_conduit_end_sda,
 	balljoint_0_conduit_end_scl,
 	balljoint_0_conduit_end_sda,
+	balljoint_1_conduit_end_scl,
+	balljoint_1_conduit_end_sda,
+	balljoint_2_conduit_end_scl,
+	balljoint_2_conduit_end_sda,
 	clk_clk,
 	fancontrol_0_conduit_end_current_average,
 	fancontrol_0_conduit_end_pwm,
@@ -74,7 +78,6 @@ module soc_system (
 	icebuscontrol_6_conduit_end_rx,
 	icebuscontrol_6_conduit_end_tx,
 	icebuscontrol_6_conduit_end_current_average,
-	led_external_connection_export,
 	memory_mem_a,
 	memory_mem_ba,
 	memory_mem_ck,
@@ -106,10 +109,8 @@ module soc_system (
 	power_sense_0_external_connection_export,
 	reset_reset_n,
 	switches_0_external_connection_export,
-	balljoint_1_conduit_end_scl,
-	balljoint_1_conduit_end_sda,
-	balljoint_2_conduit_end_scl,
-	balljoint_2_conduit_end_sda);	
+	led_external_connection_1_export,
+	led_external_connection_export);	
 
 	inout		auxilliary_i2c_0_conduit_end_scl;
 	inout		auxilliary_i2c_0_conduit_end_sda;
@@ -121,6 +122,10 @@ module soc_system (
 	inout		auxilliary_i2c_3_conduit_end_sda;
 	inout		balljoint_0_conduit_end_scl;
 	inout		balljoint_0_conduit_end_sda;
+	inout		balljoint_1_conduit_end_scl;
+	inout		balljoint_1_conduit_end_sda;
+	inout		balljoint_2_conduit_end_scl;
+	inout		balljoint_2_conduit_end_sda;
 	input		clk_clk;
 	input	[31:0]	fancontrol_0_conduit_end_current_average;
 	output		fancontrol_0_conduit_end_pwm;
@@ -185,7 +190,6 @@ module soc_system (
 	input		icebuscontrol_6_conduit_end_rx;
 	output		icebuscontrol_6_conduit_end_tx;
 	output	[31:0]	icebuscontrol_6_conduit_end_current_average;
-	output	[7:0]	led_external_connection_export;
 	output	[14:0]	memory_mem_a;
 	output	[2:0]	memory_mem_ba;
 	output		memory_mem_ck;
@@ -217,8 +221,6 @@ module soc_system (
 	input	[5:0]	power_sense_0_external_connection_export;
 	input		reset_reset_n;
 	input	[3:0]	switches_0_external_connection_export;
-	inout		balljoint_1_conduit_end_scl;
-	inout		balljoint_1_conduit_end_sda;
-	inout		balljoint_2_conduit_end_scl;
-	inout		balljoint_2_conduit_end_sda;
+	output	[7:0]	led_external_connection_1_export;
+	output	[7:0]	led_external_connection_export;
 endmodule
